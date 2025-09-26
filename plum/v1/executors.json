@@ -1,0 +1,3314 @@
+[
+    {
+        "id": 93451,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "applicants",
+        "executor_version": "v1",
+        "executor_display_name": "applicants",
+        "executor_description": "Returns a list of all applicants across all job requisitions. Filters can be used to narrow down the response.",
+        "executor_category": "applicants",
+        "executor_category_group": "applicants",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/applicants/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "plum_user_id",
+                "value": "",
+                "description": "Return only records for a given PlumUser Id",
+                "req": false
+            },
+            {
+                "key": "status_id",
+                "value": "",
+                "description": "When you query for a specified job requisition, returns applicants by pipeline stage (status). Use the application-statuses endpoint to get the available statuses. Use commas to separate multiple queries.",
+                "req": false
+            },
+            {
+                "key": "created_after",
+                "value": "",
+                "description": "Returns all applicants with applications created on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "created_before",
+                "value": "",
+                "description": "Returns all applicants with applications created before a specified datetime, exclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_after",
+                "value": "",
+                "description": "Returns all applicants with applications last modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_before",
+                "value": "",
+                "description": "Returns all applicants with applications last modified before a specified datetime, exclusively",
+                "req": false
+            },
+            {
+                "key": "match_score_modified_after",
+                "value": "",
+                "description": "Returns all applicants with match score modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "match_score_modified_before",
+                "value": "",
+                "description": "Returns all applicants with match score modified before a specified datetime, exclusively",
+                "req": false
+            },
+            {
+                "key": "job_requisition_status_id",
+                "value": "",
+                "description": "Current status of the associated job requisition. Can filter by multiple ID's by separating by a comma. See the job-requisition-statuses endpoint for available status IDs.",
+                "req": false
+            },
+            {
+                "key": "order",
+                "value": "",
+                "description": "Responses are ordered by any of the following:  created_on: Creation date (ascending/descending) modified_on: Last modified date (ascending/descending) match_score: Match score (ascending/descending) minus is descending (i.e. -created_on)",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684326935834,
+        "lastModifiedTime": 1684326935834,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "count": 0,
+                    "next": "string",
+                    "previous": "string",
+                    "results": [
+                        {
+                            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "status_id": 0,
+                            "first_name": "string",
+                            "last_name": "string",
+                            "email": "user@example.com",
+                            "plum_user_id": "string",
+                            "match_score": "string",
+                            "match_score_modified_on": "2023-05-17T11:42:44.656Z",
+                            "language": "en",
+                            "url": "string",
+                            "hired_date": "2023-05-17T11:42:44.656Z",
+                            "start_date": "2023-05-17T11:42:44.656Z",
+                            "supervisor_email": "user@example.com",
+                            "invite_url": "string",
+                            "created_on": "2023-05-17T11:42:44.656Z",
+                            "modified_on": "2023-05-17T11:42:44.656Z",
+                            "job_requisition_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "job_requisition_status_id": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93569,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteteammembersid",
+        "executor_version": "v1",
+        "executor_display_name": "deleteteammembersid",
+        "executor_description": "Removes the speicified team member from the specified job requisition.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/team-members/{id}/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684391247817,
+        "lastModifiedTime": 1684391606562,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93535,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postjobrequisitionsid",
+        "executor_version": "v1",
+        "executor_display_name": "jobrequisitionsid",
+        "executor_description": "Create new job requisitions.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}\u200b/job-requisitions\u200b/{id}\u200b/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684387417760,
+        "lastModifiedTime": 1684387979608,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "internal_title": "string",
+                    "external_title": "string",
+                    "description": "string",
+                    "remote_id": "string",
+                    "url": "string",
+                    "apply_url": "string",
+                    "location": "string",
+                    "created_on": "2023-05-18T05:21:54.794Z",
+                    "modified_on": "2023-05-18T05:21:54.794Z",
+                    "average_rank_modified_on": "2023-05-18T05:21:54.794Z",
+                    "closed_on": "2023-05-18T05:21:54.794Z",
+                    "status_id": 0,
+                    "job_family_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "mandatory_cover_letter_id": 0,
+                    "mandatory_resume_id": 0,
+                    "match_criteria": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "no_of_hires": 0,
+                    "is_managed_remotely": true
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93549,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "syncmatchcriteria",
+        "executor_version": "v1",
+        "executor_display_name": "syncmatchcriteria",
+        "executor_description": "Synchronize the job requisition average rank with the associated match criteria average rank.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/job-requisitions/{id}/sync-match-criteria/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684388904096,
+        "lastModifiedTime": 1684388904096,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "internal_title": "string",
+                    "external_title": "string",
+                    "description": "string",
+                    "remote_id": "string",
+                    "url": "string",
+                    "apply_url": "string",
+                    "location": "string",
+                    "created_on": "2023-05-18T05:44:24.685Z",
+                    "modified_on": "2023-05-18T05:44:24.685Z",
+                    "average_rank_modified_on": "2023-05-18T05:44:24.686Z",
+                    "closed_on": "2023-05-18T05:44:24.686Z",
+                    "status_id": 0,
+                    "job_family_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "mandatory_cover_letter_id": 0,
+                    "mandatory_resume_id": 0,
+                    "match_criteria": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "no_of_hires": 0,
+                    "is_managed_remotely": true
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93567,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "teammembersid",
+        "executor_version": "v1",
+        "executor_display_name": "teammembersid",
+        "executor_description": "Returns a specified team member for a specified job requisition.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/team-members/{id}/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684391096290,
+        "lastModifiedTime": 1684391970373,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "email": "user@example.com",
+                    "first_name": "string",
+                    "last_name": "string",
+                    "member_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93534,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postjobrequisitions",
+        "executor_version": "v1",
+        "executor_display_name": "jobrequisitions",
+        "executor_description": "Create new job requisitions.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/job-requisitions/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "internal_title": "string",
+                "external_title": "string",
+                "description": "string",
+                "location": "string",
+                "closed_on": "2023-05-18T05:20:19.191Z",
+                "job_family_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "mandatory_cover_letter_id": 0,
+                "mandatory_resume_id": 0,
+                "match_criteria": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "no_of_hires": 0,
+                "is_managed_remotely": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684387309559,
+        "lastModifiedTime": 1684387309559,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "internal_title": "string",
+                    "external_title": "string",
+                    "description": "string",
+                    "remote_id": "string",
+                    "url": "string",
+                    "apply_url": "string",
+                    "location": "string",
+                    "created_on": "2023-05-18T04:43:25.647Z",
+                    "modified_on": "2023-05-18T04:43:25.647Z",
+                    "average_rank_modified_on": "2023-05-18T04:43:25.647Z",
+                    "closed_on": "2023-05-18T04:43:25.647Z",
+                    "status_id": 0,
+                    "job_family_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "mandatory_cover_letter_id": 0,
+                    "mandatory_resume_id": 0,
+                    "match_criteria": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "no_of_hires": 0,
+                    "is_managed_remotely": true
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93571,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postteammembers",
+        "executor_version": "v1",
+        "executor_display_name": "postteammembers",
+        "executor_description": "Create a team member for a specified job requisition.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/team-members/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "member_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684391786740,
+        "lastModifiedTime": 1684391786740,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "member_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "email": "user@example.com",
+                    "first_name": "string",
+                    "last_name": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93546,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "changestatus",
+        "executor_version": "v1",
+        "executor_display_name": "changestatus",
+        "executor_description": "Change the status of a job requisition. Note: job requisitions must be closed first before they can be removed. It is not possible to remove a job requisition where a hire has been made.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "{{baseurl}}/job-requisitions/{id}/change-status/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "status_id": 0
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684388750443,
+        "lastModifiedTime": 1684388750443,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status_id": 0,
+                    "closed_on": "2023-05-18T05:36:37.560Z"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93556,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getapplicants",
+        "executor_version": "v1",
+        "executor_display_name": "applicants",
+        "executor_description": "Returns a list of all applicants for a specified job requisition. Filters can be used to narrow down the response.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/applicants/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "plum_user_id",
+                "value": "",
+                "description": "Return only records for a given PlumUser Id",
+                "req": false
+            },
+            {
+                "key": "status_id",
+                "value": "",
+                "description": "When you query for a specified job requisition, returns applicants by pipeline stage (status). Use the application-statuses endpoint to get the available statuses. Use commas to separate multiple queries.",
+                "req": false
+            },
+            {
+                "key": "created_after",
+                "value": "",
+                "description": "Returns all applicants with applications created on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "created_before",
+                "value": "",
+                "description": "Returns all applicants with applications created before a specified datetime, exclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_after",
+                "value": "",
+                "description": "Returns all applicants with applications last modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_before",
+                "value": "",
+                "description": "Returns all applicants with applications last modified before a specified datetime, exclusively",
+                "req": false
+            },
+            {
+                "key": "match_score_modified_after",
+                "value": "",
+                "description": "Returns all applicants with match score modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "match_score_modified_before",
+                "value": "",
+                "description": "Returns all applicants with match score modified before a specified datetime, exclusively",
+                "req": false
+            },
+            {
+                "key": "email",
+                "value": "",
+                "description": "Returns applicants with email addresses that contain a matching query.",
+                "req": false
+            },
+            {
+                "key": "great_matches",
+                "value": "",
+                "description": "Returns applicants who have a great Plum Match Score.",
+                "req": false
+            },
+            {
+                "key": "order",
+                "value": "",
+                "description": "Responses are ordered by any of the following:  created_on: Creation date (ascending/descending) modified_on: Last modified date (ascending/descending) match_score: Match score (ascending/descending) minus is descending (i.e. -created_on)",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684389614438,
+        "lastModifiedTime": 1684389614438,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "count": 0,
+                    "next": "string",
+                    "previous": "string",
+                    "results": [
+                        {
+                            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "status_id": 0,
+                            "first_name": "string",
+                            "last_name": "string",
+                            "email": "user@example.com",
+                            "plum_user_id": "string",
+                            "match_score": "string",
+                            "match_score_modified_on": "2023-05-18T05:48:38.126Z",
+                            "language": "en",
+                            "url": "string",
+                            "hired_date": "2023-05-18T05:48:38.126Z",
+                            "start_date": "2023-05-18T05:48:38.126Z",
+                            "supervisor_email": "user@example.com",
+                            "invite_url": "string",
+                            "created_on": "2023-05-18T05:48:38.126Z",
+                            "modified_on": "2023-05-18T05:48:38.126Z"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93559,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "applicantsid",
+        "executor_version": "v1",
+        "executor_display_name": "applicantsid",
+        "executor_description": "Returns a specified applicant for a specified job requisition.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/applicants/{id}/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684390225309,
+        "lastModifiedTime": 1684390225309,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "status_id": 0,
+                    "first_name": "string",
+                    "last_name": "string",
+                    "email": "user@example.com",
+                    "plum_user_id": "string",
+                    "match_score": "string",
+                    "match_score_modified_on": "2023-05-18T06:05:13.301Z",
+                    "language": "en",
+                    "url": "string",
+                    "hired_date": "2023-05-18T06:05:13.301Z",
+                    "start_date": "2023-05-18T06:05:13.301Z",
+                    "supervisor_email": "user@example.com",
+                    "invite_url": "string",
+                    "created_on": "2023-05-18T06:05:13.301Z",
+                    "modified_on": "2023-05-18T06:05:13.301Z"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93557,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postapplicants",
+        "executor_version": "v1",
+        "executor_display_name": "applicants",
+        "executor_description": "Create an application for an applicant.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/applicants/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "plum_user_id",
+                "value": "",
+                "description": "Return only records for a given PlumUser Id",
+                "req": false
+            },
+            {
+                "key": "status_id",
+                "value": "",
+                "description": "When you query for a specified job requisition, returns applicants by pipeline stage (status). Use the application-statuses endpoint to get the available statuses. Use commas to separate multiple queries.",
+                "req": false
+            },
+            {
+                "key": "created_after",
+                "value": "",
+                "description": "Returns all applicants with applications created on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "created_before",
+                "value": "",
+                "description": "Returns all applicants with applications created before a specified datetime, exclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_after",
+                "value": "",
+                "description": "Returns all applicants with applications last modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_before",
+                "value": "",
+                "description": "Returns all applicants with applications last modified before a specified datetime, exclusively",
+                "req": false
+            },
+            {
+                "key": "match_score_modified_after",
+                "value": "",
+                "description": "Returns all applicants with match score modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "match_score_modified_before",
+                "value": "",
+                "description": "Returns all applicants with match score modified before a specified datetime, exclusively",
+                "req": false
+            },
+            {
+                "key": "email",
+                "value": "",
+                "description": "Returns applicants with email addresses that contain a matching query.",
+                "req": false
+            },
+            {
+                "key": "great_matches",
+                "value": "",
+                "description": "Returns applicants who have a great Plum Match Score.",
+                "req": false
+            },
+            {
+                "key": "order",
+                "value": "",
+                "description": "Responses are ordered by any of the following:  created_on: Creation date (ascending/descending) modified_on: Last modified date (ascending/descending) match_score: Match score (ascending/descending) minus is descending (i.e. -created_on)",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "first_name": "string",
+                "last_name": "string",
+                "email": "user@example.com",
+                "language": "en"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684389905308,
+        "lastModifiedTime": 1684389905308,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "status_id": 0,
+                    "first_name": "string",
+                    "last_name": "string",
+                    "email": "user@example.com",
+                    "plum_user_id": "string",
+                    "match_score": "string",
+                    "match_score_modified_on": "2023-05-18T05:59:38.715Z",
+                    "language": "en",
+                    "url": "string",
+                    "hired_date": "2023-05-18T05:59:38.715Z",
+                    "start_date": "2023-05-18T05:59:38.715Z",
+                    "supervisor_email": "user@example.com",
+                    "invite_url": "string",
+                    "created_on": "2023-05-18T05:59:38.715Z",
+                    "modified_on": "2023-05-18T05:59:38.715Z"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93564,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "teammembers",
+        "executor_version": "v1",
+        "executor_display_name": "teammembers",
+        "executor_description": "Returns a paginated list of team members for a specified job requisition.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/team-members/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684390782727,
+        "lastModifiedTime": 1684390782727,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "count": 0,
+                    "next": "string",
+                    "previous": "string",
+                    "results": [
+                        {
+                            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "email": "user@example.com",
+                            "first_name": "string",
+                            "last_name": "string",
+                            "member_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93562,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "patchapplicantsid",
+        "executor_version": "v1",
+        "executor_display_name": "patchapplicantsid",
+        "executor_description": "Change the pipeline stage (status) of an applicant. Use application-statuses endpoint for a list of available statuses. The supervisor email must be specified but only if setting the status as hired. If hired date and start date are left blank, they will default to current.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "{{baseurl}}/job-requisitions/{job_requisition_id}/applicants/{id}/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "job_requisition_id",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "status_id": 0,
+                "hired_date": "2023-05-18T06:16:14.645Z",
+                "start_date": "2023-05-18T06:16:14.645Z",
+                "supervisor_email": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684390622072,
+        "lastModifiedTime": 1684390622072,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status_id": 0,
+                    "hired_date": "2023-05-18T06:11:37.472Z",
+                    "start_date": "2023-05-18T06:11:37.472Z",
+                    "supervisor_email": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93541,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "patchjobrequisitionsid",
+        "executor_version": "v1",
+        "executor_display_name": "patchjobrequisitionsid",
+        "executor_description": "Edit/update a specified job requisition. Always returns all the fields regardless of the number of fields patched.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "{{baseurl}}/job-requisitions/{id}/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "internal_title": "string",
+                "external_title": "string",
+                "description": "string",
+                "location": "string",
+                "no_of_hires": 0,
+                "match_criteria": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "job_family_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "mandatory_cover_letter_id": 0,
+                "mandatory_resume_id": 0,
+                "is_managed_remotely": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684388204627,
+        "lastModifiedTime": 1684388204627,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "internal_title": "string",
+                    "external_title": "string",
+                    "description": "string",
+                    "location": "string",
+                    "no_of_hires": 0,
+                    "match_criteria": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "job_family_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "mandatory_cover_letter_id": 0,
+                    "mandatory_resume_id": 0,
+                    "is_managed_remotely": true
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93513,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "jobrequisitions",
+        "executor_version": "v1",
+        "executor_display_name": "jobrequisitions",
+        "executor_description": "Returns a list of all job requisitions ever created. It is possible to filter for a specified job requisition status.",
+        "executor_category": "jobrequisitions",
+        "executor_category_group": "jobrequisitions",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/job-requisitions/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "internal_title",
+                "value": "",
+                "description": "Internal title of the job requisition. This title is not applicant-facing. Returns the job requisitions that contains the string specified, no matter where it occurs in the title.",
+                "req": false
+            },
+            {
+                "key": "external_title",
+                "value": "",
+                "description": "External title of the job requisition. This title is applicant-facing. Returns only the job requisitions that contains the string specified, no matter where it occurs in the title.",
+                "req": false
+            },
+            {
+                "key": "job_family_id",
+                "value": "",
+                "description": "If included will return the job requisitions that match the specified job family ID. See the job-families endpoint for available job families. Can filter by multiple ID's by separating by a comma.",
+                "req": false
+            },
+            {
+                "key": "status_id",
+                "value": "",
+                "description": "Current status of the job requisition. Can filter by multiple ID's by separating by a comma. See the job-requisition-statuses endpoint for available status IDs.",
+                "req": false
+            },
+            {
+                "key": "is_managed_remotely",
+                "value": "",
+                "description": "Accepts an integer value of 0 (false) or 1 (true). True returns job requisitions where the job info page is locked because the job requisition is managed via the Plum API. False returns job requisitions where the job info page is not locked, and the job requisition can be managed within Plum.",
+                "req": false
+            },
+            {
+                "key": "created_after",
+                "value": "",
+                "description": "Returns all job requisitions created on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_after",
+                "value": "",
+                "description": "Returns all job requisitions last modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "created_before",
+                "value": "",
+                "description": "Returns all job requisitions that were created before a specified datetime, exclusively.",
+                "req": false
+            },
+            {
+                "key": "modified_before",
+                "value": "",
+                "description": "Returns all job requisitions that were modified before a specified datetime, exclusively.",
+                "req": false
+            },
+            {
+                "key": "city",
+                "value": "",
+                "description": "Returns all job requisitions where the office location contains the query.",
+                "req": false
+            },
+            {
+                "key": "state_or_province",
+                "value": "",
+                "description": "Returns all job requisitions where the state/province contains the query.",
+                "req": false
+            },
+            {
+                "key": "country",
+                "value": "",
+                "description": "Returns all job requisitions where the country contains the query.",
+                "req": false
+            },
+            {
+                "key": "average_rank_modified_after",
+                "value": "",
+                "description": "Returns all job requisitions whose average rank was last modified on/after a specified datetime, inclusively.",
+                "req": false
+            },
+            {
+                "key": "match_criteria_id",
+                "value": "",
+                "description": "If included will return the job requisitions that used the specified Match Criteria",
+                "req": false
+            },
+            {
+                "key": "remote_id",
+                "value": "",
+                "description": "('Find job requisition with a specific remote id for ATS integration',)",
+                "req": false
+            },
+            {
+                "key": "has_match_criteria",
+                "value": "",
+                "description": "Accepts an integer value of 0 (false) or 1 (true). True returns job requisitions where the match criteria has been specified. False returns job requisitions with no match criteria.",
+                "req": false
+            },
+            {
+                "key": "order",
+                "value": "",
+                "description": "Responses are ordered by any of the following:  internal_title: Internal title (ascending/descending) external_title: External title (ascending/descending) created_on: Creation date (ascending/descending) modified_on: Last modified date (ascending/descending) minus is descending (i.e. -internal_title)",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684384950978,
+        "lastModifiedTime": 1684384950978,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "count": 0,
+                    "next": "string",
+                    "previous": "string",
+                    "results": [
+                        {
+                            "id": "string",
+                            "internal_title": "string",
+                            "external_title": "string",
+                            "description": "string",
+                            "remote_id": "string",
+                            "url": "string",
+                            "apply_url": "string",
+                            "location": "string",
+                            "created_on": "2023-05-18T04:35:26.710Z",
+                            "modified_on": "2023-05-18T04:35:26.710Z",
+                            "average_rank_modified_on": "2023-05-18T04:35:26.710Z",
+                            "closed_on": "2023-05-18T04:35:26.710Z",
+                            "status_id": 0,
+                            "job_family_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "mandatory_cover_letter_id": 0,
+                            "mandatory_resume_id": 0,
+                            "match_criteria": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "no_of_hires": 0,
+                            "is_managed_remotely": true
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93507,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "jobfamilies",
+        "executor_version": "v1",
+        "executor_display_name": "jobfamilies",
+        "executor_description": "Returns a list of available job families, including the family name and ID.",
+        "executor_category": "jobfamilies",
+        "executor_category_group": "jobfamilies",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}\u200b/job-families\u200b/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684384295838,
+        "lastModifiedTime": 1684384295838,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                        "name": "string"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93505,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fieldconstraints",
+        "executor_version": "v1",
+        "executor_display_name": "fieldconstraints",
+        "executor_description": "Returns list of constraints that could be applied to a field.",
+        "executor_category": "fieldconstraints",
+        "executor_category_group": "fieldconstraints",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/field-constraints/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684384158139,
+        "lastModifiedTime": 1684384158139,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": 0,
+                        "name": "string"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93575,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getmembers",
+        "executor_version": "v1",
+        "executor_display_name": "getmembers",
+        "executor_description": "Returns all active Members for this Company.",
+        "executor_category": "members",
+        "executor_category_group": "members",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/members/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "member_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684392251210,
+        "lastModifiedTime": 1684392251210,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "count": 0,
+                    "next": "string",
+                    "previous": "string",
+                    "results": [
+                        {
+                            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "email": "user@example.com",
+                            "first_name": "string",
+                            "last_name": "string",
+                            "is_employee": true,
+                            "employee_id": "string",
+                            "created_on": "2023-05-18T06:40:31.371Z",
+                            "modified_on": "2023-05-18T06:40:31.371Z"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93578,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "membersid",
+        "executor_version": "v1",
+        "executor_display_name": "membersid",
+        "executor_description": "Deletes Member from this Company.",
+        "executor_category": "members",
+        "executor_category_group": "members",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseurl}}/members/{id}/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "email": "user@example.com",
+                "first_name": "string",
+                "last_name": "string",
+                "is_employee": true,
+                "employee_id": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684392653376,
+        "lastModifiedTime": 1684392653376,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93576,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postmembers",
+        "executor_version": "v1",
+        "executor_display_name": "postmembers",
+        "executor_description": "Creates a new Member in this Company.",
+        "executor_category": "members",
+        "executor_category_group": "members",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/members/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "email": "user@example.com",
+                "first_name": "string",
+                "last_name": "string",
+                "is_employee": true,
+                "employee_id": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684392362289,
+        "lastModifiedTime": 1684392362289,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "email": "user@example.com",
+                    "first_name": "string",
+                    "last_name": "string",
+                    "is_employee": true,
+                    "employee_id": "string",
+                    "created_on": "2023-05-18T06:44:35.281Z",
+                    "modified_on": "2023-05-18T06:44:35.281Z"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93509,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "jobrequisitionstatuses",
+        "executor_version": "v1",
+        "executor_display_name": "jobrequisitionstatuses",
+        "executor_description": "Returns a list of available job requisition statuses.",
+        "executor_category": "jobrequisitionstatuses",
+        "executor_category_group": "jobrequisitionstatuses",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/job-requisition-statuses\u200b/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684384462117,
+        "lastModifiedTime": 1684384462117,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": 0,
+                        "name": "string"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93503,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "applicationstatuses",
+        "executor_version": "v1",
+        "executor_display_name": "applicationstatuses",
+        "executor_description": "Returns a list of available job application statuses.",
+        "executor_category": "applicationstatuses",
+        "executor_category_group": "applicationstatuses",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/application-statuses/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684383908289,
+        "lastModifiedTime": 1684383908289,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": 0,
+                        "name": "string"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93574,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "matchcriterias",
+        "executor_version": "v1",
+        "executor_display_name": "matchcriterias",
+        "executor_description": "Returns all existing Match Criterias.",
+        "executor_category": "matchcriterias",
+        "executor_category_group": "matchcriterias",
+        "service_provider": "plum",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/match-criterias/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "A page number within the paginated result set.",
+                "req": false
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "Number of results to return per page. An integer between 1 and 100, inclusive. Default number of results is 25.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "basic_authentication",
+            "authAttributes": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "requestBody": {
+            "value": {
+                "member_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684392126085,
+        "lastModifiedTime": 1684392126085,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "count": 0,
+                    "next": "string",
+                    "previous": "string",
+                    "results": [
+                        {
+                            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "name": "string",
+                            "created_on": "2023-05-18T06:40:34.587Z",
+                            "modified_on": "2023-05-18T06:40:34.587Z",
+                            "average_rank_modified_on": "2023-05-18T06:40:34.587Z"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

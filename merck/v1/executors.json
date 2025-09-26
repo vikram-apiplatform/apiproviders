@@ -1,0 +1,1292 @@
+[
+    {
+        "id": 115481,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveinvoicesofanorderbyitsID",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve invoices of an order by its ID",
+        "executor_description": "Retrieve list of invoices of an order by providing its ID.",
+        "executor_category": "orders",
+        "executor_category_group": "orders",
+        "service_provider": "merck",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://iapi-test.merck.com/customer-link/v1/orders/{orderId}/invoices",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "The unique ID of the order"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695243088498,
+        "lastModifiedTime": 1695243088498,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 115472,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createaneworder",
+        "executor_version": "v1",
+        "executor_display_name": "Create a new order",
+        "executor_description": "Creates a new order for a specific customer with multiple items/products.",
+        "executor_category": "orders",
+        "executor_category_group": "orders",
+        "service_provider": "merck",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://iapi-test.merck.com/customer-link/v1/orders",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "deliveryDate": "2021-07-21",
+                "customerId": "0000012345",
+                "shippingAddressId": "2000012345",
+                "billingAddressId": "2000012345",
+                "purchaseOrderNumber": "CUST00000001",
+                "externalNote": "Some order description note",
+                "internalNote": "Some order description note",
+                "specialProcessing": "CL09",
+                "extra": {
+                    "oneTimeShippingAddress": {
+                        "name": "A HOSPITAL IN PARIS",
+                        "street": "A STREET IN PARIS",
+                        "city": "PARIS",
+                        "postalCode": "12345",
+                        "country": "FR",
+                        "region": "CA"
+                    }
+                },
+                "products": [
+                    {
+                        "productId": "123456789012345678",
+                        "quantity": 10,
+                        "batch": "1234567890",
+                        "storageLocation": "1001",
+                        "plant": 1030,
+                        "contractNumber": "12345678"
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695242642800,
+        "lastModifiedTime": 1695242642800,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 115479,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveanorderbyID",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve an order by ID",
+        "executor_description": "Retrieve an existing order by providing its ID.",
+        "executor_category": "orders",
+        "executor_category_group": "orders",
+        "service_provider": "merck",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://iapi-test.merck.com/customer-link/v1/orders/{orderId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "orderId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695242998771,
+        "lastModifiedTime": 1695242998771,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 115492,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getauditlogs",
+        "executor_version": "v1",
+        "executor_display_name": "Get audit logs",
+        "executor_description": "Retrieve request logs for a specific customer. Customers can only request logs associated with them.",
+        "executor_category": "Auditlogs",
+        "executor_category_group": "Auditlogs",
+        "service_provider": "merck",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://iapi-test.merck.com/customer-link/v1/audit-logs",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "The unique ID of the customer.",
+                "req": false
+            },
+            {
+                "key": "filter",
+                "value": "",
+                "description": "In order to get specific results, the filter parameter should be set with the appropriate value. Only exact values can be used in the filter, and several filters will use the logical operator AND, for composing flexible queries, use queryParam.Show all...",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "query",
+                "value": "",
+                "description": "In order to get specific results, the query parameter should be set with the appropriate value. You can use different logical operators to compose a query, both exact and inexact values.Show all...",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695243525959,
+        "lastModifiedTime": 1695243525959,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 115484,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievecustomerdetails",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve customer details",
+        "executor_description": "Retrieves customer details including all the shipping and billing addresses.",
+        "executor_category": "customers",
+        "executor_category_group": "customers",
+        "service_provider": "merck",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://iapi-test.merck.com/customer-link/v1/customers/{customerId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "The unique ID of the customer."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695243194482,
+        "lastModifiedTime": 1695243194482,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 115487,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievecustomerordershistory",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve customer orders history",
+        "executor_description": "Retrieves the list of orders for a specific Customer.",
+        "executor_category": "customers",
+        "executor_category_group": "customers",
+        "service_provider": "merck",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://iapi-test.merck.com/customer-link/v1/customers/{customerId}/orders",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "The unique ID of the customer."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "orderDate",
+                "value": "",
+                "description": "Date at which order(s) was/were created.Show all...",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695243288767,
+        "lastModifiedTime": 1695243288767,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 115489,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievebrokerdetails",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve broker details",
+        "executor_description": "Retrieves details for \"broker\" companies. \"Brokers\" are companies, which manage orders on behalf of other customers as a service.",
+        "executor_category": "Broker",
+        "executor_category_group": "Broker",
+        "service_provider": "merck",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://iapi-test.merck.com/customer-link/v1/brokers/{brokerId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "brokerId",
+                "value": "",
+                "description": "Identifies the \"broker\" company to retrieve data for. Currently, you can only use @me to reference the company associated with the current requesting application."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695243395663,
+        "lastModifiedTime": 1695243395663,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

@@ -1,0 +1,2383 @@
+[
+    {
+        "id": 91906,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "startjobrun",
+        "executor_version": "v1",
+        "executor_display_name": "Start job run",
+        "executor_description": "Starts a new job run on a machine.",
+        "executor_category": "ERP",
+        "executor_category_group": "ERP",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.machinemetrics.com/erp/jobdispatch/start",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "erpJobOperationRunId": "01",
+                "erpMachineId": "2",
+                "startInSetup": false,
+                "startAt": "2017-10-10T10:11:00.000Z",
+                "jobName": "Spacely Sprockets",
+                "jobOperationDescription": "Sprockets for Spacely Space Sprockets, Inc.",
+                "lotName": null,
+                "partName": "Sprocket001",
+                "quantityRequired": 1000,
+                "expectedSetupTime": 600,
+                "expectedPartTime": 120000,
+                "idealPartTime": 100000
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683532734332,
+        "lastModifiedTime": 1683532734332,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Job run start success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Bad request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "ValidationError",
+                    "message": "Validation Error",
+                    "errors": [
+                        {
+                            "field": "name",
+                            "code": "MissingField",
+                            "message": null
+                        },
+                        {
+                            "field": "gatewayId",
+                            "code": "MissingField"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91915,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "stopjobrun",
+        "executor_version": "v1",
+        "executor_display_name": "Stop job run",
+        "executor_description": "Stops a job run on a machine.",
+        "executor_category": "ERP",
+        "executor_category_group": "ERP",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.machinemetrics.com/erp/jobdispatch/stop",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "erpJobOperationRunId": "01",
+                "endAt": "2017-10-10T10:11:00.000Z"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1683533457838,
+        "lastModifiedTime": 1683533716612,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Job run start success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Bad request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "ValidationError",
+                    "message": "Validation Error",
+                    "errors": [
+                        {
+                            "field": "name",
+                            "code": "MissingField",
+                            "message": null
+                        },
+                        {
+                            "field": "gatewayId",
+                            "code": "MissingField"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91911,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getjobrun",
+        "executor_version": "v1",
+        "executor_display_name": "Get job run",
+        "executor_description": "Gets data for a specified job run.",
+        "executor_category": "ERP",
+        "executor_category_group": "ERP",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.machinemetrics.com/erp/jobdispatch/{erpRunId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "erpRunId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "erpRunId",
+                "value": "",
+                "description": "Specified job run ERP ID",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683533185975,
+        "lastModifiedTime": 1683533185976,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Job run start success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "startAt": "2017-03-09T18:20:18.000Z",
+                    "endAt": null,
+                    "metrics": {
+                        "totalParts": 2069,
+                        "goodParts": 2069,
+                        "scrapParts": 0,
+                        "nonconformParts": 0
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Bad request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "ValidationError",
+                    "message": "Validation Error",
+                    "errors": [
+                        {
+                            "field": "name",
+                            "code": "MissingField",
+                            "message": null
+                        },
+                        {
+                            "field": "gatewayId",
+                            "code": "MissingField"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91863,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getProductionQueryResults",
+        "executor_version": "v1",
+        "executor_display_name": "Get Production Query Results",
+        "executor_description": "Retrieve selected data metrics rollups for a given time frame.",
+        "executor_category": "Production",
+        "executor_category_group": "Production",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.machinemetrics.com/reports/production",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "start": "2017-07-19T10:00:00Z",
+                "end": "2017-07-21T10:00:00Z",
+                "data": [
+                    {
+                        "metric": "totalParts"
+                    },
+                    {
+                        "metric": "timeInCycle"
+                    }
+                ],
+                "groupBy": [
+                    {
+                        "group": "day"
+                    },
+                    {
+                        "group": "machine"
+                    }
+                ],
+                "filter": {
+                    "machine": [
+                        "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c",
+                        "5faa6680-fa0f-4e37-ba0b-09a46a945cef",
+                        "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683528093928,
+        "lastModifiedTime": 1683528093928,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "",
+                "description": "Selected production data metrics rollups for a given time frame",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "range": {
+                        "start": "2017-07-19T10:00:00.000Z",
+                        "end": "2017-07-21T10:00:00.000Z"
+                    },
+                    "aggregate": {
+                        "totalParts": 8824,
+                        "timeInCycle": 291068400
+                    },
+                    "entities": {
+                        "day": {
+                            "0": {
+                                "start": "2017-07-19T10:00:00.000Z",
+                                "end": "2017-07-20T10:00:00.000Z",
+                                "shopDate": "2017-07-19T04:00:00.000Z"
+                            },
+                            "1": {
+                                "start": "2017-07-20T10:00:00.000Z",
+                                "end": "2017-07-21T10:00:00.000Z",
+                                "shopDate": "2017-07-20T04:00:00.000Z"
+                            }
+                        },
+                        "machine": {
+                            "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c": {
+                                "id": "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c",
+                                "name": "MACHINE 1"
+                            },
+                            "5faa6680-fa0f-4e37-ba0b-09a46a945cef": {
+                                "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef",
+                                "name": "MACHINE 2"
+                            },
+                            "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013": {
+                                "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013",
+                                "name": "MACHINE 3"
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "entity": {
+                                "type": "day",
+                                "id": "0"
+                            },
+                            "aggregate": {
+                                "totalParts": 4295,
+                                "timeInCycle": 146361236
+                            },
+                            "items": [
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                                    },
+                                    "aggregate": {
+                                        "totalParts": 0,
+                                        "timeInCycle": 9971
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c"
+                                    },
+                                    "aggregate": {
+                                        "totalParts": 3425,
+                                        "timeInCycle": 80549950
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef"
+                                    },
+                                    "aggregate": {
+                                        "totalParts": 870,
+                                        "timeInCycle": 65801315
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "entity": {
+                                "type": "day",
+                                "id": "1"
+                            },
+                            "aggregate": {
+                                "totalParts": 4529,
+                                "timeInCycle": 144707164
+                            },
+                            "items": [
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                                    },
+                                    "aggregate": {
+                                        "totalParts": 978,
+                                        "timeInCycle": 19536320
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c"
+                                    },
+                                    "aggregate": {
+                                        "totalParts": 2741,
+                                        "timeInCycle": 64656182
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef"
+                                    },
+                                    "aggregate": {
+                                        "totalParts": 810,
+                                        "timeInCycle": 60514662
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91875,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getProductionResultsCSV",
+        "executor_version": "v1",
+        "executor_display_name": "Get Production Results CSV",
+        "executor_description": "Retrieve the results of a production metrics rollup request in CSV format.",
+        "executor_category": "Production",
+        "executor_category_group": "Production",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.machinemetrics.com/csv/production/{resourceId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "resourceId",
+                "value": "",
+                "description": "Dynamic resource ID for CSV download path - resource expiry date is specified alongside resource ID in response body."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "token",
+                "value": "",
+                "description": "See operations for JWT generation and jwtAuth securities definition for more information.",
+                "req": false
+            },
+            {
+                "key": "localize",
+                "value": "",
+                "description": "Option that enables the following CSV formatting options:  localize all date-times with the company timezone offset, instead of using UTC format durations as hh:mm:ss.ms strings, instead of using integer millisecond counts map column headers to their associated report builder names",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683529577501,
+        "lastModifiedTime": 1683529577501,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Downtime metrics report request result in CSV format",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91920,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "importjobsviafile",
+        "executor_version": "v1",
+        "executor_display_name": "Import jobs via file",
+        "executor_description": "Creates jobs from list via file - format is specified in request.",
+        "executor_category": "JobsImport",
+        "executor_category_group": "JobsImport",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.machinemetrics.com/jobs/import",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "type",
+                "value": "",
+                "description": "<div class=\"sc-iIPllB sc-ciZhAO kVWksa gJGCtq\"><p>The format of the jobs file being imported.</p> <p>Acceptable values are <code>mm</code>, <code>inforVisual</code>, and <code>inforLN</code>.</p> <table> <thead> <tr> <th>Format</th> <th>String\tDescription</th> </tr> </thead> <tbody><tr> <td>mm (default)</td> <td>The default format: a CSV file formatted as specified <a href=\"https://support.machinemetrics.com/hc/en-us/articles/222971927-Job-Import-CSV-Format\"><strong>here</strong></a></td> </tr> <tr> <td>inforVisual</td> <td>A jobs CSV exported from Infor VISUAL</td> </tr> <tr> <td>inforLN</td> <td>A jobs XLSX file exported from Infor LN</td> </tr> </tbody></table> <p>If no value is provided, job import will be assumed to be in the MachineMetrics format.</p> <p>You can find more information about that format, as well as a template, <a href=\"https://support.machinemetrics.com/hc/en-us/articles/222971927-Job-Import-CSV-Format\"><strong>here</strong></a>.</p> </div>",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "erpJobOperationRunId": "01",
+                "endAt": "2017-10-10T10:11:00.000Z"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683534030331,
+        "lastModifiedTime": 1683534030331,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Job run start success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Bad request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "ValidationError",
+                    "message": "Validation Error",
+                    "errors": [
+                        {
+                            "field": "name",
+                            "code": "MissingField",
+                            "message": null
+                        },
+                        {
+                            "field": "gatewayId",
+                            "code": "MissingField"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91891,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getDowntimeResultsCSV",
+        "executor_version": "v1",
+        "executor_display_name": "Get Downtime Results CSV",
+        "executor_description": "Retrieve the results of a downtime metrics rollup request in CSV format.",
+        "executor_category": "Downtime",
+        "executor_category_group": "Downtime",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.machinemetrics.com/csv/downtime/{resourceId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "resourceId",
+                "value": "",
+                "description": "Dynamic resource ID for CSV download path - resource expiry date is specified alongside resource ID in response body."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "token",
+                "value": "",
+                "description": "See operations for JWT generation and jwtAuth securities definition for more information.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683531561797,
+        "lastModifiedTime": 1683531561797,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Downtime metrics report request result in CSV format",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91887,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getDowntimeQueryResults",
+        "executor_version": "v1",
+        "executor_display_name": "Get Downtime Query Results",
+        "executor_description": "Retrieve downtime (ms) rollups for a given time frame.",
+        "executor_category": "Downtime",
+        "executor_category_group": "Downtime",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.machinemetrics.com/reports/downtime",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "start": "2017-07-19T10:00:00Z",
+                "end": "2017-08-19T10:00:00Z",
+                "groupBy": [
+                    {
+                        "group": "reason"
+                    },
+                    {
+                        "group": "machine"
+                    }
+                ],
+                "filter": {
+                    "machine": [
+                        "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c",
+                        "5faa6680-fa0f-4e37-ba0b-09a46a945cef",
+                        "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1683531198511,
+        "lastModifiedTime": 1683531531060,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Downtime metrics report request result in CSV format",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "range": {
+                        "start": "2017-07-19T10:00:00.000Z",
+                        "end": "2017-08-19T10:00:00.000Z"
+                    },
+                    "aggregate": {
+                        "downtimeMs": 7644699,
+                        "recordCount": 8
+                    },
+                    "entities": {
+                        "reason": {
+                            "33": {
+                                "id": 33,
+                                "name": "Chipping Out",
+                                "color": "#dea638"
+                            },
+                            "95": {
+                                "id": 95,
+                                "name": "Part Changeover",
+                                "color": "#de7020"
+                            },
+                            "uncategorized": {
+                                "id": "uncategorized",
+                                "name": "Uncategorized",
+                                "color": "#444444",
+                                "virtual": true
+                            },
+                            "setup": {
+                                "id": "setup",
+                                "name": "Setup",
+                                "color": "#edde00",
+                                "virtual": true
+                            }
+                        },
+                        "machine": {
+                            "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c": {
+                                "id": "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c",
+                                "name": "MACHINE 1"
+                            },
+                            "5faa6680-fa0f-4e37-ba0b-09a46a945cef": {
+                                "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef",
+                                "name": "MACHINE 2"
+                            },
+                            "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013": {
+                                "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013",
+                                "name": "MACHINE 3"
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "entity": {
+                                "type": "reason",
+                                "id": "33"
+                            },
+                            "aggregate": {
+                                "downtimeMs": 1731898,
+                                "recordCount": 4
+                            },
+                            "items": [
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c"
+                                    },
+                                    "aggregate": {
+                                        "downtimeMs": 544259,
+                                        "recordCount": 2
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef"
+                                    },
+                                    "aggregate": {
+                                        "downtimeMs": 837607,
+                                        "recordCount": 1
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                                    },
+                                    "aggregate": {
+                                        "downtimeMs": 350032,
+                                        "recordCount": 1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "entity": {
+                                "type": "reason",
+                                "id": "95"
+                            },
+                            "aggregate": {
+                                "downtimeMs": 5912801,
+                                "recordCount": 4
+                            },
+                            "items": [
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                                    },
+                                    "aggregate": {
+                                        "downtimeMs": 5912801,
+                                        "recordCount": 4
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91898,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getQualityResultsCSV",
+        "executor_version": "v1",
+        "executor_display_name": "Get Quality Results CSV",
+        "executor_description": "Retrieve the results of a quality metrics rollup request in CSV format.",
+        "executor_category": "Quality",
+        "executor_category_group": "Quality",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.machinemetrics.com/csv/quality/{resourceId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "resourceId",
+                "value": "",
+                "description": "Dynamic resource ID for CSV download path - resource expiry date is specified alongside resource ID in response body."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "token",
+                "value": "",
+                "description": "See operations for JWT generation and jwtAuth securities definition for more information.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683532062295,
+        "lastModifiedTime": 1683532062295,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Downtime metrics report request result in CSV format",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91894,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getQualityQueryResults",
+        "executor_version": "v1",
+        "executor_display_name": "Get Quality Query Results",
+        "executor_description": "Retrieve rejectCount rollups for a given time frame.",
+        "executor_category": "Quality",
+        "executor_category_group": "Quality",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.machinemetrics.com/reports/quality",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "start": "2017-07-19T10:00:00Z",
+                "end": "2017-08-19T10:00:00Z",
+                "groupBy": [
+                    {
+                        "group": "reason"
+                    },
+                    {
+                        "group": "machine"
+                    }
+                ],
+                "filter": {
+                    "machine": [
+                        "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c",
+                        "5faa6680-fa0f-4e37-ba0b-09a46a945cef",
+                        "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683531871952,
+        "lastModifiedTime": 1683531871952,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Downtime metrics report request result in CSV format",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "range": {
+                        "start": "2017-07-19T10:00:00.000Z",
+                        "end": "2017-08-19T10:00:00.000Z"
+                    },
+                    "aggregate": {
+                        "rejectCount": 150,
+                        "recordCount": 75
+                    },
+                    "entities": {
+                        "reason": {
+                            "24": {
+                                "id": 24,
+                                "name": "Chip Impressions",
+                                "color": "#5f5da8"
+                            },
+                            "37": {
+                                "id": 37,
+                                "name": "Burrs",
+                                "color": "#14f2e5"
+                            }
+                        },
+                        "machine": {
+                            "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c": {
+                                "id": "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c",
+                                "name": "MACHINE 1"
+                            },
+                            "5faa6680-fa0f-4e37-ba0b-09a46a945cef": {
+                                "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef",
+                                "name": "MACHINE 2"
+                            },
+                            "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013": {
+                                "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013",
+                                "name": "MACHINE 3"
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "entity": {
+                                "type": "reason",
+                                "id": "24"
+                            },
+                            "aggregate": {
+                                "rejectCount": 25,
+                                "recordCount": 10
+                            },
+                            "items": [
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "0e871f8e-a48a-4a7b-ba33-a02cba7d4f2c"
+                                    },
+                                    "aggregate": {
+                                        "rejectCount": 15,
+                                        "recordCount": 5
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef"
+                                    },
+                                    "aggregate": {
+                                        "rejectCount": 10,
+                                        "recordCount": 5
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "entity": {
+                                "type": "reason",
+                                "id": "37"
+                            },
+                            "aggregate": {
+                                "rejectCount": 125,
+                                "recordCount": 65
+                            },
+                            "items": [
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "5faa6680-fa0f-4e37-ba0b-09a46a945cef"
+                                    },
+                                    "aggregate": {
+                                        "rejectCount": 79,
+                                        "recordCount": 53
+                                    }
+                                },
+                                {
+                                    "entity": {
+                                        "type": "machine",
+                                        "id": "f1e76e5f-a9cd-4ae0-9c63-48b78e3cf013"
+                                    },
+                                    "aggregate": {
+                                        "rejectCount": 46,
+                                        "recordCount": 12
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91901,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getJWTforCSVAuth",
+        "executor_version": "v1",
+        "executor_display_name": "get JWT for CSV Auth",
+        "executor_description": "With the JWT you receive in this response, you can authenticate requests to download various CSV reports.  To do so, first hit any of the above report endpoints with csv: true in the request body. The response will have a property csv: { url: exampleUrl, expires: date }.",
+        "executor_category": "CSV Auth",
+        "executor_category_group": "CSVAuth",
+        "service_provider": "machinemetrics",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.machinemetrics.com/user-token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683532360660,
+        "lastModifiedTime": 1683532360660,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Downtime metrics report request result in CSV format",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_token",
+                    "error_description": "Invalid token: access token is invalid"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The specified resource was not found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "MissingResourceError",
+                    "message": "Resource not found",
+                    "errors": [
+                        {
+                            "field": "notification",
+                            "code": null
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "You do not have permission to access this resource",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "AuthorizationError",
+                    "message": "Access denied",
+                    "errors": []
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

@@ -1,0 +1,3003 @@
+[
+    {
+        "id": 98455,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getPageroFile",
+        "executor_version": "v1",
+        "executor_display_name": "getfile",
+        "executor_description": "Get previously sent Files.",
+        "executor_category": "file",
+        "executor_category_group": "file",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/files",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "companyId",
+                "value": "",
+                "description": "string Id of company to get Files for. If not defined, get Files for all companies the user has access to.",
+                "req": false
+            },
+            {
+                "key": "sendMode",
+                "value": "",
+                "description": "string Enum: \"Production\" \"Test\" \"Certification\" Send mode.  Production - Production mode Test - Test mode. Documents will be delivered to the recipients but will be delivered in test mode if the recipients support it. Please note that not all recipients support test mode. Certification - Certification mode. Documents will be processed by Pagero Online but will not be delivered to the recipients. This can be useful during testing.",
+                "req": false
+            },
+            {
+                "key": "documentType",
+                "value": "",
+                "description": "\t string The document type of documents in the file. The document type of a File may not always be known if it was not provided when the File was created. Available document types are listed here: https://pagero.github.io/partners/apis/document-types",
+                "req": false
+            },
+            {
+                "key": "senderReference",
+                "value": "",
+                "description": "string The sender's reference to the File, as provided by the sender when the File was created.",
+                "req": false
+            },
+            {
+                "key": "createdFrom",
+                "value": "",
+                "description": "string Only return Files that were created after this date.",
+                "req": false
+            },
+            {
+                "key": "createdTo",
+                "value": "",
+                "description": "string Only return Files that were created before this date.",
+                "req": false
+            },
+            {
+                "key": "expand",
+                "value": "",
+                "description": "Array of strings A comma-separated list of response properties that should be 'expanded' into a full representation. Available properties are: sendingUser",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "integer >= 0 The number of items to skip before starting to collect the result set.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "integer >= 0 The maximum value is 100.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686726635456,
+        "lastModifiedTime": 1686726635457,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "meta": {
+                        "offset": 0,
+                        "limit": 0,
+                        "total": 0
+                    },
+                    "items": [
+                        {
+                            "id": "string",
+                            "sendingCompany": {
+                                "id": "string",
+                                "name": "string",
+                                "department": "string"
+                            },
+                            "sendingUser": {
+                                "id": "string",
+                                "fullName": "string",
+                                "username": "string",
+                                "email": "string",
+                                "phone": "string"
+                            },
+                            "sendMode": "Production",
+                            "createTime": "string",
+                            "documentType": "string",
+                            "senderReference": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98461,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getFilepartsForFile",
+        "executor_version": "v1",
+        "executor_display_name": "Get fileparts for a file",
+        "executor_description": "Get Fileparts that belong to a File",
+        "executor_category": "file",
+        "executor_category_group": "file",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/files/{id}/fileparts",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string File id"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "expand",
+                "value": "",
+                "description": "Array of strings A comma-separated list of response properties that should be 'expanded' into a full representation. Available properties are: sendingUser",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "integer >= 0 The number of items to skip before starting to collect the result set.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "integer >= 0 The maximum value is 100.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686727191962,
+        "lastModifiedTime": 1686727191962,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "meta": {
+                        "offset": 0,
+                        "limit": 0,
+                        "total": 0
+                    },
+                    "items": [
+                        {
+                            "id": "string",
+                            "createTime": "string",
+                            "file": {
+                                "id": "string"
+                            },
+                            "sendingCompany": {
+                                "id": "string",
+                                "name": "string",
+                                "department": "string"
+                            },
+                            "sendingUser": {
+                                "id": "string",
+                                "fullName": "string",
+                                "username": "string",
+                                "email": "string",
+                                "phone": "string"
+                            },
+                            "sendMode": "Production",
+                            "status": "Processing",
+                            "processingStatus": "Processing",
+                            "awaitingInteractionOperations": [
+                                "AddAttachments"
+                            ],
+                            "possibleActions": [
+                                "Resume"
+                            ],
+                            "error": {
+                                "description": "string",
+                                "documentErrors": [
+                                    {
+                                        "title": "string",
+                                        "description": "string",
+                                        "errorValue": "string",
+                                        "errorReference": "string"
+                                    }
+                                ]
+                            },
+                            "documentType": "string",
+                            "filename": "string",
+                            "documentData": {
+                                "documentIdentifier": "string",
+                                "documentDate": "string",
+                                "receiverName": "string",
+                                "dueDate": "string",
+                                "totalNetAmount": "string",
+                                "totalVatAmount": "string",
+                                "totalAmount": "string",
+                                "currency": "string"
+                            },
+                            "presentationUrl": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98460,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getaFile",
+        "executor_version": "v1",
+        "executor_display_name": "Get a file",
+        "executor_description": "Get a File.",
+        "executor_category": "file",
+        "executor_category_group": "file",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/files/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string Id of File"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "expand",
+                "value": "",
+                "description": "Array of strings A comma-separated list of response properties that should be 'expanded' into a full representation. Available properties are: sendingUser",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686727079268,
+        "lastModifiedTime": 1686727079268,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "sendingCompany": {
+                        "id": "string",
+                        "name": "string",
+                        "department": "string"
+                    },
+                    "sendingUser": {
+                        "id": "string",
+                        "fullName": "string",
+                        "username": "string",
+                        "email": "string",
+                        "phone": "string"
+                    },
+                    "sendMode": "Production",
+                    "createTime": "string",
+                    "documentType": "string",
+                    "senderReference": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98457,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postaFile",
+        "executor_version": "v1",
+        "executor_display_name": "Post a file",
+        "executor_description": "Send a file to Pagero Online. The request should be a multipart request containing the actual file data and the rest of the properties. The Content-Type of the request should be multipart/form-data.",
+        "executor_category": "file",
+        "executor_category_group": "file",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.pageroonline.com/file/v1/files",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "payload",
+                    "value": "",
+                    "description": "string <binary> The file to send.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "documentType",
+                    "value": "",
+                    "description": "string The document type of documents contained in the sent file. It is not allowed to send documents with different document types in the same file. Available document types are listed here: https://pagero.github.io/partners/apis/document-types",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "sendingCompanyId",
+                    "value": "",
+                    "description": "string If the sending user has access to more than one company, this field must be provided to specify which company the file is being sent for. If a user has access to only one company, it is assumed that the file is sent for that company and this property can be left out.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "sendMode",
+                    "value": "",
+                    "description": "string Default: \"Production\" Enum: \"Production\" \"Test\" \"Certification\" Send mode.  Production - Production mode Test - Test mode. Documents will be delivered to the recipients but will be delivered in test mode if the recipients support it. Please note that not all recipients support test mode. Certification - Certification mode. Documents will be processed by Pagero Online but will not be delivered to the recipients. This can be useful during testing.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "senderReference",
+                    "value": "",
+                    "description": "string The sender's reference to the file, for example a file name.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686726931088,
+        "lastModifiedTime": 1686726931088,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Conflict",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "File successfully created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "sendingCompany": {
+                        "id": "string",
+                        "name": "string",
+                        "department": "string"
+                    },
+                    "sendingUser": {
+                        "id": "string",
+                        "fullName": "string",
+                        "username": "string",
+                        "email": "string",
+                        "phone": "string"
+                    },
+                    "sendMode": "Production",
+                    "createTime": "string",
+                    "documentType": "string",
+                    "senderReference": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98463,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "geThePayloadOfaFile",
+        "executor_version": "v1",
+        "executor_display_name": "Get the payload of a file",
+        "executor_description": "Get the payload associated with this File resource",
+        "executor_category": "file",
+        "executor_category_group": "file",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/files/{id}/payload",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string File id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686727279755,
+        "lastModifiedTime": 1686727279755,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98489,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getPayloadofAnAttachment",
+        "executor_version": "v1",
+        "executor_display_name": "Get payload of an attachment",
+        "executor_description": "Get an attachment payload.",
+        "executor_category": "attachment",
+        "executor_category_group": "attachment",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/attachments/{id}/payload",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string Id of Attachment"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686728930958,
+        "lastModifiedTime": 1686728930958,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": "string"
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98487,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getanAttachment",
+        "executor_version": "v1",
+        "executor_display_name": "Get an attachment",
+        "executor_description": "Get an attachment.",
+        "executor_category": "attachment",
+        "executor_category_group": "attachment",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/attachments/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string Id of Attachment"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686728868910,
+        "lastModifiedTime": 1686728868910,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": "string"
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "string",
+                        "attachmentType": "string",
+                        "filename": "string",
+                        "mimetype": "string",
+                        "payloadUrl": "string"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98491,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteAnAttachment",
+        "executor_version": "v1",
+        "executor_display_name": "Delete an attachment",
+        "executor_description": "Delete an attachment.",
+        "executor_category": "attachment",
+        "executor_category_group": "attachment",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.pageroonline.com/file/v1/attachments/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string Id of Attachment"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686729017366,
+        "lastModifiedTime": 1686729017366,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98481,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getThePayloadofaFilepart",
+        "executor_version": "v1",
+        "executor_display_name": "Get the payload of a Filepart",
+        "executor_description": "Get the payload associated with this Filepart resource",
+        "executor_category": "filepart",
+        "executor_category_group": "filepart",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/fileparts/{id}/payload",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string Id of a Filepart"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686728424804,
+        "lastModifiedTime": 1686728424804,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "successfully response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98486,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "performAnActiononMultipleFilepart",
+        "executor_version": "v1",
+        "executor_display_name": "Perform an action on multiple filepart",
+        "executor_description": "Perform an action on multiple Filepart.",
+        "executor_category": "filepart",
+        "executor_category_group": "filepart",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.pageroonline.com/file/v1/fileparts/action",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "ids": [
+                    "string"
+                ],
+                "action": "Resume",
+                "replacements": [
+                    {
+                        "errorReference": "string",
+                        "newValue": "string"
+                    }
+                ],
+                "reason": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686728760946,
+        "lastModifiedTime": 1686728760946,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": "string"
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98467,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getFileparts",
+        "executor_version": "v1",
+        "executor_display_name": "Get fileparts",
+        "executor_description": "Get Fileparts",
+        "executor_category": "filepart",
+        "executor_category_group": "filepart",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/fileparts",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "companyId",
+                "value": "",
+                "description": "string Id of company to get Fileparts for. If not defined, get Fileparts for all companies the user has access to.",
+                "req": false
+            },
+            {
+                "key": "fileId",
+                "value": "",
+                "description": "string Id of File to get Fileparts for.",
+                "req": false
+            },
+            {
+                "key": "searchTerm",
+                "value": "",
+                "description": "string Return only FileParts that match the search term. The search term will be matched against filename or document identifier.",
+                "req": false
+            },
+            {
+                "key": "sendMode",
+                "value": "",
+                "description": "string Enum: \"Production\" \"Test\" \"Certification\" Send mode of the file parts.",
+                "req": false
+            },
+            {
+                "key": "status",
+                "value": "",
+                "description": "Array of strings Items Enum: \"Processing\" \"AwaitingInteraction\" \"Error\" Status of the Fileparts to get. Possible values: Processing, AwaitingInteraction,",
+                "req": false
+            },
+            {
+                "key": "documentType",
+                "value": "",
+                "description": "string The document type of the Filepart. The document type of a Filepart may not always be known if it was not provided for the File which the Filepart belongs to. Available document types are listed here: https://pagero.github.io/partners/apis/document-types",
+                "req": false
+            },
+            {
+                "key": "expand",
+                "value": "",
+                "description": "Array of strings A comma-separated list of response properties that should be 'expanded' into a full representation. Available properties are: sendingUser",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "integer >= 0 The number of items to skip before starting to collect the result set.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "integer >= 0 The maximum value is 100.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686727497828,
+        "lastModifiedTime": 1686727497828,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "meta": {
+                        "offset": 0,
+                        "limit": 0,
+                        "total": 0
+                    },
+                    "items": [
+                        {
+                            "id": "string",
+                            "createTime": "string",
+                            "file": {
+                                "id": "string"
+                            },
+                            "sendingCompany": {
+                                "id": "string",
+                                "name": "string",
+                                "department": "string"
+                            },
+                            "sendingUser": {
+                                "id": "string",
+                                "fullName": "string",
+                                "username": "string",
+                                "email": "string",
+                                "phone": "string"
+                            },
+                            "sendMode": "Production",
+                            "status": "Processing",
+                            "processingStatus": "Processing",
+                            "awaitingInteractionOperations": [
+                                "AddAttachments"
+                            ],
+                            "possibleActions": [
+                                "Resume"
+                            ],
+                            "error": {
+                                "description": "string",
+                                "documentErrors": [
+                                    {
+                                        "title": "string",
+                                        "description": "string",
+                                        "errorValue": "string",
+                                        "errorReference": "string"
+                                    }
+                                ]
+                            },
+                            "documentType": "string",
+                            "filename": "string",
+                            "documentData": {
+                                "documentIdentifier": "string",
+                                "documentDate": "string",
+                                "receiverName": "string",
+                                "dueDate": "string",
+                                "totalNetAmount": "string",
+                                "totalVatAmount": "string",
+                                "totalAmount": "string",
+                                "currency": "string"
+                            },
+                            "presentationUrl": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98475,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getAttachmentsForFilepart",
+        "executor_version": "v1",
+        "executor_display_name": "Get attachments for a filepart",
+        "executor_description": "Get attachments for a filepart.",
+        "executor_category": "filepart",
+        "executor_category_group": "filepart",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/fileparts/{id}/attachments",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string File part id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686728132676,
+        "lastModifiedTime": 1686728132676,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "string",
+                        "attachmentType": "string",
+                        "filename": "string",
+                        "mimetype": "string",
+                        "payloadUrl": "string"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98469,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "performAnActionOnFilepart",
+        "executor_version": "v1",
+        "executor_display_name": "Perform an action on a filepart",
+        "executor_description": "Perform an action on a Filepart",
+        "executor_category": "filepart",
+        "executor_category_group": "filepart",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.pageroonline.com/file/v1/fileparts/{id}/action",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string Id of Filepart"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "action": "Resume",
+                "replacements": [
+                    {
+                        "errorReference": "string",
+                        "newValue": "string"
+                    }
+                ],
+                "reason": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686727609466,
+        "lastModifiedTime": 1686727609466,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "meta": {
+                        "offset": 0,
+                        "limit": 0,
+                        "total": 0
+                    },
+                    "items": [
+                        {
+                            "id": "string",
+                            "createTime": "string",
+                            "file": {
+                                "id": "string"
+                            },
+                            "sendingCompany": {
+                                "id": "string",
+                                "name": "string",
+                                "department": "string"
+                            },
+                            "sendingUser": {
+                                "id": "string",
+                                "fullName": "string",
+                                "username": "string",
+                                "email": "string",
+                                "phone": "string"
+                            },
+                            "sendMode": "Production",
+                            "status": "Processing",
+                            "processingStatus": "Processing",
+                            "awaitingInteractionOperations": [
+                                "AddAttachments"
+                            ],
+                            "possibleActions": [
+                                "Resume"
+                            ],
+                            "error": {
+                                "description": "string",
+                                "documentErrors": [
+                                    {
+                                        "title": "string",
+                                        "description": "string",
+                                        "errorValue": "string",
+                                        "errorReference": "string"
+                                    }
+                                ]
+                            },
+                            "documentType": "string",
+                            "filename": "string",
+                            "documentData": {
+                                "documentIdentifier": "string",
+                                "documentDate": "string",
+                                "receiverName": "string",
+                                "dueDate": "string",
+                                "totalNetAmount": "string",
+                                "totalVatAmount": "string",
+                                "totalAmount": "string",
+                                "currency": "string"
+                            },
+                            "presentationUrl": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98482,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getPresentationofaFilepart",
+        "executor_version": "v1",
+        "executor_display_name": "Get a presentation of a Filepart",
+        "executor_description": "Get presentation for Filepart, if available.",
+        "executor_category": "filepart",
+        "executor_category_group": "filepart",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.pageroonline.com/file/v1/fileparts/{id}/presentation",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string Id of Filepart"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686728506965,
+        "lastModifiedTime": 1686728506965,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "successfully response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98479,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addAnAttachmentToFilepart",
+        "executor_version": "v1",
+        "executor_display_name": "Add an attachment to a filepart",
+        "executor_description": "Add an attachment to a filepart.",
+        "executor_category": "filepart",
+        "executor_category_group": "filepart",
+        "service_provider": "pagero",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.pageroonline.com/file/v1/fileparts/{id}/attachments",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string File part id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "attachmentType",
+                    "value": "",
+                    "description": "string The type of attachment. The default value is 'Misc attachment'",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "filename",
+                    "value": "",
+                    "description": "string The original filename of the attachment",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "mimetype",
+                    "value": "",
+                    "description": "string The mimetype of the attachment",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "payload",
+                    "value": "",
+                    "description": "string <binary> The attachment file",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686728321811,
+        "lastModifiedTime": 1686728321811,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Attachment  successfully created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "attachmentType": "string",
+                    "filename": "string",
+                    "mimetype": "string",
+                    "payloadUrl": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

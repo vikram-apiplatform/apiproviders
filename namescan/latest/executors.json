@@ -1,0 +1,2667 @@
+[
+    {
+        "id": 100490,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getSanctionListsInformation",
+        "executor_version": "v3",
+        "executor_display_name": "Get Sanction Lists Information",
+        "executor_description": "Retrieve sanction lists information  Allows you to retrieve information of sanction lists. The list ID can be used on the included or the excluded list parameter of a person or organisation scan.",
+        "executor_category": "EmeraldScans",
+        "executor_category_group": "EmeraldScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3/lists/emerald/sanctions",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687433890493,
+        "lastModifiedTime": 1687433890493,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "listInfo: contains id and name of sanction list.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "string",
+                        "name": "string"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100483,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newOrganisationEmeraldScans",
+        "executor_version": "v3",
+        "executor_display_name": "New Organisation Emerald Scans",
+        "executor_description": "Performs new organisation Emerald scan  Allows you to scan organisations on Emerald lists by entering their information into the fields provided.",
+        "executor_category": "EmeraldScans",
+        "executor_category_group": "EmeraldScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.namescan.io/v3/organisation-scans/emerald",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "string",
+                "country": "string",
+                "includedLists": "string",
+                "excludedLists": "string",
+                "matchRate": 0
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687433522230,
+        "lastModifiedTime": 1687433772966,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": "organisationScanEmeraldResult: contains information of matched organisations.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "date": "2017-07-29T12:06:08Z",
+                    "scanId": "string",
+                    "numberOfMatches": 0,
+                    "organisations": [
+                        {
+                            "uid": "string",
+                            "updateAt": "string",
+                            "updateInfo": "string",
+                            "category": "string",
+                            "name": "string",
+                            "originalScriptName": "string",
+                            "sortKeyName": "string",
+                            "referenceType": "string",
+                            "references": [
+                                {
+                                    "name": "string",
+                                    "since": "string",
+                                    "to": "string",
+                                    "idInList": "string"
+                                }
+                            ],
+                            "program": "string",
+                            "addresses": [
+                                {
+                                    "address1": "string",
+                                    "address2": "string",
+                                    "address3": "string",
+                                    "city": "string",
+                                    "region": "string",
+                                    "postalCode": "string",
+                                    "country": "string",
+                                    "text": "string",
+                                    "note": "string"
+                                }
+                            ],
+                            "otherNames": [
+                                {
+                                    "name": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "identities": [
+                                {
+                                    "number": "string",
+                                    "country": "string",
+                                    "note": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "contacts": [
+                                {
+                                    "value": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "images": [
+                                "string"
+                            ],
+                            "links": [
+                                {
+                                    "url": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "sources": [
+                                "string"
+                            ],
+                            "basis": "string",
+                            "summary": "string",
+                            "matchRate": 0
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100479,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newPersonEmeraldScan",
+        "executor_version": "v3",
+        "executor_display_name": "New Person Emerald Scan",
+        "executor_description": "Performs new person Emerald scan  Allows you to scan persons on Emerald lists by entering their information into the fields provided.",
+        "executor_category": "EmeraldScans",
+        "executor_category_group": "EmeraldScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.namescan.io/v3/person-scans/emerald",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "string",
+                "firstName": "string",
+                "middleName": "string",
+                "lastName": "string",
+                "gender": "string",
+                "dob": "string",
+                "country": "string",
+                "listType": "string",
+                "includedLists": "string",
+                "excludedLists": "string",
+                "matchRate": 0
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687433270949,
+        "lastModifiedTime": 1687433802709,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": "personScanEmeraldResult: contains information of matched persons.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "date": "2017-07-29T12:06:08Z",
+                    "scanId": "string",
+                    "numberOfMatches": 0,
+                    "persons": [
+                        {
+                            "uid": "string",
+                            "updateAt": "string",
+                            "updateInfo": "string",
+                            "category": "string",
+                            "deceased": true,
+                            "deceasedDate": "string",
+                            "name": "string",
+                            "title": "string",
+                            "firstName": "string",
+                            "middleName": "string",
+                            "lastName": "string",
+                            "gender": "string",
+                            "originalScriptName": "string",
+                            "sortKeyName": "string",
+                            "datesOfBirth": [
+                                {
+                                    "date": "string",
+                                    "note": "string"
+                                }
+                            ],
+                            "placesOfBirth": [
+                                {
+                                    "city": "string",
+                                    "region": "string",
+                                    "country": "string",
+                                    "text": "string",
+                                    "note": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "referenceType": "string",
+                            "references": [
+                                {
+                                    "name": "string",
+                                    "since": "string",
+                                    "to": "string",
+                                    "idInList": "string"
+                                }
+                            ],
+                            "program": "string",
+                            "nationality": "string",
+                            "citizenship": "string",
+                            "addresses": [
+                                {
+                                    "address1": "string",
+                                    "address2": "string",
+                                    "address3": "string",
+                                    "city": "string",
+                                    "region": "string",
+                                    "postalCode": "string",
+                                    "country": "string",
+                                    "text": "string",
+                                    "note": "string"
+                                }
+                            ],
+                            "places": [
+                                {
+                                    "country": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "otherNames": [
+                                {
+                                    "title": "string",
+                                    "name": "string",
+                                    "firstName": "string",
+                                    "middleName": "string",
+                                    "lastName": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "roles": [
+                                {
+                                    "title": "string",
+                                    "category": "string",
+                                    "since": "string",
+                                    "to": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "occupations": [
+                                "string"
+                            ],
+                            "father": "string",
+                            "mother": "string",
+                            "spouse": "string",
+                            "children": [
+                                "string"
+                            ],
+                            "siblings": [
+                                "string"
+                            ],
+                            "identities": [
+                                {
+                                    "number": "string",
+                                    "country": "string",
+                                    "note": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "contacts": [
+                                {
+                                    "value": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "images": [
+                                "string"
+                            ],
+                            "links": [
+                                {
+                                    "url": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "sources": [
+                                "string"
+                            ],
+                            "basis": "string",
+                            "summary": "string",
+                            "matchRate": 0
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129986,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getPersonEmeraldScan",
+        "executor_version": "v3",
+        "executor_display_name": "Get Person Emerald Scan",
+        "executor_description": "Allows you to retrieve person scan on Emerald list by entering its scanId.",
+        "executor_category": "EmeraldScans",
+        "executor_category_group": "EmeraldScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3.1/person-scans/emerald/{scanId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "scanId",
+                "value": "",
+                "description": "Scan Id, which includes scan id to retrieve. It is required."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1721131754296,
+        "lastModifiedTime": 1721131754296,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "scanParam": {
+                        "name": "string",
+                        "firstName": "string",
+                        "middleName": "string",
+                        "lastName": "string",
+                        "gender": "string",
+                        "dob": "",
+                        "country": "string",
+                        "listType": "string",
+                        "includedLists": "string",
+                        "excludedLists": "string",
+                        "matchRate": 50
+                    },
+                    "scanResult": {
+                        "date": "2019-08-24T14:15:22Z",
+                        "scanId": "string",
+                        "numberOfMatches": 0,
+                        "numberOfPepMatches": 0,
+                        "numberOfSipMatches": 0,
+                        "persons": [
+                            {
+                                "uid": "string",
+                                "updateAt": "string",
+                                "updateInfo": "string",
+                                "category": "string",
+                                "deceased": true,
+                                "deceasedDate": "string",
+                                "name": "string",
+                                "title": "string",
+                                "firstName": "string",
+                                "middleName": "string",
+                                "lastName": "string",
+                                "gender": "string",
+                                "originalScriptName": "string",
+                                "datesOfBirth": [
+                                    {
+                                        "date": "string",
+                                        "note": "string"
+                                    }
+                                ],
+                                "placesOfBirth": [
+                                    {
+                                        "city": "string",
+                                        "region": "string",
+                                        "location": "string",
+                                        "country": "string",
+                                        "text": "string",
+                                        "note": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "referenceType": "string",
+                                "references": [
+                                    {
+                                        "name": "string",
+                                        "since": "string",
+                                        "to": "string",
+                                        "idInList": "string"
+                                    }
+                                ],
+                                "program": "string",
+                                "nationality": "string",
+                                "citizenship": "string",
+                                "addresses": [
+                                    {
+                                        "address1": "string",
+                                        "address2": "string",
+                                        "address3": "string",
+                                        "city": "string",
+                                        "region": "string",
+                                        "postalCode": "string",
+                                        "country": "string",
+                                        "text": "string",
+                                        "note": "string"
+                                    }
+                                ],
+                                "places": [
+                                    {
+                                        "country": "string",
+                                        "location": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "otherNames": [
+                                    {
+                                        "name": "string",
+                                        "firstName": "string",
+                                        "middleName": "string",
+                                        "lastName": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "roles": [
+                                    {
+                                        "title": "string",
+                                        "since": "string",
+                                        "to": "string"
+                                    }
+                                ],
+                                "occupations": [
+                                    "string"
+                                ],
+                                "father": "string",
+                                "mother": "string",
+                                "spouse": "string",
+                                "children": [
+                                    "string"
+                                ],
+                                "siblings": [
+                                    "string"
+                                ],
+                                "identities": [
+                                    {
+                                        "number": "string",
+                                        "country": "string",
+                                        "note": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "politicalParties": [
+                                    {
+                                        "title": "string",
+                                        "since": "string",
+                                        "to": "string"
+                                    }
+                                ],
+                                "contacts": [
+                                    {
+                                        "value": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "images": [
+                                    "string"
+                                ],
+                                "links": [
+                                    {
+                                        "url": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "sources": [
+                                    "string"
+                                ],
+                                "basis": "string",
+                                "summary": "string",
+                                "matchRate": 0
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129987,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getOrganisationEmeraldScan",
+        "executor_version": "v3",
+        "executor_display_name": "Get Organisation Emerald Scan",
+        "executor_description": "Allows you to retrieve organisation scan on Emerald list by entering its scanId.",
+        "executor_category": "EmeraldScans",
+        "executor_category_group": "EmeraldScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3.1/organisation-scans/emerald/{scanId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "scanId",
+                "value": "",
+                "description": "Scan Id, which includes scan id to retrieve. It is required."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1721131903300,
+        "lastModifiedTime": 1721131903300,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "scanParam": {
+                        "name": "string",
+                        "country": "string",
+                        "includedLists": "string",
+                        "excludedLists": "string",
+                        "matchRate": 50
+                    },
+                    "scanResult": {
+                        "date": "2019-08-24T14:15:22Z",
+                        "scanId": "string",
+                        "numberOfMatches": 0,
+                        "organisations": [
+                            {
+                                "uid": "string",
+                                "updateAt": "string",
+                                "updateInfo": "string",
+                                "category": "string",
+                                "name": "string",
+                                "originalScriptName": "string",
+                                "referenceType": "string",
+                                "references": [
+                                    {
+                                        "name": "string",
+                                        "since": "string",
+                                        "to": "string",
+                                        "idInList": "string"
+                                    }
+                                ],
+                                "program": "string",
+                                "addresses": [
+                                    {
+                                        "address1": "string",
+                                        "address2": "string",
+                                        "address3": "string",
+                                        "city": "string",
+                                        "region": "string",
+                                        "postalCode": "string",
+                                        "country": "string",
+                                        "text": "string",
+                                        "note": "string"
+                                    }
+                                ],
+                                "otherNames": [
+                                    {
+                                        "name": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "identities": [
+                                    {
+                                        "number": "string",
+                                        "country": "string",
+                                        "note": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "contacts": [
+                                    {
+                                        "value": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "images": [
+                                    "string"
+                                ],
+                                "links": [
+                                    {
+                                        "url": "string",
+                                        "type": "string"
+                                    }
+                                ],
+                                "sources": [
+                                    "string"
+                                ],
+                                "basis": "string",
+                                "summary": "string",
+                                "matchRate": 0
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100495,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newPersonSapphireScan",
+        "executor_version": "v3",
+        "executor_display_name": "New Person Sapphire Scan",
+        "executor_description": "Performs new person Sapphire scan  Allows you to scan persons on Sapphire lists by entering their information into the fields provided.",
+        "executor_category": "SapphireScans",
+        "executor_category_group": "SapphireScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.namescan.io/v3/person-scans/sapphire",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "firstName": "string",
+                "middleName": "string",
+                "lastName": "string",
+                "originalName": "string",
+                "gender": "string",
+                "dob": "string",
+                "country": "string",
+                "matchRate": 75,
+                "maxResultCount": 100
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687434156971,
+        "lastModifiedTime": 1687434156971,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Created",
+                "description": "personScanSapphireResult: contains information of matched persons.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100501,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newOrganisationSapphireScans",
+        "executor_version": "v3",
+        "executor_display_name": "New Organisation Sapphire Scans",
+        "executor_description": "Performs new organisation Sapphire scan  Allows you to scan organisations on Sapphire lists by entering their information into the fields provided.",
+        "executor_category": "SapphireScans",
+        "executor_category_group": "SapphireScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.namescan.io/v3/organisation-scans/sapphire",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "string",
+                "country": "string",
+                "exact": true,
+                "maxResultCount": 100
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687434505669,
+        "lastModifiedTime": 1687434505669,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Created",
+                "description": "organisationScanSapphireResult: contains information of matched organisations.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "date": "2017-07-29T12:06:08Z",
+                    "scanId": "string",
+                    "numberOfMatches": 0,
+                    "corporates": [
+                        {
+                            "id": 0,
+                            "category": "string",
+                            "resultId": "string",
+                            "flag": 0,
+                            "entity": {
+                                "uniqueId": "string",
+                                "categories": "string",
+                                "subcategory": "string",
+                                "primaryName": "string",
+                                "primaryLocation": "string",
+                                "furtherInformation": "string",
+                                "enterDate": "string",
+                                "lastReviewed": "string",
+                                "generalInfo": {
+                                    "nationality": "string",
+                                    "alternateTitle": "string",
+                                    "businessDescription": "string",
+                                    "website": "string"
+                                },
+                                "descriptions": [
+                                    {
+                                        "description1": "string",
+                                        "description2": "string",
+                                        "description3": "string"
+                                    }
+                                ],
+                                "nameDetails": [
+                                    {
+                                        "nameType": "string",
+                                        "entityName": "string"
+                                    }
+                                ],
+                                "originalScriptNames": [
+                                    "string"
+                                ],
+                                "locations": [
+                                    {
+                                        "country": "string",
+                                        "city": "string",
+                                        "address": "string"
+                                    }
+                                ],
+                                "countries": [
+                                    {
+                                        "countryType": "string",
+                                        "countryValue": "string"
+                                    }
+                                ],
+                                "officialLists": [
+                                    {
+                                        "keyword": "string",
+                                        "category": "string",
+                                        "description": "string",
+                                        "country": "string",
+                                        "isCurrent": true
+                                    }
+                                ],
+                                "idNumbers": [
+                                    {
+                                        "type": "string",
+                                        "idNotes": "string",
+                                        "number": "string"
+                                    }
+                                ],
+                                "linkedIndividuals": [
+                                    {
+                                        "firstName": "string",
+                                        "middleName": "string",
+                                        "lastName": "string",
+                                        "category": "string",
+                                        "description": "string"
+                                    }
+                                ],
+                                "linkedCompanies": [
+                                    {
+                                        "name": "string",
+                                        "category": "string",
+                                        "description": "string"
+                                    }
+                                ],
+                                "sources": [
+                                    {
+                                        "url": "string",
+                                        "categories": "string",
+                                        "dates": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129988,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getPersonSapphireScans",
+        "executor_version": "v3",
+        "executor_display_name": "Get Person Sapphire Scans",
+        "executor_description": "Allows you to retrieve person scan on Sapphire list by entering its scanId.",
+        "executor_category": "SapphireScans",
+        "executor_category_group": "SapphireScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3.1/person-scans/sapphire/{scanId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "scanId",
+                "value": "",
+                "description": "Scan Id, which includes scan id to retrieve. It is required."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1721132043962,
+        "lastModifiedTime": 1721132043962,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "scanParam": {
+                        "firstName": "string",
+                        "middleName": "string",
+                        "lastName": "string",
+                        "originalName": "string",
+                        "gender": "string",
+                        "dob": "",
+                        "country": "string",
+                        "matchRate": 75,
+                        "maxResultCount": 100
+                    },
+                    "scanResult": {
+                        "date": "2019-08-24T14:15:22Z",
+                        "scanId": "string",
+                        "numberOfMatches": 0,
+                        "persons": [
+                            {
+                                "category": "string",
+                                "matchRate": 0,
+                                "matchedFields": "string",
+                                "person": {
+                                    "uniqueId": "string",
+                                    "category": "string",
+                                    "categories": "string",
+                                    "gender": "string",
+                                    "deceased": "string",
+                                    "primaryFirstName": "string",
+                                    "primaryMiddleName": "string",
+                                    "primaryLastName": "string",
+                                    "images": [
+                                        "string"
+                                    ],
+                                    "dateOfBirth": "string",
+                                    "deceasedDate": "string",
+                                    "placeOfBirth": "string",
+                                    "primaryLocation": "string",
+                                    "furtherInformation": "string",
+                                    "lastReviewed": "string",
+                                    "descriptions": [
+                                        {
+                                            "description1": "string",
+                                            "description2": "string"
+                                        }
+                                    ],
+                                    "nameDetails": [
+                                        {
+                                            "nameType": "string",
+                                            "firstName": "string",
+                                            "middleName": "string",
+                                            "lastName": "string"
+                                        }
+                                    ],
+                                    "roles": [
+                                        {
+                                            "title": "string",
+                                            "segment": "string",
+                                            "from": "string",
+                                            "to": "string",
+                                            "status": "string",
+                                            "country": "string"
+                                        }
+                                    ],
+                                    "importantDates": [
+                                        {
+                                            "dateType": "string",
+                                            "dateValue": "string"
+                                        }
+                                    ],
+                                    "nationalities": [
+                                        "string"
+                                    ],
+                                    "locations": [
+                                        {
+                                            "country": "string",
+                                            "countryCode": "string",
+                                            "city": "string",
+                                            "address": "string",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "officialLists": [
+                                        {
+                                            "keyword": "string",
+                                            "category": "string",
+                                            "description": "string",
+                                            "origin": "string",
+                                            "measures": "string",
+                                            "types": "string",
+                                            "isCurrent": true
+                                        }
+                                    ],
+                                    "identifiers": [
+                                        {
+                                            "type": "string",
+                                            "value": "string"
+                                        }
+                                    ],
+                                    "disqualifiedDirectors": [
+                                        {
+                                            "caseReference": "string",
+                                            "company": "string",
+                                            "reason": "string",
+                                            "from": "string",
+                                            "to": "string"
+                                        }
+                                    ],
+                                    "profileOfInterests": [
+                                        {
+                                            "category": "string",
+                                            "positions": [
+                                                {
+                                                    "position": "string",
+                                                    "segment": "string",
+                                                    "country": "string",
+                                                    "from": "string",
+                                                    "to": "string"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "linkedIndividuals": [
+                                        {
+                                            "firstName": "string",
+                                            "middleName": "string",
+                                            "lastName": "string",
+                                            "category": "string",
+                                            "description": "string"
+                                        }
+                                    ],
+                                    "linkedCompanies": [
+                                        {
+                                            "name": "string",
+                                            "category": "string",
+                                            "description": "string"
+                                        }
+                                    ],
+                                    "sources": [
+                                        {
+                                            "url": "string",
+                                            "categories": "string",
+                                            "details": [
+                                                {
+                                                    "categories": "string",
+                                                    "originalUrl": "string",
+                                                    "title": "string",
+                                                    "credibility": "string",
+                                                    "language": "string",
+                                                    "summary": "string",
+                                                    "keywords": "string",
+                                                    "captureDate": "string",
+                                                    "publicationDate": "string",
+                                                    "assetUrl": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129989,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getOrganisationSapphireScan",
+        "executor_version": "v3",
+        "executor_display_name": "Get Organisation Sapphire Scan",
+        "executor_description": "Allows you to retrieve organisation scan on Sapphire list by entering its scanId.",
+        "executor_category": "SapphireScans",
+        "executor_category_group": "SapphireScans",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3.1/organisation-scans/sapphire/{scanId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "scanId",
+                "value": "",
+                "description": "Scan Id, which includes scan id to retrieve. It is required."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1721132187486,
+        "lastModifiedTime": 1721132187486,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "scanParam": {
+                        "name": "string",
+                        "country": "string",
+                        "exact": false,
+                        "maxResultCount": 100
+                    },
+                    "scanResult": {
+                        "date": "2019-08-24T14:15:22Z",
+                        "scanId": "string",
+                        "numberOfMatches": 0,
+                        "corporates": [
+                            {
+                                "category": "string",
+                                "matchedFields": "string",
+                                "entity": {
+                                    "uniqueId": "string",
+                                    "category": "string",
+                                    "categories": "string",
+                                    "primaryName": "string",
+                                    "primaryLocation": "string",
+                                    "images": [
+                                        "string"
+                                    ],
+                                    "furtherInformation": "string",
+                                    "lastReviewed": "string",
+                                    "generalInfo": {
+                                        "businessDescription": "string",
+                                        "website": "string",
+                                        "businessTypes": "string",
+                                        "activities": "string"
+                                    },
+                                    "descriptions": [
+                                        {
+                                            "description1": "string",
+                                            "description2": "string"
+                                        }
+                                    ],
+                                    "nameDetails": [
+                                        {
+                                            "nameType": "string",
+                                            "entityName": "string"
+                                        }
+                                    ],
+                                    "locations": [
+                                        {
+                                            "country": "string",
+                                            "countryCode": "string",
+                                            "city": "string",
+                                            "address": "string",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "officialLists": [
+                                        {
+                                            "keyword": "string",
+                                            "category": "string",
+                                            "description": "string",
+                                            "origin": "string",
+                                            "measures": "string",
+                                            "types": "string",
+                                            "isCurrent": true
+                                        }
+                                    ],
+                                    "identifiers": [
+                                        {
+                                            "type": "string",
+                                            "value": "string"
+                                        }
+                                    ],
+                                    "profileOfInterests": [
+                                        {
+                                            "category": "string",
+                                            "positions": [
+                                                {
+                                                    "position": "string",
+                                                    "segment": "string",
+                                                    "country": "string",
+                                                    "from": "string",
+                                                    "to": "string"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "linkedIndividuals": [
+                                        {
+                                            "firstName": "string",
+                                            "middleName": "string",
+                                            "lastName": "string",
+                                            "category": "string",
+                                            "description": "string"
+                                        }
+                                    ],
+                                    "linkedCompanies": [
+                                        {
+                                            "name": "string",
+                                            "category": "string",
+                                            "description": "string"
+                                        }
+                                    ],
+                                    "sources": [
+                                        {
+                                            "url": "string",
+                                            "categories": "string",
+                                            "details": [
+                                                {
+                                                    "categories": "string",
+                                                    "originalUrl": "string",
+                                                    "title": "string",
+                                                    "credibility": "string",
+                                                    "language": "string",
+                                                    "summary": "string",
+                                                    "keywords": "string",
+                                                    "captureDate": "string",
+                                                    "publicationDate": "string",
+                                                    "assetUrl": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100504,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getMonthlyScanHistory",
+        "executor_version": "v3",
+        "executor_display_name": "Get Monthly Scan History",
+        "executor_description": "Retrieve scans history  Allows you to retrieve monthly scan history of all source types in a zip file that includes json files.",
+        "executor_category": "ScansHistory",
+        "executor_category_group": "ScansHistory",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3/scans/{year}/{month}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "year",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "month",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "year",
+                "value": "",
+                "description": "Scan history year.",
+                "req": false
+            },
+            {
+                "key": "month",
+                "value": "",
+                "description": "Scan history month.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687434820706,
+        "lastModifiedTime": 1687434820706,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Contains content of a zip file that includes scan history in json files.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100512,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getSapphireCredits",
+        "executor_version": "v3",
+        "executor_display_name": "Get Sapphire Credits",
+        "executor_description": "Retrieve sapphire credit information  Allows you to retrieve information about sapphire credits. balance shows the number of remaining sapphire credits. expiryDate indicates the date that credits will expire.",
+        "executor_category": "Credits",
+        "executor_category_group": "Credits",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3/credits/sapphire",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687435221528,
+        "lastModifiedTime": 1687435221528,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "creditResult: contains balance and expiryDate of sapphire credits",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "balance": "integer",
+                        "expiryDate": "date"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100509,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getEmeraldCredits",
+        "executor_version": "v3",
+        "executor_display_name": "Get Emerald Credits",
+        "executor_description": "Retrieve emerald credit information  Allows you to retrieve information about emerald credits. balance shows the number of remaining emerald credits. expiryDate indicates the date that credits will expire.",
+        "executor_category": "Credits",
+        "executor_category_group": "Credits",
+        "service_provider": "namescan",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.namescan.io/v3/credits/emerald",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687435049735,
+        "lastModifiedTime": 1687435049735,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": "Internal Server Error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "creditResult: contains balance and expiryDate of emerald credits.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "balance": "integer",
+                        "expiryDate": "date"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

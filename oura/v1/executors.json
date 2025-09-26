@@ -1,0 +1,4736 @@
+[
+    {
+        "id": 95361,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multipleDailyReadinessDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Daily Readiness Documents",
+        "executor_description": "Readiness tells how ready you are for the day.",
+        "executor_category": "DailyReadinessRoutes",
+        "executor_category_group": "DailyReadinessRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/daily_readiness",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_date",
+                "value": "",
+                "description": "string <date> (Start Date)",
+                "req": false
+            },
+            {
+                "key": "end_date",
+                "value": "",
+                "description": "string <date> (End Date)",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "string (Next Token)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685437593858,
+        "lastModifiedTime": 1685437593858,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": "string",
+                            "contributors": {
+                                "activity_balance": "Contribution of cumulative activity balance in range [1, 100].",
+                                "body_temperature": "Contribution of body temperature in range [1, 100].",
+                                "hrv_balance": "Contribution of heart rate variability balance in range [1, 100].",
+                                "previous_day_activity": "Contribution of previous day's activity in range [1, 100].",
+                                "previous_night": "Contribution of previous night's sleep in range [1, 100].",
+                                "recovery_index": "Contribution of recovery index in range [1, 100].",
+                                "resting_heart_rate": "Contribution of resting heart rate in range [1, 100].",
+                                "sleep_balance": "Contribution of sleep balance in range [1, 100]."
+                            },
+                            "day": "2019-08-24",
+                            "score": 0,
+                            "temperature_deviation": 0,
+                            "temperature_trend_deviation": 0,
+                            "timestamp": "2019-08-24T14:15:22Z"
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95362,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "singleDailyReadinessDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Single Daily Readiness Documents",
+        "executor_description": "Readiness tells how ready you are for the day.",
+        "executor_category": "DailyReadinessRoutes",
+        "executor_category_group": "DailyReadinessRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/daily_readiness/{document_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "document_id",
+                "value": "",
+                "description": "string (Document Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685437662918,
+        "lastModifiedTime": 1685437662918,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "contributors": {
+                        "activity_balance": "Contribution of cumulative activity balance in range [1, 100].",
+                        "body_temperature": "Contribution of body temperature in range [1, 100].",
+                        "hrv_balance": "Contribution of heart rate variability balance in range [1, 100].",
+                        "previous_day_activity": "Contribution of previous day's activity in range [1, 100].",
+                        "previous_night": "Contribution of previous night's sleep in range [1, 100].",
+                        "recovery_index": "Contribution of recovery index in range [1, 100].",
+                        "resting_heart_rate": "Contribution of resting heart rate in range [1, 100].",
+                        "sleep_balance": "Contribution of sleep balance in range [1, 100]."
+                    },
+                    "day": "2019-08-24",
+                    "score": 0,
+                    "temperature_deviation": 0,
+                    "temperature_trend_deviation": 0,
+                    "timestamp": "2019-08-24T14:15:22Z"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95365,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multipleHeartRateDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Heart Rate Documents",
+        "executor_description": "The Heart Rate data scope includes time-series heart rate data throughout the day and night. Heart rate is provided at 5-minute increments. For heart rate data recorded from a Session, see Sessions endpoint.",
+        "executor_category": "HeartRateRoutes",
+        "executor_category_group": "HeartRateRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/heartrate",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_datetime",
+                "value": "",
+                "description": "string <date-time> (Start Datetime)",
+                "req": false
+            },
+            {
+                "key": "end_datetime",
+                "value": "",
+                "description": "string <date-time> (End Datetime)",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "string (Next Token)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685438008206,
+        "lastModifiedTime": 1685438008206,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "bpm": 0,
+                            "source": "awake",
+                            "timestamp": "2019-08-24T14:15:22Z"
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95367,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multipleSessionDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Session Documents",
+        "executor_description": "The Sessions data scope provides information on how users engage with guided and unguided sessions in the Oura app, including the user\u2019s biometric trends during the sessions.",
+        "executor_category": "SessionRoutes",
+        "executor_category_group": "SessionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/session",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_datetime",
+                "value": "",
+                "description": "string <date-time> (Start Datetime)",
+                "req": false
+            },
+            {
+                "key": "end_datetime",
+                "value": "",
+                "description": "string <date-time> (End Datetime)",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "string (Next Token)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685439397814,
+        "lastModifiedTime": 1685439397814,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": "string",
+                            "day": "2019-08-24",
+                            "start_datetime": "2019-08-24T14:15:22Z",
+                            "end_datetime": "2019-08-24T14:15:22Z",
+                            "type": "breathing",
+                            "heart_rate": {
+                                "interval": 0,
+                                "items": [
+                                    0
+                                ],
+                                "timestamp": "2019-08-24T14:15:22Z"
+                            },
+                            "heart_rate_variability": {
+                                "interval": 0,
+                                "items": [
+                                    0
+                                ],
+                                "timestamp": "2019-08-24T14:15:22Z"
+                            },
+                            "mood": "bad",
+                            "motion_count": {
+                                "interval": 0,
+                                "items": [
+                                    0
+                                ],
+                                "timestamp": "2019-08-24T14:15:22Z"
+                            }
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95368,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "singleSessionDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Single Session Documents",
+        "executor_description": "The Sessions data scope provides information on how users engage with guided and unguided sessions in the Oura app, including the user\u2019s biometric trends during the sessions.",
+        "executor_category": "SessionRoutes",
+        "executor_category_group": "SessionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/session/{document_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "document_id",
+                "value": "",
+                "description": "string (Document Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685439474975,
+        "lastModifiedTime": 1685439474975,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "day": "2019-08-24",
+                    "start_datetime": "2019-08-24T14:15:22Z",
+                    "end_datetime": "2019-08-24T14:15:22Z",
+                    "type": "breathing",
+                    "heart_rate": {
+                        "interval": 0,
+                        "items": [
+                            0
+                        ],
+                        "timestamp": "2019-08-24T14:15:22Z"
+                    },
+                    "heart_rate_variability": {
+                        "interval": 0,
+                        "items": [
+                            0
+                        ],
+                        "timestamp": "2019-08-24T14:15:22Z"
+                    },
+                    "mood": "bad",
+                    "motion_count": {
+                        "interval": 0,
+                        "items": [
+                            0
+                        ],
+                        "timestamp": "2019-08-24T14:15:22Z"
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95372,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "singleTagDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Single Tag Documents",
+        "executor_description": "The Tags data scope includes tags that Oura users enter within the Oura mobile app. Tags are a growing list of activities, environment factors, symptoms, emotions, and other aspects that provide broader context into what\u2019s happening with users beyond the objective data generated by the Oura Ring.",
+        "executor_category": "TagRoutes",
+        "executor_category_group": "TagRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/tag/{document_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "document_id",
+                "value": "",
+                "description": "string (Document Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685440450705,
+        "lastModifiedTime": 1685440450705,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "day": "2019-08-24",
+                    "text": "string",
+                    "timestamp": "2019-08-24T14:15:22Z",
+                    "tags": [
+                        "string"
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95371,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multipleTagDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Tag Documents",
+        "executor_description": "The Tags data scope includes tags that Oura users enter within the Oura mobile app. Tags are a growing list of activities, environment factors, symptoms, emotions, and other aspects that provide broader context into what\u2019s happening with users beyond the objective data generated by the Oura Ring.",
+        "executor_category": "TagRoutes",
+        "executor_category_group": "TagRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/tag",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_date",
+                "value": "",
+                "description": "string <date> (Start Date)",
+                "req": false
+            },
+            {
+                "key": "end_date",
+                "value": "",
+                "description": "string <date> (End Date)",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "string (Next Token)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685439830091,
+        "lastModifiedTime": 1685439830091,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": "string",
+                            "day": "2019-08-24",
+                            "text": "string",
+                            "timestamp": "2019-08-24T14:15:22Z",
+                            "tags": [
+                                "string"
+                            ]
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95363,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multipleDailySleepDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Daily Sleep Documents",
+        "executor_description": "Sleep period is a nearly continuous, longish period of time spent lying down in bed.",
+        "executor_category": "DailySleepRoutes",
+        "executor_category_group": "DailySleepRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/daily_sleep",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_date",
+                "value": "",
+                "description": "string <date> (Start Date)",
+                "req": false
+            },
+            {
+                "key": "end_date",
+                "value": "",
+                "description": "string <date> (End Date)",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "string (Next Token)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685437802516,
+        "lastModifiedTime": 1685437802516,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": "string",
+                            "contributors": {
+                                "deep_sleep": 0,
+                                "efficiency": 0,
+                                "latency": 0,
+                                "rem_sleep": 0,
+                                "restfulness": 0,
+                                "timing": 0,
+                                "total_sleep": 0
+                            },
+                            "day": "2019-08-24",
+                            "score": 0,
+                            "timestamp": "2019-08-24T14:15:22Z"
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95364,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "singleDailySleepDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Single Daily Sleep Documents",
+        "executor_description": "Sleep period is a nearly continuous, longish period of time spent lying down in bed.",
+        "executor_category": "DailySleepRoutes",
+        "executor_category_group": "DailySleepRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/daily_sleep/{document_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "document_id",
+                "value": "",
+                "description": "string (Document Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685437874081,
+        "lastModifiedTime": 1685437874082,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "contributors": {
+                        "deep_sleep": 0,
+                        "efficiency": 0,
+                        "latency": 0,
+                        "rem_sleep": 0,
+                        "restfulness": 0,
+                        "timing": 0,
+                        "total_sleep": 0
+                    },
+                    "day": "2019-08-24",
+                    "score": 0,
+                    "timestamp": "2019-08-24T14:15:22Z"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95370,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "SingleSleepDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Single Sleep Documents",
+        "executor_description": "Returns Oura Sleep data for the specified Oura user within a given timeframe. A user can have multiple sleep periods per day.",
+        "executor_category": "SleepRoutes",
+        "executor_category_group": "SleepRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/sleep/{document_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "document_id",
+                "value": "",
+                "description": "string (Document Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685439670587,
+        "lastModifiedTime": 1685439670587,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "average_breath": 0,
+                    "average_heart_rate": 0,
+                    "average_hrv": 0,
+                    "awake_time": 0,
+                    "bedtime_end": "2019-08-24T14:15:22Z",
+                    "bedtime_start": "2019-08-24T14:15:22Z",
+                    "day": "2019-08-24",
+                    "deep_sleep_duration": 0,
+                    "efficiency": 0,
+                    "heart_rate": {
+                        "interval": 0,
+                        "items": [
+                            0
+                        ],
+                        "timestamp": "2019-08-24T14:15:22Z"
+                    },
+                    "hrv": {
+                        "interval": 0,
+                        "items": [
+                            0
+                        ],
+                        "timestamp": "2019-08-24T14:15:22Z"
+                    },
+                    "latency": 0,
+                    "light_sleep_duration": 0,
+                    "low_battery_alert": true,
+                    "lowest_heart_rate": 0,
+                    "movement_30_sec": "1143222134",
+                    "period": 0,
+                    "readiness": {
+                        "contributors": {
+                            "activity_balance": "Contribution of cumulative activity balance in range [1, 100].",
+                            "body_temperature": "Contribution of body temperature in range [1, 100].",
+                            "hrv_balance": "Contribution of heart rate variability balance in range [1, 100].",
+                            "previous_day_activity": "Contribution of previous day's activity in range [1, 100].",
+                            "previous_night": "Contribution of previous night's sleep in range [1, 100].",
+                            "recovery_index": "Contribution of recovery index in range [1, 100].",
+                            "resting_heart_rate": "Contribution of resting heart rate in range [1, 100].",
+                            "sleep_balance": "Contribution of sleep balance in range [1, 100]."
+                        },
+                        "score": 0,
+                        "temperature_deviation": 0,
+                        "temperature_trend_deviation": 0
+                    },
+                    "readiness_score_delta": 0,
+                    "rem_sleep_duration": 0,
+                    "restless_periods": 0,
+                    "sleep_phase_5_min": "444423323441114",
+                    "sleep_score_delta": 0,
+                    "time_in_bed": 0,
+                    "total_sleep_duration": 0,
+                    "type": "deleted"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95369,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multipleSleepDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Sleep Documents",
+        "executor_description": "Returns Oura Sleep data for the specified Oura user within a given timeframe. A user can have multiple sleep periods per day.",
+        "executor_category": "SleepRoutes",
+        "executor_category_group": "SleepRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/sleep",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_date",
+                "value": "",
+                "description": "string <date> (Start Date)",
+                "req": false
+            },
+            {
+                "key": "end_date",
+                "value": "",
+                "description": "string <date> (End Date)",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "string (Next Token)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685439603956,
+        "lastModifiedTime": 1685439603956,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": "string",
+                            "average_breath": 0,
+                            "average_heart_rate": 0,
+                            "average_hrv": 0,
+                            "awake_time": 0,
+                            "bedtime_end": "2019-08-24T14:15:22Z",
+                            "bedtime_start": "2019-08-24T14:15:22Z",
+                            "day": "2019-08-24",
+                            "deep_sleep_duration": 0,
+                            "efficiency": 0,
+                            "heart_rate": {
+                                "interval": 0,
+                                "items": [
+                                    0
+                                ],
+                                "timestamp": "2019-08-24T14:15:22Z"
+                            },
+                            "hrv": {
+                                "interval": 0,
+                                "items": [
+                                    0
+                                ],
+                                "timestamp": "2019-08-24T14:15:22Z"
+                            },
+                            "latency": 0,
+                            "light_sleep_duration": 0,
+                            "low_battery_alert": true,
+                            "lowest_heart_rate": 0,
+                            "movement_30_sec": "1143222134",
+                            "period": 0,
+                            "readiness": {
+                                "contributors": {
+                                    "activity_balance": "Contribution of cumulative activity balance in range [1, 100].",
+                                    "body_temperature": "Contribution of body temperature in range [1, 100].",
+                                    "hrv_balance": "Contribution of heart rate variability balance in range [1, 100].",
+                                    "previous_day_activity": "Contribution of previous day's activity in range [1, 100].",
+                                    "previous_night": "Contribution of previous night's sleep in range [1, 100].",
+                                    "recovery_index": "Contribution of recovery index in range [1, 100].",
+                                    "resting_heart_rate": "Contribution of resting heart rate in range [1, 100].",
+                                    "sleep_balance": "Contribution of sleep balance in range [1, 100]."
+                                },
+                                "score": 0,
+                                "temperature_deviation": 0,
+                                "temperature_trend_deviation": 0
+                            },
+                            "readiness_score_delta": 0,
+                            "rem_sleep_duration": 0,
+                            "restless_periods": 0,
+                            "sleep_phase_5_min": "444423323441114",
+                            "sleep_score_delta": 0,
+                            "time_in_bed": 0,
+                            "total_sleep_duration": 0,
+                            "type": "deleted"
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95379,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateWebhookSubscription",
+        "executor_version": "v2",
+        "executor_display_name": "Update Webhook Subscription",
+        "executor_description": "Update Webhook Subscription",
+        "executor_category": "WebhookSubscriptionRoutes",
+        "executor_category_group": "WebhookSubscriptionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://cloud.ouraring.com/v2/webhook/subscription/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string (Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "verification_token": "string",
+                "callback_url": "http://example.com",
+                "event_type": "create",
+                "data_type": "tag"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685441133068,
+        "lastModifiedTime": 1685441133068,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "callback_url": "http://example.com",
+                    "event_type": "create",
+                    "data_type": "tag",
+                    "expiration_time": "2019-08-24T14:15:22Z"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Webhook with specified id does not exist.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95381,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "renewWebhookSubscription",
+        "executor_version": "v2",
+        "executor_display_name": "Renew Webhook Subscription",
+        "executor_description": "Renew Webhook Subscription",
+        "executor_category": "WebhookSubscriptionRoutes",
+        "executor_category_group": "WebhookSubscriptionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://cloud.ouraring.com/v2/webhook/subscription/renew/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string (Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685441365804,
+        "lastModifiedTime": 1685441365804,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Webhook with specified id does not exist.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "callback_url": "http://example.com",
+                    "event_type": "create",
+                    "data_type": "tag",
+                    "expiration_time": "2019-08-24T14:15:22Z"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95380,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteWebhookSubscription",
+        "executor_version": "v2",
+        "executor_display_name": "Delete Webhook Subscription",
+        "executor_description": "Delete Webhook Subscription",
+        "executor_category": "WebhookSubscriptionRoutes",
+        "executor_category_group": "WebhookSubscriptionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://cloud.ouraring.com/v2/webhook/subscription/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string (Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685441240215,
+        "lastModifiedTime": 1685441240215,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Webhook with specified id does not exist.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95376,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listWebhookSubscriptions",
+        "executor_version": "v2",
+        "executor_display_name": "List Webhook Subscriptions",
+        "executor_description": "Webhooks enable you to receive near real-time Oura data updates and are the preferred way to receive the latest data from the Oura API.",
+        "executor_category": "WebhookSubscriptionRoutes",
+        "executor_category_group": "WebhookSubscriptionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/webhook/subscription",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685440749840,
+        "lastModifiedTime": 1685440749840,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "string",
+                        "callback_url": "http://example.com",
+                        "event_type": "create",
+                        "data_type": "tag",
+                        "expiration_time": "2019-08-24T14:15:22Z"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95378,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getWebhookSubscription",
+        "executor_version": "v2",
+        "executor_display_name": "Get Webhook Subscription",
+        "executor_description": "Get Webhook Subscription",
+        "executor_category": "WebhookSubscriptionRoutes",
+        "executor_category_group": "WebhookSubscriptionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/webhook/subscription/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string (Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685441030834,
+        "lastModifiedTime": 1685441030834,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "callback_url": "http://example.com",
+                    "event_type": "create",
+                    "data_type": "tag",
+                    "expiration_time": "2019-08-24T14:15:22Z"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Webhook with specified id does not exist.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95377,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createWebhookSubscription",
+        "executor_version": "v2",
+        "executor_display_name": "Create Webhook Subscription",
+        "executor_description": "Create Webhook Subscription",
+        "executor_category": "WebhookSubscriptionRoutes",
+        "executor_category_group": "WebhookSubscriptionRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloud.ouraring.com/v2/webhook/subscription",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "callback_url": "http://example.com",
+                "verification_token": "string",
+                "event_type": "create",
+                "data_type": "tag"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685440893855,
+        "lastModifiedTime": 1685440893855,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "callback_url": "http://example.com",
+                    "event_type": "create",
+                    "data_type": "tag",
+                    "expiration_time": "2019-08-24T14:15:22Z"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95359,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "singleDailyActivityDocument",
+        "executor_version": "v2",
+        "executor_display_name": "Single Daily Activity Document",
+        "executor_description": "The Daily Activity scope includes daily activity summary values and detailed activity levels. Activity levels are expressed in metabolic equivalent of task minutes (MET mins). Oura tracks activity based on the movement.",
+        "executor_category": "DailyActivityRoutes",
+        "executor_category_group": "DailyActivityRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/daily_activity/{document_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "document_id",
+                "value": "",
+                "description": "string (Document Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685437322134,
+        "lastModifiedTime": 1685437322134,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "class_5_min": "string",
+                    "score": 0,
+                    "active_calories": 0,
+                    "average_met_minutes": 0,
+                    "contributors": {
+                        "meet_daily_targets": 0,
+                        "move_every_hour": 0,
+                        "recovery_time": 0,
+                        "stay_active": 0,
+                        "training_frequency": 0,
+                        "training_volume": 0
+                    },
+                    "equivalent_walking_distance": 0,
+                    "high_activity_met_minutes": 0,
+                    "high_activity_time": 0,
+                    "inactivity_alerts": 0,
+                    "low_activity_met_minutes": 0,
+                    "low_activity_time": 0,
+                    "medium_activity_met_minutes": 0,
+                    "medium_activity_time": 0,
+                    "met": {
+                        "interval": 0,
+                        "items": [
+                            0
+                        ],
+                        "timestamp": "2019-08-24T14:15:22Z"
+                    },
+                    "meters_to_target": 0,
+                    "non_wear_time": 0,
+                    "resting_time": 0,
+                    "sedentary_met_minutes": 0,
+                    "sedentary_time": 0,
+                    "steps": 0,
+                    "target_calories": 0,
+                    "target_meters": 0,
+                    "total_calories": 0,
+                    "day": "2019-08-24",
+                    "timestamp": "2019-08-24T14:15:22Z"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95345,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multipleDailyActivityDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Daily Activity Documents",
+        "executor_description": "The Daily Activity scope includes daily activity summary values and detailed activity levels. Activity levels are expressed in metabolic equivalent of task minutes (MET mins). Oura tracks activity based on the movement.",
+        "executor_category": "DailyActivityRoutes",
+        "executor_category_group": "DailyActivityRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/daily_activity",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_date",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "end_date",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685432839997,
+        "lastModifiedTime": 1685432839997,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": "string",
+                            "class_5_min": "string",
+                            "score": 0,
+                            "active_calories": 0,
+                            "average_met_minutes": 0,
+                            "contributors": {
+                                "meet_daily_targets": 0,
+                                "move_every_hour": 0,
+                                "recovery_time": 0,
+                                "stay_active": 0,
+                                "training_frequency": 0,
+                                "training_volume": 0
+                            },
+                            "equivalent_walking_distance": 0,
+                            "high_activity_met_minutes": 0,
+                            "high_activity_time": 0,
+                            "inactivity_alerts": 0,
+                            "low_activity_met_minutes": 0,
+                            "low_activity_time": 0,
+                            "medium_activity_met_minutes": 0,
+                            "medium_activity_time": 0,
+                            "met": {
+                                "interval": 0,
+                                "items": [
+                                    0
+                                ],
+                                "timestamp": "2019-08-24T14:15:22Z"
+                            },
+                            "meters_to_target": 0,
+                            "non_wear_time": 0,
+                            "resting_time": 0,
+                            "sedentary_met_minutes": 0,
+                            "sedentary_time": 0,
+                            "steps": 0,
+                            "target_calories": 0,
+                            "target_meters": 0,
+                            "total_calories": 0,
+                            "day": "2019-08-24",
+                            "timestamp": "2019-08-24T14:15:22Z"
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95366,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "singlePersonalInfoDocument",
+        "executor_version": "v2",
+        "executor_display_name": "Single Personal Info Document",
+        "executor_description": "The Personal Info scope includes personal information (e.g. age, email, weight, and height) about the user. You can access the id on the personal_info route with any access token (no scopes are required).",
+        "executor_category": "PersonalInfoRoutes",
+        "executor_category_group": "PersonalInfoRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/personal_info",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685438128552,
+        "lastModifiedTime": 1685438257998,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "age": 0,
+                    "weight": 0,
+                    "height": 0,
+                    "biological_sex": "string",
+                    "email": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95375,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "SingleWorkoutDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Single Workout Documents",
+        "executor_description": "The Workout data scope includes information about user workouts. This is a diverse, growing list of workouts that help inform how the user is training and exercising.",
+        "executor_category": "WorkoutRoutes",
+        "executor_category_group": "WorkoutRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/workout/{document_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "document_id",
+                "value": "",
+                "description": "string (Document Id)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685440637229,
+        "lastModifiedTime": 1685440637229,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "activity": "string",
+                    "calories": 0,
+                    "day": "2019-08-24",
+                    "distance": 0,
+                    "end_datetime": "2019-08-24T14:15:22Z",
+                    "intensity": "easy",
+                    "label": "string",
+                    "source": "manual",
+                    "start_datetime": "2019-08-24T14:15:22Z"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95374,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "MultipleWorkoutDocuments",
+        "executor_version": "v2",
+        "executor_display_name": "Multiple Workout Documents",
+        "executor_description": "The Workout data scope includes information about user workouts. This is a diverse, growing list of workouts that help inform how the user is training and exercising.",
+        "executor_category": "WorkoutRoutes",
+        "executor_category_group": "WorkoutRoutes",
+        "service_provider": "oura",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloud.ouraring.com/v2/usercollection/workout",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start_date\t",
+                "value": "",
+                "description": "string <date> (Start Date)",
+                "req": false
+            },
+            {
+                "key": "end_date",
+                "value": "",
+                "description": "string <date> (End Date)",
+                "req": false
+            },
+            {
+                "key": "next_token",
+                "value": "",
+                "description": "string (Next Token)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685440582530,
+        "lastModifiedTime": 1685440582530,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful Response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": "string",
+                            "activity": "string",
+                            "calories": 0,
+                            "day": "2019-08-24",
+                            "distance": 0,
+                            "end_datetime": "2019-08-24T14:15:22Z",
+                            "intensity": "easy",
+                            "label": "string",
+                            "source": "manual",
+                            "start_datetime": "2019-08-24T14:15:22Z"
+                        }
+                    ],
+                    "next_token": "string"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Client Exception",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized access exception. Usually means the access token is expired, malformed or revoked.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Access forbidden. Usually means the user's subscription to Oura has expired and their data is not available via the API.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 426,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Minimum App Version Error. The user associated with this token has not updated their mobile app to support this data type.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Request Rate Limit Exceeded.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Validation Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "detail": [
+                        {
+                            "loc": [
+                                "string"
+                            ],
+                            "msg": "string",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

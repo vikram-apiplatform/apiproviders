@@ -1,0 +1,752 @@
+[
+    {
+        "id": 126540,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "latestNews",
+        "executor_version": "v1",
+        "executor_display_name": "Latest News",
+        "executor_description": "The latest news endpoint provides access to the latest and breaking news. The news articles are sorted by the published date. With the \"News\" endpoint, you can access the news articles up to the past 48 hours.  Retrieving the latest news allows you to build experience such as showcasing the latest news, breaking news tickers and analyzing News to better understand their content.",
+        "executor_category": "news",
+        "executor_category_group": "news",
+        "service_provider": "newsdata",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://newsdata.io/api/1/news",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "You need to add your API Key while accessing the newsdata API. How to get the NewsData.io API key.\t",
+                "req": true
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news title, content, URL, meta keywords and meta description. The value must be URL-encoded and the maximum character limit permitted is 512 characters. Please refer Advanced Search for more details",
+                "req": false
+            },
+            {
+                "key": "qInTitle",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news titles only. The value must be URL-encoded and the maximum character limit permitted is 512 characters.. Note: qInTitle can't be used with q or qInMeta parameter in the same query.\t",
+                "req": false
+            },
+            {
+                "key": "qInMeta\t",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news titles, URL, meta keywords and meta description only. The value must be URL-encoded and the maximum character limit permitted is 512 characters. Note: qInMeta can't be used with q or qInTitle parameter in the same query.\t",
+                "req": false
+            },
+            {
+                "key": "timeframe",
+                "value": "",
+                "description": "Search the news articles for a specific timeframe (Minutes and Hours). For hours, you can set a timeframe of 1 to 48, and for minutes, you can define a timeframe of 1m to 2880m. For example, if you want to get the news for the past 6 hours then use timeframe=6 and if you want to get news for the last 15 min then use timeframe=15m. Note - You can only use timeframe either in hours or minutes.",
+                "req": false
+            },
+            {
+                "key": "country",
+                "value": "",
+                "description": "Search the news articles from a specific country. You can add up to 5 countries in a single query. Check the codes for all the countries here.\t",
+                "req": false
+            },
+            {
+                "key": "category",
+                "value": "",
+                "description": "Search the news articles for a specific category. You can add up to 5 categories in a single query. Check the codes for all the categories here.",
+                "req": false
+            },
+            {
+                "key": "language",
+                "value": "",
+                "description": "Search the news articles for a specific language. You can add up to 5 languages in a single query. Check the codes for all the languages here.\t",
+                "req": false
+            },
+            {
+                "key": "tag",
+                "value": "",
+                "description": "Search the news articles for specific AI-classified tags. You can add up to 5 tags in a single query. Check the codes for all the AI tags here. (Available only for Professional and Corporate users)\t",
+                "req": false
+            },
+            {
+                "key": "sentiment",
+                "value": "",
+                "description": "Search the news articles based on the sentiment of the news article (positive, negative, neutral). (Available only for Professional and Corporate users)",
+                "req": false
+            },
+            {
+                "key": "region",
+                "value": "",
+                "description": "Search the news articles for specific geographical regions. The region could be a city, district, county, state, country, or continent. You can add up to 5 regions in a single query. (Available only for Corporate users). Check out NewsData.io Region blog for practical understanding\t",
+                "req": false
+            },
+            {
+                "key": "domain",
+                "value": "",
+                "description": "Search the news articles for specific domains or news sources. You can add up to 5 domains in a single query. You can check the name of the domains here\t",
+                "req": false
+            },
+            {
+                "key": "domainurl",
+                "value": "",
+                "description": "Search the news articles for specific domains or news sources. You can add up to 5 domains in a single query. Note: If the domain is incorrect, It will give suggestions in the response",
+                "req": false
+            },
+            {
+                "key": "excludedomain",
+                "value": "",
+                "description": "You can exclude specific domains or news sources to search the news articles. You can exclude up to 5 domains in a single query. Note: If the domain is incorrect, It will give suggestions in the response",
+                "req": false
+            },
+            {
+                "key": "prioritydomain",
+                "value": "",
+                "description": "Search the news articles only from top news domains. We have categorized prioritydomain in 3 categories.  Top: Fetches news articles from the top 10% of the news domains  Medium: Fetches news articles from the top 30% of the news domains. It means it already includes all the news articles of \"top\" priority.  Low: Fetches news articles from the top 50% of the news domains. It means it already includes all the news articles of \"top\" and \"medium\" priorities.",
+                "req": false
+            },
+            {
+                "key": "timezone",
+                "value": "",
+                "description": "Search the news articles for a specific timezone. You can add any specific timezone. You can check the timezone here\t",
+                "req": false
+            },
+            {
+                "key": "full_content",
+                "value": "",
+                "description": "Search the news articles with full content or without full content. Use \"1\" for news articles which contain the full_content response object and \"0\" for news articles which don't contain full_content response object.\t",
+                "req": false
+            },
+            {
+                "key": "image",
+                "value": "",
+                "description": "Search the news articles with featured image or without featured image. Use 1 for articles with featured image and 0 for articles without featured image.",
+                "req": false
+            },
+            {
+                "key": "video",
+                "value": "",
+                "description": "Search the news articles with videos or without videos. Use 1 for articles with videos and 0 for articles without videos.",
+                "req": false
+            },
+            {
+                "key": "size",
+                "value": "",
+                "description": "You can customize the number of articles you get per API request from 1 to 50.\t",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "Use page parameter to navigate to the next page.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711437909538,
+        "lastModifiedTime": 1711437909538,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126544,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newsArchive",
+        "executor_version": "v1",
+        "executor_display_name": "News Archive",
+        "executor_description": "The news archive endpoint provides access to the old news data for a topic, event, country, for a specific category in a country, or for a single or multiple domains.  Retrieving a piece of old news allows you to get the past news data for research and analysis purposes.  The News Archive endpoint is available only in Paid plans. You can get news data for the past 2 years using the Archive endpoint.",
+        "executor_category": "news",
+        "executor_category_group": "news",
+        "service_provider": "newsdata",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://newsdata.io/api/1/archive",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "You need to add your API Key while accessing the newsdata API. How to get the NewsData.io API key.\t",
+                "req": true
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news title, content, URL, meta keywords and meta description. The value must be URL-encoded and the maximum character limit permitted is 512 characters. Please refer Advanced Search for more details",
+                "req": false
+            },
+            {
+                "key": "qInTitle",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news titles only. The value must be URL-encoded and the maximum character limit permitted is 512 characters.. Note: qInTitle can't be used with q or qInMeta parameter in the same query.\t",
+                "req": false
+            },
+            {
+                "key": "qInMeta\t",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news titles, URL, meta keywords and meta description only. The value must be URL-encoded and the maximum character limit permitted is 512 characters. Note: qInMeta can't be used with q or qInTitle parameter in the same query.\t",
+                "req": false
+            },
+            {
+                "key": "timeframe",
+                "value": "",
+                "description": "Search the news articles for a specific timeframe (Minutes and Hours). For hours, you can set a timeframe of 1 to 48, and for minutes, you can define a timeframe of 1m to 2880m. For example, if you want to get the news for the past 6 hours then use timeframe=6 and if you want to get news for the last 15 min then use timeframe=15m. Note - You can only use timeframe either in hours or minutes.",
+                "req": false
+            },
+            {
+                "key": "country",
+                "value": "",
+                "description": "Search the news articles from a specific country. You can add up to 5 countries in a single query. Check the codes for all the countries here.\t",
+                "req": false
+            },
+            {
+                "key": "category",
+                "value": "",
+                "description": "Search the news articles for a specific category. You can add up to 5 categories in a single query. Check the codes for all the categories here.",
+                "req": false
+            },
+            {
+                "key": "language",
+                "value": "",
+                "description": "Search the news articles for a specific language. You can add up to 5 languages in a single query. Check the codes for all the languages here.\t",
+                "req": false
+            },
+            {
+                "key": "tag",
+                "value": "",
+                "description": "Search the news articles for specific AI-classified tags. You can add up to 5 tags in a single query. Check the codes for all the AI tags here. (Available only for Professional and Corporate users)\t",
+                "req": false
+            },
+            {
+                "key": "sentiment",
+                "value": "",
+                "description": "Search the news articles based on the sentiment of the news article (positive, negative, neutral). (Available only for Professional and Corporate users)",
+                "req": false
+            },
+            {
+                "key": "region",
+                "value": "",
+                "description": "Search the news articles for specific geographical regions. The region could be a city, district, county, state, country, or continent. You can add up to 5 regions in a single query. (Available only for Corporate users). Check out NewsData.io Region blog for practical understanding\t",
+                "req": false
+            },
+            {
+                "key": "domain",
+                "value": "",
+                "description": "Search the news articles for specific domains or news sources. You can add up to 5 domains in a single query. You can check the name of the domains here\t",
+                "req": false
+            },
+            {
+                "key": "domainurl",
+                "value": "",
+                "description": "Search the news articles for specific domains or news sources. You can add up to 5 domains in a single query. Note: If the domain is incorrect, It will give suggestions in the response",
+                "req": false
+            },
+            {
+                "key": "excludedomain",
+                "value": "",
+                "description": "You can exclude specific domains or news sources to search the news articles. You can exclude up to 5 domains in a single query. Note: If the domain is incorrect, It will give suggestions in the response",
+                "req": false
+            },
+            {
+                "key": "prioritydomain",
+                "value": "",
+                "description": "Search the news articles only from top news domains. We have categorized prioritydomain in 3 categories.  Top: Fetches news articles from the top 10% of the news domains  Medium: Fetches news articles from the top 30% of the news domains. It means it already includes all the news articles of \"top\" priority.  Low: Fetches news articles from the top 50% of the news domains. It means it already includes all the news articles of \"top\" and \"medium\" priorities.",
+                "req": false
+            },
+            {
+                "key": "timezone",
+                "value": "",
+                "description": "Search the news articles for a specific timezone. You can add any specific timezone. You can check the timezone here\t",
+                "req": false
+            },
+            {
+                "key": "full_content",
+                "value": "",
+                "description": "Search the news articles with full content or without full content. Use \"1\" for news articles which contain the full_content response object and \"0\" for news articles which don't contain full_content response object.\t",
+                "req": false
+            },
+            {
+                "key": "image",
+                "value": "",
+                "description": "Search the news articles with featured image or without featured image. Use 1 for articles with featured image and 0 for articles without featured image.",
+                "req": false
+            },
+            {
+                "key": "video",
+                "value": "",
+                "description": "Search the news articles with videos or without videos. Use 1 for articles with videos and 0 for articles without videos.",
+                "req": false
+            },
+            {
+                "key": "size",
+                "value": "",
+                "description": "You can customize the number of articles you get per API request from 1 to 50.\t",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "Use page parameter to navigate to the next page.",
+                "req": false
+            },
+            {
+                "key": "from_date",
+                "value": "",
+                "description": "Use from_date filter to get news data from a particular date in the past. Note: If you didn\u2019t specify from_date then from_date will be considered as per your subscription plan. For example, if you have purchased the professional subscription plan and didn\u2019t mention from_date then the API will automatically fetch the data from the past 1 year.\t",
+                "req": false
+            },
+            {
+                "key": "to_date",
+                "value": "",
+                "description": "This filter is used to set an end date for the search result. Note: If you didn't specify to_date then the API will fetch the data till today",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711438632351,
+        "lastModifiedTime": 1711438632351,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126546,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newsSources",
+        "executor_version": "v1",
+        "executor_display_name": "News Sources",
+        "executor_description": "Sources endpoint provides names of randomly selected 100 domains from a country, category or/and language.  It is mainly a convenience endpoint that you can use to keep track of the publishers available on the API.",
+        "executor_category": "news",
+        "executor_category_group": "news",
+        "service_provider": "newsdata",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://newsdata.io/api/1/sources",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "You need to add your API Key while accessing the newsdata API",
+                "req": false
+            },
+            {
+                "key": "country",
+                "value": "",
+                "description": "Search the news articles from a specific country. You can add up to 5 countries in a single query.",
+                "req": false
+            },
+            {
+                "key": "category",
+                "value": "",
+                "description": "Search the news articles for a specific category. You can add up to 5 categories in a single query",
+                "req": false
+            },
+            {
+                "key": "language",
+                "value": "",
+                "description": "Search the news articles for a specific language. You can add up to 5 languages in a single query.",
+                "req": false
+            },
+            {
+                "key": "prioritydomain",
+                "value": "",
+                "description": "Fetch list of news sources on the basis of their reputation. We have categorized prioritydomain in 3 categories.  Top: Retrieves 100 news sources that rank within the top 10% of all available sources.  Medium: Retrieves 100 news sources that rank within the top 30% of all available sources.  Low: Retrieves 100 news sources that rank within the top 50% of all available sources",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711438815824,
+        "lastModifiedTime": 1711438815824,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126542,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "cryptoNews",
+        "executor_version": "v1",
+        "executor_display_name": "Crypto News",
+        "executor_description": "Search and Monitor Worldwide Cryptocurrency-related news and blog data from the most reliable News and Blog Websites. Crypto News API endpoint is only available in the corporate plan.  Retrieving the latest news allows you to build experience such as showcasing the latest news, breaking news tickers and analyzing News to better understand their content.",
+        "executor_category": "news",
+        "executor_category_group": "news",
+        "service_provider": "newsdata",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://newsdata.io/api/1/crypto",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "You need to add your API Key while accessing the newsdata API. How to get the NewsData.io API key.\t",
+                "req": true
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news title, content, URL, meta keywords and meta description. The value must be URL-encoded and the maximum character limit permitted is 512 characters. Please refer Advanced Search for more details",
+                "req": false
+            },
+            {
+                "key": "qInTitle",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news titles only. The value must be URL-encoded and the maximum character limit permitted is 512 characters.. Note: qInTitle can't be used with q or qInMeta parameter in the same query.\t",
+                "req": false
+            },
+            {
+                "key": "qInMeta\t",
+                "value": "",
+                "description": "Search news articles for specific keywords or phrases present in the news titles, URL, meta keywords and meta description only. The value must be URL-encoded and the maximum character limit permitted is 512 characters. Note: qInMeta can't be used with q or qInTitle parameter in the same query.\t",
+                "req": false
+            },
+            {
+                "key": "timeframe",
+                "value": "",
+                "description": "Search the news articles for a specific timeframe (Minutes and Hours). For hours, you can set a timeframe of 1 to 48, and for minutes, you can define a timeframe of 1m to 2880m. For example, if you want to get the news for the past 6 hours then use timeframe=6 and if you want to get news for the last 15 min then use timeframe=15m. Note - You can only use timeframe either in hours or minutes.",
+                "req": false
+            },
+            {
+                "key": "country",
+                "value": "",
+                "description": "Search the news articles from a specific country. You can add up to 5 countries in a single query. Check the codes for all the countries here.\t",
+                "req": false
+            },
+            {
+                "key": "category",
+                "value": "",
+                "description": "Search the news articles for a specific category. You can add up to 5 categories in a single query. Check the codes for all the categories here.",
+                "req": false
+            },
+            {
+                "key": "language",
+                "value": "",
+                "description": "Search the news articles for a specific language. You can add up to 5 languages in a single query. Check the codes for all the languages here.\t",
+                "req": false
+            },
+            {
+                "key": "tag",
+                "value": "",
+                "description": "Search the news articles for specific AI-classified tags. You can add up to 5 tags in a single query. Check the codes for all the AI tags here. (Available only for Professional and Corporate users)\t",
+                "req": false
+            },
+            {
+                "key": "sentiment",
+                "value": "",
+                "description": "Search the news articles based on the sentiment of the news article (positive, negative, neutral). (Available only for Professional and Corporate users)",
+                "req": false
+            },
+            {
+                "key": "region",
+                "value": "",
+                "description": "Search the news articles for specific geographical regions. The region could be a city, district, county, state, country, or continent. You can add up to 5 regions in a single query. (Available only for Corporate users). Check out NewsData.io Region blog for practical understanding\t",
+                "req": false
+            },
+            {
+                "key": "domain",
+                "value": "",
+                "description": "Search the news articles for specific domains or news sources. You can add up to 5 domains in a single query. You can check the name of the domains here\t",
+                "req": false
+            },
+            {
+                "key": "domainurl",
+                "value": "",
+                "description": "Search the news articles for specific domains or news sources. You can add up to 5 domains in a single query. Note: If the domain is incorrect, It will give suggestions in the response",
+                "req": false
+            },
+            {
+                "key": "excludedomain",
+                "value": "",
+                "description": "You can exclude specific domains or news sources to search the news articles. You can exclude up to 5 domains in a single query. Note: If the domain is incorrect, It will give suggestions in the response",
+                "req": false
+            },
+            {
+                "key": "prioritydomain",
+                "value": "",
+                "description": "Search the news articles only from top news domains. We have categorized prioritydomain in 3 categories.  Top: Fetches news articles from the top 10% of the news domains  Medium: Fetches news articles from the top 30% of the news domains. It means it already includes all the news articles of \"top\" priority.  Low: Fetches news articles from the top 50% of the news domains. It means it already includes all the news articles of \"top\" and \"medium\" priorities.",
+                "req": false
+            },
+            {
+                "key": "timezone",
+                "value": "",
+                "description": "Search the news articles for a specific timezone. You can add any specific timezone. You can check the timezone here\t",
+                "req": false
+            },
+            {
+                "key": "full_content",
+                "value": "",
+                "description": "Search the news articles with full content or without full content. Use \"1\" for news articles which contain the full_content response object and \"0\" for news articles which don't contain full_content response object.\t",
+                "req": false
+            },
+            {
+                "key": "image",
+                "value": "",
+                "description": "Search the news articles with featured image or without featured image. Use 1 for articles with featured image and 0 for articles without featured image.",
+                "req": false
+            },
+            {
+                "key": "video",
+                "value": "",
+                "description": "Search the news articles with videos or without videos. Use 1 for articles with videos and 0 for articles without videos.",
+                "req": false
+            },
+            {
+                "key": "size",
+                "value": "",
+                "description": "You can customize the number of articles you get per API request from 1 to 50.\t",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "Use page parameter to navigate to the next page.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711438202492,
+        "lastModifiedTime": 1711438202492,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

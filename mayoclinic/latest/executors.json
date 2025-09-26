@@ -1,0 +1,353 @@
+[
+    {
+        "id": 94130,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gETauth",
+        "executor_version": "v1",
+        "executor_display_name": "GET auth",
+        "executor_description": "Used to initiate the authorization code grant flow.",
+        "executor_category": "PATHS",
+        "executor_category_group": "PATHS",
+        "service_provider": "mayoclinic",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://mcc.api.mayo.edu/oauth/auth",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "response_type ",
+                "value": "",
+                "description": "Should be set to 'code'",
+                "req": false
+            },
+            {
+                "key": "client_id ",
+                "value": "",
+                "description": "The API Key of your Apigee app.",
+                "req": false
+            },
+            {
+                "key": "client_secret ",
+                "value": "",
+                "description": "The API Key of your Apigee app.",
+                "req": false
+            },
+            {
+                "key": "redirect_uri ",
+                "value": "",
+                "description": "The API Key of your Apigee app.",
+                "req": false
+            },
+            {
+                "key": "code_challenge",
+                "value": "",
+                "description": "The PKCE code challenge.",
+                "req": false
+            },
+            {
+                "key": "code_challenge_method",
+                "value": "",
+                "description": "The encoding of the code challenge. Valid values are either 'plain', if the code verifier is being sent without alteration, or 'S256', if the SHA256 hash of the code verifier is being sent. 'plain' is the default value if a code_challenge is provided but a code_challenge_method is not. It is recommended that S256 is used whenver possible.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684873957647,
+        "lastModifiedTime": 1684873957647,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 302,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Redirect",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Invalid Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94132,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "pOSTtoken",
+        "executor_version": "v1",
+        "executor_display_name": "POST token",
+        "executor_description": "Used to obtain a token with the client credentials or password grant types or to exchange the authorization code for a token when using the authorization code grant type. Client credentials (app ID and secret) can be passed either in the body of the call or in a basic authorization header.",
+        "executor_category": "PATHS",
+        "executor_category_group": "PATHS",
+        "service_provider": "mayoclinic",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://mcc.api.mayo.edu/oauth/token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "grant_type ",
+                "value": "",
+                "description": "Valid values are 'client_credentials', 'authorization_code', 'password', or 'refresh_token'",
+                "req": false
+            },
+            {
+                "key": "client_id",
+                "value": "",
+                "description": "The API key secret of your Apigee app. Recommended when using the authorization code flow with PKCE. Required if the client credentials are not passed in the Authorization header and the request is not using PKCE.",
+                "req": false
+            },
+            {
+                "key": "code",
+                "value": "",
+                "description": "The authorization code returned to your redirect uri. This parameter is required when the grant_type is 'authorization_code'. It is not a valid parameter for any of the other grant types.",
+                "req": false
+            },
+            {
+                "key": "code_verifier",
+                "value": "",
+                "description": "The code verifier for the PKCE request. This parameter is required if a code challenge was provided on the authorization request.",
+                "req": false
+            },
+            {
+                "key": "redirect_uri",
+                "value": "",
+                "description": "The value of this parameter must match the redirect_uri presented on the initial authorization code request. This parameter is required when the grant_type is 'authorization_code'. It is not a valid parameter for any of the other grant types.",
+                "req": false
+            },
+            {
+                "key": "refresh_token",
+                "value": "",
+                "description": "The value of this parameter will be the refresh token received on a previous authorization code or refresh token call. This parameter is required when the grant_type is 'refresh_token'. It is not a valid parameter for any of the other grant types.",
+                "req": false
+            },
+            {
+                "key": "username",
+                "value": "",
+                "description": "The username of the end user. This parameter is required when the grant_type is 'password'. It is not a valid parameter for any of the other grant types",
+                "req": false
+            },
+            {
+                "key": "password",
+                "value": "",
+                "description": "The password of the end user. This parameter is required when the grant_type is 'password'. It is not a valid parameter for any of the other grant types",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684874281491,
+        "lastModifiedTime": 1684874281491,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

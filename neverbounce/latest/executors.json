@@ -1,0 +1,1588 @@
+[
+    {
+        "id": 103187,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "create",
+        "executor_version": "v4",
+        "executor_display_name": "create",
+        "executor_description": "The jobs create endpoint allows you create verify multiple emails together, the same way you would verify lists in the dashboard. This endpoint will create a job and process the emails in the list (if auto_start is enabled) asynchronously.",
+        "executor_category": "Jobs",
+        "executor_category_group": "Jobs",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.neverbounce.com/v4.2/jobs/create",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "key",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "input_location",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "filename",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "auto_parse",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "auto_start",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "allow_manual_review",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "input",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "callback_url",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688384810599,
+        "lastModifiedTime": 1688384810599,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "job_id": 150970,
+                    "execution_time": 712
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103192,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "results",
+        "executor_version": "v4",
+        "executor_display_name": "results",
+        "executor_description": "results",
+        "executor_category": "Jobs",
+        "executor_category_group": "Jobs",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.neverbounce.com/v4.2/jobs/results",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "job_id",
+                "value": "",
+                "description": "The id of the job to retrieve results for",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "The page to return the results from",
+                "req": false
+            },
+            {
+                "key": "items_per_page",
+                "value": "",
+                "description": "The number of results to be returned, between 1 and 1000",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688386185814,
+        "lastModifiedTime": 1688386185814,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "total_results": 3,
+                    "total_pages": 1,
+                    "query": {
+                        "job_id": 251319,
+                        "valids": 1,
+                        "invalids": 1,
+                        "disposables": 1,
+                        "catchalls": 1,
+                        "unknowns": 1,
+                        "page": 0,
+                        "items_per_page": 10
+                    },
+                    "results": [
+                        {
+                            "data": {
+                                "email": "email",
+                                "id": "id",
+                                "name": "name"
+                            },
+                            "verification": {
+                                "result": "invalid",
+                                "flags": [],
+                                "suggested_correction": "",
+                                "address_info": {
+                                    "original_email": "email",
+                                    "normalized_email": "",
+                                    "addr": "",
+                                    "alias": "",
+                                    "host": "",
+                                    "fqdn": "",
+                                    "domain": "",
+                                    "subdomain": "",
+                                    "tld": ""
+                                }
+                            }
+                        },
+                        {
+                            "data": {
+                                "email": "support@neverbounce.com",
+                                "id": "12345",
+                                "name": "Fred McValid"
+                            },
+                            "verification": {
+                                "result": "valid",
+                                "flags": [
+                                    "smtp_connectable",
+                                    "has_dns",
+                                    "has_dns_mx",
+                                    "role_account"
+                                ],
+                                "suggested_correction": "",
+                                "address_info": {
+                                    "original_email": "support@neverbounce.com",
+                                    "normalized_email": "support@neverbounce.com",
+                                    "addr": "support",
+                                    "alias": "",
+                                    "host": "neverbounce.com",
+                                    "fqdn": "neverbounce.com",
+                                    "domain": "neverbounce",
+                                    "subdomain": "",
+                                    "tld": "com"
+                                }
+                            }
+                        },
+                        {
+                            "data": {
+                                "email": "invalid@neverbounce.com",
+                                "id": "12346",
+                                "name": "Bob McInvalid"
+                            },
+                            "verification": {
+                                "result": "invalid",
+                                "flags": [
+                                    "smtp_connectable",
+                                    "has_dns",
+                                    "has_dns_mx"
+                                ],
+                                "suggested_correction": "",
+                                "address_info": {
+                                    "original_email": "invalid@neverbounce.com",
+                                    "normalized_email": "invalid@neverbounce.com",
+                                    "addr": "invalid",
+                                    "alias": "",
+                                    "host": "neverbounce.com",
+                                    "fqdn": "neverbounce.com",
+                                    "domain": "neverbounce",
+                                    "subdomain": "",
+                                    "tld": "com"
+                                }
+                            }
+                        }
+                    ],
+                    "execution_time": 55
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103195,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "delete",
+        "executor_version": "v4",
+        "executor_display_name": "delete",
+        "executor_description": "delete",
+        "executor_category": "Jobs",
+        "executor_category_group": "Jobs",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.neverbounce.com/v4.2/jobs/delete",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "key",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "job_id",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688386396614,
+        "lastModifiedTime": 1688386396614,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "execution_time": 57
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103189,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "parse",
+        "executor_version": "v4",
+        "executor_display_name": "parse",
+        "executor_description": "This endpoint allows you to parse a job created with auto_parse disabled. You cannot reparse a list once it's been parsed.",
+        "executor_category": "Jobs",
+        "executor_category_group": "Jobs",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.neverbounce.com/v4.2/jobs/parse",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "key",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "job_id",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688385573761,
+        "lastModifiedTime": 1688385573761,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "queue_id": "NB-PQ-59246392E9E5D",
+                    "execution_time": 712
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103184,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "search",
+        "executor_version": "v4",
+        "executor_display_name": "search",
+        "executor_description": "search",
+        "executor_category": "Jobs",
+        "executor_category_group": "Jobs",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.neverbounce.com/v4.2/jobs/search",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "job_id",
+                "value": "",
+                "description": "Filter jobs based on it's id",
+                "req": false
+            },
+            {
+                "key": "filename",
+                "value": "",
+                "description": "Filter jobs based on the filename (exact match)",
+                "req": false
+            },
+            {
+                "key": "job_status",
+                "value": "",
+                "description": "Filter jobs by the job status",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "The page to grab the jobs from",
+                "req": false
+            },
+            {
+                "key": "items_per_page",
+                "value": "",
+                "description": "The number of jobs to display",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688384322289,
+        "lastModifiedTime": 1688384322290,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "total_results": 1,
+                    "total_pages": 1,
+                    "query": {
+                        "page": 1,
+                        "items_per_page": 10
+                    },
+                    "results": [
+                        {
+                            "id": 277461,
+                            "status": "complete",
+                            "filename": "Created from Array.csv",
+                            "created_at": "2017-07-25 16:25:19",
+                            "started_at": "2017-07-25 16:25:30",
+                            "finished_at": "2017-07-25 16:25:31",
+                            "total": {
+                                "records": 2,
+                                "billable": 2,
+                                "processed": 2,
+                                "valid": 0,
+                                "invalid": 2,
+                                "catchall": 0,
+                                "disposable": 0,
+                                "unknown": 0,
+                                "duplicates": 0,
+                                "bad_syntax": 0
+                            },
+                            "bounce_estimate": 0,
+                            "percent_complete": 100
+                        }
+                    ],
+                    "execution_time": 388
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103190,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "start",
+        "executor_version": "v4",
+        "executor_display_name": "start",
+        "executor_description": "This endpoint allows you to start a job created or parsed with auto_start disabled. Once the list has been started the credits will be deducted and the process cannot be stopped or restarted.",
+        "executor_category": "Jobs",
+        "executor_category_group": "Jobs",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.neverbounce.com/v4.2/jobs/start",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "key",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "job_id",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "allow_manual_review",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688385756716,
+        "lastModifiedTime": 1688385756716,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "queue_id": "NB-PQ-59246392E9E5D",
+                    "execution_time": 712
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103191,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "status",
+        "executor_version": "v4",
+        "executor_display_name": "status",
+        "executor_description": "Job status will indicate what stage the job is currently in. This will be the primary property you'll want to check to determine what can be done with the job.",
+        "executor_category": "Jobs",
+        "executor_category_group": "Jobs",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.neverbounce.com/v4.2/jobs/status",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "job_id",
+                "value": "",
+                "description": "The id of the job to check",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688386067162,
+        "lastModifiedTime": 1688386067162,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "id": 277461,
+                    "filename": "Created from Array.csv",
+                    "created_at": "2017-07-25 14:52:27",
+                    "started_at": "2017-07-25 14:52:40",
+                    "finished_at": "2017-07-25 14:53:06",
+                    "failure_reason": null,
+                    "total": {
+                        "records": 2,
+                        "billable": 2,
+                        "processed": 2,
+                        "valid": 0,
+                        "invalid": 2,
+                        "catchall": 0,
+                        "disposable": 0,
+                        "unknown": 0,
+                        "duplicates": 0,
+                        "bad_syntax": 0
+                    },
+                    "bounce_estimate": 0,
+                    "percent_complete": 100,
+                    "job_status": "complete",
+                    "execution_time": 322
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103178,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "check",
+        "executor_version": "v4",
+        "executor_display_name": "check",
+        "executor_description": "check",
+        "executor_category": "Single",
+        "executor_category_group": "Single",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.neverbounce.com/v4.2/single/check",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "email",
+                "value": "",
+                "description": "The email to verify",
+                "req": false
+            },
+            {
+                "key": "address_info",
+                "value": "",
+                "description": "Include additional address info in response (default: false)",
+                "req": false
+            },
+            {
+                "key": "credits_info",
+                "value": "",
+                "description": "Include account credit info in response (default: false)",
+                "req": false
+            },
+            {
+                "key": "timeout",
+                "value": "",
+                "description": "The maximum time in seconds we should try to verify the address",
+                "req": false
+            },
+            {
+                "key": "request_meta_data",
+                "value": "",
+                "description": "Miscellanious request meta data",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688383937391,
+        "lastModifiedTime": 1688383937391,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "result": "valid",
+                    "flags": [
+                        "has_dns",
+                        "has_dns_mx"
+                    ],
+                    "suggested_correction": "",
+                    "execution_time": 499
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103174,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "info",
+        "executor_version": "v4",
+        "executor_display_name": "info",
+        "executor_description": "info",
+        "executor_category": "Account",
+        "executor_category_group": "Account",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.neverbounce.com/v4.2/account/info",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1688383745944,
+        "lastModifiedTime": 1688383745944,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "credits_info": {
+                        "paid_credits_used": 0,
+                        "free_credits_used": 0,
+                        "paid_credits_remaining": 9950791,
+                        "free_credits_remaining": 0
+                    },
+                    "job_counts": {
+                        "completed": 409,
+                        "under_review": 0,
+                        "queued": 0,
+                        "processing": 0
+                    },
+                    "execution_time": 896
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 103197,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "confirm",
+        "executor_version": "v4",
+        "executor_display_name": "confirm",
+        "executor_description": "This endpoint provides an extra layer of protection by confirming that the email you received was verified by NeverBounce. In most use cases the widget on its own provides enough protection against bad emails. However, an advanced user can disable or modify the script, as is the case with any client-side script. If you have control over the server-side script that processes the form request you can use this endpoint to confirm that the email supplied was verified.  Every verification performed by the widget is accompanied by a \"transaction id\" and \"confirmation token\". These are both accessible from the Result Object and in the form as the nb-transaction-id and nb-confirmation-token fields. These two parameters can be passed to this endpoint alongside the email that was submitted to confirm if this is the same email we verified or not.",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "neverbounce",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.neverbounce.com/v4.2/poe/confirm",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "key",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "email",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "transaction_id",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "confirmation_token",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "result",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1688386770761,
+        "lastModifiedTime": 1688387213350,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "status": "success",
+                    "token_confirmed": true,
+                    "execution_time": 35
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

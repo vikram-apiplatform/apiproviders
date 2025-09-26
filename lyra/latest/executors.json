@@ -1,0 +1,4375 @@
+[
+    {
+        "id": 108800,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getthesummaryofadevice",
+        "executor_version": "v1",
+        "executor_display_name": "Get the summary of a device",
+        "executor_description": "Get the summary of a device specified by the id provided in parameters",
+        "executor_category": "Device",
+        "executor_category_group": "Device",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690918346699,
+        "lastModifiedTime": 1690918346699,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "ed456a456b45g",
+                    "manufacturer": "ingenico",
+                    "type": "TELIUM",
+                    "model": "IWL250",
+                    "serial": "12345WL12345678",
+                    "mobileNetwork": {
+                        "iccId": "8934079517039221234",
+                        "imei": "490154203237518"
+                    },
+                    "luma": {
+                        "registrationCode": "12345689"
+                    },
+                    "links": {
+                        "frontDetailPage": {
+                            "href": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108795,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "finddevices",
+        "executor_version": "v1",
+        "executor_display_name": "Find devices",
+        "executor_description": "Find devices from several criteria",
+        "executor_category": "Device",
+        "executor_category_group": "Device",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "criteria",
+                "value": "",
+                "description": "object (DeviceCriteria)",
+                "req": false
+            },
+            {
+                "key": "pageable",
+                "value": "",
+                "description": "minimal Pageable query parameters",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690917099128,
+        "lastModifiedTime": 1690917099129,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "page": {
+                        "number": 1,
+                        "size": 10,
+                        "totalElements": 1,
+                        "totalPages": 1
+                    },
+                    "links": {
+                        "first": {
+                            "href": "string"
+                        },
+                        "self": {
+                            "href": "string"
+                        },
+                        "next": {
+                            "href": "string"
+                        },
+                        "last": {
+                            "href": "string"
+                        }
+                    },
+                    "content": [
+                        {
+                            "id": "ed456a456b45g",
+                            "manufacturer": "ingenico",
+                            "type": "TELIUM",
+                            "model": "IWL250",
+                            "serial": "12345WL12345678",
+                            "mobileNetwork": {
+                                "iccId": "8934079517039221234",
+                                "imei": "490154203237518"
+                            },
+                            "luma": {
+                                "registrationCode": "12345689"
+                            },
+                            "links": {
+                                "frontDetailPage": {
+                                    "href": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 206,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "partial result",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108802,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "publishordersfromprepration",
+        "executor_version": "v1",
+        "executor_display_name": "Publish orders from prepration",
+        "executor_description": "Publish all orders from a preparation to a POS specified by its deviceId",
+        "executor_category": "Device",
+        "executor_category_group": "Device",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{deviceId}/preparations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "deviceId",
+                "value": "",
+                "description": "device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690918617509,
+        "lastModifiedTime": 1690918617509,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": 88746312,
+                    "createdAt": "2021-01-18T15:51:35.497+0000",
+                    "updatedAt": "2021-01-18T15:51:35.497+0000",
+                    "name": "Preparation tetra"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108798,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteadevice",
+        "executor_version": "v1",
+        "executor_display_name": "Delete a device",
+        "executor_description": "Delete a device specified by the id provided in parameters",
+        "executor_category": "Device",
+        "executor_category_group": "Device",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690918085467,
+        "lastModifiedTime": 1690918085467,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108801,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getdetailsofonedevice",
+        "executor_version": "v1",
+        "executor_display_name": "Get details of one device",
+        "executor_description": "Get the details of the device from its ID",
+        "executor_category": "Device",
+        "executor_category_group": "Device",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690918425667,
+        "lastModifiedTime": 1690918425667,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "ed456a456b45g",
+                    "manufacturer": "Ingenico",
+                    "type": "TELIUM",
+                    "model": "IWL250 G",
+                    "serial": "12345WL12345678",
+                    "posPortalSerial": "WL12345678",
+                    "productId": "00001637",
+                    "onBase": false,
+                    "label": "Boucherie sanzos",
+                    "managerVersion": "8447788718",
+                    "osVersion": "37775420",
+                    "sdkVersion": "9.32.3+PatchW",
+                    "productCode": "M44",
+                    "manufacturingDate": "2012-12-19T23:00:00.000+0000",
+                    "totalRam": 33554432,
+                    "freeRam": 21495808,
+                    "totalFlash": 132907008,
+                    "freeFlash": 26343424,
+                    "fullProductReference": "IWL251-01T1637A",
+                    "pciValue": "PCI_PTS_V2",
+                    "functionalReference": "251163720000",
+                    "displayType": "COLOR",
+                    "displaySize": "S_320_240",
+                    "isUsingPinpad": true,
+                    "pinpadType": "IPP280",
+                    "pkiValue": "INGETRUST_TYPE_PKIv3",
+                    "pinpadPn": "00001341",
+                    "pinpadSn": "81391234",
+                    "clessCapable": false,
+                    "clessActive": false,
+                    "clessTeliumPass": false,
+                    "pinpadClessCapable": true,
+                    "pinpadClessActive": true,
+                    "teliumPassConnectionType": "COM0",
+                    "region": "FRANCE_MAINLAND",
+                    "language": "FRENCH",
+                    "mobileNetwork": {
+                        "simNumber": "9517039221234",
+                        "moduleName": "Hilo3G_900",
+                        "networkName": "BOUYGTEL",
+                        "softwareVersion": "Hi3GC,A.001.40",
+                        "apn": "gprsnac.com",
+                        "simProvider": "Bouygues+Telecom",
+                        "areaCode": 20091,
+                        "cellId": 194,
+                        "csq": 20,
+                        "radio": "5",
+                        "plmn": {
+                            "country": "France",
+                            "operator": "Bouygues Telecom",
+                            "mccMnc": 20820,
+                            "countryCode": 33
+                        },
+                        "iccId": "8934079517039221234",
+                        "imei": "490154203237518"
+                    },
+                    "luma": {
+                        "createdAt": "2019-04-03T13:48:49.226+0000",
+                        "updatedAt": "2031-04-03T00:49:56.226+0000",
+                        "lastCallDate": "2031-04-03T00:49:56.226+0000",
+                        "callTime": "00:49:47\"",
+                        "presubscribed": false,
+                        "maxPeriodicRequestDelay": 0,
+                        "applicationMode": "TODO",
+                        "hasGenericApiKey": false,
+                        "version": "1.51.FRANCE",
+                        "connectionType": {
+                            "interface": "SIM",
+                            "protocol": "LINK_LAYER"
+                        },
+                        "language": "FRENCH",
+                        "active": true,
+                        "registrationCode": 12345690
+                    },
+                    "gateways": {
+                        "main": {
+                            "connectionType": "SIM",
+                            "gateway": 43,
+                            "ipAddress": "192.168.151.200",
+                            "port": 1246,
+                            "sslEnabled": true,
+                            "sslProfile": "SIMPLEAUTH",
+                            "provider": "LYRA",
+                            "useBackup": true
+                        },
+                        "backup": {
+                            "connectionType": "SIM",
+                            "id": "string",
+                            "networkType": "string",
+                            "communicationType": "string",
+                            "gateway": 0,
+                            "ipAddress": "string",
+                            "port": 0,
+                            "sslEnabled": true,
+                            "sslProfile": "string",
+                            "provider": "LYRA"
+                        }
+                    },
+                    "tms": {
+                        "connectionType": "SIM",
+                        "ispPhoneNumber": "string",
+                        "destinationHost": "string",
+                        "identifier": 12345678,
+                        "downloadProtection": true,
+                        "downloadProtectionCode": "string",
+                        "tmsSerialLink": "string",
+                        "registeredOnMms": true
+                    },
+                    "sslProfiles": [
+                        {
+                            "name": "SIMPLEAUTH",
+                            "stca2": true
+                        }
+                    ],
+                    "networkDiagnostic": {
+                        "date": "2019-08-24T14:15:22Z",
+                        "gateways": [
+                            {
+                                "diagIp": "192.168.151.200",
+                                "diagPort": 1246,
+                                "diagSslProfile": "SIMPLEAUTH",
+                                "status": "AVAILABLE"
+                            }
+                        ],
+                        "tms": [
+                            {
+                                "diagIp": "192.168.151.200",
+                                "diagPort": 1246,
+                                "diagSslProfile": "SIMPLEAUTH",
+                                "status": "AVAILABLE"
+                            }
+                        ]
+                    },
+                    "links": {
+                        "frontDetailPage": {
+                            "href": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108820,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getallpreparationorders",
+        "executor_version": "v1",
+        "executor_display_name": "Get all preparation orders",
+        "executor_description": "Get all orders from the preparation identified by its id",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/preparations/{preparationCode}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "preparationCode",
+                "value": "",
+                "description": "Preparation code"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1690921888022,
+        "lastModifiedTime": 1690922561524,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "page": {
+                        "number": 0,
+                        "size": 20,
+                        "totalElements": 3,
+                        "totalPages": 1
+                    },
+                    "content": [
+                        {
+                            "id": "12A313G545487511F2132",
+                            "user": "userLogin1",
+                            "time": "2021-07-30T14:57:09Z",
+                            "source": "API",
+                            "context": "UNITARY",
+                            "type": "SEND_MESSAGE",
+                            "label": "Merry christmas single order",
+                            "execution": {
+                                "status": "PUBLISHED",
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z",
+                                "startedAt": "2021-07-30T14:59:09Z"
+                            }
+                        },
+                        {
+                            "id": "12A313G545487511F2789",
+                            "user": "userLogin2",
+                            "time": "2021-07-30T14:57:09Z",
+                            "source": "BO",
+                            "context": "CAMPAIGN",
+                            "type": "LAUNCH_REMOTE_DOWNLOAD",
+                            "campaign": {
+                                "name": "CB 5.5 update campaign",
+                                "archived": false,
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z"
+                            },
+                            "execution": {
+                                "status": "PUBLISHED",
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z",
+                                "startedAt": "2021-07-30T14:59:09Z"
+                            }
+                        },
+                        {
+                            "id": "12A313G545487511F7532",
+                            "user": "userLogin1",
+                            "time": "2021-07-30T14:57:09Z",
+                            "source": "BO",
+                            "context": "INITCODE",
+                            "type": "SETUP_APP",
+                            "initCode": {
+                                "code": "78945612",
+                                "name": "App init with init code",
+                                "archived": false,
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z"
+                            },
+                            "execution": {
+                                "status": "PUBLISHED",
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z",
+                                "startedAt": "2021-07-30T14:59:09Z"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 206,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "partial result",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108812,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createanewpreparation",
+        "executor_version": "v1",
+        "executor_display_name": "Create a new preparation",
+        "executor_description": "This part of the API allows to create a preparation. The preparation can be sent to the POS through the API or be used from the POS Luma application in the admin>preparation menu",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.luma.lyra.com/v1/preparations",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "my beautiful prepration",
+                "fleetCode": "12345690"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690920360809,
+        "lastModifiedTime": 1690920360809,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": 88746312,
+                    "createdAt": "2021-01-18T15:51:35.497+0000",
+                    "updatedAt": "2021-01-18T15:51:35.497+0000",
+                    "name": "Preparation tetra"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "conflict",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108813,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getallpreparations",
+        "executor_version": "v1",
+        "executor_display_name": "Get all preparations",
+        "executor_description": "Get all preparations",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/preparations",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "criteria",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "pageable",
+                "value": "",
+                "description": "minimal Pageable query parameters",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690920595781,
+        "lastModifiedTime": 1690920595781,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "page": {
+                        "number": 0,
+                        "size": 20,
+                        "totalElements": 3,
+                        "totalPages": 1
+                    },
+                    "content": [
+                        {
+                            "code": "45879865",
+                            "createdAt": "2022-03-02T17:32:28Z",
+                            "updatedAt": "2022-03-03T14:02:28Z",
+                            "name": "My preparataion"
+                        },
+                        {
+                            "code": "78996522",
+                            "createdAt": "2022-02-21T17:32:28Z",
+                            "updatedAt": "2022-02-22T17:35:28Z",
+                            "name": "My Other preparation"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 206,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "partial result",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108815,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getapreparation",
+        "executor_version": "v1",
+        "executor_display_name": "Get a preparation",
+        "executor_description": "Get a preparation specified by its id",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/preparations/{preparationCode}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "preparationCode",
+                "value": "",
+                "description": "Preparation code"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690920766226,
+        "lastModifiedTime": 1690920766226,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": "78996522",
+                    "createdAt": "2022-02-21T17:32:28Z",
+                    "updatedAt": "2022-02-22T17:35:28Z",
+                    "name": "My preparation"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108814,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteapreparation",
+        "executor_version": "v1",
+        "executor_display_name": "Delete a preparation",
+        "executor_description": "Delete a preparation specified by its code",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.luma.lyra.com/v1/preparations/{preparationCode}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "preparationCode",
+                "value": "",
+                "description": "Preparation code"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690920701287,
+        "lastModifiedTime": 1690920701287,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108825,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "publishordersfrompreprationlyra",
+        "executor_version": "v1",
+        "executor_display_name": "Publish orders from prepration",
+        "executor_description": "Publish all orders from a preparation to a POS specified by its deviceId",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{deviceId}/preparations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "deviceId",
+                "value": "",
+                "description": "device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "code": "45987523"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690922163995,
+        "lastModifiedTime": 1690922163995,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "code": 88746312,
+                    "createdAt": "2021-01-18T15:51:35.497+0000",
+                    "updatedAt": "2021-01-18T15:51:35.497+0000",
+                    "name": "Preparation tetra"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108830,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "delelepreparationorder",
+        "executor_version": "v1",
+        "executor_display_name": "Delele preparation order",
+        "executor_description": "Delele an order specified by its id from the preparation",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.luma.lyra.com/v1/preparations/{preparationCode}/orders/{orderId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "preparationCode",
+                "value": "",
+                "description": "preparation code"
+            },
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "Order id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1690922379803,
+        "lastModifiedTime": 1690922663249,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108823,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newordertoapreparation",
+        "executor_version": "v1",
+        "executor_display_name": "New order to a preparation",
+        "executor_description": "Add a new order to preparation",
+        "executor_category": "Preparation",
+        "executor_category_group": "Preparation",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.luma.lyra.com/v1/preparations/{preparationCode}/orders",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "preparationCode",
+                "value": "",
+                "description": "preparation code"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "type": "SEND_MESSAGE",
+                "time": "2021-01-31T16:43:00Z",
+                "parameters": {
+                    "onScreen": true,
+                    "onPrinter": false,
+                    "message": "test"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690922033805,
+        "lastModifiedTime": 1690922033805,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "12A313G545487511F2132",
+                    "source": "API",
+                    "context": "UNITARY",
+                    "user": "userLogin1",
+                    "time": "2021-07-30T14:57:09Z",
+                    "type": "SEND_MESSAGE",
+                    "label": "Merry christmas single order",
+                    "parameters": {
+                        "message": "We wish you a merry xmas and a happy new year",
+                        "confirmation": false,
+                        "onScreen": true,
+                        "onPrinter": true
+                    },
+                    "execution": {
+                        "status": "PUBLISHED",
+                        "createdAt": "2021-07-30T14:57:09Z",
+                        "updatedAt": "2021-08-01T01:42:09Z",
+                        "startedAt": "2021-07-30T14:59:09Z"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108810,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteanorder",
+        "executor_version": "v1",
+        "executor_display_name": "Delete an order",
+        "executor_description": "Delete an order specified by the id provided in parameters",
+        "executor_category": "Order",
+        "executor_category_group": "Order",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{deviceId}/orders/{orderId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "deviceId",
+                "value": "",
+                "description": "Device id"
+            },
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "Order id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690919992899,
+        "lastModifiedTime": 1690919992899,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108811,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getanorder",
+        "executor_version": "v1",
+        "executor_display_name": "Get an order",
+        "executor_description": "Get an order specified by the id provided in parameters",
+        "executor_category": "Order",
+        "executor_category_group": "Order",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{deviceId}/orders/{orderId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "deviceId",
+                "value": "",
+                "description": "Device id"
+            },
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "Order id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690920175778,
+        "lastModifiedTime": 1690920175778,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "12A313G545487511F2132",
+                    "source": "API",
+                    "context": "UNITARY",
+                    "user": "userLogin1",
+                    "time": "2021-07-30T14:57:09Z",
+                    "type": "SEND_MESSAGE",
+                    "label": "Merry christmas single order",
+                    "parameters": {
+                        "message": "We wish you a merry xmas and a happy new year",
+                        "confirmation": false,
+                        "onScreen": true,
+                        "onPrinter": true
+                    },
+                    "execution": {
+                        "status": "PUBLISHED",
+                        "createdAt": "2021-07-30T14:57:09Z",
+                        "updatedAt": "2021-08-01T01:42:09Z",
+                        "startedAt": "2021-07-30T14:59:09Z"
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108808,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getdevicesorders",
+        "executor_version": "v1",
+        "executor_display_name": "Get device's orders",
+        "executor_description": "Get all orders of one device.",
+        "executor_category": "Order",
+        "executor_category_group": "Order",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{id}/orders",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Device id"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "preparationCode",
+                "value": "",
+                "description": "Preparation code",
+                "req": false
+            },
+            {
+                "key": "pageable",
+                "value": "",
+                "description": "minimal Pageable query parameters",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690919736453,
+        "lastModifiedTime": 1690919736453,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "page": {
+                        "number": 0,
+                        "size": 20,
+                        "totalElements": 3,
+                        "totalPages": 1
+                    },
+                    "content": [
+                        {
+                            "id": "12A313G545487511F2132",
+                            "user": "userLogin1",
+                            "time": "2021-07-30T14:57:09Z",
+                            "source": "API",
+                            "context": "UNITARY",
+                            "type": "SEND_MESSAGE",
+                            "label": "Merry christmas single order",
+                            "execution": {
+                                "status": "PUBLISHED",
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z",
+                                "startedAt": "2021-07-30T14:59:09Z"
+                            }
+                        },
+                        {
+                            "id": "12A313G545487511F2789",
+                            "user": "userLogin2",
+                            "time": "2021-07-30T14:57:09Z",
+                            "source": "BO",
+                            "context": "CAMPAIGN",
+                            "type": "LAUNCH_REMOTE_DOWNLOAD",
+                            "campaign": {
+                                "name": "CB 5.5 update campaign",
+                                "archived": false,
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z"
+                            },
+                            "execution": {
+                                "status": "PUBLISHED",
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z",
+                                "startedAt": "2021-07-30T14:59:09Z"
+                            }
+                        },
+                        {
+                            "id": "12A313G545487511F7532",
+                            "user": "userLogin1",
+                            "time": "2021-07-30T14:57:09Z",
+                            "source": "BO",
+                            "context": "INITCODE",
+                            "type": "SETUP_APP",
+                            "initCode": {
+                                "code": "78945612",
+                                "name": "App init with init code",
+                                "archived": false,
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z"
+                            },
+                            "execution": {
+                                "status": "PUBLISHED",
+                                "createdAt": "2021-07-30T14:57:09Z",
+                                "updatedAt": "2021-08-01T01:42:09Z",
+                                "startedAt": "2021-07-30T14:59:09Z"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 206,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "partial result",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108805,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createanewdeviceorder",
+        "executor_version": "v1",
+        "executor_display_name": "Create a new device order",
+        "executor_description": "This part of the API provides allows to create and ask the POS to execute a new order such as lauching a TMS download, print a message, initilialize new instances of applications ...",
+        "executor_category": "Order",
+        "executor_category_group": "Order",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{id}/orders",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "type": "SEND_MESSAGE",
+                "time": "2021-01-31T16:43:00Z",
+                "parameters": {
+                    "onScreen": true,
+                    "onPrinter": false,
+                    "message": "test"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690919101734,
+        "lastModifiedTime": 1690919101734,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "ed456a456b45g",
+                    "context": "CAMPAIGN",
+                    "source": "BO",
+                    "deviceId": "664a55a5361142b88e71f45f286bb6cb",
+                    "user": "lionel",
+                    "time": "2019-08-24T14:15:22Z",
+                    "expirationDelay": {
+                        "duration": 26343424,
+                        "unit": "HOUR"
+                    },
+                    "type": "SEND_MESSAGE",
+                    "label": "string",
+                    "parameters": {
+                        "message": "string",
+                        "confirmation": false,
+                        "onScreen": true,
+                        "onPrinter": true
+                    },
+                    "initCode": {
+                        "archived": false,
+                        "code": 887463,
+                        "createdAt": "2021-01-18T15:51:35.497+0000",
+                        "updatedAt": "2021-01-18T15:51:35.497+0000",
+                        "name": "code de preparation"
+                    },
+                    "campaign": {
+                        "archived": false,
+                        "createdAt": "2021-01-18T15:51:35.497+0000",
+                        "updatedAt": "2021-01-18T15:51:35.497+0000",
+                        "name": "code de preparation"
+                    },
+                    "execution": {
+                        "status": "SUCCESS",
+                        "createdAt": "2021-01-18T15:51:35.497+0000",
+                        "updatedAt": "2021-01-18T15:51:35.497+0000",
+                        "startedAt": "2021-01-18T15:51:35.497+0000"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "conflict",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108803,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "devicesapplications",
+        "executor_version": "v1",
+        "executor_display_name": "Device's applications",
+        "executor_description": "Get all applications of one device",
+        "executor_category": "Application",
+        "executor_category_group": "Application",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{deviceId}/preparations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "deviceId",
+                "value": "",
+                "description": "device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690918793504,
+        "lastModifiedTime": 1690918793504,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "comment": "CB Sans Contact",
+                        "domain": "Bancaire",
+                        "version": "33870541",
+                        "publisher": "INGENICO",
+                        "subDomain": "Paiement Proximit\u00e9",
+                        "name": "CB Sans Contact 5.5",
+                        "applicationType": "CB_CONTACT"
+                    },
+                    {
+                        "comment": "CB Contact",
+                        "domain": "Bancaire",
+                        "version": "38530540",
+                        "publisher": "INGENICO",
+                        "subDomain": "Sans Contact",
+                        "name": "CB Contact 5.5",
+                        "applicationType": "CB_CLESS"
+                    }
+                ]
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108827,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "presubscriptionofdevices",
+        "executor_version": "v1",
+        "executor_display_name": "Pre subscription of devices",
+        "executor_description": "Pre subscription of devices",
+        "executor_category": "PreSubscriptionc",
+        "executor_category_group": "PreSubscriptionc",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.luma.lyra.com/v1/presubscriptions",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "clientCode": "01234567",
+                "devices": [
+                    {
+                        "type": "TELIUM",
+                        "serial": "12345WL12345678"
+                    },
+                    {
+                        "type": "TELIUM",
+                        "serial": "WL45678901"
+                    },
+                    {
+                        "type": "TETRA",
+                        "serial": "172487333191009912345678"
+                    },
+                    {
+                        "type": "TETRA",
+                        "serial": "3191009912345678"
+                    },
+                    {
+                        "type": "ENGAGE",
+                        "serial": "123456123"
+                    },
+                    {
+                        "serial": "0001234123456123"
+                    },
+                    {
+                        "mobileNetwork": {
+                            "imei": "0001234123456123"
+                        }
+                    },
+                    {
+                        "mobileNetwork": {
+                            "iccid": "89330126436012345678"
+                        }
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690922271726,
+        "lastModifiedTime": 1690922271726,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "clientCode": 342391,
+                    "devices": [
+                        {
+                            "type": "TELIUM",
+                            "registrationStatus": "PRE_REGISTERED",
+                            "serial": "12345WL12345678 or WL12345678",
+                            "mobileNetwork": {
+                                "iccId": "8934079517039221234",
+                                "imei": "490154203237518"
+                            },
+                            "links": {
+                                "frontDetailPage": {
+                                    "href": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108804,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "devicesmids",
+        "executor_version": "v1",
+        "executor_display_name": "Device's mids",
+        "executor_description": "Get all mids of one device",
+        "executor_category": "MID",
+        "executor_category_group": "MID",
+        "service_provider": "lyra",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.luma.lyra.com/v1/devices/{id}/mids",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Device id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690918966184,
+        "lastModifiedTime": 1690918966184,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "field": "string",
+                    "message": "string"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "date": "2017-07-21T17:32:28Z",
+                        "type": "TLC",
+                        "application": "CB_EMV",
+                        "applicationDescription": "string",
+                        "mid": "392094901",
+                        "siret": "50537904000015",
+                        "sourceApplication": "string",
+                        "itp": "117550310152",
+                        "bankCode": "30003",
+                        "bankName": "Banque GIE CB",
+                        "idsa": "20C7D1B2",
+                        "tasa": "B0'-EMV 5.50 TLP",
+                        "contract": {
+                            "number": "3920949",
+                            "rank": "01"
+                        },
+                        "x25Center": "1963400688801"
+                    },
+                    {
+                        "date": "2017-07-21T17:32:28Z",
+                        "type": "TLC",
+                        "group": "75611",
+                        "address": "10.3.1.26:7810 1963782411811",
+                        "application": "CB_EMV",
+                        "operator": "string",
+                        "applicationDescription": "string",
+                        "mid": "432097601",
+                        "siret": "49533304000015",
+                        "sourceApplication": "string",
+                        "itp": "117550310152",
+                        "bankCode": "30003",
+                        "bankName": "Banque GIE CB",
+                        "idsa": "20C7D1B2",
+                        "tasa": "B0'-EMV 5.50 TLP",
+                        "contract": {
+                            "number": "4320976",
+                            "rank": "01"
+                        },
+                        "x25Center": "1963400688801"
+                    }
+                ]
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

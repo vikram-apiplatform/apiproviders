@@ -1,0 +1,5445 @@
+[
+    {
+        "id": 122754,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listFineTuning",
+        "executor_version": "v1",
+        "executor_display_name": "List Fine Tuning",
+        "executor_description": "Gets a list of all fine-tune jobs owned by the Azure OpenAI resource. The details that are returned for each fine-tune job contain besides its identifier the base model, training and validation files, hyper parameters, time stamps, status and events. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "FineTuning",
+        "executor_category_group": "FineTuning",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://aoairesource.openai.azure.com/openai/fine_tuning/jobs",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            },
+            {
+                "key": "after",
+                "value": "",
+                "description": "Identifier for the last event from the previous pagination request.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Number of events to retrieve. Defaults to 20.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828546847,
+        "lastModifiedTime": 1703828546847,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "hyperparameters": {
+                                "n_epochs": 2
+                            },
+                            "model": "curie",
+                            "fine_tuned_model": "curie.ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                            "training_file": "file-181a1cbdcdcf4677ada87f63a0928099",
+                            "result_files": [
+                                "file-181a1cbdcdcf4677ada87f63a0928099"
+                            ],
+                            "finished_at": 1646127311,
+                            "trained_tokens": 2342,
+                            "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "fine_tuning.job"
+                        }
+                    ],
+                    "object": "list"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122749,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteFineTuning",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Fine Tuning",
+        "executor_description": "Deletes the fine-tune job specified by the given fine-tune-id.",
+        "executor_category": "FineTuning",
+        "executor_category_group": "FineTuning",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://aoairesource.openai.azure.com/openai/fine_tuning/jobs/{fine-tuning-job-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "fine-tuning-job-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828225357,
+        "lastModifiedTime": 1703828225357,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "The fine tune was successfully deleted.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122752,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getEventsFineTuning",
+        "executor_version": "v1",
+        "executor_display_name": "Get Events Fine Tuning",
+        "executor_description": "Gets the events for the fine-tune job specified by the given fine-tune-id. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "FineTuning",
+        "executor_category_group": "FineTuning",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://aoairesource.openai.azure.com/openai/fine_tuning/jobs/{fine-tuning-job-id}/events",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "fine-tuning-job-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            },
+            {
+                "key": "after",
+                "value": "",
+                "description": "Identifier for the last event from the previous pagination request.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Number of events to retrieve. Defaults to 20.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828418601,
+        "lastModifiedTime": 1703828418601,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "has_more": false,
+                    "data": [
+                        {
+                            "id": "ft-event-363dcd7cb4c74539bc53293c1dceef05",
+                            "created_at": 1646126127,
+                            "level": "info",
+                            "message": "Job enqueued. Waiting for jobs ahead to complete.",
+                            "type": "message",
+                            "object": "fine_tuning.job.event"
+                        },
+                        {
+                            "id": "ft-event-8c2a44999790437cb3230e543fa2cf0f",
+                            "created_at": 1646126169,
+                            "level": "info",
+                            "message": "Job started.",
+                            "type": "message",
+                            "object": "fine_tuning.job.event"
+                        },
+                        {
+                            "id": "ft-event-2d47d651d2f3484c8187c88c00078147",
+                            "created_at": 1646126192,
+                            "level": "info",
+                            "message": "Job succeeded.",
+                            "type": "message",
+                            "object": "fine_tuning.job.event"
+                        }
+                    ],
+                    "object": "list"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122745,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "cancelFineTuning",
+        "executor_version": "v1",
+        "executor_display_name": "Cancel Fine Tuning",
+        "executor_description": "Cancels the processing of the fine-tune job specified by the given fine-tune-id.",
+        "executor_category": "FineTuning",
+        "executor_category_group": "FineTuning",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://aoairesource.openai.azure.com/openai/fine_tuning/jobs/{fine-tuning-job-id}/cance",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "fine-tuning-job-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1703827923292,
+        "lastModifiedTime": 1703827991297,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "hyperparameters": {
+                        "n_epochs": 2
+                    },
+                    "model": "curie",
+                    "training_file": "file-181a1cbdcdcf4677ada87f63a0928099",
+                    "finished_at": 1646127311,
+                    "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "status": "canceled",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "fine_tuning.job"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": {
+            "showBodyParamDescription": false,
+            "bodyParamDescription": []
+        },
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122748,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createFineTuning",
+        "executor_version": "v1",
+        "executor_display_name": "Create Fine Tuning",
+        "executor_description": "Creates a job that fine-tunes a specified model from a given training file. Response includes details of the enqueued job including job status and hyper parameters. The name of the fine-tuned model is added to the response once complete.",
+        "executor_category": "FineTuning",
+        "executor_category_group": "FineTuning",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://aoairesource.openai.azure.com/openai/fine_tuning/jobs",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "model": "curie",
+                "training_file": "file-181a1cbdcdcf4677ada87f63a0928099"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828136702,
+        "lastModifiedTime": 1703828136702,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "hyperparameters": {
+                        "n_epochs": 2
+                    },
+                    "model": "curie",
+                    "training_file": "file-181a1cbdcdcf4677ada87f63a0928099",
+                    "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "status": "notRunning",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "fine_tuning.job"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122751,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getFineTuning",
+        "executor_version": "v1",
+        "executor_display_name": "Get Fine Tuning",
+        "executor_description": "Gets details for a single fine-tune job specified by the given fine-tune-id. The details contain the base model, training and validation files, hyper parameters, time stamps, status and events. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "FineTuning",
+        "executor_category_group": "FineTuning",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://aoairesource.openai.azure.com/openai/fine_tuning/jobs/{fine-tuning-job-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "fine-tuning-job-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828307282,
+        "lastModifiedTime": 1703828307282,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "hyperparameters": {
+                        "n_epochs": 2
+                    },
+                    "model": "curie",
+                    "fine_tuned_model": "curie.ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "training_file": "file-181a1cbdcdcf4677ada87f63a0928099",
+                    "result_files": [
+                        "file-181a1cbdcdcf4677ada87f63a0928099"
+                    ],
+                    "finished_at": 1646127311,
+                    "trained_tokens": 2342,
+                    "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "status": "succeeded",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "fine_tuning.job"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122780,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listFineTunes",
+        "executor_version": "v1",
+        "executor_display_name": "List Fine Tunes",
+        "executor_description": "Gets a list of all fine-tune jobs owned by the Azure OpenAI resource. The details that are returned for each fine-tune job contain besides its identifier the base model, training and validation files, hyper parameters, time stamps, status and events. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "FineTunes",
+        "executor_category_group": "FineTunes",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/fine-tunes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1704170447453,
+        "lastModifiedTime": 1704170447453,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "hyperparams": {
+                                "batch_size": 32,
+                                "learning_rate_multiplier": 1,
+                                "n_epochs": 2,
+                                "prompt_loss_weight": 0.1
+                            },
+                            "model": "curie",
+                            "fine_tuned_model": "curie.ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                            "training_files": [
+                                {
+                                    "statistics": {
+                                        "tokens": 42,
+                                        "examples": 23
+                                    },
+                                    "bytes": 140,
+                                    "purpose": "fine-tune",
+                                    "filename": "puppy.jsonl",
+                                    "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                                    "status": "succeeded",
+                                    "created_at": 1646126127,
+                                    "updated_at": 1646127311,
+                                    "object": "file"
+                                }
+                            ],
+                            "result_files": [
+                                {
+                                    "bytes": 32423,
+                                    "purpose": "fine-tune-results",
+                                    "filename": "results.csv",
+                                    "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                                    "status": "succeeded",
+                                    "created_at": 1646126127,
+                                    "updated_at": 1646127311,
+                                    "object": "file"
+                                }
+                            ],
+                            "events": [
+                                {
+                                    "created_at": 1646126127,
+                                    "level": "info",
+                                    "message": "Job enqueued. Waiting for jobs ahead to complete.",
+                                    "object": "fine-tune-event"
+                                },
+                                {
+                                    "created_at": 1646126169,
+                                    "level": "info",
+                                    "message": "Job started.",
+                                    "object": "fine-tune-event"
+                                },
+                                {
+                                    "created_at": 1646126192,
+                                    "level": "info",
+                                    "message": "Job succeeded.",
+                                    "object": "fine-tune-event"
+                                }
+                            ],
+                            "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "fine-tune"
+                        }
+                    ],
+                    "object": "list"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122778,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getFineTunes",
+        "executor_version": "v1",
+        "executor_display_name": "Get Fine Tunes",
+        "executor_description": "Gets details for a single fine-tune job specified by the given fine-tune-id. The details contain the base model, training and validation files, hyper parameters, time stamps, status and events. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "FineTunes",
+        "executor_category_group": "FineTunes",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/fine-tunes/{fine-tune-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "fine-tune-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1704170252337,
+        "lastModifiedTime": 1704170252337,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "hyperparams": {
+                        "batch_size": 32,
+                        "learning_rate_multiplier": 1,
+                        "n_epochs": 2,
+                        "prompt_loss_weight": 0.1
+                    },
+                    "model": "curie",
+                    "fine_tuned_model": "curie.ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "training_files": [
+                        {
+                            "statistics": {
+                                "tokens": 42,
+                                "examples": 23
+                            },
+                            "bytes": 140,
+                            "purpose": "fine-tune",
+                            "filename": "puppy.jsonl",
+                            "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "file"
+                        }
+                    ],
+                    "result_files": [
+                        {
+                            "bytes": 32423,
+                            "purpose": "fine-tune-results",
+                            "filename": "results.csv",
+                            "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "file"
+                        }
+                    ],
+                    "events": [
+                        {
+                            "created_at": 1646126127,
+                            "level": "info",
+                            "message": "Job enqueued. Waiting for jobs ahead to complete.",
+                            "object": "fine-tune-event"
+                        },
+                        {
+                            "created_at": 1646126169,
+                            "level": "info",
+                            "message": "Job started.",
+                            "object": "fine-tune-event"
+                        },
+                        {
+                            "created_at": 1646126192,
+                            "level": "info",
+                            "message": "Job succeeded.",
+                            "object": "fine-tune-event"
+                        }
+                    ],
+                    "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "status": "succeeded",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "fine-tune"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122773,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "cancelFineTunes",
+        "executor_version": "v1",
+        "executor_display_name": "Cancel Fine Tunes",
+        "executor_description": "Cancels the processing of the fine-tune job specified by the given fine-tune-id.",
+        "executor_category": "FineTunes",
+        "executor_category_group": "FineTunes",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{endpoint}/openai/fine-tunes/{fine-tune-id}/cancel",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "fine-tune-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703847341431,
+        "lastModifiedTime": 1703847341431,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "The fine tune has been successfully canceled",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "hyperparams": {
+                        "batch_size": 32,
+                        "learning_rate_multiplier": 1,
+                        "n_epochs": 2,
+                        "prompt_loss_weight": 0.1
+                    },
+                    "model": "curie",
+                    "training_files": [
+                        {
+                            "statistics": {
+                                "tokens": 42,
+                                "examples": 23
+                            },
+                            "bytes": 140,
+                            "purpose": "fine-tune",
+                            "filename": "puppy.jsonl",
+                            "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "file"
+                        }
+                    ],
+                    "events": [
+                        {
+                            "created_at": 1646126127,
+                            "level": "info",
+                            "message": "Job enqueued. Waiting for jobs ahead to complete.",
+                            "object": "fine-tune-event"
+                        },
+                        {
+                            "created_at": 1646126169,
+                            "level": "info",
+                            "message": "Job started.",
+                            "object": "fine-tune-event"
+                        },
+                        {
+                            "created_at": 1646126192,
+                            "level": "info",
+                            "message": "Job canceled.",
+                            "object": "fine-tune-event"
+                        }
+                    ],
+                    "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "status": "canceled",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "fine-tune"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122774,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createFineTunes",
+        "executor_version": "v1",
+        "executor_display_name": "Create Fine Tunes",
+        "executor_description": "Creates a job that fine-tunes a specified model from a given training file. Response includes details of the enqueued job including job status and hyper parameters. The name of the fine-tuned model is added to the response once complete.",
+        "executor_category": "FineTunes",
+        "executor_category_group": "FineTunes",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{endpoint}/openai/fine-tunes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "compute_classification_metrics": true,
+                "classification_n_classes": 4,
+                "model": "curie",
+                "training_file": "file-181a1cbdcdcf4677ada87f63a0928099"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703847448951,
+        "lastModifiedTime": 1703847448951,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": "The fine tune has been successfully created.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "hyperparams": {
+                        "compute_classification_metrics": true,
+                        "classification_n_classes": 4,
+                        "batch_size": 32,
+                        "learning_rate_multiplier": 1,
+                        "n_epochs": 2,
+                        "prompt_loss_weight": 0.1
+                    },
+                    "model": "curie",
+                    "training_files": [
+                        {
+                            "statistics": {
+                                "tokens": 42,
+                                "examples": 23
+                            },
+                            "bytes": 140,
+                            "purpose": "fine-tune",
+                            "filename": "puppy.jsonl",
+                            "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "file"
+                        }
+                    ],
+                    "id": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                    "status": "notRunning",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "fine-tune"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122775,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteFineTunes",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Fine Tunes",
+        "executor_description": "Deletes the fine-tune job specified by the given fine-tune-id.",
+        "executor_category": "FineTunes",
+        "executor_category_group": "FineTunes",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{endpoint}/openai/fine-tunes/{fine-tune-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "fine-tune-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703847520793,
+        "lastModifiedTime": 1703847520793,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "No Content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122779,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getEventsFineTunes",
+        "executor_version": "v1",
+        "executor_display_name": "Get Events Fine Tunes",
+        "executor_description": "Gets the events for the fine-tune job specified by the given fine-tune-id. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "FineTunes",
+        "executor_category_group": "FineTunes",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/fine-tunes/{fine-tune-id}/events",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "fine-tune-id",
+                "value": "",
+                "description": "The identifier of the fine-tune job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            },
+            {
+                "key": "stream",
+                "value": "",
+                "description": "A flag indicating whether to stream events for the fine-tune job. If set to true,",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1704170346888,
+        "lastModifiedTime": 1704170346888,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "created_at": 1646126127,
+                            "level": "info",
+                            "message": "Job enqueued. Waiting for jobs ahead to complete.",
+                            "object": "fine-tune-event"
+                        },
+                        {
+                            "created_at": 1646126169,
+                            "level": "info",
+                            "message": "Job started.",
+                            "object": "fine-tune-event"
+                        },
+                        {
+                            "created_at": 1646126192,
+                            "level": "info",
+                            "message": "Job succeeded.",
+                            "object": "fine-tune-event"
+                        }
+                    ],
+                    "object": "list"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122761,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getamodels",
+        "executor_version": "v1",
+        "executor_display_name": "Get Models",
+        "executor_description": "Gets details for the model specified by the given modelId.",
+        "executor_category": "Models",
+        "executor_category_group": "Models",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/models/{model-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "model-id",
+                "value": "",
+                "description": "The identifier of the model."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703830130371,
+        "lastModifiedTime": 1703830130371,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "capabilities": {
+                        "fine_tune": true,
+                        "inference": true,
+                        "completion": true,
+                        "chat_completion": false,
+                        "embeddings": false
+                    },
+                    "lifecycle_status": "generally-available",
+                    "deprecation": {
+                        "fine_tune": 1677662127,
+                        "inference": 1709284527
+                    },
+                    "id": "curie",
+                    "status": "succeeded",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "model"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122762,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listofModels",
+        "executor_version": "v1",
+        "executor_display_name": "List Models",
+        "executor_description": "Gets a list of all models that are accessible by the Azure OpenAI resource. These include base models as well as all successfully completed fine-tuned models owned by the Azure OpenAI resource.",
+        "executor_category": "Models",
+        "executor_category_group": "Models",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/models",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703830189299,
+        "lastModifiedTime": 1703830189299,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "capabilities": {
+                                "fine_tune": true,
+                                "inference": true,
+                                "completion": true,
+                                "chat_completion": false,
+                                "embeddings": false
+                            },
+                            "lifecycle_status": "generally-available",
+                            "deprecation": {
+                                "fine_tune": 1677662127,
+                                "inference": 1709284527
+                            },
+                            "id": "curie",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "model"
+                        },
+                        {
+                            "model": "curie",
+                            "fine_tune": "ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                            "capabilities": {
+                                "fine_tune": false,
+                                "inference": true,
+                                "completion": true,
+                                "chat_completion": false,
+                                "embeddings": false
+                            },
+                            "lifecycle_status": "generally-available",
+                            "deprecation": {
+                                "inference": 1709284527
+                            },
+                            "id": "curie.ft-72a2792ef7d24ba7b82c7fe4a37e379f",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "model"
+                        }
+                    ],
+                    "object": "list"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122763,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteOperationsImages",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Operations Images",
+        "executor_description": "Deletes an operation (if in terminal state) and all generated and user provided images associated with the operation.",
+        "executor_category": "OperationsImages",
+        "executor_category_group": "OperationsImages",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{endpoint}/openai/operations/images/{operation-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "operation-id",
+                "value": "",
+                "description": "The id of the operation"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703830319174,
+        "lastModifiedTime": 1703830319174,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "NoContent",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122764,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getOperationsImages",
+        "executor_version": "v1",
+        "executor_display_name": "Get Operations Images",
+        "executor_description": "Returns the status of the images operation",
+        "executor_category": "OperationsImages",
+        "executor_category_group": "OperationsImages",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/operations/images/{operation-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "operation-id",
+                "value": "",
+                "description": "The id of the operation"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703830397411,
+        "lastModifiedTime": 1703830397411,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "created": 1679320850,
+                    "result": {
+                        "created": 1679320850,
+                        "data": [
+                            {
+                                "url": "https://aoairesource.blob.core.windows.net/private/images?SAS-token"
+                            }
+                        ]
+                    },
+                    "expires": 1679407255,
+                    "id": "41dc2981-bf72-492a-b4fe-7eed680a1681",
+                    "status": "succeeded"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122766,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getTheFiles",
+        "executor_version": "v1",
+        "executor_display_name": "Get Files",
+        "executor_description": "Gets details for a single file specified by the given file-id including status, size, purpose, etc.",
+        "executor_category": "Files",
+        "executor_category_group": "Files",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/files/{file-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "file-id",
+                "value": "",
+                "description": "The identifier of the file."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703830907325,
+        "lastModifiedTime": 1703830907326,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statistics": {
+                        "tokens": 42,
+                        "examples": 23
+                    },
+                    "bytes": 140,
+                    "purpose": "fine-tune",
+                    "filename": "puppy.jsonl",
+                    "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                    "status": "succeeded",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "file"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122769,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getTheContent",
+        "executor_version": "v1",
+        "executor_display_name": "Get Content",
+        "executor_description": "Gets the content of the file specified by the given file-id. Files can be user uploaded content or generated by the service like result metrics of a fine-tune job.",
+        "executor_category": "Files",
+        "executor_category_group": "Files",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/files/{file-id}/content",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "file-id",
+                "value": "",
+                "description": "The identifier of the file."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703846900864,
+        "lastModifiedTime": 1703846900864,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122765,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteTheFiles",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Files",
+        "executor_description": "Deletes the file with the given file-id. Deletion is also allowed if a file was used, e.g., as training file in a fine-tune job.",
+        "executor_category": "Files",
+        "executor_category_group": "Files",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{endpoint}/openai/files/{file-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "file-id",
+                "value": "",
+                "description": "The identifier of the file."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703830811204,
+        "lastModifiedTime": 1703830811204,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "No Content",
+                "description": "The file was successfully deleted.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122771,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listFile",
+        "executor_version": "v1",
+        "executor_display_name": "List Files",
+        "executor_description": "Gets a list of all files owned by the Azure OpenAI resource. These include user uploaded content like files with purpose \"fine-tune\" for training or validation of fine-tunes models as well as files that are generated by the service such as \"fine-tune-results\" which contains various metrics for the corresponding fine-tune job.",
+        "executor_category": "Files",
+        "executor_category_group": "Files",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/files",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703847101727,
+        "lastModifiedTime": 1703847101727,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "statistics": {
+                                "tokens": 42,
+                                "examples": 23
+                            },
+                            "bytes": 140,
+                            "purpose": "fine-tune",
+                            "filename": "puppy.jsonl",
+                            "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "file"
+                        },
+                        {
+                            "bytes": 32423,
+                            "purpose": "fine-tune-results",
+                            "filename": "results.csv",
+                            "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                            "status": "succeeded",
+                            "created_at": 1646126127,
+                            "updated_at": 1646127311,
+                            "object": "file"
+                        }
+                    ],
+                    "object": "list"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122772,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "uploadaFiles",
+        "executor_version": "v1",
+        "executor_display_name": "Upload",
+        "executor_description": "Creates a new file entity by uploading data from a local machine. Uploaded files can, for example, be used for training or evaluating fine-tuned models.",
+        "executor_category": "Files",
+        "executor_category_group": "Files",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{endpoint}/openai/files",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703847220062,
+        "lastModifiedTime": 1703847220062,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": "The file has been successfully created.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "purpose": "fine-tune",
+                    "filename": "puppy.jsonl",
+                    "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                    "status": "notRunning",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "file"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122770,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "import",
+        "executor_version": "v1",
+        "executor_display_name": "Import",
+        "executor_description": "Creates a new file entity by importing data from a provided url. Uploaded files can, for example, be used for training or evaluating fine-tuned models.",
+        "executor_category": "Files",
+        "executor_category_group": "Files",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{endpoint}/openai/files/import",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "purpose": "fine-tune",
+                "filename": "puppy.jsonl",
+                "content_url": "https://www.contoso.com/trainingdata/puppy.jsonl"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703847003024,
+        "lastModifiedTime": 1703847003024,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": "The file has been successfully created.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "purpose": "fine-tune",
+                    "filename": "puppy.jsonl",
+                    "id": "file-181a1cbdcdcf4677ada87f63a0928099",
+                    "status": "notRunning",
+                    "created_at": 1646126127,
+                    "updated_at": 1646127311,
+                    "object": "file"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122747,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postrequestageneratedimage",
+        "executor_version": "v1",
+        "executor_display_name": "Request a generated image",
+        "executor_description": "Generate a batch of images from a text caption.",
+        "executor_category": "Imagegeneration",
+        "executor_category_group": "Imagegeneration",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/images/generations:submit",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "submit",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {
+                "prompt": "An avocado chair",
+                "size": "512x512",
+                "n": 3
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828125822,
+        "lastModifiedTime": 1703828125822,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "f508bcf2-e651-4b4b-85a7-58ad77981ffa",
+                    "status": "notRunning"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122746,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "requestageneratedimages",
+        "executor_version": "v1",
+        "executor_display_name": "Request a generated image",
+        "executor_description": "Generate a batch of images from a text caption.",
+        "executor_category": "Imagegeneration",
+        "executor_category_group": "Imagegeneration",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/images/generations:submit",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "submit",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {
+                "prompt": "An avocado chair",
+                "size": "512x512",
+                "n": 3
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828034321,
+        "lastModifiedTime": 1703828034321,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "f508bcf2-e651-4b4b-85a7-58ad77981ffa",
+                    "status": "notRunning"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122750,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getageneratedimageresult",
+        "executor_version": "v1",
+        "executor_display_name": "Get a generated image result",
+        "executor_description": "Use this API to retrieve the results of an image generation operation. Image generation is currently only available with api-version=2023-06-01-preview.",
+        "executor_category": "Imagegeneration",
+        "executor_category_group": "Imagegeneration",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/operations/images/{operation-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "operation-id",
+                "value": "",
+                "description": "The GUID that identifies the original image generation request."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828288501,
+        "lastModifiedTime": 1703828288501,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "created": 1685064331,
+                    "expires": 1685150737,
+                    "id": "4b755937-3173-4b49-bf3f-da6702a3971a",
+                    "result": {
+                        "data": [
+                            {
+                                "url": "<URL_TO_IMAGE>"
+                            },
+                            {
+                                "url": "<URL_TO_NEXT_IMAGE>"
+                            }
+                        ]
+                    },
+                    "status": "succeeded"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122753,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteageneratedimagefromtheserver",
+        "executor_version": "v1",
+        "executor_display_name": "Delete a generated image from the server",
+        "executor_description": "You can use the operation ID returned by the request to delete the corresponding image from the Azure server. Generated images are automatically deleted after 24 hours by default, but you can trigger the deletion earlier if you want to.",
+        "executor_category": "Imagegeneration",
+        "executor_category_group": "Imagegeneration",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/operations/images/{operation-id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "operation-id",
+                "value": "",
+                "description": "The GUID that identifies the original image generation request."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828443896,
+        "lastModifiedTime": 1703828443896,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "created": 1685064331,
+                    "expires": 1685150737,
+                    "id": "4b755937-3173-4b49-bf3f-da6702a3971a",
+                    "result": {
+                        "data": [
+                            {
+                                "url": "<URL_TO_IMAGE>"
+                            },
+                            {
+                                "url": "<URL_TO_NEXT_IMAGE>"
+                            }
+                        ]
+                    },
+                    "status": "succeeded"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122744,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "requestageneratedimage",
+        "executor_version": "v1",
+        "executor_display_name": "Request a generated image",
+        "executor_description": "Generate and retrieve a batch of images from a text caption.",
+        "executor_category": "Imagegeneration",
+        "executor_category_group": "Imagegeneration",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/images/generations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "deployment-id",
+                "value": "",
+                "description": "The name of your DALL-E 3 model deployment such as MyDalle3. You're required to first deploy a DALL-E 3 model before you can make calls."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {
+                "prompt": "An avocado chair",
+                "size": "1024x1024",
+                "n": 3,
+                "quality": "hd",
+                "style": "vivid"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703827866151,
+        "lastModifiedTime": 1703827866151,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "created": 1698116662,
+                    "data": [
+                        {
+                            "url": "url to the image",
+                            "revised_prompt": "the actual prompt that was used"
+                        },
+                        {
+                            "url": "url to the image"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122760,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listIngestionJobs",
+        "executor_version": "v1",
+        "executor_display_name": "List Ingestion Jobs",
+        "executor_description": "Lists the status of all ingestion jobs that ran in the past 48 hours in the form of paginated collections.",
+        "executor_category": "IngestionJobs",
+        "executor_category_group": "IngestionJobs",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/extensions/on-your-data/ingestion-jobs",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703829868432,
+        "lastModifiedTime": 1703829868432,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "value": [
+                        {
+                            "id": "test2",
+                            "dataRefreshIntervalInMinutes": 60,
+                            "completionAction": "cleanUpAssets",
+                            "status": "running",
+                            "warnings": [],
+                            "progress": {
+                                "stageProgress": [
+                                    {
+                                        "name": "Preprocessing",
+                                        "totalItems": 100,
+                                        "processedItems": 100
+                                    },
+                                    {
+                                        "name": "Indexing",
+                                        "totalItems": 200,
+                                        "processedItems": 50
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "test1",
+                            "dataRefreshIntervalInMinutes": 60,
+                            "completionAction": "cleanUpAssets",
+                            "status": "succeeded",
+                            "warnings": []
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122758,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createIngestionJobs",
+        "executor_version": "v1",
+        "executor_display_name": "Create Ingestion Jobs",
+        "executor_description": "Gets a list of all fine-tune jobs owned by the Azure OpenAI resource. The details that are returned for each fine-tune job contain besides its identifier the base model, training and validation files, hyper parameters, time stamps, status and events. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "IngestionJobs",
+        "executor_category_group": "IngestionJobs",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{endpoint}/openai/extensions/on-your-data/ingestion-jobs/{jobId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "jobId",
+                "value": "",
+                "description": "The id of the ingestion job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "searchServiceEndpoint",
+                "value": "",
+                "description": "The endpoint to the search service resource where the ingestion assets will be created.",
+                "req": false
+            },
+            {
+                "key": "searchServiceAdminKey",
+                "value": "",
+                "description": "The admin key to the search service resource if Managed Identity is not setup.",
+                "req": false
+            },
+            {
+                "key": "storageConnectionString",
+                "value": "",
+                "description": "The connection string to the blob storage account hosting the data that will be ingested.",
+                "req": false
+            },
+            {
+                "key": "storageContainer",
+                "value": "",
+                "description": "The name of the container hosting the data that will be ingested.",
+                "req": false
+            },
+            {
+                "key": "embeddingEndpoint",
+                "value": "",
+                "description": "The endpoint of the embeddings model to be used for embeddings calculations if enabled.",
+                "req": false
+            },
+            {
+                "key": "embeddingKey",
+                "value": "",
+                "description": "The key to use for accessing the embeddings model if enabled and if Managed Identity is not setup.",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "dataRefreshIntervalInMinutes": 60,
+                "completionAction": "cleanUpAssets"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703829645808,
+        "lastModifiedTime": 1703829645808,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "test",
+                    "dataRefreshIntervalInMinutes": 60,
+                    "completionAction": "cleanUpAssets",
+                    "status": "notRunning",
+                    "warnings": [],
+                    "progress": {
+                        "stageProgress": [
+                            {
+                                "name": "Preprocessing",
+                                "totalItems": 0,
+                                "processedItems": 0
+                            },
+                            {
+                                "name": "Indexing",
+                                "totalItems": 0,
+                                "processedItems": 0
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122759,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getIngestionJobs",
+        "executor_version": "v1",
+        "executor_display_name": "Get Ingestion Jobs",
+        "executor_description": "Gets the status of an ingestion job by its id.",
+        "executor_category": "IngestionJobs",
+        "executor_category_group": "IngestionJobs",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{endpoint}/openai/extensions/on-your-data/ingestion-jobs/{jobId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            },
+            {
+                "key": "jobId",
+                "value": "",
+                "description": "The id of the ingestion job."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703829788607,
+        "lastModifiedTime": 1703829788607,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Success",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "test-index",
+                    "dataRefreshIntervalInMinutes": 60,
+                    "completionAction": "cleanUpAssets",
+                    "status": "running",
+                    "warnings": [],
+                    "progress": {
+                        "stageProgress": [
+                            {
+                                "name": "Preprocessing",
+                                "totalItems": 100,
+                                "processedItems": 100
+                            },
+                            {
+                                "name": "Indexing",
+                                "totalItems": 200,
+                                "processedItems": 50
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122742,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listingestionjobs",
+        "executor_version": "v1",
+        "executor_display_name": "List ingestion jobs",
+        "executor_description": "List ingestion jobs",
+        "executor_category": "Completionsextensions",
+        "executor_category_group": "Completionsextensions",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://YOUR_RESOURCE_NAME.openai.azure.com/openai/extensions/on-your-data/ingestion-jobs",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703827494004,
+        "lastModifiedTime": 1703827494004,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "value": [
+                        {
+                            "id": "test-1",
+                            "dataRefreshIntervalInMinutes": 10,
+                            "completionAction": "cleanUpAssets",
+                            "status": "succeeded",
+                            "warnings": []
+                        },
+                        {
+                            "id": "test-2",
+                            "dataRefreshIntervalInMinutes": 10,
+                            "completionAction": "cleanUpAssets",
+                            "status": "failed",
+                            "error": {
+                                "code": "BadRequest",
+                                "message": "Could not execute skill because the Web Api request failed."
+                            },
+                            "warnings": []
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122741,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "startaningestionjob",
+        "executor_version": "v1",
+        "executor_display_name": "Start an ingestion job",
+        "executor_description": "Start an ingestion job",
+        "executor_category": "Completionsextensions",
+        "executor_category_group": "Completionsextensions",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://YOUR_RESOURCE_NAME.openai.azure.com/openai/extensions/on-your-data/ingestion-jobs/JOB_NAME",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703827324745,
+        "lastModifiedTime": 1703827324745,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "test-1",
+                    "dataRefreshIntervalInMinutes": 10,
+                    "completionAction": "cleanUpAssets",
+                    "status": "running",
+                    "warnings": [],
+                    "progress": {
+                        "stageProgress": [
+                            {
+                                "name": "Preprocessing",
+                                "totalItems": 100,
+                                "processedItems": 100
+                            },
+                            {
+                                "name": "Indexing",
+                                "totalItems": 350,
+                                "processedItems": 40
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122740,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "usechatcompletionsextensions",
+        "executor_version": "v1",
+        "executor_display_name": "Use chat completions extensions",
+        "executor_description": "Extensions for chat completions, for example Azure OpenAI on your data.",
+        "executor_category": "Completionsextensions",
+        "executor_category_group": "Completionsextensions",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/extensions/chat/completions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "deployment-id",
+                "value": "",
+                "description": "The name of your model deployment. You're required to first deploy a model before you can make calls."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {
+                "temperature": 0,
+                "max_tokens": 1000,
+                "top_p": 1,
+                "dataSources": [
+                    {
+                        "type": "AzureCognitiveSearch",
+                        "parameters": {
+                            "endpoint": "'YOUR_AZURE_COGNITIVE_SEARCH_ENDPOINT'",
+                            "key": "'YOUR_AZURE_COGNITIVE_SEARCH_KEY'",
+                            "indexName": "'YOUR_AZURE_COGNITIVE_SEARCH_INDEX_NAME'"
+                        }
+                    }
+                ],
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": "What are the differences between Azure Machine Learning and Azure AI services?"
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1703827166679,
+        "lastModifiedTime": 1703828956725,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "12345678-1a2b-3c4e5f-a123-12345678abcd",
+                    "model": "",
+                    "created": 1684304924,
+                    "object": "chat.completion",
+                    "choices": [
+                        {
+                            "index": 0,
+                            "messages": [
+                                {
+                                    "role": "tool",
+                                    "content": "{\"citations\": [{\"content\": \"\\nAzure AI services are cloud-based artificial intelligence (AI) services...\", \"id\": null, \"title\": \"What is Azure AI services\", \"filepath\": null, \"url\": null, \"metadata\": {\"chunking\": \"orignal document size=250. Scores=0.4314117431640625 and 1.72564697265625.Org Highlight count=4.\"}, \"chunk_id\": \"0\"}], \"intent\": \"[\\\"Learn about Azure AI services.\\\"]\"}",
+                                    "end_turn": false
+                                },
+                                {
+                                    "role": "assistant",
+                                    "content": " \nAzure AI services are cloud-based artificial intelligence (AI) services that help developers build cognitive intelligence into applications without having direct AI or data science skills or knowledge. [doc1]. Azure Machine Learning is a cloud service for accelerating and managing the machine learning project lifecycle. [doc1].",
+                                    "end_turn": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": {
+            "showBodyParamDescription": false,
+            "bodyParamDescription": []
+        },
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122743,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getthestatusofaningestionjob",
+        "executor_version": "v1",
+        "executor_display_name": "Get the status of an ingestion job",
+        "executor_description": "Get the status of an ingestion job",
+        "executor_category": "Completionsextensions",
+        "executor_category_group": "Completionsextensions",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://YOUR_RESOURCE_NAME.openai.azure.com/openai/extensions/on-your-data/ingestion-jobs/YOUR_JOB_NAME",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703827679759,
+        "lastModifiedTime": 1703827679759,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "test-1",
+                    "dataRefreshIntervalInMinutes": 10,
+                    "completionAction": "cleanUpAssets",
+                    "status": "succeeded",
+                    "warnings": []
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122755,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "requestaspeechtotexttranscription",
+        "executor_version": "v1",
+        "executor_display_name": "Request a speech to text transcription",
+        "executor_description": "Transcribes an audio file.",
+        "executor_category": "Speechtotext",
+        "executor_category_group": "Speechtotext",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/audio/transcriptions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "deployment-id",
+                "value": "",
+                "description": "The name of your Whisper model deployment such as MyWhisperDeployment. You're required to first deploy a Whisper model before you can make calls."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This value follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828686951,
+        "lastModifiedTime": 1703828686951,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122756,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "requestaspeechtotexttranslation",
+        "executor_version": "v1",
+        "executor_display_name": " Request a speech to text translation",
+        "executor_description": "Translates an audio file from another language into English.",
+        "executor_category": "Speechtotext",
+        "executor_category_group": "Speechtotext",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/audio/translations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "deployment-id",
+                "value": "",
+                "description": "The name of your Whisper model deployment such as MyWhisperDeployment. You're required to first deploy a Whisper model before you can make calls."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This value follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703828825802,
+        "lastModifiedTime": 1703828825802,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "text": "Hello, my name is Wolfgang and I come from Germany. Where are you heading today?"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122738,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createanembedding",
+        "executor_version": "v1",
+        "executor_display_name": "Create an embedding",
+        "executor_description": "Get a vector representation of a given input that can be easily consumed by machine learning models and other algorithms.",
+        "executor_category": "Embeddings",
+        "executor_category_group": "Embeddings",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/embeddings",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "deployment-id",
+                "value": "",
+                "description": "The name of your model deployment. You're required to first deploy a model before you can make calls."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703826310489,
+        "lastModifiedTime": 1703826310489,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "object": "list",
+                    "data": [
+                        {
+                            "object": "embedding",
+                            "embedding": [],
+                            "index": 0
+                        }
+                    ],
+                    "model": "text-similarity-babbage:001"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122739,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createchatcompletions",
+        "executor_version": "v1",
+        "executor_display_name": "Create chat completions",
+        "executor_description": "Create completions for chat messages with the GPT-35-Turbo and GPT-4 models.",
+        "executor_category": "Embeddings",
+        "executor_category_group": "Embeddings",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/chat/completions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "deployment-id",
+                "value": "",
+                "description": "The name of your model deployment. You're required to first deploy a model before you can make calls."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703826892503,
+        "lastModifiedTime": 1703826892503,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "chatcmpl-6v7mkQj980V1yBec6ETrKPRqFjNw9",
+                    "object": "chat.completion",
+                    "created": 1679072642,
+                    "model": "gpt-35-turbo",
+                    "usage": {
+                        "prompt_tokens": 58,
+                        "completion_tokens": 68,
+                        "total_tokens": 126
+                    },
+                    "choices": [
+                        {
+                            "message": {
+                                "role": "assistant",
+                                "content": "Yes, other Azure AI services also support customer managed keys. Azure AI services offer multiple options for customers to manage keys, such as using Azure Key Vault, customer-managed keys in Azure Key Vault or customer-managed keys through Azure Storage service. This helps customers ensure that their data is secure and access to their services is controlled."
+                            },
+                            "finish_reason": "stop",
+                            "index": 0
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122757,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "generateImages",
+        "executor_version": "v1",
+        "executor_display_name": "Generate Images",
+        "executor_description": "Gets a list of all fine-tune jobs owned by the Azure OpenAI resource. The details that are returned for each fine-tune job contain besides its identifier the base model, training and validation files, hyper parameters, time stamps, status and events. Events are created when the job status changes, e.g. running or complete, and when results are uploaded.",
+        "executor_category": "Images",
+        "executor_category_group": "Images",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{endpoint}/openai/images/generations:submit",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "submit",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "endpoint",
+                "value": "",
+                "description": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name)."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The requested API version.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "prompt": "An avocado chair",
+                "size": "512x512",
+                "n": 3
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1703829446549,
+        "lastModifiedTime": 1703829446549,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Accepted",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "f508bcf2-e651-4b4b-85a7-58ad77981ffa",
+                    "status": "notRunning"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122737,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createacompletion",
+        "executor_version": "v1",
+        "executor_display_name": "Create a completion",
+        "executor_description": "With the Completions operation, the model will generate one or more predicted completions based on a provided prompt. The service can also return the probabilities of alternative tokens at each position.",
+        "executor_category": "Completions",
+        "executor_category_group": "Completions",
+        "service_provider": "microsoftazureopenai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/completions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "your-resource-name",
+                "value": "",
+                "description": "The name of your Azure OpenAI Resource."
+            },
+            {
+                "key": "deployment-id",
+                "value": "",
+                "description": "The deployment name you chose when you deployed the model."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-version",
+                "value": "",
+                "description": "The API version to use for this operation. This follows the YYYY-MM-DD format.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1703825961790,
+        "lastModifiedTime": 1703826039993,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "cmpl-4kGh7iXtjW4lc9eGhff6Hp8C7btdQ",
+                    "object": "text_completion",
+                    "created": 1646932609,
+                    "model": "ada",
+                    "choices": [
+                        {
+                            "text": ", a dark line crossed",
+                            "index": 0,
+                            "logprobs": null,
+                            "finish_reason": "length"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": {
+            "showBodyParamDescription": false,
+            "bodyParamDescription": []
+        },
+        "vid": null,
+        "nid": null
+    }
+]

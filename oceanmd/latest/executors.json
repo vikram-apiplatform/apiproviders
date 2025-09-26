@@ -1,0 +1,4787 @@
+[
+    {
+        "id": 98059,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveapatientnote",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve a patient note",
+        "executor_description": "If the Ocean session id is provided, it will retrieve the corresponding encrypted note, otherwise the first non-downloaded encrypted patient note will be retrieved. The same non-downloaded note will be returned until it has been marked downloaded via the PUT API.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}/notes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "oceanSessionId",
+                "value": "",
+                "description": "Ocean patient reference",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686683754115,
+        "lastModifiedTime": 1686683754115,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98032,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "findpatientswithpendingforms",
+        "executor_version": "v1",
+        "executor_display_name": "Find patients with pending forms.",
+        "executor_description": "List Ocean patients with pending actions. This includes patients with pending downloads & 'stub' patients awaiting upload of patient data from external sources. (The latter is the Ocean \"patient pull\" integration model.)",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "cohort",
+                "value": "",
+                "description": "Name of cohort the patient belongs to.",
+                "req": false
+            },
+            {
+                "key": "extPatientRef",
+                "value": "",
+                "description": "External patient reference (e.g. EMR ID)",
+                "req": false
+            },
+            {
+                "key": "healthNumberHash",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686631236970,
+        "lastModifiedTime": 1686631236970,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "paitent not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98055,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addanEFormtoqueue",
+        "executor_version": "v1",
+        "executor_display_name": "Add an EForm to queue",
+        "executor_description": "Add a specific EForm to a patient's queue using the form ref.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}/formQueue",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686683508554,
+        "lastModifiedTime": 1686683508554,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98045,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateastubpatient",
+        "executor_version": "v1",
+        "executor_display_name": "Update a stub patient",
+        "executor_description": "Provides data for an existing \"stub\" patient (Ocean \"Patient Pull\" model).",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686682637254,
+        "lastModifiedTime": 1686682637254,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "no avaliable refs for paitent",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "updated patient",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98044,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveapatient",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve a patient",
+        "executor_description": "Retrieves encrypted patient data from the Ocean portal. The encrypted patient data is transmitted as a JSON byte array. The necessary values for decryption are included as HTTP headers.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686682453399,
+        "lastModifiedTime": 1686682453399,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "no avaliable refs for paitent",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98053,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievealistofeformsqueuedforapatient",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve a list of eforms queued for a patient",
+        "executor_description": "Retrieve a list of eforms queued for a patient",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}/formQueue",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686683396393,
+        "lastModifiedTime": 1686683396393,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98057,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "removeanEFormfromqueue",
+        "executor_version": "v1",
+        "executor_display_name": "Remove an EForm from queue",
+        "executor_description": "Remove an EForm from a patient's queue using the form ref.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}/formQueue",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "formRef",
+                "value": "",
+                "description": "The ref number(s) for the form(s) to be deleted",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686683628410,
+        "lastModifiedTime": 1686683628410,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98047,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createaPatientMessagelinkBETA",
+        "executor_version": "v1",
+        "executor_display_name": "Create a Patient Message Link [BETA]",
+        "executor_description": "Specify forms and other parameters to create a patient message link for a specified patient. This will return the link to the patient message. The caller is responsible for adding the one time key to the end of the link as a hash. Note: This endpoint is in beta and subject to change in subsequent updates.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "linkExpiryDays",
+                "value": "",
+                "description": "The number of days before the patient message expires and is no longer accessible",
+                "req": false
+            },
+            {
+                "key": "redirectUrl",
+                "value": "",
+                "description": "A url to redirect to when the patient message is completed",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686682832325,
+        "lastModifiedTime": 1686682832325,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "no avaliable refs for paitent",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98042,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createapatient",
+        "executor_version": "v1",
+        "executor_display_name": "Create a patient",
+        "executor_description": "Create a stub patient in Ocean given the required information, for an example of how to set up the data needed, check Example: Encrypt a Patient. The endpoint will return the Ocean patient reference of the created patient.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "encryptedHealthNumber",
+                "value": "",
+                "description": "Encrypted Health number hash",
+                "req": false
+            },
+            {
+                "key": "extPatientRef",
+                "value": "",
+                "description": "External patient ref specified by the EMR",
+                "req": false
+            },
+            {
+                "key": "healthNumberHash",
+                "value": "",
+                "description": "Health number hash",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": 123,
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686682309259,
+        "lastModifiedTime": 1686682309259,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "patient created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "no avaliable refs for paitent",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98063,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "markapatientasdownloaded",
+        "executor_version": "v1",
+        "executor_display_name": "Mark a patient as downloaded",
+        "executor_description": "Marks an Ocean note downloaded or resets the downloaded status on all notes. One of resetAllNotes or noteId must be specified. This API must be called after each note is successfully downloaded and decrypted.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}/notes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "noteId",
+                "value": "",
+                "description": "Marks the corresponding note as downloaded",
+                "req": false
+            },
+            {
+                "key": "resetAllNotes",
+                "value": "",
+                "description": "If specified, all patient notes will be made available for download again",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686683956107,
+        "lastModifiedTime": 1686683956107,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "error updating the patient",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98067,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "checkapatientstatus",
+        "executor_version": "v1",
+        "executor_display_name": "Check a patient's status",
+        "executor_description": "Retrieve the patient status",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}/status",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686684136610,
+        "lastModifiedTime": 1686684136610,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "error updating the patient",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98064,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveallthenotedetailsavailableonapatient",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve all the note details available on a patient",
+        "executor_description": "Retrieve all the note details corresponding to a specific ocean patient. To retrieve a note's encrypted data, use the Retrieve a note endpoint. Patients and notes may be removed at anytime by users or by purge rules and so some notes may not appear. For more information, click here.",
+        "executor_category": "Patients",
+        "executor_category_group": "Patients",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/patients/{patientRef}/notes/all",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "patientRef",
+                "value": "",
+                "description": "Ocean patient reference"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686684070626,
+        "lastModifiedTime": 1686684070626,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "patient not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "error updating the patient",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98081,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "exportcustomreferralanalytics",
+        "executor_version": "v1",
+        "executor_display_name": "Export custom referral analytics",
+        "executor_description": "Export referral analytics based on a date range and a custom template. The list of resulting objects contain the fields determined by template given in the request.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/customAnalytics",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "modifiedEnd",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): End date",
+                "req": false
+            },
+            {
+                "key": "modifiedStart",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): Start date",
+                "req": false
+            },
+            {
+                "key": "template",
+                "value": "",
+                "description": "Template name",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686685403350,
+        "lastModifiedTime": 1686685403350,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98098,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "saveareferralattachment",
+        "executor_version": "v1",
+        "executor_display_name": "Save a referral attachment",
+        "executor_description": "Save a referral attachment specifying the encrypted data.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/attachments",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686687143961,
+        "lastModifiedTime": 1686687143961,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "appointment not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98095,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteareferralappointment",
+        "executor_version": "v1",
+        "executor_display_name": "Delete a referral appointment",
+        "executor_description": "Delete a specific referral appointment using an index.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/appointments/{apptIndex}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "The index of the appointment that will be deleted"
+            },
+            {
+                "key": "apptIndex",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686687026959,
+        "lastModifiedTime": 1686687026959,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "appointment not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98071,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "submitinitialinfoforareferral",
+        "executor_version": "v1",
+        "executor_display_name": "Submit initial info for a referral",
+        "executor_description": "Submit the preliminary information for an incomplete referral. These incomplete referrals are shown in the site's Incomplete eReferral outbox, similar to a referral that has been \"Saved for Later\" in Ocean's Send Referral UI. These records may be used to pre-populate the referral information in Ocean's Send Referral UI when loaded using the returned initialInfoId and initialInfoAccessKey.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referralInitialInfos",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "listingRef",
+                "value": "",
+                "description": "The reference for the referral listing",
+                "req": false
+            },
+            {
+                "key": "offeringRef",
+                "value": "",
+                "description": "The reference for the health service offered by the referral listing",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686684525117,
+        "lastModifiedTime": 1686684525117,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Referral created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98110,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "markasexported",
+        "executor_version": "v1",
+        "executor_display_name": "Mark as exported",
+        "executor_description": "Mark the referral as exported.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/markExported",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "exportedBy",
+                "value": "",
+                "description": "The user that is requesting the export",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686688572410,
+        "lastModifiedTime": 1686688572410,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "appointment not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98075,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "loadareferralsinitialinfo",
+        "executor_version": "v1",
+        "executor_display_name": "Load a referral's initial info",
+        "executor_description": "Load a referral's initial info.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referralInitialInfos/{referralInitialInfoId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralInitialInfoId",
+                "value": "",
+                "description": "Identifier for a given referral's initial info"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "initialInfoAccessKey",
+                "value": "",
+                "description": "Access key for a given referral's initial info",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686684924092,
+        "lastModifiedTime": 1686684924092,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98084,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveareferral",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve a referral",
+        "executor_description": "Retrieves a referral with a given ref.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686685887702,
+        "lastModifiedTime": 1686685887702,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Refferral not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98092,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addareferralappointment",
+        "executor_version": "v1",
+        "executor_display_name": "Add a referral appointment",
+        "executor_description": "Add a referral appointment.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/appointments",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "apptTime",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): scheduled appointment time",
+                "req": false
+            },
+            {
+                "key": "apptType",
+                "value": "",
+                "description": "The type of appointment",
+                "req": false
+            },
+            {
+                "key": "waitTime",
+                "value": "",
+                "description": "Specify the wait time for the appointment",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686686658632,
+        "lastModifiedTime": 1686686658632,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "conflict trying to add appointments",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98105,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "convertareferral",
+        "executor_version": "v1",
+        "executor_display_name": "Convert a referral",
+        "executor_description": "Allows for conversion of eReferrals to eConsults and vice versa along with the option of adding a comment",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/communicationType",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "communicationType",
+                "value": "",
+                "description": "The type of communication to be used for the referral. Note: PROVIDER_MESSAGE is deprecated and may be changed or removed in the future. For eConsult functionality, use E_CONSULT.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "attachmentRefDtos": [
+                    {
+                        "emrFileId": "string",
+                        "encryptedEncryptionKey": {
+                            "data": "string",
+                            "iv": "string"
+                        },
+                        "encryptedFileName": {
+                            "data": "string",
+                            "iv": "string"
+                        },
+                        "fileName": "string",
+                        "fileRef": "string",
+                        "fromEmr": true
+                    }
+                ],
+                "attachmentSrc": "string",
+                "commentDate": "2023-06-13T18:40:56Z",
+                "eConsultData": {
+                    "minutes": 0,
+                    "minutesReason": "string"
+                },
+                "encryptedMsg": {
+                    "data": "string",
+                    "iv": "string"
+                },
+                "message": "string",
+                "ref": "string",
+                "reviewed": {
+                    "date": "2023-06-13T18:40:56Z",
+                    "user": "string"
+                },
+                "showForOtherSites": true,
+                "siteNum": "string",
+                "tags": [
+                    "APPOINTMENT_DECLINED"
+                ],
+                "targetDesc": "string",
+                "targetRtRef": "string",
+                "targetSiteNum": "string",
+                "targetUserName": "string",
+                "userFullName": "string",
+                "userName": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686687529620,
+        "lastModifiedTime": 1686687529620,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "appointment not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "conflict trying to add an econsult",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98112,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addamessage",
+        "executor_version": "v1",
+        "executor_display_name": "Add a message",
+        "executor_description": "Add a referral comment to an existing referral.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/markExported",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "attachmentRefDtos": [
+                    {
+                        "emrFileId": "string",
+                        "encryptedEncryptionKey": {
+                            "data": "string",
+                            "iv": "string"
+                        },
+                        "encryptedFileName": {
+                            "data": "string",
+                            "iv": "string"
+                        },
+                        "fileName": "string",
+                        "fileRef": "string",
+                        "fromEmr": true
+                    }
+                ],
+                "attachmentSrc": "string",
+                "commentDate": "2023-06-13T18:40:56Z",
+                "eConsultData": {
+                    "minutes": 0,
+                    "minutesReason": "string"
+                },
+                "encryptedMsg": {
+                    "data": "string",
+                    "iv": "string"
+                },
+                "message": "string",
+                "ref": "string",
+                "reviewed": {
+                    "date": "2023-06-13T18:40:56Z",
+                    "user": "string"
+                },
+                "showForOtherSites": true,
+                "siteNum": "string",
+                "tags": [
+                    "APPOINTMENT_DECLINED"
+                ],
+                "targetDesc": "string",
+                "targetRtRef": "string",
+                "targetSiteNum": "string",
+                "targetUserName": "string",
+                "userFullName": "string",
+                "userName": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686688800782,
+        "lastModifiedTime": 1686688800782,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "conflict trying to add an econsult",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98077,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getalistofreferrals",
+        "executor_version": "v1",
+        "executor_display_name": "Get a list of referrals",
+        "executor_description": "Fetches an array of referrals matching the search criteria upto a maximum of 100 at a time.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referralInitialInfos/{referralInitialInfoId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralInitialInfoId",
+                "value": "",
+                "description": "Identifier for a given referral's initial info"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameters): Specify the end of the referral sent date range. Start date must also be specified.",
+                "req": false
+            },
+            {
+                "key": "modifiedSince",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): Referral modification date. Useful for discovering updated referrals during synchronization.",
+                "req": false
+            },
+            {
+                "key": "projection",
+                "value": "",
+                "description": "If 'none' is specified, only a list of referral refs will be returned, otherwise a list of referrals will be returned",
+                "req": false
+            },
+            {
+                "key": "skip",
+                "value": "",
+                "description": "The number of matching referrals to skip prior to returning the next set of matches.",
+                "req": false
+            },
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameters): Specify the start of the referral sent date range. End date must also be specified.",
+                "req": false
+            },
+            {
+                "key": "targetRef",
+                "value": "",
+                "description": "Reference to the desired Ocean referral target. All targets associated with the site will be queried if not provided.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686685151109,
+        "lastModifiedTime": 1686685151109,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98087,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateareferral",
+        "executor_version": "v1",
+        "executor_display_name": "Update a referral",
+        "executor_description": "Sets appointment dates/times, booking comments, and referral status changes. This call will also send notification emails to pertinent referral stakeholders, as if the same change were made by a user interacting with Ocean's eReferral UI. Caveat: the emails will only send if the integration permits it. For example, a referral integration in the Ocean site may be configured to disallow email notifications upon referral completion. Furthermore, patient emails will only send if a valid emailPhi object is supplied in the request body and if the site has enabled patient email notifications in its site configuration.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "apptTime1",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): first scheduled appointment",
+                "req": false
+            },
+            {
+                "key": "apptTime2",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): second scheduled appointment",
+                "req": false
+            },
+            {
+                "key": "bookingComment",
+                "value": "",
+                "description": "Text comments for patient and referring clinician",
+                "req": false
+            },
+            {
+                "key": "bookingUrl",
+                "value": "",
+                "description": "This URL may be used by Ocean to redirect the referrer to a new site supplied by the third party, for the purpose of finishing the referral send flow by interacting with the third party's web application. It may be used for example by the third party to present a post-referral online booking interface, or to request that the referrer complete subsequent forms in the third party system. Ocean will poll for this value every few seconds after a referral has been submitted. For security reasons, the base of the URL must match the URL entered in the corresponding Integrations configuration in the owner Ocean site; the remainder of the URL may have additional parameters, such as a referral ID.",
+                "req": false
+            },
+            {
+                "key": "confirmed",
+                "value": "",
+                "description": "Sets booking confirmed on the referral",
+                "req": false
+            },
+            {
+                "key": "externalRef",
+                "value": "",
+                "description": "External ref",
+                "req": false
+            },
+            {
+                "key": "reason",
+                "value": "",
+                "description": "Providing a reason for referral status change. Mandatory for Declined and Cancelled status changes",
+                "req": false
+            },
+            {
+                "key": "status",
+                "value": "",
+                "description": "Updates the referral with the specified status. Currently supporting: Accepted, Declined, Confirmed, Cancelled, Completed, Printed, Incomplete, Sent",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686686480281,
+        "lastModifiedTime": 1686686480281,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "conflict trying to add appointments",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98108,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "manuallyforwardareferral",
+        "executor_version": "v1",
+        "executor_display_name": "Manually forward a referral",
+        "executor_description": "Manually forward a referral using the data from the request body",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/forwardedStatus",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "emailDto": {
+                    "bookingFiles": [
+                        {
+                            "fileName": "string",
+                            "key": "string",
+                            "ref": "string"
+                        }
+                    ],
+                    "ptEmail": "string",
+                    "ptPreferredName": "string"
+                },
+                "newOfferingRef": "string",
+                "newPtDistanceKm": 0,
+                "newRtRef": "string"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686688440420,
+        "lastModifiedTime": 1686688440420,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "appointment not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98079,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "exportreferralanalytics",
+        "executor_version": "v1",
+        "executor_display_name": "Export referral analytics",
+        "executor_description": "Export referral analytics based on a date range",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/analytics",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "modifiedEnd",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): End date",
+                "req": false
+            },
+            {
+                "key": "modifiedStart",
+                "value": "",
+                "description": "(ISO 8601 Datetime parameter): Start date",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686685285158,
+        "lastModifiedTime": 1686685285158,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "no content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98101,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveareferralattachment",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve a referral attachment",
+        "executor_description": "Retrieve an attachment from a referral using an attachment ref",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referrals/{referralRef}/attachments/{attachmentRef}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "referralRef",
+                "value": "",
+                "description": "The attachment ref given when uploading an attachment"
+            },
+            {
+                "key": "attachmentRef",
+                "value": "",
+                "description": "Ocean referral ref"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686687275488,
+        "lastModifiedTime": 1686687275488,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "appointment not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98129,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "validatesitecredentials",
+        "executor_version": "v1",
+        "executor_display_name": "Validate site credentials",
+        "executor_description": "Confirms whether your current Ocean API credentials are valid (NO-OP)",
+        "executor_category": "Session",
+        "executor_category_group": "Session",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/session",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686693226282,
+        "lastModifiedTime": 1686693226282,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98069,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getthecurrentsiteFormfavourites",
+        "executor_version": "v1",
+        "executor_display_name": "Get the current site's Form favourites",
+        "executor_description": "Retrieve list of Ocean Form favourites. Ocean favourites are named collections of forms that can be added to a patient's queue.",
+        "executor_category": "Forms",
+        "executor_category_group": "Forms",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/forms/favourites",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686684303100,
+        "lastModifiedTime": 1686684303100,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98068,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "findForms",
+        "executor_version": "v1",
+        "executor_display_name": "Find Forms",
+        "executor_description": "Search and list available Ocean Forms. Global Forms are those available to all Ocean users, as opposed to custom site-specific Forms.",
+        "executor_category": "Forms",
+        "executor_category_group": "Forms",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/forms",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "global",
+                "value": "",
+                "description": "If 'true', search is done on global forms only",
+                "req": false
+            },
+            {
+                "key": "search",
+                "value": "",
+                "description": "Form search string - supports partial match",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686684232905,
+        "lastModifiedTime": 1686684232905,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98121,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getareferraltarget",
+        "executor_version": "v1",
+        "executor_display_name": "Get a referral target",
+        "executor_description": "Fetches the referral target with the given ref.",
+        "executor_category": "ReferralTargets",
+        "executor_category_group": "ReferralTargets",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referralTarget/{rtRef}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "rtRef",
+                "value": "",
+                "description": "Ocean referral target ref"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686692689052,
+        "lastModifiedTime": 1686692689052,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Referral not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98117,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchforreferraltargets",
+        "executor_version": "v1",
+        "executor_display_name": "Search for referral targets",
+        "executor_description": "Returns ReferralTargetInfo objects matching the search criteria for ReferralTargets offering self referrals.",
+        "executor_category": "ReferralTargets",
+        "executor_category_group": "ReferralTargets",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/referralTarget/selfReferrals",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "healthService",
+                "value": "",
+                "description": "Health service code(s), check here for a list of supported health service categories",
+                "req": false
+            },
+            {
+                "key": "keyword",
+                "value": "",
+                "description": "Searches keywords associated with the listing. Listing keywords include title, health services, description, contact information, etc.",
+                "req": false
+            },
+            {
+                "key": "language",
+                "value": "",
+                "description": "Language name (currently only full names are supported, not ISO 639)",
+                "req": false
+            },
+            {
+                "key": "lat",
+                "value": "",
+                "description": "Latitude in decimal notation, e.g. -79.403",
+                "req": false
+            },
+            {
+                "key": "lng",
+                "value": "",
+                "description": "Longitude in decimal notation, e.g. 43.731)",
+                "req": false
+            },
+            {
+                "key": "searchRadius",
+                "value": "",
+                "description": "Search radius in km. Defaults to 25km.",
+                "req": false
+            },
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686692437040,
+        "lastModifiedTime": 1686692437040,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "invalid missing parameters",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 98125,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getyoursitesprivatekey",
+        "executor_version": "v1",
+        "executor_display_name": "Get your site's private key",
+        "executor_description": "Fetches the site's private key(s), for use in decrypting referral one-time keys. The private key(s) must be decrypted using the site's Shared Encryption Key before use.",
+        "executor_category": "ReferralTargets",
+        "executor_category_group": "ReferralTargets",
+        "service_provider": "oceanmd",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://ocean.cognisantmd.com/svc/v1/site/privateKey",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686693022675,
+        "lastModifiedTime": 1686693022675,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

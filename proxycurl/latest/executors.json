@@ -1,0 +1,2236 @@
+[
+    {
+        "id": 101975,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "employeelistingendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Employee Listing Endpoint",
+        "executor_description": "Employee Listing Endpoint",
+        "executor_category": "Company API",
+        "executor_category_group": "Company API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/company/employees/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "enrich_profiles",
+                "value": "",
+                "description": "\n    Get the full profile of employees instead of only their profile urls.\n\n    Each request respond with a streaming response of profiles.\n\n    The valid values are:\n    \n    * `skip` (default): lists employee's profile url\n    * `enrich`: lists full profile of employees\n\n    Calling this API endpoint with this parameter would add `1` credit per employee returned.\n    "
+            },
+            {
+                "key": "role_search",
+                "value": "",
+                "description": "\n    Filter employees by their title by matching the employee's title against a *regular expression*.\n\n    The default value of this parameter is `null`.\n\n    The accepted value is a *regular expression* (regex).\n\n    (The base cost of calling this API endpoint with this parameter would be `10` credits.\n    Each employee matched and returned would cost `6` credits per employee returned.)\n    "
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "\n    Tune the maximum results returned per API call.\n\n    The default value of this parameter is `200000`.\n\n    Accepted values for this parameter is an integer ranging from `1` to `200000`.\n\n    When `enrich_profiles=enrich`, this parameter accepts value ranging from `1` to `100`.\n    "
+            },
+            {
+                "key": "employment_status",
+                "value": "current",
+                "description": "\n    Parameter to tell the API to return past or current employees.\n\n    Valid values are `current`, `past`, and `all`:\n\n    * `current` (default) : lists current employees\n    * `past` : lists past employees\n    * `all` : lists current & past employees\n    "
+            },
+            {
+                "key": "resolve_numeric_id",
+                "value": "",
+                "description": "\n    Enable support for Company Profile URLs with numerical IDs that you most frequently fetch from Sales Navigator. \n    We achieve this by resolving numerical IDs into vanity IDs with cached company profiles from [LinkDB](https://nubela.co/proxycurl/linkdb). \n    For example, we will turn `https://www.linkedin.com/company/1234567890` to `https://www.linkedin.com/company/acme-corp` -- for which the API endpoint only supports the latter.\n    \n    This parameter accepts the following values:\n    - `false` (default value) - Will not resolve numerical IDs.\n    - `true` - Enable support for Company Profile URLs with numerical IDs. \n    Costs an extra `2` credit on top of the base cost of the endpoint.\n    "
+            },
+            {
+                "key": "url",
+                "value": "",
+                "description": "(Required) \n    URL of the LinkedIn Company Profile to target.\n\n    URL should be in the format of `https://www.linkedin.com/company/<public_identifier>`\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950037986,
+        "lastModifiedTime": 1691695612718,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101977,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "companylookupendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Company Lookup Endpoint",
+        "executor_description": "Company Lookup Endpoint",
+        "executor_category": "Company API",
+        "executor_category_group": "Company API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/company/resolve",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "company_location",
+                "value": "",
+                "description": "\n    The location / region of company.\n    ISO 3166-1 alpha-2 codes\n    "
+            },
+            {
+                "key": "company_domain",
+                "value": "",
+                "description": "Company website or Company domain\nRequires either `company_domain` or `company_name`"
+            },
+            {
+                "key": "company_name",
+                "value": "",
+                "description": "Company Name\nRequires either `company_domain` or `company_name`"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950089562,
+        "lastModifiedTime": 1691695645746,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101973,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "companyprofilepictureendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Company Profile Picture Endpoint",
+        "executor_description": "Company Profile Picture Endpoint",
+        "executor_category": "Company API",
+        "executor_category_group": "Company API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/company/profile-picture",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "linkedin_company_profile_url",
+                "value": "",
+                "description": "(Required) \n    LinkedIn Profile URL of the company that you are trying to get the profile picture of.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950005719,
+        "lastModifiedTime": 1691641449402,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101978,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "companyprofileendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Company Profile Endpoint",
+        "executor_description": "Company Profile Endpoint",
+        "executor_category": "Company API",
+        "executor_category_group": "Company API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/company",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "resolve_numeric_id",
+                "value": "",
+                "description": "\n    Enable support for Company Profile URLs with numerical IDs that you most frequently fetch from Sales Navigator. \n    We achieve this by resolving numerical IDs into vanity IDs with cached company profiles from [LinkDB](https://nubela.co/proxycurl/linkdb). \n    For example, we will turn `https://www.linkedin.com/company/1234567890` to `https://www.linkedin.com/company/acme-corp` -- for which the API endpoint only supports the latter.\n    \n    This parameter accepts the following values:\n    - `false` (default value) - Will not resolve numerical IDs.\n    - `true` - Enable support for Company Profile URLs with numerical IDs. \n    Costs an extra `2` credit on top of the base cost of the endpoint.\n    "
+            },
+            {
+                "key": "categories",
+                "value": "",
+                "description": "\n    Appends categories data of this company.\n\n    Default value is `\"exclude\"`.\n    The other acceptable value is `\"include\"`, which will include these categories (if available) for `1` extra credit.\n    "
+            },
+            {
+                "key": "funding_data",
+                "value": "",
+                "description": "\n    Returns a list of funding rounds that this company has received.\n\n    Default value is `\"exclude\"`.\n    The other acceptable value is `\"include\"`, which will include these categories (if available) for `1` extra credit.\n    "
+            },
+            {
+                "key": "extra",
+                "value": "",
+                "description": "\n    Enriches the Company Profile with extra details from external sources. Details include Crunchbase ranking, contact email, phone number, Facebook account, Twitter account, funding rounds and amount, IPO status, investor information, etc.\n    \n    Default value is `\"exclude\"`.\n    The other acceptable value is `\"include\"`, which will include these extra details (if available) for `1` extra credit.\n    "
+            },
+            {
+                "key": "exit_data",
+                "value": "",
+                "description": "\n    Returns a list of investment portfolio exits.\n\n    Default value is `\"exclude\"`.\n    The other acceptable value is `\"include\"`, which will include these categories (if available) for `1` extra credit.\n    "
+            },
+            {
+                "key": "acquisitions",
+                "value": "",
+                "description": "\n    Provides further enriched data on acquisitions made by this company from external sources.\n\n    Default value is `\"exclude\"`.\n    The other acceptable value is `\"include\"`, which will include these acquisition data (if available) for `1` extra credit.\n    "
+            },
+            {
+                "key": "url",
+                "value": "",
+                "description": "(Required) \n    URL of the LinkedIn Company Profile to crawl.\n\n    URL should be in the format of `https://www.linkedin.com/company/<public_identifier>`\n    "
+            },
+            {
+                "key": "use_cache",
+                "value": "",
+                "description": "`if-present` The default behavior. Fetches profile from cache regardless of age of profile. If profile is not available in cache, API will attempt to source profile externally.\n\n`if-recent` API will make a best effort to return a fresh profile no older than 29 days.Costs an extra `1` credit on top of the cost of the base endpoint."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950122021,
+        "lastModifiedTime": 1691695673564,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101970,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "employeecountendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Employee Count Endpoint",
+        "executor_description": "Employee Count Endpoint",
+        "executor_category": "Company API",
+        "executor_category_group": "Company ",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/company/employees/count/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "linkedin_employee_count",
+                "value": "",
+                "description": "\n    Option to include a scraped employee count value from the target company's LinkedIn profile.\n\n    Valid values are `include` and `exclude`:\n\n    * `exclude` (default) : To exclude the scraped employee count.\n    * `include` : To include the scraped employee count.\n\n    Costs an extra `1` credit on top of the base cost of the endpoint.\n    "
+            },
+            {
+                "key": "employment_status",
+                "value": "",
+                "description": "\n    Parameter to tell the API to filter past or current employees.\n\n    Valid values are `current`, `past`, and `all`:\n\n    * `current` (default) : count current employees\n    * `past` : count past employees\n    * `all` : count current & past employees\n    "
+            },
+            {
+                "key": "url",
+                "value": "",
+                "description": "(Required) \n    URL of the LinkedIn Company Profile to target.\n\n    URL should be in the format of `https://www.linkedin.com/company/<public_identifier>`\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687949928303,
+        "lastModifiedTime": 1691642041864,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101972,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "employeesearchapiendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Employee Search API Endpoint",
+        "executor_description": "Employee Search API Endpoint",
+        "executor_category": "Company API",
+        "executor_category_group": "Company API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/company/employee/search/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "\n    Tune the maximum results returned per API call.\n    The default value of this parameter is `200000`.\n    Accepted values for this parameter is an integer ranging from `1` to `200000`.\n    "
+            },
+            {
+                "key": "linkedin_company_profile_url",
+                "value": "",
+                "description": "(Required) \n    LinkedIn Profile URL of the target company.\n    "
+            },
+            {
+                "key": "keyword_regex",
+                "value": "",
+                "description": "(Required) \n    Job title keyword to search for in regular expression format.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687949975455,
+        "lastModifiedTime": 1691695531384,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101990,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "rolelookupendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Role Lookup Endpoint",
+        "executor_description": "Role Lookup Endpoint",
+        "executor_category": "People API",
+        "executor_category_group": "People API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/find/company/role",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "role",
+                "value": "",
+                "description": "(Required) Role of the profile that you are lookin up"
+            },
+            {
+                "key": "company_name",
+                "value": "",
+                "description": "(Required) Name of the company that you are searching for"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950592359,
+        "lastModifiedTime": 1691695992130,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101991,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "personprofileendpoint",
+        "executor_version": "v2",
+        "executor_display_name": "Person Profile Endpoint",
+        "executor_description": "Person Profile Endpoint",
+        "executor_category": "People API",
+        "executor_category_group": "People API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/v2/linkedin",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "url",
+                "value": "",
+                "description": "(Required) \n    URL of the LinkedIn Profile to crawl.\n\n    URL should be in the format of `https://www.linkedin.com/in/<public-identifier>`\n    "
+            },
+            {
+                "key": "fallback_to_cache",
+                "value": "",
+                "description": "(Required) \n    Tweaks the fallback behavior if an error arises from fetching a fresh profile.\n    \n    This parameter accepts the following values:\n    * `on-error` (default value) - Fallback to reading the profile from cache if an error arises.\n    * `never` - Do not ever read profile from cache.\n    "
+            },
+            {
+                "key": "use_cache",
+                "value": "if-present",
+                "description": "`if-present` The default behavior. Fetches profile from cache regardless of age of profile. If profile is not available in cache, API will attempt to source profile externally.\n\n`if-recent` API will make a best effort to return a fresh profile no older than 29 days.Costs an extra `1` credit on top of the cost of the base endpoint."
+            },
+            {
+                "key": "skills",
+                "value": "include",
+                "description": "\n    Include skills data from external sources.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide skills data field.\n    - `include` - Append skills data to the person profile object. Costs an extra `1` credit on top of the cost of the base endpoint (if data is available).\n    "
+            },
+            {
+                "key": "inferred_salary",
+                "value": "",
+                "description": "\n    Include inferred salary range from external sources.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide inferred salary data field.\n    - `include` - Append inferred salary range data to the person profile object. Costs an extra `1` credit on top of the cost of the base endpoint (if data is available).\n    "
+            },
+            {
+                "key": "personal_email",
+                "value": "",
+                "description": "\n    Enriches the Person Profile with personal emails from external sources.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide personal emails data field.\n    - `include` - Append personal emails data to the person profile object. Costs an extra `1` credit per email returned on top of the cost of the base endpoint (if data is available).\n    "
+            },
+            {
+                "key": "personal_contact_number",
+                "value": "",
+                "description": "\n    Enriches the Person Profile with personal numbers from external sources.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide personal numbers data field.\n    - `include` - Append personal numbers data to the person profile object. Costs an extra `1` credit per email returned on top of the cost of the base endpoint (if data is available).\n    "
+            },
+            {
+                "key": "twitter_profile_id",
+                "value": "",
+                "description": "\n    Enriches the Person Profile with Twitter Id from external sources.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide Twitter Id data field.\n    - `include` - Append Twitter Id data to the person profile object. Costs an extra `1` credit on top of the cost of the base endpoint (if data is available).\n    "
+            },
+            {
+                "key": "facebook_profile_id",
+                "value": "",
+                "description": "\n    Enriches the Person Profile with Facebook Id from external sources.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide Facebook Id data field.\n    - `include` - Append Facebook Id data to the person profile object. Costs an extra `1` credit on top of the cost of the base endpoint (if data is available).\n    "
+            },
+            {
+                "key": "github_profile_id",
+                "value": "",
+                "description": "\n    Enriches the Person Profile with Github Id from external sources.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide Github Id data field.\n    - `include` - Append Github Id data to the person profile object. Costs an extra `1` credit on top of the cost of the base endpoint (if data is available).\n    "
+            },
+            {
+                "key": "extra",
+                "value": "",
+                "description": "\n    Enriches the Person Profile with extra details from external sources. Extra details include gender, birth date, industry and interests.\n\n    This parameter accepts the following values:\n    - `exclude` (default value) - Does not provide extra data field.\n    - `include` - Append extra data to the person profile object. Costs an extra `1` credit on top of the cost of the base endpoint (if data is available).\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950640105,
+        "lastModifiedTime": 1691696032354,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101989,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "personprofilepictureendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Person Profile Picture Endpoint",
+        "executor_description": "Person Profile Picture Endpoint",
+        "executor_category": "People API",
+        "executor_category_group": "People API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/person/profile-picture",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "linkedin_person_profile_url",
+                "value": "",
+                "description": "(Required) \n    LinkedIn Profile URL of the person that you are trying to get the profile picture of.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950568414,
+        "lastModifiedTime": 1691695966548,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101988,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "personlookupendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Person Lookup Endpoint",
+        "executor_description": "Person Lookup Endpoint",
+        "executor_category": "People API",
+        "executor_category_group": "People API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/profile/resolve",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "company_domain",
+                "value": "",
+                "description": "(Required) Company name or domain"
+            },
+            {
+                "key": "location",
+                "value": "",
+                "description": "\n    The location of this user.\n\n    Name of country, city or state.\n    "
+            },
+            {
+                "key": "title",
+                "value": "",
+                "description": "Title that user is holding at his/her current job"
+            },
+            {
+                "key": "last_name",
+                "value": "",
+                "description": "Last name of the user"
+            },
+            {
+                "key": "first_name",
+                "value": "",
+                "description": "(Required) First name of the user"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950536513,
+        "lastModifiedTime": 1691695935900,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101966,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "jobslistingendpoint",
+        "executor_version": "v2",
+        "executor_display_name": "Jobs Listing Endpoint",
+        "executor_description": "Jobs Listing Endpoint",
+        "executor_category": "Jobs API",
+        "executor_category_group": "Jobs API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/v2/linkedin/company/job",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "when",
+                "value": "",
+                "description": "\n    The time when the job is posted,\n    It accepts the following case-insensitive values only:\n    - `yesterday`\n    - `past-week`\n    - `past-month`\n    - `anytime` (default)\n    "
+            },
+            {
+                "key": "flexibility",
+                "value": "",
+                "description": "\n    The flexibility of the job.\n    It accepts the following 3 case insensitive values only:\n    - `remote`\n    - `on-site`\n    - `hybrid`\n    - `anything` (default)\n    "
+            },
+            {
+                "key": "geo_id",
+                "value": "",
+                "description": "\n    The `geo_id` of the location to search for.\n    For example, 92000000 is the `geo_id` of world wide.\n    "
+            },
+            {
+                "key": "keyword",
+                "value": "",
+                "description": "\n    The keyword to search for.\n    "
+            },
+            {
+                "key": "search_id",
+                "value": "",
+                "description": "\n    The `search_id` of the company on LinkedIn.\n    You can get the `search_id` of a LinkedIn company via\n    [Company Profile API](#company-api-company-profile-endpoint).\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687949804964,
+        "lastModifiedTime": 1691695153129,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101965,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "jobslistingcountendpoint",
+        "executor_version": "v2",
+        "executor_display_name": "Jobs Listing Count Endpoint",
+        "executor_description": "Count number of jobs posted by a company on LinkedIn",
+        "executor_category": "Jobs API",
+        "executor_category_group": "Jobs API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/v2/linkedin/company/job/count",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "when",
+                "value": "",
+                "description": "\n    The time when the job is posted,\n    It accepts the following case-insensitive values only:\n    - `yesterday`\n    - `past-week`\n    - `past-month`\n    - `anytime` (default)\n    "
+            },
+            {
+                "key": "flexibility",
+                "value": "",
+                "description": "\n    The flexibility of the job.\n    It accepts the following 3 case insensitive values only:\n    - `remote`\n    - `on-site`\n    - `hybrid`\n    - `anything` (default)\n    "
+            },
+            {
+                "key": "geo_id",
+                "value": "",
+                "description": "\n    The `geo_id` of the location to search for.\n    For example, 92000000 is the `geo_id` of world wide.\n    "
+            },
+            {
+                "key": "keyword",
+                "value": "",
+                "description": "\n    The keyword to search for.\n    "
+            },
+            {
+                "key": "search_id",
+                "value": "",
+                "description": "\n    The `search_id` of the company on LinkedIn.\n    You can get the `search_id` of a LinkedIn company via\n    [Company Profile API](#company-api-company-profile-endpoint).\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687949720553,
+        "lastModifiedTime": 1691695088423,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101969,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "jobprofileendpoint",
+        "executor_version": "v2",
+        "executor_display_name": "Job Profile Endpoint",
+        "executor_description": "Get structured data of a LinkedIn Job Profile",
+        "executor_category": "Jobs API",
+        "executor_category_group": "Jobs API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/job",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "url",
+                "value": "",
+                "description": "(Required) \n    URL of the LinkedIn Job Profile to target.\n\n    URL should be in the format of\n    `https://www.linkedin.com/jobs/view/<job_id>`.\n    [Jobs Listing Endpoint](#jobs-api-jobs-listing-endpoint)\n    can be used to retrieve a job URL.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687949884842,
+        "lastModifiedTime": 1691695419281,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101983,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "workemaillookupendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Work Email Lookup Endpoint",
+        "executor_description": "Work Email Lookup Endpoint",
+        "executor_category": "Contact API",
+        "executor_category_group": "Contact API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/profile/email",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "linkedin_profile_url",
+                "value": "",
+                "description": "(Required) \n    Linkedin Profile URL of the person you want to\n    extract work email address from.\n    "
+            },
+            {
+                "key": "callback_url",
+                "value": "",
+                "description": "\n    Webhook to notify your application when\n    the request has finished processing.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950369532,
+        "lastModifiedTime": 1691695772854,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101982,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "reverseworkemaillookupendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Reverse Work Email Lookup Endpoint",
+        "executor_description": "Reverse Work Email Lookup Endpoint",
+        "executor_category": "Contact API",
+        "executor_category_group": "Contact API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/profile/resolve/email",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "work_email",
+                "value": "",
+                "description": "(Required) Work email address of the user"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950342895,
+        "lastModifiedTime": 1691695743423,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101984,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "personalcontactnumberlookupendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Personal Contact Number Lookup Endpoint",
+        "executor_description": "Personal Contact Number Lookup Endpoint",
+        "executor_category": "Contact API",
+        "executor_category_group": "Contact API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/contact-api/personal-contact",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "linkedin_profile_url",
+                "value": "",
+                "description": "(Required) \n    LinkedIn Profile URL of the person you want to extract personal contact numbers from.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950420188,
+        "lastModifiedTime": 1691695809668,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101985,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "personalemaillookupendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Personal Email Lookup Endpoint",
+        "executor_description": "Personal Email Lookup Endpoint",
+        "executor_category": "Contact API",
+        "executor_category_group": "Contact API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/contact-api/personal-email",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "email_validation",
+                "value": "",
+                "description": "\n    Perform deliverability validation on each email. (Costs 1 extra credit per email found).\n    \n    Takes the following values:\n     * include - Perform email validation.\n     * exclude (default) - Do not perform email validation.\n    "
+            },
+            {
+                "key": "linkedin_profile_url",
+                "value": "",
+                "description": "(Required) \n    LinkedIn Profile URL of the person you want to extract personal email addresses from.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950459565,
+        "lastModifiedTime": 1691695838682,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101987,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "disposableemailaddresscheckendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Disposable Email Address Check Endpoint",
+        "executor_description": "Disposable Email Address Check Endpoint",
+        "executor_category": "Contact API",
+        "executor_category_group": "Contact API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/disposable-email",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "email",
+                "value": "",
+                "description": "(Required) Email address to check"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950495774,
+        "lastModifiedTime": 1691695869229,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101992,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "studentlistingendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Student Listing Endpoint",
+        "executor_description": "Student Listing Endpoint",
+        "executor_category": "School API",
+        "executor_category_group": "School API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/school/students/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "enrich_profiles",
+                "value": "",
+                "description": "\n    Get the full profile of students instead of only their profile urls.\n\n    Each request respond with a streaming response of profiles.\n\n    The valid values are:\n    \n    * `skip` (default): lists student's profile url\n    * `enrich`: lists full profile of students\n\n    *Calling this API endpoint with this parameter would add `1` credit per student returned.*\n    "
+            },
+            {
+                "key": "search_keyword",
+                "value": "",
+                "description": "\n    Filter students by their major by matching the student's major against a *regular expression*.\n\n    The default value of this parameter is `null`.\n\n    The accepted value is a *regular expression* (regex).\n\n    (The base cost of calling this API endpoint with this parameter would be `10` credits.\n    Each student matched and returned would cost `6` credits per student returned.)\n    "
+            },
+            {
+                "key": "page_size",
+                "value": "",
+                "description": "\n    Tune the maximum results returned per API call.\n\n    The default value of this parameter is `200000`.\n\n    Accepted values for this parameter is an integer ranging from `1` to `200000`.\n\n    When `enrich_profiles=enrich`, this parameter accepts value ranging from `1` to `100`.\n    "
+            },
+            {
+                "key": "student_status",
+                "value": "",
+                "description": "\n    Parameter to tell the API to return past or current students.\n\n    Valid values are `current`, `past`, and `all`:\n\n    * `current` (default) : lists current students\n    * `past` : lists past students\n    * `all` : lists current & past students\n    "
+            },
+            {
+                "key": "resolve_numeric_id",
+                "value": "",
+                "description": "\n    Enable support for School Profile URLs with numerical IDs that you most frequently fetch from Sales Navigator. \n    We achieve this by resolving numerical IDs into vanity IDs with cached company profiles from [LinkDB](https://nubela.co/proxycurl/linkdb). \n    For example, we will turn `https://www.linkedin.com/school/1234567890` to `https://www.linkedin.com/school/acme-corp` -- for which the API endpoint only supports the latter.\n    \n    This parameter accepts the following values:\n    - `false` (default value) - Will not resolve numerical IDs.\n    - `true` - Enable support for School Profile URLs with numerical IDs. \n    Costs an extra `2` credit on top of the base cost of the endpoint.\n    "
+            },
+            {
+                "key": "linkedin_school_url",
+                "value": "",
+                "description": "(Required) \n    URL of the LinkedIn School Profile to target.\n\n    URL should be in the format of `https://www.linkedin.com/school/<public_identifier>`\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950695706,
+        "lastModifiedTime": 1691696061981,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101994,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "schoolprofileendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "School Profile Endpoint",
+        "executor_description": "School Profile Endpoint",
+        "executor_category": "School API",
+        "executor_category_group": "School API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/linkedin/school",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "url",
+                "value": "",
+                "description": "(Required) \n    URL of the LinkedIn School Profile to crawl.\n\n    URL should be in the format of `https://www.linkedin.com/school/<public_identifier>`\n    "
+            },
+            {
+                "key": "use_cache",
+                "value": "",
+                "description": "`if-present` The default behavior. Fetches profile from cache regardless of age of profile. If profile is not available in cache, API will attempt to source profile externally.\n\n`if-recent` API will make a best effort to return a fresh profile no older than 29 days.Costs an extra `1` credit on top of the cost of the base endpoint."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950732792,
+        "lastModifiedTime": 1691696121131,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 101995,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "revealendpoint",
+        "executor_version": "v1",
+        "executor_display_name": "Reveal Endpoint",
+        "executor_description": "Reveal Endpoint",
+        "executor_category": "Reveal API",
+        "executor_category_group": "Reveal API",
+        "service_provider": "proxycurl",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/proxycurl/api/reveal/company",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseUrl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "role_contact_number",
+                "value": "",
+                "description": "\n    Append personal contact numbers to the response if the system finds a relevant person profile.\n    "
+            },
+            {
+                "key": "role_personal_email",
+                "value": "",
+                "description": "\n    Append personal email addresses to the response if the system finds a relevant person profile.\n    "
+            },
+            {
+                "key": "role",
+                "value": "",
+                "description": "\n    Lookup and append an employee of a certain role of the company.\n    Within the same API call, You can choose to lookup a person with a given role within this organisation that you might want to reach out to.\n    "
+            },
+            {
+                "key": "ip",
+                "value": "",
+                "description": "(Required) \n    The target IPv4 address.\n    "
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687950768210,
+        "lastModifiedTime": 1691696221750,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]
