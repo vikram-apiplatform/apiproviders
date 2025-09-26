@@ -1,0 +1,936 @@
+[
+    {
+        "id": 100153,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "unsubscribePeople",
+        "executor_version": "v1",
+        "executor_display_name": "Unsubscribe People",
+        "executor_description": "Unsubscribes pool members with given email addresses",
+        "executor_category": "AccessErasure",
+        "executor_category_group": "AccessErasure",
+        "service_provider": "ethnio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ethn.io/api/v1/pool_members/opt_out",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": [
+                    "some@host.com",
+                    "other@host.com"
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687346821355,
+        "lastModifiedTime": 1687346821355,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Opt out Response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "email": "some@host.com",
+                            "status": "opted_out"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Validation error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Authorization error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Service is temporary unavailable",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100154,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletePeople",
+        "executor_version": "v1",
+        "executor_display_name": "Delete People",
+        "executor_description": "Removes all personal data collected for given email addresses. Note that this operation is asynchronous. You can check removal status using Data Subject Request after some time.",
+        "executor_category": "AccessErasure",
+        "executor_category_group": "AccessErasure",
+        "service_provider": "ethnio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ethn.io/api/v1/pool_members/delete",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": [
+                    "some@host.com",
+                    "other@host.com"
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687347020286,
+        "lastModifiedTime": 1687347020286,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Opt out Response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "email": "some@host.com",
+                            "status": "scheduled"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Validation error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Authorization error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Service is temporary unavailable",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100151,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dataSubjectRequest",
+        "executor_version": "v1",
+        "executor_display_name": "Data Subject Request",
+        "executor_description": "Returns personal data collected for given pool members",
+        "executor_category": "AccessErasure",
+        "executor_category_group": "AccessErasure",
+        "service_provider": "ethnio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ethn.io/api/v1/pool_members/data_subject_request",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": [
+                    "some@host.com",
+                    "other@host.com"
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687346343865,
+        "lastModifiedTime": 1687346343865,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Data Subject Response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "name": "John Doe",
+                            "email": "some@host.com",
+                            "opted_out": false,
+                            "uploaded_data": [
+                                {
+                                    "name": "John Doe",
+                                    "phone": "+1111111",
+                                    "source_item_name": "some.csv",
+                                    "source_item_type": "upload",
+                                    "raw_attributes": {
+                                        "favorite_color": "blue"
+                                    }
+                                }
+                            ],
+                            "collected_data": [
+                                {
+                                    "name": "John Doe",
+                                    "phone": "+1111111",
+                                    "source_item_name": "some screener",
+                                    "source_item_type": "screener",
+                                    "ip": "127.0.0.1",
+                                    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36",
+                                    "referer_url": "https://other.host.com?somepage",
+                                    "browser": "chrome",
+                                    "location": "string",
+                                    "country_code": "jp",
+                                    "social_info": {
+                                        "location": "Pescara, Italy"
+                                    },
+                                    "tz": "Asia/Tokyo",
+                                    "os": "Windows 7",
+                                    "platform": "windows",
+                                    "city": "Tokio",
+                                    "continent": "Asia",
+                                    "questions": [
+                                        {
+                                            "question": "What is your favorite color",
+                                            "answer": "blue"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Validation error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Authorization error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Service is temporary unavailable",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100150,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "exchangecredentialsforaccesstoken",
+        "executor_version": "v1",
+        "executor_display_name": "Exchange credentials for access token",
+        "executor_description": "Validates supplied credentials and exchanges them for an access token",
+        "executor_category": "Authentication",
+        "executor_category_group": "Authentication",
+        "service_provider": "ethnio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ethn.io/api/v1/oauth/token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                "assertion": "eyJhbGciOiJSUzUxMiJ9.eyJpc3MiOiJkNDQ0Yjk1Ny04ODM3LTRjM2EtYTM3Yy05Zjg1ZThhZWQ2OTkiLCJleHAiOjE1OTk1NzM4MDl9.imenwuNw4h3llYCoEEVLaTKKD7gf3SSTdByYUQqg7gpA_PtWGfJgbHnIoJtuJpIHS4bNvf2SgD9qrvfg6bBnLL_pR-IExZCHoPAuc9eo5TWEfVM8esxYqmZZeR829TGvMBTJ1lmpXpLOoCTG4MAZCsV4jPzIsBRy3gEsOlaQ9CnQA-8CsnADJx7j3wX5ctjfPfm6AE3vzxfQE9iik1p65mCNIOaUOXnqT6R50zpyZTqDY2Tpov7WXE_QAiHS6XycgnUEH7AA0XVNATi-kezs67mn8nyZWrSHSdFe39GHjTZYRZXkVANQcKRTBDjDedeL-5t47bwgAoBGXCnOKMgI1A"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687345985670,
+        "lastModifiedTime": 1687345985670,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Token response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "access_token": ".eyJpc3MiOiJkNDQ0Yjk1Ny04ODM3LTRjM2EtYTM3Yy05Zjg1ZThhZWQ2OTkiLCJleHAiOjE1OTk1NzM4MDl9.imenwuNw4h3llYCoEEVLaTKKD7gf3SSTdByYUQqg7gpA_PtWGfJgbHnIoJtuJpIHS4bNvf2SgD9qrvfg6bBnLL_pR-IExZCHoPAuc9eo5TWEfVM8esxYqmZZeR829TGvMBTJ1lmpXpLOoCTG4MAZCsV4jPzIsBRy3gEsOlaQ9CnQA-8CsnADJx7j3wX5ctjfPfm6AE3vzxfQE9iik1p65mCNIOaUOXnqT6R50zpyZTqDY2Tpov7WXE_QAiHS6XycgnUEH7AA0XVNATi-kezs67mn8nyZWrSHSdFe39GHjTZYRZXkVANQcKRTBDjDedeL-5t47bwgAoBGXCnOKMgI1A",
+                    "expires_in": 3600,
+                    "type": "bearer"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Validation error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Service is temporary unavailable",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100155,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newPoolMembers",
+        "executor_version": "v1",
+        "executor_display_name": "New Pool Members",
+        "executor_description": "Automatically imports new Pool members using email address. Duplicate emails will be omitted. See Pool Column Mapping for list of how the attributes you send via API map to Pool columns.",
+        "executor_category": "Import",
+        "executor_category_group": "Import",
+        "service_provider": "ethnio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://ethn.io/api/v1/pool_members/import",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "participants": [
+                    {
+                        "email": "some@host.com",
+                        "attrs": {
+                            "age": 40,
+                            "favorite_fruit": "pear",
+                            "number_of_cats": 2
+                        }
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687347232550,
+        "lastModifiedTime": 1687347232550,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Opt out Response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "email": "some@host.com",
+                            "status": "imported_with_warnings",
+                            "warnings": "These attributes don't have corresponding mapping and were ignored: favorite_fruit; number_of_cats"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Validation error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Authorization error",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Service is temporary unavailable",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": {
+                        "field": [
+                            "is invalid"
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

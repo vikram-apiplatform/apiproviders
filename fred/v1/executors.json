@@ -1,0 +1,4335 @@
+[
+    {
+        "id": 84858,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredCategoryChildren",
+        "executor_version": "v1",
+        "executor_display_name": "fred/category/children",
+        "executor_description": "Get the child categories for a specified parent category.",
+        "executor_category": "Categories",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/category/children",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675327359878,
+        "lastModifiedTime": 1675327359878,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84861,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredCategoryTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/category/tags",
+        "executor_description": "Get the FRED tags for a category. Optionally, filter results by tag name, tag group, or search. Series are assigned tags and categories. Indirectly through series, it is possible to get the tags for a category. No tags exist for a category that does not have series. See the related request fred/category/related_tags.",
+        "executor_category": "Categories",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/category/tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.  integer between 1 and 1000, optional, default: 1000",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "non-negative integer, optional, default: 0",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.  One of the following strings: 'series_id', 'title', 'units', 'frequency', 'seasonal_adjustment', 'realtime_start', 'realtime_end', 'last_updated', 'observation_start', 'observation_end', 'popularity', 'group_popularity'. optional, default: series_id",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.  One of the following strings: 'asc', 'desc'. optional, default: asc",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match all of.  String, optional, no filtering by tags by default Example value: 'income;bea'. Filter results to series having both tags 'income' and 'bea'. See the related request fred/tags.",
+                "req": false
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.  String, optional, no filtering by tag group by default. One of the following: 'freq', 'gen', 'geo', 'geot', 'rls', 'seas', 'src'. freq = Frequency gen = General or Concept geo = Geography geot = Geography Type rls = Release seas = Seasonal Adjustment src = Source",
+                "req": false
+            },
+            {
+                "key": "search_text",
+                "value": "",
+                "description": "The words to find matching tags with.  String, optional, no filtering by search words by default.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675328256208,
+        "lastModifiedTime": 1675328256208,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84862,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredCategoryRelatedTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/category/related_tags",
+        "executor_description": "Get the related FRED tags for one or more FRED tags within a category. Optionally, filter results by tag group or search.  FRED tags are attributes assigned to series. For this request, related FRED tags are the tags assigned to series that match all tags in the tag_names parameter, no tags in the exclude_tag_names parameter, and the category set by the category_id parameter. See the related request fred/category/tags.  Series are assigned tags and categories. Indirectly through series, it is possible to get the tags for a category. No tags exist for a category that does not have series.",
+        "executor_category": "Categories",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/category/related_tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.  integer between 1 and 1000, optional, default: 1000",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "non-negative integer, optional, default: 0",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.  One of the following strings: 'series_id', 'title', 'units', 'frequency', 'seasonal_adjustment', 'realtime_start', 'realtime_end', 'last_updated', 'observation_start', 'observation_end', 'popularity', 'group_popularity'. optional, default: series_id",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.  One of the following strings: 'asc', 'desc'. optional, default: asc",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match all of.  String, optional, no filtering by tags by default Example value: 'income;bea'. Filter results to series having both tags 'income' and 'bea'. See the related request fred/tags.",
+                "req": false
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.  String, optional, no filtering by tag group by default. One of the following: 'freq', 'gen', 'geo', 'geot', 'rls', 'seas', 'src'. freq = Frequency gen = General or Concept geo = Geography geot = Geography Type rls = Release seas = Seasonal Adjustment src = Source",
+                "req": false
+            },
+            {
+                "key": "search_text",
+                "value": "",
+                "description": "The words to find matching tags with.  String, optional, no filtering by search words by default.",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.  String, optional, no default value. Example value: 'goods;sa'. Find the related tags for series having neither tag 'goods' nor tag 'sa'.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675328436530,
+        "lastModifiedTime": 1675328436530,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84859,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredCategoryRelated",
+        "executor_version": "v1",
+        "executor_display_name": "fred/category/related",
+        "executor_description": "Get the related categories for a category. A related category is a one-way relation between 2 categories that is not part of a parent-child category hierarchy. Most categories do not have related categories.",
+        "executor_category": "Categories",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/category/related",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675327465914,
+        "lastModifiedTime": 1675327465914,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84860,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredCategorySeries",
+        "executor_version": "v1",
+        "executor_display_name": "fred/category/series",
+        "executor_description": "Get the series in a category.",
+        "executor_category": "Categories",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/category/series",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.  integer between 1 and 1000, optional, default: 1000",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "non-negative integer, optional, default: 0",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.  One of the following strings: 'series_id', 'title', 'units', 'frequency', 'seasonal_adjustment', 'realtime_start', 'realtime_end', 'last_updated', 'observation_start', 'observation_end', 'popularity', 'group_popularity'. optional, default: series_id",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.  One of the following strings: 'asc', 'desc'. optional, default: asc",
+                "req": false
+            },
+            {
+                "key": "filter_variable",
+                "value": "",
+                "description": "The attribute to filter results by.  On of the following strings: 'frequency', 'units', 'seasonal_adjustment'. optional, no filter by default",
+                "req": false
+            },
+            {
+                "key": "filter_value",
+                "value": "",
+                "description": "The value of the filter_variable attribute to filter results by.  String, optional, no filter by default",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.  String, optional, no filtering by tags by default. Example value: 'discontinued;annual'. Filter results to series having neither tag 'discontinued' nor tag 'annual'. Parameter exclude_tag_names requires that parameter tag_names also be set to limit the number of matching series.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match all of.  String, optional, no filtering by tags by default Example value: 'income;bea'. Filter results to series having both tags 'income' and 'bea'. See the related request fred/tags.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675327713357,
+        "lastModifiedTime": 1675327713357,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84857,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredCategory",
+        "executor_version": "v1",
+        "executor_display_name": "fred/category",
+        "executor_description": "Get a category.",
+        "executor_category": "Categories",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/category",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675327265581,
+        "lastModifiedTime": 1675327265581,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84871,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleaseTables",
+        "executor_version": "v1",
+        "executor_display_name": "fred/release/tables",
+        "executor_description": "Get release table trees for a given release. You can go directly to the tree structure by passing the appropriate element_id. You may also use a drill-down approach to start at the root (top most) element by leaving the element_id off.  Note that release dates are published by data sources and do not necessarily represent when data will be available on the FRED or ALFRED websites.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/release/tables",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "release_id",
+                "value": "",
+                "description": "The id for a release.",
+                "req": true
+            },
+            {
+                "key": "element_id",
+                "value": "",
+                "description": "The release table element id you would like to retrieve.",
+                "req": false
+            },
+            {
+                "key": "include_observation_values",
+                "value": "",
+                "description": "A flag to indicate that observations need to be returned. Observation value and date will only be returned for a series type element.",
+                "req": false
+            },
+            {
+                "key": "observation_date",
+                "value": "",
+                "description": "The observation date to be included with the returned release table.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675331671630,
+        "lastModifiedTime": 1675331671630,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84864,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleasesDates",
+        "executor_version": "v1",
+        "executor_display_name": "fred/releases/dates",
+        "executor_description": "Get release dates for all releases of economic data.  Note that release dates are published by data sources and do not necessarily represent when data will be available on the FRED or ALFRED websites.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/releases/dates",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.  integer between 1 and 1000, optional, default: 1000",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "non-negative integer, optional, default: 0",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.  One of the following strings: 'series_id', 'title', 'units', 'frequency', 'seasonal_adjustment', 'realtime_start', 'realtime_end', 'last_updated', 'observation_start', 'observation_end', 'popularity', 'group_popularity'. optional, default: series_id",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.  One of the following strings: 'asc', 'desc'. optional, default: asc",
+                "req": false
+            },
+            {
+                "key": "include_release_dates_with_no_data",
+                "value": "",
+                "description": "Determines whether release dates with no data available are returned. The defalut value 'false' excludes release dates that do not have data. In particular, this excludes future release dates which may be available in the FRED release calendar or the ALFRED release calendar.  If include_release_dates_with_no_data is set to true, the XML tag release_date has an extra attribute release_last_updated that can be compared to the release date to determine if data has been updated.  One of the following strings: 'true', 'false'. optional, default: false",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1675328648687,
+        "lastModifiedTime": 1675329421728,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84865,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredRelease",
+        "executor_version": "v1",
+        "executor_display_name": "fred/release",
+        "executor_description": "Get a release of economic data.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/release",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "release_id",
+                "value": "",
+                "description": "The id for a release.",
+                "req": true
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675328799207,
+        "lastModifiedTime": 1675328799207,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84867,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleaseSeries",
+        "executor_version": "v1",
+        "executor_display_name": "fred/release/series",
+        "executor_description": "Get the series on a release of economic data.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/release/series",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "release_id",
+                "value": "",
+                "description": "The id for a release.",
+                "req": true
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending release date order.",
+                "req": false
+            },
+            {
+                "key": "filter_variable",
+                "value": "",
+                "description": "The attribute to filter results by.",
+                "req": false
+            },
+            {
+                "key": "filter_value",
+                "value": "",
+                "description": "The value of the filter_variable attribute to filter results by.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match all of.",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675329736576,
+        "lastModifiedTime": 1675329736576,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84863,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleases",
+        "executor_version": "v1",
+        "executor_display_name": "fred/releases",
+        "executor_description": "This request can return either XML or JSON by setting the file_type parameter to xml or json. Note that the default value of file_type is xml. The API key 'abcdefghijklmnopqrstuvwxyz123456' is for demonstration purposes only. Use a registered API key instead.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/releases",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": false
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.  integer between 1 and 1000, optional, default: 1000",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "non-negative integer, optional, default: 0",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.  One of the following strings: 'series_id', 'title', 'units', 'frequency', 'seasonal_adjustment', 'realtime_start', 'realtime_end', 'last_updated', 'observation_start', 'observation_end', 'popularity', 'group_popularity'. optional, default: series_id",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.  One of the following strings: 'asc', 'desc'. optional, default: asc",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675328551594,
+        "lastModifiedTime": 1675328551594,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84868,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleaseSources",
+        "executor_version": "v1",
+        "executor_display_name": "fred/release/sources",
+        "executor_description": "Get the sources for a release of economic data.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/release/sources",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "release_id",
+                "value": "",
+                "description": "The id for a release.",
+                "req": true
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675329826050,
+        "lastModifiedTime": 1675329826050,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84866,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleaseDates",
+        "executor_version": "v1",
+        "executor_display_name": "fred/release/dates",
+        "executor_description": "Get a release of economic data.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/release/dates",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "category_id",
+                "value": "",
+                "description": "The id for a category.  Integer, default: 0 (root category)",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "release_id",
+                "value": "",
+                "description": "The id for a release.",
+                "req": true
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending release date order.",
+                "req": false
+            },
+            {
+                "key": "include_release_dates_with_no_data",
+                "value": "",
+                "description": "Determines whether release dates with no data available are returned. The defalut value 'false' excludes release dates that do not have data. In particular, this excludes future release dates which may be available in the FRED release calendar or the ALFRED release calendar.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675329561841,
+        "lastModifiedTime": 1675329561841,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84870,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleaseRelatedTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/release/related_tags",
+        "executor_description": "Get the related FRED tags for one or more FRED tags within a release. Optionally, filter results by tag group or search.  FRED tags are attributes assigned to series. For this request, related FRED tags are the tags assigned to series that match all tags in the tag_names parameter, no tags in the exclude_tag_names parameter, and the release set by the release_id parameter. See the related request fred/release/tags.  Series are assigned tags and releases. Indirectly through series, it is possible to get the tags for a release.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/release/related_tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "release_id",
+                "value": "",
+                "description": "The id for a release.",
+                "req": true
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names to only include in the response. See the related request fred/release/related_tags.",
+                "req": false
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.",
+                "req": false
+            },
+            {
+                "key": "search_text",
+                "value": "",
+                "description": "The words to find matching tags with.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.",
+                "req": false
+            },
+            {
+                "key": "search_text",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1675331286316,
+        "lastModifiedTime": 1675331505005,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84869,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredReleaseTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/release/tags",
+        "executor_description": "Get the FRED tags for a release. Optionally, filter results by tag name, tag group, or search. Series are assigned tags and releases. Indirectly through series, it is possible to get the tags for a release. See the related request fred/release/related_tags.",
+        "executor_category": "Releases",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/release/tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.  YYYY-MM-DD formatted string, optional, default: today's date",
+                "req": false
+            },
+            {
+                "key": "release_id",
+                "value": "",
+                "description": "The id for a release.",
+                "req": true
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names to only include in the response. See the related request fred/release/related_tags.",
+                "req": false
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.",
+                "req": false
+            },
+            {
+                "key": "search_text",
+                "value": "",
+                "description": "The words to find matching tags with.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675330002179,
+        "lastModifiedTime": 1675330002179,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84876,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesSearch",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/search",
+        "executor_description": "Get economic data series that match search text.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/search",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "series_id",
+                "value": "",
+                "description": "The id for a series.",
+                "req": true
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "filter_variable",
+                "value": "",
+                "description": "The attribute to filter results by.",
+                "req": false
+            },
+            {
+                "key": "filter_value",
+                "value": "",
+                "description": "The value of the filter_variable attribute to filter results by.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match all of.",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675336990961,
+        "lastModifiedTime": 1675336990961,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84875,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesRelease",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/release",
+        "executor_description": "Get the release for an economic data series.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/release",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "series_id",
+                "value": "",
+                "description": "The id for a series.",
+                "req": true
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675336834973,
+        "lastModifiedTime": 1675336834973,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84874,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesObservations",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/observations",
+        "executor_description": "Get the categories for an economic data series.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/observations",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "series_id",
+                "value": "",
+                "description": "The id for a series.",
+                "req": true
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending observation_date order.",
+                "req": false
+            },
+            {
+                "key": "observation_start",
+                "value": "",
+                "description": "The start of the observation period.",
+                "req": false
+            },
+            {
+                "key": "observation_end",
+                "value": "",
+                "description": "The end of the observation period.",
+                "req": false
+            },
+            {
+                "key": "units",
+                "value": "",
+                "description": "A key that indicates a data value transformation.",
+                "req": false
+            },
+            {
+                "key": "frequency",
+                "value": "",
+                "description": "An optional parameter that indicates a lower frequency to aggregate values to. The FRED frequency aggregation feature converts higher frequency data series into lower frequency data series (e.g. converts a monthly data series into an annual data series). In FRED, the highest frequency data is daily, and the lowest frequency data is annual. There are 3 aggregation methods available- average, sum, and end of period. See the aggregation_method parameter.",
+                "req": false
+            },
+            {
+                "key": "aggregation_method",
+                "value": "",
+                "description": "A key that indicates the aggregation method used for frequency aggregation. This parameter has no affect if the frequency parameter is not set.",
+                "req": false
+            },
+            {
+                "key": "output_type",
+                "value": "",
+                "description": "An integer that indicates an output type.",
+                "req": false
+            },
+            {
+                "key": "vintage_dates",
+                "value": "",
+                "description": "A comma separated string of YYYY-MM-DD formatted dates in history (e.g. 2000-01-01,2005-02-24). Vintage dates are used to download data as it existed on these specified dates in history. Vintage dates can be specified instead of a real-time period using realtime_start and realtime_end.  Sometimes it may be useful to enter a vintage date that is not a date when the data values were revised. For instance you may want to know the latest available revisions on 2001-09-11 (World Trade Center and Pentagon attacks) or as of a Federal Open Market Committee (FOMC) meeting date. Entering a vintage date is also useful to compare series on different releases with different release dates.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675336766670,
+        "lastModifiedTime": 1675336766670,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84879,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/tags",
+        "executor_description": "Get the FRED tags for a series.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "series_id",
+                "value": "",
+                "description": "The id for a series.",
+                "req": true
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675337453468,
+        "lastModifiedTime": 1675337453468,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84878,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesSearchRelatedTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/search/related_tags",
+        "executor_description": "Get the related FRED tags for one or more FRED tags matching a series search. Optionally, filter results by tag group or tag search.  FRED tags are attributes assigned to series. For this request, related FRED tags are the tags assigned to series that match all tags in the tag_names parameter, no tags in the exclude_tag_names parameter, and the search words set by the series_search_text parameter. See the related request fred/series/search/tags.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/search/related_tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match all of.",
+                "req": false
+            },
+            {
+                "key": "series_search_text",
+                "value": "",
+                "description": "The words to match against economic data series.",
+                "req": true
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.",
+                "req": false
+            },
+            {
+                "key": "tag_search_text",
+                "value": "",
+                "description": "The words to find matching tags with.",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675337255048,
+        "lastModifiedTime": 1675337255048,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84881,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesVintagedates",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/vintagedates",
+        "executor_description": "Get economic data series sorted by when observations were updated on the FRED\u00ae server (attribute last_updated). Results are limited to series updated within the last two weeks.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/vintagedates",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "series_id",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending vintage_date order.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675338330265,
+        "lastModifiedTime": 1675338330265,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84880,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesUpdates",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/updates",
+        "executor_description": "Get economic data series sorted by when observations were updated on the FRED\u00ae server (attribute last_updated). Results are limited to series updated within the last two weeks.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/updates",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "filter_value",
+                "value": "",
+                "description": "Limit results by geographic type of economic data series; namely 'macro', 'regional', and 'all'.",
+                "req": false
+            },
+            {
+                "key": "start_time",
+                "value": "",
+                "description": "Start time for limiting results for a time range, can filter down to minutes",
+                "req": false
+            },
+            {
+                "key": "end_time",
+                "value": "",
+                "description": "End time for limiting results for a time range, can filter down to minutes",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675337630991,
+        "lastModifiedTime": 1675337630991,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84872,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeries",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series",
+        "executor_description": "Get an economic data series.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "series_id",
+                "value": "",
+                "description": "The id for a series.",
+                "req": true
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675331898253,
+        "lastModifiedTime": 1675331898253,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84877,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesSearchTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/search/tags",
+        "executor_description": "Get the FRED tags for a series search. Optionally, filter results by tag name, tag group, or tag search. See the related request fred/series/search/related_tags.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/search/tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match all of.",
+                "req": false
+            },
+            {
+                "key": "series_search_text",
+                "value": "",
+                "description": "The words to match against economic data series.",
+                "req": true
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.",
+                "req": false
+            },
+            {
+                "key": "tag_search_text",
+                "value": "",
+                "description": "The words to find matching tags with.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1675337126119,
+        "lastModifiedTime": 1675337382748,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84873,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSeriesCategories",
+        "executor_version": "v1",
+        "executor_display_name": "fred/series/categories",
+        "executor_description": "Get the categories for an economic data series.",
+        "executor_category": "Series",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/series/categories",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "series_id",
+                "value": "",
+                "description": "The id for a series.",
+                "req": true
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675331946481,
+        "lastModifiedTime": 1675331946481,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84883,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSource",
+        "executor_version": "v1",
+        "executor_display_name": "fred/source",
+        "executor_description": "Get a source of economic data.",
+        "executor_category": "Sources",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/source",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "source_id",
+                "value": "",
+                "description": "The id for a source.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675338550068,
+        "lastModifiedTime": 1675338550068,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84882,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSources",
+        "executor_version": "v1",
+        "executor_display_name": "fred/sources",
+        "executor_description": "Get all sources of economic data.",
+        "executor_category": "Sources",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/sources",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending vintage_date order.",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675338462465,
+        "lastModifiedTime": 1675338462465,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84884,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredSourceReleases",
+        "executor_version": "v1",
+        "executor_display_name": "fred/source/releases",
+        "executor_description": "Get the releases for a source.",
+        "executor_category": "Sources",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/source/releases",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "source_id",
+                "value": "",
+                "description": "The id for a source.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675338637744,
+        "lastModifiedTime": 1675338637744,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84885,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/tags",
+        "executor_description": "Get FRED tags. Optionally, filter results by tag name, tag group, or search. FRED tags are attributes assigned to series. See the related request fred/related_tags.",
+        "executor_category": "Tags",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names to only include in the response. See the related request fred/related_tags.",
+                "req": false
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.",
+                "req": false
+            },
+            {
+                "key": "search_text",
+                "value": "",
+                "description": "The words to find matching tags with.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675338790557,
+        "lastModifiedTime": 1675338790557,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84887,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredTagsSeries",
+        "executor_version": "v1",
+        "executor_display_name": "fred/tags/series",
+        "executor_description": "Get the series matching all tags in the tag_names parameter and no tags in the exclude_tag_names parameter.",
+        "executor_category": "Tags",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/tags/series",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names to only include in the response. See the related request fred/related_tags.",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675338936155,
+        "lastModifiedTime": 1675338936155,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 84886,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fredRelatedTags",
+        "executor_version": "v1",
+        "executor_display_name": "fred/related_tags",
+        "executor_description": "Get the related FRED tags for one or more FRED tags. Optionally, filter results by tag group or search.",
+        "executor_category": "Tags",
+        "executor_category_group": null,
+        "service_provider": "fred",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.stlouisfed.org/fred/related_tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Read API Keys for more information.  32 character alpha-numeric lowercase string, required",
+                "req": true
+            },
+            {
+                "key": "file_type",
+                "value": "",
+                "description": "A key or file extension that indicates the type of file to send.  string, optional, default: xml One of the following values: 'xml', 'json' xml = Extensible Markup Language. The HTTP Content-Type is text/xml. json = JavaScript Object Notation. The HTTP Content-Type is application/json.",
+                "req": false
+            },
+            {
+                "key": "realtime_start",
+                "value": "",
+                "description": "The start of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "realtime_end",
+                "value": "",
+                "description": "The end of the real-time period. For more information, see Real-Time Periods.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "The maximum number of results to return.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Order results by values of the specified attribute.",
+                "req": false
+            },
+            {
+                "key": "sort_order",
+                "value": "",
+                "description": "Sort results is ascending or descending order for attribute values specified by order_by.",
+                "req": false
+            },
+            {
+                "key": "tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names to only include in the response. See the related request fred/related_tags.",
+                "req": false
+            },
+            {
+                "key": "tag_group_id",
+                "value": "",
+                "description": "A tag group id to filter tags by type.",
+                "req": false
+            },
+            {
+                "key": "search_text",
+                "value": "",
+                "description": "The words to find matching tags with.",
+                "req": false
+            },
+            {
+                "key": "exclude_tag_names",
+                "value": "",
+                "description": "A semicolon delimited list of tag names that series match none of.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1675338851992,
+        "lastModifiedTime": 1675338851992,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

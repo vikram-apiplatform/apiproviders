@@ -1,0 +1,4768 @@
+[
+    {
+        "id": 87598,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivitygoals",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity Goals",
+        "executor_description": "Retrieves a user's current daily or weekly activity goals.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/goals/{{period}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680780098541,
+        "lastModifiedTime": 1680780098541,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "ZvBApQy5jU8cX774YAsN97rEz8oV3srWPL7QoIMG",
+        "nid": "ybePlhjEmPQTrKmHCAKxOPIl7LfUf4jjkphztXDL"
+    },
+    {
+        "id": 87592,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivitytype",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity Type",
+        "executor_description": "Retrieves a list of all valid Fitbit public activities and the private, user-created activities from the Fitbit activities database in the format requested. If available, activity level details will display.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/activities/{{activity-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680779716136,
+        "lastModifiedTime": 1680779716136,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "qAVrEtcWsRUGSxNpEOz9W7qQjsyqIERfgAXzJsSH",
+        "nid": "e1xL0bEY8DtP5agrGKA7TLaINcg1s21y1GMw0Op8"
+    },
+    {
+        "id": 87585,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "logactivity",
+        "executor_version": "v1",
+        "executor_display_name": "Log Activity",
+        "executor_description": "Creates a log entry containing the Fitbit user's activity or private custom activity.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "activityId",
+                "value": "",
+                "description": "(Required) The ID of the activity, directory activity or intensity level activity."
+            },
+            {
+                "key": "activityName",
+                "value": "",
+                "description": "Custom activity name. Either activityId or activityName must be provided."
+            },
+            {
+                "key": "manualCalories",
+                "value": "",
+                "description": "(Required) Calories burned that are manaully specified. Required with activityName must be provided."
+            },
+            {
+                "key": "startTime",
+                "value": "",
+                "description": "(Required) Activity start time. Hours and minutes in the format HH:mm:ss."
+            },
+            {
+                "key": "durationMillis",
+                "value": "",
+                "description": "(Required) Duration in milliseconds."
+            },
+            {
+                "key": "date",
+                "value": "",
+                "description": "(Required) Log entry date in the format yyyy-MM-dd."
+            },
+            {
+                "key": "distance",
+                "value": "",
+                "description": "(Required) Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit."
+            },
+            {
+                "key": "distanceUnit",
+                "value": "",
+                "description": "Distance measurement unit. Steps units are available only for Walking (activityId=90013) and Running (activityId=90009) directory activities and their intensity levels."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680769045768,
+        "lastModifiedTime": 1680775855376,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "cSnT0mk6T1jEnN4P7WEkCo75ooSQmWwehLpwUi9I",
+        "nid": "jhquMoEMZRyUEEXkgOxqD0tfvkKqvWNQFUPlNm7d"
+    },
+    {
+        "id": 87595,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getfavoriteactivities",
+        "executor_version": "v1",
+        "executor_display_name": "Get Favorite Activities",
+        "executor_description": "Retrieves a list of a user's favorite activities.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/favorite.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680779903376,
+        "lastModifiedTime": 1680779903376,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "bsbOtS96KBygTfLQZav4bsaUshI3PL8Ge1jVzcUv",
+        "nid": "EL6ViL292wYfwX3LhH6lJx9Ok2Exr6oVAVU5Hsvj"
+    },
+    {
+        "id": 87591,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "browseactivitytypes",
+        "executor_version": "v1",
+        "executor_display_name": "Browse Activity Types",
+        "executor_description": "Retrieves a list of all valid Fitbit public activities and the private, user-created activities from the Fitbit activities database in the format requested. If available, activity level details will display.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/activities.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {
+                "token": "{{access_token}}"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680776880550,
+        "lastModifiedTime": 1680776880550,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "sBw9P2mLCBqVwlxa36jbymrEkCKPG5kOmQDa7o5j",
+        "nid": "4De8zxyX1JTvKMjkYfyjCyTyin2KlpKFHQUGxNJa"
+    },
+    {
+        "id": 87593,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getfrequentactivities",
+        "executor_version": "v1",
+        "executor_display_name": "Get Frequent Activities",
+        "executor_description": "Retrieves a list of a user's frequent activities.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/frequent.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680779762208,
+        "lastModifiedTime": 1680779762208,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "4NpabJUtOGqZFbQfeqiigha6JQbhKgRrwdoVSj3Z",
+        "nid": "BUEoG7bwy4JjwC0opeR0fULupbYkgGUjpSeZkxBP"
+    },
+    {
+        "id": 87599,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateactivitygoals",
+        "executor_version": "v1",
+        "executor_display_name": "Update Activity Goals",
+        "executor_description": "Creates or updates a user's daily or weekly activity goal.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/goals/{{period}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "type",
+                "value": "",
+                "description": "(Required) goal type"
+            },
+            {
+                "key": "value",
+                "value": "",
+                "description": "(Required) goal value"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680780186770,
+        "lastModifiedTime": 1680780186770,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "r8Y9r2siDd7W0FGJpKXwcWiBPudUJy09z9gdN6vk",
+        "nid": "TPF74gpzBQMseGQz55j6lMutN0kuY5mxadqqGRZo"
+    },
+    {
+        "id": 87589,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivityloglist",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity Log List",
+        "executor_description": "Deletes a user\u2019s activity log entry with the given ID.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/list.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "beforeDate",
+                "value": "",
+                "description": "The date in the format yyyy-MM-ddTHH:mm:ss. Only yyyy-MM-dd is required. Either beforeDate or afterDate should be specified."
+            },
+            {
+                "key": "afterDate",
+                "value": "",
+                "description": "The date in the format yyyy-MM-ddTHH:mm:ss."
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "(Required) The sort order of entries by date asc (ascending) or desc (descending)."
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "(Required) The offset number of entries."
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "(Required) The maximum number of entries returned (maximum;100)."
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680776700535,
+        "lastModifiedTime": 1680776700535,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "NGDBPuQdZuChYLjzMhi6iquf319iUO6gxzo3tqiz",
+        "nid": "8spt6wWK9y88XcXIRdu9rDNNGZNteeigd7OR3MeE"
+    },
+    {
+        "id": 87590,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivitytcx",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity TCX",
+        "executor_description": "The Training Center XML (TCX) is a data exchange format that contains GPS, heart rate, and lap data. This endpoint retrieves the details of a user's location using GPS and heart rate data during a logged exercise.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/{{log-id}}.tcx",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "includePartialTCX",
+                "value": "",
+                "description": "Include TCX points regardless of GPS data being present"
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680776780203,
+        "lastModifiedTime": 1680776780203,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "CQNjLT2Tpedkxg1Yjrgd0Phz4taM64PEXz5lJB27",
+        "nid": "c47PWETjpoCBFry6RnTmZXPji6tnLrM83ohs0kQu"
+    },
+    {
+        "id": 87594,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getrecentactivitytypes",
+        "executor_version": "v1",
+        "executor_display_name": "Get Recent Activity Types",
+        "executor_description": "Retrieves a list of a user's recent activities types logged with some details of the last activity log of that type.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/recent.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680779843610,
+        "lastModifiedTime": 1680779843610,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "ZaaCZi4wsIcwTiMavfwgsScm2kYEY1Ou75uOtsHS",
+        "nid": "8Dinb5IVTEKftE3Q1eFmDRSV5W7brkJsrNsjDc0m"
+    },
+    {
+        "id": 87586,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivitysummarybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity Summary by Date ",
+        "executor_description": "Retrieves a summary and list of a user\u2019s activities and activity log entries for a given day.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {
+                "token": "{{access_token}}"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680775518437,
+        "lastModifiedTime": 1680775518437,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "AHpu3SjCbN3HUj95apdyjdDEklNmtPxgrxs0xwi5",
+        "nid": "jAOuprUuk3ZJDHVYNwvccsJgX5hVlioCIioR4pj7"
+    },
+    {
+        "id": 87588,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteactivitylog",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Activity Log",
+        "executor_description": "Deletes a user\u2019s activity log entry with the given ID.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/{{activity-log-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680776587036,
+        "lastModifiedTime": 1680776587036,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "L63vveT46QgCn3CuKCRFGXeBgxiFVHmAfHmbYrrU",
+        "nid": "bW6D1hhJiv1VvY5lGlIm1PXnegnv2Xib0m0bYFo5"
+    },
+    {
+        "id": 87596,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletefavoriteactivity",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Favorite Activity",
+        "executor_description": "Removes the activity from a user\u2019s list of favorite activities.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/favorite/{{activity-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680779953651,
+        "lastModifiedTime": 1680779953652,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "JAvXxLS8tWbFpgiMKPLBu8EoRUNFqLN4tjkOwlxV",
+        "nid": "8L5E77kpAfL6DRyj8LtobpQOzJ04dm4ZUIWbLlCg"
+    },
+    {
+        "id": 87587,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getlifetimestats",
+        "executor_version": "v1",
+        "executor_display_name": "Get Lifetime Stats",
+        "executor_description": "Retrieves the user's activity statistics.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680776515447,
+        "lastModifiedTime": 1680776515447,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "wD3zyWppmaPmQeTiIa8mOtNBcbeVah6vNJFZyErD",
+        "nid": "WBh1TL3c2VjtnklONpgJFjNy1OUS3cgBLBqMW6hG"
+    },
+    {
+        "id": 87597,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addfavoriteactivity",
+        "executor_version": "v1",
+        "executor_display_name": "Add Favorite Activity",
+        "executor_description": "Adds the activity with the given ID to user's list of favorite activities.",
+        "executor_category": "Activity",
+        "executor_category_group": "Activity",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/favorite/{{activity-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680780052257,
+        "lastModifiedTime": 1680780052257,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "FFmhi4RxoZSbZ3UNDjSPF9sVX4sPiMZGqzlFzCLU",
+        "nid": "tvYQ8PNkgyOAVT5ccx3LWo6chWJ7iP3P8Cd6tVDv"
+    },
+    {
+        "id": 87610,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletebodyfatlog",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Body Fat Log",
+        "executor_description": "Deletes a body fat log entry",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/fat/{{body-fat-log-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782135319,
+        "lastModifiedTime": 1680782135319,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "bCgt6yKEYeaWPXUt11RxzI2rW647mfbhltJIKnF1",
+        "nid": "bUflZnqcBMJLYO1KFIRSmpMaG1rjPk0GH2cOLTLa"
+    },
+    {
+        "id": 87612,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatebodyfatgoal",
+        "executor_version": "v1",
+        "executor_display_name": "Update Body Fat Goal",
+        "executor_description": "Create or update a user's body fat goal.",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/fat/goal.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "fat",
+                "value": "",
+                "description": "(Required) Target body fat percentage; in the format X.XX."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782220603,
+        "lastModifiedTime": 1680782220603,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "uudcKfFMTou7cpr1Wp8NyBeZxAXNLy8PuMnwU12G",
+        "nid": "eF7etuh5orxmEz2QmALPc60H5IYo7CB3Es2rJBtS"
+    },
+    {
+        "id": 87609,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "logbodyfat",
+        "executor_version": "v1",
+        "executor_display_name": "Log Body Fat",
+        "executor_description": "Create or update a user's body fat goal.",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/fat.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "fat",
+                "value": " ",
+                "description": "(Required) Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided."
+            },
+            {
+                "key": "date",
+                "value": " ",
+                "description": "(Required) Log entry date in the format yyyy-MM-dd."
+            },
+            {
+                "key": "time",
+                "value": " ",
+                "description": "(Required) Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782084915,
+        "lastModifiedTime": 1680782084915,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "s06Ku49CNnz6aou094WEBq8XAwKby1IrZx1Bl9Ul",
+        "nid": "K5B8j3ztc76gswsyxxs4Kl9L9cFNJUDDvMHBTUsk"
+    },
+    {
+        "id": 87613,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateweightgoal",
+        "executor_version": "v1",
+        "executor_display_name": "Update Weight Goal",
+        "executor_description": "Creates or updates a user's weight goal.",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/weight/goal.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "(Required) Weight goal start date; in the format yyyy-MM-dd."
+            },
+            {
+                "key": "startWeight",
+                "value": "",
+                "description": "(Required) Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided."
+            },
+            {
+                "key": "weight",
+                "value": "",
+                "description": "Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782267102,
+        "lastModifiedTime": 1680782267102,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "QTD7QQkG1O9a0w2Ypy0OEjCDxLcWpLVJeB8hz1Zz",
+        "nid": "d6rzPTo7baOgdGmmtPrKTCAJHni21Ux3Btum3Mbz"
+    },
+    {
+        "id": 87614,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getweightlogs",
+        "executor_version": "v1",
+        "executor_display_name": "Get Weight Logs",
+        "executor_description": "Retrieves a list of all user's weight log entries for a given date.",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/weight/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782319630,
+        "lastModifiedTime": 1680782319630,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "rrKnpkJ2ui9giFxNni4VjgbsXnrujVLpQaoL7bRv",
+        "nid": "dlynWzHHaoDTx7Mz3tojat5jaXQS3MTuMIlGI2cM"
+    },
+    {
+        "id": 87608,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbodyfatlogs",
+        "executor_version": "v1",
+        "executor_display_name": "Get Body Fat Logs",
+        "executor_description": "Retrieves a list of all user's body fat log entries for a given date.",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/fat/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680781884604,
+        "lastModifiedTime": 1680781884604,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "cpBnfWOEBmPI2CW1JNTxnK71CD5CCxu96rH2PKKl",
+        "nid": "06MY6zrvQww9mzB4xLrMFFzmETmmUBGdUSqieA4f"
+    },
+    {
+        "id": 87611,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbodygoals",
+        "executor_version": "v1",
+        "executor_display_name": "Get Body Goals",
+        "executor_description": "Retrieves a user's body fat and weight goals.",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/:goal-type/goal.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782175788,
+        "lastModifiedTime": 1680782175788,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "eH69Y8FIcY5aDp2BEAz54xT2yvAryPQn4r1IMaKi",
+        "nid": "dL4qLBv4PkxHY3Qh8rD82uQQMGQw9QhfbSuDnJM2"
+    },
+    {
+        "id": 87615,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "logweight",
+        "executor_version": "v1",
+        "executor_display_name": "Log Weight",
+        "executor_description": "Creates a weight log entry",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/weight.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "weight",
+                "value": "",
+                "description": "(Required) Weight in the format of X.XX."
+            },
+            {
+                "key": "date",
+                "value": "",
+                "description": "(Required) Log entry date in the format yyyy-MM-dd."
+            },
+            {
+                "key": "time",
+                "value": "",
+                "description": "Time of the measurement; hours and minutes in the format of HH:mm:ss, which is set to the last second of the day if not provided."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782413811,
+        "lastModifiedTime": 1680782413811,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "PYmZWm3z2UWLw1GRbHUM9zJuEISibDAhE89bUuQZ",
+        "nid": "HuCtgAo2rtcfPt4qqSIhtfItjtV98fr9EiG46pvk"
+    },
+    {
+        "id": 87616,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteweightlog",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Weight Log",
+        "executor_description": "Deletes a Weight log entry",
+        "executor_category": "Body and Weight",
+        "executor_category_group": "Body and Weight",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/log/weight/{{body-weight-log-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782461445,
+        "lastModifiedTime": 1680782461445,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "jk8UwGSRa54aZgninmwlUilkv28tEonli4MpPQxF",
+        "nid": "9pUDTIR6QhcHrQw0UkmAmfrVt7VaRLxxK1Zbh1Zo"
+    },
+    {
+        "id": 87635,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gethrvintradaybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get HRV Intraday by Date",
+        "executor_description": "This endpoint returns the Heart Rate Variability (HRV) intraday data for a single date. HRV data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time asleep on a given date. It measures the HRV rate at various times and returns Root Mean Square of Successive Differences (rmssd), Low Frequency (LF), High Frequency (HF), and Coverage data for a given measurement. Rmssd measures short-term variability in your heart rate while asleep. LF and HF capture the power in interbeat interval fluctuations within either high frequency or low frequency bands. Finally, coverage refers to data completeness in terms of the number of interbeat intervals.  Single date measurements are provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request a daily HRV rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "Heart Rate Variability Intraday",
+        "executor_category_group": "Heart Rate Variability Intraday",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/hrv/date/:date/all.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784269464,
+        "lastModifiedTime": 1680784269464,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "6rAyl0GO1J4s7Tvh006OE9d48ir2hGghOc905huN",
+        "nid": "4yZDdOi3KmZJ4qkMtudNVDnpIgLw21AWPfmocOex"
+    },
+    {
+        "id": 87636,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gethrvintradaybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get HRV Intraday by Interval",
+        "executor_description": "This endpoint returns the Heart Rate Variability (HRV) intraday data for a date range. HRV data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time asleep on a given date. It measures your HRV rate at various times and returns Root Mean Square of Successive Differences (rmssd), Low Frequency (LF), High Frequency (HF), and Coverage data for a given measurement. Rmssd measures short-term variability in your heart rate while asleep. LF and HF capture the power in interbeat interval fluctuations within either high frequency or low frequency bands. Finally, coverage refers to data completeness in terms of the number of interbeat intervals.  Single date measurements are provided at the end of a period of sleep. The data returned can and often does reflects a sleep period that began the day before. For example, if you request a daily HRV rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "Heart Rate Variability Intraday",
+        "executor_category_group": "Heart Rate Variability Intraday",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/hrv/date/:startDate/:endDate/all.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784322774,
+        "lastModifiedTime": 1680784322774,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "rjN5qrkqdEFyjUCQzYgMLrhUm3Mq5dvGTjKGwWa4",
+        "nid": "fjvuMJhTajZvzqORJdhSeEallO7esMlz0iqnW4GR"
+    },
+    {
+        "id": 87642,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatesleepgoal",
+        "executor_version": "v1",
+        "executor_display_name": "Update Sleep Goal",
+        "executor_description": "Create or update a user's sleep goal.",
+        "executor_category": "Sleep",
+        "executor_category_group": "Sleep",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1.2/user/-/sleep/goal.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "minDuration",
+                "value": "",
+                "description": "(Required) Duration of sleep goal."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784819852,
+        "lastModifiedTime": 1680784819852,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "XYwzB0tjHd2ZOWvtoABUCnHk3Dyw9VEJXolZtvLY",
+        "nid": "aYzMQgbrLJnbftiUvv6VbkKT2FaHLw2Q44BuQe5Z"
+    },
+    {
+        "id": 87640,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getsleeplogslist",
+        "executor_version": "v1",
+        "executor_display_name": "Get Sleep Logs List",
+        "executor_description": "This endpoint returns a list of a user's sleep log entries before or after a given date, and specifying offset, limit and sort order. The data returned for different dates can include sleep periods that began on the previous date. For example, a sleep log entry for 2018-10-21 may have ended that day but started the previous night on 2018-10-20.",
+        "executor_category": "Sleep",
+        "executor_category_group": "Sleep",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1.2/user/-/sleep/list.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "beforeDate",
+                "value": "",
+                "description": "The date in the format yyyy-MM-ddTHH:mm:ss. Only yyyy-MM-dd is required. Either beforeDate or afterDate should be specified."
+            },
+            {
+                "key": "afterDate",
+                "value": "",
+                "description": "The date in the format yyyy-MM-ddTHH:mm:ss."
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "(Required) The sort order of entries by date asc (ascending) or desc (descending)."
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "(Required) The offset number of entries."
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "(Required) The maximum number of entries returned (maximum;100)."
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784716383,
+        "lastModifiedTime": 1680784716383,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "H7Rf7ecXzWKCXm7GrKxgRG5fZ8vcd7y8nH01ZVZ6",
+        "nid": "JFKDskF8FbR1siPUI3iLYF4lb0qZWgvje0zfDKld"
+    },
+    {
+        "id": 87637,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletesleeplog",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Sleep Log",
+        "executor_description": "Deletes a sleep log with the given log id.",
+        "executor_category": "Sleep",
+        "executor_category_group": "Sleep",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseUrl}}/1.2/user/-/sleep/{{log-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784442048,
+        "lastModifiedTime": 1680784442048,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "l7nkjFEsCvd8SkV4miJgyt2OWAbAbP5uSrulYBGj",
+        "nid": "Wopg2I9poaB5MDKYh3S5exTgqpauEwZwb6KiwrPi"
+    },
+    {
+        "id": 87641,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getsleepgoal",
+        "executor_version": "v1",
+        "executor_display_name": "Get Sleep Goal",
+        "executor_description": " Returns a user's current sleep goal.",
+        "executor_category": "Sleep",
+        "executor_category_group": "Sleep",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1.2/user/-/sleep/goal.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784747291,
+        "lastModifiedTime": 1680784747291,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "Hg5rhea1LtOk1aOD9JannvoHAgzi7gtFg6VsPVT0",
+        "nid": "u4fNohyfJz1adxSWJpOE0TTzc94Uz3PaKKELeKjs"
+    },
+    {
+        "id": 87638,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getsleeplog",
+        "executor_version": "v1",
+        "executor_display_name": "Get Sleep Log",
+        "executor_description": "This endpoint returns a list of a user's sleep log entries for a given date. The data returned can include sleep periods that began on the previous date. For example, if you request a Sleep Log for 2021-12-22, it may return a log entry that began the previous night on 2021-12-21, but ended on 2021-12-22.",
+        "executor_category": "Sleep",
+        "executor_category_group": "Sleep",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1.2/user/-/sleep/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784566550,
+        "lastModifiedTime": 1680784566550,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "lXTguECZUG9jq0HP3qP7KuOzBAlFeDQlHtID3ueG",
+        "nid": "KPigYdiTsuCI2A5z0IjjNHlWmQaopM2pOjuQndak"
+    },
+    {
+        "id": 87639,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getsleeplogsbydaterange",
+        "executor_version": "v1",
+        "executor_display_name": "Get Sleep Logs by Date Range",
+        "executor_description": "This endpoint returns a list of a user's sleep log entries for a date range. The data returned for either date can include a sleep period that ended that date but began on the previous date. For example, if you request a sleep log between 2021-12-22 and 2021-12-26, it may return log entries that span 2021-12-21 and 2021-12-22, as well as 2021-12-25 and 2021-12-26.",
+        "executor_category": "Sleep",
+        "executor_category_group": "Sleep",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1.2/user/-/sleep/date/:base-date/{{end-date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784674273,
+        "lastModifiedTime": 1680784674274,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "yfZw5s40hF4BxlG0jfxswl4iLiUE9fJdVrKmzPuA",
+        "nid": "y0dRNPRngKWSbPPm12kVdjddar1o2SAnAKGnYdIY"
+    },
+    {
+        "id": 87643,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "logsleep",
+        "executor_version": "v1",
+        "executor_display_name": "Log Sleep",
+        "executor_description": "Creates a log entry for a sleep event and returns a response in the format requested.",
+        "executor_category": "Sleep",
+        "executor_category_group": "Sleep",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1.2/user/-/sleep.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startTime",
+                "value": "",
+                "description": "(Required) Start time includes hours and minutes in the format HH:mm."
+            },
+            {
+                "key": "duration",
+                "value": "",
+                "description": "(Required) Duration in milliseconds."
+            },
+            {
+                "key": "date",
+                "value": "",
+                "description": "(Required) Log entry in the format yyyy-MM-dd."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784897838,
+        "lastModifiedTime": 1680784897838,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "O70o9ApTvCvV8epSIr93FAkn8iBIC4bN1Z1qWTNs",
+        "nid": "7D0Y4r1b8ZzwV29cafVKiiOhWRrqDQmyekmNVgON"
+    },
+    {
+        "id": 87676,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteasubscription",
+        "executor_version": "v1",
+        "executor_display_name": "Delete a Subscription",
+        "executor_description": "Deletes a subscription for a specific user. See Deleting a Subscription for more information.",
+        "executor_category": "Subscriptions",
+        "executor_category_group": "Subscriptions",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseUrl}}/1/user/-/:collection-path/apiSubscriptions/{{subscription-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681120032946,
+        "lastModifiedTime": 1681120032946,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "kjnF8CTpRfXnHmCIUHsonGWM33un2JRX0QIuwD9k",
+        "nid": "Q99hCQ94VJ46lcaXAGJoFIMz2iWeookv7hVhiiCH"
+    },
+    {
+        "id": 87674,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getalistofsubscriptions",
+        "executor_version": "v1",
+        "executor_display_name": "Get a List of Subscriptions",
+        "executor_description": "Retrieves a list of subscriptions created by your application for a specific user. You can either fetch subscriptions for a specific collection or the entire list of subscriptions for the user. For best practice, make sure that your application maintains this list on your side and uses this endpoint only to periodically ensure data consistency. See Getting a List of Subscriptions for more information.",
+        "executor_category": "Subscriptions",
+        "executor_category_group": "Subscriptions",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/:collection-path/apiSubscriptions.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681119887573,
+        "lastModifiedTime": 1681119887573,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "sSM1EoVl60ZI31EgtmKdflThI3pFxsap5IoHEZDx",
+        "nid": "iJ3pSDhxSVXDw64sD6K2q7kjVQ5LQ4TmIqo1L2cr"
+    },
+    {
+        "id": 87675,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addasubscription",
+        "executor_version": "v1",
+        "executor_display_name": "Add a Subscription",
+        "executor_description": "Creates a subscription to notify the application when a user has new data available. See Creating a Subscription for more information.",
+        "executor_category": "Subscriptions",
+        "executor_category_group": "Subscriptions",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/:collection-path/apiSubscriptions/{{subscription-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681119971409,
+        "lastModifiedTime": 1681119971409,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "LRezGIKytLXQ9bHswmtSu441THMzz6yf33O5FiA9",
+        "nid": "po2ZfAK838msgttVpheUqzjVloYyq3Tww7Sh5iUc"
+    },
+    {
+        "id": 87604,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getcode",
+        "executor_version": "v1",
+        "executor_display_name": "get code",
+        "executor_description": "Fitbit follows the OAuth 2.0 Client Credentials flow as specified in RFC 6749. This authorization flow is used with specific Fitbit API endpoints related to business operations. It is not supported by the public Web APIs to retrieve Fitbit user data.",
+        "executor_category": "Authorization",
+        "executor_category_group": "Authorization",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.fitbit.com/oauth2/token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": [],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680781474403,
+        "lastModifiedTime": 1680781474403,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "INhzlxGDaIM7fXc1ur1FteMmP4vXeKCDM4hbDMU5",
+        "nid": "qPCxdtDOhY3QnGL2FNXIwGeqaMh5Qll29D7YwAyU"
+    },
+    {
+        "id": 87606,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getoauth2accesstoken",
+        "executor_version": "v1",
+        "executor_display_name": "Get_OAuth2_access_token",
+        "executor_description": "Exchange the authorization code for the initial access token and refresh token (See OAuth2 Token). This process is required when using the Authorization Code Grant Flow. Obtain a new access token and refresh token when the existing access token has expired (See Refresh Token). Initiate the Client Credentials authorization flow (See Client Credentials).",
+        "executor_category": "Authorization",
+        "executor_category_group": "Authorization",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/oauth2/token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "code",
+                "value": "{{code}}",
+                "description": "Authorization code received in the redirect as URI parameter. Required if using the Authorization Code flow."
+            },
+            {
+                "key": "client_id",
+                "value": "{{client-id}}",
+                "description": "(Required) This is your Fitbit API application id from your settings on dev.fitbit.com."
+            },
+            {
+                "key": "expires_in",
+                "value": "{{expires-in}}",
+                "description": "Specify the desired access token lifetime. Defaults to 28800 for 8 hours. The other valid value is 3600 for 1 hour."
+            },
+            {
+                "key": "grant_type",
+                "value": "{{grant-type}}",
+                "description": "(Required) Authorization grant type. Valid values are 'authorization_code' and 'refresh_token'."
+            },
+            {
+                "key": "redirect_uri",
+                "value": "{{redirect_uri}}",
+                "description": "Uri to which the access token will be sent if the request is successful. Required if specified in the redirect to the authorization page. Must be exact match."
+            },
+            {
+                "key": "refresh_token",
+                "value": "{{refresh_token}}",
+                "description": "Refresh token issued by Fitbit. Required if 'grant_type' is 'refresh_token'."
+            },
+            {
+                "key": "state",
+                "value": "{{state}}",
+                "description": "Required if specified in the redirect uri of the authorization page. Must be an exact match."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "x-www-form-urlencoded"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680781629820,
+        "lastModifiedTime": 1680781629820,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "rwfWmFln0UYLUKFasyco8e2FK73GfjGT8ULDa7EH",
+        "nid": "5cNKYHy2glrxbbcKhElDxu7TBm08RQWoqdq38fco"
+    },
+    {
+        "id": 87607,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievetheactivestateofanoauth20token",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve the active state of an OAuth 2.0 token",
+        "executor_description": "Allows the application to retrieve the active state of an OAuth 2.0 token. This endpoint conforms to RFC 7662.",
+        "executor_category": "Authorization",
+        "executor_category_group": "Authorization",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1.1/oauth2/introspect",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": [],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680781762338,
+        "lastModifiedTime": 1680781762338,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "IsKs1T7dtVxtCFqCPVh9oYtdWuK68wDH4Y4TvD81",
+        "nid": "3ZfVGPa4PjXsYF5ohh4xUzl8XAYZQQDNNV9kZ0WR"
+    },
+    {
+        "id": 87605,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "1agetcode",
+        "executor_version": "v1",
+        "executor_display_name": "1a_getcode",
+        "executor_description": "Exchange the authorization code for the initial access token and refresh token (See OAuth2 Token). This process is required when using the Authorization Code Grant Flow. Obtain a new access token and refresh token when the existing access token has expired (See Refresh Token). Initiate the Client Credentials authorization flow (See Client Credentials).",
+        "executor_category": "Authorization",
+        "executor_category_group": "Authorization",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.fitbit.com/oauth2/token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": [],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680781548898,
+        "lastModifiedTime": 1680781548898,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "H3WnVv5rWaUsCPNzfp6gBoFA9biOXSnnZxzHONTc",
+        "nid": "4sK6AZcEng4uQTdV4YFSrDxh7wAdvGPDFn413bMd"
+    },
+    {
+        "id": 87621,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbreathingrateintradaybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get Breathing Rate Intraday by Interval",
+        "executor_description": "This endpoint returns intraday breathing rate data for a date range. It measures the average breathing rate throughout the day and categories your breathing rate by sleep stage. Sleep stages vary between light sleep, deep sleep, REM sleep, and full sleep.  The single date measurements are provided at the end of a period of sleep. The data returned can and often does reflect a sleep period that began the day before. For example, if you request a daily breathing rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user started to sleep.",
+        "executor_category": "Breathing Rate Intraday",
+        "executor_category_group": "Breathing Rate Intraday",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/br/date/:startDate/:endDate/all.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783213740,
+        "lastModifiedTime": 1680783213740,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "DYHKlha5wUyOyhv29C1HTVVYOS0YJMP86TI8gXDu",
+        "nid": "jtjdmPXWMh9mOqGe1C0ZlsuCNdyCvd8xGJxaboSs"
+    },
+    {
+        "id": 87620,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbreathingrateintradaybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get Breathing Rate Intraday by Date",
+        "executor_description": "This endpoint returns intraday breathing rate data for a specified date. It measures the average breathing rate throughout the day and categories your breathing rate by sleep stage. Sleep stages vary between light sleep, deep sleep, REM sleep, and full sleep.  The single date measurements are provided at the end of a period of sleep. The data returned can and often does reflect a sleep period that began the day before. For example, if you request a daily breathing rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user started to sleep.",
+        "executor_category": "Breathing Rate Intraday",
+        "executor_category_group": "Breathing Rate Intraday",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/br/date/:date/all.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783135797,
+        "lastModifiedTime": 1680783135797,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "JDCdebTSodDGE6UBvezy4xtWWpIYGUo07UvZJ591",
+        "nid": "Dmx95l6yqI7K1CXNXdIJEktqaQLEK0BOymrO1GLm"
+    },
+    {
+        "id": 87629,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getfriends",
+        "executor_version": "v1",
+        "executor_display_name": "Get Friends",
+        "executor_description": "This endpoint allows the application to retrieves a list of the specified Fitbit user's friends. This scope does not provide access to the friend's Fitbit data. Those users will need to individually consent to share their data with your application.",
+        "executor_category": "Friends",
+        "executor_category_group": "Friends",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1.1/user/-/friends.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783864883,
+        "lastModifiedTime": 1680783864883,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "IUyie9inGHOOEx1jPYcFOKcfTYF3vowR2uSJI3dl",
+        "nid": "b0zM7Xa6GVLsZd69dstY1MUhT6nHke6wMOSuQ6bi"
+    },
+    {
+        "id": 87630,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getfriendsleaderboard",
+        "executor_version": "v1",
+        "executor_display_name": "Get Friends Leaderboard",
+        "executor_description": "This endpoint returns the user's friend leaderboard in the format requested using units in the unit system which corresponds to the Accept-Language header provided. This scope does not provide access to the friend's Fitbit data. Those users will need to individually consent to share their data with your application.",
+        "executor_category": "Friends",
+        "executor_category_group": "Friends",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1.1/user/-/leaderboard/friends.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783911913,
+        "lastModifiedTime": 1680783911913,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "WFudIAU5HwochpfD5SR8yMKzMDaRELBGC0dNimqW",
+        "nid": "DKbHMCgebnS99mBHjUlWRLE0ZzM4cEaNZ7TTKPGT"
+    },
+    {
+        "id": 87677,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gettemperaturecoresummarybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get Temperature (Core) Summary by Date",
+        "executor_description": "This endpoint returns the Temperature (Core) data for a single date. Temperature (Core) data applies specifically to data logged manually by the user throughout the day.",
+        "executor_category": "Temperature",
+        "executor_category_group": "Temperature",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/temp/core/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681120154717,
+        "lastModifiedTime": 1681120154717,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "QeiESoHFL5eZbaK4BNdyemC7auOuR2VL8qJ51YfS",
+        "nid": "3JiV70BhhXFy29Pu0ixehX8g4kbEiKReIhiLazTt"
+    },
+    {
+        "id": 87680,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gettemperatureskinsummarybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get Temperature (Skin) Summary by Interval",
+        "executor_description": "This endpoint returns Temperature (Skin) data for a date range. It only returns a value for dates on which the Fitbit device was able to record Temperature (skin) data and the maximum date range cannot exceed 30 days.  Temperature (Skin) data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time asleep on a given date.  The measurement is provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request a daily Temperature (Skin) rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "Temperature",
+        "executor_category_group": "Temperature",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/temp/skin/date/:startDate/{{endDate}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681120340312,
+        "lastModifiedTime": 1681120340312,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "YRlnuK2XclKgAkvJp38AsTH5Jby8tW47W6PMKW5L",
+        "nid": "Bh1RNFp5CaVFdqthTTYhqWW69Vt10O7bO1G5qLzG"
+    },
+    {
+        "id": 87679,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gettemperatureskinsummarybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get Temperature (Skin) Summary by Date",
+        "executor_description": "This endpoint returns the Temperature (Skin) data for a single date. It only returns a value for dates on which the Fitbit device was able to record Temperature (skin) data.  Temperature (Skin) data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time asleep on a given date.  The measurement is provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request a daily Temperature (Skin) rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "Temperature",
+        "executor_category_group": "Temperature",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/temp/skin/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681120267761,
+        "lastModifiedTime": 1681120267761,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "5n6fgSpia8zzJbmiIhHIS7Vs41EvL94Cwi1AZQEd",
+        "nid": "8fqFzCK82b8dXgkA1SLRckE26dWOCf3FFykpdAM8"
+    },
+    {
+        "id": 87678,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gettemperaturecoresummarybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get Temperature (Core) Summary by Interval",
+        "executor_description": "This endpoint returns Temperature (Core) data for a date range. Temperature (Core) data applies specifically to data logged manually by the user on a given day. It only returns a value for dates on which the Fitbit device was able to record Temperature (Core) data and the maximum date range cannot exceed 30 days.",
+        "executor_category": "Temperature",
+        "executor_category_group": "Temperature",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/temp/core/date/:startDate/{{endDate}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681120226173,
+        "lastModifiedTime": 1681120226173,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "bymU8d8ofjrVQgG4m23c1HKb7Uilk6faOqKK8fWe",
+        "nid": "J8D8SSmYd4OETrCkp2u1SlXsmv8ffpJ5mpV5NJX6"
+    },
+    {
+        "id": 87619,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbreathingratesummarybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get Breathing Rate Summary by Interval",
+        "executor_description": "This endpoint returns average breathing rate data for a date range. Breathing Rate data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time during which they were asleep on a given date.  The single date measurements are provided at the end of a period of sleep. The data returned can and often does reflect a sleep period that began the day before. For example, if you request a daily breathing rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user started to sleep.",
+        "executor_category": "Breathing Rate",
+        "executor_category_group": "Breathing Rate",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/br/date/:startDate/{{endDate}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783062188,
+        "lastModifiedTime": 1680783062188,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "ASMCCBYbtm75r23OY821cm8KgiNn6xonFcGZYjnd",
+        "nid": "kCl18KM5FTHzQIShAIm4pUhQKNAISALcG9j10pKH"
+    },
+    {
+        "id": 87618,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbreathingratesummarybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get Breathing Rate Summary by Date",
+        "executor_description": "This endpoint returns average breathing rate data for a single date. Breathing Rate data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time during which they were asleep on a given date.  The measurement is provided at the end of a period of sleep. The data returned can and often does reflect a sleep period that began the day before. For example, if you request a daily breathing rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user started to sleep.",
+        "executor_category": "Breathing Rate",
+        "executor_category_group": "Breathing Rate",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/br/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {
+                "token": "{{access_token}}"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782999581,
+        "lastModifiedTime": 1680782999581,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "OXPkG9HaeoTskEoKr4QGGG2uRYnkBhfLPpAaeikE",
+        "nid": "MNV4FhtJwbupy0x5nht8mRk6EMrY9zLTsKdtvxsS"
+    },
+    {
+        "id": 87644,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getspo2summarybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get SpO2 Summary by Date",
+        "executor_description": " This endpoint returns the SpO2 summary data for a single date. SpO2 applies specifically to a user\u2019s \u201cmain sleep\u201d, which is the longest single period of time asleep on a given date.  The measurement is provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request SpO2 levels for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.  The data returned includes average, minimum, and maximum SpO2 levels. It uses units that correspond to the Accept-Language header provided.",
+        "executor_category": "SpO2",
+        "executor_category_group": "SpO2",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/spo2/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784950994,
+        "lastModifiedTime": 1680784950994,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "nkoDHnvMHmY9BA7SEzSx27TcTL192zsiUSeTHcCF",
+        "nid": "4mkLvTATtDNKBMEV19E7iPnyhcqv5s3TQ317hNKU"
+    },
+    {
+        "id": 87645,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getspo2summarybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get SpO2 Summary by Interval",
+        "executor_description": "This endpoint returns the SpO2 summary data for a specified date range. SpO2 applies specifically to a user\u2019s \u201cmain sleep\u201d, which is the longest single period of time asleep on a given date.  The measurement is provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request SpO2 levels for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "SpO2",
+        "executor_category_group": "SpO2",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/spo2/date/:startDate/{{endDate}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784997165,
+        "lastModifiedTime": 1680784997165,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "DY2CCMZSwAXZ6HKsiE5e8L8DnnC1ODDbKxMLZppq",
+        "nid": "99NcF6HrPqXR5ghI1dBbmm7sUBfs38HRG1dpLvyP"
+    },
+    {
+        "id": 87626,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addalarm",
+        "executor_version": "v1",
+        "executor_display_name": "Add Alarm",
+        "executor_description": "Creates an alarm for the given device. This endpoint is supported for trackers that support alarms.",
+        "executor_category": "Devices",
+        "executor_category_group": "Devices",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/devices/tracker/:tracker-id/alarms.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "time",
+                "value": "",
+                "description": "(Required) Time of day that the alarm vibrates with a UTC timezone offset, e.g. 07:15-08:00."
+            },
+            {
+                "key": "enabled",
+                "value": "",
+                "description": "(Required) true or false. If false, alarm does not vibrate until enabled is set to true."
+            },
+            {
+                "key": "recurring",
+                "value": "",
+                "description": "(Required) true or false. If false, the alarm is a single event."
+            },
+            {
+                "key": "weekDays",
+                "value": "",
+                "description": "(Required) Comma separated list of days of the week on which the alarm vibrates, e.g. MONDAY, TUESDAY."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783475889,
+        "lastModifiedTime": 1680783475889,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "JXWS96ylEYM9BkLpYVIxlmFLbG4wadeYO3dr6EkY",
+        "nid": "YCWFatdMZdAkPoLZQade1GwxCxTw9lNthu99NbSk"
+    },
+    {
+        "id": 87628,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletealarm",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Alarm",
+        "executor_description": "Deletes an alarm on the given device. This endpoint is supported for trackers that support alarms.",
+        "executor_category": "Devices",
+        "executor_category_group": "Devices",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseUrl}}/1/user/-/devices/tracker/:tracker-id/alarms/{{alarm-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783582684,
+        "lastModifiedTime": 1680783582684,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "3LBtfqIIferEW7yrNKEMm12AoUyJQJGBU596FNYI",
+        "nid": "JpWxSfiCOCVWqlTKXG79PU1fBuc4CTs5x8zrl5NV"
+    },
+    {
+        "id": 87625,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getalarms",
+        "executor_version": "v1",
+        "executor_display_name": "Get Alarms",
+        "executor_description": "Retrieves the alarms enabled for a specific device. This endpoint is supported for trackers that support alarms.",
+        "executor_category": "Devices",
+        "executor_category_group": "Devices",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/devices/tracker/:tracker-id/alarms.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783416948,
+        "lastModifiedTime": 1680783416948,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "PcFrM2KBVL0Sgmv4XpSxka1ootldSjsgflYq49iB",
+        "nid": "Giguf7siOaCuH84kFMbTkJyY0NWhAoyNbI3iCUJC"
+    },
+    {
+        "id": 87627,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatealarm",
+        "executor_version": "v1",
+        "executor_display_name": "Update Alarm",
+        "executor_description": "Updates an alarm on the given device. This endpoint is supported for trackers that support alarms.",
+        "executor_category": "Devices",
+        "executor_category_group": "Devices",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/1/user/-/devices/tracker/:tracker-id/alarms/{{alarm-id}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "time",
+                "value": "",
+                "description": "(Required) Time of day that the alarm vibrates with a UTC timezone offset, e.g. 07:15-08:00."
+            },
+            {
+                "key": "enabled",
+                "value": "",
+                "description": "(Required) true or false. If false, the alarm does not vibrate until enabled is set to true."
+            },
+            {
+                "key": "recurring",
+                "value": "",
+                "description": "(Required) true or false. If false, the alarm is a single event."
+            },
+            {
+                "key": "weekDays",
+                "value": "",
+                "description": "(Required) Comma seperated list of days of the week on which the alarm vibrates, e.g. MONDAY, TUESDAY."
+            },
+            {
+                "key": "snoozeLength",
+                "value": "",
+                "description": "(Required) Minutes between alarms."
+            },
+            {
+                "key": "snoozeCount",
+                "value": "-31012109",
+                "description": "(Required) Maximum snooze count."
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": null,
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783534341,
+        "lastModifiedTime": 1680783534341,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "tdnLdKDIkw0T5UBEl7bkeTcCKeovnZQYGvtSXvf9",
+        "nid": "uHllRzLVSCnMTscRFNYVUhbqCzirHoEYC04WPn8g"
+    },
+    {
+        "id": 87624,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getdevices",
+        "executor_version": "v1",
+        "executor_display_name": "Get Devices",
+        "executor_description": "Retrieves a list of Fitbit devices paired to a user's account.",
+        "executor_category": "Devices",
+        "executor_category_group": "Devices",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/devices.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783368144,
+        "lastModifiedTime": 1680783368144,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "S9Ogj7HRbLtkegRxEni6SiZkRawr7MYyNu9iLFam",
+        "nid": "KjagqlPlCQk2unps62GWHs36EmBpEhoHY8cvP3gc"
+    },
+    {
+        "id": 87631,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getheartrateintradaytimeseries",
+        "executor_version": "v1",
+        "executor_display_name": "Get Heart Rate Intraday Time Series",
+        "executor_description": "Retrieves the heart rate time series data over a period of time by specifying a date and time period. The response will include only the daily summary values.",
+        "executor_category": "Heart Rate Intraday Time Series",
+        "executor_category_group": "Heart Rate Intraday Time Series",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/heart/date/:date/:end-date/{{detail-level}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783994175,
+        "lastModifiedTime": 1680783994175,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "E5O4ZYBRR54Yr1YOAOOdkWGtKuYW8GKYcvF5zEza",
+        "nid": "NX0euVwrDMMP3HAz4vfFpS4tB1WqopJokqoDRXOc"
+    },
+    {
+        "id": 87632,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getheartratetimeseries",
+        "executor_version": "v1",
+        "executor_display_name": "Get Heart Rate Time Series",
+        "executor_description": "Retrieves the heart rate time series data over a period of time by specifying a date range. The response will include only the daily summary values.",
+        "executor_category": "Heart Rate Time Series",
+        "executor_category_group": "Heart Rate Time Series",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/heart/date/:date/{{period}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784078856,
+        "lastModifiedTime": 1680784078856,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "5KdttGdM1G2WiveHd9NzVtA8BUwOQldSWhjOuii9",
+        "nid": "I8vn3GeYocIC31hLFozouJ9XZveEgns7Spg26tjZ"
+    },
+    {
+        "id": 87633,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gethrvsummarybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get HRV Summary by Date",
+        "executor_description": "This endpoint returns the Heart Rate Variability (HRV) data for a single date. HRV data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time asleep on a given date.  The measurement is provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request a daily HRV rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "Heart Rate Variability",
+        "executor_category_group": "Heart Rate Variability",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/hrv/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784162970,
+        "lastModifiedTime": 1680784162970,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "Mf4jvCZhASjSKriBQcKGNhMgXG9TDVKPv5EeS1w9",
+        "nid": "dLbPjp0KzWCC97IRzmc3hpWPPL0uwCOlmHu4kNZ2"
+    },
+    {
+        "id": 87634,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "gethrvsummarybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get HRV Summary by Interval",
+        "executor_description": "This endpoint returns the Heart Rate Variability (HRV) data for a date range. HRV data applies specifically to a user\u2019s \u201cmain sleep,\u201d which is the longest single period of time asleep on a given date.  Single date measurements are provided at the end of a period of sleep. The data returned can and often does reflects a sleep period that began the day before. For example, if you request a daily HRV rate for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "Heart Rate Variability",
+        "executor_category_group": "Heart Rate Variability",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/hrv/date/:startDate/{{endDate}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680784223856,
+        "lastModifiedTime": 1680784223856,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "u0nMO3BLnnqrvESRnenyYhPDLCLxSyZb5i29lsOI",
+        "nid": "tEfStTWvdW1kIWApnFF5eVeD6vsb7mDsRSsRgMnN"
+    },
+    {
+        "id": 87617,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbodytimeseries",
+        "executor_version": "v1",
+        "executor_display_name": "Get Body Time Series",
+        "executor_description": "Retrieves a list of all user's bmi, body fat, or weight for a given period.",
+        "executor_category": "Body and Weight Time Series",
+        "executor_category_group": "Body and Weight Time Series",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/body/:resource-path/date/:date/{{period}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680782623427,
+        "lastModifiedTime": 1680782623427,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "C8jMqS8KaSVZYHQtGhkuKHSGK2A4aICW7oGbnmYx",
+        "nid": "OAjA788uoRXaaChh0tgV0fm6aBsqZQccP3OJPoO2"
+    },
+    {
+        "id": 87622,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getvo2maxsummarybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get VO2 Max Summary by Date",
+        "executor_description": "This endpoint returns the Cardio Fitness Score (also known as VO2 Max) data for a single date. VO2 Max values will be shown as a range if no run data is available or a single numeric value if the user uses a GPS for runs. See Additional Information for further context.",
+        "executor_category": "Cardio Fitness Score (VO2 Max)",
+        "executor_category_group": "Cardio Fitness Score (VO2 Max)",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/cardioscore/date/{{date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783266894,
+        "lastModifiedTime": 1680783266894,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "ahX0HvrhKZk6JqrsNtmKbQ245lqFVNsOodJCxlQt",
+        "nid": "jnBUvFIPov8oWG2y0qYpnQJk0K6JSy58HAZp5i5P"
+    },
+    {
+        "id": 87623,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getvo2maxsummarybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get VO2 Max Summary by Interval",
+        "executor_description": "This endpoint returns the Cardio Fitness Score (also know as VO2 Max) data for a date range. VO2 Max values will be shown as a range if no run data is available or a single numeric value if the user uses a GPS for runs. See Additional Information for further context.",
+        "executor_category": "Cardio Fitness Score (VO2 Max)",
+        "executor_category_group": "Cardio Fitness Score (VO2 Max)",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/cardioscore/date/:startDate/{{endDate}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680783318812,
+        "lastModifiedTime": 1680783318812,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "B6MPM91dVibpC6p7Iu9zUL3SFeLWROhe15cQtqjU",
+        "nid": "Si3IFkr7pTNoqP2vFZ6hXguWt75E3ONlqWOSvTLq"
+    },
+    {
+        "id": 87646,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getspo2intradaybydate",
+        "executor_version": "v1",
+        "executor_display_name": "Get SpO2 Intraday by Date",
+        "executor_description": "This endpoint returns the SpO2 intraday data for a single date. SpO2 applies specifically to a user\u2019s \u201cmain sleep\u201d, which is the longest single period of time asleep on a given date. Spo2 values are calculated on a 5-minute exponentially-moving average.  The measurement is provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request SpO2 levels for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "SpO2 Intraday",
+        "executor_category_group": "SpO2 Intraday",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/spo2/date/:date/all.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680785038942,
+        "lastModifiedTime": 1680785038942,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "6MBahHnPZUmRIhWgAbIARn8Wgg4OvUoyjzToaEbK",
+        "nid": "cPBg9013ijBdmWmHDfoJXqj1p7xDetDaNQb4I2n5"
+    },
+    {
+        "id": 87647,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getspo2intradaybyinterval",
+        "executor_version": "v1",
+        "executor_display_name": "Get SpO2 Intraday by Interval",
+        "executor_description": "Get SpO2 Intraday by Interval This endpoint returns the SpO2 intraday data for a specified date range. SpO2 applies specifically to a user\u2019s \u201cmain sleep\u201d, which is the longest single period of time asleep on a given date. Spo2 values are calculated on a 5-minute exponentially-moving average.  The measurement is provided at the end of a period of sleep. The data returned usually reflects a sleep period that began the day before. For example, if you request SpO2 levels for 2021-12-22, it may include measurements that were taken the previous night on 2021-12-21 when the user fell asleep.",
+        "executor_category": "SpO2 Intraday",
+        "executor_category_group": "SpO2 Intraday",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/spo2/date/:startDate/:endDate/all.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680785130210,
+        "lastModifiedTime": 1680785130210,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "nAIFQQYTSlbtQpWq8FO1G8H6p1Amyc2sCcHvLblK",
+        "nid": "BhlGIKkEwQt8zbbgFJjZYOWsNZCFvAwlRCdrfIDq"
+    },
+    {
+        "id": 87681,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbadges",
+        "executor_version": "v1",
+        "executor_display_name": "Get Badges",
+        "executor_description": "Retrieves a list of the user\u2019s badges.",
+        "executor_category": "User",
+        "executor_category_group": "User",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/badges.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {
+                "token": "{{access_token}}"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681120410169,
+        "lastModifiedTime": 1681120410169,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "CVz2OwpqO0nMqt14Y0nafgegpqtNfCE3F1qW9Qwg",
+        "nid": "Yx7jORJR0hqtPe20ShLb2acfIy6yR4wER1CzQQ9Q"
+    },
+    {
+        "id": 87603,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivitytrackerresourcebydaterangetimeseries",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity Tracker Resource by Date Range Time Series",
+        "executor_description": "Retrieves the activity data for a given resource over a period of time by specifying a date and time period. The response will include only the daily summary values.",
+        "executor_category": "Activity Time Series",
+        "executor_category_group": "Activity Time Series",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/tracker/:resource-path/date/:base-date/{{end-date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680781023481,
+        "lastModifiedTime": 1680781023481,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "E9vtocdatOj0gXueUB1mQi5YCXESb6YAUxXZ78zT",
+        "nid": "LjOQfmF8XieQVEgr2RE9unUH88AxrTCDuZzYRAcv"
+    },
+    {
+        "id": 87602,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivityresourcebydaterange",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity Resource by Date Range",
+        "executor_description": "Retrieves the activity data for a given resource over a period of time by specifying a date range. The response will include only the daily summary values.",
+        "executor_category": "Activity Time Series",
+        "executor_category_group": "Activity Time Series",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/:resource-path/date/:base-date/{{end-date}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680780944352,
+        "lastModifiedTime": 1680780944352,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "KnnuU7tGHHPkR4rnQE8rtmuLd2wNKnLMlut03Lah",
+        "nid": "xjoEcOcmm0SQwgD9XQCE7sGdZ0OkRpr9AcSGCW2Z"
+    },
+    {
+        "id": 87601,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getintradaytimeseries",
+        "executor_version": "v1",
+        "executor_display_name": "Get Intraday Time Series",
+        "executor_description": "Retrieves the activity data for a given resource over a period of time by specifying a date and time period. The response will include only the daily summary values.",
+        "executor_category": "Activity Intraday Time Series",
+        "executor_category_group": "Activity Intraday Time Series",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/:resource-path/date/:date/1d/{{detail-level}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680780526564,
+        "lastModifiedTime": 1680780526564,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "RforkkNCorr8U5a6i5kPq6J46LveeZC5mpcVrTwC",
+        "nid": "XBSkqWYsA5caM2cq735rqxsCOYCluB7TErU3QN8j"
+    },
+    {
+        "id": 87600,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getactivityintradaytimeseries",
+        "executor_version": "v1",
+        "executor_display_name": "Get Activity Intraday Time Series",
+        "executor_description": "Retrieves the activity data for a given resource over a period of time by specifying a date and time period. The response will include only the daily summary values.",
+        "executor_category": "Activity Intraday Time Series",
+        "executor_category_group": "Activity Intraday Time Series",
+        "service_provider": "Fitbit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/1/user/-/activities/:resource-path/date/:base-date/:end-date/{{detail-level}}.json",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": null,
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1680780437491,
+        "lastModifiedTime": 1680780673800,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "FaDw7HoPvICS7bDWRKkYA1H1cfhXUXwE2M1vhgp3",
+        "nid": "uC0gEwneP1u0wfZHsjxVzuKTrlwgKhEcM2zn3sgi"
+    }
+]

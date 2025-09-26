@@ -1,0 +1,283 @@
+[
+    {
+        "id": 113523,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createPrivacyRequest",
+        "executor_version": "v1",
+        "executor_display_name": "Create a privacy request",
+        "executor_description": "Creates a privacy request to access or delete personal data.  A privacy request is a request for access or deletion of personal data that is made directly from a data subject, data processor on behalf of a data subject, or any other avenue that pertains to your supported dynamic policies.",
+        "executor_category": "PrivacyRequest",
+        "executor_category_group": "PrivacyRequest",
+        "service_provider": "datagrail",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://${yourDataGrailDomain}/api/v1/privacy_requests",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "yourDataGrailDomain",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "privacy_right": "access",
+                "custom": {
+                    "first_name": "Queen",
+                    "last_name": "Guinevere",
+                    "phone_numbers": [
+                        "555-555-1234",
+                        "555-555-5678"
+                    ],
+                    "country": "Britain",
+                    "app_id": "holy_grail_app",
+                    "user_id": "123abc",
+                    "notes": "Apple Account Deletion",
+                    "origin": "iOS"
+                },
+                "identifiers": {
+                    "emails": [
+                        "guinevere@camelotknights.com"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1693223679339,
+        "lastModifiedTime": 1693223679339,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "80edbafc-4ec6-45a0-b341-73080457890e",
+                    "status": "open",
+                    "privacy_right": "deletion",
+                    "dynamic_policy": [
+                        "CCPA"
+                    ],
+                    "identifiers": {
+                        "emails": [
+                            "guinevere@camelotknights.com"
+                        ]
+                    },
+                    "custom": {
+                        "first_name": "Queen",
+                        "last_name": "Guinevere",
+                        "phone_numbers": [
+                            "555-555-1234",
+                            "555-555-5678"
+                        ],
+                        "country": "Britain",
+                        "app_id": "holy_grail_app",
+                        "user_id": "123abc",
+                        "notes": "Apple Account Deletion",
+                        "origin": "iOS"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 113524,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getPrivacyRequest",
+        "executor_version": "v1",
+        "executor_display_name": "Get a privacy request",
+        "executor_description": "Returns information related to a submitted privacy request.",
+        "executor_category": "PrivacyRequest",
+        "executor_category_group": "PrivacyRequest",
+        "service_provider": "datagrail",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://${yourDataGrailDomain}/api/v1/privacy_requests/${id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "yourDataGrailDomain",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "The ID of the privacy request. The ID is the 36 character string that is returned in the id field after creating a privacy request."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1693223790965,
+        "lastModifiedTime": 1693223790965,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "80edbafc-4ec6-45a0-b341-73080457890e",
+                    "status": "open",
+                    "privacy_right": "deletion",
+                    "identifiers": {
+                        "emails": [
+                            "guinevere@camelotknights.com"
+                        ]
+                    },
+                    "custom": {
+                        "first_name": "Queen",
+                        "last_name": "Guinevere",
+                        "phone_numbers": [
+                            "555-555-1234",
+                            "555-555-5678"
+                        ],
+                        "country": "Britain",
+                        "app_id": "holy_grail_app",
+                        "user_id": "123abc",
+                        "notes": "Apple Account Deletion",
+                        "origin": "iOS"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

@@ -1,0 +1,1850 @@
+[
+    {
+        "id": 95273,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateUsersSessions",
+        "executor_version": "v1",
+        "executor_display_name": "Update Users Sessions",
+        "executor_description": "Updates or insert a given session.",
+        "executor_category": "UsersSessions",
+        "executor_category_group": "UsersSessions",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/sessions/{sessionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Create sessions for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "sessionId",
+                "value": "",
+                "description": "The ID of the session to be created."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "activityType": 0,
+                "application": {
+                    "name": ""
+                },
+                "endTimeMillis": 0,
+                "id": "",
+                "name": "",
+                "startTimeMillis": 0
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685422295439,
+        "lastModifiedTime": 1685422295439,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "",
+                "description": "If successful, this method returns a response body with the following structure.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "startTimeMillis": "long",
+                    "endTimeMillis": "long",
+                    "modifiedTimeMillis": "long",
+                    "application": {
+                        "packageName": "string",
+                        "version": "string",
+                        "detailsUrl": "string",
+                        "name": "string"
+                    },
+                    "activityType": "integer",
+                    "activeTimeMillis": "long"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95269,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listUsersSessions",
+        "executor_version": "v1",
+        "executor_display_name": "List Users Sessions",
+        "executor_description": "Lists sessions previously created.",
+        "executor_category": "UsersSessions",
+        "executor_category_group": "UsersSessions",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/sessions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "List sessions for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "activityType",
+                "value": "",
+                "description": "If non-empty, only sessions with these activity types should be returned.",
+                "req": false
+            },
+            {
+                "key": "endTime",
+                "value": "",
+                "description": "An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response. If this time is omitted but startTime is specified, all sessions from startTime to the end of time will be returned.",
+                "req": false
+            },
+            {
+                "key": "includeDeleted",
+                "value": "",
+                "description": "If true, and if both startTime and endTime are omitted, session deletions will be returned.",
+                "req": false
+            },
+            {
+                "key": "pageToken",
+                "value": "",
+                "description": "The continuation token, which is used for incremental syncing. To get the next batch of changes, set this parameter to the value of nextPageToken from the previous response. The page token is ignored if either start or end time is specified. If none of start time, end time, and the page token is specified, sessions modified in the last 30 days are returned.",
+                "req": false
+            },
+            {
+                "key": "startTime",
+                "value": "",
+                "description": "An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response. If this time is omitted but endTime is specified, all sessions from the start of time up to endTime will be returned.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685421357744,
+        "lastModifiedTime": 1685421357744,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "",
+                "description": "If successful, this method returns a response body with the following structure.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": [
+                        {
+                            "id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "startTimeMillis": "long",
+                            "endTimeMillis": "long",
+                            "modifiedTimeMillis": "long",
+                            "application": {
+                                "packageName": "string",
+                                "version": "string",
+                                "detailsUrl": "string",
+                                "name": "string"
+                            },
+                            "activityType": "integer",
+                            "activeTimeMillis": "long"
+                        }
+                    ],
+                    "deletedSession": [
+                        {
+                            "id": "string",
+                            "name": "string",
+                            "description": "string",
+                            "startTimeMillis": "long",
+                            "endTimeMillis": "long",
+                            "modifiedTimeMillis": "long",
+                            "application": {
+                                "packageName": "string",
+                                "version": "string",
+                                "detailsUrl": "string",
+                                "name": "string"
+                            },
+                            "activityType": "integer",
+                            "activeTimeMillis": "long"
+                        }
+                    ],
+                    "nextPageToken": "string",
+                    "hasMoreData": "boolean"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95265,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteUsersSessions",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Users Sessions",
+        "executor_description": "Deletes a session specified by the given session ID.",
+        "executor_category": "UsersSessions",
+        "executor_category_group": "UsersSessions",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/sessions/{sessionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Delete a session for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "sessionId",
+                "value": "",
+                "description": "The ID of the session to be deleted."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685420940312,
+        "lastModifiedTime": 1685420940312,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "",
+                "description": "If successful, this method returns an empty response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95219,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateUsersDataSources",
+        "executor_version": "v1",
+        "executor_display_name": "Update Users Data Sources",
+        "executor_description": "Updates the specified data source. The dataStreamId, dataType, type, dataStreamName, and device properties with the exception of version, cannot be modified.",
+        "executor_category": "UsersdataSources",
+        "executor_category_group": "UsersdataSources",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/{dataSourceId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Update the data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "dataSourceId",
+                "value": "",
+                "description": "The data stream ID of the data source to update."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "dataTypeName",
+                "value": "",
+                "description": "The names of data types to include in the list. If not specified, all data sources will be returned.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "application": {
+                    "name": ""
+                },
+                "dataStreamId": "",
+                "dataType": {
+                    "field": [],
+                    "name": ""
+                },
+                "device": {
+                    "manufacturer": "",
+                    "model": "",
+                    "type": "",
+                    "uid": "",
+                    "version": ""
+                },
+                "type": ""
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685363578509,
+        "lastModifiedTime": 1685363578509,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a Users.dataSources resource in the response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "dataStreamId": "string",
+                    "name": "string",
+                    "dataStreamName": "string",
+                    "type": "string",
+                    "dataType": {
+                        "name": "string",
+                        "field": [
+                            {
+                                "name": "string",
+                                "format": "string",
+                                "optional": "boolean"
+                            }
+                        ]
+                    },
+                    "device": {
+                        "uid": "string",
+                        "type": "string",
+                        "version": "string",
+                        "model": "string",
+                        "manufacturer": "string"
+                    },
+                    "application": {
+                        "packageName": "string",
+                        "version": "string",
+                        "detailsUrl": "string",
+                        "name": "string"
+                    },
+                    "dataQualityStandard": [
+                        "string"
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95217,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listUsersDataSources",
+        "executor_version": "v1",
+        "executor_display_name": "List Users Data Sources",
+        "executor_description": "Lists all data sources that are visible to the developer, using the OAuth scopes provided. The list is not exhaustive; the user may have private data sources that are only visible to other developers, or calls using other scopes. Try it now.",
+        "executor_category": "UsersdataSources",
+        "executor_category_group": "UsersdataSources",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "List data sources for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "dataTypeName",
+                "value": "",
+                "description": "The names of data types to include in the list. If not specified, all data sources will be returned.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685363294663,
+        "lastModifiedTime": 1685363294663,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a response body with the following structure:",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "dataSource": [
+                        "users.dataSources Resource"
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95206,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createUsersDataSources",
+        "executor_version": "v1",
+        "executor_display_name": "Create Users Data Sources",
+        "executor_description": "Creates a new data source that is unique across all data sources belonging to this user.  A data source is a unique source of sensor data. Data sources can expose raw data coming from hardware sensors on local or companion devices. They can also expose derived data, created by transforming or merging other data sources. Multiple data sources can exist for the same data type. Every data point in every dataset inserted into or read from the Fitness API has an associated data source.  Each data source produces a unique stream of dataset updates, with a unique data source identifier. Not all changes to data source affect the data stream ID, so that data collected by updated versions of the same application/device can still be considered to belong to the same data source.  Data sources are identified using a string generated by the server, based on the contents of the source being created. The dataStreamId field should not be set when invoking this method. It will be automatically generated by the server with the correct format. If a dataStreamId is set, it must match the format that the server would generate. This format is a combination of some fields from the data source, and has a specific order. If it doesn't match, the request will fail with an error.  Specifying a DataType which is not a known type (beginning with \"com.google.\") will create a DataSource with a custom data type. Custom data types are only readable by the application that created them. Custom data types are deprecated; use standard data types instead.  In addition to the data source fields included in the data source ID, the developer project number that is authenticated when creating the data source is included. This developer project number is obfuscated when read by any other developer reading public data types. Try it now.",
+        "executor_category": "UsersdataSources",
+        "executor_category_group": "UsersdataSources",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Create the data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "application": {
+                    "name": ""
+                },
+                "dataType": {
+                    "field": [],
+                    "name": ""
+                },
+                "device": {
+                    "manufacturer": "",
+                    "model": "",
+                    "type": "",
+                    "uid": "",
+                    "version": ""
+                },
+                "type": ""
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685362518107,
+        "lastModifiedTime": 1685362518107,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "If successful, this method returns a Users.dataSources resource in the response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "dataStreamId": "string",
+                    "name": "string",
+                    "dataStreamName": "string",
+                    "type": "string",
+                    "dataType": {
+                        "name": "string",
+                        "field": [
+                            {
+                                "name": "string",
+                                "format": "string",
+                                "optional": "boolean"
+                            }
+                        ]
+                    },
+                    "device": {
+                        "uid": "string",
+                        "type": "string",
+                        "version": "string",
+                        "model": "string",
+                        "manufacturer": "string"
+                    },
+                    "application": {
+                        "packageName": "string",
+                        "version": "string",
+                        "detailsUrl": "string",
+                        "name": "string"
+                    },
+                    "dataQualityStandard": [
+                        "string"
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95210,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteUsersDataSources",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Users Data Sources",
+        "executor_description": "Deletes the specified data source. The request will fail if the data source contains any data points. Try it now.",
+        "executor_category": "UsersdataSources",
+        "executor_category_group": "UsersdataSources",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/{dataSourceId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Retrieve a data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "dataSourceId",
+                "value": "",
+                "description": "The data stream ID of the data source to delete."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685363067596,
+        "lastModifiedTime": 1685363067596,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a Users.dataSources resource in the response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "dataStreamId": "string",
+                    "name": "string",
+                    "dataStreamName": "string",
+                    "type": "string",
+                    "dataType": {
+                        "name": "string",
+                        "field": [
+                            {
+                                "name": "string",
+                                "format": "string",
+                                "optional": "boolean"
+                            }
+                        ]
+                    },
+                    "device": {
+                        "uid": "string",
+                        "type": "string",
+                        "version": "string",
+                        "model": "string",
+                        "manufacturer": "string"
+                    },
+                    "application": {
+                        "packageName": "string",
+                        "version": "string",
+                        "detailsUrl": "string",
+                        "name": "string"
+                    },
+                    "dataQualityStandard": [
+                        "string"
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95211,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getUsersDataSources",
+        "executor_version": "v1",
+        "executor_display_name": "Get Users Data Sources",
+        "executor_description": "Returns the specified data source. Try it now.",
+        "executor_category": "UsersdataSources",
+        "executor_category_group": "UsersdataSources",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/{dataSourceId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Retrieve a data source for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "dataSourceId",
+                "value": "",
+                "description": "The data stream ID of the data source to delete."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685363123508,
+        "lastModifiedTime": 1685363123508,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a Users.dataSources resource in the response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "dataStreamId": "string",
+                    "name": "string",
+                    "dataStreamName": "string",
+                    "type": "string",
+                    "dataType": {
+                        "name": "string",
+                        "field": [
+                            {
+                                "name": "string",
+                                "format": "string",
+                                "optional": "boolean"
+                            }
+                        ]
+                    },
+                    "device": {
+                        "uid": "string",
+                        "type": "string",
+                        "version": "string",
+                        "model": "string",
+                        "manufacturer": "string"
+                    },
+                    "application": {
+                        "packageName": "string",
+                        "version": "string",
+                        "detailsUrl": "string",
+                        "name": "string"
+                    },
+                    "dataQualityStandard": [
+                        "string"
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95231,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteDatasets",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Datasets",
+        "executor_description": "Performs an inclusive delete of all data points whose start and end times have any overlap with the time range specified by the dataset ID. For most data types, the entire data point will be deleted. For data types where the time span represents a consistent value (such as com.google.activity.segment), and a data point straddles either end point of the dataset, only the overlapping portion of the data point will be deleted.",
+        "executor_category": "Datasets",
+        "executor_category_group": "Datasets",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Delete a dataset for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "dataSourceId",
+                "value": "",
+                "description": "The data stream ID of the data source that created the dataset."
+            },
+            {
+                "key": "datasetId",
+                "value": "",
+                "description": "Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: \"startTime-endTime\" where startTime and endTime are 64 bit integers."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685364947550,
+        "lastModifiedTime": 1685364947550,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns an empty response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95259,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getDataset",
+        "executor_version": "v1",
+        "executor_display_name": "Get Datasets",
+        "executor_description": "Returns a dataset containing all data points whose start and end times overlap with the specified range of the dataset minimum start time and maximum end time. Specifically, any data point whose start time is less than or equal to the dataset end time and whose end time is greater than or equal to the dataset start time.",
+        "executor_category": "Datasets",
+        "executor_category_group": "Datasets",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Delete a dataset for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "dataSourceId",
+                "value": "",
+                "description": "The data stream ID of the data source that created the dataset."
+            },
+            {
+                "key": "datasetId",
+                "value": "",
+                "description": "Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: \"startTime-endTime\" where startTime and endTime are 64 bit integers."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "limit",
+                "value": "",
+                "description": "If specified, no more than this many data points will be included in the dataset. If there are more data points in the dataset, nextPageToken will be set in the dataset response. The limit is applied from the end of the time range. That is, if pageToken is absent, the limit most recent data points will be returned.",
+                "req": false
+            },
+            {
+                "key": "pageToken",
+                "value": "",
+                "description": "The continuation token, which is used to page through large datasets. To get the next page of a dataset, set this parameter to the value of nextPageToken from the previous response. Each subsequent call will yield a partial dataset with data point end timestamps that are strictly smaller than those in the previous partial response.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685420044568,
+        "lastModifiedTime": 1685420044568,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a Users.dataSources.datasets resource in the response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "minStartTimeNs": "long",
+                    "maxEndTimeNs": "long",
+                    "dataSourceId": "string",
+                    "point": [
+                        {
+                            "startTimeNanos": "long",
+                            "endTimeNanos": "long",
+                            "dataTypeName": "string",
+                            "originDataSourceId": "string",
+                            "value": [
+                                {
+                                    "intVal": "integer",
+                                    "fpVal": "double",
+                                    "stringVal": "string",
+                                    "mapVal": [
+                                        {
+                                            "key": "string",
+                                            "value": {
+                                                "fpVal": "double"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "modifiedTimeMillis": "long",
+                            "rawTimestampNanos": "long",
+                            "computationTimeMillis": "long"
+                        }
+                    ],
+                    "nextPageToken": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95260,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "patchDatasets",
+        "executor_version": "v1",
+        "executor_display_name": "Patch Datasets",
+        "executor_description": "Adds data points to a dataset. The dataset need not be previously created. All points within the given dataset will be returned with subsquent calls to retrieve this dataset. Data points can belong to more than one dataset.",
+        "executor_category": "Datasets",
+        "executor_category_group": "Datasets",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/{dataSourceId}/datasets/{datasetId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Delete a dataset for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "dataSourceId",
+                "value": "",
+                "description": "The data stream ID of the data source that created the dataset."
+            },
+            {
+                "key": "datasetId",
+                "value": "",
+                "description": "Dataset identifier that is a composite of the minimum data point start time and maximum data point end time represented as nanoseconds from the epoch. The ID is formatted like: \"startTime-endTime\" where startTime and endTime are 64 bit integers."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "dataSourceId": "",
+                "maxEndTimeNs": 0,
+                "minStartTimeNs": 0,
+                "point": []
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685420208464,
+        "lastModifiedTime": 1685420208464,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a Users.dataSources.datasets resource in the response body.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "minStartTimeNs": "long",
+                    "maxEndTimeNs": "long",
+                    "dataSourceId": "string",
+                    "point": [
+                        {
+                            "startTimeNanos": "long",
+                            "endTimeNanos": "long",
+                            "dataTypeName": "string",
+                            "originDataSourceId": "string",
+                            "value": [
+                                {
+                                    "intVal": "integer",
+                                    "fpVal": "double",
+                                    "stringVal": "string",
+                                    "mapVal": [
+                                        {
+                                            "key": "string",
+                                            "value": {
+                                                "fpVal": "double"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "modifiedTimeMillis": "long",
+                            "rawTimestampNanos": "long",
+                            "computationTimeMillis": "long"
+                        }
+                    ],
+                    "nextPageToken": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95228,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listDataPointChanges",
+        "executor_version": "v1",
+        "executor_display_name": "List Data Point Changes",
+        "executor_description": "Queries for user's data point changes for a particular data source. ",
+        "executor_category": "DataPointChanges",
+        "executor_category_group": "DataPointChanges",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/{dataSourceId}/dataPointChanges",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "List data points for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "dataSourceId",
+                "value": "",
+                "description": "The data stream ID of the data source that created the dataset."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "limit",
+                "value": "",
+                "description": "If specified, no more than this many data point changes will be included in the response.",
+                "req": false
+            },
+            {
+                "key": "pageToken",
+                "value": "",
+                "description": "The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of nextPageToken from the previous response.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685364775982,
+        "lastModifiedTime": 1685364775982,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a response body with the following structure.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "insertedDataPoint": [
+                        {
+                            "startTimeNanos": "long",
+                            "endTimeNanos": "long",
+                            "dataTypeName": "string",
+                            "originDataSourceId": "string",
+                            "value": [
+                                {
+                                    "intVal": "integer",
+                                    "fpVal": "double",
+                                    "stringVal": "string",
+                                    "mapVal": [
+                                        {
+                                            "key": "string",
+                                            "value": {
+                                                "fpVal": "double"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "modifiedTimeMillis": "long",
+                            "rawTimestampNanos": "long",
+                            "computationTimeMillis": "long"
+                        }
+                    ],
+                    "deletedDataPoint": [
+                        {
+                            "startTimeNanos": "long",
+                            "endTimeNanos": "long",
+                            "dataTypeName": "string",
+                            "originDataSourceId": "string",
+                            "value": [
+                                {
+                                    "intVal": "integer",
+                                    "fpVal": "double",
+                                    "stringVal": "string",
+                                    "mapVal": [
+                                        {
+                                            "key": "string",
+                                            "value": {
+                                                "fpVal": "double"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "modifiedTimeMillis": "long",
+                            "rawTimestampNanos": "long",
+                            "computationTimeMillis": "long"
+                        }
+                    ],
+                    "nextPageToken": "string",
+                    "dataSourceId": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95264,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "aggregateUsersDatasets",
+        "executor_version": "v1",
+        "executor_display_name": "Aggregate Users Datasets",
+        "executor_description": "Aggregates data of a certain type or stream into buckets divided by a given type of boundary. Multiple data sets of multiple types and from multiple sources can be aggregated into exactly one bucket type per request. Try it now.",
+        "executor_category": "UsersDatasets",
+        "executor_category_group": "UsersDatasets",
+        "service_provider": "googlefit",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://www.googleapis.com/fitness/v1/users/{userId}/dataSources/dataset/{aggregate}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "Aggregate data for the person identified. Use me to indicate the authenticated user. Only me is supported at this time."
+            },
+            {
+                "key": "aggregate",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "aggregateBy": [],
+                "endTimeMillis": 0,
+                "startTimeMillis": 0
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685420731283,
+        "lastModifiedTime": 1685420731283,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "If successful, this method returns a response body with the following structure.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "bucket": [
+                        {
+                            "type": "string",
+                            "startTimeMillis": "long",
+                            "endTimeMillis": "long",
+                            "dataset": [
+                                "users.dataSources.datasets Resource"
+                            ],
+                            "session": {
+                                "id": "string",
+                                "name": "string",
+                                "description": "string",
+                                "startTimeMillis": "long",
+                                "endTimeMillis": "long",
+                                "modifiedTimeMillis": "long",
+                                "application": {
+                                    "packageName": "string",
+                                    "version": "string",
+                                    "detailsUrl": "string",
+                                    "name": "string"
+                                },
+                                "activityType": "integer",
+                                "activeTimeMillis": "long"
+                            },
+                            "activity": "integer"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

@@ -1,0 +1,2034 @@
+[
+    {
+        "id": 117857,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "datarange",
+        "executor_version": "v3",
+        "executor_display_name": "datarange",
+        "executor_description": "The /dataRange endpoint enables retrieval of a user's earliest and latest times for calibration, EGV, and event records. This can be used to efficiently pull historical data and determine whether new data is available.",
+        "executor_category": "DexcomAPIV3",
+        "executor_category_group": "DexcomAPIV3",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v3/users/self/dataRange",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "lastSyncTime",
+                "value": "",
+                "description": "string <date-time> A timestamp that represents the last time a consumer/client of Dexcom API pulled data. How to use the \u201clastSyncTime\u201d query parameter SyncTime - \u201clastSyncTime\u201d is a new datetime query parameter built into the DataRange endpoint. If you know the last time you did a data sync for a user, you can specify this using the \u201clastSyncTime\u201d parameter.  If provided, the system will only return date ranges for new data AFTER that date time. This allows for more efficient syncing as you\u2019ll now have date ranges for data you know is new.  A SyncTime request example would look like this:  curl --location --request GET 'https://api.dexcom.com/v3/users/self/dataRange?lastSyncTime=2022-01-01T17:00:00\u2019 --header 'Authorization: Bearer <token>' --header 'Accept: application/json'",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697541007354,
+        "lastModifiedTime": 1697541007354,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "recordType": "dataRange",
+                    "recordVersion": "3.0",
+                    "userId": "5b329ebcfbf2f0ba7e49d4c5eb57775468f5ee657ac16fcde07e1fd08197b4c7",
+                    "calibrations": {
+                        "start": {
+                            "systemTime": "2021-06-01T01:10:08",
+                            "displayTime": "2021-06-01T01:10:08"
+                        },
+                        "end": {
+                            "systemTime": "2021-06-01T01:10:08",
+                            "displayTime": "2021-06-01T01:10:08"
+                        }
+                    },
+                    "egvs": {
+                        "start": {
+                            "systemTime": "2021-06-01T01:10:08",
+                            "displayTime": "2021-06-01T01:10:08"
+                        },
+                        "end": {
+                            "systemTime": "2021-06-01T01:10:08",
+                            "displayTime": "2021-06-01T01:10:08"
+                        }
+                    },
+                    "events": {
+                        "start": {
+                            "systemTime": "2021-06-01T01:10:08",
+                            "displayTime": "2021-06-01T01:10:08"
+                        },
+                        "end": {
+                            "systemTime": "2021-06-01T01:10:08",
+                            "displayTime": "2021-06-01T01:10:08"
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117858,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "devices",
+        "executor_version": "v3",
+        "executor_display_name": "devices",
+        "executor_description": "The /devices endpoint enables retrieval of a user's device information, including G4, G5, G6, and G7 standalone receivers, the G5, G6, and G7 mobile apps, and transmitters. The response is an array of all receiver-type devices contributing data to the specified time window, including the alerts and settings associated with each receiver.",
+        "executor_category": "DexcomAPIV3",
+        "executor_category_group": "DexcomAPIV3",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v3/users/self/devices",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697541296977,
+        "lastModifiedTime": 1697541296977,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "recordType": "device",
+                    "recordVersion": "3.0",
+                    "userId": "5b329ebcfbf2f0ba7e49d4c5eb57775468f5ee657ac16fcde07e1fd08197b4c7",
+                    "records": [
+                        {
+                            "transmitterGeneration": "g7",
+                            "displayDevice": "android",
+                            "displayApp": "G7Android",
+                            "lastUploadDate": "2021-11-09T15:57:34Z",
+                            "alertSchedules": [
+                                {
+                                    "alertScheduleSettings": {
+                                        "alertScheduleName": "",
+                                        "isEnabled": true,
+                                        "startTime": "00:00",
+                                        "endTime": "00:00",
+                                        "isActive": false,
+                                        "override": {
+                                            "isOverrideEnabled": true,
+                                            "mode": "quiet",
+                                            "endTime": "2021-07-05T10:49:22.123-07:00"
+                                        },
+                                        "daysOfWeek": [
+                                            "sunday",
+                                            "monday",
+                                            "tuesday",
+                                            "wednesday",
+                                            "thursday",
+                                            "friday",
+                                            "saturday"
+                                        ]
+                                    },
+                                    "alertSettings": [
+                                        {
+                                            "systemTime": "2021-04-05T17:53:03Z",
+                                            "displayTime": "2021-04-05T10:52:48-06:59:59",
+                                            "alertName": "rise",
+                                            "value": 3,
+                                            "unit": "mg/dL/min",
+                                            "snooze": null,
+                                            "enabled": false,
+                                            "SecondaryTriggerCondition": 10,
+                                            "soundTheme": "modern",
+                                            "soundOutputMode": "matchPhone"
+                                        },
+                                        {
+                                            "systemTime": "2021-04-05T17:52:47Z",
+                                            "displayTime": "2021-04-05T10:53:04-06:59:59",
+                                            "alertName": "high",
+                                            "value": 192,
+                                            "unit": "mg/dL",
+                                            "snooze": 75,
+                                            "enabled": true,
+                                            "SecondaryTriggerCondition": 184,
+                                            "soundTheme": "modern",
+                                            "soundOutputMode": "matchPhone"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "transmitterId": "d55d01d0341ed0ba2cd99b322e8c5b609254f47d10c7cd12b99b4922effeba44"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117856,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "egvs",
+        "executor_version": "v3",
+        "executor_display_name": "egvs",
+        "executor_description": "The /egvs endpoint enables retrieval of a user's estimated glucose value (EGV) data, including trend and status information.",
+        "executor_category": "DexcomAPIV3",
+        "executor_category_group": "DexcomAPIV3",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v3/users/self/egvs",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window.  Example: startDate=2022-02-06T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window.  Example: endDate=2022-02-06T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697540667762,
+        "lastModifiedTime": 1697540667762,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "recordType": "egv",
+                    "recordVersion": "3.0",
+                    "userId": "5b329ebcfbf2f0ba7e49d4c5eb57775468f5ee657ac16fcde07e1fd08197b4c7",
+                    "records": [
+                        {
+                            "recordId": "2cab70ee-d3b4-5a34-9aa9-767513ab72bd",
+                            "systemTime": "2022-01-30T23:49:55Z",
+                            "displayTime": "2022-01-30T15:49:55-08:00",
+                            "transmitterId": "cdb4f8eea4392295413c64d5bc7a9e0e0ee9b215fb43c5a6d71d4431e540046b",
+                            "transmitterTicks": 85273,
+                            "value": 103,
+                            "trend": "flat",
+                            "trendRate": 0,
+                            "unit": "mg/dL",
+                            "rateUnit": "mg/dL/min",
+                            "displayDevice": "iOS",
+                            "transmitterGeneration": "g6"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117855,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "calibrations",
+        "executor_version": "v3",
+        "executor_display_name": "calibrations",
+        "executor_description": "The /calibrations endpoint enables retrieval of a user's calibration events. Calibration events are where the user enters the glucose value that they obtain from testing a fingerstick blood sample with their blood glucose meter into the CGM. These readings are used as a reference point for calculating EGV from the sensor signal.",
+        "executor_category": "DexcomAPIV3",
+        "executor_category_group": "DexcomAPIV3",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v3/users/self/calibrations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window.  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697540563774,
+        "lastModifiedTime": 1697540563774,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "recordType": "calibrations",
+                    "recordVersion": "3.0",
+                    "userId": "5b329ebcfbf2f0ba7e49d4c5eb57775468f5ee657ac16fcde07e1fd08197b4c7",
+                    "records": [
+                        {
+                            "recordId": "763923b7-5424-451e-b37d-fd8ff635b308",
+                            "systemTime": "2022-06-17T03:59:11",
+                            "displayTime": "2022-06-16T19:59:11",
+                            "unit": "mg/dL",
+                            "value": 124,
+                            "displayDevice": "android",
+                            "transmitterId": "d55d01d0341ed0ba2cd99b322e8c5b609254f47d10c7cd12b99b4922effeba44",
+                            "transmitterTicks": 72364324786,
+                            "transmitterGeneration": "g6"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117854,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "alerts",
+        "executor_version": "v3",
+        "executor_display_name": "alerts",
+        "executor_description": "The /alerts endpoint was not previously available to data partners in version 2 of The Dexcom API. This endpoint provides EGV alerts for a user, such as High or Low, within a provided date range.",
+        "executor_category": "DexcomAPIV3",
+        "executor_category_group": "DexcomAPIV3",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v3/users/self/alerts",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Lower bound (inclusive) of the time window in which to look for data.  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "Upper bound (exclusive) of the time window in which to look for data.  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697540329198,
+        "lastModifiedTime": 1697540329199,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "recordType": "alerts",
+                    "recordVersion": "3.0",
+                    "userId": "5b329ebcfbf2f0ba7e49d4c5eb57775468f5ee657ac16fcde07e1fd08197b4c7",
+                    "records": [
+                        {
+                            "recordId": "3cb368a9-7b7c-45dc-850a-33f62118bfd5",
+                            "systemTime": "2022-12-05T15:00:25.438Z",
+                            "displayTime": "2022-12-05T15:00:25.438Z",
+                            "alertName": "high",
+                            "alertState": "activeAlarming",
+                            "displayDevice": "receiver",
+                            "transmitterGeneration": "g6",
+                            "transmitterId": "d55d01d0341ed0ba2cd99b322e8c5b609254f47d10c7cd12b99b4922effeba44"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117859,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "eventsDexcomAPI",
+        "executor_version": "v3",
+        "executor_display_name": "events",
+        "executor_description": "The /events endpoint enables retrieval of a user's event records. This includes carbohydrate intake, insulin doses, exercise, and health events that are entered in the receiver interface or through the mobile app.",
+        "executor_category": "DexcomAPIV3",
+        "executor_category_group": "DexcomAPIV3",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v3/users/self/events",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window.  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window.  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697541695256,
+        "lastModifiedTime": 1697541695256,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "recordType": "events",
+                    "recordVersion": "3.0",
+                    "userId": "5b329ebcfbf2f0ba7e49d4c5eb57775468f5ee657ac16fcde07e1fd08197b4c7",
+                    "records": [
+                        {
+                            "recordId": "763923b7-5424-451e-b37d-fd8ff635b308",
+                            "systemTime": "2022-02-06T09:12:35+00:00",
+                            "displayTime": "2022-02-06T01:12:35-08:00",
+                            "eventStatus": "created",
+                            "eventType": "insulin",
+                            "eventSubType": "longActing",
+                            "value": 400,
+                            "unit": "units",
+                            "transmitterId": "d55d01d0341ed0ba2cd99b322e8c5b609254f47d10c7cd12b99b4922effeba44",
+                            "transmitterGeneration": "g6",
+                            "displayDevice": "android"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117865,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getevents",
+        "executor_version": "v2",
+        "executor_display_name": "Get events",
+        "executor_description": "The /events endpoint enables retrieval of a user's event records. This includes carbohydrate intake, insulin doses, exercise, and health events that are entered in the receiver interface or through the mobile app.",
+        "executor_category": "DexcomAPIV2",
+        "executor_category_group": "DexcomAPIV2",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v2/users/self/events",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697542381421,
+        "lastModifiedTime": 1697542381421,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "events": [
+                        {
+                            "systemTime": "2019-08-24T14:15:22Z",
+                            "displayTime": "2019-08-24T14:15:22Z",
+                            "eventType": "insulin",
+                            "eventSubType": "longActing",
+                            "value": 17,
+                            "unit": "units",
+                            "eventId": "4b790d7c-542e-4673-b1c4-92e4d8d4550a",
+                            "eventStatus": "created"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117863,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getdevices",
+        "executor_version": "v2",
+        "executor_display_name": "Get devices",
+        "executor_description": "The /devices endpoint enables retrieval of a user's device information, including G4, G5, and G6 standalone receivers, the G5 and G6 mobile apps, and transmitters. The response is an array of all receiver-type devices contributing data to the specified time window, including the alerts and settings associated with each receiver.",
+        "executor_category": "DexcomAPIV2",
+        "executor_category_group": "DexcomAPIV2",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v2/users/self/devices",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697542154670,
+        "lastModifiedTime": 1697542154670,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "devices": [
+                        {
+                            "transmitterGeneration": "g6",
+                            "displayDevice": "iOS",
+                            "lastUploadDate": "2019-08-24T14:15:22Z",
+                            "alertScheduleList": [
+                                {
+                                    "alertScheduleSettings": {
+                                        "alertScheduleName": "sampleName",
+                                        "isEnabled": true,
+                                        "isDefaultSchedule": true,
+                                        "startTime": "2019-08-24T14:15:22Z",
+                                        "endTime": "2019-08-24T14:15:22Z",
+                                        "daysOfWeek": [
+                                            "sunday",
+                                            "monday",
+                                            "tuesday"
+                                        ]
+                                    },
+                                    "alertSettings": [
+                                        {
+                                            "alertName": "high",
+                                            "value": 200,
+                                            "unit": "mg/dL",
+                                            "snooze": 80,
+                                            "enabled": true,
+                                            "systemTime": "2019-08-24T14:15:22Z",
+                                            "displayTime": "2019-08-24T14:15:22Z"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117860,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getcalibrations",
+        "executor_version": "v2",
+        "executor_display_name": "Get calibrations",
+        "executor_description": "The /calibrations endpoint enables retrieval of a user's calibration events. Calibration events are where the user enters the glucose value that they obtain from testing a fingerstick blood sample with their blood glucose meter into the CGM. These readings are used as a reference point for calculating EGV from the sensor signal.",
+        "executor_category": "DexcomAPIV2",
+        "executor_category_group": "DexcomAPIV2",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v2/users/self/calibrations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "string <date-time> Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697541942720,
+        "lastModifiedTime": 1697541942720,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "calibrations": [
+                        {
+                            "systemTime": "2019-08-24T14:15:22Z",
+                            "displayTime": "2019-08-24T14:15:22Z",
+                            "unit": "mg/dL",
+                            "value": 0
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117862,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getdataRange",
+        "executor_version": "v2",
+        "executor_display_name": "Get dataRange",
+        "executor_description": "The /dataRange endpoint enables retrieval of a user's earliest and latest times for calibration, EGV, and event records. This can be used to efficiently pull historical data and determine whether new data is available.",
+        "executor_category": "DexcomAPIV2",
+        "executor_category_group": "DexcomAPIV2",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v2/users/self/dataRange",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697542039141,
+        "lastModifiedTime": 1697542039141,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "calibrations": {
+                        "start": {
+                            "systemTime": "2023-01-01T09:12:35",
+                            "displayTime": "2023-01-01T09:12:35"
+                        },
+                        "end": {
+                            "systemTime": "2023-01-01T09:12:35",
+                            "displayTime": "2023-01-01T09:12:35"
+                        }
+                    },
+                    "egvs": {
+                        "start": {
+                            "systemTime": "2023-01-01T09:12:35",
+                            "displayTime": "2023-01-01T09:12:35"
+                        },
+                        "end": {
+                            "systemTime": "2023-01-01T09:12:35",
+                            "displayTime": "2023-01-01T09:12:35"
+                        }
+                    },
+                    "events": {
+                        "start": {
+                            "systemTime": "2023-01-01T09:12:35",
+                            "displayTime": "2023-01-01T09:12:35"
+                        },
+                        "end": {
+                            "systemTime": "2023-01-01T09:12:35",
+                            "displayTime": "2023-01-01T09:12:35"
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117866,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getstatistics",
+        "executor_version": "v2",
+        "executor_display_name": "Get statistics",
+        "executor_description": "Get statistics",
+        "executor_category": "DexcomAPIV2",
+        "executor_category_group": "DexcomAPIV2",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/v2/users/self/events",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "name": "string",
+                    "startTime": "2019-08-24T14:15:22Z",
+                    "endTime": "2019-08-24T14:15:22Z",
+                    "egvRanges": [
+                        {
+                            "name": "string",
+                            "bound": 0
+                        }
+                    ]
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697542502930,
+        "lastModifiedTime": 1697542502930,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "hypoglycemiaRisk": "string",
+                    "min": 0,
+                    "max": 0,
+                    "mean": 0,
+                    "median": 0,
+                    "variance": 0,
+                    "stdDev": 0,
+                    "sum": 0,
+                    "q1": 0,
+                    "q2": 0,
+                    "q3": 0,
+                    "utilizationPercent": 0,
+                    "meanDailyCalibrations": 0,
+                    "nDays": 0,
+                    "nValues": 0,
+                    "nUrgentLow": 0,
+                    "nBelowRange": 0,
+                    "nWithinRange": 0,
+                    "nAboveRange": 0,
+                    "percentUrgentLow": 0,
+                    "percentBelowRange": 0,
+                    "percentWithinRange": 0,
+                    "percentAboveRange": 0
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 117864,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getegvs",
+        "executor_version": "v2",
+        "executor_display_name": "Get egvs",
+        "executor_description": "The /egvs endpoint enables retrieval of a user's estimated glucose value (EGV) data, including trend and status information.",
+        "executor_category": "DexcomAPIV2",
+        "executor_category_group": "DexcomAPIV2",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/v2/users/self/egvs",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35",
+                "req": false
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window  Example: endDate=2023-01-01T09:12:35",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1697542286199,
+        "lastModifiedTime": 1697542286199,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "unit": "mg/dL",
+                    "rateUnit": "mg/dL/min",
+                    "egvs": [
+                        {
+                            "systemTime": "2019-08-24T14:15:22Z",
+                            "displayTime": "2019-08-24T14:15:22Z",
+                            "value": 122,
+                            "realtimeValue": 121,
+                            "smoothedValue": 122,
+                            "status": null,
+                            "trend": "flat",
+                            "trendRate": -0.5
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 87775,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsuserssummarystatisticsincludingaveragesquartilesandmeasuresofvariance",
+        "executor_version": "v1",
+        "executor_display_name": "Returns user's summary statistics, including averages, quartiles, and measures of variance.",
+        "executor_description": " v2 of the statistics endpoint does not include G7 data.",
+        "executor_category": "Dexcom_API",
+        "executor_category_group": "Dexcom_API",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseUrl}}/statistics",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35"
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window  Example: endDate=2023-01-01T09:12:35"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json"
+            },
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681208206475,
+        "lastModifiedTime": 1681211229106,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "mNynryP4MsMzXiHLUcNyvj3ejKXDBszLoM433Lhv",
+        "nid": "OIAStUE4jb1jrxToopSPHecK7GFzIAwxGONrm50i"
+    },
+    {
+        "id": 87774,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsusersestimatedglucosevalue",
+        "executor_version": "v1",
+        "executor_display_name": "Returns user's estimated glucose value",
+        "executor_description": "The /egvs endpoint enables retrieval of a user's estimated glucose value (EGV) data, including trend and status information.",
+        "executor_category": "Dexcom_API",
+        "executor_category_group": "Dexcom_API",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/egvs",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window.  Example: startDate=2022-02-06T09:12:35"
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window.  Example: endDate=2022-02-06T09:12:35"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681208131661,
+        "lastModifiedTime": 1681211159113,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "muVi4h2He7jXdPk8n76L5HpgtsgxxmW4lMSXUOCN",
+        "nid": "UWWWqDMt8bWvLbMawviKYQDLHj6eN5RoVsrPRWnX"
+    },
+    {
+        "id": 87771,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsearliestandlatesttimesforcalibrationegvandeventrecords",
+        "executor_version": "v1",
+        "executor_display_name": "Returns earliest and latest times for calibration, EGV, and event records",
+        "executor_description": "The /dataRange endpoint enables retrieval of a user's earliest and latest times for calibration, EGV, and event records. This can be used to efficiently pull historical data and determine whether new data is available.",
+        "executor_category": "Dexcom_API",
+        "executor_category_group": "Dexcom_API",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/dataRange",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681207687700,
+        "lastModifiedTime": 1681210746708,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "g3dRO8TmbC0xZvbKETlt4o2pzMrjGagKKl6ih3TP",
+        "nid": "r6EpRJBHGp35XTJCfwqSBJiXSlTxffQivAOl1gxz"
+    },
+    {
+        "id": 87772,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsusersdeviceinformationincludingg4g5andg6standalonereceiverstheg5andg6mobileappsandtransmitters",
+        "executor_version": "v1",
+        "executor_display_name": "Returns user's device information, including G4, G5, and G6 standalone receivers, the G5 and G6 mobile apps, and transmitters.",
+        "executor_description": "The /devices endpoint enables retrieval of a user's device information, including G4, G5, G6, and G7 standalone receivers, the G5, G6, and G7 mobile apps, and transmitters. The response is an array of all receiver-type devices contributing data to the specified time window, including the alerts and settings associated with each receiver.",
+        "executor_category": "Dexcom_API",
+        "executor_category_group": "Dexcom_API",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/devices",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35"
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window.  Example: endDate=2023-01-01T09:12:35"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681207780733,
+        "lastModifiedTime": 1681210917421,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "BhOIym6kPFjKQuQtAALlELyrFPvrJBXVZwq6WrqV",
+        "nid": "nhpvg75TdyBnV5Go0FENYmpNCj2jJTlmTETZUplT"
+    },
+    {
+        "id": 87768,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsalistofuserscalibrationevents",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of user's calibration events",
+        "executor_description": "The /calibrations endpoint enables retrieval of a user's calibration events. Calibration events are where the user enters the glucose value that they obtain from testing a fingerstick blood sample with their blood glucose meter into the CGM. These readings are used as a reference point for calculating EGV from the sensor signal.",
+        "executor_category": "Dexcom_API",
+        "executor_category_group": "Dexcom-API",
+        "service_provider": "Dexcom",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseUrl}}/calibrations",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startDate",
+                "value": "",
+                "description": "Beginning of the time window; see the discussion of time in the Endpoint Overview section for more details on how they relate to device information  Example: startDate=2023-01-01T09:12:35"
+            },
+            {
+                "key": "endDate",
+                "value": "",
+                "description": "End of the time window.  Example: endDate=2023-01-01T09:12:35"
+            }
+        ],
+        "headers": [
+            {
+                "key": "Accept",
+                "value": "application/json"
+            }
+        ],
+        "authModel": {
+            "authType": "inherit",
+            "authAttributes": null
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": [],
+        "functions": null,
+        "responseAttributes": null,
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1681205583177,
+        "lastModifiedTime": 1681210433985,
+        "executionLib": null,
+        "isDocumentationPublished": false,
+        "mockResponses": null,
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": [
+            {
+                "name": "default",
+                "type": "kong"
+            }
+        ],
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": "bGcmzLjK1IYk69X8kqFVeBxifr5M97ZgPxS4b0EP",
+        "nid": "FiZQR1wSZ0RvsohCLUM99SzgIZIya97zimekEWnT"
+    }
+]

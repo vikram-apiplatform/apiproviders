@@ -1,0 +1,1585 @@
+[
+    {
+        "id": 126562,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "randomJoke",
+        "executor_version": "v1",
+        "executor_display_name": "Random Joke",
+        "executor_description": "This endpoint is similar to the Search Jokes endpoint but you'll receive a random joke every time.",
+        "executor_category": "Jokes",
+        "executor_category_group": "Jokes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.humorapi.com/jokes/random",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "include-tags",
+                "value": "",
+                "description": "A comma-separated list of tags the jokes should have.",
+                "req": false
+            },
+            {
+                "key": "exclude-tags",
+                "value": "",
+                "description": "A comma-separated list of tags the jokes must not have.",
+                "req": false
+            },
+            {
+                "key": "min-rating",
+                "value": "",
+                "description": "The minimum rating (0-10) of the jokes.",
+                "req": false
+            },
+            {
+                "key": "max-length",
+                "value": "",
+                "description": "The maximum length of the joke in letters.",
+                "req": false
+            },
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "",
+                "description": "application/json",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711514758141,
+        "lastModifiedTime": 1711514758141,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": 38242,
+                    "joke": "Q: How many divorced men does it take to screw in a light bulb?\nA: None, the sockets go with the house."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126561,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchJokes",
+        "executor_version": "v1",
+        "executor_display_name": "Search Jokes",
+        "executor_description": "With over 50,000 jokes, you should find something for any occasion. There are 27 categories to choose from but you can also search for very specific words within jokes.",
+        "executor_category": "Jokes",
+        "executor_category_group": "Jokes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.humorapi.com/jokes/search",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "keywords",
+                "value": "",
+                "description": "A comma-separated list of words that must occur in the joke.",
+                "req": false
+            },
+            {
+                "key": "include-tags",
+                "value": "",
+                "description": "A comma-separated list of tags the jokes should have.",
+                "req": false
+            },
+            {
+                "key": "exclude-tags",
+                "value": "",
+                "description": "A comma-separated list of tags the jokes must not have.",
+                "req": false
+            },
+            {
+                "key": "min-rating",
+                "value": "",
+                "description": "The minimum rating (0-10) of the jokes.",
+                "req": false
+            },
+            {
+                "key": "max-length",
+                "value": "",
+                "description": "The maximum length of the joke in letters.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "The number of jokes to skip, between 0 and 1000.",
+                "req": false
+            },
+            {
+                "key": "number",
+                "value": "",
+                "description": "The number of jokes, between 0 and 10.",
+                "req": false
+            },
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "",
+                "description": "application/json",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711514613311,
+        "lastModifiedTime": 1711514613311,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "jokes": [
+                        {
+                            "id": 35642,
+                            "joke": "A man walked into a cowboy bar and ordered a beer just as President Bush appeared on the television. After a few sips, he looked up at the television and mumbled, \"Now, there's the biggest horse's ass I've ever seen.\" A customer at the end of the bar quickly stood up, walked over to him, and decked him. A few minutes later, as the man was finishing his beer, Mrs. Bush appeared \n on the television. \"She's a horse's ass too,\" the man. This time, a customer at the other end of the bar quickly stood up, walked over \n to him, and knocked him off his stool. \"Damn it!\" the man said, climbing back up to the bar. \"This must be Bush country!\" \"Nope,\" the bartender replied. \"Horse country!\""
+                        },
+                        {
+                            "id": 39052,
+                            "joke": "The General went out to find that none of his G.I.s were there. One finally ran up, panting heavily.\"Sorry, sir! I can explain, you see I had a date and it ran a little late. I ran to the bus but missed it, I hailed a cab but it broke down, found a farm, bought a horse but it dropped dead, ran 10 miles, and now I`m here.\"The General was very skeptical about this explanation but at least he was here so he let the G.I. go. Moments later, eight more G.I.s came up to the general panting, he asked them why they were late.\"Sorry, sir! I had a date and it ran a little late, I ran to the bus but missed it, I hailed a cab but it broke down, found a farm, bought a horse but it dropped dead, ran 10 miles, and now I`m here.\"The General eyed them, feeling very skeptical but since he let the first guy go, he let them go, too. A ninth G.I. jogged up to the General, panting heavily.\"Sorry, sir! I had a date and it ran a little late, I ran to the bus but missed it, I hailed a cab but...\"\"Let me guess,\" the General interrupted, \"it broke down.\"\"No,\" said the G.I., \"there were so many dead horses in the road, it took forever to get around them.\""
+                        },
+                        {
+                            "id": 41701,
+                            "joke": "A man has a racehorse, never won a race. Man in disgust says, Horse, you win today or you pull a milk wagon tomorrow morning.\" The starting gate opens, the horses take-off, they move the gate away and there lays his horse asleep on the track. He kicks the horse and asks, \"WHY ARE YOU SLEEPING. The horse, half asleep says, \"I have to get up at three in the morning.\""
+                        }
+                    ],
+                    "available": 541
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126564,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createJoke",
+        "executor_version": "v1",
+        "executor_display_name": "Create Joke",
+        "executor_description": "Use a large language model to create a joke for a certain topic or even multiple topics.",
+        "executor_category": "Jokes",
+        "executor_category_group": "Jokes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.humorapi.com/jokes/create",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "topics",
+                "value": "",
+                "description": "A comma-separated list of topics that the joke should be about.",
+                "req": false
+            },
+            {
+                "key": "max-length",
+                "value": "",
+                "description": "The maximum length of the joke in letters.",
+                "req": false
+            },
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711515201552,
+        "lastModifiedTime": 1711515201552,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "joke": "What's a pirate's least favorite exercise? The plank."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126565,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "analyzeJoke",
+        "executor_version": "v1",
+        "executor_display_name": "Analyze Joke",
+        "executor_description": "This endpoint is similar to the Search Jokes endpoint but you'll receive a random joke every time.",
+        "executor_category": "Jokes",
+        "executor_category_group": "Jokes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.humorapi.com/jokes/analyze",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "topics",
+                "value": "",
+                "description": "A comma-separated list of topics that the joke should be about.",
+                "req": false
+            },
+            {
+                "key": "max-length",
+                "value": "",
+                "description": "The maximum length of the joke in letters.",
+                "req": false
+            },
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "What do you call a deer without eyes? No ideer.",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711515432970,
+        "lastModifiedTime": 1711515432971,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "joke": "What do you call a deer without eyes? No ideer.",
+                    "tags": [
+                        "ANIMAL"
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126718,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "submitJoke",
+        "executor_version": "v1",
+        "executor_display_name": "Submit Joke",
+        "executor_description": "This endpoint is similar to the Search Jokes endpoint but you'll receive a random joke every time.",
+        "executor_category": "Jokes",
+        "executor_category_group": "Jokes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.humorapi.com/jokes",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "topics",
+                "value": "",
+                "description": "A comma-separated list of topics that the joke should be about.",
+                "req": false
+            },
+            {
+                "key": "max-length",
+                "value": "",
+                "description": "The maximum length of the joke in letters.",
+                "req": false
+            },
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "What do you call a deer without eyes? No ideer.",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711536891250,
+        "lastModifiedTime": 1711536891250,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "joke": {
+                        "id": 52625,
+                        "joke": "What do you call a deer without eyes? No ideer.",
+                        "tags": [
+                            "ANIMAL"
+                        ]
+                    },
+                    "message": "Thanks for submitting the joke. We will evaluate the joke asap."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126720,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "downvoteJoke",
+        "executor_version": "v1",
+        "executor_display_name": "Downvote Joke",
+        "executor_description": "This endpoint is similar to the Search Jokes endpoint but you'll receive a random joke every time.",
+        "executor_category": "Jokes",
+        "executor_category_group": "Jokes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.humorapi.com/jokes/{id}/downvote",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "The id of the joke to vote."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711537340242,
+        "lastModifiedTime": 1711537340242,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Thanks for submitting a downvote."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126719,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "upvoteJoke",
+        "executor_version": "v1",
+        "executor_display_name": "Upvote Joke",
+        "executor_description": "This endpoint is similar to the Search Jokes endpoint but you'll receive a random joke every time.",
+        "executor_category": "Jokes",
+        "executor_category_group": "Jokes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.humorapi.com/jokes/{id}/upvote",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "The id of the joke to vote."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711537146825,
+        "lastModifiedTime": 1711537146825,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Thanks for submitting an upvote."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126723,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "upvoteMeme",
+        "executor_version": "v1",
+        "executor_display_name": "Upvote Meme",
+        "executor_description": "This endpoint is similar to the Search Jokes endpoint but you'll receive a random joke every time.",
+        "executor_category": "Memes",
+        "executor_category_group": "Memes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.humorapi.com/memes/{id}/upvote",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "The id of the meme to vote."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711538094179,
+        "lastModifiedTime": 1711538094179,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Thanks for submitting an upvote."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126724,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "downvoteMeme",
+        "executor_version": "v1",
+        "executor_display_name": "Downvote Meme",
+        "executor_description": "This endpoint is similar to the Search Jokes endpoint but you'll receive a random joke every time.",
+        "executor_category": "Memes",
+        "executor_category_group": "Memes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.humorapi.com/memes/{id}/downvote",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "The id of the meme to vote."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711538215706,
+        "lastModifiedTime": 1711538215706,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Thanks for submitting a downvote."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126722,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "randomMeme",
+        "executor_version": "v1",
+        "executor_display_name": "Random Meme",
+        "executor_description": "Get a random meme out of over 200,000 memes and growing.",
+        "executor_category": "Memes",
+        "executor_category_group": "Memes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.humorapi.com/memes/random",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "keywords",
+                "value": "",
+                "description": "A comma-separated list of words that must occur in the meme.",
+                "req": false
+            },
+            {
+                "key": "keywords-in-image",
+                "value": "",
+                "description": "Whether the keywords must occur in the image.",
+                "req": false
+            },
+            {
+                "key": "media-type\t",
+                "value": "",
+                "description": "The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').",
+                "req": false
+            },
+            {
+                "key": "min-rating\t",
+                "value": "",
+                "description": "The minimum rating (0-10) of the meme.",
+                "req": false
+            },
+            {
+                "key": "max-age-days\t",
+                "value": "",
+                "description": "The maximum age of the meme in days.",
+                "req": false
+            },
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711537944953,
+        "lastModifiedTime": 1711537944953,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": 50561,
+                    "url": "https://preview.redd.it/hg0zn2mhjsh01.png?width=640&crop=smart&auto=webp&s=f19b0a87edfc6c71b35ec9aceb64799cd532ff59",
+                    "type": "image/png"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126721,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchMemes",
+        "executor_version": "v1",
+        "executor_display_name": "Search Memes",
+        "executor_description": "With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.",
+        "executor_category": "Memes",
+        "executor_category_group": "Memes",
+        "service_provider": "humorapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.humorapi.com/memes/search",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "keywords",
+                "value": "",
+                "description": "A comma-separated list of words that must occur in the meme.",
+                "req": false
+            },
+            {
+                "key": "keywords-in-image",
+                "value": "",
+                "description": "Whether the keywords must occur in the image.",
+                "req": false
+            },
+            {
+                "key": "media-type\t",
+                "value": "",
+                "description": "The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').",
+                "req": false
+            },
+            {
+                "key": "min-rating\t",
+                "value": "",
+                "description": "The minimum rating (0-10) of the meme.",
+                "req": false
+            },
+            {
+                "key": "max-age-days\t",
+                "value": "",
+                "description": "The maximum age of the meme in days.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "The number of memes to skip, between 0 and 1000.",
+                "req": false
+            },
+            {
+                "key": "number\t",
+                "value": "",
+                "description": "The number of memes, between 0 and 10.",
+                "req": false
+            },
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711537844543,
+        "lastModifiedTime": 1711537844543,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "memes": [
+                        {
+                            "id": 6696,
+                            "url": "https://i.imgur.com/1rmAxUG.jpg",
+                            "type": "image/jpeg"
+                        },
+                        {
+                            "id": 6697,
+                            "url": "https://i.imgur.com/ELT8zMQ.jpg",
+                            "type": "image/jpeg"
+                        },
+                        {
+                            "id": 6698,
+                            "url": "https://i.imgur.com/8JTc5z3.jpg",
+                            "type": "image/jpeg"
+                        }
+                    ],
+                    "available": 32
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

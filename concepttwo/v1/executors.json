@@ -1,0 +1,2887 @@
+[
+    {
+        "id": 96492,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getAuthorizationCode",
+        "executor_version": "v1",
+        "executor_display_name": "Get Authorization Code",
+        "executor_description": "When you want to to authenticate a user via the Authorization Code grant, you need to first send them to the Logbook\u2019s login and authorization system.  If the user then allows your application access, they will then be redirected to the callback URL you registered with ?code={authorization_code} appended. You can then exchange this code for an access token.",
+        "executor_category": "Authorization",
+        "executor_category_group": "Authorization",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/oauth/authorize",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "client_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "scope",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "response_type",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "redirect_uri",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685952944102,
+        "lastModifiedTime": 1685952944102,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96502,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fetchAuthorizationToken",
+        "executor_version": "v1",
+        "executor_display_name": "Fetch authorization token",
+        "executor_description": "The client makes a request to the token endpoint by adding the following parameters using the \u201capplication/x-www-form-urlencoded\u201d format with a character encoding of UTF-8 in the HTTP request entity-body.  This will return an access token which can used to verify API calls. In order to minimise the effect of tokens being intercepted, each access token is only valid for a certain period, specified by the expiry_in time, which is the lifetime in seconds of the token.  When an access token has expired, rather than request a new token with username and password, you should use the refresh_token to get a new one. The lifetime of the refresh token is currently one year. Set the grant_type to refresh_token and pass the correct refresh_token value. When you use it, as well as a new access_token, you will also get back a new refresh token, meaning you can use the API indefinitely without the user needing to reauthenticate. If the user does not use the client for over a year, they will need to log back in.",
+        "executor_category": "Authorization",
+        "executor_category_group": "Authorization",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://log.concept2.com/oauth/access_token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "client_id",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "client_secret",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "grant_type",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "redirect_uri",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "code",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "scope",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685953615966,
+        "lastModifiedTime": 1685953615966,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "access_token": "TA3n1vrNjuQJWw0TdCDHnjSmrjIPULhTlejMIWqq",
+                    "token_type": "Bearer",
+                    "expires_in": 604800,
+                    "refresh_token": "jHJhFzCfOOKB8oyiayubhLAlxaMkG3ruC1E8YxaR"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": "generally due to one or more of the request parameters is missing.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_request",
+                    "error_description": "The request is missing a required parameter, includes an invalid parameter value, includes a parameter more than once, or is otherwise malformed. Check the \"client_secret\" parameter."
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Incorrect login or client credentials",
+                "description": "The error and error description will change depending which is incorrect.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "invalid_credentials",
+                    "error_description": "The user credentials were incorrect."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96514,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "eitUser",
+        "executor_version": "v1",
+        "executor_display_name": "Edit User",
+        "executor_description": "Edit an existing user. You can send across either the entire resource or just any changed values.",
+        "executor_category": "LogbookUsers",
+        "executor_category_group": "LogbookUsers",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://log.concept2.com/api/users/{user}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": "peterp@concept2.co.uk"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685954522328,
+        "lastModifiedTime": 1685957713163,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 2,
+                        "username": "Peter Parker",
+                        "first_name": "Peter",
+                        "last_name": "Parker",
+                        "gender": "M",
+                        "dob": "1962-08-01",
+                        "email": "peterp@concept2.co.uk",
+                        "country": "USA"
+                    }
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Validation error",
+                "description": "one or more fields is incorrect.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Could not update user.",
+                    "status_code": 422,
+                    "errors": {
+                        "email": [
+                            "The email format is invalid."
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96511,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getUserId",
+        "executor_version": "v1",
+        "executor_display_name": "Get User",
+        "executor_description": "Get a user by id.",
+        "executor_category": "LogbookUsers",
+        "executor_category_group": "LogbookUsers",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/users/{user}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685954400089,
+        "lastModifiedTime": 1685957669791,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 1,
+                        "username": "David Hart",
+                        "first_name": "David",
+                        "last_name": "Hart",
+                        "gender": "M",
+                        "dob": "1977-08-19",
+                        "email": "davidh@concept2.com",
+                        "country": "GBR",
+                        "profile_image": "http://media.concept2.com/assets/uploads/profiles/1/small/mypicture.jpg",
+                        "age_restricted": false,
+                        "email_permission": true,
+                        "max_heart_rate": null
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96505,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createLogbookUser",
+        "executor_version": "v1",
+        "executor_display_name": "Create User",
+        "executor_description": "This endpoint is used for creating a new user. To do this, you need to use a client access token rather than a user access token. Following are the list of values that can be sent as part of the message body.",
+        "executor_category": "LogbookUsers",
+        "executor_category_group": "LogbookUsers",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://log.concept2.com/api/users",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "username": "Peter Parker",
+                "password": "supersecret",
+                "first_name": "Peter",
+                "last_name": "Parker",
+                "gender": "M",
+                "dob": "1962-08-01",
+                "email": "peterp@concept2.com",
+                "country": "USA"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685953943017,
+        "lastModifiedTime": 1685953943017,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 1,
+                        "username": "David Hart",
+                        "first_name": "David",
+                        "last_name": "Hart",
+                        "gender": "M",
+                        "dob": "1977-08-19",
+                        "email": "davidh@concept2.com",
+                        "country": "GBR",
+                        "profile_image": "http://media.concept2.com/assets/uploads/profiles/1/small/mypicture.jpg",
+                        "age_restricted": false,
+                        "email_permission": true,
+                        "max_heart_rate": null
+                    }
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Validation error",
+                "description": "one or more fields is missing or incorrect.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Could not create user.",
+                    "status_code": 422,
+                    "errors": {
+                        "gender": [
+                            "The gender field is required."
+                        ],
+                        "username": [
+                            "The username has already been taken."
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96525,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateImage",
+        "executor_version": "v1",
+        "executor_display_name": "Update Image",
+        "executor_description": "Update or add the profile image for an existing user. Images must be posted as multipart/form-data. There is a maximum limit of 2MB for the uploaded image.  The full URL for the profile image will be returned on success. By changing the URL, you can get different size images [square (cropped to 75x75), medium (maximum 320px wide), large (maximum 640px wide)]",
+        "executor_category": "LogbookUsers",
+        "executor_category_group": "LogbookUsers",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/image",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "name",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "filename",
+                    "value": "",
+                    "description": "",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685957832448,
+        "lastModifiedTime": 1685957832448,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "profile_image": "http://log.concept2.com/assets/uploads/profiles/1/small/21d29076e455877b19531d5a4cd4033a.jpg"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96535,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteStrokes",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Strokes",
+        "executor_description": "Delete stroke data. Note: This cannot be undone.",
+        "executor_category": "StrokeData",
+        "executor_category_group": "StrokeData",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results/{result_id}/strokes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            },
+            {
+                "key": "result_id",
+                "value": "",
+                "description": "number (required) Example: 9 The integer id of the workout"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685959261361,
+        "lastModifiedTime": 1685959261361,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Result deleted successfully"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "This workout does not exist for this user",
+                    "status_code": 404
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "User does not have rights to this resource",
+                    "status_code": 403
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96534,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getStrokeData",
+        "executor_version": "v1",
+        "executor_display_name": "Get Stroke Data",
+        "executor_description": "Get stroke data for a workout. See Add Result for information on structure.",
+        "executor_category": "StrokeData",
+        "executor_category_group": "StrokeData",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results/{result_id}/strokes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            },
+            {
+                "key": "result_id",
+                "value": "",
+                "description": "number (required) Example: 9 The integer id of the workout"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685959125569,
+        "lastModifiedTime": 1685959125569,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "t": 0,
+                            "d": 0,
+                            "p": 0,
+                            "spm": 0,
+                            "hr": 0
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "This workout does not have any stroke data associated with it",
+                    "status_code": 404
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96530,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addResults",
+        "executor_version": "v1",
+        "executor_display_name": "Add Results",
+        "executor_description": "If you want to add more than one workout at once, you can post to /api/users/me/results/bulk.  This takes an array of results. The return response will be an array of results or error messages, similar to posting individual results, but with an additional status code. The status code of the responsed will always be 200.",
+        "executor_category": "AddResults",
+        "executor_category_group": "AddResults",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results/bulk",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "type": "rower",
+                    "date": "2015-05-14 03:15:41",
+                    "distance": 5649,
+                    "time": 8649,
+                    "weight_class": "H",
+                    "workout_type": "JustRow"
+                },
+                {
+                    "type": "rower",
+                    "date": "2015-05-14 03:15:41",
+                    "distance": 5649,
+                    "time": 8649,
+                    "weight_class": "H",
+                    "workout_type": "JustRow"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685958621198,
+        "lastModifiedTime": 1685958621198,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "status_code": 201,
+                        "data": {
+                            "id": 371,
+                            "user_id": 1,
+                            "date": "2015-05-05 03:15:41",
+                            "timezone": null,
+                            "date_utc": null,
+                            "distance": 5649,
+                            "type": "rower",
+                            "time": 8649,
+                            "time_formatted": "14:24.9",
+                            "workout_type": "JustRow",
+                            "source": "ErgData",
+                            "weight_class": "H",
+                            "verified": true,
+                            "ranked": false,
+                            "comments": null
+                        }
+                    },
+                    {
+                        "status_code": 409,
+                        "message": "Duplicate result"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96544,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getChallengesForSeason",
+        "executor_version": "v1",
+        "executor_display_name": "Get challenges for a season",
+        "executor_description": "Get challenges for a specific season.",
+        "executor_category": "LogbookChallenges",
+        "executor_category_group": "LogbookChallenges",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/challenges/season/{season}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "season",
+                "value": "",
+                "description": "umber (required) Example: 2014 The logbook season (which runs May 1 through April 30) you need the challenges for."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685960138418,
+        "lastModifiedTime": 1685960138418,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "season": "2014",
+                            "start": "2013-05-01",
+                            "end": "2013-05-15",
+                            "activity": "Row/Ski",
+                            "name": "Global Marathon",
+                            "category": "Individual",
+                            "description": "Row or ski either a full (42,195m) or half (21,097m) marathon in one workout",
+                            "short_description": "Complete either a full or half marathon in one workout"
+                        },
+                        {
+                            "season": "2014",
+                            "start": "2013-06-21",
+                            "end": "2013-06-21",
+                            "activity": "Row/Ski",
+                            "name": "Summer Solstice",
+                            "category": "Individual",
+                            "description": "Row and/or ski 21,000 meters",
+                            "short_description": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96542,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getAllChallenges",
+        "executor_version": "v1",
+        "executor_display_name": "Get all challenges",
+        "executor_description": "Fetch a paginated collection of all challenges.",
+        "executor_category": "LogbookChallenges",
+        "executor_category_group": "LogbookChallenges",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/challenges",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685959958568,
+        "lastModifiedTime": 1685959958568,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "season": "2014",
+                            "start": "2013-05-01",
+                            "end": "2013-05-15",
+                            "activity": "Row/Ski",
+                            "name": "Global Marathon",
+                            "category": "Individual",
+                            "description": "Row or ski either a full (42,195m) or half (21,097m) marathon in one workout",
+                            "short_description": "Complete either a full or half marathon in one workout"
+                        },
+                        {
+                            "season": "2014",
+                            "start": "2013-06-21",
+                            "end": "2013-06-21",
+                            "activity": "Row/Ski",
+                            "name": "Summer Solstice",
+                            "category": "Individual",
+                            "description": "Row and/or ski 21,000 meters",
+                            "short_description": false
+                        },
+                        {
+                            "season": "2014",
+                            "start": "2013-08-01",
+                            "end": "2013-08-28",
+                            "activity": "Row/Ski",
+                            "name": "Dog Days of Summer",
+                            "category": "Individual",
+                            "description": "Row and/or ski a different distance goal each week",
+                            "short_description": false
+                        },
+                        {
+                            "season": "2014",
+                            "start": "2013-09-15",
+                            "end": "2013-10-15",
+                            "activity": "Row/Ski",
+                            "name": "Fall Team Challenge",
+                            "category": "Team",
+                            "description": "Complete as many meters as you can during the timeframe indicated",
+                            "short_description": "Help your team row and ski as many meters as possible"
+                        },
+                        {
+                            "season": "2014",
+                            "start": "2013-10-25",
+                            "end": "2013-10-31",
+                            "activity": "Row/Ski",
+                            "name": "Skeleton Crew",
+                            "category": "Individual",
+                            "description": "Row and/or ski at least 31,000 meters",
+                            "short_description": false
+                        },
+                        {
+                            "season": "2014",
+                            "start": "2013-11-28",
+                            "end": "2013-12-24",
+                            "activity": "Row/Ski",
+                            "name": "Holiday Challenge",
+                            "category": "Individual",
+                            "description": "Row and/or ski 100,000 meters or 200,000 meters",
+                            "short_description": false
+                        }
+                    ],
+                    "meta": {
+                        "pagination": {
+                            "total": 24,
+                            "count": 6,
+                            "per_page": 6,
+                            "current_page": 1,
+                            "total_pages": 4,
+                            "links": {
+                                "next": "http://log.concept2.com/api/challenges?page=2"
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96543,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getCurrentChallenges",
+        "executor_version": "v1",
+        "executor_display_name": "Get current challenges",
+        "executor_description": "Get current active challenges only.",
+        "executor_category": "LogbookChallenges",
+        "executor_category_group": "LogbookChallenges",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/challenges/current",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685960034191,
+        "lastModifiedTime": 1685960034191,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "season": "2014",
+                            "start": "2013-05-01",
+                            "end": "2013-05-15",
+                            "activity": "Row/Ski",
+                            "name": "Global Marathon",
+                            "category": "Individual",
+                            "description": "Row or ski either a full (42,195m) or half (21,097m) marathon in one workout",
+                            "short_description": "Complete either a full or half marathon in one workout"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96527,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getResults",
+        "executor_version": "v1",
+        "executor_display_name": "Get Results",
+        "executor_description": "Get all results for the current user. The response is paginated. See Pagination for more information on how to work with paginated result sets.  It\u2019s possible to filter the results and return only results that match certain criteria. To do this, pass the filter criteria as query string variables.",
+        "executor_category": "Results",
+        "executor_category_group": "Results",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "from",
+                "value": "",
+                "description": "Fetches only results where the workout date is on or after this. Should be in YYYY-MM-DD format. Note: You can also use full \"YYYY-MM-DD H:M:S\" if required.",
+                "req": false
+            },
+            {
+                "key": "to",
+                "value": "",
+                "description": "Fetches only results where the workout date is on or before this. Should be in YYYY-MM-DD format. Note: You can also use full \"YYYY-MM-DD H:M:S\" if required.\t",
+                "req": false
+            },
+            {
+                "key": "type",
+                "value": "",
+                "description": "Fetches only results of this type. Must be one of rower skierg bike dynamic slides paddle water snow rollerski multierg",
+                "req": false
+            },
+            {
+                "key": "updated_after",
+                "value": "",
+                "description": "Fetches only results created or updated on or after this date. Should be in YYYY-MM-DD format. Note: You can also use full \"YYYY-MM-DD H:M:S\" if required. The timezone of the updated_after date is GMT, so you should convert to this when making the call.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685958042988,
+        "lastModifiedTime": 1685958042988,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": [
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "date": "2013-06-21 00:00:00",
+                            "timezone": null,
+                            "date_utc": null,
+                            "distance": 23000,
+                            "type": "rower",
+                            "time": 152350,
+                            "time_formatted": "4:13:55.0",
+                            "workout_type": "unknown",
+                            "source": "Web",
+                            "weight_class": "H",
+                            "verified": false,
+                            "ranked": false,
+                            "comments": null
+                        },
+                        {
+                            "id": 8,
+                            "user_id": 1,
+                            "date": "2013-05-10 00:00:00",
+                            "timezone": null,
+                            "date_utc": null,
+                            "distance": 42195,
+                            "type": "skierg",
+                            "time": 262700,
+                            "time_formatted": "7:17:50.0",
+                            "workout_type": "unknown",
+                            "source": "Web",
+                            "weight_class": "H",
+                            "verified": false,
+                            "ranked": false,
+                            "comments": null
+                        }
+                    ],
+                    "meta": {
+                        "pagination": {
+                            "total": 9,
+                            "count": 9,
+                            "per_page": 50,
+                            "current_page": 1,
+                            "total_pages": 1,
+                            "links": []
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96529,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addResult",
+        "executor_version": "v1",
+        "executor_display_name": "Add Result",
+        "executor_description": "Add a new workout. Following are the list of values that can be sent as part of the message body. Note: the Logbook filters for duplicate workouts, so will return a Duplicate Entry error if you post a workout which has the same date, time and distance as an existing workout. Note: We recommend you use our Online Validator tool to check workouts for errors, especially if uploading interval workouts.",
+        "executor_category": "Results",
+        "executor_category_group": "Results",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "type": "rower",
+                "date": "2015-08-05 13:15:41",
+                "timezone": "Europe/London",
+                "distance": 5649,
+                "time": 8649,
+                "weight_class": "H",
+                "workout_type": "JustRow",
+                "comments": null
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685958422674,
+        "lastModifiedTime": 1685958422674,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 339,
+                        "user_id": 1,
+                        "date": "2015-08-05 13:15:41",
+                        "timezone": "Europe/London",
+                        "date_utc": "2015-08-05 12:15:41",
+                        "distance": 5649,
+                        "type": "rower",
+                        "time": 8649,
+                        "time_formatted": "14:24.9",
+                        "workout_type": "JustRow",
+                        "source": "ErgData",
+                        "weight_class": "H",
+                        "verified": true,
+                        "ranked": false
+                    }
+                }
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Duplicate result",
+                "description": "The workout you are trying to add has the same time, distance and date as an existing workout.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Duplicate result",
+                    "status_code": 409
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Validation error",
+                "description": "one or more fields is missing or incorrect.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Could not create user.",
+                    "status_code": 422,
+                    "errors": {
+                        "distance": [
+                            "The distance field is required."
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96537,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getResultFileExport",
+        "executor_version": "v1",
+        "executor_display_name": "Get Result File Export",
+        "executor_description": "Get a file export of a workout.",
+        "executor_category": "GetResultFileExport",
+        "executor_category_group": "GetResultFileExport",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results/{result_id}/export/{type}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            },
+            {
+                "key": "result_id",
+                "value": "",
+                "description": "number (required) Example: 9 The integer id of the workout"
+            },
+            {
+                "key": "type",
+                "value": "",
+                "description": "string (required) Example: one of `csv`, `fit`, or `tcx` The file type to export"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685959449120,
+        "lastModifiedTime": 1685959449120,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Stroke data not found",
+                    "status_code": 404
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96541,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createUsernameReminder",
+        "executor_version": "v1",
+        "executor_display_name": "Create Username Reminder",
+        "executor_description": "Send any usernames associated with an email account to the specified email.",
+        "executor_category": "Reminders",
+        "executor_category_group": "Reminders",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://log.concept2.com/api/reminder/username",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": "peterp@concept2.com"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685959823890,
+        "lastModifiedTime": 1685959823890,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "A username reminder has been sent to your email address."
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Missing or incorrect email.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Could not get usernames",
+                    "status_code": 422,
+                    "errors": {
+                        "email": [
+                            "You must enter a valid email address"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "",
+                "description": "Unknown email address.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "There are no users with that email address.",
+                    "status_code": 404
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96539,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createPasswordReset",
+        "executor_version": "v1",
+        "executor_display_name": "Create Password Reset",
+        "executor_description": "Send a password reset email to the email account associated with a username.",
+        "executor_category": "Reminders",
+        "executor_category_group": "Reminders",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://log.concept2.com/api/reminder/password",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "username": "Peter Parker"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685959682134,
+        "lastModifiedTime": 1685959682134,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "A password reset email has been sent to the email address for this username."
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Missing username.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Could not get user",
+                    "status_code": 422,
+                    "errors": {
+                        "username": [
+                            "Missing username"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "",
+                "description": "No known user.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "There are no users with that username.",
+                    "status_code": 404
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96531,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getResult",
+        "executor_version": "v1",
+        "executor_display_name": "Get Result",
+        "executor_description": "Get an individual result.",
+        "executor_category": "Result",
+        "executor_category_group": "Result",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results/{result_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            },
+            {
+                "key": "result_id",
+                "value": "",
+                "description": "number (required) Example: 1 The integer id of the workout"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685958730307,
+        "lastModifiedTime": 1685958730307,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 3,
+                        "user_id": 1,
+                        "date": "2013-06-21 00:00:00",
+                        "distance": 23000,
+                        "type": "rower",
+                        "time": 152350,
+                        "time_formatted": "4:13:55.0",
+                        "workout_type": "unknown",
+                        "source": "Web",
+                        "weight_class": "H",
+                        "verified": false,
+                        "ranked": false,
+                        "comments": null
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96532,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "editResult",
+        "executor_version": "v1",
+        "executor_display_name": "Edit Result",
+        "executor_description": "Edit an existing workout. You can send across either the entire resource or just any changed values.",
+        "executor_category": "Result",
+        "executor_category_group": "Result",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results/{result_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            },
+            {
+                "key": "result_id",
+                "value": "",
+                "description": "number (required) Example: 1 The integer id of the workout"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "weight_class": "L",
+                "comments": "Second row of the year."
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685958873313,
+        "lastModifiedTime": 1685958873313,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 339,
+                        "user_id": 1,
+                        "date": "2015-05-05 03:15:41",
+                        "distance": 5649,
+                        "type": "rower",
+                        "time": 8649,
+                        "time_formatted": "14:24.9",
+                        "workout_type": "JustRow",
+                        "source": "ErgData",
+                        "weight_class": "L",
+                        "verified": true,
+                        "ranked": false,
+                        "comments": "Second row of the year."
+                    }
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Validation error",
+                "description": "one or more fields is incorrect.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Could not update result.",
+                    "status_code": 422,
+                    "errors": {
+                        "distance": [
+                            "The distance field is required."
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96533,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteResult",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Result",
+        "executor_description": "Delete a result. Note: This cannot be undone.",
+        "executor_category": "Result",
+        "executor_category_group": "Result",
+        "service_provider": "concepttwo",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://log.concept2.com/api/users/{user}/results/{result_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user",
+                "value": "",
+                "description": "number or string (required) Example: me Either the integer id of the user or \u2018me\u2019 as shorthand for authenticated user."
+            },
+            {
+                "key": "result_id",
+                "value": "",
+                "description": "number (required) Example: 1 The integer id of the workout"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "oauth_2_0",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685958991669,
+        "lastModifiedTime": 1685958991669,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Result deleted successfully"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "This workout does not exist for this user",
+                    "status_code": 404
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "User does not have rights to this resource",
+                    "status_code": 403
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

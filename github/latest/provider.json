@@ -1,0 +1,138 @@
+{
+    "producer": "github",
+    "title": "GitHub",
+    "description": "GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code",
+    "image": "https://s3.amazonaws.com/services.apiplatform.io/apiproducerslogo/github.png",
+    "url": "https://github.com",
+    "authorization": [
+        {
+            "authtype": "OAuth 2.0",
+            "authattributes": [
+                {
+                    "key": "base_url",
+                    "displayname": "Authorize URL",
+                    "quickConnectValue": "https://github.com/login/oauth/authorize"
+                },
+                {
+                    "key": "token_url",
+                    "displayname": "Access Token URL",
+                    "quickConnectValue": "https://github.com/login/oauth/access_token"
+                },
+                {
+                    "key": "client_id",
+                    "displayname": "Client ID",
+                    "quickConnectValue": "Ov23li4dlSiR2dCpo1mo"
+                },
+                {
+                    "key": "client_secret",
+                    "displayname": "Client Secret",
+                    "quickConnectValue": "93071f73365e3cedd97a407bbb36e54b43880192"
+                },
+                {
+                    "key": "scope",
+                    "displayname": "Scope",
+                    "quickConnectValue": "admin:repo_hook repo user"
+                }
+            ]
+        }
+    ],
+    "isPromoted": false,
+    "isSupported": false,
+    "isAiCertified": false,
+    "enableQuickConnect": true,
+    "partner": "services",
+    "account": "services",
+    "id": 1547,
+    "additionalConfigurations": {
+        "globalVariables": [
+            {
+                "key": "baseUrl",
+                "value": "https://api.github.com",
+                "scope": "pathParams"
+            }
+        ]
+    },
+    "triggers": [
+        {
+            "triggerType": "manual",
+            "enabled": false
+        },
+        {
+            "triggerType": "webhook",
+            "enabled": true,
+            "enableActions": true,
+            "info": "",
+            "actions": [
+                {
+                    "key": "list_events",
+                    "name": "List Events",
+                    "executor": {
+                        "id": 157187,
+                        "name": "listevents",
+                        "method": "GET",
+                        "displayName": "listEvents",
+                        "description": null,
+                        "version": "v1"
+                    },
+                    "dataRoots": [
+                        {
+                            "key": "event_types",
+                            "displayName": "Event Types",
+                            "path": "type"
+                        }
+                    ]
+                },
+                {
+                    "key": "create_webhook",
+                    "name": "Create Webhook",
+                    "executor": {
+                        "id": 159154,
+                        "name": "createarepositorywebhook",
+                        "method": "POST",
+                        "displayName": "Create a repository webhook",
+                        "description": null,
+                        "version": "v1"
+                    }
+                },
+                {
+                    "key": "delete_webhook",
+                    "name": "Delete Webhook",
+                    "executor": {
+                        "id": 159152,
+                        "name": "deletearepositorywebhook",
+                        "method": "DELETE",
+                        "displayName": "Delete a repository webhook",
+                        "description": null,
+                        "version": "v1"
+                    },
+                    "dataMapping": [
+                        {
+                            "key": "",
+                            "value": "",
+                            "scope": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "list_webhooks",
+                    "name": "List Webhooks",
+                    "executor": {
+                        "id": 159153,
+                        "name": "listrepositorywebhooks",
+                        "method": "GET",
+                        "displayName": "List repository webhooks",
+                        "description": null,
+                        "version": "v1"
+                    },
+                    "dataRoots": [
+                        {
+                            "key": "col0",
+                            "displayName": "Name",
+                            "path": "name"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

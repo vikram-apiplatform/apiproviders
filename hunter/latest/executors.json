@@ -1,0 +1,3506 @@
+[
+    {
+        "id": 96452,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "domainSearch",
+        "executor_version": "v2",
+        "executor_display_name": "Domain Search",
+        "executor_description": "One key feature of Hunter is to search all the email addresses corresponding to one website. You give one domain name and it returns all the email addresses using this domain name found on the internet.",
+        "executor_category": "calls",
+        "executor_category_group": "calls",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/domain-search",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "domain",
+                "value": "",
+                "description": "Domain name from which you want to find the email addresses. For example, \"stripe.com\".",
+                "req": false
+            },
+            {
+                "key": "company",
+                "value": "",
+                "description": "The company name from which you want to find the email addresses. For example, \"stripe\". Note that you'll get better results by supplying the domain name as we won't have to find it. If you send a request with both the domain and the company name, we'll use the domain name. It doesn't need to be in lowercase.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685999443989,
+        "lastModifiedTime": 1685999443989,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96459,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "emailCount",
+        "executor_version": "v2",
+        "executor_display_name": "Email Count",
+        "executor_description": "This API endpoint allows you to know how many email addresses we have for one domain or for one company. It's free and doesn't require authentication.",
+        "executor_category": "calls",
+        "executor_category_group": "calls",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/email-count",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "domain",
+                "value": "",
+                "description": "The domain name for which you want to know how many email addresses we have.",
+                "req": false
+            },
+            {
+                "key": "company",
+                "value": "",
+                "description": "The company name for which you want to know how many email addresses we have. For example, \"stripe\". Note that you'll get better results by supplying the domain name as we won't have to find it. If you send a request with both the domain and the company name, we'll use the domain name. It doesn't need to be in lowercase. It must be composed of at least 3 characters.",
+                "req": false
+            },
+            {
+                "key": "type",
+                "value": "",
+                "description": "Get the count of only personal or generic email addresses.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686001130033,
+        "lastModifiedTime": 1686001130033,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "total": 81,
+                        "personal_emails": 65,
+                        "generic_emails": 16,
+                        "department": {
+                            "executive": 10,
+                            "it": 0,
+                            "finance": 8,
+                            "management": 0,
+                            "sales": 0,
+                            "legal": 0,
+                            "support": 6,
+                            "hr": 0,
+                            "marketing": 0,
+                            "communication": 2,
+                            "education": 0,
+                            "design": 0,
+                            "health": 0,
+                            "operations": 0
+                        },
+                        "seniority": {
+                            "junior": 13,
+                            "senior": 5,
+                            "executive": 2
+                        }
+                    },
+                    "meta": {
+                        "params": {
+                            "domain": "stripe.com",
+                            "company": null,
+                            "type": null
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "The supplied type is invalid.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96454,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "emailFinder",
+        "executor_version": "v2",
+        "executor_display_name": "Email Finder",
+        "executor_description": "This API endpoint finds the most likely email address from a domain name, a first name and a last name.",
+        "executor_category": "calls",
+        "executor_category_group": "calls",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/email-finder",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "domain",
+                "value": "",
+                "description": "Domain name from which you want to find the email addresses. For example, \"stripe.com\".",
+                "req": false
+            },
+            {
+                "key": "company",
+                "value": "",
+                "description": "The company name from which you want to find the email addresses. For example, \"stripe\". Note that you'll get better results by supplying the domain name as we won't have to find it. If you send a request with both the domain and the company name, we'll use the domain name. It doesn't need to be in lowercase.",
+                "req": false
+            },
+            {
+                "key": "first_name",
+                "value": "",
+                "description": "The person's first name. It doesn't need to be in lowercase.",
+                "req": false
+            },
+            {
+                "key": "last_name",
+                "value": "",
+                "description": "The person's last name. It doesn't need to be in lowercase.",
+                "req": false
+            },
+            {
+                "key": "full_name",
+                "value": "",
+                "description": "The person's full name. Note that you'll get better results by supplying the person's first and last name if you can. It doesn't need to be in lowercase.",
+                "req": false
+            },
+            {
+                "key": "max_duration",
+                "value": "",
+                "description": "The maximum duration of the request in seconds. Setting a longer duration allows us to refine the results and provide more accurate data. It must range between 3 and 20. The default is 5.",
+                "req": false
+            },
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686000066415,
+        "lastModifiedTime": 1686000066415,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "first_name": "Alexis",
+                        "last_name": "Ohanian",
+                        "email": "alexis@reddit.com",
+                        "score": 97,
+                        "domain": "reddit.com",
+                        "accept_all": false,
+                        "position": "Cofounder",
+                        "twitter": null,
+                        "linkedin_url": null,
+                        "phone_number": null,
+                        "company": "Reddit",
+                        "sources": [
+                            {
+                                "domain": "redditblog.com",
+                                "uri": "http://redditblog.com/2008/10/22/widgets-get-an-upgrade-and-a-firefox-extension-that-will-rock-your-world",
+                                "extracted_on": "2018-10-19",
+                                "last_seen_on": "2021-05-18",
+                                "still_on_page": true
+                            }
+                        ],
+                        "verification": {
+                            "date": "2021-06-14",
+                            "status": "valid"
+                        }
+                    },
+                    "meta": {
+                        "params": {
+                            "first_name": "Alexis",
+                            "last_name": "Ohanian",
+                            "full_name": null,
+                            "domain": "reddit.com",
+                            "company": null,
+                            "max_duration": null
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 451,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "claimedemail\t",
+                "description": "The person owning the email address asked us directly or indirectly to stop the processing of their personal data. For this reason, you shouldn't process it yourself in any way.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96461,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "accountInformation",
+        "executor_version": "v2",
+        "executor_display_name": "Account Information",
+        "executor_description": "This API endpoint enables you to get information regarding your Hunter account at any time. This call is free.",
+        "executor_category": "calls",
+        "executor_category_group": "calls",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/account",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "domain",
+                "value": "",
+                "description": "The domain name for which you want to know how many email addresses we have.",
+                "req": false
+            },
+            {
+                "key": "company",
+                "value": "",
+                "description": "The company name for which you want to know how many email addresses we have. For example, \"stripe\". Note that you'll get better results by supplying the domain name as we won't have to find it. If you send a request with both the domain and the company name, we'll use the domain name. It doesn't need to be in lowercase. It must be composed of at least 3 characters.",
+                "req": false
+            },
+            {
+                "key": "type",
+                "value": "",
+                "description": "Get the count of only personal or generic email addresses.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686001258064,
+        "lastModifiedTime": 1686001258064,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "total": 81,
+                        "personal_emails": 65,
+                        "generic_emails": 16,
+                        "department": {
+                            "executive": 10,
+                            "it": 0,
+                            "finance": 8,
+                            "management": 0,
+                            "sales": 0,
+                            "legal": 0,
+                            "support": 6,
+                            "hr": 0,
+                            "marketing": 0,
+                            "communication": 2,
+                            "education": 0,
+                            "design": 0,
+                            "health": 0,
+                            "operations": 0
+                        },
+                        "seniority": {
+                            "junior": 13,
+                            "senior": 5,
+                            "executive": 2
+                        }
+                    },
+                    "meta": {
+                        "params": {
+                            "domain": "stripe.com",
+                            "company": null,
+                            "type": null
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "The supplied type is invalid.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96456,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "emailVerifier",
+        "executor_version": "v2",
+        "executor_display_name": "Email Verifier",
+        "executor_description": "This API endpoint allows you to verify the deliverability of an email address.",
+        "executor_category": "calls",
+        "executor_category_group": "calls",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/email-finder",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "email",
+                "value": "",
+                "description": "The email address you want to verify.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686000803441,
+        "lastModifiedTime": 1686000803441,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "status": "valid",
+                        "result": "deliverable",
+                        "_deprecation_notice": "Using result is deprecated, use status instead",
+                        "score": 100,
+                        "email": "patrick@stripe.com",
+                        "regexp": true,
+                        "gibberish": false,
+                        "disposable": false,
+                        "webmail": false,
+                        "mx_records": true,
+                        "smtp_server": true,
+                        "smtp_check": true,
+                        "accept_all": false,
+                        "block": false,
+                        "sources": [
+                            {
+                                "domain": "beta.paganresearch.io",
+                                "uri": "http://beta.paganresearch.io/details/stripe",
+                                "extracted_on": "2020-06-17",
+                                "last_seen_on": "2020-06-17",
+                                "still_on_page": true
+                            },
+                            {
+                                "domain": "icloudnewz.blogspot.com",
+                                "uri": "http://icloudnewz.blogspot.com/2017/11/follow-patrick-collison-mike-birbiglia.html",
+                                "extracted_on": "2020-03-25",
+                                "last_seen_on": "2020-06-29",
+                                "still_on_page": true
+                            }
+                        ]
+                    },
+                    "meta": {
+                        "params": {
+                            "email": "patrick@stripe.com"
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 451,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "claimedemail\t",
+                "description": "The person owning the email address asked us directly or indirectly to stop the processing of their personal data. For this reason, you shouldn't process it yourself in any way.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Accepted response status",
+                "description": "The verification is still in progress. Feel free to make the API call again as often as necessary. It will only count as a single request until we return the response.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 222,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The verification failed because of an unexpected response from the remote SMTP server. This failure is outside of our control. We recommend to retry later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "too many requests",
+                "description": "You've reached the limit for the number of verifications per domain in 24 hours. To prevent this, check the number of requests remaining per domain using the X-Rate-Limit-Remaining header.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96501,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateacustomattribute",
+        "executor_version": "v2",
+        "executor_display_name": "Update a custom attribute",
+        "executor_description": "Updates an existing custom attribute. The updated values must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://api.hunter.io/v2/leads_custom_attributes/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "label": "Outreach Campaign ID"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686005600388,
+        "lastModifiedTime": 1686005879548,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "No content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96503,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteacustomattribute",
+        "executor_version": "v2",
+        "executor_display_name": "Delete a custom attribute",
+        "executor_description": "Deletes an existing custom attribute.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.hunter.io/v2/leads_custom_attributes/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686005940408,
+        "lastModifiedTime": 1686007369901,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "No content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96464,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listallyourleads",
+        "executor_version": "v2",
+        "executor_display_name": "List all your leads",
+        "executor_description": "Returns all the leads already saved in your account. The leads are returned in sorted order, with the most recent leads appearing first.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/leads",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686002207759,
+        "lastModifiedTime": 1686002207759,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "leads": [
+                            {
+                                "id": 1,
+                                "email": "hoon@stripe.com",
+                                "first_name": "Jeremy",
+                                "last_name": "Hoon",
+                                "position": null,
+                                "company": "Stripe",
+                                "company_industry": null,
+                                "company_size": null,
+                                "confidence_score": null,
+                                "website": "stripe.com",
+                                "country_code": null,
+                                "source": null,
+                                "linkedin_url": null,
+                                "phone_number": null,
+                                "twitter": null,
+                                "sync_status": null,
+                                "notes": null,
+                                "sending_status": null,
+                                "last_activity_at": null,
+                                "last_contacted_at": null,
+                                "verification": {
+                                    "date": "2021-01-01 12:00:00 UTC",
+                                    "status": "deliverable"
+                                },
+                                "leads_list": {
+                                    "id": 1,
+                                    "name": "My leads list",
+                                    "leads_count": 2
+                                },
+                                "created_at": "2021-01-01 12:00:00 UTC"
+                            },
+                            {
+                                "id": 2,
+                                "email": "alexis@reddit.com",
+                                "first_name": "Alexis",
+                                "last_name": "Ohanian",
+                                "position": "Cofounder",
+                                "company": "Reddit",
+                                "company_industry": null,
+                                "company_size": null,
+                                "confidence_score": 97,
+                                "website": "reddit.com",
+                                "country_code": "US",
+                                "source": null,
+                                "linkedin_url": null,
+                                "phone_number": null,
+                                "twitter": null,
+                                "sync_status": null,
+                                "notes": null,
+                                "sending_status": null,
+                                "last_activity_at": null,
+                                "last_contacted_at": null,
+                                "verification": {
+                                    "date": "2021-01-01 12:00:00 UTC",
+                                    "status": "deliverable"
+                                },
+                                "leads_list": {
+                                    "id": 1,
+                                    "name": "My leads list",
+                                    "leads_count": 2
+                                },
+                                "created_at": "2021-01-01 12:00:00 UTC"
+                            }
+                        ]
+                    },
+                    "meta": {
+                        "count": 2,
+                        "total": 2,
+                        "params": {
+                            "limit": 20,
+                            "offset": 0
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96478,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatealead",
+        "executor_version": "v2",
+        "executor_display_name": "Update a lead",
+        "executor_description": "Updates an existing lead. The updated values must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://api.hunter.io/v2/leads/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "company": "Facebook"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686003230028,
+        "lastModifiedTime": 1686003230028,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "No content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96512,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createaleadslist",
+        "executor_version": "v2",
+        "executor_display_name": "Create a leads list",
+        "executor_description": "Creates a new leads list. The parameters must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.hunter.io/v2/leads_lists",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "My new leads list"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686006573415,
+        "lastModifiedTime": 1686007856132,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 3,
+                        "name": "My new leads list",
+                        "leads_count": 0,
+                        "created_at": "2021-01-01 12:00:00 UTC"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96471,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createalead",
+        "executor_version": "v2",
+        "executor_display_name": "Create a lead",
+        "executor_description": "Creates a new lead. The parameters must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.hunter.io/v2/leads",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "email",
+                "value": "",
+                "description": "The email address of the lead.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": "alexis@reddit.com",
+                "first_name": "Alexis",
+                "last_name": "Ohanian",
+                "position": "Cofounder",
+                "company": "Reddit",
+                "company_industry": "Internet and Telecom",
+                "company_size": "201-500 employees",
+                "confidence_score": 97,
+                "website": "reddit.com",
+                "custom_attributes": {
+                    "customer_id": "cus-1234abcd"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686002659982,
+        "lastModifiedTime": 1686002952345,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 3,
+                        "email": "alexis@reddit.com",
+                        "first_name": "Alexis",
+                        "last_name": "Ohanian",
+                        "position": "Cofounder",
+                        "company": "Reddit",
+                        "company_industry": "Internet and Telecom",
+                        "company_size": "201-500 employees",
+                        "confidence_score": 97,
+                        "website": "reddit.com",
+                        "country_code": null,
+                        "source": null,
+                        "linkedin_url": null,
+                        "phone_number": null,
+                        "twitter": null,
+                        "sync_status": null,
+                        "notes": null,
+                        "sending_status": null,
+                        "last_activity_at": null,
+                        "last_contacted_at": null,
+                        "verification": {
+                            "date": null,
+                            "status": null
+                        },
+                        "customer_id": "cus1234-abcd",
+                        "leads_list": {
+                            "id": 1,
+                            "name": "My leads list",
+                            "leads_count": 3
+                        },
+                        "created_at": "2021-01-01 12:00:00 UTC"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96515,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatealeadslist",
+        "executor_version": "v2",
+        "executor_display_name": "Update a leads list",
+        "executor_description": "Updates an existing leads list. The updated values must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://api.hunter.io/v2/leads_lists/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "The name of the leads list.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "My new leads list"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686006773674,
+        "lastModifiedTime": 1686007897765,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "No content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96518,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listallyourcampaigns",
+        "executor_version": "v2",
+        "executor_display_name": "List all your campaigns",
+        "executor_description": "Returns all the campaigns in your account. The campaigns are returned in reverse-chronological order by creation date.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/campaigns",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686007250243,
+        "lastModifiedTime": 1686007250243,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "campaigns": [
+                            {
+                                "id": 2,
+                                "name": "January tourism CTO outreach",
+                                "recipients_count": 39,
+                                "editable": true,
+                                "started": true,
+                                "archived": false,
+                                "paused": false
+                            },
+                            {
+                                "id": 1,
+                                "name": "Long-term customers upsell",
+                                "recipients_count": 85,
+                                "editable": true,
+                                "started": true,
+                                "archived": false,
+                                "paused": true
+                            }
+                        ]
+                    },
+                    "meta": {
+                        "limit": 20,
+                        "offset": 0
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96500,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createacustomattribute",
+        "executor_version": "v2",
+        "executor_display_name": "Create a custom attribute",
+        "executor_description": "Creates a new custom attribute. The parameters must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.hunter.io/v2/leads_custom_attributes",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "label",
+                "value": "",
+                "description": "The name, or label, of your custom attribute. Has to be unique.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686005438619,
+        "lastModifiedTime": 1686005849965,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 1,
+                        "label": "Campaign ID",
+                        "slug": "campaign_id"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96509,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getaleadslist",
+        "executor_version": "v2",
+        "executor_display_name": "Get a leads list",
+        "executor_description": "Retrieves all the fields of a leads list.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/leads_lists",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "A limit on the number of lists to be returned. Limit can range between 1 and 100 lists. Default is 20.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "The number of lists to skip. Use this parameter to fetch all the lists.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "Identifier of the leads list.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686006447217,
+        "lastModifiedTime": 1686007700873,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 1,
+                        "name": "My leads",
+                        "leads_count": 10,
+                        "created_at": "2021-01-01 12:00:00 UTC",
+                        "leads": [
+                            {
+                                "id": 1,
+                                "first_name": "Jeremy",
+                                "last_name": "Hoon",
+                                "position": null,
+                                "company": "Stripe",
+                                "company_industry": null,
+                                "company_size": null,
+                                "email": "hoon@stripe.com",
+                                "confidence_score": null,
+                                "website": "https://stripe.com",
+                                "country_code": null,
+                                "source": null,
+                                "linkedin_url": null,
+                                "phone_number": null,
+                                "twitter": null,
+                                "sync_status": null,
+                                "notes": null,
+                                "sending_status": null,
+                                "last_activity_at": null,
+                                "last_contacted_at": null,
+                                "verification": {
+                                    "date": "2021-01-01 12:00:00 UTC",
+                                    "status": "deliverable"
+                                },
+                                "leads_list_id": 1,
+                                "created_at": "2021-01-01 12:00:00 UTC"
+                            }
+                        ]
+                    },
+                    "meta": {
+                        "params": {
+                            "limit": 20,
+                            "offset": 0,
+                            "leads_list_id": 1
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96519,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listtherecipientsofacampaign",
+        "executor_version": "v2",
+        "executor_display_name": "List the recipients of a campaign",
+        "executor_description": "Returns all the recipients of a campaign. The recipients are returned in chronological order by addition date.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/campaigns/1/recipients",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686007354126,
+        "lastModifiedTime": 1686007354126,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "recipients": [
+                            {
+                                "email": "hoon@stripe.com",
+                                "first_name": "Jeremy",
+                                "last_name": "Hoon",
+                                "position": null,
+                                "company": "Stripe",
+                                "website": "stripe.com",
+                                "sending_status": "pending",
+                                "lead_id": 1
+                            },
+                            {
+                                "email": "alexis@reddit.com",
+                                "first_name": "Alexis",
+                                "last_name": "Ohanian",
+                                "position": "Cofounder",
+                                "company": "Reddit",
+                                "website": "reddit.com",
+                                "sending_status": "pending",
+                                "lead_id": 2
+                            }
+                        ]
+                    },
+                    "meta": {
+                        "limit": 20,
+                        "offset": 0
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96475,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createorupdatealead",
+        "executor_version": "v2",
+        "executor_display_name": "Create or update a lead",
+        "executor_description": "Creates a new lead if it doesn't exist yet based on email address, or updates it if it does. The updated values must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://api.hunter.io/v2/leads",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": "alexis@reddit.com",
+                "first_name": "Alexis",
+                "last_name": "Ohanian"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686003089144,
+        "lastModifiedTime": 1686003342957,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 3,
+                        "email": "alexis@reddit.com",
+                        "first_name": "Alexis",
+                        "last_name": "Ohanian",
+                        "position": "Cofounder",
+                        "company": "Reddit",
+                        "company_industry": "Internet and Telecom",
+                        "company_size": "201-500 employees",
+                        "confidence_score": 97,
+                        "website": "reddit.com",
+                        "country_code": null,
+                        "source": null,
+                        "linkedin_url": null,
+                        "phone_number": null,
+                        "twitter": null,
+                        "sync_status": null,
+                        "notes": null,
+                        "sending_status": null,
+                        "last_activity_at": null,
+                        "last_contacted_at": null,
+                        "verification": {
+                            "date": null,
+                            "status": null
+                        },
+                        "customer_id": "cus1234-abcd",
+                        "leads_list": {
+                            "id": 1,
+                            "name": "My leads list",
+                            "leads_count": 3
+                        },
+                        "created_at": "2021-01-01 12:00:00 UTC"
+                    }
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 3,
+                        "email": "alexis@reddit.com",
+                        "first_name": "Alexis",
+                        "last_name": "Ohanian",
+                        "position": "Cofounder",
+                        "company": "Reddit",
+                        "company_industry": "Internet and Telecom",
+                        "company_size": "201-500 employees",
+                        "confidence_score": 97,
+                        "website": "reddit.com",
+                        "country_code": null,
+                        "source": null,
+                        "linkedin_url": null,
+                        "phone_number": null,
+                        "twitter": null,
+                        "sync_status": null,
+                        "notes": null,
+                        "sending_status": null,
+                        "last_activity_at": null,
+                        "last_contacted_at": null,
+                        "verification": {
+                            "date": null,
+                            "status": null
+                        },
+                        "customer_id": "cus1234-abcd",
+                        "leads_list": {
+                            "id": 1,
+                            "name": "My leads list",
+                            "leads_count": 3
+                        },
+                        "created_at": "2021-01-01 12:00:00 UTC"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96488,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listallyourcustomattributes",
+        "executor_version": "v2",
+        "executor_display_name": "List all your custom attributes",
+        "executor_description": "Returns all the custom attributes already saved in your account. The custom attributes are returned in sorted order, with the most recent custom attributes appearing first.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/leads_custom_attributes",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686003907601,
+        "lastModifiedTime": 1686003907601,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "leads_custom_attributes": [
+                            {
+                                "id": 2,
+                                "label": "Customer ID",
+                                "slug": "customer_id"
+                            },
+                            {
+                                "id": 1,
+                                "label": "Campaign ID",
+                                "slug": "campaign_id"
+                            }
+                        ]
+                    },
+                    "meta": {
+                        "total": 2
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96482,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletealead",
+        "executor_version": "v2",
+        "executor_display_name": "Delete a lead",
+        "executor_description": "Deletes an existing lead.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.hunter.io/v2/leads/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Identifier of the lead.",
+                "req": false
+            },
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686003607525,
+        "lastModifiedTime": 1686003607525,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "No content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96489,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getacustomattribute",
+        "executor_version": "v2",
+        "executor_display_name": "Get a custom attribute",
+        "executor_description": "Retrieves all the fields of a custom attribute.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/leads_custom_attributes/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "Identifier of the custom attribute.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686004053879,
+        "lastModifiedTime": 1686004053879,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 1,
+                        "label": "Campaign ID",
+                        "slug": "campaign_id"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96508,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listallyourleadslists",
+        "executor_version": "v2",
+        "executor_display_name": "List all your leads lists",
+        "executor_description": "Returns all the leads lists already saved in your account. The leads lists are returned in sorted order, with the most recent leads lists appearing first.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/leads_lists",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "A limit on the number of lists to be returned. Limit can range between 1 and 100 lists. Default is 20.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "The number of lists to skip. Use this parameter to fetch all the lists.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686006311475,
+        "lastModifiedTime": 1686007668841,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96517,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletealeadslist",
+        "executor_version": "v2",
+        "executor_display_name": "Delete a leads list",
+        "executor_description": "Deletes an existing leads list.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.hunter.io/v2/leads_lists/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1686006901522,
+        "lastModifiedTime": 1686007139379,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "No content",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96467,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getalead",
+        "executor_version": "v2",
+        "executor_display_name": "Get a lead",
+        "executor_description": "Retrieves all the fields of a lead.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.hunter.io/v2/leads/1",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686002391529,
+        "lastModifiedTime": 1686002391529,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "id": 1,
+                        "email": "hoon@stripe.com",
+                        "first_name": "Jeremy",
+                        "last_name": "Hoon",
+                        "position": null,
+                        "company": "Stripe",
+                        "company_industry": null,
+                        "company_size": null,
+                        "confidence_score": null,
+                        "website": "stripe.com",
+                        "country_code": null,
+                        "source": null,
+                        "linkedin_url": null,
+                        "phone_number": null,
+                        "twitter": null,
+                        "sync_status": null,
+                        "notes": null,
+                        "sending_status": null,
+                        "last_activity_at": null,
+                        "last_contacted_at": null,
+                        "verification": {
+                            "date": "2021-01-01 12:00:00 UTC",
+                            "status": "deliverable"
+                        },
+                        "leads_list": {
+                            "id": 1,
+                            "name": "My leads list",
+                            "leads_count": 2
+                        },
+                        "created_at": "2021-01-01 12:00:00 UTC"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96520,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addarecipient",
+        "executor_version": "v2",
+        "executor_display_name": "Add a recipient",
+        "executor_description": "Add a recipient to a campaign. The parameters must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.hunter.io/v2/campaigns/42/recipients",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": " id",
+                "value": "",
+                "description": "Identifier of the campaign",
+                "req": false
+            },
+            {
+                "key": "emails",
+                "value": "",
+                "description": "The recipients you want to add to the campaign. If there's only one email, it can be supplied as a string. Otherwise, it should be an array of up to 50 emails. In case an email doesn't pass our validation, an error is returned, and no recipient is added.",
+                "req": false
+            },
+            {
+                "key": "lead_ids",
+                "value": "",
+                "description": "The lead IDs you want to add to the campaign. It should be an array of up to 50 lead IDs. In case a lead cannot be found, an error is returned, and no recipients are added.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "emails": [
+                    "marcus@hunter.io",
+                    "john@hunter.io"
+                ],
+                "lead_ids": [
+                    1,
+                    2
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686007591812,
+        "lastModifiedTime": 1686007591812,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "recipients_added": 1
+                    },
+                    "meta": {
+                        "params": {
+                            "emails": [
+                                "marcus@hunter.io",
+                                "john@hunter.io"
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 96521,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "cancelscheduledemailstoarecipient",
+        "executor_version": "v2",
+        "executor_display_name": "Cancel scheduled emails to a recipient",
+        "executor_description": "Cancel scheduled messages to a recipient from a campaign. The parameters must be passed as a JSON hash.",
+        "executor_category": "Resources",
+        "executor_category_group": "Resources",
+        "service_provider": "hunter",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.hunter.io/v2/campaigns/42/recipients",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api_key",
+                "value": "",
+                "description": "Your secret API key. You can generate it in your dashboard.",
+                "req": false
+            },
+            {
+                "key": " id",
+                "value": "",
+                "description": "Identifier of the campaign",
+                "req": false
+            },
+            {
+                "key": "emails",
+                "value": "",
+                "description": "The recipients you want to add to the campaign. If there's only one email, it can be supplied as a string. Otherwise, it should be an array of up to 50 emails. In case an email doesn't pass our validation, an error is returned, and no recipient is added.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1686007844856,
+        "lastModifiedTime": 1686007844856,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "recipients_canceled": [
+                            "marcus@hunter.io"
+                        ],
+                        "messages_canceled": 1
+                    },
+                    "meta": {
+                        "params": {
+                            "emails": [
+                                "marcus@hunter.io"
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]
