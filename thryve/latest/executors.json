@@ -1,0 +1,1556 @@
+[
+    {
+        "id": 94448,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dynamicEpochValues",
+        "executor_version": "v5",
+        "executor_display_name": "DynamicEpochValues",
+        "executor_description": "DynamicEpochValues represent a period that is composed through a start and end timestamp. This data type is available up to second precision. Typically, the data represent individual measurements, e.g., the heart rate measured passively by a wearable",
+        "executor_category": "HealthDataAPI",
+        "executor_category_group": "HealthDataAPI",
+        "service_provider": "thryve",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.und-gesund.de/v5/dynamicEpochValues",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "authenticationToken",
+                "value": "",
+                "description": "The Thryve access token generated for the respective user. Example structure: de3d1e068537dd927b48988cb6969abe",
+                "req": false
+            },
+            {
+                "key": "createdAfterUnix",
+                "value": "",
+                "description": "The data set to be retrieved ranging from the current time (now) back to createdAfter timestamp in Unix-timestamp format. The value can be a maximum of 31 days prior to the current time (now).",
+                "req": false
+            },
+            {
+                "key": "startTimestamp",
+                "value": "",
+                "description": "The start time for the data period to be retrieved. Structure: YYYY-MM-ddTHH:mm:ss+XX:XX (e.g., 2020-02-04T00:00:00+01:00)",
+                "req": false
+            },
+            {
+                "key": "endTimestamp",
+                "value": "",
+                "description": "The end time for the data period to be retrieved. Structure: YYYY-MM-ddTHH:mm:ss+XX:XX (e.g., 2020-02-04T00:00:00+01:00)",
+                "req": false
+            },
+            {
+                "key": " startTimestampUnix",
+                "value": "",
+                "description": "The start time in Unix-timestamp format for the data period to be retrieved. (e.g., 1580808640000)",
+                "req": false
+            },
+            {
+                "key": " endTimestampUnix",
+                "value": "",
+                "description": "The end time in Unix-timestamp format for the data period to be retrieved. (e.g., 1580808640000)",
+                "req": false
+            },
+            {
+                "key": "dataSources",
+                "value": "",
+                "description": "Restricts response to specific data sources when providing Thryve data source ID, combinable with ',' (comma separated). Example structure: 1 (for, e.g., Fitbit)",
+                "req": false
+            },
+            {
+                "key": " valueTypes",
+                "value": "",
+                "description": "Restricts the values in response to single valueTypes when providing Thryve DataTypeID, combinable with ',' (comma separated)",
+                "req": false
+            },
+            {
+                "key": "detailed",
+                "value": "",
+                "description": "If set to true, additional recording information will be added to the response, if available.",
+                "req": false
+            },
+            {
+                "key": "displayPartnerUserID",
+                "value": "",
+                "description": "If set to true, the specific PartnerUserID will be displayed in the response.",
+                "req": false
+            },
+            {
+                "key": " displayTypeName",
+                "value": "",
+                "description": "If set to true, the specific data type name (STRING) will be displayed in the response.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684964750750,
+        "lastModifiedTime": 1684964750750,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request (request is invalid)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized (Check the correct use of web authentication)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden (Check use of parameters)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": "Not found (Check correct URL)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Method not allowed ",
+                "description": "Method not allowed (Check request method)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 415,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unsupported media type",
+                "description": "Unsupported media type (Check usage of Content-Type)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94450,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dailyDynamicValues",
+        "executor_version": "v5",
+        "executor_display_name": "DailyDynamicValues",
+        "executor_description": "DailyDynamicValues represent a direct relation of one day as one value. Due to the nature of this data type, only one data point can exist per Thryve Biomarker per day. DailyDynamicValues can be, e.g., the sum of all steps a person took in a day. The value (e.g. the daily steps) of DailyDynamicValues are updated throughout a day.",
+        "executor_category": "HealthDataAPI",
+        "executor_category_group": "HealthDataAPI",
+        "service_provider": "thryve",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.und-gesund.de/v5/dailyDynamicValues",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "authenticationToken",
+                "value": "",
+                "description": "The Thryve access token generated for the respective user. Example structure: de3d1e068537dd927b48988cb6969abe",
+                "req": false
+            },
+            {
+                "key": "createdAfterUnix",
+                "value": "",
+                "description": "The data set to be retrieved ranging from the current time (now) back to createdAfter timestamp in Unix-timestamp format. The value can be a maximum of 31 days prior to the current time (now).",
+                "req": false
+            },
+            {
+                "key": "startTimestamp",
+                "value": "",
+                "description": "The start time for the data period to be retrieved. Structure: YYYY-MM-ddTHH:mm:ss+XX:XX (e.g., 2020-02-04T00:00:00+01:00)",
+                "req": false
+            },
+            {
+                "key": "endTimestamp",
+                "value": "",
+                "description": "The end time for the data period to be retrieved. Structure: YYYY-MM-ddTHH:mm:ss+XX:XX (e.g., 2020-02-04T00:00:00+01:00)",
+                "req": false
+            },
+            {
+                "key": " startTimestampUnix",
+                "value": "",
+                "description": "The start time in Unix-timestamp format for the data period to be retrieved. (e.g., 1580808640000)",
+                "req": false
+            },
+            {
+                "key": " endTimestampUnix",
+                "value": "",
+                "description": "The end time in Unix-timestamp format for the data period to be retrieved. (e.g., 1580808640000)",
+                "req": false
+            },
+            {
+                "key": "dataSources",
+                "value": "",
+                "description": "Restricts response to specific data sources when providing Thryve data source ID, combinable with ',' (comma separated). Example structure: 1 (for, e.g., Fitbit)",
+                "req": false
+            },
+            {
+                "key": " valueTypes",
+                "value": "",
+                "description": "Restricts the values in response to single valueTypes when providing Thryve DataTypeID, combinable with ',' (comma separated)",
+                "req": false
+            },
+            {
+                "key": "detailed",
+                "value": "",
+                "description": "If set to true, additional recording information will be added to the response, if available.",
+                "req": false
+            },
+            {
+                "key": "displayPartnerUserID",
+                "value": "",
+                "description": "If set to true, the specific PartnerUserID will be displayed in the response.",
+                "req": false
+            },
+            {
+                "key": " displayTypeName",
+                "value": "",
+                "description": "If set to true, the specific data type name (STRING) will be displayed in the response.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684965044748,
+        "lastModifiedTime": 1684965044748,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request (request is invalid)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized (Check the correct use of web authentication)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden (Check use of parameters)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": "Not found (Check correct URL)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Method not allowed ",
+                "description": "Method not allowed (Check request method)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 415,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unsupported media type",
+                "description": "Unsupported media type (Check usage of Content-Type)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Request successful",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94463,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "initiateDataRetrieval",
+        "executor_version": "v5",
+        "executor_display_name": "InitiateDataRetrieval",
+        "executor_description": "InitiateDataRetrieval-interface provides the possibility to immediately retrieve the data from sources with the bulk-request retrieval mechanism such as GoogleFit, OmronConnect, and Oura. Please refer to the supported data source section for information on which data sources use bulk-requests.",
+        "executor_category": "HealthDataAPI",
+        "executor_category_group": "HealthDataAPI",
+        "service_provider": "thryve",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.und-gesund.de/v5/initiateDataRetrieval",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "authenticationToken",
+                "value": "",
+                "description": "The access token of the requested user (e.g. de3d1e068537dd927b48988cb6969abe). The tokens requested can be combined with ',' (comma separated)",
+                "req": false
+            },
+            {
+                "key": " dataSources",
+                "value": "",
+                "description": "The ID of the data source supporting bulk-request retrieval where data shall be instantly retrieved. For a user with multiple data sources, please pass the data source ID combinable with ',' (comma separated). Example structure: 12,18",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684966194131,
+        "lastModifiedTime": 1684966194131,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request (request is invalid)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized (Check the correct use of web authentication)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden (Check use of parameters)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": "Not found (Check correct URL)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Method not allowed ",
+                "description": "Method not allowed (Check request method)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 415,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unsupported media type",
+                "description": "Unsupported media type (Check usage of Content-Type)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Request successful",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94460,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dataAvailability",
+        "executor_version": "v5",
+        "executor_display_name": "DataAvailability",
+        "executor_description": "With the retrieval of UserInformation, you can get to know basic time-independent information about your connected users. The information can include biological data, as well as information of connected data source(s) and its associated device(s). Access to the UserInformation-interface can be achieved for single or multiple users.",
+        "executor_category": "HealthDataAPI",
+        "executor_category_group": "HealthDataAPI",
+        "service_provider": "thryve",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.und-gesund.de/v5/userInformation",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "authenticationToken",
+                "value": "",
+                "description": "The access token of the requested user (e.g. de3d1e068537dd927b48988cb6969abe). The tokens requested can be combined with ',' (comma separated)",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684965968768,
+        "lastModifiedTime": 1684965968768,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request (request is invalid)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized (Check the correct use of web authentication)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden (Check use of parameters)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": "Not found (Check correct URL)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Method not allowed ",
+                "description": "Method not allowed (Check request method)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 415,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unsupported media type",
+                "description": "Unsupported media type (Check usage of Content-Type)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Request successful",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "authenticationToken": "de3d1e068537dd927b48988cb6969abe",
+                        "partnerUserID": "FVMW6fp9wnUxKnfekrQduZ96Xt6gemVk",
+                        "height": 180,
+                        "weight": 80,
+                        "birthdate": "1990-01-01",
+                        "gender": "male",
+                        "connectedSources": [
+                            {
+                                "dataSource": 1,
+                                "connectedAt": "2020-02-21T10:27:07+01:00"
+                            },
+                            {
+                                "dataSource": 8,
+                                "connectedAt": "2020-01-21T10:27:07+01:00"
+                            }
+                        ],
+                        "devices": [
+                            {
+                                "datasource": 1,
+                                "deviceName": "Versa 3",
+                                "connectedAt": "2022-03-18T21:41:02+01:00",
+                                "configuration": {
+                                    "battery": "Medium",
+                                    "deviceVersion": "Versa 3",
+                                    "id": "2016125859",
+                                    "lastSyncTime": "2022-03-18T21:41:02",
+                                    "type": "TRACKER"
+                                }
+                            },
+                            {
+                                "datasource": 8,
+                                "deviceName": "ScanWatch",
+                                "connectedAt": "2020-01-21T10:27:07+01:00",
+                                "configuration": {
+                                    "type": "Activity Tracker",
+                                    "model": "ScanWatch",
+                                    "model_id": "93",
+                                    "battery": "high",
+                                    "deviceid": "cea01c1f4fb14e69b007ac2dadf77e3efa3db40f",
+                                    "timezone": "Europe/Berlin",
+                                    "last_session_date": 1656157718
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "authenticationToken": "4b52uhm7uhdaesenbrwg6xbdr4mm4t8c",
+                        "partnerUserID": "FVMW6fp9wnUxKnfekrQduZ96Xt6gemVk",
+                        "height": 160,
+                        "weight": 44,
+                        "birthdate": "1992-02-02",
+                        "gender": "female",
+                        "connectedSources": [
+                            {
+                                "dataSource": 1,
+                                "connectedAt": "2021-12-23T13:41:53Z"
+                            }
+                        ],
+                        "devices": [
+                            {
+                                "datasource": 1,
+                                "deviceName": "Versa 3",
+                                "connectedAt": "2020-01-21T10:27:07+01:00",
+                                "configuration": {
+                                    "battery": "Medium",
+                                    "deviceVersion": "Versa 3",
+                                    "id": "2016125859",
+                                    "lastSyncTime": "2022-03-18T21:41:02",
+                                    "type": "TRACKER"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94458,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "userInformation",
+        "executor_version": "v5",
+        "executor_display_name": "UserInformation",
+        "executor_description": "With the retrieval of UserInformation, you can get to know basic time-independent information about your connected users. The information can include biological data, as well as information of connected data source(s) and its associated device(s). Access to the UserInformation-interface can be achieved for single or multiple users.",
+        "executor_category": "HealthDataAPI",
+        "executor_category_group": "HealthDataAPI",
+        "service_provider": "thryve",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.und-gesund.de/v5/userInformation",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "authenticationToken",
+                "value": "",
+                "description": "The access token of the requested user (e.g. de3d1e068537dd927b48988cb6969abe). The tokens requested can be combined with ',' (comma separated)",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684965810884,
+        "lastModifiedTime": 1684965810884,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request (request is invalid)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized (Check the correct use of web authentication)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden (Check use of parameters)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": "Not found (Check correct URL)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Method not allowed ",
+                "description": "Method not allowed (Check request method)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 415,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unsupported media type",
+                "description": "Unsupported media type (Check usage of Content-Type)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Request successful",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "authenticationToken": "de3d1e068537dd927b48988cb6969abe",
+                        "partnerUserID": "FVMW6fp9wnUxKnfekrQduZ96Xt6gemVk",
+                        "height": 180,
+                        "weight": 80,
+                        "birthdate": "1990-01-01",
+                        "gender": "male",
+                        "connectedSources": [
+                            {
+                                "dataSource": 1,
+                                "connectedAt": "2020-02-21T10:27:07+01:00"
+                            },
+                            {
+                                "dataSource": 8,
+                                "connectedAt": "2020-01-21T10:27:07+01:00"
+                            }
+                        ],
+                        "devices": [
+                            {
+                                "datasource": 1,
+                                "deviceName": "Versa 3",
+                                "connectedAt": "2022-03-18T21:41:02+01:00",
+                                "configuration": {
+                                    "battery": "Medium",
+                                    "deviceVersion": "Versa 3",
+                                    "id": "2016125859",
+                                    "lastSyncTime": "2022-03-18T21:41:02",
+                                    "type": "TRACKER"
+                                }
+                            },
+                            {
+                                "datasource": 8,
+                                "deviceName": "ScanWatch",
+                                "connectedAt": "2020-01-21T10:27:07+01:00",
+                                "configuration": {
+                                    "type": "Activity Tracker",
+                                    "model": "ScanWatch",
+                                    "model_id": "93",
+                                    "battery": "high",
+                                    "deviceid": "cea01c1f4fb14e69b007ac2dadf77e3efa3db40f",
+                                    "timezone": "Europe/Berlin",
+                                    "last_session_date": 1656157718
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "authenticationToken": "4b52uhm7uhdaesenbrwg6xbdr4mm4t8c",
+                        "partnerUserID": "FVMW6fp9wnUxKnfekrQduZ96Xt6gemVk",
+                        "height": 160,
+                        "weight": 44,
+                        "birthdate": "1992-02-02",
+                        "gender": "female",
+                        "connectedSources": [
+                            {
+                                "dataSource": 1,
+                                "connectedAt": "2021-12-23T13:41:53Z"
+                            }
+                        ],
+                        "devices": [
+                            {
+                                "datasource": 1,
+                                "deviceName": "Versa 3",
+                                "connectedAt": "2020-01-21T10:27:07+01:00",
+                                "configuration": {
+                                    "battery": "Medium",
+                                    "deviceVersion": "Versa 3",
+                                    "id": "2016125859",
+                                    "lastSyncTime": "2022-03-18T21:41:02",
+                                    "type": "TRACKER"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94453,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "constantValues",
+        "executor_version": "v5",
+        "executor_display_name": "ConstantValues",
+        "executor_description": "ConstantValues are data that has been uploaded through the PartnerDataUpload. This can be demographic data like gender or age. Information uploaded through the PartnerDataUpload can be accessed via the constantValue interface.",
+        "executor_category": "HealthDataAPI",
+        "executor_category_group": "HealthDataAPI",
+        "service_provider": "thryve",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.und-gesund.de/v5/constantValue",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "authenticationToken",
+                "value": "",
+                "description": "The Thryve access token generated for the respective user. Example structure: de3d1e068537dd927b48988cb6969abe",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684965566624,
+        "lastModifiedTime": 1684965566624,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad Request (request is invalid)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized (Check the correct use of web authentication)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden (Check use of parameters)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": "Not found (Check correct URL)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Method not allowed ",
+                "description": "Method not allowed (Check request method)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 415,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unsupported media type",
+                "description": "Unsupported media type (Check usage of Content-Type)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Request successful",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "authenticationToken": "de3d1e068537dd927b48988cb6969abe",
+                        "data": [
+                            {
+                                "createdAt": "2020-06-19T14:30:27Z",
+                                "dailyDynamicValueType": 9050,
+                                "value": "4",
+                                "valueType": "LONG"
+                            },
+                            {
+                                "createdAt": "2020-06-19T14:30:27Z",
+                                "dailyDynamicValueType": 9060,
+                                "value": true,
+                                "valueType": "BOOLEAN"
+                            }
+                        ]
+                    },
+                    {
+                        "authenticationToken": "4b52uhm7uhdaesenbrwg6xbdr4mm4t8c",
+                        "data": [
+                            {
+                                "createdAt": "2021-01-19T17:30:00Z",
+                                "dailyDynamicValueType": 9050,
+                                "value": "7",
+                                "valueType": "LONG"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

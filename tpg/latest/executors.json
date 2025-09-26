@@ -1,0 +1,1604 @@
+[
+    {
+        "id": 114306,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "confirmRepliesAsReceived",
+        "executor_version": "v1",
+        "executor_display_name": "Confirm replies as received",
+        "executor_description": "Mark a reply message as confirmed so it is no longer returned in check replies requests.The confirm replies endpoint is intended to be used in conjunction with the check replies endpoint to allow for robust processing of reply messages. Once one or more reply messages have been processed they can then be confirmed using the confirm replies endpoint so they are no longer returned in subsequent check replies requests.",
+        "executor_category": "Replies",
+        "executor_category_group": "Replies",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/replies/confirmed",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "reply_ids": [
+                    "011dcead-6988-4ad6-a1c7-6b6c68ea628d",
+                    "3487b3fa-6586-4979-a233-2d1b095c7718",
+                    "ba28e94b-c83d-4759-98e7-ff9c7edb87a1"
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694065144779,
+        "lastModifiedTime": 1694065144779,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorised",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Invalid authentication credentials"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Resource not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Resource not found"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Request failed to parse correctly. Please ensure input is valid and try again."
+                }
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Requested replies will be marked as confirmed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "type": "object",
+                    "required": [
+                        "reply_ids"
+                    ],
+                    "properties": {
+                        "reply_ids": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            "maxItems": 100
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114305,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "checkReplies",
+        "executor_version": "v1",
+        "executor_display_name": "Check replies",
+        "executor_description": "Check for any replies that have been received.Replies are messages that have been sent from a handset in response to a message sent by an application or messages that have been sent from a handset to a inbound number associated with an account, known as a dedicated inbound number (contact support@messaging.tpgtelecom.com.au for more information on dedicated inbound numbers).",
+        "executor_category": "Replies",
+        "executor_category_group": "Replies",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/replies",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694065015518,
+        "lastModifiedTime": 1694065015518,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorised",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Invalid authentication credentials"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Resource not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Resource not found"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Request failed to parse correctly. Please ensure input is valid and try again."
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "replies": [
+                        {
+                            "metadata": {
+                                "myKey": "myValue",
+                                "anotherKey": "anotherValue"
+                            },
+                            "message_id": "877c19ef-fa2e-4cec-827a-e1df9b5509f7",
+                            "reply_id": "a175e797-2b54-468b-9850-41a3eab32f74",
+                            "date_received": "2022-12-07T08:43:00.850Z",
+                            "callback_url": "https://my.callback.url.com",
+                            "destination_number": "+61491570156",
+                            "source_number": "+61491570157",
+                            "vendor_account_id": {
+                                "vendor_id": "TPGTelecom",
+                                "account_id": "MyAccount"
+                            },
+                            "content": "My first reply!"
+                        },
+                        {
+                            "metadata": {
+                                "myKey": "myValue",
+                                "anotherKey": "anotherValue"
+                            },
+                            "message_id": "8f2f5927-2e16-4f1c-bd43-47dbe2a77ae4",
+                            "reply_id": "3d8d53d8-01d3-45dd-8cfa-4dfc81600f7f",
+                            "date_received": "2022-12-07T08:43:00.850Z",
+                            "callback_url": "https://my.callback.url.com",
+                            "destination_number": "+61491570157",
+                            "source_number": "+61491570158",
+                            "vendor_account_id": {
+                                "vendor_id": "TPGTelecom",
+                                "account_id": "MyAccount"
+                            },
+                            "content": "My second reply!"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114310,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "webhookdelete",
+        "executor_version": "v1",
+        "executor_display_name": "Delete Webhook",
+        "executor_description": "Delete a webhook that was previously created for the connected account. A webhook can be cancelled by appending the UUID of the webhook to the endpoint and submitting a DELETE request to the /webhooks/messages endpoint.A successful request to the retrieve webhook endpoint will return a null response.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/webhooks/messages/{webhookId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "webhookId",
+                "value": "",
+                "description": "UUID Example: a7f11bb0-f299-4861-a5ca-9b29d04bc5ad"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694065654335,
+        "lastModifiedTime": 1694065654335,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Webhook deleted successfully",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Webhook not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114311,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "webhookUpdate",
+        "executor_version": "v1",
+        "executor_display_name": "Update Webhook",
+        "executor_description": "Update a webhook. You can update individual attributes or all of them by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/webhooks/messages/{webhookId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "webhookId",
+                "value": "",
+                "description": "UUID Example: a7f11bb0-f299-4861-a5ca-9b29d04bc5ad"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "url": "https://myurl.com",
+                "method": "POST",
+                "encoding": "FORM_ENCODED",
+                "events": [
+                    "ENROUTE_DR"
+                ],
+                "template": "{\"id\":\"$mtId\", \"status\":\"$statusCode\"}",
+                "read_timeout": 5000,
+                "retries": 3,
+                "retry_delay": 30
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694065805034,
+        "lastModifiedTime": 1694065805034,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Webhook updated successfully",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Unexpected error in API call. See HTTP response body for details.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Something went wrong. Please try again later."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114307,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createwebhooks",
+        "executor_version": "v1",
+        "executor_display_name": "Create Webhook",
+        "executor_description": "Create a webhook for one or more of the specified events.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/webhooks/messages",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "url": "http://webhook.com",
+                "method": "POST",
+                "encoding": "JSON",
+                "headers": {
+                    "Account": "DeveloperPortal7000"
+                },
+                "events": [
+                    "ENROUTE_DR",
+                    "DELIVERED_DR"
+                ],
+                "template": "{\"id\":\"$mtId\",\"status\":\"$statusCode\"}",
+                "read_timeout": 5000,
+                "retries": 3,
+                "retry_delay": 30
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694065330927,
+        "lastModifiedTime": 1694065330927,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Request was invalid",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Something went wrong. Please try again later."
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Webhook successfully created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Duplicate webhook",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "A webhook with the given url and method already exists."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114309,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievewebhook",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve Webhook",
+        "executor_description": "Retrieve all the webhooks created for the connected account. A successful request to the retrieve webhook endpoint will return a response body as follows:",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/webhooks/messages/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": " Example: '0'.",
+                "req": false
+            },
+            {
+                "key": "pageSize",
+                "value": "",
+                "description": " Example: '10'.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694065504707,
+        "lastModifiedTime": 1694065504707,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unexpected error in API call. See HTTP response body for details.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Something went wrong. Please try again later."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114300,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "sendmessages",
+        "executor_version": "v1",
+        "executor_display_name": "Send messages",
+        "executor_description": "Submit one or more (up to 100 per request) SMS messages for delivery.The most basic message has the following structure:{     \"messages\": [         {             \"content\": \"My first message!\",             \"destination_number\": \"+61410123456\"         }     ] } More advanced delivery features can be specified by setting the following properties in a message:callback_url A URL can be included with each message to which Webhooks will be pushed to via a HTTP POST request. Webhooks will be sent if and when the status of the message changes as it is processed (if the delivery report property of the request is set to true) and when replies are received. Specifying a callback URL is optional.content The content of the message. This can be a Unicode string, up to 5,000 characters long. Message content is required.delivery_report Delivery reports can be requested with each message. If delivery reports are requested, a webhook will be submitted to the callback_url property specified for the message (or to the webhooks specified for the account) every time the status of the message changes as it is processed. Delivery reports are optional and by default will not be requested.destination_number The destination number the message should be delivered to. This should be specified in E.164 international format. For information on E.164, please refer to http://en.wikipedia.org/wiki/E.164. A destination number is required.format The format specifies which format the message will be sent as, SMS (text message), MMS (multimedia message) or TTS (text to speech). With TTS format, we will call the destination number and read out the message using a computer generated voice. Specifying a format is optional, by default SMS will be used.media The media is used to specify a list of URLs of the media file(s) that you are trying to send. Supported file formats include png, jpeg and gif. format parameter must be set to MMS for this to work.subject The subject field is used to denote subject of the MMS message and has a maximum size of 64 characters long. Specifying a subject is optional.source_number A source number may be specified for the message, this will be the number that the message appears from on the handset. By default this feature is not available and will be ignored in the request. Specifying a source number is optional and by default a source number will be assigned to the message.source_number_type If a source number is specified, the type of source number may also be specified. This is recommended when using a source address type that is not an internationally formatted number, available options are INTERNATIONAL or ALPHANUMERIC. Specifying a source number type is only valid when the source_number parameter is specified and is optional. If a source number is specified and no source number type is specified, the source number type will be inferred from the source number, however this may be inaccurate.scheduled A message can be scheduled for delivery in the future by setting the scheduled property. The scheduled property expects a date time specified in ISO 8601 format. The scheduled time must be provided in UTC and is optional. If no scheduled property is set, the message will be delivered immediately.message_expiry_timestamp A message expiry timestamp can be provided to specify the latest time at which the message should be delivered. If the message cannot be delivered before the specified message expiry timestamp elapses, the message will be discarded. Specifying a message expiry timestamp is optional.metadata Metadata can be included with the message which will then be included with any delivery reports or replies matched to the message. This can be used to create powerful two-way messaging applications without having to store persistent data in the application. Up to 10 key / value metadata data pairs can be specified in a message. Each key can be up to 100 characters long, and each value up to 256 characters long. Specifying metadata for a message is optional.The response body of a successful POST request to the messages endpoint will include a messages property which contains a list of all messages submitted. The list of messages submitted will reflect the list of messages included in the request, but each message will also contain two new properties, message_id and status. The returned message ID will be a 36 character UUID which can be used to check the status of the message via the Get Message Status endpoint. The status of the message which reflect the status of the message at submission time which will always be queued. See the Webhooks section of this documentation for more information on message statues.",
+        "executor_category": "Messages",
+        "executor_category_group": "Messages",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/messages",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "messages": [
+                    {
+                        "callback_url": "https://my.callback.url.com",
+                        "content": "My first message",
+                        "destination_number": "+61410123456",
+                        "delivery_report": true,
+                        "format": "SMS",
+                        "message_expiry_timestamp": "2022-11-03T11:49:02.807Z",
+                        "metadata": {
+                            "myKey": "myValue",
+                            "anotherKey": "anotherValue"
+                        },
+                        "scheduled": "2022-11-03T11:49:02.807Z",
+                        "source_number": "+61450654321",
+                        "source_number_type": "INTERNATIONAL"
+                    },
+                    {
+                        "callback_url": "https://my.callback.url.com",
+                        "content": "My second message",
+                        "destination_number": "+61410123456",
+                        "delivery_report": true,
+                        "format": "SMS",
+                        "message_expiry_timestamp": "2022-11-03T11:49:02.807Z",
+                        "metadata": {
+                            "myKey": "myValue",
+                            "anotherKey": "anotherValue"
+                        },
+                        "scheduled": "2022-11-03T11:49:02.807Z",
+                        "source_number": "+61450654321",
+                        "source_number_type": "INTERNATIONAL"
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694061959087,
+        "lastModifiedTime": 1694061959087,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Messages were accepted for processing",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "messages": [
+                        {
+                            "message_id": "04fe9a97-a579-43c5-bb1a-58ed29bf0a6a",
+                            "callback_url": "https://my.url.com",
+                            "status": "delivered",
+                            "content": "My first message",
+                            "destination_number": "+61410123456",
+                            "delivery_report": true,
+                            "format": "SMS",
+                            "message_expiry_timestamp": "2022-11-03T11:49:02.807Z",
+                            "metadata": {
+                                "myKey": "myValue",
+                                "anotherKey": "anotherValue"
+                            },
+                            "scheduled": "2022-11-03T11:49:02.807Z",
+                            "source_number": "+61450654321",
+                            "source_number_type": "INTERNATIONAL"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Request was invalid",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Request failed to parse correctly. Please ensure input is valid and try again."
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorised",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Invalid authentication credentials"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114301,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getMessageStatus",
+        "executor_version": "v1",
+        "executor_display_name": "Get message status",
+        "executor_description": "Retrieve the current status of a message using the message ID returned in the send messages end point.A successful request to the get message status endpoint will return a response body as follows:{     \"format\": \"SMS\",     \"content\": \"My first message!\",     \"metadata\": {         \"myKey\": \"myValue\",         \"anotherKey\": \"anotherValue\"     },     \"message_id\": \"877c19ef-fa2e-4cec-827a-e1df9b5509f7\",     \"callback_url\": \"https://my.callback.url.com\",     \"delivery_report\": true,     \"destination_number\": \"+61410123456\",     \"scheduled\": \"2022-11-03T11:49:02.807Z\",     \"source_number\": \"+61450654321\",     \"source_number_type\": \"INTERNATIONAL\",     \"message_expiry_timestamp\": \"2022-11-03T11:49:02.807Z\",     \"status\": \"enroute\" } The status property of the response indicates the current status of the message. See the Webhooks section of this documentation for more information on message statues.",
+        "executor_category": "Messages",
+        "executor_category_group": "Messages",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/messages/{messageId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "messageId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694062188673,
+        "lastModifiedTime": 1694062188673,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorised",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Invalid authentication credentials"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "format": "SMS",
+                    "content": "My first message!",
+                    "metadata": {
+                        "key1": "value1",
+                        "key2": "value2"
+                    },
+                    "message_id": "877c19ef-fa2e-4cec-827a-e1df9b5509f7",
+                    "callback_url": "https://my.callback.url.com",
+                    "delivery_report": true,
+                    "destination_number": "+61410123456",
+                    "scheduled": "2022-11-03T11:49:02.807Z",
+                    "source_number": "+61450654321",
+                    "source_number_type": "INTERNATIONAL",
+                    "message_expiry_timestamp": "2022-11-03T11:49:02.807Z",
+                    "status": "enroute"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Resource not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Resource not found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114302,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "checkDeliveryReports",
+        "executor_version": "v1",
+        "executor_display_name": "Check delivery reports",
+        "executor_description": "Check for any delivery reports that have been received.",
+        "executor_category": "DeliveryReports",
+        "executor_category_group": "DeliveryReports",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/delivery_reports",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694062362901,
+        "lastModifiedTime": 1694062362901,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorised",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Invalid authentication credentials"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Resource not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Resource not found"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unconfirmed reports",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "delivery_reports": [
+                        {
+                            "callback_url": "https://my.callback.url.com",
+                            "delivery_report_id": "01e1fa0a-6e27-4945-9cdb-18644b4de043",
+                            "source_number": "+61491570157",
+                            "date_received": "2022-05-20T06:30:37.642Z",
+                            "status": "enroute",
+                            "delay": 0,
+                            "submitted_date": "2022-05-20T06:30:37.639Z",
+                            "original_text": "My first message!",
+                            "message_id": "d781dcab-d9d8-4fb2-9e03-872f07ae94ba",
+                            "vendor_account_id": {
+                                "vendor_id": "TPGTelecom",
+                                "account_id": "MyAccount"
+                            },
+                            "metadata": {
+                                "myKey": "myValue",
+                                "anotherKey": "anotherValue"
+                            }
+                        },
+                        {
+                            "callback_url": "https://my.callback.url.com",
+                            "delivery_report_id": "0edf9022-7ccc-43e6-acab-480e93e98c1b",
+                            "source_number": "+61491570158",
+                            "date_received": "2022-05-21T01:46:42.579Z",
+                            "status": "submitted",
+                            "delay": 0,
+                            "submitted_date": "2022-05-21T01:46:42.574Z",
+                            "original_text": "My second message!",
+                            "message_id": "fbb3b3f5-b702-4d8b-ab44-65b2ee39a281",
+                            "vendor_account_id": {
+                                "vendor_id": "TPGTelecom",
+                                "account_id": "MyAccount"
+                            },
+                            "metadata": {
+                                "myKey": "myValue",
+                                "anotherKey": "anotherValue"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114304,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "confirmDeliveryReportsAsReceived",
+        "executor_version": "v1",
+        "executor_display_name": "Confirm delivery reports as received",
+        "executor_description": "Mark a delivery report as confirmed so it is no longer return in check delivery reports requests.The confirm delivery reports endpoint is intended to be used in conjunction with the check delivery reports endpoint to allow for robust processing of delivery reports. Once one or more delivery reports have been processed, they can then be confirmed using the confirm delivery reports endpoint so they are no longer returned in subsequent check delivery reports requests.",
+        "executor_category": "DeliveryReports",
+        "executor_category_group": "DeliveryReports",
+        "service_provider": "tpg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.messaging.tpgtelecom.com.au/v1/delivery_reports/confirmed",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "delivery_report_ids": [
+                    "011dcead-6988-4ad6-a1c7-6b6c68ea628d",
+                    "3487b3fa-6586-4979-a233-2d1b095c7718",
+                    "ba28e94b-c83d-4759-98e7-ff9c7edb87a1"
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694064822173,
+        "lastModifiedTime": 1694064822173,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorised",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Invalid authentication credentials"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Resource not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Resource not found"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "Request failed to parse correctly. Please ensure input is valid and try again."
+                }
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Requested delivery reports will be marked as confirmed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "type": "object",
+                    "required": [
+                        "delivery_report_ids"
+                    ],
+                    "properties": {
+                        "delivery_report_ids": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "format": "uuid"
+                            },
+                            "maxItems": 100
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

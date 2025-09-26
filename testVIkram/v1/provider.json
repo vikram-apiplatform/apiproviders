@@ -1,0 +1,42 @@
+{
+    "producer": "testVIkram",
+    "title": "Test Vikram",
+    "description": "test service provider",
+    "image": "https://apiplatform.io/assets/images/navbar/logo.svg",
+    "url": "https://apiplatform.io/Home",
+    "authorization": [
+        {
+            "authtype": "API Key",
+            "authattributes": [
+                {
+                    "key": "key",
+                    "displayname": "Key"
+                },
+                {
+                    "key": "value",
+                    "displayname": "Value"
+                }
+            ]
+        }
+    ],
+    "isPromoted": false,
+    "isSupported": false,
+    "isAiCertified": false,
+    "enableQuickConnect": false,
+    "triggers": [
+        {
+            "triggerType": "manual",
+            "enabled": false
+        },
+        {
+            "triggerType": "webhook",
+            "enabled": false,
+            "enableActions": false,
+            "info": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Webhook Configuration</title>\n  <style>\n\n    .webhook-config-container {\n      margin: 0 auto;\n      padding: 24px;\n      border: 1px solid #e0e0e0;\n      border-radius: 12px;\n      background-color: #f9f9f9;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n    }\n\n    .webhook-header {\n      margin-bottom: 24px;\n      text-align: center;\n    }\n\n    .webhook-header h6 {\n      font-size: 13px;\n      margin: 0 0 12px 0;\n      color: #333;\n      font-weight: 600;\n    }\n\n    .webhook-header p {\n      margin: 0;\n      color: #666;\n      font-size: 14px;\n      line-height: 1.5;\n    }\n\n    .webhook-url-container {\n      margin-bottom: 20px;\n      padding: 20px;\n      background-color: #fff;\n      border-radius: 8px;\n      border: 1px solid #e8e8e8;\n    }\n\n    .url-label {\n      font-size: 12px;\n      font-weight: 600;\n      color: #333;\n      margin-bottom: 8px;\n      display: block;\n    }\n\n    .url-input-group {\n      display: flex;\n      align-items: center;\n      gap: 12px;\n    }\n\n    .webhook-url-input {\n      flex: 1;\n      font-size: 12px;\n      background-color: #f5f5f5;\n      color: #333;\n      border: 1px solid #ccc;\n      border-radius: 6px;\n      padding: 8px 12px;\n      transition: border-color 0.2s;\n    }\n\n    .webhook-url-input:focus {\n      outline: none;\n      border-color: #19427d;\n      box-shadow: 0 0 0 2px rgba(25, 66, 125, 0.1);\n    }\n\n    .copy-webhook-button {\n      white-space: nowrap;\n      min-width: 80px;\n      padding: 8px 16px;\n      font-size: 12px;\n      cursor: pointer;\n      background-color: #19427d;\n      color: white;\n      border: none;\n      border-radius: 6px;\n      transition: background-color 0.2s;\n      font-weight: 500;\n    }\n\n    .copy-webhook-button:hover {\n      background-color: #153a6f;\n    }\n\n    .copy-webhook-button.copied {\n      background-color: #28a745;\n    }\n\n    .webhook-details {\n      margin-top: 20px;\n      padding: 20px;\n      background-color: #fff;\n      border: 1px solid #e8e8e8;\n      border-radius: 8px;\n    }\n\n    .details-header {\n      font-size: 12px;\n      font-weight: 600;\n      color: #333;\n      margin-bottom: 16px;\n      border-bottom: 2px solid #eee;\n      padding-bottom: 10px;\n    }\n\n    .detail-row {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      margin-bottom: 12px;\n      font-size: 13px;\n      padding: 8px 0;\n      border-bottom: 1px solid #f5f5f5;\n    }\n\n    .detail-row:last-child {\n      border-bottom: none;\n    }\n\n    .detail-label {\n      font-weight: 500;\n      color: #555;\n      flex: 1;\n    }\n\n    .detail-value {\n      font-family: 'Courier New', monospace;\n      background-color: #f8f9fa;\n      padding: 4px 10px;\n      border-radius: 4px;\n      color: #333;\n      font-size: 11px;\n      border: 1px solid #e9ecef;\n      font-weight: 500;\n    }\n\n    .status-indicator {\n      margin-top: 20px;\n      padding: 12px 16px;\n      background-color: #fff;\n      border: 1px solid #e8e8e8;\n      border-radius: 8px;\n      display: flex;\n      align-items: center;\n      gap: 10px;\n    }\n\n    .status-dot {\n      width: 8px;\n      height: 8px;\n      border-radius: 50%;\n      background-color: #28a745;\n      animation: pulse 2s infinite;\n    }\n\n    .status-text {\n      font-size: 13px;\n      color: #555;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"webhook-config-container\">\n    <div class=\"webhook-header\">\n      <h6>Configure Webhook Endpoint</h6>\n      <p>\n        Use this URL to configure your webhook in <strong>{{provider}}</strong>. Once configured,\n        your agent will automatically listen for incoming requests and process them accordingly.\n      </p>\n    </div>\n\n    <div class=\"webhook-url-container\">\n      <label class=\"url-label\">Webhook URL</label>\n      <div class=\"url-input-group\">\n        <input\n          type=\"text\"\n          class=\"webhook-url-input\"\n          value=\"{{webhook_url}}\"\n          readonly\n          onclick=\"this.select()\"\n        />\n        <button class=\"copy-webhook-button\" onclick=\"copyWebhookUrl()\">\n          <span class=\"button-text\">Copy URL</span>\n        </button>\n      </div>\n    </div>\n\n    <div class=\"webhook-details\">\n      <div class=\"details-header\">Request Configuration</div>\n      <div class=\"detail-row\">\n        <span class=\"detail-label\">HTTP Method</span>\n        <span class=\"detail-value\">POST</span>\n      </div>\n      <div class=\"detail-row\">\n        <span class=\"detail-label\">Content-Type</span>\n        <span class=\"detail-value\">application/json</span>\n      </div>\n\n    </div>\n\n  <script>\n    function copyWebhookUrl() {\n      const input = document.querySelector('.webhook-url-input');\n      const button = document.querySelector('.copy-webhook-button');\n      const buttonText = button.querySelector('.button-text');\n      \n      navigator.clipboard.writeText(input.value).then(() => {\n        button.classList.add('copied');\n        buttonText.textContent = 'Copied!';\n        \n        setTimeout(() => {\n          button.classList.remove('copied');\n          buttonText.textContent = 'Copy URL';\n        }, 2000);\n      }).catch(err => {\n        console.error('Failed to copy URL:', err);\n        \n        // Fallback for older browsers\n        input.select();\n        try {\n          document.execCommand('copy');\n          buttonText.textContent = 'Copied!';\n          setTimeout(() => {\n            buttonText.textContent = 'Copy URL';\n          }, 2000);\n        } catch (e) {\n          alert('Please manually copy the URL');\n        }\n      });\n    }\n\n    // Allow clicking on the input to select all text\n    document.querySelector('.webhook-url-input').addEventListener('click', function() {\n      this.select();\n    });\n  </script>\n</body>\n</html>",
+            "actions": []
+        }
+    ],
+    "partner": "org-m29xwr8o-jp0hx",
+    "account": "ws-m29xwr8o-jofpir6h",
+    "id": 1758
+}

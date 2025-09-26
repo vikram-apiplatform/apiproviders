@@ -1,0 +1,5210 @@
+[
+    {
+        "id": 94780,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "pollingtheresults",
+        "executor_version": "v1",
+        "executor_display_name": "Polling the results",
+        "executor_description": "Use the polling endpoint provided in the successful response of the create request.",
+        "executor_category": "flightsLivePrices",
+        "executor_category_group": "flightsLivePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/pricing/v1.0/{SessionKey}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "SessionKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685083032336,
+        "lastModifiedTime": 1685083346301,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94778,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "creatingthesession",
+        "executor_version": "v1",
+        "executor_display_name": "Creating the session",
+        "executor_description": "Creating the session",
+        "executor_category": "flightsLivePrices",
+        "executor_category_group": "flightsLivePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/pricing/v1.0",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "apiKey",
+                "value": "",
+                "description": "The API Key to identify the customer",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "country",
+                    "value": "",
+                    "description": "The market/country your user is in",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "currency",
+                    "value": "",
+                    "description": "The currency you want the prices in",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "locale",
+                    "value": "",
+                    "description": "The locale you want the results in (ISO locale)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "originPlace",
+                    "value": "",
+                    "description": "The origin place (see places)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "destinationPlace",
+                    "value": "",
+                    "description": "The destination place (see places)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "outboundDate",
+                    "value": "",
+                    "description": "The outbound date. Format \"yyyy-mm-dd\".",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "inboundDate",
+                    "value": "",
+                    "description": "The return date. Format \"yyyy-mm-dd\". Use empty string for oneway trip.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "cabinClass",
+                    "value": "",
+                    "description": "The cabin class. Can be \"Economy\", \"PremiumEconomy\", \"Business\", \"First\"",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "adults",
+                    "value": "",
+                    "description": "Number of adults (16+ years). Must be between 1 and 8.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "children",
+                    "value": "",
+                    "description": "Number of children (1-16 years). Can be between 0 and 8.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "infants",
+                    "value": "",
+                    "description": "Number of infants (under 12 months). Can be between 0 and 8.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "includeCarriers",
+                    "value": "",
+                    "description": "Only return results from those carriers. Comma-separated list of carrier ids.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "excludeCarriers",
+                    "value": "",
+                    "description": "Filter out results from those carriers. Comma-separated list of carrier ids.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "groupPricing",
+                    "value": "",
+                    "description": "If set to true, prices will be obtained for the whole passenger group and if set to false it will be obtained for one adult only - the other adults/children/infants will be ignored. By default it is set to false.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "apiKey",
+                    "value": "",
+                    "description": "Your API Key.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685082842796,
+        "lastModifiedTime": 1685082842796,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94790,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "pollingthebookingdetails",
+        "executor_version": "v1",
+        "executor_display_name": "Polling the booking details",
+        "executor_description": "Use the polling endpoint provided in the successful response of the get booking details request.",
+        "executor_category": "flightsLivePrices",
+        "executor_category_group": "flightsLivePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/pricing/v1.0/{SessionKey}/booking/{OutboundLegId}|{InboundLegId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "SessionKey",
+                "value": "",
+                "description": "The Session key to identify the session."
+            },
+            {
+                "key": "OutboundLegId",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "InboundLegId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685084361436,
+        "lastModifiedTime": 1685084554004,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94785,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getbookingdetails",
+        "executor_version": "v1",
+        "executor_display_name": "Get booking details",
+        "executor_description": "A request for booking details will return the most up-to-date prices for the selected itinerary. Some of the prices returned in the previous requests might be cached and slightly older. By creating a booking details session you'll receive the most up-to-date price which we can get from our partners.",
+        "executor_category": "flightsLivePrices",
+        "executor_category_group": "flightsLivePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/pricing/v1.0/{SessionKey}/booking",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "SessionKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "OutboundLegId",
+                    "value": "",
+                    "description": "The outbound leg Id of the itinerary",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "InboundLegId",
+                    "value": "",
+                    "description": "The inbound leg Id of the itinerary for return flights",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "adults",
+                    "value": "",
+                    "description": "Number of adults (16+ years). Must be between 1 and 8.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "children",
+                    "value": "",
+                    "description": "Number of children (1-16 years). Can be between 0 and 8.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "infants",
+                    "value": "",
+                    "description": "Number of infants (under 12 months). Can be between 0 and 8.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685083834087,
+        "lastModifiedTime": 1685083834087,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94811,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "locationRequest",
+        "executor_version": "v1",
+        "executor_display_name": "Location Request",
+        "executor_description": "This endpoint gives back hotels with prices too but instead from an entity, around specific coordinates. It takes the coordinades as an input to provide the hotels. Provides the search by current location functionality.",
+        "executor_category": "SearchPrices",
+        "executor_category_group": "SearchPrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v1/prices/search/location/{lon,lat}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "lon,lat",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Sort by a given attribute. By default the relevance sorting is applied One of: relevance, -relevance, price, -price, distance, -distance, rating, -rating, stars, -stars",
+                "req": false
+            },
+            {
+                "key": "price_min",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at least price_min (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_max",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at most price_max (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_buckets",
+                "value": "",
+                "description": "OR filter. Return only hotels with offers inside the specified buckets. Cannot be used together with price_min/price_max",
+                "req": false
+            },
+            {
+                "key": "district",
+                "value": "",
+                "description": "OR filter. Return only results where a district matches",
+                "req": false
+            },
+            {
+                "key": "stars",
+                "value": "",
+                "description": "OR filter. Return only results where a star category matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "city",
+                "value": "",
+                "description": "OR filter. When the search is done for an entity that contains different cities, this filter is available. Returns only results where the cities match. The values must be TravelAPI entity ids",
+                "req": false
+            },
+            {
+                "key": "chain",
+                "value": "",
+                "description": "OR filter. Return only results where a hotel chains matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "amenities",
+                "value": "",
+                "description": "AND filter. Return only results where all amenities match. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "cancellation",
+                "value": "",
+                "description": "OR filter. Return only results where a cancellation policies matches. Options are: free_cancellation, non_refundable, refundable, special_conditions",
+                "req": false
+            },
+            {
+                "key": "meal_plan",
+                "value": "",
+                "description": "OR filter. Return only results where a meal plan matches. Options are: room_only, breakfast_included, half_board, full_board, all_inclusive",
+                "req": false
+            },
+            {
+                "key": "property_type",
+                "value": "",
+                "description": "OR filter. Return only results where an accommodation type matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "hotel_name",
+                "value": "",
+                "description": "Filter. Return only results where hotel name matches",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Number of results to retrieve between 1-30, default: 15",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "How many results to skip from the first position. Useful for paginating default: 0",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. Available options are: filters: Returns extra object in the response including the filters like stars, district, city, etc. price_slider: Return the price_slider. partners: Returns information about the active partners in the system. is_official, the logo, the name and the website_id. images: Returns images for the hotels. With the partner website_id and the urls. amenities: Returns the hotels amenities. query_location: Returns the location (higher level entities according to the searched entity) and map boundary (the coordinates of the search area). extras: Returns the hotel chain of the hotels. translations: Returns a dictionary with all literals and their corresponding translations using the request locale. detailed_reviews: Returns information from the hotel reviews provided by Trustyou (http://www.trustyou.com/)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685087109168,
+        "lastModifiedTime": 1685087109168,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94798,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "entityRequest",
+        "executor_version": "v1",
+        "executor_display_name": "Entity Request",
+        "executor_description": "Given an entity_id, this endpoint will give back hotels with prices around the provided entity. The supported entities are any, from cities, islands, nations, places to Hotels.  The Hotels API, first of all, tries to search for the hotels related to an entity using an explicit relation - cities, administration zones, and nations, and if the results are less than a minimum number of hotels the query turns out in a geographical query. This geographical query seeks for hotels using different distances, from 500 meters to 50km, till finding this minimum amount or get the maximum distance.  When a Hotel is used as the entity queried for, the service will treat this as an ad-hoc case. The hotel used as an entity will be serialized into the HOTEL_PIVOT object with its offers. Meanwhile, it will be removed from the results object.  The following URL shows how the search prices endpoint can be used to retrieve prices for those hotels that are placed in Barcelona",
+        "executor_category": "SearchPrices",
+        "executor_category_group": "SearchPrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v1/prices/search/entity/{entity_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Sort by a given attribute. By default the relevance sorting is applied One of: relevance, -relevance, price, -price, distance, -distance, rating, -rating, stars, -stars",
+                "req": false
+            },
+            {
+                "key": "price_min",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at least price_min (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_max",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at most price_max (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_buckets",
+                "value": "",
+                "description": "OR filter. Return only hotels with offers inside the specified buckets. Cannot be used together with price_min/price_max",
+                "req": false
+            },
+            {
+                "key": "price_bucket_step",
+                "value": "",
+                "description": "Fix step for the buckets. Need to be used together with price_buckets, default step will be dynamic",
+                "req": false
+            },
+            {
+                "key": "price_bucket_number",
+                "value": "",
+                "description": "This parameter allows you to set the price buckets number, default: 5",
+                "req": false
+            },
+            {
+                "key": "price_buckets_strategy",
+                "value": "",
+                "description": "price_buckets_strategy is 2 means use the new price buckets thread (split most 30 buckets), others use old price bucket thread (split into price_bucket_number buckets at most)",
+                "req": false
+            },
+            {
+                "key": "price_buckets_min",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at least price_buckets_min (included). Would not be applied if price_buckets_strategy is not 2",
+                "req": false
+            },
+            {
+                "key": "price_buckets_max",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at most price_buckets_max (included). Would not be applied if price_buckets_strategy is not 2",
+                "req": false
+            },
+            {
+                "key": "district",
+                "value": "",
+                "description": "OR filter. Return only results where a district matches",
+                "req": false
+            },
+            {
+                "key": "stars",
+                "value": "",
+                "description": "OR filter. Return only results where a star category matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "city",
+                "value": "",
+                "description": "OR filter. When the search is done for an entity that contains different cities, this filter is available. Returns only results where the cities match. The values must be TravelAPI entity ids",
+                "req": false
+            },
+            {
+                "key": "chain",
+                "value": "",
+                "description": "OR filter. Return only results where a hotel chains matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "amenities",
+                "value": "",
+                "description": "AND filter. Return only results where all amenities match. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "cancellation",
+                "value": "",
+                "description": "OR filter. Return only results where a cancellation policies matches. Options are: free_cancellation, non_refundable, refundable, special_conditions",
+                "req": false
+            },
+            {
+                "key": "meal_plan",
+                "value": "",
+                "description": "OR filter. Return only results where a meal plan matches. Options are: room_only, breakfast_included, half_board, full_board, all_inclusive",
+                "req": false
+            },
+            {
+                "key": "property_type",
+                "value": "",
+                "description": "OR filter. Return only results where an accommodation type matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "guest_rating",
+                "value": "",
+                "description": "OR filter. Return only results where a guest rating matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "guest_type",
+                "value": "",
+                "description": "OR filter. Return only results where a guest type matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "hotel_name",
+                "value": "",
+                "description": "Filter. Return only results where hotel name matches",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Number of results to retrieve between 1-30, default: 15",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "How many results to skip from the first position. Useful for paginating default: 0",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. Available options are: filters: Returns extra object in the response including the filters like stars, district, city, etc. price_slider: Return the price_slider. partners: Returns information about the active partners in the system. is_official, the logo, the name and the website_id. images: Returns images for the hotels. With the partner website_id and the urls. amenities: Returns the hotels amenities. query_location: Returns the location (higher level entities according to the searched entity) and map boundary (the coordinates of the search area). extras: Returns the hotel chain of the hotels. translations: Returns a dictionary with all literals and their corresponding translations using the request locale. detailed_reviews: Returns information from the hotel reviews provided by Trustyou (http://www.trustyou.com/)",
+                "req": false
+            },
+            {
+                "key": "index",
+                "value": "",
+                "description": "Mark the times of the same requests sent to bellboy, start from 1, default: 0",
+                "req": false
+            },
+            {
+                "key": "sorting_version",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Hotel sorting score calculation options mr4: RelevanceContainerScoring, mr5: IronRankScoring, mr6: IronCatRankScoring, mr4a: RelevanceContainerHotelModelScoring, mr7: HotelBookingModelScoring, mr8: IronTrainModelScoring, default: mr4",
+                "req": false
+            },
+            {
+                "key": "t_version",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Used for ABTesting, default is ''",
+                "req": false
+            },
+            {
+                "key": "app_name",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app name, default is ''",
+                "req": false
+            },
+            {
+                "key": "appVersion",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app version, default is ''",
+                "req": false
+            },
+            {
+                "key": "search_id",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Elasticsearch ID, for the same request, first time needn't set the value, second time can get the value from prior response, default is ''",
+                "req": false
+            },
+            {
+                "key": "cug_segments",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Only v3 supports, it allows you to add special cug segments for user. Options are: mobile, logged_in, business, apps, flight_booked",
+                "req": false
+            },
+            {
+                "key": "cug",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to reorder hotels by cug price. Options are: 1: cug hotels would be ranked ahead, 2: high cug hotels would be ranked ahead. default is 0, order by parameter sort",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685085825318,
+        "lastModifiedTime": 1685086287891,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94805,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "entityrequest",
+        "executor_version": "v3",
+        "executor_display_name": "entityrequest",
+        "executor_description": "This endpoint gives back hotels with prices too but instead from an entity, around specific coordinates. It takes the coordinades as an input to provide the hotels. Provides the search by current location functionality.",
+        "executor_category": "SearchPrices",
+        "executor_category_group": "SearchPrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v3/prices/search/entity/{entity_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Sort by a given attribute. By default the relevance sorting is applied One of: relevance, -relevance, price, -price, distance, -distance, rating, -rating, stars, -stars",
+                "req": false
+            },
+            {
+                "key": "price_min",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at least price_min (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_max",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at most price_max (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_buckets",
+                "value": "",
+                "description": "OR filter. Return only hotels with offers inside the specified buckets. Cannot be used together with price_min/price_max",
+                "req": false
+            },
+            {
+                "key": "price_bucket_step",
+                "value": "",
+                "description": "Fix step for the buckets. Need to be used together with price_buckets, default step will be dynamic",
+                "req": false
+            },
+            {
+                "key": "price_bucket_number",
+                "value": "",
+                "description": "This parameter allows you to set the price buckets number, default: 5",
+                "req": false
+            },
+            {
+                "key": "price_buckets_strategy",
+                "value": "",
+                "description": "price_buckets_strategy is 2 means use the new price buckets thread (split most 30 buckets), others use old price bucket thread (split into price_bucket_number buckets at most)",
+                "req": false
+            },
+            {
+                "key": "price_buckets_min",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at least price_buckets_min (included). Would not be applied if price_buckets_strategy is not 2",
+                "req": false
+            },
+            {
+                "key": "price_buckets_max",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at most price_buckets_max (included). Would not be applied if price_buckets_strategy is not 2",
+                "req": false
+            },
+            {
+                "key": "district",
+                "value": "",
+                "description": "OR filter. Return only results where a district matches",
+                "req": false
+            },
+            {
+                "key": "stars",
+                "value": "",
+                "description": "OR filter. Return only results where a star category matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "city",
+                "value": "",
+                "description": "OR filter. When the search is done for an entity that contains different cities, this filter is available. Returns only results where the cities match. The values must be TravelAPI entity ids",
+                "req": false
+            },
+            {
+                "key": "chain",
+                "value": "",
+                "description": "OR filter. Return only results where a hotel chains matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "amenities",
+                "value": "",
+                "description": "AND filter. Return only results where all amenities match. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "cancellation",
+                "value": "",
+                "description": "OR filter. Return only results where a cancellation policies matches. Options are: free_cancellation, non_refundable, refundable, special_conditions",
+                "req": false
+            },
+            {
+                "key": "meal_plan",
+                "value": "",
+                "description": "OR filter. Return only results where a meal plan matches. Options are: room_only, breakfast_included, half_board, full_board, all_inclusive",
+                "req": false
+            },
+            {
+                "key": "property_type",
+                "value": "",
+                "description": "OR filter. Return only results where an accommodation type matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "guest_rating",
+                "value": "",
+                "description": "OR filter. Return only results where a guest rating matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "guest_type",
+                "value": "",
+                "description": "OR filter. Return only results where a guest type matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "hotel_name",
+                "value": "",
+                "description": "Filter. Return only results where hotel name matches",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Number of results to retrieve between 1-30, default: 15",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "How many results to skip from the first position. Useful for paginating default: 0",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. Available options are: filters: Returns extra object in the response including the filters like stars, district, city, etc. price_slider: Return the price_slider. partners: Returns information about the active partners in the system. is_official, the logo, the name and the website_id. images: Returns images for the hotels. With the partner website_id and the urls. amenities: Returns the hotels amenities. query_location: Returns the location (higher level entities according to the searched entity) and map boundary (the coordinates of the search area). extras: Returns the hotel chain of the hotels. translations: Returns a dictionary with all literals and their corresponding translations using the request locale. detailed_reviews: Returns information from the hotel reviews provided by Trustyou (http://www.trustyou.com/)",
+                "req": false
+            },
+            {
+                "key": "index",
+                "value": "",
+                "description": "Mark the times of the same requests sent to bellboy, start from 1, default: 0",
+                "req": false
+            },
+            {
+                "key": "sorting_version",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Hotel sorting score calculation options mr4: RelevanceContainerScoring, mr5: IronRankScoring, mr6: IronCatRankScoring, mr4a: RelevanceContainerHotelModelScoring, mr7: HotelBookingModelScoring, mr8: IronTrainModelScoring, default: mr4",
+                "req": false
+            },
+            {
+                "key": "t_version",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Used for ABTesting, default is ''",
+                "req": false
+            },
+            {
+                "key": "app_name",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app name, default is ''",
+                "req": false
+            },
+            {
+                "key": "appVersion",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app version, default is ''",
+                "req": false
+            },
+            {
+                "key": "search_id",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Elasticsearch ID, for the same request, first time needn't set the value, second time can get the value from prior response, default is ''",
+                "req": false
+            },
+            {
+                "key": "cug_segments",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Only v3 supports, it allows you to add special cug segments for user. Options are: mobile, logged_in, business, apps, flight_booked",
+                "req": false
+            },
+            {
+                "key": "cug",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to reorder hotels by cug price. Options are: 1: cug hotels would be ranked ahead, 2: high cug hotels would be ranked ahead. default is 0, order by parameter sort",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685086637409,
+        "lastModifiedTime": 1685086637409,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94857,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "examplesdayview",
+        "executor_version": "v1",
+        "executor_display_name": "examplesdayview",
+        "executor_description": "An example including some of the parameters looks like:  Please try to avoid using locale, market and currency, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/g/referrals/v1/cars/day-view/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685095740337,
+        "lastModifiedTime": 1685095740337,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94854,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "examplesflights",
+        "executor_version": "v1",
+        "executor_display_name": "Examplesflights",
+        "executor_description": "An example including some of the parameters looks like:  Please try to avoid using locale, market and currency, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/g/referrals/v1/flights/day-view/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685095615343,
+        "lastModifiedTime": 1685095615343,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94852,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "referrals",
+        "executor_version": "v1",
+        "executor_display_name": "Referrals",
+        "executor_description": "The referral service is used to provide partner redirects to Skyscanner pages based on provided request parameters.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/g/referrals/v1/{vertical}/{pagetype}?mediaPartnerId={yourmediapartnerID}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "vertical",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "pagetype",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "Your Impact partner ID as found at Impact.com.",
+                "req": false
+            },
+            {
+                "key": "adId",
+                "value": "",
+                "description": "This is an Impact ID used to identify your ad type. If none is provided, 1477112 will be used. This will be reported on Impact as Other Referral.",
+                "req": false
+            },
+            {
+                "key": "utm_term",
+                "value": "",
+                "description": "Additional alphanumeric tracking parameter you can add to your text links for additional tracking. This will be reported on Impact as Sub Id 2.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685095461319,
+        "lastModifiedTime": 1685095461319,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94855,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "examples",
+        "executor_version": "v1",
+        "executor_display_name": "Examples",
+        "executor_description": "An example including some of the parameters looks like:  Please try to avoid using locale, market and currency, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.",
+        "executor_category": "Referrals",
+        "executor_category_group": "Referrals",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/g/referrals/v1/flights/calendar-month-view/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685095664291,
+        "lastModifiedTime": 1685095664291,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94846,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listofplaces",
+        "executor_version": "v1",
+        "executor_display_name": "List of places",
+        "executor_description": "Get a list of places that match a query string.",
+        "executor_category": "Places",
+        "executor_category_group": "Places",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/{country}/{currency}/{locale}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "country",
+                "value": "",
+                "description": "The market/country code your user is in"
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "The currency code you want the prices in"
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "The locale code you want the results in (ISO locale)"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "query",
+                "value": "",
+                "description": "The query string.",
+                "req": false
+            },
+            {
+                "key": "apiKey",
+                "value": "",
+                "description": "Your API Key or token.",
+                "req": false
+            },
+            {
+                "key": "includeAirports",
+                "value": "",
+                "description": "If set to true, airports will be included in the result. If set to false, airports will be excluded. By default, it is set to true.",
+                "req": false
+            },
+            {
+                "key": "includeCities",
+                "value": "",
+                "description": "If set to true, cities will be included in the result. If set to false, cities will be excluded. By default, it is set to true.",
+                "req": false
+            },
+            {
+                "key": "includeCountries",
+                "value": "",
+                "description": "If set to true, countries will be included in the result. If set to false, countries will be excluded. By default, it is set to true.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685093824301,
+        "lastModifiedTime": 1685093824301,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94847,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "placeInformation",
+        "executor_version": "v1",
+        "executor_display_name": "Place Information",
+        "executor_description": "Get information about a specific country, city or airport using a Skyscanner Place ID. Alternatively, get information about the closest city using an IP address or lat-long coordinates.",
+        "executor_category": "Places",
+        "executor_category_group": "Places",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/{country}/{currency}/{locale}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "country",
+                "value": "",
+                "description": "The market/country code your user is in"
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "The currency code you want the prices in"
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "The locale code you want the results in (ISO locale)"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Should be one of the following: - The Skyscanner place id (e.g. \"CDG-sky\"). Will return information about the place specified. - An IP address (e.g. \"188.39.95.140-ip\"). Will return information about the city of the nearest airport to the IP specified. - Lat-long coordinates (e.g. \"35.2794,139.0436-latlong\"). Will return information about the city of the nearest airport to the coordinates specified.",
+                "req": false
+            },
+            {
+                "key": "apiKey",
+                "value": "",
+                "description": "Your API Key or token.",
+                "req": false
+            },
+            {
+                "key": "includeAirports",
+                "value": "",
+                "description": "If set to true, airports will be included in the result. If set to false, airports will be excluded. By default, it is set to true.",
+                "req": false
+            },
+            {
+                "key": "includeCities",
+                "value": "",
+                "description": "If set to true, cities will be included in the result. If set to false, cities will be excluded. By default, it is set to true.",
+                "req": false
+            },
+            {
+                "key": "includeCountries",
+                "value": "",
+                "description": "If set to true, countries will be included in the result. If set to false, countries will be excluded. By default, it is set to true.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685094717441,
+        "lastModifiedTime": 1685094717441,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94848,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "geoCatalog",
+        "executor_version": "v1",
+        "executor_display_name": "Geo Catalog",
+        "executor_description": "Get the full list of all the places that we support.",
+        "executor_category": "Places",
+        "executor_category_group": "Places",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/geo/v1.0",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685094932848,
+        "lastModifiedTime": 1685094932848,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93613,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dayview",
+        "executor_version": "v1",
+        "executor_display_name": "Day view",
+        "executor_description": "In this example, we are redirecting the traveller to our day-view page with the origin \"Paris Charles de Gaulle Airport (CDG)\" and the destination \"Edinburgh Airport (EDI)\". The outbound date is set to be 7th December 2023.  At the end, we also have 2 tracking parameters set, the mediaPartnerId which identifies our partners on impact.com, and the utm_term that is an optional tracking parameter. You can read more about tracking on our Tracking page.",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Flights",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/flights/day-view",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "origin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "destination",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "outboundDate",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "utm_term",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684397868576,
+        "lastModifiedTime": 1684398441560,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93617,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "calendarmonthview",
+        "executor_version": "v1",
+        "executor_display_name": "Calendar month view",
+        "executor_description": "An example with the same origin and destination as above, but in this case the traveller is redirected to the calendar-month-view page where they can have an overview of the prices for this route for the current month (as the month is not set).",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Flights",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/flights/calendar-month-view/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "origin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "destination",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "utm_term",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684398142768,
+        "lastModifiedTime": 1684398532507,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93623,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "durationoftheflight",
+        "executor_version": "v1",
+        "executor_display_name": "Duration of the flight",
+        "executor_description": "In this example we are specifying the duration of the flight to be limited to 22 hours (1320 minutes).",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Flights",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/flights/day-view",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "duration",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "market",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "origin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "destination",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "outboundDate",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "inboundDate",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684399481258,
+        "lastModifiedTime": 1684399481258,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93626,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "preferredalliances",
+        "executor_version": "v1",
+        "executor_display_name": "Preferred alliances",
+        "executor_description": "You can also provide a list of preferred alliances. In that case the traveller would be presented with flights that are operated by airlines that are part of the preferred alliance(s).",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Flights",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/flights/day-view",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "alliances",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "market",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "origin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "destination",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "outboundDate",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "inboundDate",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684399679240,
+        "lastModifiedTime": 1684399679240,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93637,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dayviewCarHire",
+        "executor_version": "v1",
+        "executor_display_name": "Day viewCarHire",
+        "executor_description": "In this example the traveller is being redirected to our day-view page for the provided pick-up and drop-off place \"Barcelona (BCN)\". The pick-up date and time is set to December 1st at 12:00, and the drop-off to December 7th at 12:00. The driver age is set to 42, and the Impact identification parameter mediaPartnerId is provided as well.",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>CarHire",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/cars/day-view/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "pickupPlace",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "dropoffPlace",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "pickupTime",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "dropoffTime",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "driverAge",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684400694476,
+        "lastModifiedTime": 1684400694476,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93629,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dayView",
+        "executor_version": "v1",
+        "executor_display_name": "Day view",
+        "executor_description": "This is an example of the day-view page for Hotels and the traveller will be presented with search results for Costa Rica for the provided dates, rooms and number of adults. In order to search for a particular location, the entity_id parameter must be set. For more information on the entity_id supported values, have a look at the IATA codes and Entity IDs page.",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Hotels",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/hotels/day-view",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "checkin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "checkout",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684399882996,
+        "lastModifiedTime": 1684399882996,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93622,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "specificdeparturetimes",
+        "executor_version": "v1",
+        "executor_display_name": "Specific departure times",
+        "executor_description": "In this example, the departure-time query parameter configures the first legs departure time to be between 0 (00:00) and 660 minutes (11:00).",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Flights",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/flights/day-view",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "departure-times",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "market",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "origin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "destination",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "outboundDate",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "inboundDate",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684399170901,
+        "lastModifiedTime": 1684399170901,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93621,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "multiCity",
+        "executor_version": "v1",
+        "executor_display_name": "Multi-City",
+        "executor_description": "This is an example of the multicity page where multiple origins and destinations are provided. The traveller will be redirected to the results page where the three routes that are provided will be included.",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Flights",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/flights/multicity/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "origin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "date",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "destination",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "children",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "infants",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "cabinclass",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "market",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684398944436,
+        "lastModifiedTime": 1684398944436,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93632,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "hoteldetails",
+        "executor_version": "v1",
+        "executor_display_name": "Hotel details",
+        "executor_description": "In this example, the traveller will be redirected to The Venetian Hotel in Las Vegas, and will be presented with prices for the provided dates, rooms and number of adults.",
+        "executor_category": "Examples",
+        "executor_category_group": "Examples>Hotels",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/hotels/hotel-details",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "hotelId",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "checkin",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "checkout",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "market",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684400209346,
+        "lastModifiedTime": 1684400209346,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93608,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "localisation",
+        "executor_version": "v1",
+        "executor_display_name": "Localisation",
+        "executor_description": "If you have specific localisation requirements, you can use the parameters locale, market or currency to set specific values for your referral links.",
+        "executor_category": "Localisation",
+        "executor_category_group": "Localisation",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://skyscanner.net/g/referrals/v1/flights/day-view/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "mediaPartnerId",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684396930310,
+        "lastModifiedTime": 1684398388821,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94843,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "locales",
+        "executor_version": "v1",
+        "executor_display_name": "Locales",
+        "executor_description": "Retrieve the locales that we support to translate your content.",
+        "executor_category": "Localisation",
+        "executor_category_group": "Localisation",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/reference/v1.0/locales",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685092989676,
+        "lastModifiedTime": 1685092989676,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94845,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "markets",
+        "executor_version": "v1",
+        "executor_display_name": "Markets",
+        "executor_description": "Retrieve the market countries that we support.  Most suppliers (airlines, travel agents, and car hire dealers) set their fares based on the market (or country of purchase). It is therefore necessary to specify the market country in every query.",
+        "executor_category": "Localisation",
+        "executor_category_group": "Localisation",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/reference/v1.0/countries/{locale}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "locale",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685093471782,
+        "lastModifiedTime": 1685093471782,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94844,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "currencies",
+        "executor_version": "v1",
+        "executor_display_name": "Currencies",
+        "executor_description": "Retrieve the currencies that we support.",
+        "executor_category": "Localisation",
+        "executor_category_group": "Localisation",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/reference/v1.0/currencies",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685093398400,
+        "lastModifiedTime": 1685093398400,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94748,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "browseRoutes",
+        "executor_version": "v1",
+        "executor_display_name": "Browse Routes",
+        "executor_description": "Retrieve the cheapest routes from our cache prices. Similar to the Browse Quotes API but with the routes built for you from the individual quotes.",
+        "executor_category": "FlightsBrowsePrices",
+        "executor_category_group": "FlightsBrowsePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "country",
+                "value": "",
+                "description": "The market country your user is in"
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "The currency you want the prices in"
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "The locale you want the results in (ISO locale)"
+            },
+            {
+                "key": "originPlace",
+                "value": "",
+                "description": "The origin place (see places)"
+            },
+            {
+                "key": "destinationPlace",
+                "value": "",
+                "description": "The destination place (see places)"
+            },
+            {
+                "key": "outboundPartialDate",
+                "value": "",
+                "description": "The outbound date (see dates)"
+            },
+            {
+                "key": "inboundPartialDate",
+                "value": "",
+                "description": "The return date (see dates). Use empty string for oneway trip."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "apiKey",
+                "value": "",
+                "description": "The API Key to identify the customer",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685078338387,
+        "lastModifiedTime": 1685078338387,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94746,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "browseQuotes",
+        "executor_version": "v1",
+        "executor_display_name": "Browse Quotes",
+        "executor_description": "Retrieve the cheapest quotes from our cached prices.",
+        "executor_category": "FlightsBrowsePrices",
+        "executor_category_group": "FlightsBrowsePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "country",
+                "value": "",
+                "description": "The market country your user is in"
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "The currency you want the prices in"
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "The locale you want the results in (ISO locale)"
+            },
+            {
+                "key": "originPlace",
+                "value": "",
+                "description": "The origin place (see places)"
+            },
+            {
+                "key": "destinationPlace",
+                "value": "",
+                "description": "The destination place (see places)"
+            },
+            {
+                "key": "outboundPartialDate",
+                "value": "",
+                "description": "The outbound date (see dates)"
+            },
+            {
+                "key": "inboundPartialDate",
+                "value": "",
+                "description": "The return date (see dates). Use empty string for oneway trip."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "apiKey",
+                "value": "",
+                "description": "The API Key to identify the customer",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685077862431,
+        "lastModifiedTime": 1685078843828,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94751,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "browseDatesgrid",
+        "executor_version": "v1",
+        "executor_display_name": "Browse Dates (grid)",
+        "executor_description": "Retrieve the cheapest dates for a given route from our cache.",
+        "executor_category": "FlightsBrowsePrices",
+        "executor_category_group": "FlightsBrowsePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/browsegrid/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "country",
+                "value": "",
+                "description": "The market country your user is in"
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "The currency you want the prices in"
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "The locale you want the results in (ISO locale)"
+            },
+            {
+                "key": "originPlace",
+                "value": "",
+                "description": "The origin place (see places)"
+            },
+            {
+                "key": "destinationPlace",
+                "value": "",
+                "description": "The destination place (see places)"
+            },
+            {
+                "key": "outboundPartialDate",
+                "value": "",
+                "description": "The outbound date (see dates)"
+            },
+            {
+                "key": "inboundPartialDate",
+                "value": "",
+                "description": "The return date (see dates). Use empty string for oneway trip."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "apiKey",
+                "value": "",
+                "description": "The API Key to identify the customer",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685079161037,
+        "lastModifiedTime": 1685079161037,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94750,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "browseDates",
+        "executor_version": "v1",
+        "executor_display_name": "Browse Dates",
+        "executor_description": "Retrieve the cheapest dates for a given route from our cache.",
+        "executor_category": "FlightsBrowsePrices",
+        "executor_category_group": "FlightsBrowsePrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/browsedates/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "country",
+                "value": "",
+                "description": "The market country your user is in"
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "The currency you want the prices in"
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "The locale you want the results in (ISO locale)"
+            },
+            {
+                "key": "originPlace",
+                "value": "",
+                "description": "The origin place (see places)"
+            },
+            {
+                "key": "destinationPlace",
+                "value": "",
+                "description": "The destination place (see places)"
+            },
+            {
+                "key": "outboundPartialDate",
+                "value": "",
+                "description": "The outbound date (see dates)"
+            },
+            {
+                "key": "inboundPartialDate",
+                "value": "",
+                "description": "The return date (see dates). Use empty string for oneway trip."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "apiKey",
+                "value": "",
+                "description": "The API Key to identify the customer",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685079012649,
+        "lastModifiedTime": 1685079012649,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94842,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "request",
+        "executor_version": "v2",
+        "executor_display_name": "Request",
+        "executor_description": "Given multiple hotels (maximum 50), this endpoint will give back the hotels with all the information and live prices.",
+        "executor_category": "HotelsPrices",
+        "executor_category_group": "HotelsPrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v2/prices/hotel/{hotel_ids}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "hotel_ids",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. The available options are: location: Returns the higher level entities according to the search entity. translations: Returns a dictionary with all literals and their corresponding translations using the request locale.",
+                "req": false
+            },
+            {
+                "key": "app_name",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app name, default is ''",
+                "req": false
+            },
+            {
+                "key": "appVersion",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app version, default is ''",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685092713852,
+        "lastModifiedTime": 1685092713852,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94816,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getentityRequest",
+        "executor_version": "v1",
+        "executor_display_name": "Entity Request",
+        "executor_description": "Given an entity, this endpoint will give you back the hotels with prices around the provided entity, having the same intentions than the regular search prices but modifying the response to suit it in environments where the information has to be rendered in a map. These differences can be summarized into the following points:  Every hotel will have one price (the cheapest). The default total amount of hotels returned per page will be 100. Support for bounding box queries to filter hotels that are inside of an area, the coordinates passed are serialized as LEFT, BOTTOM, RIGHT, TOP",
+        "executor_category": "SearchPricesmapversion",
+        "executor_category_group": "SearchPricesmapversion",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v1/prices/map/entity/{entity_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Sort by a given attribute. By default the relevance sorting is applied One of: relevance, -relevance, price, -price, distance, -distance, rating, -rating, stars, -stars",
+                "req": false
+            },
+            {
+                "key": "price_min",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at least price_min (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_max",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at most price_max (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_buckets",
+                "value": "",
+                "description": "OR filter. Return only hotels with offers inside the specified buckets. Cannot be used together with price_min/price_max",
+                "req": false
+            },
+            {
+                "key": "district",
+                "value": "",
+                "description": "OR filter. Return only results where a district matches",
+                "req": false
+            },
+            {
+                "key": "stars",
+                "value": "",
+                "description": "OR filter. Return only results where a star category matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "city",
+                "value": "",
+                "description": "OR filter. When the search is done for an entity that contains different cities, this filter is available. Returns only results where the cities match. The values must be TravelAPI entity ids",
+                "req": false
+            },
+            {
+                "key": "chain",
+                "value": "",
+                "description": "OR filter. Return only results where a hotel chains matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "amenities",
+                "value": "",
+                "description": "AND filter. Return only results where all amenities match. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "cancellation",
+                "value": "",
+                "description": "OR filter. Return only results where a cancellation policies matches. Options are: free_cancellation, non_refundable, refundable, special_conditions",
+                "req": false
+            },
+            {
+                "key": "meal_plan",
+                "value": "",
+                "description": "OR filter. Return only results where a meal plan matches. Options are: room_only, breakfast_included, half_board, full_board, all_inclusive",
+                "req": false
+            },
+            {
+                "key": "property_type",
+                "value": "",
+                "description": "OR filter. Return only results where an accommodation type matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "hotel_name",
+                "value": "",
+                "description": "Filter. Return only results where hotel name matches",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Number of results to retrieve between 1-30, default: 15",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "How many results to skip from the first position. Useful for paginating default: 0",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. Available options are: filters: Returns extra object in the response including the filters like stars, district, city, etc. price_slider: Return the price_slider. partners: Returns information about the active partners in the system. is_official, the logo, the name and the website_id. images: Returns images for the hotels. With the partner website_id and the urls. amenities: Returns the hotels amenities. query_location: Returns the location (higher level entities according to the searched entity) and map boundary (the coordinates of the search area). extras: Returns the hotel chain of the hotels. translations: Returns a dictionary with all literals and their corresponding translations using the request locale. detailed_reviews: Returns information from the hotel reviews provided by Trustyou (http://www.trustyou.com/)",
+                "req": false
+            },
+            {
+                "key": "bbox",
+                "value": "",
+                "description": "Bounding Box coordinates in which to look for hotels as bbox=left,bottom,right,top Example: -4.051,50.478,1.853,52.909",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685087423521,
+        "lastModifiedTime": 1685087423521,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94818,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "locationrequest",
+        "executor_version": "v1",
+        "executor_display_name": "Location Request",
+        "executor_description": "This endpoint gives back hotels with prices too with map specific features but instead from an entity, around specific coordinates.  Provides the search by current location functionality.",
+        "executor_category": "SearchPricesmapversion",
+        "executor_category_group": "SearchPricesmapversion",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v1/prices/map/location/{lon,lat}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "lon,lat",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Sort by a given attribute. By default the relevance sorting is applied One of: relevance, -relevance, price, -price, distance, -distance, rating, -rating, stars, -stars",
+                "req": false
+            },
+            {
+                "key": "price_min",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at least price_min (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_max",
+                "value": "",
+                "description": "Filter. Return only hotels where the cheaper price is at most price_max (included). Cannot be used together with price_buckets",
+                "req": false
+            },
+            {
+                "key": "price_buckets",
+                "value": "",
+                "description": "OR filter. Return only hotels with offers inside the specified buckets. Cannot be used together with price_min/price_max",
+                "req": false
+            },
+            {
+                "key": "district",
+                "value": "",
+                "description": "OR filter. Return only results where a district matches",
+                "req": false
+            },
+            {
+                "key": "stars",
+                "value": "",
+                "description": "OR filter. Return only results where a star category matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "city",
+                "value": "",
+                "description": "OR filter. When the search is done for an entity that contains different cities, this filter is available. Returns only results where the cities match. The values must be TravelAPI entity ids",
+                "req": false
+            },
+            {
+                "key": "chain",
+                "value": "",
+                "description": "OR filter. Return only results where a hotel chains matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "amenities",
+                "value": "",
+                "description": "AND filter. Return only results where all amenities match. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "cancellation",
+                "value": "",
+                "description": "OR filter. Return only results where a cancellation policies matches. Options are: free_cancellation, non_refundable, refundable, special_conditions",
+                "req": false
+            },
+            {
+                "key": "meal_plan",
+                "value": "",
+                "description": "OR filter. Return only results where a meal plan matches. Options are: room_only, breakfast_included, half_board, full_board, all_inclusive",
+                "req": false
+            },
+            {
+                "key": "property_type",
+                "value": "",
+                "description": "OR filter. Return only results where an accommodation type matches. The values must be TravelAPI ids",
+                "req": false
+            },
+            {
+                "key": "hotel_name",
+                "value": "",
+                "description": "Filter. Return only results where hotel name matches",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Number of results to retrieve between 1-30, default: 15",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "How many results to skip from the first position. Useful for paginating default: 0",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. Available options are: filters: Returns extra object in the response including the filters like stars, district, city, etc. price_slider: Return the price_slider. partners: Returns information about the active partners in the system. is_official, the logo, the name and the website_id. images: Returns images for the hotels. With the partner website_id and the urls. amenities: Returns the hotels amenities. query_location: Returns the location (higher level entities according to the searched entity) and map boundary (the coordinates of the search area). extras: Returns the hotel chain of the hotels. translations: Returns a dictionary with all literals and their corresponding translations using the request locale. detailed_reviews: Returns information from the hotel reviews provided by Trustyou (http://www.trustyou.com/)",
+                "req": false
+            },
+            {
+                "key": "bbox",
+                "value": "",
+                "description": "Bounding Box coordinates in which to look for hotels as bbox=left,bottom,right,top Example: -4.051,50.478,1.853,52.909",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685087602446,
+        "lastModifiedTime": 1685087602446,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94841,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "request",
+        "executor_version": "v3",
+        "executor_display_name": "Request",
+        "executor_description": "Given a hotel, this endpoint will give back the hotel with all the information and live prices. To reuse the prices already fetched by previous calls to the search endpoint the parameter ENTITY_ID must be filled with the same entity id. Otherwise, the system will start fetching prices from the beginning for this specific hotel. Is a regular practice following the user flow first of all search for prices using the search prices endpoint and then retrieve more specific information - perhaps the detailed reviews - about one of the hotels using the hotel prices endpoint.",
+        "executor_category": "HotelPrices",
+        "executor_category_group": "HotelPrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v3/prices/hotel/{hotel_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "hotel_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. The available options are: location: Returns the higher level entities according to the search entity. translations: Returns a dictionary with all literals and their corresponding translations using the request locale.",
+                "req": false
+            },
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": "This field should be present when this endpoint has been called when the user has already looked for prices in an upper entity containing the hotel in order to reuse the cached prices. For example: A user searches for prices in Paris (the service stores Paris prices). And then, the user opens a hotel details page. In this case, the request to the service must have the entity_id param fulfilled with the Paris entity_id in order to reuse the prices.",
+                "req": false
+            },
+            {
+                "key": "index",
+                "value": "",
+                "description": "Mark the times of the same requests sent to bellboy, start from 1, default: 0",
+                "req": false
+            },
+            {
+                "key": "t_version",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Used for ABTesting, default is ''",
+                "req": false
+            },
+            {
+                "key": "app_name",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app name, default is ''",
+                "req": false
+            },
+            {
+                "key": "appVersion",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app version, default is ''",
+                "req": false
+            },
+            {
+                "key": "search_id",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Elasticsearch ID, the value can be got from search response or first request response, default is ''",
+                "req": false
+            },
+            {
+                "key": "cug_segments",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Only v3 supports, it allows you to add special cug segments for user. Options are: mobile, logged_in, business, apps, flight_booked",
+                "req": false
+            },
+            {
+                "key": "ignore_cache",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to bypass Elasticsearch and Redis cache. Options are: 0: use cache, 1: bypass cache, default: 0",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685092478940,
+        "lastModifiedTime": 1685092478940,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 94840,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "request",
+        "executor_version": "v1",
+        "executor_display_name": "Request",
+        "executor_description": "Given a hotel, this endpoint will give back the hotel with all the information and live prices. To reuse the prices already fetched by previous calls to the search endpoint the parameter ENTITY_ID must be filled with the same entity id. Otherwise, the system will start fetching prices from the beginning for this specific hotel. Is a regular practice following the user flow first of all search for prices using the search prices endpoint and then retrieve more specific information - perhaps the detailed reviews - about one of the hotels using the hotel prices endpoint.",
+        "executor_category": "HotelPrices",
+        "executor_category_group": "HotelPrices",
+        "service_provider": "skyscanner",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://partners.api.skyscanner.net/apiservices/v1/prices/hotel/{hotel_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "hotel_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "market",
+                "value": "",
+                "description": "Matching [A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "locale",
+                "value": "",
+                "description": "Matching [a-z]{2}-[A-Z]{2}",
+                "req": false
+            },
+            {
+                "key": "currency",
+                "value": "",
+                "description": "Currency code",
+                "req": false
+            },
+            {
+                "key": "checkin_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "checkout_date",
+                "value": "",
+                "description": "YYYY-MM-DD",
+                "req": false
+            },
+            {
+                "key": "rooms",
+                "value": "",
+                "description": "Number of rooms",
+                "req": false
+            },
+            {
+                "key": "adults",
+                "value": "",
+                "description": "Number of adults",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": "This parameter is required to be on every single request any client does",
+                "req": false
+            },
+            {
+                "key": "images",
+                "value": "",
+                "description": "Maximum number of images to retrieve for each hotel between 1-30, default: 1",
+                "req": false
+            },
+            {
+                "key": "image_resolution",
+                "value": "",
+                "description": "Resolution options",
+                "req": false
+            },
+            {
+                "key": "image_type",
+                "value": "",
+                "description": "The format of the images thumbnail or gallery or dynamic",
+                "req": false
+            },
+            {
+                "key": "boost_official_partners",
+                "value": "",
+                "description": "Indicates whether prices from official partners must be shown in the first place [1] or not [0]",
+                "req": false
+            },
+            {
+                "key": "partners_per_hotel",
+                "value": "",
+                "description": "Maximum numbers of partners to retrieve per each hotel. Note that 0 means all the available partners default: 3",
+                "req": false
+            },
+            {
+                "key": "enhanced",
+                "value": "",
+                "description": "This parameter allows you to add additional content to the default response. The available options are: location: Returns the higher level entities according to the search entity. translations: Returns a dictionary with all literals and their corresponding translations using the request locale.",
+                "req": false
+            },
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": "This field should be present when this endpoint has been called when the user has already looked for prices in an upper entity containing the hotel in order to reuse the cached prices. For example: A user searches for prices in Paris (the service stores Paris prices). And then, the user opens a hotel details page. In this case, the request to the service must have the entity_id param fulfilled with the Paris entity_id in order to reuse the prices.",
+                "req": false
+            },
+            {
+                "key": "index",
+                "value": "",
+                "description": "Mark the times of the same requests sent to bellboy, start from 1, default: 0",
+                "req": false
+            },
+            {
+                "key": "t_version",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Used for ABTesting, default is ''",
+                "req": false
+            },
+            {
+                "key": "app_name",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app name, default is ''",
+                "req": false
+            },
+            {
+                "key": "appVersion",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to set the app version, default is ''",
+                "req": false
+            },
+            {
+                "key": "search_id",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Elasticsearch ID, the value can be got from search response or first request response, default is ''",
+                "req": false
+            },
+            {
+                "key": "cug_segments",
+                "value": "",
+                "description": "(B2B partner needn't set the value) Only v3 supports, it allows you to add special cug segments for user. Options are: mobile, logged_in, business, apps, flight_booked",
+                "req": false
+            },
+            {
+                "key": "ignore_cache",
+                "value": "",
+                "description": "(B2B partner needn't set the value) This parameter allows you to bypass Elasticsearch and Redis cache. Options are: 0: use cache, 1: bypass cache, default: 0",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685092422125,
+        "lastModifiedTime": 1685092422125,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

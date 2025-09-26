@@ -1,0 +1,92 @@
+{
+    "image": "https://s3.amazonaws.com/services.apiplatform.io/service-providers/slack.png",
+    "title": "Slack",
+    "id": 1,
+    "url": "https://api.slack.com/apps",
+    "producer": "slack",
+    "authorization": [
+        {
+            "authtype": "OAuth 2.0",
+            "authattributes": [
+                {
+                    "key": "base_url",
+                    "value": "https://slack.com/oauth/authorize",
+                    "description": "Authorize URL",
+                    "displayname": "Authorize URL"
+                },
+                {
+                    "key": "token_url",
+                    "value": "https://slack.com/api/oauth.access",
+                    "description": "Access Token URL",
+                    "displayname": "Access Token URL"
+                },
+                {
+                    "key": "client_id",
+                    "value": "",
+                    "description": "Client ID",
+                    "displayname": "Client ID"
+                },
+                {
+                    "key": "client_secret",
+                    "value": "",
+                    "description": "Client Secret",
+                    "displayname": "Client Secret"
+                },
+                {
+                    "key": "scope",
+                    "value": "",
+                    "description": "Scope",
+                    "displayname": "Scope"
+                }
+            ]
+        },
+        {
+            "authtype": "Bearer Token",
+            "authattributes": [
+                {
+                    "key": "token",
+                    "value": "",
+                    "description": "Access Token",
+                    "displayname": "Access Token"
+                }
+            ]
+        }
+    ],
+    "account": "services",
+    "partner": "services",
+    "oauth2configurations": [
+        {
+            "name": "client_id",
+            "displayname": "Client ID",
+            "defaultvalue": ""
+        },
+        {
+            "name": "client_secret",
+            "displayname": "Client Secret",
+            "defaultvalue": ""
+        },
+        {
+            "name": "scope",
+            "displayname": "Scope",
+            "defaultvalue": ""
+        }
+    ],
+    "description": "Slack is the collaboration hub that brings the right people, information and tools together to get work done. From FTSE 100 companies to corner shops, millions of people around the world use slack to connect their teams, unify their systems and drive their business forwards.",
+    "isSupported": true,
+    "additionalConfigurations": {
+        "globalVariables": []
+    },
+    "triggers": [
+        {
+            "triggerType": "manual",
+            "enabled": false
+        },
+        {
+            "triggerType": "webhook",
+            "enabled": true,
+            "enableActions": false,
+            "info": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n  <title>Slack Webhook Configuration</title>\n  <style>\n    .webhook-config-container {\n       margin: 0 auto;\n      padding: 24px;\n      border: 1px solid #e0e0e0;\n      border-radius: 12px;\n      background-color: #f9f9f9;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n    }\n    .webhook-header { \n      margin-bottom: 30px; \n      text-align: center; \n    }\n    .webhook-header h1 {\n      font-size: 18px;\n      margin: 0 0 12px 0;\n      color: #333;\n      font-weight: 700;\n    }\n    .webhook-header p {\n      margin: 0;\n      color: #666;\n      font-size: 16px;\n      line-height: 1.5;\n    }\n    .webhook-url-container {\n      margin-bottom: 30px;\n      padding: 20px;\n      background-color: #fff;\n      border-radius: 8px;\n      border: 1px solid #e8e8e8;\n    }\n    .url-label {\n      font-size: 14px;\n      font-weight: 600;\n      color: #333;\n      margin-bottom: 8px;\n      display: block;\n    }\n    .url-input-group {\n      display: flex;\n      align-items: center;\n      gap: 12px;\n    }\n    .webhook-url-input {\n      flex: 1;\n      font-size: 13px;\n      background-color: #f5f5f5;\n      color: #333;\n      border: 1px solid #ccc;\n      border-radius: 6px;\n      padding: 12px 16px;\n      transition: border-color 0.2s;\n      font-family: 'Courier New', monospace;\n    }\n    .webhook-url-input:focus {\n      outline: none;\n      border-color: #19427d;\n      box-shadow: 0 0 0 2px rgba(25, 66, 125, 0.1);\n    }\n    .copy-webhook-button {\n      white-space: nowrap;\n      min-width: 100px;\n      padding: 12px 20px;\n      font-size: 13px;\n      cursor: pointer;\n      background-color: #19427d;\n      color: white;\n      border: none;\n      border-radius: 6px;\n      transition: background-color 0.2s;\n      font-weight: 500;\n    }\n    .copy-webhook-button:hover { background-color: #153a6f; }\n    .copy-webhook-button.copied { background-color: #28a745; }\n    \n    .steps-section {\n      background-color: #fff;\n      border: 1px solid #e0e0e0;\n      border-radius: 8px;\n      padding: 25px;\n    }\n    .steps-title {\n      font-size: 15px;\n      margin: 0 0 25px 0;\n      color: #333;\n      font-weight: 600;\n    }\n    \n    .step {\n      margin-bottom: 20px;\n      padding-bottom: 15px;\n    }\n    .step:last-child {\n      margin-bottom: 0;\n      padding-bottom: 0;\n    }\n    .step-content ol {\n      margin: 0;\n      padding-left: 20px;\n    }\n    .step-content li {\n      font-size: 14px;\n      margin-bottom: 15px;\n      color: #444;\n      line-height: 1.6;\n    }\n    .step-content ul {\n      margin: 5px 0 10px 0;\n      padding-left: 20px;\n    }\n    .step-content ul li {\n      font-size: 14px;\n      margin-bottom: 3px;\n      color: #555;\n    }\n    \n    .note-box {\n      background-color: #f8f9fa;\n      border: 1px solid #e9ecef;\n      border-radius: 6px;\n      padding: 15px;\n      margin: 15px 0 0 0;\n      border-left: 4px solid #19427d;\n    }\n    .note-box p {\n      margin: 0;\n      font-size: 14px;\n      color: #495057;\n      line-height: 1.5;\n      font-style: italic;\n    }\n    \n    strong { font-weight: 600; }\n    code {\n      background-color: #f1f3f4;\n      padding: 2px 6px;\n      border-radius: 3px;\n      font-size: 12px;\n      color: #333;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"webhook-config-container\">\n    <div class=\"webhook-header\">\n      <h1>Slack Event Subscription Configuration</h1>\n      <p>\n        Configure your Slack app to send webhook notifications \n        to Haiva.\n      </p>\n    </div>\n\n    <div class=\"webhook-url-container\">\n      <label class=\"url-label\">Your Webhook URL</label>\n      <div class=\"url-input-group\">\n        <input\n          type=\"text\"\n          class=\"webhook-url-input\"\n          value=\"{{webhook_url}}\"\n          readonly\n          onclick=\"this.select()\"\n        />\n        <button class=\"copy-webhook-button\" onclick=\"copyWebhookUrl()\">\n          <span class=\"button-text\">Copy URL</span>\n        </button>\n      </div>\n    </div>\n\n    <div class=\"steps-section\">\n      <h6 class=\"steps-title\">Steps to configure Slack Event Subscription (Webhook URL)</h6>\n      \n      <div class=\"step\">\n        <div class=\"step-content\">\n          <ol>\n            <li>Go to <strong>api.slack.com/apps</strong> \u2192 Create an app.</li>\n            <li>In <strong>OAuth & Permissions</strong>, add bot scopes (example):\n              <ul>\n                <li><code>app_mentions:read</code></li>\n                <li><code>channels:history</code></li>\n                <li><code>groups:history</code></li>\n              </ul>\n            </li>\n            <li>Enable <strong>Event Subscriptions</strong> \u2192 paste your <strong>Request URL</strong>.</li>\n            <li>Subscribe to bot events (example):\n              <ul>\n                <li><code>app_mention</code></li>\n                <li><code>message.channels</code> (and <code>message.groups</code> if needed).</li>\n              </ul>\n            </li>\n            <li><strong>Install/Reinstall App</strong> under <strong>Install App</strong>.</li>\n            <li>Invite the bot to a channel: <code>/invite @your-bot-name</code>.</li>\n            <li>Start posting your queries in that channel \u2014 <strong>Haiva listens actively and responds</strong>.</li>\n          </ol>\n          \n          <div class=\"note-box\">\n            <p><strong>Note:</strong> These scopes are just for reference. Add the exact scopes you need based on your use case.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <script>\n    function copyWebhookUrl() {\n      const input = document.querySelector('.webhook-url-input');\n      const button = document.querySelector('.copy-webhook-button');\n      const buttonText = button.querySelector('.button-text');\n      \n      navigator.clipboard.writeText(input.value).then(() => {\n        button.classList.add('copied');\n        buttonText.textContent = 'Copied!';\n        \n        setTimeout(() => {\n          button.classList.remove('copied');\n          buttonText.textContent = 'Copy URL';\n        }, 2000);\n      }).catch(err => {\n        console.error('Failed to copy URL:', err);\n        input.select();\n        try {\n          document.execCommand('copy');\n          buttonText.textContent = 'Copied!';\n          setTimeout(() => {\n            buttonText.textContent = 'Copy URL';\n          }, 2000);\n        } catch (e) {\n          alert('Please manually copy the URL');\n        }\n      });\n    }\n\n    document.querySelector('.webhook-url-input').addEventListener('click', function() {\n      this.select();\n    });\n  </script>\n</body>\n</html>",
+            "actions": []
+        }
+    ]
+}

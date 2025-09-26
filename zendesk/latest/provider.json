@@ -1,0 +1,183 @@
+{
+    "producer": "zendesk",
+    "title": "zendesk",
+    "description": "The intelligent heart of customer experience.",
+    "image": "https://s3.amazonaws.com/services.apiplatform.io/service-providers/Service%20providers%20-%20resized%20logo's/Resized%20Logo's/zendesk.png",
+    "url": "https://www.zendesk.com/",
+    "authorization": [
+        {
+            "authtype": "OAuth 2.0",
+            "authattributes": [
+                {
+                    "key": "base_url",
+                    "displayname": "Authorize URL"
+                },
+                {
+                    "key": "token_url",
+                    "displayname": "Access Token URL"
+                },
+                {
+                    "key": "refreshtoken_url",
+                    "displayname": "Refresh Token URL"
+                },
+                {
+                    "key": "client_id",
+                    "displayname": "Client ID"
+                },
+                {
+                    "key": "client_secret",
+                    "displayname": "Client Secret"
+                },
+                {
+                    "key": "scope",
+                    "displayname": "Scope"
+                }
+            ]
+        },
+        {
+            "authtype": "Bearer Token",
+            "authattributes": [
+                {
+                    "key": "token",
+                    "displayname": "Token"
+                }
+            ]
+        },
+        {
+            "authtype": "Basic Authentication",
+            "authattributes": [
+                {
+                    "key": "username",
+                    "displayname": "Username"
+                },
+                {
+                    "key": "password",
+                    "displayname": "Password"
+                }
+            ]
+        }
+    ],
+    "partner": "services",
+    "account": "services",
+    "isPromoted": false,
+    "id": 562,
+    "triggers": [
+        {
+            "triggerType": "manual",
+            "enabled": false
+        },
+        {
+            "triggerType": "webhook",
+            "enabled": true,
+            "enableActions": true,
+            "info": "",
+            "actions": [
+                {
+                    "key": "list_events",
+                    "name": "List Events",
+                    "executor": {
+                        "id": 156239,
+                        "name": "geteventtypes",
+                        "method": "GET",
+                        "displayName": "Get Event Types",
+                        "description": "Fetches the list of event types that can be subscribed",
+                        "version": "v1"
+                    },
+                    "dataRoots": [
+                        {
+                            "key": "event_types",
+                            "displayName": "Event Types",
+                            "path": "event_types.type"
+                        }
+                    ]
+                },
+                {
+                    "key": "create_webhook",
+                    "name": "Create Webhook",
+                    "executor": {
+                        "id": 107243,
+                        "name": "createOrCloneWebhook",
+                        "method": "POST",
+                        "displayName": "Create or Clone Webhook",
+                        "description": "Creates or clones a webhook. The clone_webhook_id query parameter is only required when cloning a webhook. A request body is only required when creating a webhook.  Note that admins cannot clone webhooks created by Zendesk apps.",
+                        "version": "v2"
+                    }
+                },
+                {
+                    "key": "delete_webhook",
+                    "name": "Delete Webhook",
+                    "executor": {
+                        "id": 107253,
+                        "name": "deletewebhook",
+                        "method": "DELETE",
+                        "displayName": "Delete Webhook",
+                        "description": "Deletes the specified webhook.",
+                        "version": "v2"
+                    },
+                    "dataMapping": [
+                        {
+                            "key": "webhook_id",
+                            "name": "",
+                            "scope": "pathParams",
+                            "value": "webhooks.id"
+                        }
+                    ]
+                },
+                {
+                    "key": "list_webhooks",
+                    "name": "List Webhooks",
+                    "executor": {
+                        "id": 107240,
+                        "name": "listWebhooks",
+                        "method": "GET",
+                        "displayName": "List Webhooks",
+                        "description": "List a Webhooks.",
+                        "version": "v2"
+                    },
+                    "dataRoots": [
+                        {
+                            "key": "col0",
+                            "displayName": "Webhook ID",
+                            "path": "webhooks.id"
+                        },
+                        {
+                            "key": "col1",
+                            "value": "",
+                            "scope": "",
+                            "displayName": "Name",
+                            "path": "webhooks.name"
+                        },
+                        {
+                            "key": "col2",
+                            "value": "",
+                            "scope": "",
+                            "displayName": "Status",
+                            "path": "webhooks.status"
+                        },
+                        {
+                            "key": "col3",
+                            "value": "",
+                            "scope": "",
+                            "path": "webhooks.endpoint",
+                            "displayName": "Endpoint"
+                        }
+                    ]
+                },
+                {
+                    "key": "update_webhooks",
+                    "name": "Update Webhook",
+                    "executor": {}
+                }
+            ]
+        }
+    ],
+    "additionalConfigurations": {
+        "globalVariables": [
+            {
+                "key": "subdomain",
+                "value": "",
+                "scope": "pathParams"
+            }
+        ]
+    }
+}

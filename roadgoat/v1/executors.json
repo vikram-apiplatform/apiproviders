@@ -1,0 +1,545 @@
+[
+    {
+        "id": 92446,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "destinations",
+        "executor_version": "v2",
+        "executor_display_name": "Destinations",
+        "executor_description": "This endpoint retrieves details about a Travel Destination.",
+        "executor_category": "APIEndpoints",
+        "executor_category_group": "APIendpoints",
+        "service_provider": "roadgoat",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "GET https://api.roadgoat.com/api/v2/destinations/:id",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "ID or slug of a destination. Can be retrieved using Autocomplete endpoint"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683833550382,
+        "lastModifiedTime": 1683833550382,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request ",
+                "description": "Your request is invalid.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized ",
+                "description": "Your API key is wrong.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Forbidden ",
+                "description": "The goat requested is hidden for administrators only.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": "The specified goat could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Method Not Allowed",
+                "description": " You tried to access a goat with an invalid method.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 406,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Acceptable",
+                "description": "You requested a format that isn't json.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 410,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Gone",
+                "description": "The goat requested has been removed from our servers.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 418,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "I'm a teapot.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Too Many Requests ",
+                "description": "You're requesting too many goats! Slow down!",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": "We had a problem with our server. Try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Service Unavailable",
+                "description": "We're temporarily offline for maintenance. Please try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92447,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "autocomplete",
+        "executor_version": "v2",
+        "executor_display_name": "Autocomplete",
+        "executor_description": "This endpoint provides autocomplete results for a query containing a travel destination.",
+        "executor_category": "APIEndpoints",
+        "executor_category_group": "APIendpoints",
+        "service_provider": "roadgoat",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "GET https://api.roadgoat.com/api/v2/destinations/auto_complete",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "q",
+                "value": "",
+                "description": "A string containing the name of the travel destination, such as Charleston, SC or Zaragoza, Spain.Travel destinations must be a country, region, US state, city, or town",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1683833662935,
+        "lastModifiedTime": 1683833884341,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request ",
+                "description": "Your request is invalid.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized ",
+                "description": "Your API key is wrong.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Forbidden ",
+                "description": "The goat requested is hidden for administrators only.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": "The specified goat could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Method Not Allowed",
+                "description": " You tried to access a goat with an invalid method.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 406,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Acceptable",
+                "description": "You requested a format that isn't json.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 410,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Gone",
+                "description": "The goat requested has been removed from our servers.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 418,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "I'm a teapot.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Too Many Requests ",
+                "description": "You're requesting too many goats! Slow down!",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": "We had a problem with our server. Try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Service Unavailable",
+                "description": "We're temporarily offline for maintenance. Please try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

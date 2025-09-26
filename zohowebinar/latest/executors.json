@@ -1,0 +1,2189 @@
+[
+    {
+        "id": 129893,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createaMeeting",
+        "executor_version": "v2",
+        "executor_display_name": "Create a Meeting",
+        "executor_description": "This API allows you to create a meeting by providing the details (title, date, time and duration) of the meeting in the Schedule meeting form.",
+        "executor_category": "Meeting",
+        "executor_category_group": "Meeting",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/sessions.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "topic": "Monthly Marketing Meeting",
+                "agenda": "Points to get noted during meeting.",
+                "presenter": 123456789,
+                "startTime": "Jun 19, 2020 07:00 PM",
+                "duration": 3600000,
+                "timezone": "Asia/Calcutta",
+                "participants": [
+                    {
+                        "email": "dummy@email.com"
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720690493634,
+        "lastModifiedTime": 1720690493634,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "meetingKey": 123456789,
+                        "topic": "Monthly Marketing Meeting",
+                        "agenda": "Points to get noted during meeting.",
+                        "presenter": 123456789,
+                        "startTime": "Jun 19, 2020 07:00 PM IST",
+                        "endTime": "Jun 19, 2020 08:00 PM IST",
+                        "duration": 3600000,
+                        "timezone": "Asia/Calcutta",
+                        "offset": 19800000,
+                        "pwd": "a***z",
+                        "encryptPwd": "a***z",
+                        "creatorZuid": 123456789,
+                        "joinLink": "https://meeting.zoho.com/join?key=123456789",
+                        "startLink": "https://meeting.zoho.com/meeting-start?key=1065243211",
+                        "participants": [
+                            {
+                                "id": "12345678912345",
+                                "email": "dummy@email.com"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129894,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listofMeeting",
+        "executor_version": "v2",
+        "executor_display_name": "List of Meeting",
+        "executor_description": "You can use this API to get the list of meetings.",
+        "executor_category": "Meeting",
+        "executor_category_group": "Meeting",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/sessions.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "listtype",
+                "value": "",
+                "description": "List Type of the Meeting. Allowed Regex: all | past | week | month | today | upcoming",
+                "req": false
+            },
+            {
+                "key": "index",
+                "value": "",
+                "description": "Index of the Meeting Record",
+                "req": false
+            },
+            {
+                "key": "count",
+                "value": "",
+                "description": "Count of the Meeting Records needed in list",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720696659078,
+        "lastModifiedTime": 1720696659078,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": [
+                        {
+                            "meetingKey": 123456789,
+                            "topic": "Monthly Marketing Meeting",
+                            "presenterEmail": "frida.m@zylker.com",
+                            "presenterZuid": 123456789,
+                            "startTime": "Jun 19, 2020 07:00 PM IST",
+                            "endTime": "Jun 19, 2020 08:00 PM IST",
+                            "duration": 3600000,
+                            "timezone": "Asia/Calcutta",
+                            "creatorZuid": 123456789,
+                            "joinLink": "https://meeting.zoho.com/join?key=123456789",
+                            "meetingEmbedUrl": "https://meeting.zoho.com/meeting/login/embedmeeting.jsp?meetingKey=1046517098&newWindow=true&t=cd14920943b8be630e8e485040a24177bd57e92a87f8db4f698d108ca23b0b7c",
+                            "pwd": "a***z",
+                            "encryptPwd": "a***z",
+                            "sysId": 98726527628726
+                        }
+                    ],
+                    "count": 34
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129895,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "editMeeting",
+        "executor_version": "v2",
+        "executor_display_name": "Edit Meeting",
+        "executor_description": "You can use this API to edit a meeting. You can change the topic, agenda, or time of a meeting you've scheduled at anytime.",
+        "executor_category": "Meeting",
+        "executor_category_group": "Meeting",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/sessions/{meetingKey}.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "meetingKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "topic": "Monthly Marketing Meeting",
+                "agenda": "Points to get noted during meeting.",
+                "presenter": 123456789,
+                "startTime": "Jun 19, 2020 07:00 PM",
+                "duration": 3600000,
+                "timezone": "Asia/Calcutta",
+                "participants": [
+                    {
+                        "email": "dummy@email.com"
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720696843735,
+        "lastModifiedTime": 1720696843735,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "meetingKey": 123456789,
+                        "topic": "Monthly Marketing Meeting",
+                        "agenda": "Points to get noted during meeting.",
+                        "presenterEmail": "frida.m@zylker.com",
+                        "presenter": 123456789,
+                        "presenterName": "Frida",
+                        "startTime": "Jun 19, 2020 07:00 PM",
+                        "duration": 3600000,
+                        "timezone": "Asia/Calcutta",
+                        "joinLink": "https://meeting.zoho.com/join?key=123456789",
+                        "startLink": "https://meeting.zoho.com/meeting-start?key=1065243211",
+                        "pwd": "a***z",
+                        "encryptPwd": "a***z",
+                        "meetingEmbedUrl": "https://meeting.zoho.com/meeting/login/embedmeeting.jsp?meetingKey=1046517098&newWindow=true&t=cd14920943b8be630e8e485040a24177bd57e92a87f8db4f698d108ca23b0b7c"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129896,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getMeeting",
+        "executor_version": "v2",
+        "executor_display_name": "Get Meeting",
+        "executor_description": "You can use this API to get the details of a meeting. This includes the start link, join link, date and time, topic, host of the meeting and the email addresses of participants.",
+        "executor_category": "Meeting",
+        "executor_category_group": "Meeting",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/sessions/{meetingKey}.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "meetingKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720696930407,
+        "lastModifiedTime": 1720696930407,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "meetingKey": 123456789,
+                        "topic": "Monthly Marketing Meeting",
+                        "agenda": "Points to get noted during meeting.",
+                        "presenterEmail": "frida.m@zylker.com",
+                        "presenter": 123456789,
+                        "presenterName": "Frida",
+                        "startTime": "Jun 19, 2020 07:00 PM IST",
+                        "endTime": "Jun 19, 2020 08:00 PM IST",
+                        "duration": 3600000,
+                        "timezone": "Asia/Calcutta",
+                        "joinLink": "https://meeting.zoho.com/join?key=123456789",
+                        "startLink": "https://meeting.zoho.com/meeting-start?key=1065243211",
+                        "pwd": "a***z",
+                        "encryptPwd": "a***z",
+                        "meetingEmbedUrl": "https://meeting.zoho.com/meeting/login/embedmeeting.jsp?meetingKey=1046517098&newWindow=true&t=cd14920943b8be630e8e485040a24177bd57e92a87f8db4f698d108ca23b0b7c"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129897,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteMeeting",
+        "executor_version": "v2",
+        "executor_display_name": "Delete Meeting",
+        "executor_description": "You can use this API to delete a meeting. Once you delete the meeting, it will no longer be available for you to host.",
+        "executor_category": "Meeting",
+        "executor_category_group": "Meeting",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/sessions/{meetingKey}.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "meetingKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720696998184,
+        "lastModifiedTime": 1720696998184,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "NO CONTENT",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129898,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createaWebinar",
+        "executor_version": "v2",
+        "executor_display_name": "Create a Webinar",
+        "executor_description": "You can use this API to create a webinar by filling in details including the title of your webinar, a short description, date, duration, frequency, and time zone.",
+        "executor_category": "Webinar",
+        "executor_category_group": "Webinar",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/webinar.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "session": {
+                    "topic": "Monthly Marketing Webinar",
+                    "agenda": "Description of webinar.",
+                    "presenter": "7989202345",
+                    "startTime": "Jun 19, 2023 04:00 PM",
+                    "duration": 3600000,
+                    "timezone": "Asia/Calcutta",
+                    "participants": [
+                        {
+                            "email": "dummy@email.com"
+                        }
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720697182486,
+        "lastModifiedTime": 1720697182486,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "meetingKey": "567891679",
+                        "topic": "Monthly Marketing Webinar",
+                        "agenda": "Description of webinar.",
+                        "presenter": "7989202345",
+                        "startTime": "Jun 19, 2020 07:00 PM IST",
+                        "endTime": "Jun 19, 2020 08:00 PM IST",
+                        "duration": 3600000,
+                        "timezone": "Asia/Calcutta",
+                        "offset": 19800000,
+                        "creatorZuid": 123456789,
+                        "registrationLink": "https://meeting.zoho.com/meeting/register?sessionId=1065156851",
+                        "startLink": "/meeting-start?key=1021744359",
+                        "participants": [
+                            {
+                                "email": "dummy@email.com"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129899,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listOfWebinar",
+        "executor_version": "v2",
+        "executor_display_name": "List of Webinar",
+        "executor_description": "You can use this API to get the list of webinars.",
+        "executor_category": "Webinar",
+        "executor_category_group": "Webinar",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/webinar.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720697281007,
+        "lastModifiedTime": 1720697281007,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": [
+                        {
+                            "presenterZuid": "7989202345",
+                            "timezone": "Asia/Calcutta",
+                            "creatorZuid": 123456789,
+                            "registrationLink": "https://meeting.zoho.com/meeting/register?sessionId=1065156851",
+                            "startLink": "/meeting-start?key=1021744359",
+                            "duration": 3600000,
+                            "topic": "Monthly Marketing Webinar",
+                            "startTime": "Jun 19, 2020 07:00 PM IST",
+                            "endTime": "Jun 19, 2020 08:00 PM IST",
+                            "meetingKey": "567891679",
+                            "presenterEmail": "frida.m@zylker.com",
+                            "attendeeCount": 8,
+                            "registrationUserCount": 8,
+                            "sysId": 98726527628726,
+                            "startTimeMillis": 1594112400000,
+                            "participants": [
+                                {
+                                    "id": "12345678912345",
+                                    "email": "dummy@email.com"
+                                }
+                            ]
+                        }
+                    ],
+                    "count": 34
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129900,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "editWebinar",
+        "executor_version": "v2",
+        "executor_display_name": "Edit Webinar",
+        "executor_description": "You can use this API to edit the title, description, and time of your webinar. You can also edit the polls. Your registrants will be notified about the changes via email.",
+        "executor_category": "Webinar",
+        "executor_category_group": "Webinar",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/webinar/{webinarKey}.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "webinarKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "session": {
+                    "topic": "Monthly Marketing Webinar",
+                    "agenda": "Description of webinar.",
+                    "presenter": "7989202345",
+                    "startTime": "Jun 19, 2020 07:00 PM",
+                    "duration": 3600000,
+                    "timezone": "Asia/Calcutta",
+                    "participants": [
+                        {
+                            "email": "dummy@email.com"
+                        }
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720697389300,
+        "lastModifiedTime": 1720697389300,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "meetingKey": "567891679",
+                        "topic": "Monthly Marketing Webinar",
+                        "agenda": "Description of webinar.",
+                        "presenterEmail": "frida.m@zylker.com",
+                        "presenter": "7989202345",
+                        "startTime": "Jun 19, 2020 07:00 PM IST",
+                        "endTime": "Jun 19, 2020 08:00 PM IST",
+                        "duration": 3600000,
+                        "timezone": "Asia/Calcutta",
+                        "offset": 19800000,
+                        "registrationLink": "https://meeting.zoho.com/meeting/register?sessionId=1065156851",
+                        "startLink": "/meeting-start?key=1021744359",
+                        "creatorZuid": 123456789,
+                        "participants": [
+                            {
+                                "id": "12345678912345",
+                                "email": "dummy@email.com"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129901,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getWebinar",
+        "executor_version": "v2",
+        "executor_display_name": "Get Webinar",
+        "executor_description": "You can use this API to get the details of a webinar. This includes the start link, join link, date and time, topic, organizer of the webinar and the email addresses of registrants.",
+        "executor_category": "Webinar",
+        "executor_category_group": "Webinar",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/webinar/{webinarKey}.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "webinarKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720697463671,
+        "lastModifiedTime": 1720697463671,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "meetingKey": "567891679",
+                        "topic": "Monthly Marketing Webinar",
+                        "agenda": "Description of webinar.",
+                        "presenterEmail": "frida.m@zylker.com",
+                        "presenter": "7989202345",
+                        "displayName": "Frida",
+                        "startTime": "Jun 19, 2020 07:00 PM IST",
+                        "endTime": "Jun 19, 2020 08:00 PM IST",
+                        "duration": 3600000,
+                        "timezone": "Asia/Calcutta",
+                        "offset": 19800000,
+                        "registrationLink": "https://meeting.zoho.com/meeting/register?sessionId=1065156851",
+                        "startLink": "/meeting-start?key=1021744359",
+                        "creatorZuid": 123456789,
+                        "instanceId": 98726527628726,
+                        "attendeeCount": 8,
+                        "registrationCount": 8,
+                        "isSessionStarted": true,
+                        "isPastSession": true
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129902,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteWebinar",
+        "executor_version": "v2",
+        "executor_display_name": "Delete Webinar",
+        "executor_description": "You can use this API to delete a webinar. Once you delete the webinar, it will no longer be available for you to host.",
+        "executor_category": "Webinar",
+        "executor_category_group": "Webinar",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{zsoid}/webinar/{webinarKey}.json",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "zsoid",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "webinarKey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720697535393,
+        "lastModifiedTime": 1720697535393,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "NO CONTENT",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129903,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createAnInstantSession",
+        "executor_version": "v2",
+        "executor_display_name": "Create an Instant Session",
+        "executor_description": "To host an instant meeting.",
+        "executor_category": "SDK",
+        "executor_category_group": "SDK",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://meeting.zoho.com/meeting/api/v2/{orgId}/sdk/session/meet",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "orgId",
+                "value": "",
+                "description": "organization id which is retrieved from currentUser api"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "session": {
+                    "conferenceType": "audio"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720697731129,
+        "lastModifiedTime": 1720697731129,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "dialinUrl": "https://help.zoho.com/portal/kb/articles/zoho-meeting-dial-in-numbers",
+                        "timezone": "Asia/Calcutta",
+                        "departmentId": "556536000000025015",
+                        "addedParticipants": "[dummy@email.com]",
+                        "webServer": "meeting.zoho.com",
+                        "creatorZuid": "71158042",
+                        "source": "Meeting Create page",
+                        "endTimeMillisec": 1704378600000,
+                        "encryptPwd": "091cf9166b2ad6ed31f828fcb3e098563cb88654d7b012e537a8c8bf0497b963",
+                        "duration": 3600000,
+                        "sys_id": "556536000000214003",
+                        "accessCode": "11691 28522 #",
+                        "sessionType": "meeting",
+                        "startTime": "Jan 04, 2024 07:00 PM IST",
+                        "meeting": {
+                            "zsoid": "77994516"
+                        },
+                        "participants": [
+                            {
+                                "id": "556536000000214007",
+                                "email": "dummy@email.com"
+                            }
+                        ],
+                        "departmentName": "My Department",
+                        "creator": "71158042",
+                        "presenter": 71158042,
+                        "offset": "19800000",
+                        "isRecurring": false,
+                        "joinLink": "https://meet.zoho.com/gT9JMpyG9z",
+                        "agenda": "Points to get noted during meeting.",
+                        "startLink": "https://meeting.zoho.com/meeting/statelessStart?signature=MIIBIjAN&key=1169128522&frameOrigin=https://<your_registered_domain>",
+                        "UID": 556536000000214000,
+                        "startTimeMillisec": 1704375000000,
+                        "topic": "Monthly Marketing Meeting",
+                        "endTime": "Jan 04, 2024 08:00 PM IST",
+                        "pwd": "GLivoM",
+                        "meetingKey": "1169128522",
+                        "removedParticipants": "[]",
+                        "startDate": "Jan 4, 2024 07:00 PM"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129904,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "scheduleaSdkSession",
+        "executor_version": "v2",
+        "executor_display_name": "Schedule a SDK session",
+        "executor_description": "To schedule a meeting using the SDK.",
+        "executor_category": "SDK",
+        "executor_category_group": "SDK",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://meeting.zoho.com/meeting/api/v2/{orgId}/sdk/session",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "orgId",
+                "value": "",
+                "description": "organization id which is retrieved from currentUser api"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "session": {
+                    "topic": "Monthly Marketing Meeting",
+                    "agenda": "Points to get noted during meeting.",
+                    "presenter": 71158042,
+                    "startTime": "Jan 4, 2024 07:00 PM",
+                    "duration": 3600000,
+                    "timezone": "Asia/Calcutta",
+                    "participants": [
+                        {
+                            "email": "dummy@email.com"
+                        }
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720697921457,
+        "lastModifiedTime": 1720697921457,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": {
+                        "dialinUrl": "https://help.zoho.com/portal/kb/articles/zoho-meeting-dial-in-numbers",
+                        "timezone": "Asia/Calcutta",
+                        "departmentId": "556536000000025015",
+                        "addedParticipants": "[dummy@email.com]",
+                        "webServer": "meeting.zoho.com",
+                        "creatorZuid": "71158042",
+                        "source": "Meeting Create page",
+                        "endTimeMillisec": 1704378600000,
+                        "encryptPwd": "091cf9166b2ad6ed31f828fcb3e098563cb88654d7b012e537a8c8bf0497b963",
+                        "duration": 3600000,
+                        "sys_id": "556536000000214003",
+                        "accessCode": "11691 28522 #",
+                        "sessionType": "meeting",
+                        "startTime": "Jan 04, 2024 07:00 PM IST",
+                        "meeting": {
+                            "zsoid": "77994516"
+                        },
+                        "participants": [
+                            {
+                                "id": "556536000000214007",
+                                "email": "dummy@email.com"
+                            }
+                        ],
+                        "departmentName": "My Department",
+                        "creator": "71158042",
+                        "presenter": 71158042,
+                        "offset": "19800000",
+                        "isRecurring": false,
+                        "joinLink": "https://meet.zoho.com/gT9JMpyG9z",
+                        "agenda": "Points to get noted during meeting.",
+                        "startLink": "https://meeting.zoho.com/meeting/statelessStart?signature=MIIBIjANB&key=1169128522&frameOrigin=https://<your_registered_domain>",
+                        "UID": 556536000000214000,
+                        "startTimeMillisec": 1704375000000,
+                        "topic": "Monthly Marketing Meeting",
+                        "endTime": "Jan 04, 2024 08:00 PM IST",
+                        "pwd": "GLivoM",
+                        "meetingKey": "1169128522",
+                        "removedParticipants": "[]",
+                        "startDate": "Jan 4, 2024 07:00 PM"
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": {
+                        "code": 2000,
+                        "message": "INVALID_OAUTHTOKEN"
+                    }
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": {
+                        "code": 1025,
+                        "message": "Org doesn't matches with request uri"
+                    },
+                    "resourceType": "/meeting/api/v2/1234567/user"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129905,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getListofSdkSessions",
+        "executor_version": "v2",
+        "executor_display_name": "Get List of SDK Sessions",
+        "executor_description": "To get a list of all the SDK meetings.",
+        "executor_category": "SDK",
+        "executor_category_group": "SDK",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{orgId}/sdk/sessions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "orgId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "index",
+                "value": "",
+                "description": "Page No. Default value is 0",
+                "req": false
+            },
+            {
+                "key": "count",
+                "value": "",
+                "description": "No.of Records for each page. Default value is 20",
+                "req": false
+            },
+            {
+                "key": "filterType",
+                "value": "",
+                "description": "sdkMeetingList",
+                "req": false
+            },
+            {
+                "key": "listtype",
+                "value": "",
+                "description": "upcoming \u2192 upcoming sessions, past \u2192 Past sessions",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720698084197,
+        "lastModifiedTime": 1720698084197,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": [
+                        {
+                            "lastName": "Pradhap",
+                            "meetingEmbedUrl": "https://meeting.zoho.com/meeting/login/embedmeeting.jsp?meetingKey=1037111818&newWindow=true&t=824af776fd7fda584ead5ecfe7fea9101149528d8bd3d00a0b0ffa879ef54f24",
+                            "presenterFullName": "Firat name last name",
+                            "startTimeMillis": "1704367800000",
+                            "sysId": "556536000000214030",
+                            "timezone": "America/Cuiaba",
+                            "creatorZuid": "71158042",
+                            "source": "new_meeting",
+                            "liveConferenceStatusTime": "Starts in 11 mins",
+                            "meeting_embedurl": "https://meeting.zoho.com/meeting/login/embedmeeting.jsp?meetingKey=1037111818&newWindow=true&t=824af776fd7fda584ead5ecfe7fea9101149528d8bd3d00a0b0ffa879ef54f24",
+                            "type": "presenter",
+                            "encryptPwd": "824af776fd7fda584ead5ecfe7fea9101149528d8bd3d00a0b0ffa879ef54f24",
+                            "duration": 1800000,
+                            "liveConferenceStatus": "toBeStarted",
+                            "eventTime": "Today",
+                            "durationInHours": "30 mins",
+                            "startTime": "Jan 04, 2024 07:30 AM AMT",
+                            "presenterZuid": "71158042",
+                            "sTime": "07:30 AM",
+                            "usedCredits": 0,
+                            "presenterAvatar": "https://contacts.zoho.com/file?ID=71158042&fs=thumb&t=user",
+                            "isRecurring": false,
+                            "joinLink": "https://meet.zoho.com/ZQI0Fg9h7B",
+                            "presenterEmail": "pradhap.mp@*****.com",
+                            "firstName": "Pradhap",
+                            "startTimeMillisec": 1704367800000,
+                            "sDate": "Thu, 4 Jan",
+                            "timePeriod": "MORNING",
+                            "topic": "Normal meeting",
+                            "endTime": "Jan 04, 2024 08:00 AM AMT",
+                            "pwd": "fMVoxZ",
+                            "meetingKey": "1037111818"
+                        }
+                    ],
+                    "count": 4
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129906,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getSdkSession",
+        "executor_version": "v2",
+        "executor_display_name": "Get SDK Session",
+        "executor_description": "Get a particular meeting's information.",
+        "executor_category": "SDK",
+        "executor_category_group": "SDK",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{orgId}/sdk/sessions/{meetingKey}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "orgId",
+                "value": "",
+                "description": "organization id which is retrieved from currentUser api"
+            },
+            {
+                "key": "meetingKey",
+                "value": "",
+                "description": "meetingKey which is obtained from get sdk meeting list api"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720698199779,
+        "lastModifiedTime": 1720698199779,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "session": [
+                        {
+                            "lastName": "Pradhap",
+                            "meetingEmbedUrl": "https://meeting.zoho.com/meeting/login/embedmeeting.jsp?meetingKey=1037111818&newWindow=true&t=824af776fd7fda584ead5ecfe7fea9101149528d8bd3d00a0b0ffa879ef54f24",
+                            "presenterFullName": "Pradhap Pradhap",
+                            "startTimeMillis": "1704367800000",
+                            "sysId": "556536000000214030",
+                            "timezone": "America/Cuiaba"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129907,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "convertIntoSdkSessions",
+        "executor_version": "v2",
+        "executor_display_name": "Convert into SDK Sessions",
+        "executor_description": "This converts the normal meetings scheduled previously in Zoho Meeting to  SDK sessions.",
+        "executor_category": "SDK",
+        "executor_category_group": "SDK",
+        "service_provider": "zohowebinar",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://meeting.zoho.com/api/v2/{orgId}/sdk/session/convert/{sysId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "orgId",
+                "value": "",
+                "description": "organization ID that is retrieved from the currentUser API"
+            },
+            {
+                "key": "sysId",
+                "value": "",
+                "description": "sysId that is obtained from get the SDK meeting list API"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "index",
+                "value": "",
+                "description": "Page No. Default value is 0",
+                "req": false
+            },
+            {
+                "key": "count",
+                "value": "",
+                "description": "No.of Records for each page. Default value is 20",
+                "req": false
+            },
+            {
+                "key": "filterType",
+                "value": "",
+                "description": "sdkMeetingList",
+                "req": false
+            },
+            {
+                "key": "listtype",
+                "value": "",
+                "description": "upcoming sessions, past \u2192 Past sessions",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720698363322,
+        "lastModifiedTime": 1720698363322,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "representation": {
+                        "status": "Success"
+                    },
+                    "resourceType": "/meeting/api/v2/77994516/sdk/session/convert/556536000000214030"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

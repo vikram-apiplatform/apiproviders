@@ -1,0 +1,4677 @@
+[
+    {
+        "id": 95547,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "sleepData",
+        "executor_version": "v1",
+        "executor_display_name": "Sleep data",
+        "executor_description": "Sleep data. From parameter : , to parameter: . Maximum fetch interval duration is 28 days. We advise to fetch the activity data every 24 hours.",
+        "executor_category": "Suunto247DataAPI",
+        "executor_category_group": "Suunto247DataAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/247samples/sleep",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "from",
+                "value": "",
+                "description": "Sleep data interval start date in EPOCH format",
+                "req": false
+            },
+            {
+                "key": "to",
+                "value": "",
+                "description": "Sleep data interval end date in EPOCH format",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "JWT access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685527591707,
+        "lastModifiedTime": 1685527591707,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "array of sleep summary data",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "timestamp": "2021-01-24T21:54:52.217Z",
+                        "entryData": {
+                            "Duration": 28126,
+                            "DeepSleepDuration": 4225,
+                            "REMSleepDuration": 0,
+                            "LightSleepDuration": 0,
+                            "DateTime": "2021-01-24T21:54:52.217Z",
+                            "BedtimeStart": "",
+                            "BedtimeEnd": "",
+                            "SleepQualityScore": 0
+                        }
+                    },
+                    {
+                        "timestamp": "2021-01-25T22:55:52.322Z",
+                        "entryData": {
+                            "Duration": 32126,
+                            "DeepSleepDuration": 4525,
+                            "REMSleepDuration": 0,
+                            "LightSleepDuration": 0,
+                            "DateTime": "2021-01-25T22:54:52.322Z",
+                            "BedtimeStart": "",
+                            "BedtimeEnd": "",
+                            "SleepQualityScore": 0
+                        }
+                    }
+                ]
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "Bad request. Something is wrong with the parameters.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": "Authentication failed.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": "Internal server error.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Service Unavailable",
+                "description": "Service capacity exceeded. Try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95543,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dailyActivitySamples",
+        "executor_version": "v1",
+        "executor_display_name": "Daily activity samples",
+        "executor_description": "Endpoint provides daily steps, energy consumption (in joules), HR data and SpO2 based on sample values from the watches. Data is stored into and fetched from the API using UTC time. Sample usage: /daily-activity-samples?from=&to=. Maximum fetch interval duration is 28 days. We advise to fetch the activity data every 24 hours.",
+        "executor_category": "Suunto247DataAPI",
+        "executor_category_group": "Suunto247DataAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/247samples/activity",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "from",
+                "value": "",
+                "description": "Activity fetch interval start date in EPOCH format",
+                "req": false
+            },
+            {
+                "key": "to",
+                "value": "",
+                "description": "Activity fetch interval end date in EPOCH format",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685527242735,
+        "lastModifiedTime": 1685527242735,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "array of daily activity records",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "timestamp": "2019-02-11T12:00:00Z",
+                        "entryData": {
+                            "StepCount": 100,
+                            "EnergyConsumption": 8000,
+                            "HR": 72,
+                            "SpO2": 0,
+                            "Altitude": 0
+                        }
+                    },
+                    {
+                        "timestamp": "2019-02-11T12:10:00Z",
+                        "entryData": {
+                            "StepCount": 50,
+                            "EnergyConsumption": 6000,
+                            "HR": 72,
+                            "SpO2": 0,
+                            "Altitude": 0
+                        }
+                    },
+                    {
+                        "timestamp": "2019-02-11T12:20:00Z",
+                        "entryData": {
+                            "StepCount": 75,
+                            "EnergyConsumption": 6000,
+                            "HR": 72,
+                            "SpO2": 0,
+                            "Altitude": 0
+                        }
+                    }
+                ]
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "Bad request. Something is wrong with the parameters.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": "Authentication failed.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": "Internal server error.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Service Unavailable",
+                "description": "Service capacity exceeded. Try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95546,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dailyActivityStatistics",
+        "executor_version": "v1",
+        "executor_display_name": "Daily activity statistics",
+        "executor_description": "Endpoint provides aggregated daily steps and energy consumption (in joules) data based on sample values from the watches. Data is stored into and fetched from the API using UTC time. Sample usage: /daily-activity-statistics?startdate=2019-02-11T02:00:00&enddate=2019-02-20T01:59:59 . Maximum fetch interval duration is 28 days. We advise to fetch the activity data every 24 hours.",
+        "executor_category": "Suunto247DataAPI",
+        "executor_category_group": "Suunto247DataAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/247samples/daily-activity-statistics",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startdate",
+                "value": "",
+                "description": "Start date and time for daily statistics export in ISO-8601 format.",
+                "req": false
+            },
+            {
+                "key": "enddate",
+                "value": "",
+                "description": "End date and time for daily statistics export in ISO-8601 format",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "JWT access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685527461779,
+        "lastModifiedTime": 1685527461779,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "array of aggregated daily statistics records",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "Name": "energyconsumption",
+                        "Aggregation": "sum",
+                        "Sources": [
+                            {
+                                "Name": "suunto-247-3e0f7c17-2775-477a-a12f-a50ff0170860",
+                                "Samples": [
+                                    {
+                                        "TimeISO8601": "2019-02-11T02:00:00.000",
+                                        "Value": null
+                                    },
+                                    {
+                                        "TimeISO8601": "2019-02-12T02:00:00.000",
+                                        "Value": 640580.3985
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "stepcount",
+                        "Aggregation": "sum",
+                        "Sources": [
+                            {
+                                "Name": "suunto-247-3e0f7c17-2775-477a-a12f-a50ff0170860",
+                                "Samples": [
+                                    {
+                                        "TimeISO8601": "2019-02-11T02:00:00.000",
+                                        "Value": null
+                                    },
+                                    {
+                                        "TimeISO8601": "2019-02-12T02:00:00.000",
+                                        "Value": 4617
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "Bad request. Something is wrong with the parameters.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": "Authentication failed.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": "Internal server error.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Service Unavailable",
+                "description": "Service capacity exceeded. Try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95561,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createGuide",
+        "executor_version": "v1",
+        "executor_display_name": "createGuide",
+        "executor_description": "createGuide",
+        "executor_category": "SuuntoGuidesAPI",
+        "executor_category_group": "SuuntoGuidesAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloudapi.suunto.com/v2/guides/files",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685529422124,
+        "lastModifiedTime": 1685529422124,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": {
+                        "code": "string",
+                        "description": "string"
+                    },
+                    "metadata": {},
+                    "payload": {
+                        "activities": [
+                            0
+                        ],
+                        "description": "string",
+                        "fileTime": 0,
+                        "id": "string",
+                        "localDate": "string",
+                        "modificationTime": 0,
+                        "name": "string",
+                        "owner": "string",
+                        "pinned": true,
+                        "requiredCapabilities": [
+                            "string"
+                        ],
+                        "type": "SEQUENCE",
+                        "url": "string",
+                        "usage": "WORKOUT",
+                        "username": "string"
+                    }
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Created",
+                "description": "Created",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95563,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "file",
+        "executor_version": "v1",
+        "executor_display_name": "getFile",
+        "executor_description": "getFile",
+        "executor_category": "SuuntoGuidesAPI",
+        "executor_category_group": "SuuntoGuidesAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/guides/files/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685529754686,
+        "lastModifiedTime": 1685529754686,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95564,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getItem",
+        "executor_version": "v1",
+        "executor_display_name": "getItems",
+        "executor_description": "getItems",
+        "executor_category": "SuuntoGuidesAPI",
+        "executor_category_group": "SuuntoGuidesAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/guides/items",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685530166637,
+        "lastModifiedTime": 1685530166637,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95565,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateGuideFile",
+        "executor_version": "v1",
+        "executor_display_name": "updateGuideFile",
+        "executor_description": "updateGuideFile",
+        "executor_category": "SuuntoGuidesAPI",
+        "executor_category_group": "SuuntoGuidesAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://cloudapi.suunto.com/v2/guides/files/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685530338537,
+        "lastModifiedTime": 1685530338537,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": {
+                        "code": "string",
+                        "description": "string"
+                    },
+                    "metadata": {},
+                    "payload": {
+                        "activities": [
+                            0
+                        ],
+                        "description": "string",
+                        "fileTime": 0,
+                        "id": "string",
+                        "localDate": "string",
+                        "modificationTime": 0,
+                        "name": "string",
+                        "owner": "string",
+                        "pinned": true,
+                        "requiredCapabilities": [
+                            "string"
+                        ],
+                        "type": "SEQUENCE",
+                        "url": "string",
+                        "usage": "WORKOUT",
+                        "username": "string"
+                    }
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Created",
+                "description": "Created",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95562,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteGuide",
+        "executor_version": "v1",
+        "executor_display_name": "deleteGuide",
+        "executor_description": "createGuide",
+        "executor_category": "SuuntoGuidesAPI",
+        "executor_category_group": "SuuntoGuidesAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://cloudapi.suunto.com/v2/guides/files/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685529591293,
+        "lastModifiedTime": 1685529591293,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "No Content",
+                "description": "No Content",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95551,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "confirmAccess",
+        "executor_version": "v1",
+        "executor_display_name": "Confirm access",
+        "executor_description": "Confirm access endpoint. Endpoint participates in OAuth workflow. No direct call required.",
+        "executor_category": "SuuntoAuthorisationAPI",
+        "executor_category_group": "SuuntoAuthorisationAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloudapi-oauth.suunto.com/oauth/confirm_access",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685528089658,
+        "lastModifiedTime": 1685528089658,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95559,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "token",
+        "executor_version": "v1",
+        "executor_display_name": "Token",
+        "executor_description": "Token endpoint. Provides JWT token (access and refresh). Refresh access token: /oauth/token?grant_type=refresh_token&refresh_token=<refresh_token>. New access and refresh tokens: /oauth/token?grant_type=authorization_code&code=<authorization code from /authorize endpoint>. Token endpoint is protected using Basic authentication scheme. The Authorization header has to be added as specified in RFC7617. Authorization header format - Authorization: Basic Base64(username:password).",
+        "executor_category": "SuuntoAuthorisationAPI",
+        "executor_category_group": "SuuntoAuthorisationAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloudapi-oauth.suunto.com/oauth/token",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "grant_type",
+                "value": "",
+                "description": "Grant type. Possible values: authorization_code or refresh_token",
+                "req": false
+            },
+            {
+                "key": "code",
+                "value": "",
+                "description": "Authorization code obtained from Authorize endpoint",
+                "req": false
+            },
+            {
+                "key": "refresh_token",
+                "value": "",
+                "description": "Refresh token obtained from token endpoint",
+                "req": false
+            },
+            {
+                "key": "redirect_uri",
+                "value": "",
+                "description": "same redirect URI as used for /authorize endpoint request",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685528683687,
+        "lastModifiedTime": 1685528683687,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "JWT token (access and refresh) encoded as base64 strings. Token expiration time (seconds since Unix epoch) is in the \"exp\" token attribute.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95556,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "loginScreen",
+        "executor_version": "v1",
+        "executor_display_name": "Login screen",
+        "executor_description": "Login endpoint. Endpoint participates in OAuth workflow. Redirect to this endpoint generates from Authorize endpoint. No direct call required.",
+        "executor_category": "SuuntoAuthorisationAPI",
+        "executor_category_group": "SuuntoAuthorisationAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi-oauth.suunto.com/uaa/login",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685528451024,
+        "lastModifiedTime": 1685528451024,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95549,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getAuthorize",
+        "executor_version": "v1",
+        "executor_display_name": "Authorize",
+        "executor_description": "OAuth 2 authorize endpoint. Provides authorization code for token endpoint.",
+        "executor_category": "SuuntoAuthorisationAPI",
+        "executor_category_group": "SuuntoAuthorisationAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi-oauth.suunto.com/oauth/authorize",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "response_type",
+                "value": "",
+                "description": "auth response type",
+                "req": false
+            },
+            {
+                "key": "client_id",
+                "value": "",
+                "description": "application login/id",
+                "req": false
+            },
+            {
+                "key": "redirect_uri",
+                "value": "",
+                "description": "redirect URL",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1685527971520,
+        "lastModifiedTime": 1685528237590,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 302,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Moved Temporarily",
+                "description": "redirect with auth code",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95553,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deauthorize",
+        "executor_version": "v1",
+        "executor_display_name": "Deauthorize",
+        "executor_description": "Disconnect user from partner service. Access token, formatted as bearer token must be submitted as Authorization header. Authorization header format: \"Authorization: Bearer \"",
+        "executor_category": "SuuntoAuthorisationAPI",
+        "executor_category_group": "SuuntoAuthorisationAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi-oauth.suunto.com/oauth/deauthorize",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "client_id",
+                "value": "",
+                "description": "application login/id",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685528218050,
+        "lastModifiedTime": 1685528218050,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "empty response if success",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95558,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "processAuthorize",
+        "executor_version": "v1",
+        "executor_display_name": "Process authorize",
+        "executor_description": "This endpoint process data required for authorizing partner app. Endpoint participates in OAuth workflow. No direct call required.",
+        "executor_category": "SuuntoAuthorisationAPI",
+        "executor_category_group": "SuuntoAuthorisationAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloudapi-oauth.suunto.com/oauth/authorize",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685528541725,
+        "lastModifiedTime": 1685528541725,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 302,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Moved Temporarily",
+                "description": "Redirect to the registered URL with the authorization code.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95555,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "loginSuuntoAuthorisationAPI",
+        "executor_version": "v1",
+        "executor_display_name": "Login",
+        "executor_description": "Login endpoint. Endpoint participates in OAuth workflow. No direct call required.",
+        "executor_category": "SuuntoAuthorisationAPI",
+        "executor_category_group": "SuuntoAuthorisationAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloudapi-oauth.suunto.com/uaa/login",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685528319788,
+        "lastModifiedTime": 1685528319788,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95567,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getRoute",
+        "executor_version": "v2",
+        "executor_display_name": "Get Route",
+        "executor_description": "Get User Route by Id",
+        "executor_category": "SuuntoRouteAPI",
+        "executor_category_group": "SuuntoRouteAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/route/{oid}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "oid",
+                "value": "",
+                "description": "string oid"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "string JWT access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685530732105,
+        "lastModifiedTime": 1685530732105,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "activityIds": [
+                        0
+                    ],
+                    "averageSpeed": 0,
+                    "centerPoint": {
+                        "altitude": 0,
+                        "latitude": 0,
+                        "longitude": 0
+                    },
+                    "created": 0,
+                    "description": "string",
+                    "endPoint": {
+                        "altitude": 0,
+                        "latitude": 0,
+                        "longitude": 0
+                    },
+                    "id": "string",
+                    "modified": 0,
+                    "startPoint": {
+                        "altitude": 0,
+                        "latitude": 0,
+                        "longitude": 0
+                    },
+                    "totalDistance": 0,
+                    "turnWaypointsEnabled": true,
+                    "visibility": "string",
+                    "watchEnabled": true
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95568,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getRoutesList",
+        "executor_version": "v2",
+        "executor_display_name": "Get Routes List",
+        "executor_description": "Get User Routes List",
+        "executor_category": "SuuntoRouteAPI",
+        "executor_category_group": "SuuntoRouteAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/route",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "Format - int32. Format - int32. Format - int32. Format - int32. page",
+                "req": false
+            },
+            {
+                "key": "since",
+                "value": "",
+                "description": "Format - int64. Format - int64. Format - int64. Format - int64. since",
+                "req": false
+            },
+            {
+                "key": "size",
+                "value": "",
+                "description": "Format - int32. Format - int32. Format - int32. Format - int32. size",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "sort",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "string JWT access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685530988890,
+        "lastModifiedTime": 1685530988890,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "activityIds": [
+                            0
+                        ],
+                        "averageSpeed": 0,
+                        "centerPoint": {
+                            "altitude": 0,
+                            "latitude": 0,
+                            "longitude": 0
+                        },
+                        "created": 0,
+                        "description": "string",
+                        "endPoint": {
+                            "altitude": 0,
+                            "latitude": 0,
+                            "longitude": 0
+                        },
+                        "id": "string",
+                        "modified": 0,
+                        "startPoint": {
+                            "altitude": 0,
+                            "latitude": 0,
+                            "longitude": 0
+                        },
+                        "totalDistance": 0,
+                        "turnWaypointsEnabled": true,
+                        "visibility": "string",
+                        "watchEnabled": true
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95570,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "importGpx",
+        "executor_version": "v2",
+        "executor_display_name": "Import GPX",
+        "executor_description": "Import route in GPX format. Suunto Route API enables importing routes in GPX format which the user can choose to use in watch for route navigation. GPX, or GPS Exchange Format, is an XML schema designed as a common GPS data format for software applications. It can be used to describe waypoints, tracks, and routes.",
+        "executor_category": "SuuntoRouteAPI",
+        "executor_category_group": "SuuntoRouteAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloudapi.suunto.com/v2/route/import",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "activities",
+                "value": "",
+                "description": "A comma-separated list of integers where the integers is a valid Suunto activity ID. The activities are shown as suitable activities for the route in Suunto app inside route details.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "string JWT access token",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685531367885,
+        "lastModifiedTime": 1685531367885,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Request processed successfully.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal Server Error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95566,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "exportRouteGpx",
+        "executor_version": "v2",
+        "executor_display_name": "Export Route as GPX",
+        "executor_description": "Export Route in GPX format",
+        "executor_category": "SuuntoRouteAPI",
+        "executor_category_group": "SuuntoRouteAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/route/{oid}/export",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "oid",
+                "value": "",
+                "description": "string oid"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "string JWT access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685530639632,
+        "lastModifiedTime": 1685530639632,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Ok",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Unauthorized",
+                "description": "Unauthorized",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Forbidden",
+                "description": "Forbidden",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95579,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getWorkoutsList",
+        "executor_version": "v2",
+        "executor_display_name": "Get workouts list",
+        "executor_description": "Get workout list for authenticated user. Sample request: /v2/workouts?since=1547811684000&until=1552909284000&limit=10&offset=0.",
+        "executor_category": "SuuntoWorkoutAPI",
+        "executor_category_group": "SuuntoWorkoutAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/workouts",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "since",
+                "value": "",
+                "description": "User activity since. Datetime timestamp in milliseconds since Epoch. For example: 1546304461000",
+                "req": false
+            },
+            {
+                "key": "until",
+                "value": "",
+                "description": "User activity until date. Datetime timestamp in milliseconds since Epoch. For example: 1552909284000.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "Workout fetch limit (by default max 50 workouts will be fetched)",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "Workout fetch offset. Position of the first element to fetch in a workout list.",
+                "req": false
+            },
+            {
+                "key": "filter-by-modification-time",
+                "value": "",
+                "description": "This parameter control what field will be used to filter workouts: modification time or workout start time. Default value is \"true\", which mean that all modified workouts in the specified time frame will be selected.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "JWT token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685533817193,
+        "lastModifiedTime": 1685533817193,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Request processed successfully.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": {
+                        "code": "string",
+                        "description": "string"
+                    },
+                    "metadata": {},
+                    "payload": {
+                        "accessible": true,
+                        "achievements": [
+                            "string"
+                        ],
+                        "activityId": 0,
+                        "avgPace": 0,
+                        "avgSpeed": 0,
+                        "cadence": 0,
+                        "centerPosition": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "commentCount": 0,
+                        "created": 0,
+                        "cumulativeRecoveryTime": 0,
+                        "description": "string",
+                        "energyConsumption": 0,
+                        "extensionTypes": [
+                            "SKI"
+                        ],
+                        "extensions": [
+                            {}
+                        ],
+                        "hrdata": {
+                            "userMaxHR": 0,
+                            "workoutAvgHR": 0,
+                            "workoutMaxHR": 0
+                        },
+                        "key": "string",
+                        "maxAltitude": 0,
+                        "maxSpeed": 0,
+                        "minAltitude": 0,
+                        "pictureCount": 0,
+                        "rankings": {
+                            "totalTimeOnRouteRanking": {
+                                "originalNumberOfWorkouts": 0,
+                                "originalRanking": 0
+                            }
+                        },
+                        "recoveryTime": 0,
+                        "startPosition": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "startTime": 0,
+                        "stepCount": 0,
+                        "stopPosition": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "stopTime": 0,
+                        "totalAscent": 0,
+                        "totalDescent": 0,
+                        "totalDistance": 0,
+                        "totalTime": 0,
+                        "timeOffsetInMinutes": 0,
+                        "workoutAchievements": [
+                            {
+                                "replacedByWorkout": {
+                                    "present": true
+                                },
+                                "type": "TIME_FOR_100M",
+                                "value": 0
+                            }
+                        ],
+                        "workoutId": 0,
+                        "workoutKey": "string",
+                        "workoutName": "string",
+                        "isEdited": true
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95577,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getWorkoutImage",
+        "executor_version": "v2",
+        "executor_display_name": "Get workout image",
+        "executor_description": "getImage",
+        "executor_category": "SuuntoWorkoutAPI",
+        "executor_category_group": "SuuntoWorkoutAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/image/{key}.jpg",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "key",
+                "value": "",
+                "description": "image id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685533487049,
+        "lastModifiedTime": 1685533487049,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "image stream will be returned, if image was found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 302,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Moved Temporarily",
+                "description": "Redirect to a actual url",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": "Not Found",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95578,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getWorkoutSummary",
+        "executor_version": "v2",
+        "executor_display_name": "Get workout summary",
+        "executor_description": "Get workout data as JSON",
+        "executor_category": "SuuntoWorkoutAPI",
+        "executor_category_group": "SuuntoWorkoutAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/workouts/{workoutKey}/summary",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "workoutKey",
+                "value": "",
+                "description": "Workout key"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "Access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685533617545,
+        "lastModifiedTime": 1685533617545,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Request processed successfully.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": {
+                        "code": "string",
+                        "description": "string"
+                    },
+                    "metadata": {},
+                    "payload": {
+                        "accessible": true,
+                        "achievements": [
+                            "string"
+                        ],
+                        "activityId": 0,
+                        "avgPace": 0,
+                        "avgSpeed": 0,
+                        "cadence": 0,
+                        "centerPosition": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "commentCount": 0,
+                        "created": 0,
+                        "cumulativeRecoveryTime": 0,
+                        "description": "string",
+                        "energyConsumption": 0,
+                        "extensionTypes": [
+                            "SKI"
+                        ],
+                        "extensions": [
+                            {}
+                        ],
+                        "hrdata": {
+                            "userMaxHR": 0,
+                            "workoutAvgHR": 0,
+                            "workoutMaxHR": 0
+                        },
+                        "key": "string",
+                        "maxAltitude": 0,
+                        "maxSpeed": 0,
+                        "minAltitude": 0,
+                        "pictureCount": 0,
+                        "rankings": {
+                            "totalTimeOnRouteRanking": {
+                                "originalNumberOfWorkouts": 0,
+                                "originalRanking": 0
+                            }
+                        },
+                        "recoveryTime": 0,
+                        "startPosition": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "startTime": 0,
+                        "stepCount": 0,
+                        "stopPosition": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "stopTime": 0,
+                        "totalAscent": 0,
+                        "totalDescent": 0,
+                        "totalDistance": 0,
+                        "totalTime": 0,
+                        "timeOffsetInMinutes": 0,
+                        "workoutAchievements": [
+                            {
+                                "replacedByWorkout": {
+                                    "present": true
+                                },
+                                "type": "TIME_FOR_100M",
+                                "value": 0
+                            }
+                        ],
+                        "workoutId": 0,
+                        "workoutKey": "string",
+                        "workoutName": "string",
+                        "isEdited": true
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": "Bad Request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95574,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "exportUserWorkoutFit",
+        "executor_version": "v2",
+        "executor_display_name": "Export user workout in FIT",
+        "executor_description": "Export user workout in the FIT format",
+        "executor_category": "SuuntoWorkoutAPI",
+        "executor_category_group": "SuuntoWorkoutAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/workout/exportFit/{workoutIdOrKey}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "workoutIdOrKey",
+                "value": "",
+                "description": "Workout identifier (workoutKey)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "string JWT access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685533129538,
+        "lastModifiedTime": 1685533129538,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "User workout data in Garmin FIT format",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95576,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getWorkoutData",
+        "executor_version": "v2",
+        "executor_display_name": "Get workout data as JSON with location points",
+        "executor_description": "Get workout data as JSON",
+        "executor_category": "SuuntoWorkoutAPI",
+        "executor_category_group": "SuuntoWorkoutAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/workouts/{workoutKey}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "workoutKey",
+                "value": "",
+                "description": "Workout key"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "Access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685533327483,
+        "lastModifiedTime": 1685533327483,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "Request processed successfully.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95572,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getStatu",
+        "executor_version": "v2",
+        "executor_display_name": "Status",
+        "executor_description": "Status",
+        "executor_category": "SuuntoUploadAPI",
+        "executor_category_group": "SuuntoUploadAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/v2/upload/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Upload Id"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "string JWT access token",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685532703363,
+        "lastModifiedTime": 1685532703363,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "OK",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "string",
+                    "description": "string",
+                    "dataType": "string",
+                    "status": "string",
+                    "message": "string",
+                    "workoutKey": "string",
+                    "comment": "string",
+                    "notifyUser": true
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unprocessable Entity",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95571,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "initUpload",
+        "executor_version": "v2",
+        "executor_display_name": "Init Upload",
+        "executor_description": "Prepare Upload",
+        "executor_category": "SuuntoUploadAPI",
+        "executor_category_group": "SuuntoUploadAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://cloudapi.suunto.com/v2/upload/",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            },
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "string JWT access token",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "description": "Some description",
+                "comment": "Some Notes",
+                "notifyUser": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685531733003,
+        "lastModifiedTime": 1685531733003,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "OK",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "5e4abc416789b038e4bb40bf",
+                    "url": "https://askoworkoutdev001.blob.core.windows.net/fit/5e4abc416789b038e4bb40bf?sv=2019-02-02&se=2020-02-18T16%3A16%3A01Z&sr=b&sp=racwd&sig=%2Fk77heUEetbnCjl4fogqgx5GR9wb5ihxTTlOZ%2Fnd2tM%3D",
+                    "headers": {
+                        "x-ms-blob-type": "BlockBlob"
+                    },
+                    "method": "PUT",
+                    "description": "",
+                    "comment": "",
+                    "dataType": "FIT",
+                    "curlString": "curl -i -X PUT -T '/path/to/your/file' -H 'x-ms-blob-type: BlockBlob' 'https://askoworkoutdev001.blob.core.windows.net/fit/5e4abc416789b038e4bb40bf?sv=2019-02-02&se=2020-02-18T16%3A16%3A01Z&sr=b&sp=racwd&sig=%2Fk77heUEetbnCjl4fogqgx5GR9wb5ihxTTlOZ%2Fnd2tM%3D'"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unprocessable Entity",
+                "description": "On wrong parameters (e.g. unsupported data type)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 95560,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dailyActivityStatistic",
+        "executor_version": "v1",
+        "executor_display_name": "Daily activity statistics",
+        "executor_description": "Endpoint provides aggregated daily steps and energy consumption (in joules) data based on sample values from the watches. Data is stored into and fetched from the API using UTC time. Sample usage: /daily-activity-statistics?startdate=2019-02-11T02:00:00&enddate=2019-02-20T01:59:59 . Maximum fetch interval duration is 28 days. We advise to fetch the activity data every 24 hours.",
+        "executor_category": "SuuntoDailyActivityAPI",
+        "executor_category_group": "SuuntoDailyActivityAPI",
+        "service_provider": "suunto",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://cloudapi.suunto.com/247/daily-activity-statistics",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "startdate",
+                "value": "",
+                "description": "Start date and time for daily statistics export in ISO-8601 format.",
+                "req": false
+            },
+            {
+                "key": "enddate",
+                "value": "",
+                "description": "End date and time for daily statistics export in ISO-8601 format",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "JWT access token",
+                "req": false
+            },
+            {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "",
+                "description": "Subscription key which provides access to this API. Found in your Profile.",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1685529151661,
+        "lastModifiedTime": 1685529151661,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "OK",
+                "description": "array of aggregated daily statistics records",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "Name": "energyconsumption",
+                        "Aggregation": "sum",
+                        "Sources": [
+                            {
+                                "Name": "suunto-247-3e0f7c17-2775-477a-a12f-a50ff0170860",
+                                "Samples": [
+                                    {
+                                        "TimeISO8601": "2019-02-11T02:00:00.000",
+                                        "Value": null
+                                    },
+                                    {
+                                        "TimeISO8601": "2019-02-12T02:00:00.000",
+                                        "Value": 640580.3985
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "stepcount",
+                        "Aggregation": "sum",
+                        "Sources": [
+                            {
+                                "Name": "suunto-247-3e0f7c17-2775-477a-a12f-a50ff0170860",
+                                "Samples": [
+                                    {
+                                        "TimeISO8601": "2019-02-11T02:00:00.000",
+                                        "Value": null
+                                    },
+                                    {
+                                        "TimeISO8601": "2019-02-12T02:00:00.000",
+                                        "Value": 4617
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": "Bad request. Something is wrong with the parameters.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": "Authentication failed.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal Server Error",
+                "description": "Internal server error.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Service Unavailable",
+                "description": "Service capacity exceeded. Try again later.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

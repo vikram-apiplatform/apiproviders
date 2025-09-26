@@ -1,0 +1,728 @@
+[
+    {
+        "id": 114798,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fetchCreditBalanceAndFreeAPICalls",
+        "executor_version": "v1",
+        "executor_display_name": "Fetch credit balance and free API calls",
+        "executor_description": "Get the current credit balance and number of free API calls.  Notes:  Balance changes may be delayed by several seconds. To locally keep track of your credit balance, you should therefore only call this endpoint initially (or e.g. when the user manually triggers a refresh), then use the X-Credits-Charged response header returned with each image processing response to adjust the local balance.  The \"sizes\" field is always \"all\", is deprecated and will soon be removed.",
+        "executor_category": "Fetch account info",
+        "executor_category_group": "Fetch account info",
+        "service_provider": "removebg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.remove.bg/v1.0/improve",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "description": ""
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694668411647,
+        "lastModifiedTime": 1694668411647,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "data": {
+                        "attributes": {
+                            "credits": {
+                                "total": 200,
+                                "subscription": 150,
+                                "payg": 50,
+                                "enterprise": 0
+                            },
+                            "api": {
+                                "free_calls": 50,
+                                "sizes": "all"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Authentication failed",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "Missing API Key"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Rate limit exceeded",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "Rate limit exceeded"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114796,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "removeTheBackgroundOfAnImage",
+        "executor_version": "v1",
+        "executor_display_name": "Remove the background of an image",
+        "executor_description": "Removes the background of a JPG/PNG image.  File size: up to 12 MB Image source: File upload (binary or as base64 encoded string) or download from URL Image Content: Any photo with a foreground (e.g. people, products, animals, cars, etc.) Output resolutions available: Preview (up to 0.25 megapixels), Full (up to 25 megapixels)",
+        "executor_category": "Background Removal",
+        "executor_category_group": "Background Removal",
+        "service_provider": "removebg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.remove.bg/v1.0/removebg",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            },
+            {
+                "description": ""
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "image_file",
+                    "value": "",
+                    "description": "Source image file (binary). (If this parameter is present, the other image source parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "image_file_b64",
+                    "value": "",
+                    "description": "Source image file (base64-encoded string). (If this parameter is present, the other image source parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "image_url",
+                    "value": "",
+                    "description": "Source image URL. (If this parameter is present, the other image source parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "size",
+                    "value": "",
+                    "description": "Maximum output image resolution: \"preview\" (default) = Resize image to 0.25 megapixels (e.g. 625\u00d7400 pixels) \u2013 0.25 credits per image, \"full\" = Use original image resolution, up to 25 megapixels (e.g. 6250x4000) with formats ZIP or JPG, or up to 10 megapixels (e.g. 4000x2500) with PNG \u2013 1 credit per image), \"auto\" = Use highest available resolution (based on image size and available credits).  For backwards-compatibility this parameter also accepts the values \"medium\" (up to 1.5 megapixels) and \"hd\" (up to 4 megapixels) for 1 credit per image. The value \"full\" is also available under the name \"4k\" and the value \"preview\" is aliased as \"small\" and \"regular\".",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "type",
+                    "value": "",
+                    "description": "Foreground type: \"auto\" = Automatically detect kind of foreground, \"person\" = Use person(s) as foreground, \"product\" = Use product(s) as foreground. \"car\" = Use car as foreground,",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "type_level",
+                    "value": "",
+                    "description": "Classification level of the detected foreground type: \"none\" = No classification (X-Type Header won't bet set on the response) \"1\" = Use coarse classification classes: [person, product, animal, car, other] \"2\" = Use more specific classification classes: [person, product, animal, car, car_interior, car_part, transportation, graphics, other] \"latest\" = Always use the latest classification classes available",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "format",
+                    "value": "",
+                    "description": "Result image format: \"auto\" = Use PNG format if transparent regions exist, otherwise use JPG format (default), \"png\" = PNG format with alpha transparency, \"jpg\" = JPG format, no transparency, \"zip\" = ZIP format, contains color image and alpha matte image, supports transparency (recommended).",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "roi",
+                    "value": "",
+                    "description": "Region of interest: Only contents of this rectangular region can be detected as foreground. Everything outside is considered background and will be removed. The rectangle is defined as two x/y coordinates in the format \"x1 y1 x2 y2\". The coordinates can be in absolute pixels (suffix 'px') or relative to the width/height of the image (suffix '%'). By default, the whole image is the region of interest (\"0% 0% 100% 100%\").",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "crop",
+                    "value": "",
+                    "description": "Whether to crop off all empty regions (default: false). Note that cropping has no effect on the amount of charged credits.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "crop_margin",
+                    "value": "",
+                    "description": "Adds a margin around the cropped subject (default: 0). Can be an absolute value (e.g. \"30px\") or relative to the subject size (e.g. \"10%\"). Can be a single value (all sides), two values (top/bottom and left/right) or four values (top, right, bottom, left). This parameter only has an effect when \"crop=true\". The maximum margin that can be added on each side is 50% of the subject dimensions or 500 pixels.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "scale",
+                    "value": "",
+                    "description": "Scales the subject relative to the total image size. Can be any value from \"10%\" to \"100%\", or \"original\" (default). Scaling the subject implies \"position=center\" (unless specified otherwise).",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "position",
+                    "value": "",
+                    "description": "Positions the subject within the image canvas. Can be \"original\" (default unless \"scale\" is given), \"center\" (default when \"scale\" is given) or a value from \"0%\" to \"100%\" (both horizontal and vertical) or two values (horizontal, vertical).",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "channels",
+                    "value": "",
+                    "description": "Request either the finalized image (\"rgba\", default) or an alpha mask (\"alpha\"). Note: Since remove.bg also applies RGB color corrections on edges, using only the alpha mask often leads to a lower final image quality. Therefore \"rgba\" is recommended.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "add_shadow",
+                    "value": "",
+                    "description": "Whether to add an artificial shadow to the result (default: false). NOTE: Adding shadows is currently only supported for car photos. Other subjects are returned without shadow, even if set to true (this might change in the future).",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "semitransparency",
+                    "value": "",
+                    "description": "Whether to have semi-transparent regions in the result (default: true). NOTE: Semitransparency is currently only supported for car windows (this might change in the future). Other objects are returned without semitransparency, even if set to true.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "bg_color",
+                    "value": "",
+                    "description": "Adds a solid color background. Can be a hex color code (e.g. 81d4fa, fff) or a color name (e.g. green). For semi-transparency, 4-/8-digit hex codes are also supported (e.g. 81d4fa77). (If this parameter is present, the other bg_ parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "bg_image_url",
+                    "value": "",
+                    "description": "Adds a background image from a URL. The image is centered and resized to fill the canvas while preserving the aspect ratio, unless it already has the exact same dimensions as the foreground image. (If this parameter is present, the other bg_ parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "bg_image_file",
+                    "value": "",
+                    "description": "Adds a background image from a file (binary). The image is centered and resized to fill the canvas while preserving the aspect ratio, unless it already has the exact same dimensions as the foreground image. (If this parameter is present, the other bg_ parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694668016513,
+        "lastModifiedTime": 1694668016514,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Image background removed",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Invalid parameters or input file unprocessable (no credits charged)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "code": "multiple_sources",
+                            "title": "Multiple image sources given: Please provide either the image_url, image_file or image_file_b64 parameter."
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 402,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Insufficient credits (no credits charged)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "Insufficient credits"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Authentication failed (no credits charged)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "Missing API Key"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Rate limit exceeded (no credits charged)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "Rate limit exceeded"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 114797,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "improvementProgram",
+        "executor_version": "v1",
+        "executor_display_name": "Improvement Program",
+        "executor_description": "Submit an image to the remove.bg Improvement program  Contribute an image that remove.bg is currently not able to remove the background from properly Help us make remove.bg better Get better results for similiar images in the future",
+        "executor_category": "Improvement Program",
+        "executor_category_group": "Improvement Program",
+        "service_provider": "removebg",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.remove.bg/v1.0/improve",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            },
+            {
+                "description": ""
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {
+                "add_to": "header"
+            }
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "image_file",
+                    "value": "",
+                    "description": "Source image file (binary). (If this parameter is present, the other image source parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "image_file_b64",
+                    "value": "",
+                    "description": "Source image file (base64-encoded string). (If this parameter is present, the other image source parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "image_url",
+                    "value": "",
+                    "description": "Source image URL. (If this parameter is present, the other image source parameters must be empty.)",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "image_filename",
+                    "value": "",
+                    "description": "Filename of the image, if not provided it will be autodetected form the submitted data.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "tag",
+                    "value": "",
+                    "description": "Images with the same tag are grouped together.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1694668271650,
+        "lastModifiedTime": 1694668271650,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Image submitted",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "fe09820b-be79-4511-8836-679583529882"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Invalid parameters or input file unprocessable",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "File too large"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Authentication failed",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "Missing API Key"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Rate limit exceeded",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "title": "Rate limit exceeded"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

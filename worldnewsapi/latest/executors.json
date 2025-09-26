@@ -1,0 +1,1125 @@
+[
+    {
+        "id": 126494,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchnews",
+        "executor_version": "v1",
+        "executor_display_name": "Search News",
+        "executor_description": "Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like but you have to set at least one, e.g. text or language.",
+        "executor_category": "SearchNews",
+        "executor_category_group": "SearchNews",
+        "service_provider": "worldnewsapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.worldnewsapi.com/search-news",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "text",
+                "value": "",
+                "description": "The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford",
+                "req": false
+            },
+            {
+                "key": "language",
+                "value": "",
+                "description": "The ISO 6391 language code of the news.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of points left today (depends on your plan)",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711349202302,
+        "lastModifiedTime": 1711349202302,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "offset": 0,
+                    "number": 10,
+                    "available": 83,
+                    "news": [
+                        {
+                            "id": 28,
+                            "title": "Tesla to Release a Four-Motor Version of Cybertruck",
+                            "text": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck, the mass production of which was delayed until 2023 because of the lack of components and a lot of complex technologies that need to be scaled up. According to Musk, the initial production of the electric pickup truck will begin with a four-motor variant with \u201cindependent, ultra fast response torque control of each wheel,\u201d the tweet reads. In response, Twitter users asked if the Cybertruck could turn like a tank. Musk said that thanks to both the rear and front wheel steer, the electric truck will not only be able to turn like a tank, but also drive diagonally like a crab. According to Electrek, this change could be Tesla's reaction to what its competitors do. Since the introduction of Tesla\u2019s novelty, the market for electric pickup trucks has significantly evolved. Currently, one electric pickup on the market can turn like a tank \u2013 the Rivian R1T, while GMC's Hummer EV can drive diagonally. Following the announcement of Tesla Cybertruck in 2019, the company announced three configurations of the pickup truck: the entry-level model with one motor, the one with two motors, and the one with three. Rumor has it that the company intends to abandon the single-motor version altogether. In this case, Tesla Cybertruck will be sold with two, three, and four motors. Musk has promised to provide an update on the pickup's roadmap on the next earnings call. The production of Tesla Cybertruck is expected to begin at the end of 2022, and its mass production is slated to start in 2023.",
+                            "summary": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck. According to Musk, its initial production will begin with a four-motor variant.",
+                            "url": "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/",
+                            "image": "https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png",
+                            "publish_date": "2022-09-30 01:07:48",
+                            "authors": [
+                                "Iwan Stone",
+                                "Zahna Eklund"
+                            ],
+                            "language": "en",
+                            "source_country": "co",
+                            "sentiment": 0.712523
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126495,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "extractnews",
+        "executor_version": "v1",
+        "executor_display_name": "Extract News",
+        "executor_description": "Extract a news article from a website to a well structure JSON object.",
+        "executor_category": "ExtractNews",
+        "executor_category_group": "ExtractNews",
+        "service_provider": "worldnewsapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.worldnewsapi.com/extract-news",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "url",
+                "value": "",
+                "description": "The url of the news.",
+                "req": false
+            },
+            {
+                "key": "analyze",
+                "value": "",
+                "description": "Whether to analyze the news (extract entities etc.)",
+                "req": false
+            },
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of points left today (depends on your plan)",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1711349422548,
+        "lastModifiedTime": 1711349502361,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "title": "Tesla to Release a Four-Motor Version of Cybertruck",
+                    "text": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck, the mass production of which was delayed until 2023 because of the lack of components and a lot of complex technologies that need to be scaled up. According to Musk, the initial production of the electric pickup truck will begin with a four-motor variant with \u201cindependent, ultra fast response torque control of each wheel,\u201d the tweet reads. In response, Twitter users asked if the Cybertruck could turn like a tank. Musk said that thanks to both the rear and front wheel steer, the electric truck will not only be able to turn like a tank, but also drive diagonally like a crab. According to Electrek, this change could be Tesla's reaction to what its competitors do. Since the introduction of Tesla\u2019s novelty, the market for electric pickup trucks has significantly evolved. Currently, one electric pickup on the market can turn like a tank \u2013 the Rivian R1T, while GMC's Hummer EV can drive diagonally. Following the announcement of Tesla Cybertruck in 2019, the company announced three configurations of the pickup truck: the entry-level model with one motor, the one with two motors, and the one with three. Rumor has it that the company intends to abandon the single-motor version altogether. In this case, Tesla Cybertruck will be sold with two, three, and four motors. Musk has promised to provide an update on the pickup's roadmap on the next earnings call. The production of Tesla Cybertruck is expected to begin at the end of 2022, and its mass production is slated to start in 2023.",
+                    "url": "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/",
+                    "image": "https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png",
+                    "publish_date": "2022-09-30 01:07:48",
+                    "author": "Kay Lee",
+                    "language": "en",
+                    "source_country": "co",
+                    "sentiment": 0.712523
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": {
+            "showBodyParamDescription": false,
+            "bodyParamDescription": []
+        },
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126496,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "extractNewsLinks",
+        "executor_version": "v1",
+        "executor_display_name": "Extract News Links",
+        "executor_description": "Extract a news links from a news website.",
+        "executor_category": "ExtractNewsLinks",
+        "executor_category_group": "SearchNews",
+        "service_provider": "worldnewsapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.worldnewsapi.com/extract-news-links",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "url",
+                "value": "",
+                "description": "The url from which links should be extracted.",
+                "req": false
+            },
+            {
+                "key": "prefix",
+                "value": "",
+                "description": "The prefix the news links must start with.",
+                "req": false
+            },
+            {
+                "key": "sub-domain",
+                "value": "",
+                "description": "Whether to include links to news on sub-domains.",
+                "req": false
+            },
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of points left today (depends on your plan)",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711349679552,
+        "lastModifiedTime": 1711349679552,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "news_links": [
+                        "https://www.nytimes.com/2023/10/07/opinion/wnba-liberty-championship.html",
+                        "https://www.nytimes.com/2023/10/08/business/economy/labor-strikes.html",
+                        "https://www.nytimes.com/2023/10/08/dining/sunday-calls-for-old-fashioned-beef-stew.html"
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126498,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getGeoCoordinates",
+        "executor_version": "v1",
+        "executor_display_name": "Get Geo Coordinates",
+        "executor_description": "Retrieve the latitude and longitude of a location name. Given this information you can fill the location-filter parameter in the news search endpoint.",
+        "executor_category": "GetGeoCoordinates",
+        "executor_category_group": "GetGeoCoordinates",
+        "service_provider": "worldnewsapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.worldnewsapi.com/geo-coordinates",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "location",
+                "value": "",
+                "description": "The address or name of the location.",
+                "req": false
+            },
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of points left today (depends on your plan)",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711349988955,
+        "lastModifiedTime": 1711349988955,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "latitude": 35.652832,
+                    "longitude": 139.839478,
+                    "city": "Tokyo"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126497,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "newsWebsitetoRSSFeed",
+        "executor_version": "v1",
+        "executor_display_name": "News Website to RSS Feed",
+        "executor_description": "Turn a news website into an RSS feed. Any page of a news website can be turned into an RSS feed. Provide the URL to the page and the API will return an RSS feed with the latest news from that page.",
+        "executor_category": "NewsWebsitetoRSSFeed",
+        "executor_category_group": "NewsWebsitetoRSSFeed",
+        "service_provider": "worldnewsapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.worldnewsapi.com/feed.rss",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "url",
+                "value": "",
+                "description": "The url from which links should be extracted.",
+                "req": false
+            },
+            {
+                "key": "extract-news\t",
+                "value": "",
+                "description": "Whether extract news and add information such as description, publish date, and image to each item.",
+                "req": false
+            },
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of points used by the request",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of points used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of points left today (depends on your plan)",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711349835485,
+        "lastModifiedTime": 1711349835485,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129549,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "topNews",
+        "executor_version": "v1",
+        "executor_display_name": "Top News",
+        "executor_description": "Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.  Results for the current day are frequently updated to capture new developments.",
+        "executor_category": "Top News",
+        "executor_category_group": "Top News",
+        "service_provider": "worldnewsapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.worldnewsapi.com/top-news",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "source-country",
+                "value": "",
+                "description": "The ISO 3166 country code of the country for which top news should be retrieved.",
+                "req": false
+            },
+            {
+                "key": "language",
+                "value": "",
+                "description": "The ISO 6391 language code of the top news. The language must be one spoken in the source-country.",
+                "req": false
+            },
+            {
+                "key": "date",
+                "value": "",
+                "description": "The date for which the top news should be retrieved. If no date is given, the current day is assumed.",
+                "req": false
+            },
+            {
+                "key": "headlines-only",
+                "value": "",
+                "description": "Whether to only return basic information such as id, title, and url of the news.",
+                "req": false
+            },
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720174509031,
+        "lastModifiedTime": 1720174509031,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "top_news": [
+                        {
+                            "news": [
+                                {
+                                    "id": 224767206,
+                                    "title": "Jury to Begin Deliberations In Trump Trial",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://politicalwire.com/2024/05/28/jury-to-begin-deliberations-in-trump-trial/",
+                                    "image": "https://politicalwire.com/wp-content/uploads/2018/02/PW-podcast-logo.jpg",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 00:10:48",
+                                    "author": "Taegan Goddard",
+                                    "authors": [
+                                        "Taegan Goddard"
+                                    ]
+                                },
+                                {
+                                    "id": 224839780,
+                                    "title": "Jury in Donald Trump's hush money case to begin deliberations",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://apnews.com/article/trump-trial-deliberations-jury-judge-verdict-390f045e9e8a37f069e82576edd7a842",
+                                    "image": "https://dims.apnews.com/dims4/default/3446536/2147483647/strip/true/crop/6195x3485+0+323/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fec%2Fd5%2Ff56fdc38f86e38b6217b50083d19%2Fd5ef4afe1cb64825be1349de8fd40df0",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 04:30:08",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 224936214,
+                                    "title": "Jury in Trump's hush money case to begin deliberations after hearing instructions from judge",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://whdh.com/news/jury-in-trumps-hush-money-case-to-begin-deliberations-after-hearing-instructions-from-judge/",
+                                    "image": "https://whdh.com/wp-content/uploads/sites/3/2024/05/WHDH_2024-05-27_15h27-33-cover.jpg?quality=60&strip=color",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 08:47:26",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 224956968,
+                                    "title": "Trump trial jury set to begin deliberating verdict today after judge issues instructions",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://www.cbsnews.com/live-updates/trump-trial-verdict-jury-deliberations-judge-instructions/",
+                                    "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2024/05/29/66524a85-576c-4c40-94ba-cfb04cbb7950/thumbnail/1200x630g3/d2d9c8ea35b659db292c371bdc0a47e8/gettyimages-2154550679.jpg?v=c5044be0004eac09882c007ac02fef6d",
+                                    "video": "https://prod.vodvideo.cbsnews.com/cbsnews/vr/hls/2942696_hls/master.m3u8",
+                                    "publish_date": "2024-05-29 10:00:18",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 224957034,
+                                    "title": "Jury in Trump\u2019s Hush-Money Trial to Begin Deliberations on Wednesday",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://www.nytimes.com/2024/05/29/nyregion/trump-trial-jury-charges.html",
+                                    "image": "https://static01.nyt.com/images/2024/05/29/multimedia/29trump-trial-pinned-qzmh/29trump-trial-pinned-qzmh-facebookJumbo-v2.jpg",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 10:12:08",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 224961802,
+                                    "title": "Jury to begin deliberations in Trump trial and more top headlines",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://www.foxnews.com/us/judge-outline-framework-jury-trial-decide-trumps-fate-more-top-headlines",
+                                    "image": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/05/931/524/judge-trump.png?ve=1&tl=1",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 10:22:36",
+                                    "authors": []
+                                }
+                            ]
+                        },
+                        {
+                            "news": [
+                                {
+                                    "id": 225109966,
+                                    "title": "Scottie Scheffler PGA Championship charges set to get dropped",
+                                    "text": "...",
+                                    "url": "https://www.sbnation.com/golf/2024/5/29/24167024/scottie-scheffler-pga-championship-louisville-police-drop-charges",
+                                    "image": "https://cdn.vox-cdn.com/thumbor/WBEMdSSOD_jHJGnNV7hLX88zANk=/0x444:5601x3376/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/25469085/2152809074.jpg",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 15:24:34",
+                                    "author": "Brendan Porath",
+                                    "authors": [
+                                        "Brendan Porath"
+                                    ]
+                                },
+                                {
+                                    "id": 225118216,
+                                    "title": "Charges against world\u2019s top golfer Scottie Scheffler dropped after arrest outside PGA Championship",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://www.pilotonline.com/2024/05/29/charges-against-worlds-top-golfer-scottie-scheffler-dropped-after-arrest-outside-pga-championship/",
+                                    "image": "https://www.pilotonline.com/wp-content/uploads/2024/05/Scheffler_Arrest_Golf_86723_6d56d8.jpg?w=1024",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 17:05:55",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 225118304,
+                                    "title": "Charges against world\u2019s top golfer Scottie Scheffler dropped after arrest outside PGA Championship",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://www.twincities.com/2024/05/29/charges-against-worlds-top-golfer-scottie-scheffler-dropped-after-arrest-outside-pga-championship/",
+                                    "image": "https://www.twincities.com/wp-content/uploads/2024/05/Scheffler_Arrest_Golf_86723_6d56d8.jpg?w=1024",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 17:05:55",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 225119550,
+                                    "title": "Charges against world's top golfer Scottie Scheffler dropped after arrest outside PGA Championship",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://wsvn.com/sports/charges-against-worlds-top-golfer-scottie-scheffler-dropped-after-arrest-outside-pga-championship/",
+                                    "image": "https://wsvn.com/wp-content/uploads/sites/2/2024/04/240414_Scottie_Scheffler.jpg?quality=60&strip=color",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 17:10:09",
+                                    "authors": []
+                                }
+                            ]
+                        },
+                        {
+                            "news": [
+                                {
+                                    "id": 225012756,
+                                    "title": "Pandas to return to DC's National Zoo",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://www.nbcwashington.com/news/local/national-zoo-expected-to-make-announcement-about-panda-program/3627045/",
+                                    "image": "https://media.nbcwashington.com/2019/09/AP163564666366.jpg?quality=85&strip=all&fit=722%2C406",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 12:37:10",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 225017360,
+                                    "title": "Giant pandas are returning to D.C.'s National Zoo",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://apnews.com/article/giant-pandas-washington-zoo-china-764f8016d98c01ab579bdbb6dcc3dd6b",
+                                    "image": "https://dims.apnews.com/dims4/default/1f5b9aa/2147483647/strip/true/crop/3382x1902+0+176/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fc4%2F1e%2F69094cc265243956d243348db814%2F71b160bbb0204eb594474a4934fb0df6",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 12:51:08",
+                                    "authors": []
+                                },
+                                {
+                                    "id": 225017634,
+                                    "title": "2 new giant pandas are returning to Washington\u2019s National Zoo from China by the end of the year",
+                                    "text": "...",
+                                    "summary": "...",
+                                    "url": "https://www.baltimoresun.com/2024/05/29/2-new-giant-pandas-are-returning-to-washingtons-national-zoo-from-china-by-the-end-of-the-year/",
+                                    "image": "https://www.baltimoresun.com/wp-content/uploads/2024/05/Giant_Pandas_89303.jpg?w=1024",
+                                    "video": null,
+                                    "publish_date": "2024-05-29 12:52:08",
+                                    "authors": []
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "country": "us"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129551,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveNewsArticlesbyIds",
+        "executor_version": "v1",
+        "executor_display_name": "Retrieve News Articles by Ids",
+        "executor_description": "Retrieve information about one or more news articles by their ids. The ids can be retrieved from the search news or top news APIs.",
+        "executor_category": "Retrieve News",
+        "executor_category_group": "Retrieve News",
+        "service_provider": "worldnewsapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.worldnewsapi.com/retrieve-news",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "ids",
+                "value": "",
+                "description": "A comma separated list of news ids.",
+                "req": false
+            },
+            {
+                "key": "api-key",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720174645736,
+        "lastModifiedTime": 1720174645736,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "news": [
+                        {
+                            "id": 2352,
+                            "title": "While China and the US squabble, the world\u2019s debt and climate crises worsen - Amnesty International",
+                            "text": "...",
+                            "summary": "...",
+                            "url": "https://www.amnesty.org/en/latest/news/2020/09/while-china-and-the-us-squabble-the-world-debt-and-climate-crises-worsen/",
+                            "image": "https://www.amnesty.org/en/wp-content/uploads/2021/06/272748-1024x433.jpg",
+                            "video": null,
+                            "publish_date": "2020-09-11 18:05:26",
+                            "authors": [
+                                "Amnesty International",
+                                "William Nee"
+                            ],
+                            "language": "en",
+                            "catgory": "politics",
+                            "source_country": "mx",
+                            "sentiment": -0.176
+                        },
+                        {
+                            "id": 2354,
+                            "title": "Sexual violence against Hong Kong protesters \u2013 what\u2019s going on? - Amnesty International",
+                            "text": "...",
+                            "summary": "...",
+                            "url": "https://www.amnesty.org/en/latest/news/2019/12/sexual-violence-against-hong-kong-protesters/",
+                            "image": "https://www.amnesty.org/en/wp-content/uploads/2021/06/264281-1024x433.jpg",
+                            "video": null,
+                            "publish_date": "2019-12-20 11:14:17",
+                            "authors": [
+                                "Amnesty International"
+                            ],
+                            "language": "en",
+                            "catgory": "politics",
+                            "source_country": "mx",
+                            "sentiment": -0.449
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]
