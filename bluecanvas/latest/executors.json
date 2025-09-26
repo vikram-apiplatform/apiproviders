@@ -1,0 +1,1211 @@
+[
+    {
+        "id": 107628,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deploymentscreated",
+        "executor_version": "v1",
+        "executor_display_name": "deployments/created",
+        "executor_description": "Emitted once when a new deployment request is created.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://example.com/bluecanvas/event-handler/#Event=deployments/created",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "Type": "Notification",
+                "Event": "deployments/created",
+                "Deployment": {
+                    "tenantId": "td25c036d-6c12-4d17-aac6-c87babcaf8bf",
+                    "deploymentNumber": 100,
+                    "type": "STORY",
+                    "title": "Add FooController and related sources",
+                    "description": "",
+                    "phase": "NEW",
+                    "state": "WORKING",
+                    "sourceBranchName": "dev",
+                    "sourceCommit": "8c4a2b8fbd5e82826b227299053280c9e543e95a",
+                    "targetBranchName": "integration",
+                    "deploymentBranchName": "deployment-request-dev-d1246a31c-1560-44d0-90c7-f2743b127571",
+                    "testLevel": "RUN_SPECIFIED_TESTS",
+                    "specifiedTests": [
+                        "FooControllerTest"
+                    ],
+                    "files": [
+                        "src/classes/FooController.cls",
+                        "src/classes/FooController.cls-meta.xml"
+                    ],
+                    "creator": {
+                        "email": "egbert@example.com"
+                    }
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690269444966,
+        "lastModifiedTime": 1690269444967,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 107635,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "subscriptionConfirmation",
+        "executor_version": "v1",
+        "executor_display_name": "SubscriptionConfirmation",
+        "executor_description": "When you create a webhook, Blue Canvas sends a subscription confirmation message to the endpoint. The confirmation message contains a SubscribeURL that must be fetched in your code, or you can log it and open it manually in the browser.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://example.com/bluecanvas/event-handler/#type=SubscriptionConfirmation",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "Type": "SubscriptionConfirmation",
+                "MessageId": "2bf38cf0-de5e-41ec-8d9b-88bb98d1111f",
+                "Token": "EXAMPLE2804",
+                "TopicArn": "arn:aws:sns:us-east-1:801025944130:td25c036d-6c12-4d17-aac6-c87babcaf8bf",
+                "Message": "You have chosen to subscribe to the topic arn:aws:sns:us-east-1:801025944130:td25c036d-6c12-4d17-aac6-c87babcaf8bf.\nTo confirm the subscription, visit the SubscribeURL included in this message.",
+                "SubscribeURL": "https://sns.us-east-1.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-east-1:801025944130:td25c036d-6c12-4d17-aac6-c87babcaf8bf&Token=EXAMPLE2804",
+                "Timestamp": "2020-05-13T06:55:21.459Z",
+                "SignatureVersion": "1",
+                "Signature": "EXAMPLE3MdmvDQ==",
+                "SigningCertURL": "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690270294517,
+        "lastModifiedTime": 1690270294517,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 107631,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deploymentsvalidating",
+        "executor_version": "v1",
+        "executor_display_name": "deployments/validating",
+        "executor_description": "Emitted when Blue Canvas is starting to validate against Salesforce.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://example.com/bluecanvas/event-handler/#Event=deployments/validating",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "Type": "Notification",
+                "Event": "deployments/created",
+                "Deployment": {
+                    "tenantId": "td25c036d-6c12-4d17-aac6-c87babcaf8bf",
+                    "deploymentNumber": 100,
+                    "type": "STORY",
+                    "title": "Add FooController and related sources",
+                    "description": "",
+                    "phase": "NEW",
+                    "state": "WORKING",
+                    "sourceBranchName": "dev",
+                    "sourceCommit": "8c4a2b8fbd5e82826b227299053280c9e543e95a",
+                    "targetBranchName": "integration",
+                    "deploymentBranchName": "deployment-request-dev-d1246a31c-1560-44d0-90c7-f2743b127571",
+                    "testLevel": "RUN_SPECIFIED_TESTS",
+                    "specifiedTests": [
+                        "FooControllerTest"
+                    ],
+                    "files": [
+                        "src/classes/FooController.cls",
+                        "src/classes/FooController.cls-meta.xml"
+                    ],
+                    "creator": {
+                        "email": "egbert@example.com"
+                    }
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690269784904,
+        "lastModifiedTime": 1690269784904,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 107634,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deploymentsvalidated",
+        "executor_version": "v1",
+        "executor_display_name": "deployments/validated",
+        "executor_description": "Emitted when validation agains Salesforce is complete.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://example.com/bluecanvas/event-handler/#Event=deployments/validated",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "Type": "Notification",
+                "Event": "deployments/validated",
+                "Deployment": {
+                    "tenantId": "td25c036d-6c12-4d17-aac6-c87babcaf8bf",
+                    "deploymentNumber": 100,
+                    "type": "STORY",
+                    "title": "Add FooController and related sources",
+                    "description": "",
+                    "phase": "VALIDATE",
+                    "state": "READY",
+                    "sourceBranchName": "dev",
+                    "sourceCommit": "8c4a2b8fbd5e82826b227299053280c9e543e95a",
+                    "targetBranchName": "integration",
+                    "deploymentBranchName": "deployment-request-dev-d1246a31c-1560-44d0-90c7-f2743b127571",
+                    "testLevel": "RUN_SPECIFIED_TESTS",
+                    "specifiedTests": [
+                        "FooControllerTest"
+                    ],
+                    "files": [
+                        "src/classes/FooController.cls",
+                        "src/classes/FooController.cls-meta.xml"
+                    ],
+                    "creator": {
+                        "email": "egbert@example.com"
+                    }
+                },
+                "Validation": {
+                    "state": "DONE",
+                    "result": "SUCCESS",
+                    "externalId": "0Af3i00000N7CcZCAV",
+                    "externalUrl": "https://tokyo-demo-inc.my.salesforce.com/changemgmt/monitorDeploymentsDetails.apexp?asyncId=0Af3i00000N7CcZCAV"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690270072746,
+        "lastModifiedTime": 1690270072746,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129569,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deploymentsdeployed",
+        "executor_version": "v1",
+        "executor_display_name": "deployments deployed",
+        "executor_description": "Emitted when the deployment against Salesforce is complete.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://example.com/bluecanvas/event-handler/#Event=deployments/deployed",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "Type": "Notification",
+                "Event": "deployments/deployed",
+                "Deployment": {
+                    "tenantId": "td25c036d-6c12-4d17-aac6-c87babcaf8bf",
+                    "deploymentNumber": "100",
+                    "type": "STORY",
+                    "title": "Add FooController and related sources",
+                    "phase": "NEW",
+                    "state": "WORKING",
+                    "sourceBranchName": "dev-alex",
+                    "sourceCommit": "27451efc674fd417ccc4e74d5eec2ad051553c76",
+                    "targetBranchName": "integration",
+                    "labels": [
+                        "[\"qa-ready\"]"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720182762441,
+        "lastModifiedTime": 1720182762441,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129568,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deploymentsreviewed",
+        "executor_version": "v1",
+        "executor_display_name": " deployments reviewed",
+        "executor_description": "Emitted when a user reviews a deployment request.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://example.com/bluecanvas/event-handler/#Event=deployments/reviewed",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "Type": "Notification",
+                "Event": "deployments/created",
+                "Deployment": {
+                    "tenantId": "td25c036d-6c12-4d17-aac6-c87babcaf8bf",
+                    "deploymentNumber": "100",
+                    "type": "STORY",
+                    "title": "Add FooController and related sources",
+                    "phase": "NEW",
+                    "state": "WORKING",
+                    "sourceBranchName": "dev-alex",
+                    "sourceCommit": "27451efc674fd417ccc4e74d5eec2ad051553c76",
+                    "targetBranchName": "integration",
+                    "labels": [
+                        "[\"qa-ready\"]"
+                    ]
+                },
+                "Review": {
+                    "comment": "null"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1720182660010,
+        "lastModifiedTime": 1720182860319,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": {
+            "showBodyParamDescription": false,
+            "bodyParamDescription": []
+        },
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129567,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "branchescommitted",
+        "executor_version": "v1",
+        "executor_display_name": "branches committed",
+        "executor_description": "Emitted once when a new deployment request is created. This document describes an event that occurs when a new commit is pushed to a branch.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://example.com/bluecanvas/event-handler/#Event=branches/committed",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "Type": "Notification",
+                "Event": "branches/committed"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1720182544695,
+        "lastModifiedTime": 1720182835342,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": {
+            "showBodyParamDescription": false,
+            "bodyParamDescription": []
+        },
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 107617,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "upsertaCheck",
+        "executor_version": "v1",
+        "executor_display_name": "Upsert a Check",
+        "executor_description": "Creates or updates the status of a check for a given deployment by its canonical check name. The first time you invoke this action, a new record for the check is created and will appear in the interface. Successive calls to this action update the state of that record. This allows you to update the status of a check as it progresses in your external system.",
+        "executor_category": "DeploymentChecks",
+        "executor_category_group": "DeploymentChecks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://COMPANY.my.bluecanvas.io/apis/rest/v1/deployments/{deploymentNumber}/checks/{name}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "deploymentNumber",
+                "value": "",
+                "description": "The numeric identifier of the Deployment Request for which you are updating the check."
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "The canonical identifier of the status check, for example \"code-coverage\"."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "state": "DONE",
+                "result": "SUCCESS",
+                "description": "Build #20194 completed successfully in 40s",
+                "externalUrl": "https://ci.example.com/jobs/20194",
+                "externalId": "20194"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690268421044,
+        "lastModifiedTime": 1690268421044,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "check": {
+                        "name": "jenkins-bot",
+                        "state": "DONE",
+                        "result": "SUCCESS",
+                        "description": "Build #20194 completed successfully in 40s",
+                        "externalUrl": "https://ci.example.com/jobs/20194",
+                        "externalId": "20194"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129566,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteaCheck",
+        "executor_version": "v1",
+        "executor_display_name": "Delete a Check",
+        "executor_description": "We recommend updating existing checks to a SUCCESS or a SKIPPED state, this will unblock the user from deploying. However for completeness we allow you to remove the checks in case they where created by mistake.",
+        "executor_category": "DeploymentChecks",
+        "executor_category_group": "DeploymentChecks",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://COMPANY.my.bluecanvas.io/apis/rest/v1/deployments/{deploymentNumber}/checks/{name}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "deploymentNumber",
+                "value": "",
+                "description": "The numeric identifier of the Deployment Request for which you are updating the check."
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "The canonical identifier of the status check, for example"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720182430225,
+        "lastModifiedTime": 1720182430225,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "check": {
+                        "name": "jenkins-bot",
+                        "state": "DONE",
+                        "result": "SUCCESS",
+                        "description": "Build #20194 completed successfully in 40s",
+                        "externalUrl": "https://ci.example.com/jobs/20194",
+                        "externalId": "20194"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 107624,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getanArchiveofFiles",
+        "executor_version": "v1",
+        "executor_display_name": "Get an Archive of Files",
+        "executor_description": "Retrieves a gzipped tarball (.tar.gz) of the file tree for the specified revision. Use this to fetch a copy of all files for local code inspection.",
+        "executor_category": "Repository",
+        "executor_category_group": "Repository",
+        "service_provider": "bluecanvas",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://COMPANY.my.bluecanvas.io/apis/rest/v1/archives/{revision}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "revision",
+                "value": "",
+                "description": "A valid Git revision (see man gitrevision)."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1690269017080,
+        "lastModifiedTime": 1690269325574,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

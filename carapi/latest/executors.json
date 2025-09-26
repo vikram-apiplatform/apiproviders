@@ -1,0 +1,3613 @@
+[
+    {
+        "id": 129519,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dataFeedLastUpdated",
+        "executor_version": "v1",
+        "executor_display_name": "Data Feed Last Updated",
+        "executor_description": "Returns last modified timestamp of the data feed. All times are United States Eastern Standard Time (EST).",
+        "executor_category": "Data Feeds",
+        "executor_category_group": "Data Feeds",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/api/data-feeds/last-updated",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720094711977,
+        "lastModifiedTime": 1720094711977,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "last_updated": "2023-01-01 12:00:00"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "BadRequestException",
+                    "code": "400",
+                    "url": "/url/path",
+                    "message": "The request contains invalid data. The returned error message should indicate the issue."
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "MethodNotAllowedException",
+                    "code": "405",
+                    "url": "/url/path",
+                    "message": "The HTTP method used to request this resource is not valid. For example, using an HTTP POST  when the endpoint only accepts HTTP GET."
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "UnauthenticatedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "TooManyRequestsException",
+                    "code": "429",
+                    "url": "/url/path",
+                    "message": "TooManyRequestsException - Max Per Minute: 600 (note: daily rate limits may apply, see your subscription plans details)"
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ServiceUnavailableException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ServiceUnavailableException",
+                    "code": "503",
+                    "url": "/url/path",
+                    "message": "The server is unavailable, typically only encountered during scheduled maintenance."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129517,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getDataFeed",
+        "executor_version": "v1",
+        "executor_display_name": "Get Data Feed",
+        "executor_description": "Returns a datafeed as a CSV compressed in a ZIP for download, you must subscribe to this product through your dashboard.",
+        "executor_category": "Data Feeds",
+        "executor_category_group": "Data Feeds",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/api/data-feeds/download",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720094569550,
+        "lastModifiedTime": 1720094569551,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "UnauthenticatedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ServiceUnavailableException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129515,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getTodaysAPIUsage",
+        "executor_version": "v1",
+        "executor_display_name": "Get Today's API Usage",
+        "executor_description": "Returns the total requests made by your account today to rate-limited endpoints. All dates are reported using UTC/GMT -5 (US Eastern Standard Time).",
+        "executor_category": "Account",
+        "executor_category_group": "Account",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/api/account/requests-today",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720094424168,
+        "lastModifiedTime": 1720094424168,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "count": 42
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "BadRequestException",
+                    "code": "400",
+                    "url": "/url/path",
+                    "message": "The request contains invalid data. The returned error message should indicate the issue."
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "MethodNotAllowedException",
+                    "code": "405",
+                    "url": "/url/path",
+                    "message": "The HTTP method used to request this resource is not valid. For example, using an HTTP POST  when the endpoint only accepts HTTP GET."
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "UnauthenticatedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ServiceUnavailableException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ServiceUnavailableException",
+                    "code": "503",
+                    "url": "/url/path",
+                    "message": "The server is unavailable, typically only encountered during scheduled maintenance."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92336,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getAPIusages",
+        "executor_version": "v1",
+        "executor_display_name": "Get API usages",
+        "executor_description": "Returns the total requests made by your account since last month. All dates are reported using UTC/GMT -5 (US Eastern Standard Time).",
+        "executor_category": "Account",
+        "executor_category_group": "Account",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/account/requests",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683753874597,
+        "lastModifiedTime": 1683753874597,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "date": "2023-01-01",
+                        "count": 203
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "UnauthenticatedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 129521,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getMODELS",
+        "executor_version": "v1",
+        "executor_display_name": "Get Models",
+        "executor_description": "Search models by year, make, model, trim or make_id.",
+        "executor_category": "Models",
+        "executor_category_group": "Models",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/api/models",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Available values : id, make_id, name",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "Available values : asc, desc",
+                "req": false
+            },
+            {
+                "key": "verbose",
+                "value": "",
+                "description": "Includes make and model  Available values : yes, no",
+                "req": false
+            },
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "json",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1720095273753,
+        "lastModifiedTime": 1720095273753,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "collection": {
+                        "url": "/collection",
+                        "count": 50,
+                        "pages": 20,
+                        "total": 200,
+                        "next": "/collection?page=:number",
+                        "prev": "/collection?page=:number",
+                        "first": "/collection?page=:number",
+                        "last": "/collection?page=:number"
+                    },
+                    "data": [
+                        {
+                            "id": 0,
+                            "make_id": 0,
+                            "name": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "BadRequestException",
+                    "code": "400",
+                    "url": "/url/path",
+                    "message": "The request contains invalid data. The returned error message should indicate the issue."
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "MethodNotAllowedException",
+                    "code": "405",
+                    "url": "/url/path",
+                    "message": "The HTTP method used to request this resource is not valid. For example, using an HTTP POST  when the endpoint only accepts HTTP GET."
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "UnauthenticatedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "TooManyRequestsException",
+                    "code": "429",
+                    "url": "/url/path",
+                    "message": "TooManyRequestsException - Max Per Minute: 600 (note: daily rate limits may apply, see your subscription plans details)"
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ServiceUnavailableException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ServiceUnavailableException",
+                    "code": "503",
+                    "url": "/url/path",
+                    "message": "The server is unavailable, typically only encountered during scheduled maintenance."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92302,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "jwtllogin",
+        "executor_version": "v1",
+        "executor_display_name": "JWT login",
+        "executor_description": null,
+        "executor_category": "Auth",
+        "executor_category_group": "Auth",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{baseurl}/api/year",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "api_token": "",
+                "api_secret": ""
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683746771470,
+        "lastModifiedTime": 1683746771470,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92325,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchvehiclemileages",
+        "executor_version": "v1",
+        "executor_display_name": "search vehicle mileages",
+        "executor_description": "To include additional information about the returned body (such as year, make, model and trim) request with the query parameter as verbose=yes.  For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"combined_mpg\", \"op\": \">=\", \"val\": 20}, {\"field\": \"combined_mpg\", \"op\": \"<=\", \"val\": 30}]  Allowed json operators are: =, !=, >, <, >=, <=, in, not in, like, not like, not null, and is null.  Allowed json search fields are: year, make, model, trim, combined_mpg, epa_city_mpg, epa_highway_mpg, range_city, range_highway, epa_combined_mpg_electric, epa_city_mpg_electric, epa_highway_mpg_electric, range_electric, epa_kwh_100_mi_electric, epa_time_to_charge_hr_240v_electric, battery_capacity_electric, created, modified, make_id, make_model_id, and make_model_trim_id.",
+        "executor_category": "Mileages",
+        "executor_category_group": "Engines",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/mileages",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Available values : id, make_model_trim_id, fuel_tank_capacity, combined_mpg, epa_city_mpg, epa_highway_mpg, range_city, range_highway, battery_capacity_electric, epa_time_to_charge_hr_240v_electric, epa_kwh_100_mi_electric, range_electric, epa_highway_mpg_electric, epa_city_mpg_electric, epa_combined_mpg_electric",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "verbose",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_trim_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "combined_mpg",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "epa_city_mpg",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "epa_highway_mpg",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "range_city",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "range_highway",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "trim",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "json",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683752454526,
+        "lastModifiedTime": 1683752454526,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "collection": {
+                        "url": "/collection",
+                        "count": 50,
+                        "pages": 20,
+                        "total": 200,
+                        "next": "/collection?page=:number",
+                        "prev": "/collection?page=:number",
+                        "first": "/collection?page=:number",
+                        "last": "/collection?page=:number"
+                    },
+                    "data": [
+                        {
+                            "id": 0,
+                            "make_model_trim_id": 0,
+                            "engine_type": "diesel",
+                            "fuel_type": "diesel fuel",
+                            "cylinders": "fla",
+                            "size": 0,
+                            "horsepower_hp": 0,
+                            "horsepower_rpm": 0,
+                            "torque_ft_lbs": 0,
+                            "torque_rpm": 0,
+                            "valves": 0,
+                            "valve_timing": "Variable",
+                            "cam_type": "Double overhead cam (DOHC)",
+                            "drive_type": "all wheel drive",
+                            "transmission": "1-speed direct drive"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92308,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getvechiledata",
+        "executor_version": "v1",
+        "executor_display_name": "get vechile data",
+        "executor_description": "Returns all data associated with the vehicle trim.",
+        "executor_category": "Trims",
+        "executor_category_group": "Trims",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/trims/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683749435515,
+        "lastModifiedTime": 1683749435515,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": 0,
+                    "make_model_id": 0,
+                    "year": 0,
+                    "name": "string",
+                    "description": "string",
+                    "msrp": 0,
+                    "invoice": 0,
+                    "created": "2023-05-10T20:07:25.081Z",
+                    "modified": "2023-05-10T20:07:25.081Z",
+                    "make_model": {
+                        "id": 0,
+                        "make_id": 0,
+                        "name": "string",
+                        "make": {
+                            "id": 0,
+                            "name": "string"
+                        }
+                    },
+                    "make_model_trim_body": {
+                        "id": 0,
+                        "make_model_trim_id": 0,
+                        "type": "Cargo Van",
+                        "doors": 0,
+                        "length": 0,
+                        "width": 0,
+                        "seats": 0,
+                        "height": 0,
+                        "wheel_base": 0,
+                        "front_track": 0,
+                        "rear_track": 0,
+                        "ground_clearance": 0,
+                        "cargo_capacity": 0,
+                        "max_cargo_capacity": 0,
+                        "curb_weight": 0,
+                        "gross_weight": 0,
+                        "max_payload": 0,
+                        "max_towing_capacity": 0
+                    },
+                    "make_model_trim_engine": {
+                        "id": 0,
+                        "make_model_trim_id": 0,
+                        "engine_type": "diesel",
+                        "fuel_type": "diesel fuel",
+                        "cylinders": "fla",
+                        "size": 0,
+                        "horsepower_hp": 0,
+                        "horsepower_rpm": 0,
+                        "torque_ft_lbs": 0,
+                        "torque_rpm": 0,
+                        "valves": 0,
+                        "valve_timing": "Variable",
+                        "cam_type": "Double overhead cam (DOHC)",
+                        "drive_type": "all wheel drive",
+                        "transmission": "1-speed direct drive"
+                    },
+                    "make_model_trim_mileage": {
+                        "id": 0,
+                        "make_model_trim_id": 0,
+                        "fuel_tank_capacity": 0,
+                        "combined_mpg": 0,
+                        "epa_city_mpg": 0,
+                        "epa_highway_mpg": 0,
+                        "range_city": 0,
+                        "range_highway": 0,
+                        "battery_capacity_electric": 0,
+                        "epa_time_to_charge_hr_240v_electric": 0,
+                        "epa_kwh_100_mi_electric": 0,
+                        "range_electric": 0,
+                        "epa_highway_mpg_electric": 0,
+                        "epa_city_mpg_electric": 0,
+                        "epa_combined_mpg_electric": 0
+                    },
+                    "make_model_trim_exterior_colors": [
+                        {
+                            "id": 0,
+                            "make_model_trim_id": 0,
+                            "name": "string",
+                            "rgb": "string"
+                        }
+                    ],
+                    "make_model_trim_interior_colors": [
+                        {
+                            "id": 0,
+                            "make_model_trim_id": 0,
+                            "name": "string",
+                            "rgb": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "RecordNotFoundException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92307,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchtrims",
+        "executor_version": "v1",
+        "executor_display_name": "search trims",
+        "executor_description": "To include additional information about the returned body (such as year, make, model and trim) request with the query parameter as verbose=yes.  For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"year\", \"op\": \">=\", \"val\": 2010}, {\"field\": \"year\", \"op\": \"<=\", \"val\": 2020}]  Allowed json operators are: =, !=, >, <, >=, <=, in, not in, like, not like, not null, and is null.  Allowed json search fields are: year, make, model, trim, make_model_id, make_model_trim_id, created, modified, bodies.type, engines.cam_type, engines.cylinders, engines.drive_type, engines.engine_type, engines.fuel_type, engines.transmission, engines.valve_timing, engines.valves, and make_id.",
+        "executor_category": "Trims",
+        "executor_category_group": "Trims",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/trims",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "limit",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "trim",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "json",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683749229267,
+        "lastModifiedTime": 1683749229267,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "collection": {
+                        "url": "/collection",
+                        "count": 50,
+                        "pages": 20,
+                        "total": 200,
+                        "next": "/collection?page=:number",
+                        "prev": "/collection?page=:number",
+                        "first": "/collection?page=:number",
+                        "last": "/collection?page=:number"
+                    },
+                    "data": [
+                        {
+                            "id": 0,
+                            "make_model_id": 0,
+                            "year": 0,
+                            "name": "string",
+                            "description": "string",
+                            "msrp": 0,
+                            "invoice": 0,
+                            "created": "2023-05-10T19:58:50.266Z",
+                            "modified": "2023-05-10T19:58:50.266Z"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92327,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchvehiclecolorsexterior",
+        "executor_version": "v1",
+        "executor_display_name": "search vehicle colors exterior",
+        "executor_description": "o include additional information about the returned body (such as year, make, model and trim) request with the query parameter as verbose=yes.  For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"name\", \"op\": \"in\", \"val\": [\"red\", \"blue\"]}]  Allowed json operators are: =, !=, >, <, >=, <=, in, not in, like, not like, not null, and is null.  Allowed json search fields are: year, make, model, trim, name, rgb, created, modified, make_id, make_model_id, and make_model_trim_id.",
+        "executor_category": "colorsexterior",
+        "executor_category_group": "colorsexterior",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api//exterior-colors",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "verbose",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_trim_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "rgb",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "trim",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683752961973,
+        "lastModifiedTime": 1683752961973,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "collection": {
+                        "url": "/collection",
+                        "count": 50,
+                        "pages": 20,
+                        "total": 200,
+                        "next": "/collection?page=:number",
+                        "prev": "/collection?page=:number",
+                        "first": "/collection?page=:number",
+                        "last": "/collection?page=:number"
+                    },
+                    "data": [
+                        {
+                            "id": 0,
+                            "make_model_trim_id": 0,
+                            "name": "string",
+                            "rgb": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92310,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "vindecoder",
+        "executor_version": "v1",
+        "executor_display_name": "Vin decoder",
+        "executor_description": "Decodes Vehicle Identification Numbers. The result will include a list of specifications in the specs property and a list of all possible trims matching the VIN in the trims property.  You can use KNDJ23AU4N7154467 for testing.",
+        "executor_category": "Vindecoder",
+        "executor_category_group": "Vindecoder",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/vin/{vin}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "vin",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683750520005,
+        "lastModifiedTime": 1683750520005,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "year": 2020,
+                    "make": "make (e.g. Toyota)",
+                    "model": "model (e.g. Camry)",
+                    "trim": "trim (e.g. LX)",
+                    "specs": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "RecordNotFoundException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92304,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getyearslist",
+        "executor_version": "v1",
+        "executor_display_name": "get years list",
+        "executor_description": "For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"make\", \"op\": \"in\", \"val\": [\"Scion\", \"Tesla\"]}]  Allowed operators are: >, <, >=, <=, in, not in, like, not like, is null and not null.  Allowed search fields are: year, make, model, trim, make_id, and make_model_id.",
+        "executor_category": "Years",
+        "executor_category_group": "Years",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/year",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "trim",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "json",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683748384463,
+        "lastModifiedTime": 1683748384463,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    2022,
+                    2021,
+                    2020
+                ]
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BAd request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92314,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchvehiclebodies",
+        "executor_version": "v1",
+        "executor_display_name": "search vehicle bodies",
+        "executor_description": "To include additional information about the returned body (such as year, make, model and trim) request with the query parameter as verbose=yes.  For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"doors\", \"op\": \">=\", \"val\": 4}, {\"field\": \"type\", \"op\": \"in\", \"val\": [\"SUV\",\"Van\"]}]  See /api/vehicle-attributes for a complete list of vehicle attributes.  Allowed json operators are: =, !=, >, <, >=, <=, in, not in, like, not like, not null, and is null.  Allowed json search fields are: year, make, model, trim, type, doors, make_model_trim_id, created, modified, make_id, and make_model_id.",
+        "executor_category": "Bodies",
+        "executor_category_group": "Bodies",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/bodies",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "verbose",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_trim_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "type",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "doors",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "trim",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "json",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683751193824,
+        "lastModifiedTime": 1683751193824,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "year": 2020,
+                    "make": "make (e.g. Toyota)",
+                    "model": "model (e.g. Camry)",
+                    "trim": "trim (e.g. LX)",
+                    "specs": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "RecordNotFoundException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92305,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getmakes",
+        "executor_version": "v1",
+        "executor_display_name": "get makes",
+        "executor_description": "Search makes by name and year.",
+        "executor_category": "Makes",
+        "executor_category_group": "Makes",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/makes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "limit",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683748714155,
+        "lastModifiedTime": 1683748714155,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "collection": {
+                        "url": "/collection",
+                        "count": 50,
+                        "pages": 20,
+                        "total": 200,
+                        "next": "/collection?page=:number",
+                        "prev": "/collection?page=:number",
+                        "first": "/collection?page=:number",
+                        "last": "/collection?page=:number"
+                    },
+                    "data": [
+                        {
+                            "id": 0,
+                            "name": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92331,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchvehiclecolorsinterior",
+        "executor_version": "v1",
+        "executor_display_name": "search vehicle colors interior",
+        "executor_description": "To include additional information about the returned body (such as year, make, model and trim) request with the query parameter as verbose=yes.  For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"name\", \"op\": \"in\", \"val\": [\"red\", \"blue\"]}]  Allowed json operators are: =, !=, >, <, >=, <=, in, not in, like, not like, not null, and is null.  Allowed json search fields are: year, make, model, trim, name, rgb, created, modified, make_id, make_model_id, and make_model_trim_id",
+        "executor_category": "colorsinterior",
+        "executor_category_group": "colorsinterior",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api//interior-colors",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "verbose",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_trim_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "rgb",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "trim",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683753181869,
+        "lastModifiedTime": 1683753181869,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "collection": {
+                        "url": "/collection",
+                        "count": 50,
+                        "pages": 20,
+                        "total": 200,
+                        "next": "/collection?page=:number",
+                        "prev": "/collection?page=:number",
+                        "first": "/collection?page=:number",
+                        "last": "/collection?page=:number"
+                    },
+                    "data": [
+                        {
+                            "id": 0,
+                            "make_model_trim_id": 0,
+                            "name": "string",
+                            "rgb": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92335,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchvehicleattributes",
+        "executor_version": "v1",
+        "executor_display_name": "search vehicle attributes",
+        "executor_description": "To include additional information about the returned body (such as year, make, model and trim) request with the query parameter as verbose=yes.  For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"name\", \"op\": \"in\", \"val\": [\"red\", \"blue\"]}]  Allowed json operators are: =, !=, >, <, >=, <=, in, not in, like, not like, not null, and is null.  Allowed json search fields are: year, make, model, trim, name, rgb, created, modified, make_id, make_model_id, and make_model_trim_id",
+        "executor_category": "Vehicleattributes",
+        "executor_category_group": "Vehicleattributes",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/vehicle-attributes",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "attribute",
+                "value": "",
+                "description": "The attribute options to be returned",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683753552188,
+        "lastModifiedTime": 1683753552188,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    "option a",
+                    "option b ",
+                    "option c"
+                ]
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92319,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchvehicleengies",
+        "executor_version": "v1",
+        "executor_display_name": "search vehicle engies",
+        "executor_description": "To include additional information about the returned body (such as year, make, model and trim) request with the query parameter as verbose=yes.  For complex queries you may use the json field to send an array of URL encoded JSON conditions, example:  [{\"field\": \"horsepower_hp\", \"op\": \">=\", \"val\": 100}, {\"field\": \"horsepower_hp\", \"op\": \"<=\", \"val\": 300}]  See /api/vehicle-attributes for a complete list of vehicle attributes.  Allowed json operators are: =, !=, >, <, >=, <=, in, not in, like, not like, not null, and is null.  Allowed json search fields are: year, make, model, trim, fuel_type, engine_type, transmission, drive_type, cam_type, valve_timing, valves, horsepower_hp, size, cylinders, created, modified, make_id, make_model_id, and make_model_trim_id.",
+        "executor_category": "Engines",
+        "executor_category_group": "Engines",
+        "service_provider": "carapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{baseurl}/api/engies",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "Available values : id, make_model_trim_id, engine_type, fuel_type, cylinders, size, horsepower_hp, horsepower_rpm, torque_ft_lbs, torque_rpm, valves, valve_timing, cam_type, drive_type, transmission",
+                "req": false
+            },
+            {
+                "key": "direction",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "verbose",
+                "value": "",
+                "description": "Includes make, model and trim",
+                "req": false
+            },
+            {
+                "key": "make_model_trim_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "cylinders",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "size",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "horsepower_hp",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "valves",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "valve_timing",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "cam_type",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "drive_type",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "transmission",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "engine_type",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "fuel_type",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_model_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make_id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "year",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "make",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "model",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "trim",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "json",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683751752660,
+        "lastModifiedTime": 1683751752660,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "collection": {
+                        "url": "/collection",
+                        "count": 50,
+                        "pages": 20,
+                        "total": 200,
+                        "next": "/collection?page=:number",
+                        "prev": "/collection?page=:number",
+                        "first": "/collection?page=:number",
+                        "last": "/collection?page=:number"
+                    },
+                    "data": [
+                        {
+                            "id": 0,
+                            "make_model_trim_id": 0,
+                            "engine_type": "diesel",
+                            "fuel_type": "diesel fuel",
+                            "cylinders": "fla",
+                            "size": 0,
+                            "horsepower_hp": 0,
+                            "horsepower_rpm": 0,
+                            "torque_ft_lbs": 0,
+                            "torque_rpm": 0,
+                            "valves": 0,
+                            "valve_timing": "Variable",
+                            "cam_type": "Double overhead cam (DOHC)",
+                            "drive_type": "all wheel drive",
+                            "transmission": "1-speed direct drive"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BadRequestException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            },
+            {
+                "statusCode": 405,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "MethodNotAllowedException",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "exception": "ExceptionName",
+                    "code": 500,
+                    "url": "/url/path",
+                    "message": "Internal Error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

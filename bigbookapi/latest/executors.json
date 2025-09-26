@@ -1,0 +1,788 @@
+[
+    {
+        "id": 126727,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getBookInformation",
+        "executor_version": "v1",
+        "executor_display_name": "Get Book Information",
+        "executor_description": "Get all information about a certain book.",
+        "executor_category": "BigBookAPI",
+        "executor_category_group": "BigBookAPI",
+        "service_provider": "bigbookapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bigbookapi.com/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "The id of the book.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of requests used",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of requests used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of requests left today (depends on your plan).",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711602916603,
+        "lastModifiedTime": 1711602916603,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": 16384516,
+                    "title": "Harry Potter and the Goblet of Fire",
+                    "image": "https://covers.openlibrary.org/b/id/12775900-M.jpg",
+                    "identifiers": {
+                        "open_library_id": "OL82577W",
+                        "isbn_10": "0439139597",
+                        "isbn_13": "0439139597"
+                    },
+                    "authors": [
+                        {
+                            "id": 14136020,
+                            "name": "J. K. Rowling"
+                        }
+                    ],
+                    "publish_date": 2000,
+                    "number_of_pages": 734,
+                    "description": "Celebrate 20 years of Harry Potter magic! \r\n\r\nThe Triwizard Tournament is to be held at Hogwarts. Only wizards who are over seventeen are allowed to enter \u2013 but that doesn't stop Harry dreaming that he will win the competition. Then at Hallowe'en, when the Goblet of Fire makes its selection, Harry is amazed to find his name is one of those that the magical cup picks out. He will face death-defying tasks, dragons and Dark wizards, but with the help of his best friends, Ron and Hermione, he might just make it through \u2013 alive!\r\n\r\nThese new editions of the classic and internationally bestselling, multi-award-winning series feature instantly pick-up-able new jackets by Jonny Duddle, with huge child appeal, to bring Harry Potter to the next generation of readers. It's time to PASS THE MAGIC ON",
+                    "rating": {
+                        "average": 0.912
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126729,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchAuthors",
+        "executor_version": "v1",
+        "executor_display_name": "Search Authors",
+        "executor_description": "Search for book authors by name or partial name. The response contains the author's name and their id. You can then use the id in the book search.",
+        "executor_category": "BigBookAPI",
+        "executor_category_group": "BigBookAPI",
+        "service_provider": "bigbookapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bigbookapi.com/search-authors",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "The (partial/beginning) name of the author.",
+                "req": false
+            },
+            {
+                "key": "offset",
+                "value": "",
+                "description": "The number of authors to skip in range [0,100]",
+                "req": false
+            },
+            {
+                "key": "number",
+                "value": "",
+                "description": "The number of authors to return in range [1,100]",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of requests used",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of requests used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of requests left today (depends on your plan).",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711603172763,
+        "lastModifiedTime": 1711603172763,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "authors": [
+                        {
+                            "id": 18826554,
+                            "name": "Morgan Horton Seacord"
+                        },
+                        {
+                            "id": 17858271,
+                            "name": "Morgan Housel"
+                        },
+                        {
+                            "id": 13486775,
+                            "name": "Morgan Howell"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126726,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "searchBooks",
+        "executor_version": "v1",
+        "executor_display_name": "Search Books",
+        "executor_description": "Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.",
+        "executor_category": "BigBookAPI",
+        "executor_category_group": "BigBookAPI",
+        "service_provider": "bigbookapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bigbookapi.com/search-books",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "query",
+                "value": "",
+                "description": "The search query.",
+                "req": false
+            },
+            {
+                "key": "earliest-publish-year\t",
+                "value": "",
+                "description": "The books must have been published after this year.",
+                "req": false
+            },
+            {
+                "key": "latest-publish-year\t",
+                "value": "",
+                "description": "The books must have been published before this year.",
+                "req": false
+            },
+            {
+                "key": "min-rating\t",
+                "value": "",
+                "description": "The minimum rating the book must have gotten in the interval [0,1].",
+                "req": false
+            },
+            {
+                "key": "max-rating",
+                "value": "",
+                "description": "The maximum rating the book must have gotten in the interval [0,1].",
+                "req": false
+            },
+            {
+                "key": "genres",
+                "value": "",
+                "description": "A comma-separated list of genres. Only books from any of the given genres will be returned.",
+                "req": false
+            },
+            {
+                "key": "authors",
+                "value": "",
+                "description": "A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate.",
+                "req": false
+            },
+            {
+                "key": "isbn",
+                "value": "",
+                "description": "Only the book matching the ISBN-13 will be returned",
+                "req": false
+            },
+            {
+                "key": "oclc",
+                "value": "",
+                "description": "Only the book matching the OCLC will be returned",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "The sorting criteria (publish-date or rating).",
+                "req": false
+            },
+            {
+                "key": "sort-direction\t",
+                "value": "",
+                "description": "Whether to sort ascending or descending (ASC or DESC).",
+                "req": false
+            },
+            {
+                "key": "group-results\t",
+                "value": "",
+                "description": "Whether to group similar editions of the same book.",
+                "req": false
+            },
+            {
+                "key": "offset\t",
+                "value": "",
+                "description": "The number of books to skip in range [0,1000]",
+                "req": false
+            },
+            {
+                "key": "number",
+                "value": "",
+                "description": "The number of books to return in range [1,100]",
+                "req": false
+            },
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of requests used",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of requests used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of requests left today (depends on your plan).",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711602814326,
+        "lastModifiedTime": 1711602814326,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "available": 5999,
+                    "number": 10,
+                    "offset": 0,
+                    "books": [
+                        {
+                            "id": 17200576,
+                            "title": "Journey to Hogwarts",
+                            "image": "https://covers.openlibrary.org/b/id/2520429-M.jpg"
+                        },
+                        {
+                            "id": 15954006,
+                            "title": "Inside Hogwarts",
+                            "subtitle": "Magical Paintbook",
+                            "image": "https://covers.openlibrary.org/b/id/2520430-M.jpg"
+                        },
+                        {
+                            "id": 16384516,
+                            "title": "Harry Potter and the Goblet of Fire",
+                            "image": "https://covers.openlibrary.org/b/id/12775900-M.jpg"
+                        },
+                        {
+                            "id": 14296534,
+                            "title": "Harry Potter and the Order of the Phoenix",
+                            "image": "https://covers.openlibrary.org/b/id/11416565-M.jpg"
+                        },
+                        {
+                            "id": 14530450,
+                            "title": "Great Gatsby (Silver Screen Edition)",
+                            "image": "https://covers.openlibrary.org/b/id/12791857-M.jpg"
+                        },
+                        {
+                            "id": 18810398,
+                            "title": "The Hobbit",
+                            "subtitle": "or, There and back again",
+                            "image": "https://covers.openlibrary.org/b/id/394001-M.jpg"
+                        },
+                        {
+                            "id": 13597674,
+                            "title": "The Name of the Wind",
+                            "subtitle": "The Kingkiller Chronicle : day one",
+                            "image": "https://covers.openlibrary.org/b/id/6282709-M.jpg"
+                        },
+                        {
+                            "id": 20778556,
+                            "title": "Two Towers : The Lord of the Rings",
+                            "subtitle": "Part Two",
+                            "image": "https://covers.openlibrary.org/b/id/13220226-M.jpg"
+                        },
+                        {
+                            "id": 20101114,
+                            "title": "Frankenstein (Silver Screen Edition)",
+                            "image": "https://covers.openlibrary.org/b/id/12791860-M.jpg"
+                        },
+                        {
+                            "id": 17798828,
+                            "title": "Bogar b\u00e1rd mes\u00e9i",
+                            "image": "https://covers.openlibrary.org/b/id/9326689-M.jpg"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 126728,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "findSimilarBooks",
+        "executor_version": "v1",
+        "executor_display_name": "Find Similar Books",
+        "executor_description": "Find books that are similar to the given book.",
+        "executor_category": "BigBookAPI",
+        "executor_category_group": "BigBookAPI",
+        "service_provider": "bigbookapi",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bigbookapi.com/{id}/similar",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "api-key\t",
+                "value": "",
+                "description": "Your API key.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "The id of the book to which similar books should be found.",
+                "req": false
+            },
+            {
+                "key": "number\t",
+                "value": "",
+                "description": "The number of similar books to return in range [1,100]",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "",
+                "description": "application/json",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Request",
+                "value": "",
+                "description": "The number of requests used",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Used",
+                "value": "",
+                "description": "The number of requests used in total today",
+                "req": false
+            },
+            {
+                "key": "X-API-Quota-Left",
+                "value": "",
+                "description": "The number of requests left today (depends on your plan).",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "api_key",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1711603030480,
+        "lastModifiedTime": 1711603030480,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "similar_books": [
+                        {
+                            "id": 14296534,
+                            "title": "Harry Potter and the Order of the Phoenix",
+                            "image": "https://covers.openlibrary.org/b/id/11416565-M.jpg"
+                        },
+                        {
+                            "id": 16499448,
+                            "title": "Harry Potter and the Half-Blood Prince",
+                            "image": "https://covers.openlibrary.org/b/id/8235163-M.jpg"
+                        },
+                        {
+                            "id": 18610968,
+                            "title": "Blood and Fire",
+                            "image": "https://covers.openlibrary.org/b/id/10404497-M.jpg"
+                        },
+                        {
+                            "id": 20464852,
+                            "title": "Towers of midnight",
+                            "subtitle": "Wheel of Time Book 13",
+                            "image": "https://covers.openlibrary.org/b/id/6657713-M.jpg"
+                        },
+                        {
+                            "id": 13804028,
+                            "title": "Best of Robert Jordan",
+                            "subtitle": "The Shadow Rising; The Fires of Heaven; Lord of Chaos; A Crown of Swords (The Wheel of Time Series)",
+                            "image": "https://covers.openlibrary.org/b/id/3027823-M.jpg"
+                        },
+                        {
+                            "id": 14987824,
+                            "title": "MAR, Volume 7",
+                            "image": "https://covers.openlibrary.org/b/id/765103-M.jpg"
+                        },
+                        {
+                            "id": 19984854,
+                            "title": "The Daysong of the Knightbird",
+                            "image": "https://covers.openlibrary.org/b/id/1822804-M.jpg"
+                        },
+                        {
+                            "id": 17174416,
+                            "title": "The key",
+                            "image": "https://covers.openlibrary.org/b/id/8369732-M.jpg"
+                        },
+                        {
+                            "id": 20121054,
+                            "title": "Bring me the head of Prince Charming",
+                            "image": "https://covers.openlibrary.org/b/id/3965371-M.jpg"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

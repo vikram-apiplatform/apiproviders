@@ -1,0 +1,4663 @@
+[
+    {
+        "id": 92920,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "editafacility",
+        "executor_version": "v4",
+        "executor_display_name": "Edit a Facility",
+        "executor_description": "Edit a facility",
+        "executor_category": "Facility",
+        "executor_category_group": "Facility",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/facility/edit",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "nameName",
+                "value": "",
+                "description": "Name",
+                "req": false
+            },
+            {
+                "key": "isActive",
+                "value": "",
+                "description": "Allows you to disallow a facility from being able to log in",
+                "req": false
+            },
+            {
+                "key": "externalId\t",
+                "value": "",
+                "description": "This is your organizational id for this account. We reccomend you use your own id or billing code for this account as it can be used for relating data between your system and ours.",
+                "req": false
+            },
+            {
+                "key": "subDomainPiece",
+                "value": "",
+                "description": "Subdomain componetent used by facility (eg. in https://hospital-blue.bluestreamhealth.com this is 'hospital') NOTE: uniqueness among facilities under the customer verified",
+                "req": false
+            },
+            {
+                "key": "intakeMetadata",
+                "value": "",
+                "description": "These are the intake fields a user has to fill in when logging into this facility before making a call.",
+                "req": false
+            },
+            {
+                "key": "expertises",
+                "value": "",
+                "description": "Array of expertises and their options.",
+                "req": false
+            },
+            {
+                "key": "accessCode",
+                "value": "",
+                "description": "Access codes are a shared login type of field. They are less secure than a password and reversible, access codes cannot be used to obtain information only to make requests",
+                "req": false
+            },
+            {
+                "key": "allowAccessCodeLogin",
+                "value": "",
+                "description": "Flag to allow access code login",
+                "req": false
+            },
+            {
+                "key": "allowUserLogin",
+                "value": "",
+                "description": "Flag to allow user login",
+                "req": false
+            },
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "Customer that the facility belongs to",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684186222791,
+        "lastModifiedTime": 1684186222791,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "UUID of the edited facility",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "facilityId": "00000000-0000-0000-0000-000000000000"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92921,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getsallFacilities",
+        "executor_version": "v4",
+        "executor_display_name": "Gets all Facilities",
+        "executor_description": "Gets all facilities for a specified customer",
+        "executor_category": "Facility",
+        "executor_category_group": "Facility",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/facility/list-all",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "UUID of the customer",
+                "req": false
+            },
+            {
+                "key": "start\t",
+                "value": "",
+                "description": "Starting index of facilities (default 0)",
+                "req": false
+            },
+            {
+                "key": "total",
+                "value": "",
+                "description": "Total number of facilities (default 10)",
+                "req": false
+            },
+            {
+                "key": "sortKey",
+                "value": "",
+                "description": "Key to sort by",
+                "req": false
+            },
+            {
+                "key": "query",
+                "value": "",
+                "description": "String you want to search for in the Facilities. You can search by name or externalId",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684187205826,
+        "lastModifiedTime": 1684187858700,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "List of facilities",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 2,
+                    "facilities": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Test Facility 1",
+                            "isActive": true,
+                            "externalId": "",
+                            "subDomainPiece": "facility1",
+                            "fullDomainName": "https://",
+                            "intakeMetadata": [
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "sortOrder": 0,
+                                    "active": true,
+                                    "required": false
+                                }
+                            ],
+                            "expertises": [
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "audio": true,
+                                    "video": true,
+                                    "sortOrder": 0
+                                },
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "audio": true,
+                                    "video": true,
+                                    "sortOrder": 1
+                                },
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "audio": true,
+                                    "video": true,
+                                    "sortOrder": 2
+                                }
+                            ],
+                            "accessCode": "12345",
+                            "allowAccessCodeLogin": true,
+                            "allowUserLogin": true,
+                            "credentials": [
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "firstName": "John",
+                                    "lastName": "Doe",
+                                    "email": "john.doe@company.com",
+                                    "externalId": ""
+                                },
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "firstName": "Jane",
+                                    "lastName": "Smith",
+                                    "email": "jane.smith@my-company.com",
+                                    "externalId": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Test Facility 2",
+                            "isActive": true,
+                            "externalId": "",
+                            "subDomainPiece": "facility2",
+                            "fullDomainName": "https://",
+                            "intakeMetadata": [],
+                            "expertises": [
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "audio": true,
+                                    "video": true,
+                                    "sortOrder": 0
+                                }
+                            ],
+                            "accessCode": null,
+                            "allowAccessCodeLogin": false,
+                            "allowUserLogin": true,
+                            "credentials": [
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "firstName": "John",
+                                    "lastName": "Doe",
+                                    "email": "john.doe@company.com",
+                                    "externalId": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92918,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createaFacility",
+        "executor_version": "v4",
+        "executor_display_name": "Create a Facility",
+        "executor_description": "Create a new facility",
+        "executor_category": "Facility",
+        "executor_category_group": "Facility",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/facility/create",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "nameName",
+                "value": "",
+                "description": "Name",
+                "req": false
+            },
+            {
+                "key": "isActive",
+                "value": "",
+                "description": "Allows you to disallow a facility from being able to log in",
+                "req": false
+            },
+            {
+                "key": "externalId\t",
+                "value": "",
+                "description": "This is your organizational id for this account. We reccomend you use your own id or billing code for this account as it can be used for relating data between your system and ours.",
+                "req": false
+            },
+            {
+                "key": "subDomainPiece",
+                "value": "",
+                "description": "Subdomain componetent used by facility (eg. in https://hospital-blue.bluestreamhealth.com this is 'hospital') NOTE: uniqueness among facilities under the customer verified",
+                "req": false
+            },
+            {
+                "key": "intakeMetadata",
+                "value": "",
+                "description": "These are the intake fields a user has to fill in when logging into this facility before making a call.",
+                "req": false
+            },
+            {
+                "key": "expertises",
+                "value": "",
+                "description": "Array of expertises and their options.",
+                "req": false
+            },
+            {
+                "key": "accessCode",
+                "value": "",
+                "description": "Access codes are a shared login type of field. They are less secure than a password and reversible, access codes cannot be used to obtain information only to make requests",
+                "req": false
+            },
+            {
+                "key": "allowAccessCodeLogin",
+                "value": "",
+                "description": "Flag to allow access code login",
+                "req": false
+            },
+            {
+                "key": "allowUserLogin",
+                "value": "",
+                "description": "Flag to allow user login",
+                "req": false
+            },
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "Customer that the facility belongs to",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684186076170,
+        "lastModifiedTime": 1684186076170,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "UUID of the generated facility",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "facilityId": "00000000-0000-0000-0000-000000000000"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92923,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getallMetaData",
+        "executor_version": "v4",
+        "executor_display_name": "Get all MetaData",
+        "executor_description": "Get a list of all availble metadata",
+        "executor_category": "Metadata",
+        "executor_category_group": "Metadata",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/metadata/list-all",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "type\t",
+                "value": "",
+                "description": "The type of metadata. Options: CHECKBOX_GROUP, CHECK_BOX_GROUP, CONSENT, DATE, DATE_NO_SELECTION_BOX, DATE_TIME, DATE_TIME_SIMPLE, DD_MM_YYYY, DEPARTMENT_LIST, DIAL_PAD, ENUM, ENUM_WITH_OTHER, FACILITY_LIST, GROUP, INTERNATIONAL_PHONE_NUMBER, LABEL, MEETING_TYPE_ENUM, MULTI_ENUM, NORMAL, PATIENT_TYPE_ENUM, RADIO_BUTTON, RADIO_GROUP, RADIO_WITH_OTHER, RANGE, RATING, SEARCHABLE_DROP_DOWN, EX_ENUM, TEXTBOX, USER_NAME, USER_PHONE",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684187658333,
+        "lastModifiedTime": 1684187784010,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "List of metadata",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 3,
+                    "metaData": [
+                        {
+                            "metaDataInfoName": "Objective",
+                            "metaDataInfoId": "00000000-0000-0000-0000-000000000000",
+                            "isEncrypted": true,
+                            "type": "TEXTBOX",
+                            "config": null,
+                            "metaDataKey": "objective"
+                        },
+                        {
+                            "metaDataInfoName": "Plan",
+                            "metaDataInfoId": "00000000-0000-0000-0000-000000000000",
+                            "isEncrypted": true,
+                            "type": "TEXTBOX",
+                            "config": null,
+                            "metaDataKey": "plan"
+                        },
+                        {
+                            "metaDataInfoName": "Notes",
+                            "metaDataInfoId": "00000000-0000-0000-0000-000000000000",
+                            "isEncrypted": true,
+                            "type": "TEXTBOX",
+                            "config": "",
+                            "metaDataKey": "notes"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92925,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "insertMetadataValueslarge",
+        "executor_version": "v4",
+        "executor_display_name": "Insert Metadata Values",
+        "executor_description": "Allows you to insert metadata objects",
+        "executor_category": "Metadata",
+        "executor_category_group": "Metadata",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/metadata/update-large",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "metadataEntryId",
+                "value": "",
+                "description": "UUID of the metadataEntryId to be updated",
+                "req": false
+            },
+            {
+                "key": "startTime\t",
+                "value": "",
+                "description": "Unix Timestamp - if a link is associated with the entry id, update start time",
+                "req": false
+            },
+            {
+                "key": "endTime",
+                "value": "",
+                "description": "Unix Timestamp - if a link is associated with the enrtr id, update end time",
+                "req": false
+            },
+            {
+                "key": "cancelLink",
+                "value": "",
+                "description": "disables link if one exists for the metadataentryId",
+                "req": false
+            },
+            {
+                "key": "metadata\t",
+                "value": "",
+                "description": "Metadata UUIDs and values that we want to insert",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684188574562,
+        "lastModifiedTime": 1684188574562,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "saves metadate",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "sucess": "true"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92924,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "insertMetadataValues",
+        "executor_version": "v4",
+        "executor_display_name": "Insert Metadata Values",
+        "executor_description": "Allows you to insert metadata objects",
+        "executor_category": "Metadata",
+        "executor_category_group": "Metadata",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/metadata/update",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "metadataEntryId",
+                "value": "",
+                "description": "UUID of the metadataEntryId to be updated",
+                "req": false
+            },
+            {
+                "key": "startTime\t",
+                "value": "",
+                "description": "Unix Timestamp - if a link is associated with the entry id, update start time",
+                "req": false
+            },
+            {
+                "key": "endTime",
+                "value": "",
+                "description": "Unix Timestamp - if a link is associated with the enrtr id, update end time",
+                "req": false
+            },
+            {
+                "key": "cancelLink\t",
+                "value": "",
+                "description": "disables link if one exists for the metadataentryId",
+                "req": false
+            },
+            {
+                "key": "metadata",
+                "value": "",
+                "description": "Metadata UUIDs and values that we want to insert",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684188109646,
+        "lastModifiedTime": 1684188434805,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "saves metadate",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "sucess": "true"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92928,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getRemoteExpertActivity",
+        "executor_version": "v4",
+        "executor_display_name": "Get Remote Expert Activity",
+        "executor_description": "Gets the expert activity for a call center",
+        "executor_category": "RemoteExpert",
+        "executor_category_group": "RemoteExpert",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/remote-expert/activity",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "remoteExperts",
+                "value": "",
+                "description": "Array of experts UUIDs",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684189018602,
+        "lastModifiedTime": 1684189018602,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "List of remote experts",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 1,
+                    "expertActivityList": [
+                        {
+                            "id": "",
+                            "name": "John Doe Expert",
+                            "expertises": "Spanish",
+                            "status": "online",
+                            "expertLoginTime": "2023-01-19 20:44:42",
+                            "lastCallId": "494187b2-2e42-4133-b0b7-3127403a2110",
+                            "lastCallCustomerName": "Jane Doe",
+                            "lastCallStatusTime": "Active",
+                            "lastCallStartTime": "2023-01-13 21:22:21",
+                            "lastCallEndTime": "2023-01-13 21:22:32",
+                            "lastChangedStatus": "2023-01-19 20:44:43"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92931,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getallRemoteExperts",
+        "executor_version": "v4",
+        "executor_display_name": "Get all Remote Experts",
+        "executor_description": "Gets all data for remote experts for a call center",
+        "executor_category": "RemoteExpert",
+        "executor_category_group": "RemoteExpert",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/remote-expert/list-all",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start",
+                "value": "",
+                "description": "Starting index of remote experts (default 0)",
+                "req": false
+            },
+            {
+                "key": "total\t",
+                "value": "",
+                "description": "Total number of remote experts (default 10)",
+                "req": false
+            },
+            {
+                "key": "sortKey",
+                "value": "",
+                "description": "Key to sort by",
+                "req": false
+            },
+            {
+                "key": "query",
+                "value": "",
+                "description": "String you want to search for in the Remote Experts. You can search by id, firstName, lastName, email and organizationalId",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684189799537,
+        "lastModifiedTime": 1684189799538,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "List of remote experts",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 2,
+                    "remoteExpert": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "firstName": "John",
+                            "lastName": "Doe",
+                            "email": "john.doe@company.com",
+                            "phoneNumber": "555-2368",
+                            "emailNotification": false,
+                            "smsNotification": false,
+                            "isActive": false,
+                            "organizationalId": "",
+                            "expertises": [
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "name": "Test"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "firstName": "Jane",
+                            "lastName": "Smith",
+                            "email": "jane.smith@my-company.com",
+                            "phoneNumber": "555-2368",
+                            "emailNotification": false,
+                            "smsNotification": false,
+                            "isActive": true,
+                            "organizationalId": "",
+                            "expertises": [
+                                {
+                                    "id": "00000000-0000-0000-0000-000000000000",
+                                    "name": "Test"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92930,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "editaRemoteExpert",
+        "executor_version": "v4",
+        "executor_display_name": "Edit a Remote Expert",
+        "executor_description": "Edit a Remote Expert",
+        "executor_category": "RemoteExpert",
+        "executor_category_group": "RemoteExpert",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/remote-expert/edit",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "firstName",
+                "value": "",
+                "description": "First name",
+                "req": false
+            },
+            {
+                "key": "lastName",
+                "value": "",
+                "description": "Last name",
+                "req": false
+            },
+            {
+                "key": "email",
+                "value": "",
+                "description": "Expert's email address. Emails must be unique system wide. Please contact support if an email seems to be in use",
+                "req": false
+            },
+            {
+                "key": "phoneNumber",
+                "value": "",
+                "description": "Integer phone number",
+                "req": false
+            },
+            {
+                "key": "emailNotification",
+                "value": "",
+                "description": "Allows email notifications",
+                "req": false
+            },
+            {
+                "key": "smsNotification",
+                "value": "",
+                "description": "Allows text notifications. If you will be using over 1,000 messages per month please confirm usage with your account manager as certain plans may experience rate limiting",
+                "req": false
+            },
+            {
+                "key": "expertises",
+                "value": "",
+                "description": "Array of expertise UUIDs",
+                "req": false
+            },
+            {
+                "key": "externalId",
+                "value": "",
+                "description": "This is your organizational id for this user, it is useful for reporting purposes to keep track of a user by an id that can map to your system",
+                "req": false
+            },
+            {
+                "key": "isActive",
+                "value": "",
+                "description": "allows you to disable the ability for a user to log in. If a user attempts too many incorrect password attempts, this value may flip on its own.",
+                "req": false
+            },
+            {
+                "key": "id",
+                "value": "",
+                "description": "UUID for remote expert",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684189575994,
+        "lastModifiedTime": 1684189575994,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "UUID of the generated edited expert",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "expertId": "00000000-0000-0000-0000-000000000000"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92908,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "expertiseLink",
+        "executor_version": "v4",
+        "executor_display_name": "Expertise Link",
+        "executor_description": "Allows you to create a link in order to call out a specific expertise",
+        "executor_category": "EmbeddingViaIframes",
+        "executor_category_group": "EmbeddingViaIframes",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/links/expertise-link",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "facilityId",
+                "value": "",
+                "description": "facility that you want this call to originate from",
+                "req": false
+            },
+            {
+                "key": "expertiseId",
+                "value": "",
+                "description": "id of the remote expertise you want to use - this expertise MUST be assigned to the above facility",
+                "req": false
+            },
+            {
+                "key": "startTime",
+                "value": "",
+                "description": "Unix Timestamp of when the link will begin to be active (default is now)",
+                "req": false
+            },
+            {
+                "key": "endTime",
+                "value": "",
+                "description": "Unix Timestamp of when the link will cease to be active (default 2hours from now)",
+                "req": false
+            },
+            {
+                "key": "smsNumber\t",
+                "value": "",
+                "description": "SMS number you would like to send the link to. If you will be using over 1,000 messages per month please confirm usage with your account manager as certain plans may experience rate limiting",
+                "req": false
+            },
+            {
+                "key": "email",
+                "value": "",
+                "description": "Email you would like to send the link to",
+                "req": false
+            },
+            {
+                "key": "messageText\t",
+                "value": "",
+                "description": "If using an SMS or Email, this allows you to write a short message along the standard body of the sms/email",
+                "req": false
+            },
+            {
+                "key": "languageCode\t",
+                "value": "",
+                "description": "languageCode for custom SMS/Email message - language mapping/availability unique per instance, please contact your account represenative for details",
+                "req": false
+            },
+            {
+                "key": "callBackUrl",
+                "value": "",
+                "description": "URL to send remote expert back to once the call is over",
+                "req": false
+            },
+            {
+                "key": "metadata\t",
+                "value": "",
+                "description": "Metadata UUIDs and values to associate with this query",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684182204926,
+        "lastModifiedTime": 1684182204926,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Expertise Link",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "metadataEntryId": "00000000-0000-0000-0000-000000000000",
+                    "callerLink": "https://1click.blue/stream/ABCD1234"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92907,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "dualLinks",
+        "executor_version": "v4",
+        "executor_display_name": "Dual Links",
+        "executor_description": "Allows you to create two links to give to two parties in order to join into one call. Must have Dual Links turned on in order for this API to work.",
+        "executor_category": "EmbeddingViaIframes",
+        "executor_category_group": "EmbeddingViaIframes",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/links/dual-link",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "facilityId",
+                "value": "",
+                "description": "The Facility Id in where you want to add the approved IP access.",
+                "req": false
+            },
+            {
+                "key": "startTime",
+                "value": "",
+                "description": "Unix Timestamp of when the link will begin to be active (default is now)",
+                "req": false
+            },
+            {
+                "key": "endTime\t",
+                "value": "",
+                "description": "Unix Timestamp of when the link will cease to be active (default 2hours from now)",
+                "req": false
+            },
+            {
+                "key": "callBackUrlExpert\t",
+                "value": "",
+                "description": "URL to send remote expert back to once the call is over",
+                "req": false
+            },
+            {
+                "key": "callBackUrlCaller",
+                "value": "",
+                "description": "URL to send caller back to once the call is over",
+                "req": false
+            },
+            {
+                "key": "metadata",
+                "value": "",
+                "description": "Metadata UUIDs and values to associate with this query",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684180044853,
+        "lastModifiedTime": 1684180044853,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "DualLink",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "metadataEntryId": "00000000-0000-0000-0000-000000000000",
+                    "callerLink": "https://1click.blue/stream/ABCD1234",
+                    "expertLink": "https://1click.blue/stream/1234ABCD"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92910,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "rapidResponseBulkUsage",
+        "executor_version": "v4",
+        "executor_display_name": "Rapid Response Bulk Usage",
+        "executor_description": "Calls Rapid Response Links multiple times",
+        "executor_category": "EmbeddingViaIframes",
+        "executor_category_group": "EmbeddingViaIframes",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/links/rapid-response-bulk",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "Array of Rapid response requests",
+                "value": "",
+                "description": "an array, each containing the object that is used for /links/rapid-response",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684182803772,
+        "lastModifiedTime": 1684182803772,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Rapid Response Link",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "linkData": "[]"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92909,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "rapidResponse",
+        "executor_version": "v4",
+        "executor_display_name": "Rapid Response",
+        "executor_description": "Allows you to create rapid response links to lead to a specific expert. Must have Rapid Response turned on in order for this API to work.",
+        "executor_category": "EmbeddingViaIframes",
+        "executor_category_group": "EmbeddingViaIframes",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/links/rapid-response",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "facilityId",
+                "value": "",
+                "description": "facility that you want this call to originate from",
+                "req": false
+            },
+            {
+                "key": "expertiseId",
+                "value": "",
+                "description": "id of the remote expertise you want to use - this expertise MUST be assigned to the above facility",
+                "req": false
+            },
+            {
+                "key": "startTime",
+                "value": "",
+                "description": "Unix Timestamp of when the link will begin to be active (default is now)",
+                "req": false
+            },
+            {
+                "key": "endTime",
+                "value": "",
+                "description": "Unix Timestamp of when the link will cease to be active (default 2hours from now)",
+                "req": false
+            },
+            {
+                "key": "smsNumber\t",
+                "value": "",
+                "description": "SMS number you would like to send the link to. If you will be using over 1,000 messages per month please confirm usage with your account manager as certain plans may experience rate limiting",
+                "req": false
+            },
+            {
+                "key": "email",
+                "value": "",
+                "description": "Email you would like to send the link to",
+                "req": false
+            },
+            {
+                "key": "messageText\t",
+                "value": "",
+                "description": "If using an SMS or Email, this allows you to write a short message along the standard body of the sms/email",
+                "req": false
+            },
+            {
+                "key": "languageCode\t",
+                "value": "",
+                "description": "languageCode for custom SMS/Email message - language mapping/availability unique per instance, please contact your account represenative for details",
+                "req": false
+            },
+            {
+                "key": "callBackUrl",
+                "value": "",
+                "description": "URL to send remote expert back to once the call is over",
+                "req": false
+            },
+            {
+                "key": "metadata\t",
+                "value": "",
+                "description": "Metadata UUIDs and values to associate with this query",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684182543228,
+        "lastModifiedTime": 1684182543228,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Rapid Response Link",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "customerId": "00000000-0000-0000-0000-000000000000"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92914,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getallCustomers",
+        "executor_version": "v4",
+        "executor_display_name": "Get all Customers",
+        "executor_description": "List all customers for the requested call center",
+        "executor_category": "Customer",
+        "executor_category_group": "Customer",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/customer/list-all",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "Customer id for which you want to obtain the expertises",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684185212528,
+        "lastModifiedTime": 1684185212528,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "List of Customers",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 2,
+                    "customers": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Test Health System",
+                            "facilities": 2,
+                            "isActive": true,
+                            "externalId": "00000000-0000-0000-0000-000000000000",
+                            "subDomainPiece": "test",
+                            "url": "",
+                            "urlText": ""
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Demo Translation Company",
+                            "facilities": 1,
+                            "isActive": true,
+                            "externalId": "00000000-0000-0000-0000-000000000000",
+                            "subDomainPiece": "demo",
+                            "url": "",
+                            "urlText": ""
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92913,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "customerExpertiseList",
+        "executor_version": "v4",
+        "executor_display_name": "Customer Expertise List",
+        "executor_description": "Gets a list of all expertises available to a given customer. This list consists of all the call center expertises along with expertises from underlying 3rd party call centers that the customer may be linked to",
+        "executor_category": "Customer",
+        "executor_category_group": "Customer",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/customer/expertises",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "Customer id for which you want to obtain the expertises",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684184849029,
+        "lastModifiedTime": 1684185056162,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "List of Expertise",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 0,
+                    "expertises": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "French"
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Queue Manager"
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Registry Review"
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Schedule A Call"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92911,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createaCustomer",
+        "executor_version": "v4",
+        "executor_display_name": "Create a Customer",
+        "executor_description": "The following APIs allow you to lookup, edit, and create customers under your account. Customers are logical grouping of entry points into the system. Depending on your use case a \"customer\" may either be an actual customer of yours or a specific site or program that you are running under.",
+        "executor_category": "Customer",
+        "executor_category_group": "Customer",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/customer/create",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start\t",
+                "value": "",
+                "description": "Starting index of customers (default 0)",
+                "req": false
+            },
+            {
+                "key": "total",
+                "value": "",
+                "description": "Total number of customers (default 10)",
+                "req": false
+            },
+            {
+                "key": "sortKey",
+                "value": "",
+                "description": "Key to sort by",
+                "req": false
+            },
+            {
+                "key": "getAllForCallCenter",
+                "value": "",
+                "description": "Optional flag to get all for a reseller call center",
+                "req": false
+            },
+            {
+                "key": "query",
+                "value": "",
+                "description": "String you want to search for in the Customers. You can search by name or externalId",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684183789677,
+        "lastModifiedTime": 1684183789677,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "List of customers",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 2,
+                    "customers": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Test Health System",
+                            "facilities": 2,
+                            "isActive": true,
+                            "externalId": "00000000-0000-0000-0000-000000000000",
+                            "subDomainPiece": "test",
+                            "url": "",
+                            "urlText": ""
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Demo Translation Company",
+                            "facilities": 1,
+                            "isActive": true,
+                            "externalId": "00000000-0000-0000-0000-000000000000",
+                            "subDomainPiece": "demo",
+                            "url": "",
+                            "urlText": ""
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92912,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "editaCustomer",
+        "executor_version": "v4",
+        "executor_display_name": "Edit a Customer",
+        "executor_description": "Edit a customer",
+        "executor_category": "Customer",
+        "executor_category_group": "Customer",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/customer/edit",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "Customer id",
+                "req": false
+            },
+            {
+                "key": "name",
+                "value": "",
+                "description": "Name of the customer",
+                "req": false
+            },
+            {
+                "key": "isActive",
+                "value": "",
+                "description": "Allows you to disallow a customer account and all its facilities from being able to log in",
+                "req": false
+            },
+            {
+                "key": "externalId\t",
+                "value": "",
+                "description": "This is your organizational id for this account. We reccomend you use your own id or billing code for this account as it can be used for relating data between your system and ours.",
+                "req": false
+            },
+            {
+                "key": "subDomainPiece",
+                "value": "",
+                "description": "Subdomain componetent used by customer (eg. in https://hospital-blue.bluestreamhealth.com this is 'blue') NOTE: uniqueness among customers verifiedurlText\t",
+                "req": false
+            },
+            {
+                "key": "urlText\t",
+                "value": "",
+                "description": "In the UI allows for a custom banner that can lead to a site of your choice, the link is defined in the param below",
+                "req": false
+            },
+            {
+                "key": "url",
+                "value": "",
+                "description": "Url that URL text will link to",
+                "req": false
+            },
+            {
+                "key": "primaryContactFirstName\t",
+                "value": "",
+                "description": "First name for primary contact",
+                "req": false
+            },
+            {
+                "key": "primaryContactLastName\t",
+                "value": "",
+                "description": "Last name for primary contact",
+                "req": false
+            },
+            {
+                "key": "primaryContactEmail\t",
+                "value": "",
+                "description": "Email for primary contact",
+                "req": false
+            },
+            {
+                "key": "primaryContactPhoneNumber",
+                "value": "",
+                "description": "Phone number for primary contact",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684184621665,
+        "lastModifiedTime": 1684184621665,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Phone number for primary contact",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "customerId": "00000000-0000-0000-0000-000000000000"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92916,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "expertiseAvailability",
+        "executor_version": "v4",
+        "executor_display_name": "Expertise Availability",
+        "executor_description": "Gets the availability of a given expertise. This API lets you know how many users are online, available and how many calls are in the queue of a given expertise. When combined with click to call links this API can help to know whether or not to activate a certain link within your own UIs",
+        "executor_category": "Expertise",
+        "executor_category_group": "Expertise",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/expertises/status",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "expertiseId",
+                "value": "",
+                "description": "expertiseId",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684185649581,
+        "lastModifiedTime": 1684185649581,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "status of Expertise ",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "callsInQueue": 4,
+                    "expertsOnline": 8,
+                    "expertsAvailable": 0
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92915,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "callCenterexpertiseList",
+        "executor_version": "v4",
+        "executor_display_name": "Call Center expertise List",
+        "executor_description": "Get a list of all the expertises available to your call center",
+        "executor_category": "Expertise",
+        "executor_category_group": "Expertise",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/expertises/list",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1684185468316,
+        "lastModifiedTime": 1684187952932,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "List of expertise ",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": "4",
+                    "expertises": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "French"
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Queue Manager"
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Registry Review"
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "name": "Schedule A Call"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92904,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addApprovedIP",
+        "executor_version": "v4",
+        "executor_display_name": "Add Approved IP",
+        "executor_description": "Add IP to Approved Access List",
+        "executor_category": "ApprovedAccess",
+        "executor_category_group": "ApprovedAccess",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/approvedAccess/ip/add",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "facilityId",
+                "value": "",
+                "description": "The Facility Id in where you want to add the approved IP access.",
+                "req": false
+            },
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "The Customer Id for which you want to add an approved IP access.",
+                "req": false
+            },
+            {
+                "key": "ipAddress",
+                "value": "",
+                "description": "Provide the IP address that you want to allow access (Format: IP or CIDR), ex. 172.22.10.1 or 10.0.0.0/24",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684178638170,
+        "lastModifiedTime": 1684178638170,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "IP Approved Access List",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 2,
+                    "approvedIpAccessList": [
+                        "10.10.10.0/28",
+                        "10.0.2.2"
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92906,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "approvedIPList",
+        "executor_version": "v4",
+        "executor_display_name": "Approved IP List",
+        "executor_description": "Approved IP Access List",
+        "executor_category": "ApprovedAccess",
+        "executor_category_group": "ApprovedAccess",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/approvedAccess/ip/list-all",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "facilityId",
+                "value": "",
+                "description": "The Facility Id in where you want to add the approved IP access.",
+                "req": false
+            },
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "The Customer Id for which you want to add an approved IP access.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684179443537,
+        "lastModifiedTime": 1684179443537,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "IP Approved Access List",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 2,
+                    "approvedIpAccessList": [
+                        "10.10.10.0/28",
+                        "10.0.2.2"
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92905,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "removeApprovedIP",
+        "executor_version": "v4",
+        "executor_display_name": "Remove Approved IP",
+        "executor_description": "Remove IP from Approved Access List",
+        "executor_category": "ApprovedAccess",
+        "executor_category_group": "ApprovedAccess",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/approvedAccess/ip/delete",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "facilityId",
+                "value": "",
+                "description": "The Facility Id in where you want to add the approved IP access.",
+                "req": false
+            },
+            {
+                "key": "customerId",
+                "value": "",
+                "description": "The Customer Id for which you want to add an approved IP access.",
+                "req": false
+            },
+            {
+                "key": "ipAddress",
+                "value": "",
+                "description": "Provide the IP address that you want to allow access (Format: IP or CIDR), ex. 172.22.10.1 or 10.0.0.0/24",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "private",
+        "registeredAsIs": true,
+        "creationTime": 1684179049461,
+        "lastModifiedTime": 1684179049461,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "IP Approved Access List",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "total": 2,
+                    "approvedIpAccessList": [
+                        "10.10.10.0/28",
+                        "10.0.2.2"
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92933,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "callSnapshots",
+        "executor_version": "v4",
+        "executor_display_name": "Call Snapshots",
+        "executor_description": "Allows retrieval of in call snapshots. This API requires your account to be enabled for call snapshots and a signed BAA. Please contact your account representative for details",
+        "executor_category": "Reporting",
+        "executor_category_group": "Reporting",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/reporting/call-snapshots",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "callId",
+                "value": "",
+                "description": "UUID of the call to get images from",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684190128706,
+        "lastModifiedTime": 1684190128706,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "List of snapshot",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "snapshotsData": [
+                        {
+                            "callId": "00000000-0000-0000-0000-000000000000",
+                            "timeStamp": "2020-01-12 17:18:43 ET",
+                            "snapshotId": "00000000-0000-0000-0000-000000000000",
+                            "snapshotBytes": "183578",
+                            "snapshotData": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQA..."
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 92932,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "callReport",
+        "executor_version": "v4",
+        "executor_display_name": "Call Report",
+        "executor_description": "Report of calls for the call center (ET is used as a timezone). Metadata fields may be marked [protected] if you are seeing this please contact your account representative. Please note for this type of data to be available via API we require a BAA to be signed.",
+        "executor_category": "Reporting",
+        "executor_category_group": "Reporting",
+        "service_provider": "bluestream",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.bluestreamhealth.com/a/4/reporting/call-data",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "start",
+                "value": "",
+                "description": "Start date YYYY-MM-DD HH:MM:SS",
+                "req": false
+            },
+            {
+                "key": "end",
+                "value": "",
+                "description": "End date YYYY-MM-DD HH:MM:SS",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684189962278,
+        "lastModifiedTime": 1684189962278,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Account credential was accepted, but the request generated an error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "PARAMETER_MISSING",
+                            "errorParameter": "string",
+                            "message": "Required Parameter is missing",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Internal server error.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "errors": [
+                        {
+                            "errorKey": "EXCEPTION",
+                            "errorParameter": null,
+                            "message": "An Unexpected Error Has Occurred. Please contact support. (reference id: 55e53efd-c33b-48ef-b47f-120a3082bf98)",
+                            "errorId": "00000000-0000-0000-0000-000000000000"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "List of calls",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "calls": [
+                        {
+                            "callId": "00000000-0000-0000-0000-000000000000",
+                            "metadataId": "00000000-0000-0000-0000-000000000000",
+                            "segmentCount": 1,
+                            "callType": "VIDEO_CALL",
+                            "customerName": "Test Health System",
+                            "customerNumber": "",
+                            "facilityName": null,
+                            "facilityExternalId": null,
+                            "managingCallCenter": "The Language Services Center",
+                            "snapshotCount": 1,
+                            "segments": [
+                                {
+                                    "segmentId": "00000000-0000-0000-0000-000000000000",
+                                    "destinationCallCenter": "The Language Services Center",
+                                    "expertFirstName": "Jane",
+                                    "expertLastName": "Doe",
+                                    "expertEmail": "jane.doe@company.com",
+                                    "expertExternalId": "",
+                                    "expertiseName": "Queue Manager",
+                                    "callIsManuallyMarkedTest": "N",
+                                    "callIsManuallyMarkedFail": "N",
+                                    "waitTimeSeconds": 15,
+                                    "waitTimeMinutes": 0.3,
+                                    "durationSeconds": 4,
+                                    "durationMinutes": 0.1,
+                                    "disconnectType": null,
+                                    "placed": "2020-01-12 17:18:43 EDT",
+                                    "startTime": "2020-01-12 17:18:59 EDT",
+                                    "endTime": "2020-01-12 17:19:03 EDT",
+                                    "callProviderWaitTime": null,
+                                    "callProviderMediaQuality": null,
+                                    "callProviderComment": null,
+                                    "callProviderCameraPermission": "true",
+                                    "callProviderMicrophonePermission": "true",
+                                    "callExpertQuality": null,
+                                    "callExpertWaitTime": null,
+                                    "callExpertMediaQuality": null,
+                                    "callExpertCameraPermission": "true",
+                                    "callExpertMicrophonePermission": "true",
+                                    "metadata": {
+                                        "MRN": "[protected]",
+                                        "Name": "John Smith"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

@@ -1,0 +1,3444 @@
+[
+    {
+        "id": 91393,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getClaimstatuses",
+        "executor_version": "v2",
+        "executor_display_name": " Get Claim statuses",
+        "executor_description": "You can search the collection of claim statuses using this endpoint.",
+        "executor_category": "Claimstatuses",
+        "executor_category_group": "Claimstatuses",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/demo/v2/claim-statuses",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "payerid\t",
+                "value": "",
+                "description": "The Availity id for the health plan.",
+                "req": false
+            },
+            {
+                "key": "submitterlastName\t",
+                "value": "",
+                "description": "The last or business name of the submitter.",
+                "req": false
+            },
+            {
+                "key": "submitterfirstName\t",
+                "value": "",
+                "description": "The first name of the submitter.",
+                "req": false
+            },
+            {
+                "key": "submittermiddleName\t",
+                "value": "",
+                "description": "The middle name of the submitter.",
+                "req": false
+            },
+            {
+                "key": "submittersuffix\t",
+                "value": "",
+                "description": "The suffix of the submitter.",
+                "req": false
+            },
+            {
+                "key": "fromDate\t",
+                "value": "",
+                "description": "The service from date.",
+                "req": false
+            },
+            {
+                "key": "toDate\t",
+                "value": "",
+                "description": "The service to date.",
+                "req": false
+            },
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1683153926990,
+        "lastModifiedTime": 1683575075017,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Once the health plan has successfully fulfilled your request, we will respond with a status code of 200 and summaries of each claim status we found.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "If we are unable to communicate with the health plan (due to maintenance), we will respond with a status code of 504 and a message indicating that the health plan is down for maintenance.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "userMessage": "The health plan is down for maintenance.",
+                    "developerMessage": "We were unable to complete a transaction with the payer.",
+                    "documentation": "https://developer.availity.com/documentation",
+                    "reasonCode": 7,
+                    "statusCode": 504
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "If the health plan responds with validation messages indicating that they were unable to fulfill your request, we will respond with a status code of 400 and a list of errors from the health plan.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91394,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getClaimstatusesid",
+        "executor_version": "v2",
+        "executor_display_name": " Get Claim statuses id",
+        "executor_description": "You can search the collection of claim statuses using this endpoint.",
+        "executor_category": "Claimstatuses",
+        "executor_category_group": "Claimstatuses",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/demo/v2/claim-statuses/id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1683154335491,
+        "lastModifiedTime": 1683575123974,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We have returned an up to date copy of the resource.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We have not yet received a response from the health plan, but are still trying. You should try again later.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "The health plan indicated that something is wrong with the request. The resource should have a list of validationMessages. Correct and resubmit the request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not find a ClaimStatus with the id that you specified.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not receive a respsone from the health plan within the time allotted. You should try your request again later.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91395,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteClaimstatusesid",
+        "executor_version": "v1",
+        "executor_display_name": " Delete Claim statuses id",
+        "executor_description": "You can delete a claim status using this endpoint.",
+        "executor_category": "Claimstatuses",
+        "executor_category_group": "Claimstatuses",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.availity.com/demo/v1/claim-statuses/id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683154630495,
+        "lastModifiedTime": 1683154630495,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "We have deleted the resource from our system.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "We did not find a ClaimStatus with the id that you specified.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91358,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getcoveragesID ",
+        "executor_version": "v1",
+        "executor_display_name": " Get coverages ID",
+        "executor_description": "You can retrieve the details about a member's coverage by requesting an individual coverage.",
+        "executor_category": "coverages ",
+        "executor_category_group": "coverages ",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/availity/v1/coverages/id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683147475272,
+        "lastModifiedTime": 1683147475272,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": "",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "firstName": "JAMES",
+                    "middleName": "T",
+                    "lastName": "KIRK",
+                    "suffix": "SR",
+                    "memberId": "ASDF12345",
+                    "gender": "Male",
+                    "genderCode": "M",
+                    "ssn": "123591122",
+                    "birthDate": "1982-04-28T00:00:00.000+0000",
+                    "address": {
+                        "line1": "123 MAIN ST",
+                        "line2": "SUITE 1",
+                        "city": "JACKSONVILLE",
+                        "state": "Florida",
+                        "stateCode": "FL",
+                        "zipCode": "23211"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91359,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletecoveragesID ",
+        "executor_version": "v1",
+        "executor_display_name": " delete coverages ID",
+        "executor_description": "You can delete a particular coverage by issuing a DELETE against it.",
+        "executor_category": "coverages ",
+        "executor_category_group": "coverages ",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.availity.com/availity/v1/coverages/id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683147774260,
+        "lastModifiedTime": 1683147774260,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91357,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getcoverages ",
+        "executor_version": "v1",
+        "executor_display_name": " Get coverages ",
+        "executor_description": "You can retrieve a snapshot of a member's health plan coverage by querying the coverages resource with the following parameters:",
+        "executor_category": "coverages ",
+        "executor_category_group": "coverages ",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/availity/v1/coverages",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "payerId",
+                "value": "",
+                "description": "This is the Availity id of the health plan that the member has coverage with. You can view the list of payer id's by selecting the Coverage Resource from the Supported Health Plans link on the contents menu on the left side of this page.",
+                "req": false
+            },
+            {
+                "key": "providerType\t",
+                "value": "",
+                "description": "Certain health plans require that the submitter specify whether or not they are a professional or institutional provider. You can specify that using this optional field.",
+                "req": false
+            },
+            {
+                "key": "providerNpi",
+                "value": "",
+                "description": "Most health plans require that you send the provider's National Provider Identifier number to identify who is requesting to see a member's coverage information. Specify this value using this parameter.",
+                "req": false
+            },
+            {
+                "key": "providerTaxId\t",
+                "value": "",
+                "description": "Some health plans require that you send the provider's tax id. Please use this parameter to specify the requesting provider's tax id.",
+                "req": false
+            },
+            {
+                "key": "payerAssignedProviderId\t",
+                "value": "",
+                "description": "A few health plans allow you to specify a payer-assigned identifier for the requesting provider. If the requesting provider has been assigned a payer-assigned provider id, send it using this parameter.",
+                "req": false
+            },
+            {
+                "key": "providerSSN",
+                "value": "",
+                "description": "A few health plans allow you to specify a provider's SSN.",
+                "req": false
+            },
+            {
+                "key": "providerFirstName\t",
+                "value": "",
+                "description": "The provider's first name.",
+                "req": false
+            },
+            {
+                "key": "providerLastName\t",
+                "value": "",
+                "description": "The provider's last name.",
+                "req": false
+            },
+            {
+                "key": "providerCity\t",
+                "value": "",
+                "description": "Certain health plans require that you specify the city that the provider is located in. You can send that information using this parameter.",
+                "req": false
+            },
+            {
+                "key": "providerState",
+                "value": "",
+                "description": "Certain health plans require that you specify the state that the provider is located in. You can send that information using this parameter.",
+                "req": false
+            },
+            {
+                "key": "providerZipCode\t",
+                "value": "",
+                "description": "Certain health plans require that you specify the ZIP code that the provider is located in. You can send that information using this parameter.",
+                "req": false
+            },
+            {
+                "key": "providerSpecialty\t",
+                "value": "",
+                "description": "Certain health plans allow you to specify the provider's specialty using a taxonomy code.",
+                "req": false
+            },
+            {
+                "key": "placeOfService\t",
+                "value": "",
+                "description": "Certain health plans require that you identify the place of service.",
+                "req": false
+            },
+            {
+                "key": "submitterId\t",
+                "value": "",
+                "description": "Some health plans require that you identify yourself using a payer-assigned submitter identifier. Please send that information for health plans that require it using this parameter.",
+                "req": false
+            },
+            {
+                "key": "asOfDate\t",
+                "value": "",
+                "description": "You can indicate the date of service or point in time you want to check coverage information for using this parameter.",
+                "req": false
+            },
+            {
+                "key": "toDate\t",
+                "value": "",
+                "description": "Some health plans require that you provide an end date for your coverage information search period. If checking coverage for such a health plan, please use this parameter.",
+                "req": false
+            },
+            {
+                "key": "serviceType\t",
+                "value": "",
+                "description": "You can specify the type or types of service using this parameter.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683147011020,
+        "lastModifiedTime": 1683147011020,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": "",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "totalCount": 5,
+                    "count": 5,
+                    "offset": 0,
+                    "limit": 50,
+                    "links": {
+                        "self": {
+                            "href": "https://api.availity.com/availity/v1/coverages"
+                        }
+                    },
+                    "coverages": [
+                        {
+                            "links": {
+                                "self": {
+                                    "href": "https://api.availity.com/availity/v1/coverages/0001234821666577173234942038175340242587013739108497709963594997"
+                                }
+                            },
+                            "id": "0001234821666577173234942038175340242587013739108497709963594997",
+                            "customerId": "4321",
+                            "controlNumber": "9876543",
+                            "status": "Complete",
+                            "statusCode": "4",
+                            "createdDate": "2014-10-15T16:31:07.000+0000",
+                            "updatedDate": "2014-10-15T16:31:07.000+0000",
+                            "expirationDate": "2014-10-16T16:31:07.000+0000",
+                            "asOfDate": "2014-10-15T04:00:00.000+0000",
+                            "requestedServiceType": [
+                                {
+                                    "code": "30",
+                                    "value": "Health Benefit Plan Coverage"
+                                }
+                            ],
+                            "subscriber": {
+                                "firstName": "ZENA",
+                                "lastName": "MARDIN",
+                                "memberId": "H87654321",
+                                "gender": "Female",
+                                "genderCode": "F",
+                                "birthDate": "1942-09-15T04:00:00.000+0000"
+                            },
+                            "patient": {
+                                "firstName": "ZENA",
+                                "lastName": "MARDIN",
+                                "subscriberRelationship": "Self",
+                                "subscriberRelationshipCode": "18",
+                                "gender": "Female",
+                                "genderCode": "F",
+                                "birthDate": "1942-09-15T04:00:00.000+0000"
+                            },
+                            "payer": {
+                                "name": "HUMANA",
+                                "payerId": "HUMANA"
+                            },
+                            "requestingProvider": {
+                                "npi": "1234567893",
+                                "taxId": "123123123"
+                            },
+                            "plans": [
+                                {
+                                    "status": "Active Coverage",
+                                    "statusCode": "1",
+                                    "groupNumber": "P1234567"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "If you send invalid parameters, the resource will return a status code of 400 and an error response",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "userMessage": "This client system has made an invalid request.",
+                    "developerMessage": "Your request is not formed properly. Please check your request and the API documentation.",
+                    "documentation": "https://api.availity.com/availity/v1/documentation/coverages",
+                    "reasonCode": 0,
+                    "statusCode": 400,
+                    "errors": [
+                        {
+                            "field": "submitterId",
+                            "errorMessage": "Please enter a valid Submitter ID."
+                        },
+                        {
+                            "field": "serviceType",
+                            "errorMessage": "This field is required."
+                        },
+                        {
+                            "field": "patientBirthDate",
+                            "errorMessage": "Enter a valid date that is not in the future."
+                        },
+                        {
+                            "field": "memberId",
+                            "errorMessage": "Enter a patient ID containing letters, numbers, spaces, and any of the following special characters: ,;'-.?!&/\\#+=()"
+                        },
+                        {
+                            "field": "providerNpi",
+                            "errorMessage": "Enter a valid National Provider Identifier (NPI) containing 10 numeric digits and beginning with a 1, 2, 3, or 4."
+                        },
+                        {
+                            "field": "patientLastName",
+                            "errorMessage": "Enter a name containing letters, numbers, spaces, and any of the following special characters: ,;'-.?!&/\\#+=()"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91400,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postdentalclaim",
+        "executor_version": "v1",
+        "executor_display_name": "Post dental claim",
+        "executor_description": "This endpoint creates a dental claim asynchronously. To submit a dental claim, make a valid request and a response will be returned with a location header containing a URL you can query for your result.The validation rules for the DentalClaim resource can vary by health plan, the type of claim being requested, and the type of service to be performed. Availity organizes these rules and makes them available through the Configuration service. The Configuration resource documents the fields you need to send to create a DentalClaim and explains what values are valid for those fields. See the Configurations service for details.",
+        "executor_category": "dentalclaim",
+        "executor_category_group": "dentalclaim",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.availity.com/demo/v1/dental-claims",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683157444926,
+        "lastModifiedTime": 1683157444926,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "The claim was accepted for processing. Poll the URL in the Location header. The X-Status-Message header will contain additional detail.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "The claim has completed processing and will be submitted to the health plan.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "The claim request failed validation. It either failed our validation rules or was rejected by the health plan. The errors property will contain detailed information. Errors that specify a field are Availity validation rule failures. Errors that specify a code are from the health plan. Correct the errors and resubmit the request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "We were unable to parse your request. Correct the errors and resubmit the request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91401,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getdentalclaimid",
+        "executor_version": "v1",
+        "executor_display_name": "Get dental claimid",
+        "executor_description": "You can retrieve a dental claim using this endpoint.",
+        "executor_category": "dentalclaim",
+        "executor_category_group": "dentalclaim",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/demo/v1/dental-claims/:id",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683157976144,
+        "lastModifiedTime": 1683157976145,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are done processing your request and the response body contains the result.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are currently processing your request. We may be retrying it.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not find a ProfessionalClaim with the id that you sent.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91399,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getInstitutionalClaimid",
+        "executor_version": "v1",
+        "executor_display_name": "Get InstitutionalClaimid",
+        "executor_description": "You can retrieve a CCE using this endpoint.",
+        "executor_category": "CareCostEstimatorInstitutionalClaim",
+        "executor_category_group": "CareCostEstimatorInstitutionalClaim",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/demo/v1/institutional-claims/:id",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683156787837,
+        "lastModifiedTime": 1683156787837,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are done processing your request and the response body contains the result.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "-5375712665050195544",
+                    "createdDate": "2016-07-06T14:35:07.000+0000",
+                    "updatedDate": "2016-07-06T14:35:08.000+0000",
+                    "expirationDate": "2016-07-07T14:35:07.000+0000",
+                    "requestTypeCode": "PRE_DETERMINATION",
+                    "submitter": {
+                        "lastName": "JOHNSON",
+                        "id": "123456789"
+                    },
+                    "payer": {
+                        "id": "BCBSF"
+                    },
+                    "billingProvider": {
+                        "ein": "111222333",
+                        "payerAssignedProviderId": "G1234"
+                    },
+                    "subscriber": {
+                        "memberId": "JBTEST1",
+                        "onHold": false
+                    },
+                    "patient": {
+                        "lastName": "SMITH",
+                        "firstName": "JOE",
+                        "birthDate": "1870-01-01",
+                        "gender": "Male",
+                        "genderCode": "M",
+                        "subscriberRelationship": "Spouse",
+                        "subscriberRelationshipCode": "01"
+                    },
+                    "claimInformation": {
+                        "facilityTypeCode": "13",
+                        "frequencyTypeCode": "1",
+                        "messages": [
+                            {
+                                "code": "EAPI-90386",
+                                "description": " Plan profile information not found"
+                            }
+                        ],
+                        "displayMessage": "Unable to determine patient liability; additional information is required. For assistance, contact BCBSF",
+                        "principalDiagnosis": {
+                            "qualifier": "International Classification of Diseases Clinical Modification (ICD-10-CM) Principal Diagnosis",
+                            "qualifierCode": "ABK",
+                            "code": "G912"
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are currently processing your request. We may be retrying it.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Your CCE request failed validation. You can correct the errors and resubmit.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not find a InstitutionalClaim with the id that you sent.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We were unable to process your request. The health plan did not respond after several retry attempts. Please try your request again later.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91398,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postInstitutionalClaim",
+        "executor_version": "v1",
+        "executor_display_name": "Post InstitutionalClaim",
+        "executor_description": "This endpoint creates a CCE asynchronously. To submit a CCE, make a valid request and a response will be returned with a location header containing a URL you can query for your result.The validation rules for the InstitutionalClaim resource can vary by health plan, the type of claim being requested, and the type of service to be performed. Availity organizes these rules and makes them available through the Configuration service. The Configuration resource documents the fields you need to send to create a InstitutionalClaim and explains what values are valid for those fields. See the Configurations service for details.",
+        "executor_category": "CareCostEstimatorInstitutionalClaim",
+        "executor_category_group": "CareCostEstimatorInstitutionalClaim",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.availity.com/demo/v1/institutional-claims",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683156409735,
+        "lastModifiedTime": 1683156409735,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "The CCE was accepted for processing. Poll the URL in the Location header. The X-Status-Message header will contain additional detail.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "The CCE request failed validation. It either failed our validation rules or was rejected by the health plan. The errors property will contain detailed information. Errors that specify a field are Availity validation rule failures. Errors that specify a code are from the health plan. Correct the errors and resubmit the request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "We were unable to parse your request. Correct the errors and resubmit the request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91392,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteServicereviewsid",
+        "executor_version": "v2",
+        "executor_display_name": "Delete Service reviews id",
+        "executor_description": "This endpoint voids an existing service review asynchronously. Only a service review with deleteable=true can be voided. Once you make a valid request, we will respond with a location header containing a URL you can query for your result while we asynchronously send a void request to the health plan.",
+        "executor_category": "Servicereviews",
+        "executor_category_group": "Servicereviews",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.availity.com/availity/v2/service-reviews/-id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683152945508,
+        "lastModifiedTime": 1683152945508,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are currently processing your request. We may be retrying it. The X-Status-Message header will contain additional detail.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Your request has been rejected.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": ""
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not find a ServiceReview with the id that you sent.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We were unable to parse your request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91369,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postServicereviews",
+        "executor_version": "v2",
+        "executor_display_name": "post Service reviews",
+        "executor_description": "This endpoint creates service reviews asynchronously. To submit a transaction, make a valid request and we will respond with a location header containing a URL you can query for your result.",
+        "executor_category": "Servicereviews",
+        "executor_category_group": "Servicereviews",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.availity.com/availity/v2/service-reviews",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683150735504,
+        "lastModifiedTime": 1683150735504,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "If your request is valid, we will respond with a status code of 202 and a location header where you can check back for your response. We will continue to respond in this way until we have heard back from the health plan.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "BCBSF",
+                    "requestingProvider": {
+                        "lastName": "Slice n Dice Discount Surgery",
+                        "npi": "1234567893"
+                    },
+                    "subscriber": {
+                        "memberId": "XBH1823812"
+                    },
+                    "patient": {
+                        "lastName": "Smith",
+                        "firstName": "Bob",
+                        "birthDate": "1956-01-29"
+                    },
+                    "diagnoses": [
+                        {
+                            "qualifierCode": "ABF",
+                            "code": "W5602XA"
+                        }
+                    ],
+                    "requestTypeCode": "AR",
+                    "serviceTypeCode": "1",
+                    "placeOfServiceCode": "11",
+                    "fromDate": "2014-05-01",
+                    "toDate": "2014-05-03",
+                    "quantity": "3",
+                    "quantityTypeCode": "DA",
+                    "admissionTypeCode": "1",
+                    "renderingProviders": [
+                        {
+                            "roleCode": "71",
+                            "lastName": "Jones",
+                            "firstName": "Jane",
+                            "npi": "1231231238"
+                        },
+                        {
+                            "roleCode": "FA",
+                            "lastName": "Slice and Dice Surgery Center",
+                            "npi": "1234912380"
+                        }
+                    ],
+                    "procedures": [
+                        {
+                            "qualifierCode": "HC",
+                            "code": "S8948",
+                            "quantity": "1",
+                            "quantityTypeCode": "UN"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "If your request is invalid, we will respond with a status code of 400 and a list of errors for you to correct.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "BCBSF",
+                    "requestingProvider": {
+                        "lastName": "Slice n Dice Discount Surgery"
+                    },
+                    "subscriber": {
+                        "memberId": "XBH1823812"
+                    },
+                    "patient": {
+                        "lastName": "Smith",
+                        "firstName": "Bob",
+                        "birthDate": "1956-01-29"
+                    },
+                    "diagnoses": [
+                        {
+                            "qualifierCode": "ABF",
+                            "code": "W5602XA"
+                        }
+                    ],
+                    "requestTypeCode": "AR",
+                    "serviceTypeCode": "1",
+                    "placeOfServiceCode": "11",
+                    "fromDate": "2014-05-01",
+                    "toDate": "2014-05-03",
+                    "quantity": "3",
+                    "quantityTypeCode": "DA",
+                    "admissionTypeCode": "1",
+                    "renderingProviders": [
+                        {
+                            "roleCode": "71",
+                            "lastName": "Jones",
+                            "firstName": "Jane",
+                            "npi": "1231231238"
+                        },
+                        {
+                            "roleCode": "FA",
+                            "lastName": "Slice and Dice Surgery Center",
+                            "npi": "1234912380"
+                        }
+                    ],
+                    "procedures": [
+                        {
+                            "qualifierCode": "HC",
+                            "code": "S8948",
+                            "quantity": "1",
+                            "quantityTypeCode": "UN"
+                        }
+                    ],
+                    "userMessage": "The request was invalid. See the 'errors' property for details.",
+                    "developerMessage": "The request was invalid. See the 'errors' property for details.",
+                    "documentation": "https://developer.availity.com/documentation",
+                    "reasonCode": 0,
+                    "statusCode": 400,
+                    "errors": [
+                        {
+                            "field": "requestingProvider.npi",
+                            "errorMessage": "Please enter a valid Requesting Provider NPI.",
+                            "index": 0
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91384,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getServicereviewsid",
+        "executor_version": "v2",
+        "executor_display_name": "Get Service reviews id",
+        "executor_description": "You can search the for service reviews in the health plan's system using this endpoint.",
+        "executor_category": "Servicereviews",
+        "executor_category_group": "Servicereviews",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/availity/v2/service-reviews/id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "payerid\t",
+                "value": "",
+                "description": "The Availity payer id of the health plan.",
+                "req": false
+            },
+            {
+                "key": "requestingProviderspecialtyCode\t",
+                "value": "",
+                "description": "The specialty code of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "requestingProviderlastName\t",
+                "value": "",
+                "description": "The last or business name of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "requestingProviderfirstName\t",
+                "value": "",
+                "description": "The first name of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "requestingProvidermiddleName\t",
+                "value": "",
+                "description": "The middle name of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "requestingProvidersuffix\t",
+                "value": "",
+                "description": "The suffix of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "requestingProvidernpi\t",
+                "value": "",
+                "description": "The NPI of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "requestingProvidertaxId\t",
+                "value": "",
+                "description": "The tax id of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "requestingProviderpayerAssignedProviderId\t",
+                "value": "",
+                "description": "The payer assigned provider id of the requesting provider.",
+                "req": false
+            },
+            {
+                "key": "certificationIssueDate\t",
+                "value": "",
+                "description": "The date the service review certification was issued.",
+                "req": false
+            },
+            {
+                "key": "referenceNumber",
+                "value": "",
+                "description": "The number assigned to uncertified service reviews.",
+                "req": false
+            },
+            {
+                "key": "statusCode\t",
+                "value": "",
+                "description": "The status code of the service reviews.",
+                "req": false
+            },
+            {
+                "key": "sessionId\t",
+                "value": "",
+                "description": "Used for polling for a result.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683152192131,
+        "lastModifiedTime": 1683152192131,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are currently processing your request. We may be retrying it. The X-Status-Message header will contain additional detail.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Your request has been rejected. It either failed our validation rules or was rejected by the health plan. The errors property will contain detailed information. Errors that specify a field are Availity validation rule failures. Errors that specify a code are from the health plan.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "userMessage": "The request was invalid. See the 'errors' property for details.",
+                    "developerMessage": "The request was invalid. See the 'errors' property for details.",
+                    "documentation": "https://developer.availity.com/documentation",
+                    "reasonCode": 0,
+                    "statusCode": 400,
+                    "errors": [
+                        {
+                            "field": "requestingProvider.npi",
+                            "errorMessage": "Please enter a valid Requesting Provider NPI.",
+                            "index": 0
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are done processing your request and the response body contains the result.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We were unable to process your request. The health plan did not respond after several retry attempts. Please try your request again later.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "userMessage": "The health plan is down for maintenance.",
+                    "developerMessage": "We were unable to complete a transaction with the payer.",
+                    "documentation": "https://developer.availity.com/documentation",
+                    "reasonCode": 7,
+                    "statusCode": 504
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91364,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getServicereviews",
+        "executor_version": "v2",
+        "executor_display_name": "get Service reviews",
+        "executor_description": "You can retrieve a service review using this endpoint.",
+        "executor_category": "Servicereviews",
+        "executor_category_group": "Servicereviews",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/demo/v2/service-reviews/id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683149786281,
+        "lastModifiedTime": 1683149786281,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "-11923818311",
+                    "createdDate": "2014-04-28T21:59:29.000+0000",
+                    "updatedDate": "2014-04-29T08:28:01.000+0000",
+                    "expirationDate": "2014-05-14T21:59:29.000+0000",
+                    "customerId": "11314",
+                    "updatable": false,
+                    "status": "Certified in Total",
+                    "statusCode": "A1",
+                    "certificationIssueDate": "2014-04-29",
+                    "certificationEffectiveDate": "2014-05-01",
+                    "certificationExpirationDate": "2014-05-03",
+                    "certificationNumber": "129738127",
+                    "payer": {
+                        "id": "BCBSF",
+                        "name": "Florida Blue",
+                        "contactName": "Billing Dept",
+                        "phone": "1-800-555-4444"
+                    },
+                    "requestingProvider": {
+                        "lastName": "Slice n Dice Discount Surgery",
+                        "npi": "1234567893"
+                    },
+                    "subscriber": {
+                        "memberId": "XBH1823812"
+                    },
+                    "patient": {
+                        "lastName": "Smith",
+                        "firstName": "Bob",
+                        "birthDate": "1956-01-29",
+                        "subscriberRelationship": "Self",
+                        "subscriberRelationshipCode": "18"
+                    },
+                    "diagnoses": [
+                        {
+                            "qualifier": "ICD-10",
+                            "qualifierCode": "ABF",
+                            "value": "Struck by dolphin, initial encounter",
+                            "code": "W5602XA"
+                        }
+                    ],
+                    "requestType": "Admission Review",
+                    "requestTypeCode": "AR",
+                    "serviceType": "Medical Care",
+                    "serviceTypeCode": "1",
+                    "placeOfService": "Office",
+                    "placeOfServiceCode": "11",
+                    "fromDate": "2014-05-01",
+                    "toDate": "2014-05-03",
+                    "quantity": "3",
+                    "quantityType": "Days",
+                    "quantityTypeCode": "DA",
+                    "admissionType": "Emergency",
+                    "admissionTypeCode": "1",
+                    "renderingProviders": [
+                        {
+                            "role": "Attending Provider",
+                            "roleCode": "71",
+                            "lastName": "Jones",
+                            "firstName": "Jane",
+                            "npi": "1231231238"
+                        },
+                        {
+                            "role": "Facility",
+                            "roleCode": "FA",
+                            "lastName": "Slice and Dice Surgery Center",
+                            "npi": "1234912380"
+                        }
+                    ],
+                    "procedures": [
+                        {
+                            "qualifier": "HCPCS",
+                            "qualifierCode": "HC",
+                            "value": "Low-level laser treatment, 15 minutes",
+                            "code": "S8948",
+                            "quantity": "1",
+                            "quantityType": "Units",
+                            "quantityTypeCode": "UN"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are currently processing your request. We may be retrying it. The X-Status-Message header will contain additional detail.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not find a ServiceReview with the id that you sent.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We were unable to process your request. The health plan did not respond after several retry attempts. Please try your request again later.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91390,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "putServicereviewsid",
+        "executor_version": "v2",
+        "executor_display_name": "put Service reviews id",
+        "executor_description": "This endpoint updates service reviews asynchronously. Only a service review with updatable=true can be updated. Once you make a valid request, we will respond with a location header containing a URL you can query for your result while we asynchronously send an updated copy of the service review to the health plan",
+        "executor_category": "Servicereviews",
+        "executor_category_group": "Servicereviews",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/availity/v2/service-reviews/id",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683152671690,
+        "lastModifiedTime": 1683152671690,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are currently processing your request. We may be retrying it. The X-Status-Message header will contain additional detail.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Your request has been rejected. It either failed our validation rules (a 400 in res) See the errors property for details.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "userMessage": "The request was invalid. See the 'errors' property for details.",
+                    "developerMessage": "The request was invalid. See the 'errors' property for details.",
+                    "documentation": "https://developer.availity.com/documentation",
+                    "reasonCode": 0,
+                    "statusCode": 400,
+                    "errors": [
+                        {
+                            "field": "requestingProvider.npi",
+                            "errorMessage": "Please enter a valid Requesting Provider NPI.",
+                            "index": 0
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not find a ServiceReview with the id that you sent.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We were unable to parse your request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91397,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getProfessionalClaim ",
+        "executor_version": "v1",
+        "executor_display_name": " Get ProfessionalClaim ",
+        "executor_description": "You can retrieve a CCE using this endpoint.",
+        "executor_category": "CareCostEstimatorProfessional",
+        "executor_category_group": "CareCostEstimatorProfessional",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/demo/v1/professional-claims/:id",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683155708558,
+        "lastModifiedTime": 1683155708558,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are done processing your request and the response body contains the result.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "1684335841477061460",
+                    "createdDate": "2016-06-06T18:34:46.000+0000",
+                    "updatedDate": "2016-06-06T18:34:52.000+0000",
+                    "expirationDate": "2016-06-07T18:34:46.000+0000",
+                    "requestTypeCode": "PRE_DETERMINATION",
+                    "submitter": {
+                        "lastName": "Island Ear Nose and Throat",
+                        "id": "263749002"
+                    },
+                    "payer": {
+                        "id": "BCBSF"
+                    },
+                    "billingProvider": {
+                        "npi": "1255569224",
+                        "payerAssignedProviderId": "G4402"
+                    },
+                    "subscriber": {
+                        "memberId": "H23183209",
+                        "totalDeductible": "6100.00",
+                        "accumulatedDeductible": "0.00",
+                        "remainingDeductible": "6100.00",
+                        "onHold": false
+                    },
+                    "patient": {
+                        "lastName": "CARIDAD",
+                        "firstName": "ANISLEIDY",
+                        "birthDate": "1992-11-22",
+                        "gender": "Female",
+                        "genderCode": "F",
+                        "subscriberRelationship": "Self",
+                        "subscriberRelationshipCode": "18"
+                    },
+                    "claimInformation": {
+                        "bundled": false,
+                        "diagnoses": [
+                            {
+                                "qualifier": "International Classification of Diseases Clinical Modification (ICD-10-CM) Principal Diagnosis",
+                                "qualifierCode": "ABK",
+                                "code": "J3089"
+                            }
+                        ],
+                        "serviceLines": [
+                            {
+                                "procedure": "PROFESSIONAL SVCS FOR THE SUPERVISION OF PREP & PROVISION OF ANTIGENS FOR ALLERGEN IMMUNOTHERAPY; SINGLE OR MULTIPLE ANTIGENS (SPE",
+                                "procedureCode": "95165",
+                                "amount": "2500.00",
+                                "estimatedPatientResponsibility": "10.00",
+                                "allowed": {
+                                    "amount": "1807.50",
+                                    "code": "PPSCH",
+                                    "codeType": "AL",
+                                    "description": "Allowed amount based on fee schedule",
+                                    "patientLiable": false
+                                },
+                                "coPay": {
+                                    "amount": "10.00",
+                                    "code": "BCPI",
+                                    "codeType": "CP",
+                                    "patientLiable": true
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We are currently processing your request. We may be retrying it.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Your CCE request failed validation. You can correct the errors and resubmit.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We did not find a ProfessionalClaim with the id that you sent.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "We were unable to process your request. The health plan did not respond after several retry attempts. Please try your request again later.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91396,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postProfessionalClaim ",
+        "executor_version": "v1",
+        "executor_display_name": " post ProfessionalClaim ",
+        "executor_description": "This endpoint creates a CCE asynchronously. To submit a CCE, make a valid request and a response will be returned with a location header containing a URL you can query for your result.The validation rules for the ProfessionalClaim resource can vary by health plan, the type of claim being requested, and the type of service to be performed. Availity organizes these rules and makes them available through the Configuration service. The Configuration resource documents the fields you need to send to create a ProfessionalClaim and explains what values are valid for those fields. See the Configurations service for details.",
+        "executor_category": "CareCostEstimatorProfessional",
+        "executor_category_group": "CareCostEstimatorProfessional",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.availity.com/demo/v1/professional-claims",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "claimNumber\t",
+                "value": "",
+                "description": "The health plan's claim tracking number assigned when the original claim was received and processed.",
+                "req": false
+            },
+            {
+                "key": "claimAmount\t",
+                "value": "",
+                "description": "The total claim charge amount of the original claim processed by the health plan.",
+                "req": false
+            },
+            {
+                "key": "facilityTypeCode\t",
+                "value": "",
+                "description": "The code identifying where services were, or may have been, performed for institutional claims.",
+                "req": false
+            },
+            {
+                "key": "frequencyTypeCode\t",
+                "value": "",
+                "description": "The code identifying the frequency of an institutional claim.",
+                "req": false
+            },
+            {
+                "key": "q",
+                "value": "",
+                "description": "Fuzzy search parameter - triggers us to search our database instead of reaching out to the health plan.",
+                "req": false
+            },
+            {
+                "key": "sortBy\t",
+                "value": "",
+                "description": "Field we will sort by when returning results from our database. Currently only supports - updatedDate.",
+                "req": false
+            },
+            {
+                "key": "sortDirection\t",
+                "value": "",
+                "description": "The direction we will sort results from our database. Supports asc and desc. Defaults to desc.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683155145471,
+        "lastModifiedTime": 1683155145471,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 202,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "The CCE was accepted for processing. Poll the URL in the Location header. The X-Status-Message header will contain additional detail.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "The CCE request failed validation. It either failed our validation rules or was rejected by the health plan. The errors property will contain detailed information. Errors that specify a field are Availity validation rule failures. Errors that specify a code are from the health plan. Correct the errors and resubmit the request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "We were unable to parse your request. Correct the errors and resubmit the request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 91348,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getconfigurations",
+        "executor_version": "v1",
+        "executor_display_name": " Get Configurations",
+        "executor_description": "You can find and retrieve Configurations using this endpoint",
+        "executor_category": "Configurations",
+        "executor_category_group": "Configurations",
+        "service_provider": "availity",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.availity.com/availity/v1/configurations",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "type",
+                "value": "",
+                "description": "The type of configuration you are looking for",
+                "req": false
+            },
+            {
+                "key": "subtypeId",
+                "value": "",
+                "description": "The subtype id of the configuration you are looking for.",
+                "req": false
+            },
+            {
+                "key": "payerId",
+                "value": "",
+                "description": "The health plan id of the configuration you are looking for.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1683144937201,
+        "lastModifiedTime": 1683144937201,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

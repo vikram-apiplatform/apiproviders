@@ -1,0 +1,4043 @@
+[
+    {
+        "id": 93363,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "userInfo",
+        "executor_version": "v2",
+        "executor_display_name": "User Info",
+        "executor_description": "This endpoint returns the information about a user in the organization.",
+        "executor_category": "User",
+        "executor_category_group": "User",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /users/{user_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "user_id",
+                "value": "",
+                "description": "ID of the user"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684358712821,
+        "lastModifiedTime": 1684358712821,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "user": {
+                        "id": "cDRV8T",
+                        "name": "John Doe",
+                        "email": "john@test.com",
+                        "type": "users",
+                        "organization_id": "eb318f3e-e05c-4c05-8be5-fd505270d8a5",
+                        "last_seen_at": 1602044426,
+                        "manager_id": "cDRV8T",
+                        "role": "Developer",
+                        "team_ids": [
+                            "E4hFju",
+                            "a3okdY",
+                            "9MTN4G",
+                            "WI6bfi"
+                        ],
+                        "is_admin": true,
+                        "is_owner": true,
+                        "account_type": "regular",
+                        "status": "active",
+                        "link": "https://app.ally.io/users/u/cDRV8T/objectives"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "user_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93361,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listAllUsers",
+        "executor_version": "v2",
+        "executor_display_name": "List All Users",
+        "executor_description": "This endpoint returns a paginated list of all users in the organization.",
+        "executor_category": "User",
+        "executor_category_group": "User",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /users",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684358575340,
+        "lastModifiedTime": 1684358575340,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "users": [
+                        {
+                            "id": "YdQe7y",
+                            "name": "John Doe",
+                            "email": "john@test.com",
+                            "type": "users",
+                            "organization_id": "eb318f3e-e05c-4c05-8be5-fd505270d8a5",
+                            "last_seen_at": 0,
+                            "is_admin": false,
+                            "is_owner": false,
+                            "account_type": "regular",
+                            "status": "active",
+                            "link": "https://app.ally.io/users/u/YdQe7y/objectives"
+                        },
+                        {
+                            "id": "yjw9uH",
+                            "name": "Jane Doe",
+                            "email": "jane@test.com",
+                            "type": "users",
+                            "organization_id": "eb318f3e-e05c-4c05-8be5-fd505270d8a5",
+                            "last_seen_at": 1600848918,
+                            "is_admin": false,
+                            "is_owner": false,
+                            "account_type": "regular",
+                            "status": "inactive",
+                            "link": "https://app.ally.io/users/u/yjw9uH/objectives"
+                        }
+                    ],
+                    "metadata": {
+                        "next_cursor": "dXNlcnM6OjU1LS01NQ==\n"
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93358,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getlistAllTags",
+        "executor_version": "v2",
+        "executor_display_name": "List All Tags",
+        "executor_description": "This endpoint returns a paginated list of all tags available in the organization.",
+        "executor_category": "User",
+        "executor_category_group": "User",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684358185304,
+        "lastModifiedTime": 1684358185304,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "teams": [
+                        {
+                            "id": "T34GJRL",
+                            "name": "Engineering",
+                            "is_active": true
+                        },
+                        {
+                            "id": "T12LKRW",
+                            "name": "Sales",
+                            "is_active": false
+                        }
+                    ],
+                    "metadata": {
+                        "next_cursor": "jAyoJZt1a4ayr5IM"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "user_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93360,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "findauserbyEmail",
+        "executor_version": "v2",
+        "executor_display_name": "Find a user by Email",
+        "executor_description": "This endpoint retrieves a user based on Email",
+        "executor_category": "User",
+        "executor_category_group": "User",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /users/lookup",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684358444339,
+        "lastModifiedTime": 1684358444339,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "user": {
+                        "id": "cDRV8T",
+                        "name": "John Doe",
+                        "email": "john@test.com",
+                        "type": "users",
+                        "organization_id": "eb318f3e-e05c-4c05-8be5-fd505270d8a5",
+                        "last_seen_at": 1602044426,
+                        "manager_id": "cDRV8T",
+                        "role": "Developer",
+                        "team_ids": [
+                            "E4hFju",
+                            "a3okdY",
+                            "9MTN4G",
+                            "WI6bfi"
+                        ],
+                        "is_admin": true,
+                        "is_owner": true,
+                        "account_type": "regular",
+                        "status": "active",
+                        "link": "https://app.ally.io/users/u/cDRV8T/objectives"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "user_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93379,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postcreateaTeam",
+        "executor_version": "v2",
+        "executor_display_name": "Create a Team",
+        "executor_description": "This endpoint creates a new team in the organization based on the arguments.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2 /teams",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "Engineering",
+                "owner_id": "A12BSWR",
+                "parent_team_id": "T12LKRW",
+                "description": "Engineering Team",
+                "team_type": "Department"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684359728631,
+        "lastModifiedTime": 1684359728631,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "team": {
+                        "id": "T34GJRL",
+                        "organization_id": "T28DVS2",
+                        "name": "Engineering",
+                        "description": "Engineering Team",
+                        "owner_id": "A12BSWR",
+                        "parent_team_id": "T12LKRW",
+                        "team_type": "Department",
+                        "is_active": true
+                    }
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unprocessable Entity (WebDAV)",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "name_taken"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93386,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "teamInfo",
+        "executor_version": "v2",
+        "executor_display_name": "Team Info",
+        "executor_description": "This endpoint returns the information about a team in the organization.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /teams/{team_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "team_id",
+                "value": "",
+                "description": "ID of the team"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684359991748,
+        "lastModifiedTime": 1684359991748,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "team": {
+                        "id": "T34GJRL",
+                        "organization_id": "T28DVS2",
+                        "name": "Engineering",
+                        "description": "Engineering Team",
+                        "owner_id": "A12BSWR",
+                        "parent_team_id": null,
+                        "team_type": "Department",
+                        "is_active": true,
+                        "member_ids": [
+                            "A12BSWR",
+                            "B23TRKH"
+                        ],
+                        "link": "https://app.ally.io/teams/u/T34GJRL/objectives"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "team_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93388,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "archiveExistingTeam",
+        "executor_version": "v2",
+        "executor_display_name": "Archive Existing Team",
+        "executor_description": "This endpoint archives an existing team in the organization.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2 /teams/{team_id}/archive",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "team_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684360099269,
+        "lastModifiedTime": 1684360099269,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "team": {
+                        "id": "T34GJRL",
+                        "organization_id": "T28DVS2",
+                        "name": "Engineering",
+                        "description": "Engineering Team",
+                        "owner_id": "A12BSWR",
+                        "parent_team_id": "T12LKRW",
+                        "team_type": "Department",
+                        "is_active": false
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "team_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93394,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "removeUserfromTeam",
+        "executor_version": "v2",
+        "executor_display_name": "Remove User from Team",
+        "executor_description": "This endpoint removes a user from an existing team in the organization.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2 /teams/{team_id}/remove",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "team_id",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "user_id": "A12BSWR"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684360461031,
+        "lastModifiedTime": 1684360461031,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "user_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93392,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "addUsertoTeam",
+        "executor_version": "v2",
+        "executor_display_name": "Add User to Team",
+        "executor_description": "This endpoint adds a user to an existing team in the organization.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2 /teams/{team_id}/invite",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "team_id",
+                "value": "",
+                "description": "ID of the team"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "user_id": "A12BSWR"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684360319156,
+        "lastModifiedTime": 1684360319156,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "user_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93375,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listAllTeams",
+        "executor_version": "v2",
+        "executor_display_name": "List All Teams",
+        "executor_description": "This endpoint returns a paginated list of all teams in the organization.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /teams",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684359567011,
+        "lastModifiedTime": 1684359567011,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "teams": [
+                        {
+                            "id": "T34GJRL",
+                            "name": "Engineering",
+                            "is_active": true
+                        },
+                        {
+                            "id": "T12LKRW",
+                            "name": "Sales",
+                            "is_active": false
+                        }
+                    ],
+                    "metadata": {
+                        "next_cursor": "jAyoJZt1a4ayr5IM"
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93382,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateExistingTeam",
+        "executor_version": "v2",
+        "executor_display_name": "Update Existing Team",
+        "executor_description": "This endpoint updates an existing team in the organization based on the arguments.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://app.ally.io/api/v2 /teams/{team_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "team_id",
+                "value": "",
+                "description": "ID of the team"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "Engineering",
+                "owner_id": "A12BSWR",
+                "parent_team_id": "T12LKRW",
+                "description": "Engineering Team",
+                "team_type": "Department"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684359858324,
+        "lastModifiedTime": 1684359858324,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "team": {
+                        "id": "T34GJRL",
+                        "organization_id": "T28DVS2",
+                        "name": "Engineering",
+                        "description": "Engineering Team",
+                        "owner_id": "A12BSWR",
+                        "parent_team_id": "T12LKRW",
+                        "team_type": "Department",
+                        "is_active": true
+                    }
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unprocessable Entity (WebDAV)",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "name_taken"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93390,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "unarchiveExistingTeam",
+        "executor_version": "v2",
+        "executor_display_name": "Unarchive Existing Team",
+        "executor_description": "This endpoint unarchive an archived team in the organization.",
+        "executor_category": "Teams",
+        "executor_category_group": "Teams",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2 /teams/{team_id}/unarchive",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "team_id",
+                "value": "",
+                "description": "ID of the team"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684360197502,
+        "lastModifiedTime": 1684360197502,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "team": {
+                        "id": "T34GJRL",
+                        "organization_id": "T28DVS2",
+                        "name": "Engineering",
+                        "description": "Engineering Team",
+                        "owner_id": "A12BSWR",
+                        "parent_team_id": "T12LKRW",
+                        "team_type": "Department",
+                        "is_active": true
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "team_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93348,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateanObjective",
+        "executor_version": "v2",
+        "executor_display_name": "Update an Objective",
+        "executor_description": "This endpoint updates an objective.",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://app.ally.io/api/v2 /objectives/{objective_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "objective_id",
+                "value": "",
+                "description": "ID of the objective"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "objective": {
+                    "title": "Research and improve customer satisfaction",
+                    "start_date": "2020-10-09",
+                    "end_date": "2020-10-29",
+                    "metric": {
+                        "name": "Happiness index",
+                        "start": 0,
+                        "target": 15,
+                        "type": "kpi"
+                    },
+                    "entities": [
+                        {
+                            "type": "teams",
+                            "id": "WI6bfi"
+                        }
+                    ],
+                    "tags": [
+                        "customer"
+                    ],
+                    "owner_ids": [
+                        "cDRV8T"
+                    ],
+                    "time_period_id": "PSnqEw"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684356913277,
+        "lastModifiedTime": 1684356913277,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "objective": {
+                        "id": "b42e148a-0bb3-11eb-8050-0242ac120007",
+                        "title": "Research and improve customer satisfaction",
+                        "description": "Ensure that our customers are happy with our service.",
+                        "current_progress": null,
+                        "start_date": "2020-10-09",
+                        "end_date": "2020-10-29",
+                        "owner_ids": [
+                            "cDRV8T"
+                        ],
+                        "entities": [
+                            {
+                                "id": "WI6bfi",
+                                "type": "teams"
+                            }
+                        ],
+                        "time_period_id": "PSnqEw",
+                        "latest_check_in": null,
+                        "key_results_count": 0,
+                        "projects_count": 0,
+                        "tags": [
+                            "customer"
+                        ],
+                        "current_status": null,
+                        "score": null,
+                        "parent_ids": [],
+                        "created_at": 1602415201,
+                        "updated_at": 1602415201,
+                        "link": "https://app.ally.io/objectives/u/b42e148a-0bb3-11eb-8050-0242ac120007",
+                        "metric": {
+                            "name": "Happiness index",
+                            "target": 15,
+                            "start": 0,
+                            "scoring_guidance": null
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "not_found"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "Cannot align to multiple objectives"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93338,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "children",
+        "executor_version": "v2",
+        "executor_display_name": "Children",
+        "executor_description": "This endpoint returns the list of child objectives of an objective.",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /objectives/{objective_id}/children",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "objective_id",
+                "value": "",
+                "description": "ID of the objective"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Field to order the results by. Possible values :  start_date end_date current_progress updated_at",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684356039178,
+        "lastModifiedTime": 1684356039178,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "objectives": [
+                        {
+                            "id": "e6aacaf2-0717-11eb-9ae1-0242ac120006",
+                            "title": "Research and improve customer satisfaction",
+                            "description": "Ensure that our customers are happy with our service.",
+                            "current_progress": 41,
+                            "score": 0,
+                            "start_date": "2020-08-21",
+                            "end_date": "2020-09-21",
+                            "owner_ids": [
+                                "cDRV8T"
+                            ],
+                            "entities": [
+                                {
+                                    "id": "cDRV8T",
+                                    "type": "users"
+                                }
+                            ],
+                            "time_period_id": "0aVFAc",
+                            "latest_check_in": {
+                                "id": "2cd5db0a-02f1-11eb-b759-0242ac120007",
+                                "metric_current_value": 10,
+                                "user_id": "cDRV8T",
+                                "note": "Key result changed from 57% (Behind) to 41% (At Risk).",
+                                "status": "At Risk",
+                                "mode": "auto",
+                                "source": "Asana",
+                                "created_at": 1601452042
+                            },
+                            "key_results_count": 1,
+                            "projects_count": 0,
+                            "tags": [
+                                "customer",
+                                "CS"
+                            ],
+                            "current_status": "At Risk",
+                            "parent_ids": [],
+                            "metric": {
+                                "name": "% Completed",
+                                "target": 100,
+                                "start": 0,
+                                "scoring_guidance": null
+                            },
+                            "created_at": 1600676468,
+                            "updated_at": 1600676468,
+                            "link": "https://app.ally.io/objectives/u/e6aacaf2-0717-11eb-9ae1-0242ac120006"
+                        },
+                        {
+                            "id": "e6ab071a-0717-11eb-9ae1-0242ac120006",
+                            "title": "Exceed Net Promoter Score (NPS) of over 8.0",
+                            "description": "Form a dedicated team to work closely with detractors.",
+                            "current_progress": 41,
+                            "score": 0,
+                            "start_date": "2020-08-21",
+                            "end_date": "2020-09-21",
+                            "owner_ids": [
+                                "cDRV8T"
+                            ],
+                            "entities": [
+                                {
+                                    "id": "cDRV8T",
+                                    "type": "users"
+                                }
+                            ],
+                            "time_period_id": "0aVFAc",
+                            "latest_check_in": {
+                                "id": "2b748c66-02f1-11eb-8b3f-0242ac120007",
+                                "metric_current_value": 41,
+                                "user_id": "cDRV8T",
+                                "note": null,
+                                "status": "At Risk",
+                                "mode": "manual",
+                                "source": null,
+                                "created_at": 1601452040
+                            },
+                            "key_results_count": 1,
+                            "projects_count": 0,
+                            "tags": [
+                                "customer",
+                                "NPS"
+                            ],
+                            "current_status": "At Risk",
+                            "parent_ids": [
+                                "e6aacaf2-0717-11eb-9ae1-0242ac120006"
+                            ],
+                            "metric": {
+                                "name": "% Completed",
+                                "target": 100,
+                                "start": 0,
+                                "scoring_guidance": null
+                            },
+                            "created_at": 1600676468,
+                            "updated_at": 1600676468,
+                            "link": "https://app.ally.io/objectives/u/e6aacaf2-0717-11eb-9ae1-0242ac120006"
+                        }
+                    ],
+                    "metadata": {
+                        "next_cursor": "cHJvamVjdHM6OjIwMjAtMDgtMjEtLTIxNzk=\n"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "objective_not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93353,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteanObjective",
+        "executor_version": "v2",
+        "executor_display_name": "Delete an Objective",
+        "executor_description": "This endpoint deletes an objective",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://app.ally.io/api/v2 /objectives/{objective_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "objective_id",
+                "value": "",
+                "description": "ID of the objective"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684357365323,
+        "lastModifiedTime": 1684357365323,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "not_found"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Unprocessable Entity (WebDAV)",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "Cannot delete this objective as it is currently being modified. Try again after sometime."
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93336,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listAllObjectives",
+        "executor_version": "v2",
+        "executor_display_name": "List All Objectives",
+        "executor_description": "This endpoint returns a paginated list of all the objectives that belong to an entity (User/Team/Organization).",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /{entity_type}/{entity_id}/objectives",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "entity_type",
+                "value": "",
+                "description": "ID of the entity (User ID if entity_type is 'users')"
+            },
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": "Takes one of the following values :  users teams organizations"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "order_by",
+                "value": "",
+                "description": "Field to order the results by. Possible values :  start_date end_date current_progress updated_at",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            },
+            {
+                "key": "top_level_only",
+                "value": "",
+                "description": "Boolean argument to determine whether to include only the top-level objectives in the result (Defaults to false).",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684355885523,
+        "lastModifiedTime": 1684355885523,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "objectives": [
+                        {
+                            "id": "e6aacaf2-0717-11eb-9ae1-0242ac120006",
+                            "title": "Research and improve customer satisfaction",
+                            "description": "Ensure that our customers are happy with our service.",
+                            "current_progress": 41,
+                            "score": 0,
+                            "start_date": "2020-08-21",
+                            "end_date": "2020-09-21",
+                            "owner_ids": [
+                                "cDRV8T"
+                            ],
+                            "entities": [
+                                {
+                                    "id": "cDRV8T",
+                                    "type": "users"
+                                }
+                            ],
+                            "time_period_id": "0aVFAc",
+                            "latest_check_in": {
+                                "id": "2cd5db0a-02f1-11eb-b759-0242ac120007",
+                                "metric_current_value": 10,
+                                "user_id": "cDRV8T",
+                                "note": "Key result changed from 57% (Behind) to 41% (At Risk).",
+                                "status": "At Risk",
+                                "mode": "auto",
+                                "source": "Asana",
+                                "created_at": 1601452042
+                            },
+                            "key_results_count": 1,
+                            "projects_count": 0,
+                            "tags": [
+                                "customer",
+                                "CS"
+                            ],
+                            "current_status": "At Risk",
+                            "parent_ids": [],
+                            "metric": {
+                                "name": "% Completed",
+                                "target": 100,
+                                "start": 0,
+                                "scoring_guidance": null
+                            },
+                            "created_at": 1600676468,
+                            "updated_at": 1600676468,
+                            "link": "https://app.ally.io/objectives/u/e6aacaf2-0717-11eb-9ae1-0242ac120006"
+                        },
+                        {
+                            "id": "e6ab071a-0717-11eb-9ae1-0242ac120006",
+                            "title": "Exceed Net Promoter Score (NPS) of over 8.0",
+                            "description": "Form a dedicated team to work closely with detractors.",
+                            "current_progress": 41,
+                            "score": 0,
+                            "start_date": "2020-08-21",
+                            "end_date": "2020-09-21",
+                            "owner_ids": [
+                                "cDRV8T"
+                            ],
+                            "entities": [
+                                {
+                                    "id": "cDRV8T",
+                                    "type": "users"
+                                }
+                            ],
+                            "time_period_id": "0aVFAc",
+                            "latest_check_in": {
+                                "id": "2b748c66-02f1-11eb-8b3f-0242ac120007",
+                                "metric_current_value": 41,
+                                "user_id": "cDRV8T",
+                                "note": null,
+                                "status": "At Risk",
+                                "mode": "manual",
+                                "source": null,
+                                "created_at": 1601452040
+                            },
+                            "key_results_count": 1,
+                            "projects_count": 0,
+                            "tags": [
+                                "customer",
+                                "NPS"
+                            ],
+                            "current_status": "At Risk",
+                            "parent_ids": [
+                                "e6aacaf2-0717-11eb-9ae1-0242ac120006"
+                            ],
+                            "metric": {
+                                "name": "% Completed",
+                                "target": 100,
+                                "start": 0,
+                                "scoring_guidance": null
+                            },
+                            "created_at": 1600676468,
+                            "updated_at": 1600676468,
+                            "link": "https://app.ally.io/objectives/u/e6aacaf2-0717-11eb-9ae1-0242ac120006"
+                        }
+                    ],
+                    "metadata": {
+                        "next_cursor": "cHJvamVjdHM6OjIwMjAtMDgtMjEtLTIxNzk=\n"
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "False",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93342,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createanObjective",
+        "executor_version": "v2",
+        "executor_display_name": "Create an Objective",
+        "executor_description": "This endpoint creates a new objective",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "objective": {
+                    "title": "Research and improve customer satisfaction",
+                    "start_date": "2020-10-09",
+                    "end_date": "2020-10-29",
+                    "metric": {
+                        "name": "Happiness index",
+                        "start": 0,
+                        "target": 15,
+                        "type": "kpi"
+                    },
+                    "entities": [
+                        {
+                            "type": "teams",
+                            "id": "WI6bfi"
+                        }
+                    ],
+                    "tags": [
+                        "customer"
+                    ],
+                    "owner_ids": [
+                        "cDRV8T"
+                    ],
+                    "time_period_id": "PSnqEw",
+                    "parent_ids": [
+                        "c53e148a-1aa4-11eb-8050-0242ac120007"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684356550281,
+        "lastModifiedTime": 1684356550281,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "objective": {
+                        "title": "Research and improve customer satisfaction",
+                        "start_date": "2020-10-09",
+                        "end_date": "2020-10-29",
+                        "metric": {
+                            "name": "Happiness index",
+                            "start": 0,
+                            "target": 15,
+                            "type": "kpi"
+                        },
+                        "entities": [
+                            {
+                                "type": "teams",
+                                "id": "WI6bfi"
+                            }
+                        ],
+                        "tags": [
+                            "customer"
+                        ],
+                        "owner_ids": [
+                            "cDRV8T"
+                        ],
+                        "time_period_id": "PSnqEw",
+                        "parent_ids": [
+                            "c53e148a-1aa4-11eb-8050-0242ac120007"
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unprocessable Entity (WebDAV)",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "Should belong to at least one entity"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93345,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "objectiveInfo",
+        "executor_version": "v2",
+        "executor_display_name": "Objective Info",
+        "executor_description": "This endpoint returns the information about an objective.",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /objectives/{objective_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "objective_id",
+                "value": "",
+                "description": "ID of the objective"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684356682831,
+        "lastModifiedTime": 1684356682831,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "objective": {
+                        "id": "e6b0823a-0717-11eb-9ae1-0242ac120006",
+                        "title": "Research and improve customer satisfaction",
+                        "description": "Ensure that our customers are happy with our service.",
+                        "current_progress": 41,
+                        "score": 0,
+                        "start_date": "2020-08-21",
+                        "end_date": "2020-09-21",
+                        "owner_ids": [
+                            "cDRV8T"
+                        ],
+                        "entities": [
+                            {
+                                "id": "cDRV8T",
+                                "type": "users"
+                            }
+                        ],
+                        "time_period_id": "0aVFAc",
+                        "latest_check_in": {
+                            "id": "2b748c66-02f1-11eb-8b3f-0242ac120007",
+                            "metric_current_value": 41,
+                            "user_id": "cDRV8T",
+                            "note": null,
+                            "status": "At Risk",
+                            "mode": "manual",
+                            "source": null,
+                            "created_at": 1601452040
+                        },
+                        "latest_manual_check_in": {
+                            "id": "2b748c66-02f1-11eb-8b3f-0242ac120007",
+                            "metric_current_value": 41,
+                            "user_id": "cDRV8T",
+                            "note": null,
+                            "status": "At Risk",
+                            "mode": "manual",
+                            "source": null,
+                            "created_at": 1601452040
+                        },
+                        "key_results_count": 0,
+                        "projects_count": 0,
+                        "tags": [
+                            "customer",
+                            "CS"
+                        ],
+                        "current_status": "Not Started",
+                        "parent_ids": [],
+                        "metric": {
+                            "name": "% Completed",
+                            "target": 100,
+                            "start": 0,
+                            "scoring_guidance": null
+                        },
+                        "created_at": 1600676468,
+                        "updated_at": 1600676468,
+                        "link": "https://app.ally.io/objectives/u/e6b0823a-0717-11eb-9ae1-0242ac120006",
+                        "data_link": {
+                            "last_sync": 1583128228,
+                            "connection": {
+                                "name": "Asana connection",
+                                "public": true,
+                                "type": "Asana",
+                                "creator_id": "cDRV8T"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "error": "string"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93350,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "summary",
+        "executor_version": "v2",
+        "executor_display_name": "Summary",
+        "executor_description": "This endpoint returns the summary of the given entity for the given time period.",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /{entity_type}/{entity_id}/summary",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "entity_type",
+                "value": "",
+                "description": "ID of the entity (User ID if entity_type is 'users')"
+            },
+            {
+                "key": "entity_id",
+                "value": "",
+                "description": "Takes one of the following values :  users teams organizations"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "time_period_id",
+                "value": "",
+                "description": "Time Period ID to get the summary for. Defaults to the current time period of the organization.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684357074025,
+        "lastModifiedTime": 1684357074025,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "summary": {
+                        "actual_progress": 46,
+                        "average_score": 0.6,
+                        "okrs_by_status": {
+                            "Behind": 1,
+                            "At Risk": 1,
+                            "Closed": 1
+                        },
+                        "time_period_id": "x9cY9M"
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93340,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "search",
+        "executor_version": "v2",
+        "executor_display_name": "Search",
+        "executor_description": "This endpoint returns a paginated list of all the objectives that satisfy the given search criteria.",
+        "executor_category": "Objectives",
+        "executor_category_group": "Objectives",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2 /objectives/search",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "query": "customer",
+                "entities": [
+                    {
+                        "type": "users",
+                        "id": "fVN3w6"
+                    }
+                ],
+                "time_period_ids": [
+                    "A12STEO",
+                    "N34Tsi5"
+                ],
+                "tags": {
+                    "names": [
+                        "CS",
+                        "NPS"
+                    ],
+                    "condition": "contains_any"
+                },
+                "next_cursor": "jAyoJZt1a4ayr5IM",
+                "per_page": 50,
+                "order_ by": "end_date"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684356332570,
+        "lastModifiedTime": 1684356332570,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "query": "customer",
+                    "entities": [
+                        {
+                            "type": "users",
+                            "id": "fVN3w6"
+                        }
+                    ],
+                    "time_period_ids": [
+                        "A12STEO",
+                        "N34Tsi5"
+                    ],
+                    "tags": {
+                        "names": [
+                            "CS",
+                            "NPS"
+                        ],
+                        "condition": "contains_any"
+                    },
+                    "next_cursor": "jAyoJZt1a4ayr5IM",
+                    "per_page": 50,
+                    "order_ by": "end_date"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93354,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listAllTimePeriods",
+        "executor_version": "v2",
+        "executor_display_name": "List All Time Periods",
+        "executor_description": "This endpoint returns a paginated list of all time periods in the organization.",
+        "executor_category": "TimePeriods",
+        "executor_category_group": "TimePeriods",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /time_periods",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684357695959,
+        "lastModifiedTime": 1684357695959,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "time_periods": [
+                        {
+                            "id": "oBdKcw",
+                            "name": "Q1 2020",
+                            "start_date": "2019-01-01",
+                            "end_date": "2019-03-31",
+                            "archived": false,
+                            "mode": "auto"
+                        },
+                        {
+                            "id": "mCsRPZ",
+                            "name": "Q2 2020",
+                            "start_date": "2019-04-01",
+                            "end_date": "2019-06-30",
+                            "archived": false,
+                            "mode": "auto"
+                        },
+                        {
+                            "id": "2CjXbH",
+                            "name": "Q3 2020",
+                            "start_date": "2019-07-01",
+                            "end_date": "2019-09-30",
+                            "archived": false,
+                            "mode": "auto"
+                        },
+                        {
+                            "id": "s1YXNj",
+                            "name": "Q4 2020",
+                            "start_date": "2019-10-01",
+                            "end_date": "2019-12-31",
+                            "archived": false,
+                            "mode": "auto"
+                        }
+                    ],
+                    "metadata": {
+                        "next_cursor": "dGltZXBlcmlvZHM6OjIwMjAtMDEtMDEtLTY1\n"
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93366,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createacheckin",
+        "executor_version": "v2",
+        "executor_display_name": "Create a check-in",
+        "executor_description": "This endpoint creates a check-in for a given objective",
+        "executor_category": "checkin",
+        "executor_category_group": "checkin",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://app.ally.io/api/v2 /objectives/{objective_id}/check_ins",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "objective_id",
+                "value": "",
+                "description": "ID of the objective"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "status": "on_track",
+                "note": "Everything's on track",
+                "value": 40
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684359068198,
+        "lastModifiedTime": 1684359068198,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "check_in": {
+                        "id": "815eacc8-0bb7-11eb-8050-0242ac120007",
+                        "metric_current_value": 40,
+                        "note": "Everything's on track",
+                        "status": "On Track",
+                        "mode": "manual",
+                        "source": null,
+                        "created_at": 1602416834,
+                        "user_id": "cDRV8T",
+                        "objective_id": "b42e148a-0bb3-11eb-8050-0242ac120007"
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "user_not_found"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unprocessable Entity (WebDAV)",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_status"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93371,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteacheckin",
+        "executor_version": "v2",
+        "executor_display_name": "Delete a check-in",
+        "executor_description": "This endpoint deletes a check-in",
+        "executor_category": "checkin",
+        "executor_category_group": "checkin",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://app.ally.io/api/v2 /objectives/{objective_id}/check_ins/{check_in_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "objective_id",
+                "value": "",
+                "description": "ID of the check-in"
+            },
+            {
+                "key": "check_in_id",
+                "value": "",
+                "description": "ID of the objective"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684359368562,
+        "lastModifiedTime": 1684359368562,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not Found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "user_not_found"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Forbidden",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "okr_closed"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93334,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "organizationInfo",
+        "executor_version": "v2",
+        "executor_display_name": "Organization Info",
+        "executor_description": "This endpoint returns info about the organization.",
+        "executor_category": "Organization ",
+        "executor_category_group": "Organization ",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /organization",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684355399490,
+        "lastModifiedTime": 1684355399490,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "organization": {
+                        "id": "eb318f3e-e05c-4c05-8be5-fd505270d8a5",
+                        "name": "Arrow Inc.",
+                        "description": "Arrow Inc.",
+                        "type": "organizations",
+                        "owner_id": "cDRV8T",
+                        "current_time_period_id": "0aVFAc",
+                        "link": "https://app.ally.io/organizations/u/eb318f3e-e05c-4c05-8be5-fd505270d8a5/objectives"
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "False",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 93356,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listAllTags",
+        "executor_version": "v2",
+        "executor_display_name": "List All Tags",
+        "executor_description": "This endpoint returns a paginated list of all tags available in the organization.",
+        "executor_category": "Tags",
+        "executor_category_group": "Tags",
+        "service_provider": "allyio",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://app.ally.io/api/v2 /tags",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "next_cursor",
+                "value": "",
+                "description": "Value of the cursor to continue from. The value should be taken from the property next_cursor under metadata in the previous response",
+                "req": false
+            },
+            {
+                "key": "per_page",
+                "value": "",
+                "description": "No. of entries to be returned (Defaults to 100, maximum is 250)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1684357835555,
+        "lastModifiedTime": 1684357835555,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "True",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": true,
+                    "tags": [
+                        {
+                            "name": "customer",
+                            "created_at": 1577376884
+                        },
+                        {
+                            "name": "NPS",
+                            "created_at": 1577603833
+                        }
+                    ],
+                    "metadata": {
+                        "next_cursor": "dGFnczo6MjAxOS0xMi0yOSAwOToxMTo0MyBVVEMtLTY=\n"
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "ok": false,
+                    "error": "invalid_token"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

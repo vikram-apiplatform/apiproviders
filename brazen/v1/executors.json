@@ -1,0 +1,2026 @@
+[
+    {
+        "id": 99541,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getregistrationid",
+        "executor_version": "v1",
+        "executor_display_name": "registration id",
+        "executor_description": "registration id",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/registrations/{registration_id}/files",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            },
+            {
+                "key": "registration_id",
+                "value": "",
+                "description": "The unique identifier for the registration."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687234637351,
+        "lastModifiedTime": 1687234879533,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "href": "/core/v1/events/P7q6sM/registrations/97390103/files/31415926",
+                        "data": {
+                            "id": 2919344,
+                            "filename": "Jay_Unit_junit_resume.pdf",
+                            "field_label": "File Upload",
+                            "field_type": "File Upload"
+                        }
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Event registration not found for the specified id or the registration doesn't belong to the specified event.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99504,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "registrations",
+        "executor_version": "v1",
+        "executor_display_name": "registrations",
+        "executor_description": "Gets the completed registrations in the event.",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/registrations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687177983535,
+        "lastModifiedTime": 1687177983535,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "href": "/core/v1/events/P7q6sM/registrations/783942",
+                        "data": {
+                            "id": 783942,
+                            "email": "han@theresistance.org",
+                            "peer_group": "representatives",
+                            "registered_on": "2021-01-08T12:14:32Z"
+                        }
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Resource requested could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99521,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "files",
+        "executor_version": "v1",
+        "executor_display_name": "files",
+        "executor_description": "This endpoint accepts file uploads for the specified event registration. You can PUT to this endpoint once for each file upload field on your registration form by passing different fieldLabel values. Subsequent PUTs for the same fieldLabel will overwrite the previously uploaded file. If your client does not automatically do so, ensure you've included the file name in the Content-Disposition header (example: Content-Disposition: form-data; name=\"fieldLabel\"; filename=\"profile_pic.png\").",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/registrations/{registration_id}/files",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event (format: string matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            },
+            {
+                "key": "registration_id",
+                "value": "",
+                "description": "The registration's unique identifier"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "send_reg_conf_email",
+                "value": "",
+                "description": "Set this parameter to false if you do not want the standard Brazen registration confirmation sent to the registrant.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687179849113,
+        "lastModifiedTime": 1687179849113,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Bad The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Resource requested could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Successfully updated response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Successfully created response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Bad request",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 415,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Missing or incorrect Content-type header; this endpoint accepts only multipart/form-data.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99501,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "eventcode",
+        "executor_version": "v1",
+        "executor_display_name": "event_code",
+        "executor_description": "Get key information about a specific event.",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687177736898,
+        "lastModifiedTime": 1687177736898,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "event_code": "P7q6sM",
+                    "title": "Meet the Acme Team",
+                    "subtitle": "Learn more about career opportunities at Acme",
+                    "start_time": "2021-02-02T18:00:00Z",
+                    "end_time": "2021-02-02T20:00:00Z",
+                    "time_zone": "America/Denver",
+                    "event_type": "OPEN_HOUSE",
+                    "event_url": "https://app.brazenconnect.com/events/P7q6sM",
+                    "cancelled_on": null,
+                    "last_modified": "2021-02-01T20:45:00Z",
+                    "tags": [
+                        "Monmouth County"
+                    ],
+                    "event_content": "<div><p>This online chat will connect you directly with organizations ...</p></div>",
+                    "short_description": "Save your spot to chat directly with a variety of organizations. Each chat lasts around 10 mins and you can join from your desktop or smartphone at anytime during the event. Sign up today!"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Resource requested could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99546,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "chats",
+        "executor_version": "v1",
+        "executor_display_name": "chats",
+        "executor_description": "Gets the completed chats in the event.",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/chats",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687235044270,
+        "lastModifiedTime": 1687235044270,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "href": "/core/v1/events/P7q6sM/chats/2919344",
+                        "data": {
+                            "id": 2919344,
+                            "booth_code": "booth-01",
+                            "start_time": "2021-01-29T13:42:51Z"
+                        }
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Event registration not found for the specified id or the registration doesn't belong to the specified event.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The event has not yet started, therefore there are no chats.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99549,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "chatid",
+        "executor_version": "v1",
+        "executor_display_name": "chat id",
+        "executor_description": "chat id",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/chats/{chat_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            },
+            {
+                "key": "chat_id",
+                "value": "",
+                "description": "The unique identifier for the chat."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687235224096,
+        "lastModifiedTime": 1687235224096,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": 492391,
+                    "start_time": "2021-01-29T13:42:51Z",
+                    "end_time": "2021-01-29T13:51:23Z",
+                    "event_code": "P7q6sM",
+                    "booth_title": "Chat Booth",
+                    "booth_code": "booth-2",
+                    "participants": [
+                        294573
+                    ],
+                    "representatives": [
+                        294591
+                    ],
+                    "ratings": [
+                        {
+                            "rater_id": 239492,
+                            "rated_id": 423921,
+                            "rating": "3",
+                            "job_next_step": "INTERVIEW",
+                            "rep_notes": "Candidate meets all qualifications; screen further"
+                        }
+                    ],
+                    "termination_reason": "USER_MOVED_ON",
+                    "extended": true,
+                    "extended_by": 294591,
+                    "external_ids": [
+                        {
+                            "user_id": 294591,
+                            "external_id": "65aa1e882c9e7bb456b291550156b33b"
+                        }
+                    ],
+                    "highest_engagement_level": "VIDEO"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Event registration not found for the specified id or the registration doesn't belong to the specified event.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99496,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getevents",
+        "executor_version": "v1",
+        "executor_display_name": "Events",
+        "executor_description": "Get a list of events hosted by your account.",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "afterDate",
+                "value": "",
+                "description": "An optional ISO-8601 UTC date indicating the closed lower-bound for this request. Only events with start times on or after this date will be returned; omit to return all events from the time your account was opened. (format: yyyy-MM-dd)",
+                "req": false
+            },
+            {
+                "key": "beforeDate",
+                "value": "",
+                "description": "An optional ISO-8601 UTC date indicating the open upper-bound for this request. Only events with start times before this date will be returned; omit to return all events from the afterDate, onward. (format: yyyy-MM-dd)",
+                "req": false
+            },
+            {
+                "key": "modifiedAfterDate",
+                "value": "",
+                "description": "An optional ISO-8601 UTC date indicating a closed lower bound for this request. Only events with last modified times on or after this date will be returned; omit to return all events from the after date, onward. (format: yyyy-MM-dd)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1687177120920,
+        "lastModifiedTime": 1687177688854,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "href": "/core/v1/events/P7q6sM",
+                        "data": {
+                            "event_code": "P7q6sM",
+                            "start_time": "2021-02-02T18:00:00Z",
+                            "cancelled_on": "2021-02-01T20:45:00Z",
+                            "last_modified": "2021-02-01T20:45:00Z"
+                        }
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Resource requested could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99509,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "registrationid",
+        "executor_version": "v1",
+        "executor_display_name": "registrationid",
+        "executor_description": "registration id",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/registrations/{registration_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            },
+            {
+                "key": "registration_id",
+                "value": "",
+                "description": "The unique identifier for the registration."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "send_reg_conf_email",
+                "value": "",
+                "description": "Set this parameter to false if you do not want the standard Brazen registration confirmation sent to the registrant.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687178632103,
+        "lastModifiedTime": 1687178632103,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Resource requested could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": 783942,
+                    "first_name": "Han",
+                    "last_name": "Solo",
+                    "email": "han@theresistance.org",
+                    "user_id": 284646,
+                    "external_id": "8a08b0f84916a39c014916faf5f400ee",
+                    "verified_user": true,
+                    "registered_on": "2021-01-08T12:14:32Z",
+                    "last_updated": "2021-01-08T12:14:35Z",
+                    "event_code": "P7q6sM",
+                    "peer_group": "Participant",
+                    "attended": true,
+                    "data": "First%20Field=value&Second%20Field=value"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99518,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "putregistrationid",
+        "executor_version": "v1",
+        "executor_display_name": "registrationid",
+        "executor_description": "The request must contain the following event registration properties  id event_code data The email, user_id, registered_on, last_updated properties are ignored.",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/registrations/{registration_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            },
+            {
+                "key": "registration_id",
+                "value": "",
+                "description": "The unique identifier for the registration."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "send_reg_conf_email",
+                "value": "",
+                "description": "Set this parameter to false if you do not want the standard Brazen registration confirmation sent to the registrant.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "id": 783942,
+                "first_name": "Han",
+                "last_name": "Solo",
+                "email": "han@theresistance.org",
+                "user_id": 284646,
+                "external_id": "8a08b0f84916a39c014916faf5f400ee",
+                "verified_user": true,
+                "registered_on": "2021-01-08T12:14:32Z",
+                "last_updated": "2021-01-08T12:14:35Z",
+                "event_code": "P7q6sM",
+                "peer_group": "Participant",
+                "attended": true,
+                "data": "First%20Field=value&Second%20Field=value"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687179425936,
+        "lastModifiedTime": 1687179425936,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Resource requested could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "204 is used instead of 200 because there is no need to echo back the representation when it is successfully updated from the PUT method.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99508,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "postregistrations",
+        "executor_version": "v1",
+        "executor_display_name": "registrations",
+        "executor_description": "Register a user for an event.",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/registrations",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "send_reg_conf_email",
+                "value": "",
+                "description": "Set this parameter to false if you do not want the standard Brazen registration confirmation sent to the registrant.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "id": 783942,
+                "first_name": "Han",
+                "last_name": "Solo",
+                "email": "han@theresistance.org",
+                "user_id": 284646,
+                "external_id": "8a08b0f84916a39c014916faf5f400ee",
+                "verified_user": true,
+                "registered_on": "2021-01-08T12:14:32Z",
+                "last_updated": "2021-01-08T12:14:35Z",
+                "event_code": "P7q6sM",
+                "peer_group": "Participant",
+                "attended": true,
+                "data": "First%20Field=value&Second%20Field=value"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687178405600,
+        "lastModifiedTime": 1687178405600,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": "Resource requested could not be found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The new registration was successfully created.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": 783942,
+                    "first_name": "Han",
+                    "last_name": "Solo",
+                    "email": "han@theresistance.org",
+                    "user_id": 284646,
+                    "external_id": "8a08b0f84916a39c014916faf5f400ee",
+                    "verified_user": true,
+                    "registered_on": "2021-01-08T12:14:32Z",
+                    "last_updated": "2021-01-08T12:14:35Z",
+                    "event_code": "P7q6sM",
+                    "peer_group": "Participant",
+                    "attended": true,
+                    "data": "First%20Field=value&Second%20Field=value"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "User with the given email is not found.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "The person is already registered for this event; switch to PUT to update.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 99545,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "fileid",
+        "executor_version": "v1",
+        "executor_display_name": "file id",
+        "executor_description": "file id",
+        "executor_category": "Events",
+        "executor_category_group": "Events",
+        "service_provider": "brazen",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.brazen.com/core/v1/events/{event_code}/registrations/{registration_id}/files/{file_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "event_code",
+                "value": "",
+                "description": "A hashid that identifies the event. (format: matching ^[a-zA-Z0-9]$, at least 5 characters)"
+            },
+            {
+                "key": "registration_id",
+                "value": "",
+                "description": "The unique identifier for the registration."
+            },
+            {
+                "key": "file_id",
+                "value": "",
+                "description": "The unique identifier for the file. (It is the Answer#id for the form answer mapping to this file)"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687234935823,
+        "lastModifiedTime": 1687234935823,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Successful response",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "href": "/core/v1/events/P7q6sM/registrations/97390103/files/31415926",
+                        "data": {
+                            "id": 2919344,
+                            "filename": "Jay_Unit_junit_resume.pdf",
+                            "field_label": "File Upload",
+                            "field_type": "File Upload"
+                        }
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "The request contained an invalid token or none at all.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Token is not permitted to access this resource.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PUT",
+                "message": null,
+                "description": "Event registration not found for the specified id or the registration doesn't belong to the specified event.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

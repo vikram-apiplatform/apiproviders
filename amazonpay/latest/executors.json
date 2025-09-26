@@ -1,0 +1,3463 @@
+[
+    {
+        "id": 116227,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getCharge",
+        "executor_version": "v2",
+        "executor_display_name": "Get Charge",
+        "executor_description": "Get Charge details such as charge amount and authorization state. Use this operation to determine if authorization or capture was successful.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Charge",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/charges/:chargeId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "chargeId",
+                "value": "",
+                "description": "Charge identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695386358745,
+        "lastModifiedTime": 1695386358745,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "chargeId": "P21-1111111-1111111-C111111",
+                    "chargePermissionId": "P21-1111111-1111111",
+                    "chargeInitiator": "CITU",
+                    "channel": "Web",
+                    "chargeAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "captureAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "refundedAmount": {
+                        "amount": "0.00",
+                        "currencyCode": "USD"
+                    },
+                    "convertedAmount": "14.00",
+                    "conversionRate": "1.00",
+                    "softDescriptor": "Descriptor",
+                    "merchantMetadata": null,
+                    "providerMetadata": {
+                        "providerReferenceId": null
+                    },
+                    "statusDetails": {
+                        "state": "Captured",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20190714T155300Z"
+                    },
+                    "creationTimestamp": "20190714T155300Z",
+                    "expirationTimestamp": "20190715T155300Z",
+                    "releaseEnvironment": "Sandbox"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116219,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateCheckoutSession",
+        "executor_version": "v2",
+        "executor_display_name": "Update Checkout Session",
+        "executor_description": "Update the Checkout Session with transaction details. You can keep updating the Checkout Session until the buyer is redirected to amazonPayRedirectUrl. Once all mandatory parameters have been set, the Checkout Session object will respond with an unique amazonPayRedirectUrl that you will use to redirect the buyer to complete checkout.  Set chargeAmount to the value that should be processed using the paymentIntent during checkout. If you need to split the order to capture additional payment after checkout is complete, use the optional totalOrderAmount parameter to set the full order amount.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>CheckoutSession",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://pay-api.amazon.com/:version/checkoutSessions/:checkoutSessionId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "checkoutSessionId",
+                "value": "",
+                "description": "Get Checkout Session details includes buyer info, payment instrument details, and shipping address. Shipping address will only be returned if Checkout Session has PayAndShip product type. Use this operation to determine if checkout was successful after the buyer returns from the AmazonPayRedirectUrl to the specified checkoutResultReturnUrl."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "webCheckoutDetails": {
+                    "checkoutResultReturnUrl": "https://a.com/merchant-confirm-page"
+                },
+                "paymentDetails": {
+                    "paymentIntent": "AuthorizeWithCapture",
+                    "canHandlePendingAuthorization": false,
+                    "softDescriptor": "Descriptor",
+                    "chargeAmount": {
+                        "amount": "1",
+                        "currencyCode": "USD"
+                    }
+                },
+                "merchantMetadata": {
+                    "merchantReferenceId": "Merchant reference ID",
+                    "merchantStoreName": "Merchant store name",
+                    "noteToBuyer": "Note to buyer",
+                    "customInformation": "Custom information"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1695380075435,
+        "lastModifiedTime": 1695381145840,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "NOT FOUND",
+                "description": "Checkout Session details are permanently deleted after 30 days. Any request on the Checkout Session will return this error code",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "UNPROCESSABLE ENTITY",
+                "description": "You tried to call an operation on a Checkout Session that is in a state where that operation is not allowed",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116225,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "closeChargePermission",
+        "executor_version": "v2",
+        "executor_display_name": "Close Charge Permission",
+        "executor_description": "Moves the Charge Permission to a Closed state. No future charges can be made and pending charges will be canceled if you set cancelPendingCharges to true.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>ChargePermission",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://pay-api.amazon.com/:version/chargePermissions/:chargePermissionId/close",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "chargePermissionId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "closureReason": "No more charges required",
+                "cancelPendingCharges": false
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695384976291,
+        "lastModifiedTime": 1695384976291,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful. This request is idempotent, subsequent requests will return the same response.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "checkoutSessionId": "bd504926-f659-4ad7-a1a9-9a747aaf5275",
+                    "webCheckoutDetails": null,
+                    "chargePermissionType": "PaymentMethodOnFile",
+                    "recurringMetadata": null,
+                    "productType": null,
+                    "paymentDetails": null,
+                    "merchantMetadata": null,
+                    "paymentMethodOnFileMetadata": null,
+                    "supplementaryData": null,
+                    "buyer": null,
+                    "billingAddress": null,
+                    "paymentPreferences": [
+                        null
+                    ],
+                    "statusDetails": {
+                        "state": "Completed",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20191015T204327Z"
+                    },
+                    "shippingAddress": null,
+                    "platformId": null,
+                    "chargePermissionId": "S01-5105180-3221187",
+                    "chargeId": "S01-5105180-3221187-C056351",
+                    "constraints": [
+                        null
+                    ],
+                    "creationTimestamp": "20191015T204313Z",
+                    "expirationTimestamp": null,
+                    "storeId": null,
+                    "deliverySpecifications": null,
+                    "providerMetadata": null,
+                    "releaseEnvironment": null
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116251,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "capture",
+        "executor_version": "v2",
+        "executor_display_name": "Capture",
+        "executor_description": "Capture payment on a Charge in the Authorized state. A successful Capture will move the Charge from Authorized to Captured state. The Captured state may be preceded by a temporary CaptureInitiated state if payment was captured more than 7 days after authorization. See asynchronous processing for more information. An unsuccessful Charge will move to a Declined state if payment was declined.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Charge",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/charges/:chargeId/capture",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "chargeId",
+                "value": "",
+                "description": "Charge identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "x-amz-pay-idempotency-key",
+                "value": "",
+                "description": "Idempotency key to safely retry requests",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "captureAmount": {
+                    "amount": "14.00",
+                    "currencyCode": "USD"
+                },
+                "softDescriptor": "Descriptor"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695615670390,
+        "lastModifiedTime": 1695615670390,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "chargeId": "P21-1111111-1111111-C111111",
+                    "chargePermissionId": "P21-1111111-1111111",
+                    "chargeInitiator": "CITU",
+                    "channel": "Web",
+                    "chargeAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "captureAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "refundedAmount": {
+                        "amount": "0.00",
+                        "currencyCode": "USD"
+                    },
+                    "convertedAmount": "14.00",
+                    "conversionRate": "1.00",
+                    "softDescriptor": "Descriptor",
+                    "merchantMetadata": null,
+                    "providerMetadata": {
+                        "providerReferenceId": null
+                    },
+                    "statusDetails": {
+                        "state": "Captured",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20190714T155300Z"
+                    },
+                    "creationTimestamp": "20190714T155300Z",
+                    "expirationTimestamp": "20190715T155300Z",
+                    "releaseEnvironment": "Sandbox"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "BAD REQUEST",
+                "description": "You've exceeded the maximum capture amount allowed for this Charge",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "UNPROCESSABLE ENTITY",
+                "description": "You've exceeded the maximum limit of 1 successfully captured Charge, per Charge Permission",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "INTERNAL SERVER ERROR",
+                "description": "Amazon could not process the Charge because of an internal processing error. You should retry the Charge only if the Charge Permission is in the Chargeable state",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116253,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "cancelCharge",
+        "executor_version": "v2",
+        "executor_display_name": "Cancel Charge",
+        "executor_description": "Moves Charge to Canceled state and releases any authorized payments. You can call this operation until Capture is initiated while Charge is in an AuthorizationInitiated or Authorized state.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Charge",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://pay-api.amazon.com/:version/charges/:chargeId/cancel",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "chargeId",
+                "value": "",
+                "description": "Charge identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "cancellationReason": "REASON DESCRIPTION"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695616040505,
+        "lastModifiedTime": 1695616040505,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "chargeId": "P21-1111111-1111111-C111111",
+                    "chargePermissionId": "P21-1111111-1111111",
+                    "chargeInitiator": "CITU",
+                    "channel": "Web",
+                    "chargeAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "captureAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "refundedAmount": {
+                        "amount": "0.00",
+                        "currencyCode": "USD"
+                    },
+                    "convertedAmount": "14.00",
+                    "conversionRate": "1.00",
+                    "softDescriptor": "SOFT DESCRIPTOR",
+                    "merchantMetadata": null,
+                    "providerMetadata": {
+                        "providerReferenceId": null
+                    },
+                    "statusDetails": {
+                        "state": "Canceled",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20190714T155300Z"
+                    },
+                    "creationTimestamp": "20190714T155300Z",
+                    "expirationTimestamp": "20190715T155300Z",
+                    "releaseEnvironment": "Sandbox"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "UNPROCESSABLE ENTITY",
+                "description": "You've exceeded the maximum limit of 1 successfully captured Charge, per Charge Permission",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116272,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getReportById",
+        "executor_version": "v2",
+        "executor_display_name": "Get Report By Id",
+        "executor_description": "Returns report details for the given reportId.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/reports/:reportdId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "reportdId",
+                "value": "",
+                "description": "Report identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695622342204,
+        "lastModifiedTime": 1695622342204,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "reportId": "A08439021T39K6DTX4JS8",
+                    "reportType": "_GET_FLAT_FILE_OFFAMAZONPAYMENTS_SETTLEMENT_DATA_",
+                    "startTime": "20221118T150630Z",
+                    "endTime": "20221202T150350Z",
+                    "createdTime": "20221207T170826Z",
+                    "processingStatus": "COMPLETED",
+                    "processingStartTime": "20221207T170826Z",
+                    "processingEndTime": "20221207T170826Z",
+                    "reportDocumentId": "amzn1.tortuga.3.45ee712dc-3512-6cbd-ad71-ab3cb4cffef7.T3FKJJI01Y1E32"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116289,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getReportScheduleById",
+        "executor_version": "v2",
+        "executor_display_name": "Get Report Schedule By Id ",
+        "executor_description": "Returns the report schedule details that match the given ID.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/report-schedules",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695625026655,
+        "lastModifiedTime": 1695625026655,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "reportScheduleId": "68973459224",
+                    "reportType": "_GET_FLAT_FILE_OFFAMAZONPAYMENTS_ORDER_REFERENCE_DATA_",
+                    "scheduleFrequency": "P1D",
+                    "nextReportCreationTime": "20221118T150630Z"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116224,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateChargePermission",
+        "executor_version": "v2",
+        "executor_display_name": "Update Charge Permission",
+        "executor_description": "Update the Charge Permission with your external order metadata or the recurringMetadata if subscription details change. See update info post-checkout for limitations. Some of the values may be shared with the buyer. See buyer communication for more info.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>ChargePermission",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://pay-api.amazon.com/:version/chargePermissions/:chargePermissionId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "chargePermissionId",
+                "value": "",
+                "description": "Charge Permission identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "merchantMetadata": {
+                    "merchantReferenceId": "32-41-323141-32",
+                    "merchantStoreName": "AmazonTestStoreFront",
+                    "noteToBuyer": "Some Note to buyer",
+                    "customInformation": ""
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695384703073,
+        "lastModifiedTime": 1695384703073,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "checkoutSessionId": "bd504926-f659-4ad7-a1a9-9a747aaf5275",
+                    "webCheckoutDetails": null,
+                    "chargePermissionType": "PaymentMethodOnFile",
+                    "recurringMetadata": null,
+                    "productType": null,
+                    "paymentDetails": null,
+                    "merchantMetadata": null,
+                    "paymentMethodOnFileMetadata": null,
+                    "supplementaryData": null,
+                    "buyer": null,
+                    "billingAddress": null,
+                    "paymentPreferences": [
+                        null
+                    ],
+                    "statusDetails": {
+                        "state": "Completed",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20191015T204327Z"
+                    },
+                    "shippingAddress": null,
+                    "platformId": null,
+                    "chargePermissionId": "S01-5105180-3221187",
+                    "chargeId": "S01-5105180-3221187-C056351",
+                    "constraints": [
+                        null
+                    ],
+                    "creationTimestamp": "20191015T204313Z",
+                    "expirationTimestamp": null,
+                    "storeId": null,
+                    "deliverySpecifications": null,
+                    "providerMetadata": null,
+                    "releaseEnvironment": null
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "UNPROCESSABLE ENTITY",
+                "description": "You have tried to modify a Charge Permission that is in a state where it can't be modified",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116226,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createCharge",
+        "executor_version": "v2",
+        "executor_display_name": "Create Charge",
+        "executor_description": "You can create a Charge to authorize payment, if you have a Charge Permission in a Chargeable state. You can optionally capture payment immediately by setting captureNow to true. You can create up to 25 Charges per one-time Charge Permission.  The response for Create Charge will include a Charge ID. This is the only time this value will ever be returned, so you must store the ID in order to capture payment, Get Charge details, or Create Refund at a later date. If the request fails, you should reengage the buyer and ask them to go through checkout again.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Charge",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/charges",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "closureReason": "No more charges required",
+                "cancelPendingCharges": false
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1695385534240,
+        "lastModifiedTime": 1695386513764,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Successful",
+                "description": "Returns HTTP 201 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "chargeId": "P21-1111111-1111111-C111111",
+                    "chargePermissionId": "P21-1111111-1111111",
+                    "chargeInitiator": "CITU",
+                    "channel": "Web",
+                    "chargeAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "captureAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "refundedAmount": {
+                        "amount": "0.00",
+                        "currencyCode": "USD"
+                    },
+                    "convertedAmount": "14.00",
+                    "conversionRate": "1.00",
+                    "softDescriptor": "Descriptor",
+                    "merchantMetadata": null,
+                    "providerMetadata": {
+                        "providerReferenceId": null
+                    },
+                    "statusDetails": {
+                        "state": "Captured",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20190714T155300Z"
+                    },
+                    "creationTimestamp": "20190714T155300Z",
+                    "expirationTimestamp": "20190715T155300Z",
+                    "releaseEnvironment": "Sandbox"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "BAD REQUEST",
+                "description": "You've exceeded the monthly maximum charge amount allowed for a recurring Charge Permission.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "UNPROCESSABLE ENTITY",
+                "description": "You tried to call an operation on a ChargePermission object that is in a state where that operation cannot be called",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "INTERNAL SERVER ERROR",
+                "description": "Amazon could not process the Charge because of an internal processing error. You should retry the charge only if the Charge Permission is in the Chargeable state",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116263,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createDeliveryTracker",
+        "executor_version": "v2",
+        "executor_display_name": "Create Delivery Tracker",
+        "executor_description": "Create a Delivery Tracker once an order has been shipped and a tracking code has been generated. The buyer will receive a notification on their Alexa-enabled device when the order is shipped and when the order is delivered. Note that tracking codes can only be used once.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>DeliveryTracker",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/deliveryTrackers",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695617307646,
+        "lastModifiedTime": 1695617307646,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "amazonOrderReferenceId": "P00-0000000-0000000",
+                    "deliveryDetails": [
+                        {
+                            "trackingNumber": "1Z999AA10123456784",
+                            "carrierCode": "UPS"
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "BAD REQUEST",
+                "description": "The token provided is expired, revoked, malformed, or invalid for some other reason",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116294,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createReportSchedule",
+        "executor_version": "v2",
+        "executor_display_name": "create Report Schedule",
+        "executor_description": "Creates a report schedule for the given reportType. Only one schedule per report type allowed.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/report-schedules",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "deleteExistingSchedule",
+                "value": "",
+                "description": "If true deletes an existing report schedule for the given report type. The API returns an array, if a schedule for the given report type already exists and set to false.  Default: false",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "reportType": "_GET_FLAT_FILE_OFFAMAZONPAYMENTS_ORDER_REFERENCE_DATA_",
+                "scheduleFrequency": "P1D",
+                "nextReportCreationTime": "2022-08-06T23-59-59Z"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1695625536331,
+        "lastModifiedTime": 1695625776876,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Returns HTTP 201 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "reportScheduleId": "68973459224"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116223,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getChargePermission",
+        "executor_version": "v2",
+        "executor_display_name": "Get Charge Permission",
+        "executor_description": "Get Charge Permission to determine if this Charge Permission can be used to charge the buyer. You can also use this operation to retrieve buyer details and their shipping address after a successful checkout. You can only retrieve details for 30 days after the time that the Charge Permission was created.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>ChargePermission",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/chargePermissions/:chargePermissionId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "chargePermissionId",
+                "value": "",
+                "description": "Charge Permission identifier"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695383907156,
+        "lastModifiedTime": 1695383907156,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "checkoutSessionId": "bd504926-f659-4ad7-a1a9-9a747aaf5275",
+                    "webCheckoutDetails": null,
+                    "chargePermissionType": "PaymentMethodOnFile",
+                    "recurringMetadata": null,
+                    "productType": null,
+                    "paymentDetails": null,
+                    "merchantMetadata": null,
+                    "paymentMethodOnFileMetadata": null,
+                    "supplementaryData": null,
+                    "buyer": null,
+                    "billingAddress": null,
+                    "paymentPreferences": [
+                        null
+                    ],
+                    "statusDetails": {
+                        "state": "Completed",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20191015T204327Z"
+                    },
+                    "shippingAddress": null,
+                    "platformId": null,
+                    "chargePermissionId": "S01-5105180-3221187",
+                    "chargeId": "S01-5105180-3221187-C056351",
+                    "constraints": [
+                        null
+                    ],
+                    "creationTimestamp": "20191015T204313Z",
+                    "expirationTimestamp": null,
+                    "storeId": null,
+                    "deliverySpecifications": null,
+                    "providerMetadata": null,
+                    "releaseEnvironment": null
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116221,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "completeCheckoutSession",
+        "executor_version": "v2",
+        "executor_display_name": "Complete Checkout Session",
+        "executor_description": "Complete Checkout Session after the buyer returns to checkoutResultReturnUrl to confirm that the buyer has successfully returned to your site.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>CheckoutSession",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/checkoutSessions/:checkoutSessionId/complete",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "checkoutSessionId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1695383205893,
+        "lastModifiedTime": 1695384243437,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if paymentIntent was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "checkoutSessionId": "bd504926-f659-4ad7-a1a9-9a747aaf5275",
+                    "webCheckoutDetails": null,
+                    "chargePermissionType": "PaymentMethodOnFile",
+                    "recurringMetadata": null,
+                    "productType": null,
+                    "paymentDetails": null,
+                    "merchantMetadata": null,
+                    "paymentMethodOnFileMetadata": null,
+                    "supplementaryData": null,
+                    "buyer": null,
+                    "billingAddress": null,
+                    "paymentPreferences": [
+                        null
+                    ],
+                    "statusDetails": {
+                        "state": "Completed",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20191015T204327Z"
+                    },
+                    "shippingAddress": null,
+                    "platformId": null,
+                    "chargePermissionId": "S01-5105180-3221187",
+                    "chargeId": "S01-5105180-3221187-C056351",
+                    "constraints": [
+                        null
+                    ],
+                    "creationTimestamp": "20191015T204313Z",
+                    "expirationTimestamp": null,
+                    "storeId": null,
+                    "deliverySpecifications": null,
+                    "providerMetadata": null,
+                    "releaseEnvironment": null
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "BAD REQUEST",
+                "description": "The currency code provided in the request does not match the currency set during checkout",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "NOT FOUND",
+                "description": "Checkout Session details are permanently deleted after 30 days. Any request on the Checkout Session will return this error code",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 409,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "CONFLICT",
+                "description": "Mismatch between Checkout Session object chargeAmount and the request chargeAmount",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "UNPROCESSABLE ENTITY",
+                "description": "Checkout was unsuccessful because the buyer cancelled the transaction or payment was declined",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "INTERNAL SERVER ERROR",
+                "description": "Amazon could not process the Charge because of an internal processing error. You should retry the charge only if the Charge Permission is in the Chargeable state",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116216,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "buyer",
+        "executor_version": "v2",
+        "executor_display_name": "Buyer",
+        "executor_description": "The Buyer object includes details about the buyer such as name, email, unique Amazon Pay identifier, default shipping address postal and country code. You should only use this object if you\u2019ve implemented Amazon Sign-in and only because you need to retrieve Buyer details before the buyer starts Amazon Pay checkout. Once checkout has started, you should use Get Checkout Session and Get Charge Permission instead.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/buyers/:buyerToken",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "buyerToken",
+                "value": "",
+                "description": "Token used to retrieve buyer details. This value is appended as a query parameter to signInReturnUrl  Max length: 1000 characters/bytes"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695377970545,
+        "lastModifiedTime": 1695377970545,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "OK",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BAD REQUEST",
+                "description": "The token provided is expired, revoked, malformed, or invalid for some other reason",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116218,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getCheckoutSession",
+        "executor_version": "v2",
+        "executor_display_name": "Get Checkout Session",
+        "executor_description": "Get Checkout Session details includes buyer info, payment instrument details, and shipping address. Shipping address will only be returned if Checkout Session has PayAndShip product type. Use this operation to determine if checkout was successful after the buyer returns from the AmazonPayRedirectUrl to the specified checkoutResultReturnUrl.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>CheckoutSession",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/checkoutSessions/:checkoutSessionId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "checkoutSessionId",
+                "value": "",
+                "description": "Get Checkout Session details includes buyer info, payment instrument details, and shipping address. Shipping address will only be returned if Checkout Session has PayAndShip product type. Use this operation to determine if checkout was successful after the buyer returns from the AmazonPayRedirectUrl to the specified checkoutResultReturnUrl."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1695379671568,
+        "lastModifiedTime": 1695380911912,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BAD REQUEST",
+                "description": "Checkout Session details are permanently deleted after 30 days. Any request on the Checkout Session will return this error code",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116259,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createRefund",
+        "executor_version": "v2",
+        "executor_display_name": "Create Refund",
+        "executor_description": "Initiate a full or partial refund for a charge. At your discretion, you can also choose to overcompensate the buyer and refund more than the original Charge amount by either 15% or 75 USD/GBP/EUR or 8,400 YEN (whichever is less). The response for Create Refund will include a Refund ID. This is the only time this value will ever be returned. You must store the ID in order to retrieve Refund details at a later date.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Refund",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/refunds",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "chargeId": "S01-5105180-3221187-C056351",
+                "refundAmount": {
+                    "amount": "14.00",
+                    "currencyCode": "USD"
+                },
+                "softDescriptor": "Descriptor"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695616604536,
+        "lastModifiedTime": 1695616604536,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Returns HTTP 201 status response code if the operation was successful",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "refundId": "S01-5105180-3221187-R022311",
+                    "chargeId": "S01-5105180-3221187-C056351",
+                    "refundAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "softDescriptor": "Descriptor",
+                    "creationTimestamp": "20190714T155300Z",
+                    "statusDetails": {
+                        "state": "RefundInitiated",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20190714T155300Z"
+                    },
+                    "releaseEnvironment": "Sandbox"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "BAD REQUEST",
+                "description": "You've exceeded the maximum refund amount allowed for this Refund",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "UNPROCESSABLE ENTITY",
+                "description": "You tried to call a Refund operation on a Charge that is not in a Completed state. Check the Charge status for more information",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "INTERNAL SERVER ERROR",
+                "description": "Amazon could not process the transaction because of an internal processing error or because the buyer has already received a refund from an A-to-z claim or a chargeback. You should only retry the Refund if the Charge object is in the Captured state. Otherwise, you should refund the buyer in an alternative way (for example, a store credit or a check)",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116298,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "cancelReportSchedule",
+        "executor_version": "v2",
+        "executor_display_name": "Cancel Report Schedule",
+        "executor_description": "Cancels the report schedule with the given reportScheduleId.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://pay-api.amazon.com/:version/report-schedules/:reportScheduleId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "reportScheduleId",
+                "value": "",
+                "description": "Report schedule identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695626277951,
+        "lastModifiedTime": 1695626277951,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": null,
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "BAD REQUEST",
+                "description": "Request has missing or invalid parameters and cannot be parsed.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "FORBIDDEN",
+                "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "NOT FOUND",
+                "description": "The specified resource does not exist.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 429,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "TOO MANY REQUESTS",
+                "description": "The frequency of requests was greater than allowed.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "INTERNAL SERVER ERROR",
+                "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116269,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getReports",
+        "executor_version": "v2",
+        "executor_display_name": "Get Reports",
+        "executor_description": "Create a Delivery Tracker once an order has been shipped and a tracking code has been generated. The buyer will receive a notification on their Alexa-enabled device when the order is shipped and when the order is delivered. Note that tracking codes can only be used once.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/reports",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "reportTypes",
+                "value": "",
+                "description": "List of types of reports requested.",
+                "req": false
+            },
+            {
+                "key": "processingStatuses",
+                "value": "",
+                "description": "A list of processing statuses used to filter reports.",
+                "req": false
+            },
+            {
+                "key": "createdSince",
+                "value": "",
+                "description": "The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. Reports are retained for a maximum of 90 days.  Default: 90 days",
+                "req": false
+            },
+            {
+                "key": "createdUntil",
+                "value": "",
+                "description": "The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. Reports are retained for a maximum of 90 days.  Default: now",
+                "req": false
+            },
+            {
+                "key": "pageSize",
+                "value": "",
+                "description": "The number of reports per page to return. Minimum: 1 Maximum: 100  Default: 10",
+                "req": false
+            },
+            {
+                "key": "nextToken",
+                "value": "",
+                "description": "A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695619867915,
+        "lastModifiedTime": 1695619867915,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "reports": [
+                        {
+                            "reportId": "A08439021T39K6DTX4JS8",
+                            "reportType": "_GET_FLAT_FILE_OFFAMAZONPAYMENTS_SETTLEMENT_DATA_",
+                            "startTime": "20221118T150630Z",
+                            "endTime": "20221202T150350Z",
+                            "createdTime": "20221207T170826Z",
+                            "processingStatus": "COMPLETED",
+                            "processingStartTime": "20221207T170826Z",
+                            "processingEndTime": "20221207T170826Z",
+                            "reportDocumentId": "amzn1.tortuga.3.45ee712dc-3512-6cbd-ad71-ab3cb4cffef7.T3FKJJI01Y1E32"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116273,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createReport",
+        "executor_version": "v2",
+        "executor_display_name": "Create Report",
+        "executor_description": "Submits a request to generate a report based on the reportType and date range specified.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/reports",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695622515784,
+        "lastModifiedTime": 1695622515784,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": "Returns HTTP 201 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "reportId": "A08439021T39K6DTX4JS8"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116276,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getReportDocument",
+        "executor_version": "v2",
+        "executor_display_name": "Get Report Document",
+        "executor_description": "Returns the pre-signed S3 URL for the report. The report can be downloaded using this URL.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/report-documents/:reportDocumentId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "reportDocumentId",
+                "value": "",
+                "description": "Report Document identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695622680814,
+        "lastModifiedTime": 1695622680814,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "reportDocumentId": "amzn1.tortuga.3.45ee712dc-3512-6cbd-ad71-ab3cb4cffef7.T3FKJJI01Y1E32",
+                    "url": "https://tortuga-[...].amazonaws.com/<reportDocumentId>?X-Amz-Algorithm=...&X-Amz-Signature=...",
+                    "compressionAlgorithm": "N/A"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116217,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "checkoutSession",
+        "executor_version": "v2",
+        "executor_display_name": "Checkout Session",
+        "executor_description": "Create a new Amazon Pay Checkout Session to customize and manage the buyer experience, from when the buyer clicks the Amazon Pay button to when they complete checkout.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>CheckoutSession",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://pay-api.amazon.com/:version/checkoutSessions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "webCheckoutDetails": {
+                    "checkoutReviewReturnUrl": "https://a.com/merchant-review-page"
+                },
+                "storeId": "amzn1.application-oa2-client.8b5e45312b5248b69eeaStoreId",
+                "scopes": [
+                    "name",
+                    "email",
+                    "phoneNumber",
+                    "billingAddress"
+                ],
+                "deliverySpecifications": {
+                    "specialRestrictions": [
+                        "RestrictPOBoxes"
+                    ],
+                    "addressRestrictions": {
+                        "type": "Allowed",
+                        "restrictions": {
+                            "US": {
+                                "statesOrRegions": [
+                                    "WA"
+                                ],
+                                "zipCodes": [
+                                    "95050",
+                                    "93405"
+                                ]
+                            },
+                            "GB": {
+                                "zipCodes": [
+                                    "72046",
+                                    "72047"
+                                ]
+                            },
+                            "IN": {
+                                "statesOrRegions": [
+                                    "AP"
+                                ]
+                            },
+                            "JP": {}
+                        }
+                    }
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1695378971827,
+        "lastModifiedTime": 1695380396910,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "BAD REQUEST",
+                "description": "The chargeAmount currency code provided in the request does not match the presentmentCurrency currency code",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Returns HTTP 201 status response code if the operation was successful.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116262,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getRefund",
+        "executor_version": "v2",
+        "executor_display_name": "Get Refund",
+        "executor_description": "Get refund details.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Refund",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/refunds/:refundId",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "refundId",
+                "value": "",
+                "description": "Refund identifier"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "chargeId": "S01-5105180-3221187-C056351",
+                "refundAmount": {
+                    "amount": "14.00",
+                    "currencyCode": "USD"
+                },
+                "softDescriptor": "Descriptor"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695616897640,
+        "lastModifiedTime": 1695616897640,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "refundId": "S01-5105180-3221187-R022311",
+                    "chargeId": "S01-5105180-3221187-C056351",
+                    "refundAmount": {
+                        "amount": "14.00",
+                        "currencyCode": "USD"
+                    },
+                    "softDescriptor": "Descriptor",
+                    "creationTimestamp": "20190714T155300Z",
+                    "statusDetails": {
+                        "state": "Refunded",
+                        "reasonCode": null,
+                        "reasonDescription": null,
+                        "lastUpdatedTimestamp": "20190714T155300Z"
+                    },
+                    "releaseEnvironment": "Sandbox"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116287,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getReportSchedules",
+        "executor_version": "v2",
+        "executor_display_name": "Get Report Schedules",
+        "executor_description": "Returns report schedule details that match the filters criteria specified.",
+        "executor_category": "APIreference",
+        "executor_category_group": "APIreference>Reports",
+        "service_provider": "amazonpay",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://pay-api.amazon.com/:version/report-schedules",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "version",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "reportTypes",
+                "value": "",
+                "description": "List of report types",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1695624560093,
+        "lastModifiedTime": 1695624560093,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Successful",
+                "description": "Returns HTTP 200 status response code if the operation was successful.",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "reportSchedules": [
+                        {
+                            "reportScheduleId": "68973459224",
+                            "reportType": "_GET_FLAT_FILE_OFFAMAZONPAYMENTS_ORDER_REFERENCE_DATA_",
+                            "scheduleFrequency": "P1D",
+                            "nextReportCreationTime": "20221118T150630Z"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

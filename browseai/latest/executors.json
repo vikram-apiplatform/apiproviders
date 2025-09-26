@@ -1,0 +1,3839 @@
+[
+    {
+        "id": 108084,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveatask",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve a task",
+        "executor_description": "Retrieve a task's details and captured data.",
+        "executor_category": "Tasks",
+        "executor_category_group": "Tasks",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/tasks/{taskId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            },
+            {
+                "key": "taskId",
+                "value": "",
+                "description": "Unique task ID"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690520505273,
+        "lastModifiedTime": 1690520505273,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "result": {
+                        "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                        "inputParameters": {
+                            "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                            "companies_skip": 0,
+                            "companies_limit": 10
+                        },
+                        "robotId": "4f5cd7ff-6c98-4cac-8cf0-d7d0cb050b06",
+                        "status": "successful",
+                        "runByUserId": null,
+                        "robotBulkRunId": null,
+                        "runByTaskMonitorId": null,
+                        "runByAPI": true,
+                        "createdAt": 1678795867879,
+                        "startedAt": 1678795867879,
+                        "finishedAt": 1678795867879,
+                        "userFriendlyError": null,
+                        "triedRecordingVideo": true,
+                        "videoUrl": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/system-1620230966-b1a9688b-05d3-4682-beeb-9ce035e482b1.mp4",
+                        "videoRemovedAt": 1678795867879,
+                        "retriedOriginalTaskId": "673da019-bf0c-476e-9c4f-d35252a151dc",
+                        "retriedByTaskId": null,
+                        "capturedDataTemporaryUrl": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/system-1620230966-b1a9688b-05d3-4682-beeb-9ce035e482b1.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQVG3TPBVXHSCAX63%2F20221031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221031T185642Z&X-Amz-Expires=1800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDfX8VNAl5kBgttrCU85U5wc1ZtSOmshO6%2FPilXOv8nvgIhAIveFfsk%2B2CnEkrMZWriodEPsj0osO5a5zV6eVu%2FXfuZKp8DCHwQAhoMMDQ1NTU3NzA4OTA3IgyrbhVK0MP1WMFBXh0q%2FAJulP5qfaV5mn3NRbINqZN4hy4Dg3IujNrZjw8ef32sWE1Gj2D%2Fc0YTJUzvx%2Fnm7LxyNO6AR35mrVy%2FBm9Q80UIspkcLMl45EK%2FoUDO0fAvoUF8g6iZ905qS3MvnOTxXkObhM1PVmpFeJFMw3jksnOPfKE4X7Ut%2FJXNwD%2F5QzdkQCXkGem%2BlrYSSSf8jB8lihTAjT%2FNXmOKMv3jktmZ13T8J1R8F8zeuLPMQf7QphUzlKn5joPb28cConluQC97y%2BjwxqIYjvIFKXY9cZEoaHGh4c6FbXsia714zG3CQp8NSGLbqCCu93oJI1Z61E%2BZ6PhB3vZGdBvXi61AlJcxZ7sti6i0h4VAbWspiJIgWwoZzrsTtneBNNpUW9tvtacGgEZIwAKV%2F3AhVEZu3WC1eQ9HtfjT9%2FjW99SEB8VVGXwkM%2FA9mtT%2FuiL0cAfQZRMhtbQJXXDRdkYEw%2FWuhjJ3zxEtEB2m3uH%2B%2BUEzOzGTd5Knm%2Bero%2BhMfN8X%2Botm3DDbtICbBjqcAf5Riii0XE1w2TZvpm%2FPNHTchCu7FnNz5hfvflv8scpgO5M4bGpy%2FadI4%2F7AUQqCQXFw4scF0FCCdb8AKJZsFGG18W1jjDHyR0YuxZFQ%2FJQRt0JP3yr%2BkVxjAH7qTtc0AzF%2FnGTgy3MOF%2Bm6Y7EkyCWyV2r6o1JTBQMftlf7MI8Uvw4cSZE6JoZviaFtmKVLGGgR4F3cDiyU56augA%3D%3D&X-Amz-Signature=a7bb4d7597ad37cdf1f260890c3c474f7f49334db58c9650d75302a34126f7bc&X-Amz-SignedHeaders=host",
+                        "capturedTexts": {
+                            "Product Name": "Alexis",
+                            "Width": "15",
+                            "Pattern Repeat": "PATTERN REPEAT",
+                            "Construction": "Hand woven",
+                            "Fiber": "100% Wool",
+                            "Color": null,
+                            "Main Image": "https://isteam.wsimg.com/ip/e31f7bba-252b-4669-9209-639d1c00765d/ols/258_original"
+                        },
+                        "capturedScreenshots": {
+                            "top-ads": {
+                                "id": "b4d132f3-12d9-4770-ac7d-88e481fc5b47",
+                                "name": "Top ads",
+                                "src": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/00001-user-1620230947-6f113cf2-90ef-4c66-a448-9d5c6bd64873.png",
+                                "width": 600,
+                                "height": 120,
+                                "x": 201,
+                                "y": 142,
+                                "deviceScaleFactor": 1.2,
+                                "full": "page",
+                                "comparedToScreenshotId": "29d742c2-6f45-4f29-9d48-ba6fe66e6e3d",
+                                "diffImageSrc": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/00001-user-1620230947-6f113cf2-90ef-4c66-a448-9d5c6bd64873.png",
+                                "changePercentage": 20,
+                                "diffThreshold": 5,
+                                "fileRemovedAt": 1678795867879
+                            }
+                        },
+                        "capturedLists": {
+                            "companies": [
+                                {
+                                    "Position": "1",
+                                    "name": "Airbnb",
+                                    "location": "San Francisco, CA, USA",
+                                    "description": "Book accommodations around the world."
+                                },
+                                {
+                                    "Position": "2",
+                                    "name": "Coin base",
+                                    "location": "San Francisco, CA, USA",
+                                    "description": "Buy, sell, and manage crypto currencies."
+                                },
+                                {
+                                    "Position": "3",
+                                    "name": "DoorDash",
+                                    "location": "San Francisco, CA, USA",
+                                    "description": "Restaurant delivery."
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108082,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getalltasksbyarobot",
+        "executor_version": "v2",
+        "executor_display_name": "Get all tasks by a robot",
+        "executor_description": "Get all of a robot's tasks",
+        "executor_category": "Tasks",
+        "executor_category_group": "Tasks",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/tasks",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "Page number",
+                "req": false
+            },
+            {
+                "key": "status",
+                "value": "",
+                "description": "Task status",
+                "req": false
+            },
+            {
+                "key": "robotBulkRunId",
+                "value": "",
+                "description": "filter the result based on robot bulk run ID",
+                "req": false
+            },
+            {
+                "key": "sort",
+                "value": "",
+                "description": "A comma separated list of fields to sort by. Default sorting is ascending and prefixing field names with a hyphen '-' yields a descending order.",
+                "req": false
+            },
+            {
+                "key": "includeRetried",
+                "value": "",
+                "description": "by passing false you can exclude the retried tasks",
+                "req": false
+            },
+            {
+                "key": "fromDate",
+                "value": "",
+                "description": "From task creation date and time in the form of a Unix timestamp",
+                "req": false
+            },
+            {
+                "key": "toDate",
+                "value": "",
+                "description": "You can generate a new API key on your dashboard if you do not have one.",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690519828621,
+        "lastModifiedTime": 1690519828621,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "result": {
+                        "robotTasks": {
+                            "totalCount": 20,
+                            "pageNumber": 1,
+                            "hasMore": true,
+                            "items": [
+                                {
+                                    "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                                    "inputParameters": {
+                                        "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                                        "companies_skip": 0,
+                                        "companies_limit": 10
+                                    },
+                                    "robotId": "4f5cd7ff-6c98-4cac-8cf0-d7d0cb050b06",
+                                    "status": "successful",
+                                    "runByUserId": null,
+                                    "robotBulkRunId": null,
+                                    "runByTaskMonitorId": null,
+                                    "runByAPI": true,
+                                    "createdAt": 1678795867879,
+                                    "startedAt": 1678795867879,
+                                    "finishedAt": 1678795867879,
+                                    "userFriendlyError": null,
+                                    "triedRecordingVideo": true,
+                                    "videoUrl": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/system-1620230966-b1a9688b-05d3-4682-beeb-9ce035e482b1.mp4",
+                                    "videoRemovedAt": 1678795867879,
+                                    "retriedOriginalTaskId": "673da019-bf0c-476e-9c4f-d35252a151dc",
+                                    "retriedByTaskId": null,
+                                    "capturedDataTemporaryUrl": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/system-1620230966-b1a9688b-05d3-4682-beeb-9ce035e482b1.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQVG3TPBVXHSCAX63%2F20221031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221031T185642Z&X-Amz-Expires=1800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDfX8VNAl5kBgttrCU85U5wc1ZtSOmshO6%2FPilXOv8nvgIhAIveFfsk%2B2CnEkrMZWriodEPsj0osO5a5zV6eVu%2FXfuZKp8DCHwQAhoMMDQ1NTU3NzA4OTA3IgyrbhVK0MP1WMFBXh0q%2FAJulP5qfaV5mn3NRbINqZN4hy4Dg3IujNrZjw8ef32sWE1Gj2D%2Fc0YTJUzvx%2Fnm7LxyNO6AR35mrVy%2FBm9Q80UIspkcLMl45EK%2FoUDO0fAvoUF8g6iZ905qS3MvnOTxXkObhM1PVmpFeJFMw3jksnOPfKE4X7Ut%2FJXNwD%2F5QzdkQCXkGem%2BlrYSSSf8jB8lihTAjT%2FNXmOKMv3jktmZ13T8J1R8F8zeuLPMQf7QphUzlKn5joPb28cConluQC97y%2BjwxqIYjvIFKXY9cZEoaHGh4c6FbXsia714zG3CQp8NSGLbqCCu93oJI1Z61E%2BZ6PhB3vZGdBvXi61AlJcxZ7sti6i0h4VAbWspiJIgWwoZzrsTtneBNNpUW9tvtacGgEZIwAKV%2F3AhVEZu3WC1eQ9HtfjT9%2FjW99SEB8VVGXwkM%2FA9mtT%2FuiL0cAfQZRMhtbQJXXDRdkYEw%2FWuhjJ3zxEtEB2m3uH%2B%2BUEzOzGTd5Knm%2Bero%2BhMfN8X%2Botm3DDbtICbBjqcAf5Riii0XE1w2TZvpm%2FPNHTchCu7FnNz5hfvflv8scpgO5M4bGpy%2FadI4%2F7AUQqCQXFw4scF0FCCdb8AKJZsFGG18W1jjDHyR0YuxZFQ%2FJQRt0JP3yr%2BkVxjAH7qTtc0AzF%2FnGTgy3MOF%2Bm6Y7EkyCWyV2r6o1JTBQMftlf7MI8Uvw4cSZE6JoZviaFtmKVLGGgR4F3cDiyU56augA%3D%3D&X-Amz-Signature=a7bb4d7597ad37cdf1f260890c3c474f7f49334db58c9650d75302a34126f7bc&X-Amz-SignedHeaders=host",
+                                    "capturedTexts": {
+                                        "Product Name": "Alexis",
+                                        "Width": "15",
+                                        "Pattern Repeat": "PATTERN REPEAT",
+                                        "Construction": "Hand woven",
+                                        "Fiber": "100% Wool",
+                                        "Color": null,
+                                        "Main Image": "https://isteam.wsimg.com/ip/e31f7bba-252b-4669-9209-639d1c00765d/ols/258_original"
+                                    },
+                                    "capturedScreenshots": {
+                                        "top-ads": {
+                                            "id": "b4d132f3-12d9-4770-ac7d-88e481fc5b47",
+                                            "name": "Top ads",
+                                            "src": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/00001-user-1620230947-6f113cf2-90ef-4c66-a448-9d5c6bd64873.png",
+                                            "width": 600,
+                                            "height": 120,
+                                            "x": 201,
+                                            "y": 142,
+                                            "deviceScaleFactor": 1.2,
+                                            "full": "page",
+                                            "comparedToScreenshotId": "29d742c2-6f45-4f29-9d48-ba6fe66e6e3d",
+                                            "diffImageSrc": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/00001-user-1620230947-6f113cf2-90ef-4c66-a448-9d5c6bd64873.png",
+                                            "changePercentage": 20,
+                                            "diffThreshold": 5,
+                                            "fileRemovedAt": 1678795867879
+                                        }
+                                    },
+                                    "capturedLists": {
+                                        "companies": [
+                                            {
+                                                "Position": "1",
+                                                "name": "Airbnb",
+                                                "location": "San Francisco, CA, USA",
+                                                "description": "Book accommodations around the world."
+                                            },
+                                            {
+                                                "Position": "2",
+                                                "name": "Coin base",
+                                                "location": "San Francisco, CA, USA",
+                                                "description": "Buy, sell, and manage crypto currencies."
+                                            },
+                                            {
+                                                "Position": "3",
+                                                "name": "DoorDash",
+                                                "location": "San Francisco, CA, USA",
+                                                "description": "Restaurant delivery."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "invalid_robot_id"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108083,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "runarobot",
+        "executor_version": "v2",
+        "executor_display_name": "Run a robot",
+        "executor_description": "Run a robot on-demand with custom input parameters.",
+        "executor_category": "Tasks",
+        "executor_category_group": "Tasks",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/tasks",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "recordVideo": false,
+                "inputParameters": {
+                    "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                    "companies_skip": 0,
+                    "companies_limit": 10
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690520398490,
+        "lastModifiedTime": 1690520398490,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "result": {
+                        "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                        "inputParameters": {
+                            "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                            "companies_skip": 0,
+                            "companies_limit": 10
+                        },
+                        "robotId": "4f5cd7ff-6c98-4cac-8cf0-d7d0cb050b06",
+                        "status": "successful",
+                        "runByUserId": null,
+                        "robotBulkRunId": null,
+                        "runByTaskMonitorId": null,
+                        "runByAPI": true,
+                        "createdAt": 1678795867879,
+                        "startedAt": 1678795867879,
+                        "finishedAt": 1678795867879,
+                        "userFriendlyError": null,
+                        "triedRecordingVideo": true,
+                        "videoUrl": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/system-1620230966-b1a9688b-05d3-4682-beeb-9ce035e482b1.mp4",
+                        "videoRemovedAt": 1678795867879,
+                        "retriedOriginalTaskId": "673da019-bf0c-476e-9c4f-d35252a151dc",
+                        "retriedByTaskId": null,
+                        "capturedDataTemporaryUrl": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/system-1620230966-b1a9688b-05d3-4682-beeb-9ce035e482b1.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQVG3TPBVXHSCAX63%2F20221031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221031T185642Z&X-Amz-Expires=1800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDfX8VNAl5kBgttrCU85U5wc1ZtSOmshO6%2FPilXOv8nvgIhAIveFfsk%2B2CnEkrMZWriodEPsj0osO5a5zV6eVu%2FXfuZKp8DCHwQAhoMMDQ1NTU3NzA4OTA3IgyrbhVK0MP1WMFBXh0q%2FAJulP5qfaV5mn3NRbINqZN4hy4Dg3IujNrZjw8ef32sWE1Gj2D%2Fc0YTJUzvx%2Fnm7LxyNO6AR35mrVy%2FBm9Q80UIspkcLMl45EK%2FoUDO0fAvoUF8g6iZ905qS3MvnOTxXkObhM1PVmpFeJFMw3jksnOPfKE4X7Ut%2FJXNwD%2F5QzdkQCXkGem%2BlrYSSSf8jB8lihTAjT%2FNXmOKMv3jktmZ13T8J1R8F8zeuLPMQf7QphUzlKn5joPb28cConluQC97y%2BjwxqIYjvIFKXY9cZEoaHGh4c6FbXsia714zG3CQp8NSGLbqCCu93oJI1Z61E%2BZ6PhB3vZGdBvXi61AlJcxZ7sti6i0h4VAbWspiJIgWwoZzrsTtneBNNpUW9tvtacGgEZIwAKV%2F3AhVEZu3WC1eQ9HtfjT9%2FjW99SEB8VVGXwkM%2FA9mtT%2FuiL0cAfQZRMhtbQJXXDRdkYEw%2FWuhjJ3zxEtEB2m3uH%2B%2BUEzOzGTd5Knm%2Bero%2BhMfN8X%2Botm3DDbtICbBjqcAf5Riii0XE1w2TZvpm%2FPNHTchCu7FnNz5hfvflv8scpgO5M4bGpy%2FadI4%2F7AUQqCQXFw4scF0FCCdb8AKJZsFGG18W1jjDHyR0YuxZFQ%2FJQRt0JP3yr%2BkVxjAH7qTtc0AzF%2FnGTgy3MOF%2Bm6Y7EkyCWyV2r6o1JTBQMftlf7MI8Uvw4cSZE6JoZviaFtmKVLGGgR4F3cDiyU56augA%3D%3D&X-Amz-Signature=a7bb4d7597ad37cdf1f260890c3c474f7f49334db58c9650d75302a34126f7bc&X-Amz-SignedHeaders=host",
+                        "capturedTexts": {
+                            "Product Name": "Alexis",
+                            "Width": "15",
+                            "Pattern Repeat": "PATTERN REPEAT",
+                            "Construction": "Hand woven",
+                            "Fiber": "100% Wool",
+                            "Color": null,
+                            "Main Image": "https://isteam.wsimg.com/ip/e31f7bba-252b-4669-9209-639d1c00765d/ols/258_original"
+                        },
+                        "capturedScreenshots": {
+                            "top-ads": {
+                                "id": "b4d132f3-12d9-4770-ac7d-88e481fc5b47",
+                                "name": "Top ads",
+                                "src": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/00001-user-1620230947-6f113cf2-90ef-4c66-a448-9d5c6bd64873.png",
+                                "width": 600,
+                                "height": 120,
+                                "x": 201,
+                                "y": 142,
+                                "deviceScaleFactor": 1.2,
+                                "full": "page",
+                                "comparedToScreenshotId": "29d742c2-6f45-4f29-9d48-ba6fe66e6e3d",
+                                "diffImageSrc": "https://prod-browseai-captured-data.s3.amazonaws.com/1fae674a-2788-46a8-83c8-95c4664c6d25/6326b3c1-7b16-4256-a323-7d8d8954bd4e/1061671f-7f71-42ac-bb9a-207d126d1f3a/00001-user-1620230947-6f113cf2-90ef-4c66-a448-9d5c6bd64873.png",
+                                "changePercentage": 20,
+                                "diffThreshold": 5,
+                                "fileRemovedAt": 1678795867879
+                            }
+                        },
+                        "capturedLists": {
+                            "companies": [
+                                {
+                                    "Position": "1",
+                                    "name": "Airbnb",
+                                    "location": "San Francisco, CA, USA",
+                                    "description": "Book accommodations around the world."
+                                },
+                                {
+                                    "Position": "2",
+                                    "name": "Coin base",
+                                    "location": "San Francisco, CA, USA",
+                                    "description": "Buy, sell, and manage crypto currencies."
+                                },
+                                {
+                                    "Position": "3",
+                                    "name": "DoorDash",
+                                    "location": "San Francisco, CA, USA",
+                                    "description": "Restaurant delivery."
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "credit limit reached",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 403,
+                    "messageCode": "credits_limit_reached"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 503,
+                    "messageCode": "robot_under_maintenance"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108085,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievearobotsmonitors",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve a robot's monitors",
+        "executor_description": "Retrieve a robot's monitors list.",
+        "executor_category": "Monitors",
+        "executor_category_group": "Monitors",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/monitors",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690521807682,
+        "lastModifiedTime": 1690521807682,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "monitors": {
+                        "totalCount": 10,
+                        "items": [
+                            {
+                                "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                                "name": "Monitor Products",
+                                "status": "active",
+                                "pausedReason": null,
+                                "inputParameters": {
+                                    "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                                    "companies_skip": 0,
+                                    "companies_limit": 10
+                                },
+                                "schedules": [
+                                    {
+                                        "type": "FIXED_INTERVAL",
+                                        "everyMinutes": 60
+                                    }
+                                ],
+                                "schedule": "FREQ=HOURLY;INTERVAL=1;BYWEEKDAY=MO,TU,WE,TH,FR",
+                                "notifyOnCapturedScreenshotChange": true,
+                                "notifyOnCapturedTextChange": true,
+                                "capturedScreenshotNotificationThreshold": 15,
+                                "createdAt": 1678795867879,
+                                "pausedAt": 1678795867879,
+                                "updatedAt": 1678795867879
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108087,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievearobotsmonitor",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve a robot's monitor",
+        "executor_description": "Retrieve a robot's monitor.",
+        "executor_category": "Monitors",
+        "executor_category_group": "Monitors",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/monitors/{monitorId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            },
+            {
+                "key": "monitorId",
+                "value": "",
+                "description": "You can find a monitor's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690522042949,
+        "lastModifiedTime": 1690522042949,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "monitor": {
+                        "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                        "name": "Monitor Products",
+                        "status": "active",
+                        "pausedReason": null,
+                        "inputParameters": {
+                            "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                            "companies_skip": 0,
+                            "companies_limit": 10
+                        },
+                        "schedules": [
+                            {
+                                "type": "FIXED_INTERVAL",
+                                "everyMinutes": 60
+                            }
+                        ],
+                        "schedule": "FREQ=HOURLY;INTERVAL=1;BYWEEKDAY=MO,TU,WE,TH,FR",
+                        "notifyOnCapturedScreenshotChange": true,
+                        "notifyOnCapturedTextChange": true,
+                        "capturedScreenshotNotificationThreshold": 15,
+                        "createdAt": 1678795867879,
+                        "pausedAt": 1678795867879,
+                        "updatedAt": 1678795867879
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108086,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createanewmonitoronarobot",
+        "executor_version": "v2",
+        "executor_display_name": "Create a new monitor on a robot",
+        "executor_description": "Create a new monitor on a robot.",
+        "executor_category": "Monitors",
+        "executor_category_group": "Monitors",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/monitors",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "Monitor Products",
+                "inputParameters": {
+                    "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                    "companies_skip": 0,
+                    "companies_limit": 10
+                },
+                "schedules": [
+                    {
+                        "type": "FIXED_INTERVAL",
+                        "everyMinutes": 60
+                    }
+                ],
+                "schedule": "FREQ=HOURLY;INTERVAL=1;BYWEEKDAY=MO,TU,WE,TH,FR",
+                "notifyOnCapturedScreenshotChange": true,
+                "notifyOnCapturedTextChange": true,
+                "capturedScreenshotNotificationThreshold": 15
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690521932563,
+        "lastModifiedTime": 1690521932563,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "monitor": {
+                        "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                        "name": "Monitor Products",
+                        "status": "active",
+                        "pausedReason": null,
+                        "inputParameters": {
+                            "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                            "companies_skip": 0,
+                            "companies_limit": 10
+                        },
+                        "schedules": [
+                            {
+                                "type": "FIXED_INTERVAL",
+                                "everyMinutes": 60
+                            }
+                        ],
+                        "schedule": "FREQ=HOURLY;INTERVAL=1;BYWEEKDAY=MO,TU,WE,TH,FR",
+                        "notifyOnCapturedScreenshotChange": true,
+                        "notifyOnCapturedTextChange": true,
+                        "capturedScreenshotNotificationThreshold": 15,
+                        "createdAt": 1678795867879,
+                        "pausedAt": 1678795867879,
+                        "updatedAt": 1678795867879
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 403,
+                    "messageCode": "schedule_interval_below_minimum"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108088,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatearobotsmonitor",
+        "executor_version": "v2",
+        "executor_display_name": "Update a robot's monitor",
+        "executor_description": "Update a robot's monitor",
+        "executor_category": "Monitors",
+        "executor_category_group": "Monitors",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/monitors/{monitorId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            },
+            {
+                "key": "monitorId",
+                "value": "",
+                "description": "You can find a monitor's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "Monitor Products",
+                "status": "active",
+                "inputParameters": {
+                    "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                    "companies_skip": 0,
+                    "companies_limit": 10
+                },
+                "schedules": [
+                    {
+                        "type": "FIXED_INTERVAL",
+                        "everyMinutes": 60
+                    }
+                ],
+                "schedule": "FREQ=HOURLY;INTERVAL=1;BYWEEKDAY=MO,TU,WE,TH,FR",
+                "notifyOnCapturedScreenshotChange": true,
+                "notifyOnCapturedTextChange": true,
+                "capturedScreenshotNotificationThreshold": 15
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690522519824,
+        "lastModifiedTime": 1690522519824,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "monitor": {
+                        "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                        "name": "Monitor Products",
+                        "status": "active",
+                        "pausedReason": null,
+                        "inputParameters": {
+                            "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                            "companies_skip": 0,
+                            "companies_limit": 10
+                        },
+                        "schedules": [
+                            {
+                                "type": "FIXED_INTERVAL",
+                                "everyMinutes": 60
+                            }
+                        ],
+                        "schedule": "FREQ=HOURLY;INTERVAL=1;BYWEEKDAY=MO,TU,WE,TH,FR",
+                        "notifyOnCapturedScreenshotChange": true,
+                        "notifyOnCapturedTextChange": true,
+                        "capturedScreenshotNotificationThreshold": 15,
+                        "createdAt": 1678795867879,
+                        "pausedAt": 1678795867879,
+                        "updatedAt": 1678795867879
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 403,
+                    "messageCode": "schedule_interval_below_minimum"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108089,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletearobotmonitor",
+        "executor_version": "v2",
+        "executor_display_name": "Delete a robot's monitor",
+        "executor_description": "Delete a robot's monitor.",
+        "executor_category": "Monitors",
+        "executor_category_group": "Monitors",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/monitors/{monitorId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            },
+            {
+                "key": "monitorId",
+                "value": "",
+                "description": "You can find a monitor's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690522585764,
+        "lastModifiedTime": 1690522585764,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108081,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievesinglerobotbyID",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve single robot by ID",
+        "executor_description": "You can use this endpoint to retrieve a single robot by ID.",
+        "executor_category": "Robots",
+        "executor_category_group": "Robots",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "Unique robot ID You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690519385276,
+        "lastModifiedTime": 1690519385276,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "robot": {
+                        "id": "4f5cd7ff-6c98-4cac-8cf0-d7d0cb050b06",
+                        "name": "Extract data from Realtor.com",
+                        "createdAt": 1678795867879,
+                        "inputParameters": [
+                            {
+                                "type": "string",
+                                "name": "originUrl",
+                                "label": "Origin URL",
+                                "encrypted": false,
+                                "defaultValue": "https://www.espressozone.com/espresso-machines/semi-automatic-espresso-machines"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108080,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievelistofrobotsunderyouraccount",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve list of robots under your account",
+        "executor_description": "If you have already created a few robots on your dashboard, you can use this endpoint to retrieve a list of them.",
+        "executor_category": "Robots",
+        "executor_category_group": "Robots",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1690519235423,
+        "lastModifiedTime": 1690522531962,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "robots": {
+                        "totalCount": 20,
+                        "items": [
+                            {
+                                "id": "4f5cd7ff-6c98-4cac-8cf0-d7d0cb050b06",
+                                "name": "Extract data from Realtor.com",
+                                "createdAt": 1678795867879,
+                                "inputParameters": [
+                                    {
+                                        "type": "string",
+                                        "name": "originUrl",
+                                        "label": "Origin URL",
+                                        "encrypted": false,
+                                        "defaultValue": "https://www.espressozone.com/espresso-machines/semi-automatic-espresso-machines"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108090,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievearobotswebhooks",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve a robot's webhooks",
+        "executor_description": "Retrieve a robot's webhook list.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/webhooks",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690522711987,
+        "lastModifiedTime": 1690522711987,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108091,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createanewwebhookonarobot",
+        "executor_version": "v2",
+        "executor_display_name": "Create a new webhook on a robot",
+        "executor_description": "Create a new webhook on a robot",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/webhooks",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "hookUrl": "https://example.com/v2/webhooks/callback/events",
+                "eventType": "taskFinished"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690522796579,
+        "lastModifiedTime": 1690522796579,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "webhook": {
+                        "id": "6d7f1218-43fb-4735-ac71-21e81b1ab23e",
+                        "url": "https://example.com/v2/webhooks/callback/events",
+                        "webhookEvent": "taskFinished",
+                        "createdAt": 1678795867879
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108092,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletearobotwebhook",
+        "executor_version": "v2",
+        "executor_display_name": "Delete a robot's webhook",
+        "executor_description": "Delete a robot's webhook.",
+        "executor_category": "Webhooks",
+        "executor_category_group": "Webhooks",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/webhooks/{webhookId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            },
+            {
+                "key": "webhookId",
+                "value": "",
+                "description": "Unique webhookId ID"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690522918912,
+        "lastModifiedTime": 1690522918912,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108094,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievearobotsbulkrunslist",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve a robot's bulk runs list",
+        "executor_description": "Retrieve a robot's bulk runs list.",
+        "executor_category": "bulkRuns",
+        "executor_category_group": "bulkRuns",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/bulk-runs",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": "You can find a robot's ID by opening it on the dashboard and copying its ID in the browser address bar."
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "Page number",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690523146814,
+        "lastModifiedTime": 1690523146814,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "result": {
+                        "totalCount": 20,
+                        "pageNumber": 1,
+                        "hasMore": true,
+                        "items": [
+                            {
+                                "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                                "title": "Bulk Run Title",
+                                "tasksCount": 10,
+                                "robotId": "4f5cd7ff-6c98-4cac-8cf0-d7d0cb050b06",
+                                "createdAt": 1678795867879
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108095,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievearobotsbulkrun",
+        "executor_version": "v2",
+        "executor_display_name": "Retrieve a robot's bulk run",
+        "executor_description": "Retrieve a robot's bulk run along with a list of tasks run within the bulk run.",
+        "executor_category": "bulkRuns",
+        "executor_category_group": "bulkRuns",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/bulk-runs/{bulkRunId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "bulkRunId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "page",
+                "value": "",
+                "description": "Page number",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690523206335,
+        "lastModifiedTime": 1690523206335,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "result": {
+                        "totalCount": 20,
+                        "pageNumber": 1,
+                        "hasMore": true,
+                        "items": [
+                            {
+                                "id": "f6fb62b6-f06a-4bf7-a623-c6a35c2e70b0",
+                                "title": "Bulk Run Title",
+                                "tasksCount": 10,
+                                "robotId": "4f5cd7ff-6c98-4cac-8cf0-d7d0cb050b06",
+                                "createdAt": 1678795867879
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108093,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "bulkruntasks",
+        "executor_version": "v2",
+        "executor_display_name": "Bulk run tasks",
+        "executor_description": "You can run up to 50,000 tasks at once using a robot with different input parameters for each task.",
+        "executor_category": "bulkRuns",
+        "executor_category_group": "bulkRuns",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.browse.ai/v2/robots/{robotId}/bulk-runs",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "robotId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "title": "Bulk Run Title",
+                "inputParameters": [
+                    {
+                        "originUrl": "https://www.ycombinator.com/companies/airbnb",
+                        "companies_skip": 0,
+                        "companies_limit": 10
+                    },
+                    {
+                        "originUrl": "https://www.ycombinator.com/companies/coinbase",
+                        "companies_skip": 0,
+                        "companies_limit": 20
+                    }
+                ]
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690523050683,
+        "lastModifiedTime": 1690523050683,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success"
+                }
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "unauthorized",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 401,
+                    "messageCode": "unauthorized"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 400,
+                    "messageCode": "bad_request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 404,
+                    "messageCode": "not_found"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "internal server",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 500,
+                    "messageCode": "internal_server_error"
+                }
+            },
+            {
+                "statusCode": 403,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 403,
+                    "messageCode": "exceeded_bulk_run_threshold"
+                }
+            },
+            {
+                "statusCode": 503,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 503,
+                    "messageCode": "robot_under_maintenance"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 108079,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "endpointforchecking",
+        "executor_version": "v2",
+        "executor_display_name": "Endpoint for checking the status of Browse AI infrastructure",
+        "executor_description": "This endpoint provides you with real-time information regarding the operational status of the Browse AI infrastructure. It gives insights into the condition of the tasks queue, thus allowing you to understand if the services are running smoothly or are under maintenance.",
+        "executor_category": "system",
+        "executor_category_group": "system",
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/status",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1690519143733,
+        "lastModifiedTime": 1690519143733,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "statusCode": 200,
+                    "messageCode": "success",
+                    "tasksQueueStatus": "OK"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 122783,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "endpointforchecking",
+        "executor_version": "v1",
+        "executor_display_name": null,
+        "executor_description": null,
+        "executor_category": "system",
+        "executor_category_group": null,
+        "service_provider": "browseai",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.browse.ai/v2/status",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Authorization",
+                "value": "Bearer 4433ff8e-33a8-4ddb-b720-1b1ae68e2e7b:9a2ac72d-4712-43cf-8284-cb3c0500ffef",
+                "description": ""
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": "statusCode",
+                "displayName": null,
+                "description": null,
+                "type": "Double",
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": null,
+                "required": false,
+                "dataStoragePolicy": null,
+                "apiAccessPolicy": null,
+                "displayPolicy": null,
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            },
+            {
+                "attributeName": "messageCode",
+                "displayName": null,
+                "description": null,
+                "type": "String",
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": null,
+                "required": false,
+                "dataStoragePolicy": null,
+                "apiAccessPolicy": null,
+                "displayPolicy": null,
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            },
+            {
+                "attributeName": "tasksQueueStatus",
+                "displayName": null,
+                "description": null,
+                "type": "String",
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": null,
+                "required": false,
+                "dataStoragePolicy": null,
+                "apiAccessPolicy": null,
+                "displayPolicy": null,
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1704180304951,
+        "lastModifiedTime": 1704180304951,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Date",
+                        "value": "Tue, 02 Jan 2024 07:23:59 GMT"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "Transfer-Encoding",
+                        "value": "chunked"
+                    },
+                    {
+                        "name": "Connection",
+                        "value": "keep-alive"
+                    },
+                    {
+                        "name": "x-amzn-requestid",
+                        "value": "a4adba05-f44e-4f31-b7a9-bb3b89b70c85"
+                    },
+                    {
+                        "name": "access-control-allow-origin",
+                        "value": "*"
+                    },
+                    {
+                        "name": "x-amz-apigw-id",
+                        "value": "Q5oCYF3QIAMEILA="
+                    },
+                    {
+                        "name": "x-amzn-trace-id",
+                        "value": "Root=1-6593ba0e-0ba05968470376521e26f1df;Sampled=0;lineage=a933afd0:0"
+                    },
+                    {
+                        "name": "CF-Cache-Status",
+                        "value": "DYNAMIC"
+                    },
+                    {
+                        "name": "Report-To",
+                        "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=aY8HYiuC70DMMLcLlZRt9eKAPxcHXkoFxtpzy1GbJSMca2VTFonjvmb1ErdM23myzljvfZYKxFs83Cap5OcLzHWMFWLInHbWaXv5d%2F8b9mst%2FyTf6%2B3kMySWjaK4GBIZ\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+                    },
+                    {
+                        "name": "NEL",
+                        "value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+                    },
+                    {
+                        "name": "Strict-Transport-Security",
+                        "value": "max-age=15552000; includeSubDomains; preload"
+                    },
+                    {
+                        "name": "Server",
+                        "value": "cloudflare"
+                    },
+                    {
+                        "name": "CF-RAY",
+                        "value": "83f1427d5b473b78-IAD"
+                    },
+                    {
+                        "name": "Content-Encoding",
+                        "value": "gzip"
+                    },
+                    {
+                        "name": "alt-svc",
+                        "value": "h3=\":443\"; ma=86400"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [
+                    {
+                        "attributeName": "statusCode",
+                        "displayName": null,
+                        "description": null,
+                        "type": "Double",
+                        "size": 0,
+                        "precision": 0,
+                        "autoIncrement": false,
+                        "defaultValue": null,
+                        "subType": [],
+                        "attributeType": null,
+                        "required": false,
+                        "dataStoragePolicy": null,
+                        "apiAccessPolicy": null,
+                        "displayPolicy": null,
+                        "array": false,
+                        "customType": false,
+                        "updateOption": null,
+                        "previousAttributeName": null,
+                        "compliances": null
+                    },
+                    {
+                        "attributeName": "messageCode",
+                        "displayName": null,
+                        "description": null,
+                        "type": "String",
+                        "size": 0,
+                        "precision": 0,
+                        "autoIncrement": false,
+                        "defaultValue": null,
+                        "subType": [],
+                        "attributeType": null,
+                        "required": false,
+                        "dataStoragePolicy": null,
+                        "apiAccessPolicy": null,
+                        "displayPolicy": null,
+                        "array": false,
+                        "customType": false,
+                        "updateOption": null,
+                        "previousAttributeName": null,
+                        "compliances": null
+                    },
+                    {
+                        "attributeName": "tasksQueueStatus",
+                        "displayName": null,
+                        "description": null,
+                        "type": "String",
+                        "size": 0,
+                        "precision": 0,
+                        "autoIncrement": false,
+                        "defaultValue": null,
+                        "subType": [],
+                        "attributeType": null,
+                        "required": false,
+                        "dataStoragePolicy": null,
+                        "apiAccessPolicy": null,
+                        "displayPolicy": null,
+                        "array": false,
+                        "customType": false,
+                        "updateOption": null,
+                        "previousAttributeName": null,
+                        "compliances": null
+                    }
+                ],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": {
+            "showBodyParamDescription": false,
+            "bodyParamDescription": []
+        },
+        "vid": null,
+        "nid": null
+    }
+]

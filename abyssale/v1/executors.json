@@ -1,0 +1,977 @@
+[
+    {
+        "id": 111839,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "generateImage",
+        "executor_version": "v1",
+        "executor_display_name": "Generate image",
+        "executor_description": "Retrieve the details of a template (general information, formats, elements & properties).",
+        "executor_category": "Images",
+        "executor_category_group": "Images",
+        "service_provider": "abyssale",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.abyssale.com/banner-builder/{templateId}/generate",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "templateId",
+                "value": "",
+                "description": "string <uuid> Unique identifier (UUID) of the template"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "elements": {
+                    "element-name1": {
+                        "background_color": "#FF0000"
+                    },
+                    "element-name2": {
+                        "background_color": "#FF0000"
+                    }
+                },
+                "template_format_name": "facebook-post",
+                "file_compression_level": 80
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692251327714,
+        "lastModifiedTime": 1692251327714,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "64238d01-d402-474b-8c2d-fbc957e9d290",
+                    "file": {
+                        "type": "jpeg",
+                        "url": "https://production-banners.s3.eu-west-1.amazonaws.com/demo/996739f4-b563-428a-a6e8-ec3cb8bd03d4.jpeg",
+                        "cdn_url": "https://cdn.abyssale.com/demo/996739f4-b563-428a-a6e8-ec3cb8bd03d4.jpeg",
+                        "filename": "996739f4-b563-428a-a6e8-ec3cb8bd03d4.jpeg"
+                    },
+                    "format": {
+                        "id": "facebook-post",
+                        "width": 1200,
+                        "height": 1200
+                    },
+                    "template": {
+                        "id": "64238d01-d402-474b-8c2d-fbc957e9d290",
+                        "name": "Ad campaign fall 2022",
+                        "created_at": 1649942114,
+                        "updated_at": 1649942114
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111842,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "generateMultiFormatImagesVideos",
+        "executor_version": "v1",
+        "executor_display_name": "Generate Multi-Format Images/Videos",
+        "executor_description": "Generate multiple formats of an image/video/pdf at once from a template designed in Abyssale. This method is asynchronous and allows to generate several media (images/videos/pdf/gif) with one API call. Of course, it can also be used for single image generation (because of time-constraints for instance).",
+        "executor_category": "Images",
+        "executor_category_group": "Images",
+        "service_provider": "abyssale",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.abyssale.com/async/banner-builder/{templateId}/generate",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "templateId",
+                "value": "",
+                "description": "string <uuid> Unique identifier (UUID) of the template"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "elements": {
+                    "element-name1": {
+                        "background_color": "#FF0000"
+                    },
+                    "element-name2": {
+                        "background_color": "#FF0000"
+                    }
+                },
+                "template_format_names": [
+                    "facebook-feed",
+                    "instagram-post",
+                    "iab-medium"
+                ],
+                "callback_url": "http://example.com"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692252027725,
+        "lastModifiedTime": 1692252027725,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "generation_request_id": "06399fcd-0c21-47da-bd9b-1e653e0453e8"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111837,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getTemplates",
+        "executor_version": "v1",
+        "executor_display_name": "Get Templates",
+        "executor_description": "Retrieve all of your templates (containing for each the id, name, creation date & update date)",
+        "executor_category": "Templates",
+        "executor_category_group": "Templates",
+        "service_provider": "abyssale",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.abyssale.com/templates",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692251144478,
+        "lastModifiedTime": 1692251144478,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "64238d01-d402-474b-8c2d-fbc957e9d290",
+                        "name": "Ad campaign fall 2022",
+                        "created_at": 1649942114,
+                        "updated_at": 1649942114
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111838,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getTemplateDetails",
+        "executor_version": "v1",
+        "executor_display_name": "Get Template details",
+        "executor_description": "Retrieve the details of a template (general information, formats, elements & properties).",
+        "executor_category": "Templates",
+        "executor_category_group": "Templates",
+        "service_provider": "abyssale",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.abyssale.com/templates/{templateId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "templateId",
+                "value": "",
+                "description": "string <uuid> Unique identifier (UUID) of the template"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692251233828,
+        "lastModifiedTime": 1692251233828,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "64238d01-d402-474b-8c2d-fbc957e9d290",
+                    "name": "Ad campaign fall 2022",
+                    "created_at": 1649942114,
+                    "updated_at": 1649942114,
+                    "formats": [
+                        {
+                            "id": "facebook-post",
+                            "width": 1200,
+                            "height": 1200,
+                            "preview_url": "https://production-banners.s3-eu-west-1.amazonaws.com/templates/e0d292f2-ec21-11e9-a539-3c408bf94155/a9b3c668-7b84-4924-adf0-815dae727d32.png"
+                        }
+                    ],
+                    "elements": [
+                        {
+                            "name": "element-name",
+                            "type": "text",
+                            "attributes": [
+                                {
+                                    "id": "payload",
+                                    "help": "Text content (i.e. Lorem ipsum)",
+                                    "values": {
+                                        "facebook-post": "My image title"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111844,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getFonts",
+        "executor_version": "v1",
+        "executor_display_name": "Get fonts",
+        "executor_description": "Retrieve all of your fonts (custom & google fonts)",
+        "executor_category": "Fonts",
+        "executor_category_group": "Fonts",
+        "service_provider": "abyssale",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.abyssale.com/fonts",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692252186048,
+        "lastModifiedTime": 1692252186048,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "61568e7c-33c5-11ea-9877-92672c1b8195",
+                        "name": "Ubuntu Mono",
+                        "available_weights": [
+                            100
+                        ],
+                        "type": "google"
+                    }
+                ]
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111847,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievefile",
+        "executor_version": "v1",
+        "executor_display_name": "Get File",
+        "executor_description": "Retrieve the information of a file",
+        "executor_category": "Files",
+        "executor_category_group": "Files",
+        "service_provider": "abyssale",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.abyssale.com/banners/{bannerId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "bannerId",
+                "value": "",
+                "description": "string <uuid> Unique identifier (UUID) of the file"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692252563191,
+        "lastModifiedTime": 1692252563191,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "64238d01-d402-474b-8c2d-fbc957e9d290",
+                    "file": {
+                        "type": "jpeg",
+                        "url": "https://production-banners.s3.eu-west-1.amazonaws.com/demo/996739f4-b563-428a-a6e8-ec3cb8bd03d4.jpeg",
+                        "cdn_url": "https://cdn.abyssale.com/demo/996739f4-b563-428a-a6e8-ec3cb8bd03d4.jpeg",
+                        "filename": "996739f4-b563-428a-a6e8-ec3cb8bd03d4.jpeg"
+                    },
+                    "format": {
+                        "id": "facebook-post",
+                        "width": 1200,
+                        "height": 1200
+                    },
+                    "template": {
+                        "id": "64238d01-d402-474b-8c2d-fbc957e9d290",
+                        "name": "Ad campaign fall 2022",
+                        "created_at": 1649942114,
+                        "updated_at": 1649942114
+                    }
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A banner with the specified ID was not found.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111846,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createBannerExport",
+        "executor_version": "v1",
+        "executor_display_name": "Create a banner export",
+        "executor_description": "As this method is asynchronous you need to provide a callback URL that will be called back when the export is done. We will do a POST request on this URL with a JSON payload.",
+        "executor_category": "Exports",
+        "executor_category_group": "Exports",
+        "service_provider": "abyssale",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.abyssale.com/async/banners/export",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "ids": [
+                    "64238d01-d402-474b-8c2d-fbc957e9d290"
+                ],
+                "callback_url": "https://your-webhook.com/export-abyssale"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692252347077,
+        "lastModifiedTime": 1692252347077,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Ok",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "export_id": "64238d01-d402-474b-8c2d-fbc957e9d290"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

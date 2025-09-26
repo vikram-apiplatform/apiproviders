@@ -1,0 +1,3676 @@
+[
+    {
+        "id": 100173,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "shortcodeget",
+        "executor_version": "v2",
+        "executor_display_name": "shortcode get",
+        "executor_description": "shortcode get",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/shortcode/get/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "short_code",
+                "value": "",
+                "description": "The \"mbsy\" variable passed via GET or POST",
+                "req": false
+            },
+            {
+                "key": "sandbox",
+                "value": "",
+                "description": "Does the short code belong to a test campaign? (1 - yes, 0 - no)  0",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404774811,
+        "lastModifiedTime": 1687404774811,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "shortcode": {
+                                "valid": 1,
+                                "sandbox": "0",
+                                "discount_value": "abc123",
+                                "first_name": "Jane",
+                                "last_name": "Doe",
+                                "email": "johndoe@example.com",
+                                "uid": "17296",
+                                "campaign_uid": "17",
+                                "campaign_name": "Username Reservations",
+                                "campaign_description": "Get 5 of your friends to reserve their Ambassador username and get an Ambassador t-shirt!",
+                                "custom1": "data1",
+                                "custom2": "data2",
+                                "custom3": "data3",
+                                "status": "enrolled"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100171,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "ambassadorstats",
+        "executor_version": "v2",
+        "executor_display_name": "ambassador stats",
+        "executor_description": "ambassador stats",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/ambassador/stats/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "email",
+                "value": "",
+                "description": "Your customer's email address",
+                "req": false
+            },
+            {
+                "key": "uid",
+                "value": "",
+                "description": "Your customer's internal unique ID",
+                "req": false
+            },
+            {
+                "key": "auto_create",
+                "value": "",
+                "description": "If the customer is not an ambassador, create them (1 - yes, 0 - no)",
+                "req": false
+            },
+            {
+                "key": "first_name",
+                "value": "",
+                "description": "Your customer's first name",
+                "req": false
+            },
+            {
+                "key": "last_name",
+                "value": "",
+                "description": "Your customer's last name",
+                "req": false
+            },
+            {
+                "key": "email_new_ambassador",
+                "value": "",
+                "description": "Email login credentials to new ambassadors (1 - yes, 0 - no)  1",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404499577,
+        "lastModifiedTime": 1687404499577,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "referring_ambassador": {
+                                "first_name": null,
+                                "last_name": null,
+                                "email": "jane@example.com",
+                                "uid": null,
+                                "commission": null,
+                                "balance_money": "0.00",
+                                "balance_points": "0.00",
+                                "memorable_url": "http://mbsy.co/Developers/djane",
+                                "unique_referrals": "8",
+                                "sandbox": "0",
+                                "custom1": null,
+                                "custom2": null,
+                                "custom3": null
+                            },
+                            "ambassador": {
+                                "first_name": null,
+                                "last_name": null,
+                                "email": "john@example.com",
+                                "uid": null,
+                                "balance_money": "0.00",
+                                "balance_points": "0.00",
+                                "memorable_url": "http://mbsy.co/Developers/djohn",
+                                "unique_referrals": "0",
+                                "sandbox": "0",
+                                "custom1": null,
+                                "custom2": null,
+                                "custom3": null,
+                                "stats_summary": {
+                                    "start_date": "2012-04-10",
+                                    "end_date": "2012-06-22",
+                                    "commissions": {
+                                        "pending_count": "0",
+                                        "approved_count": "0",
+                                        "denied_count": "0",
+                                        "pending_sum": "0",
+                                        "approved_sum": "0",
+                                        "denied_sum": "0"
+                                    },
+                                    "revenue": {
+                                        "pending_sum": "0",
+                                        "approved_sum": "0",
+                                        "denied_sum": "0"
+                                    },
+                                    "count_clicks": "0",
+                                    "count_shares": "0",
+                                    "unique_referrals": "0",
+                                    "channels": {
+                                        "email": {
+                                            "count_shares": "0",
+                                            "count_clicks": "N/A",
+                                            "unique_referrals": "0",
+                                            "commissions": {
+                                                "pending_count": "0",
+                                                "approved_count": "0",
+                                                "denied_count": "0",
+                                                "pending_sum": "0",
+                                                "approved_sum": "0",
+                                                "denied_sum": "0"
+                                            },
+                                            "revenue": {
+                                                "pending_sum": "0",
+                                                "approved_sum": "0",
+                                                "denied_sum": "0"
+                                            }
+                                        },
+                                        "facebook": {
+                                            "count_shares": "0",
+                                            "count_clicks": "0",
+                                            "unique_referrals": "0",
+                                            "commissions": {
+                                                "pending_count": "0",
+                                                "approved_count": "0",
+                                                "denied_count": "0",
+                                                "pending_sum": "0",
+                                                "approved_sum": "0",
+                                                "denied_sum": "0"
+                                            },
+                                            "revenue": {
+                                                "pending_sum": "0",
+                                                "approved_sum": "0",
+                                                "denied_sum": "0"
+                                            }
+                                        }
+                                    }
+                                },
+                                "campaign_links": [
+                                    {
+                                        "campaign_uid": "82",
+                                        "campaign_name": "Campaign One",
+                                        "campaign_description": "This is an example campaign description",
+                                        "sandbox": "0",
+                                        "private": "0",
+                                        "facebook_enabled": "1",
+                                        "url": "http://mbsy.co/bJj",
+                                        "total_money_earned": "0.00",
+                                        "total_points_earned": "0.00",
+                                        "unique_referrals": "0",
+                                        "stats": {
+                                            "commissions": {
+                                                "pending_count": "0",
+                                                "approved_count": "0",
+                                                "denied_count": "0",
+                                                "pending_sum": "0",
+                                                "approved_sum": "0",
+                                                "denied_sum": "0"
+                                            },
+                                            "revenue": {
+                                                "pending_sum": "0",
+                                                "approved_sum": "0",
+                                                "denied_sum": "0"
+                                            },
+                                            "count_clicks": "0",
+                                            "count_shares": "0",
+                                            "unique_referrals": "0",
+                                            "channels": {
+                                                "email": {
+                                                    "count_shares": "0",
+                                                    "count_clicks": "N/A",
+                                                    "unique_referrals": "0",
+                                                    "commissions": {
+                                                        "pending_count": "0",
+                                                        "approved_count": "0",
+                                                        "denied_count": "0",
+                                                        "pending_sum": "0",
+                                                        "approved_sum": "0",
+                                                        "denied_sum": "0"
+                                                    },
+                                                    "revenue": {
+                                                        "pending_sum": "0",
+                                                        "approved_sum": "0",
+                                                        "denied_sum": "0"
+                                                    }
+                                                },
+                                                "facebook": {
+                                                    "count_shares": "0",
+                                                    "count_clicks": "0",
+                                                    "unique_referrals": "0",
+                                                    "commissions": {
+                                                        "pending_count": "0",
+                                                        "approved_count": "0",
+                                                        "denied_count": "0",
+                                                        "pending_sum": "0",
+                                                        "approved_sum": "0",
+                                                        "denied_sum": "0"
+                                                    },
+                                                    "revenue": {
+                                                        "pending_sum": "0",
+                                                        "approved_sum": "0",
+                                                        "denied_sum": "0"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "company": {
+                                "company_name": "Developers",
+                                "company_url": "",
+                                "company_email": "support@getambassador.com",
+                                "point_name": "Month(s)",
+                                "outgoing_email": null,
+                                "avatar_url": "https://s3.amazonaws.com/ambassador/avatars/1088_1339785224.jpg"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100177,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "companyemails",
+        "executor_version": "v2",
+        "executor_display_name": "companyemails",
+        "executor_description": "company email",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/company/emails/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "start_date",
+                "value": "",
+                "description": "The starting date to fetch email statistics. If used, must be used with end_date. (YYYY-MM-DD)",
+                "req": false
+            },
+            {
+                "key": "end_date",
+                "value": "",
+                "description": "The ending date to fetch email statistics. If used, must be used with start_date. (YYYY-MM-DD)",
+                "req": false
+            },
+            {
+                "key": "aggregate",
+                "value": "",
+                "description": "Combine email statistics based on date period (1 - yes, 0 - no)",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687405278388,
+        "lastModifiedTime": 1687405278388,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "token": "cfeab99f171a70a900887212e42d1320"
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100164,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "balanceadd",
+        "executor_version": "v2",
+        "executor_display_name": "balance add",
+        "executor_description": "balance add",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/balance/add/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687403730582,
+        "lastModifiedTime": 1687403730582,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "ambassador": {
+                                "first_name": "John",
+                                "last_name": "Doe",
+                                "email": "john@example.com",
+                                "uid": null,
+                                "balance_money": 0,
+                                "balance_points": 0,
+                                "memorable_url": "http://mbsy.co/USERNAME/djohn",
+                                "unique_referrals": 0,
+                                "sandbox": "0",
+                                "custom1": null,
+                                "custom2": null,
+                                "custom3": null,
+                                "campaign_links": [
+                                    {
+                                        "campaign_uid": "25",
+                                        "campaign_name": "Refer a Company",
+                                        "sandbox": "0",
+                                        "private": "0",
+                                        "facebook_enabled": "0",
+                                        "campaign_description": "Refer a new company to Ambassador and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                        "url": "http://mbsy.co/8l",
+                                        "total_money_earned": "0",
+                                        "total_points_earned": "0"
+                                    }
+                                ]
+                            },
+                            "company": {
+                                "company_name": "Example Company",
+                                "company_url": "http://example.com",
+                                "company_email": "John@example.com",
+                                "point_name": "Month(s)",
+                                "outgoing_email": "email@example.com",
+                                "avatar_url": "https://s3.amazonaws.com/example/avatars/sample.jpg"
+                            },
+                            "balance": {
+                                "old": "1.00",
+                                "new": 2,
+                                "type": "money"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100163,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "balancededuct",
+        "executor_version": "v2",
+        "executor_display_name": "balance deduct",
+        "executor_description": "/balance/deduct/",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/balance/deduct/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687403643103,
+        "lastModifiedTime": 1687403643103,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "ambassador": {
+                                "first_name": "",
+                                "last_name": "",
+                                "created_at": "2016-03-09T14:15:58.056+0000",
+                                "email": "johndoe@example.com",
+                                "uid": null,
+                                "platform_id": 46818,
+                                "balance_money": "0.00",
+                                "balance_points": "0.00",
+                                "memorable_url": "http://staging.mbsy.co/Developers/1996",
+                                "unique_referrals": null,
+                                "count_shares": "39",
+                                "sandbox": "0",
+                                "custom1": "",
+                                "custom2": "",
+                                "custom3": "",
+                                "groups": "177,229",
+                                "street": "",
+                                "city": "",
+                                "state": "",
+                                "zip": "",
+                                "country": "",
+                                "campaign_links": [
+                                    {
+                                        "campaign_uid": "25",
+                                        "campaign_name": "Refer a Company",
+                                        "sandbox": "0",
+                                        "private": "0",
+                                        "facebook_enabled": "0",
+                                        "campaign_description": "Refer a new company to Ambassador and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                        "url": "http://mbsy.co/8l",
+                                        "total_money_earned": "0",
+                                        "total_points_earned": "0"
+                                    }
+                                ]
+                            },
+                            "company": {
+                                "company_name": "Example Company",
+                                "company_url": "http://example.com",
+                                "company_email": "John@example.com",
+                                "point_name": "Month(s)",
+                                "outgoing_email": "email@example.com",
+                                "avatar_url": "https://s3.amazonaws.com/example/avatars/sample.jpg"
+                            },
+                            "balance": {
+                                "old": "2.00",
+                                "new": 1,
+                                "type": "money"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100175,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "companystats",
+        "executor_version": "v2",
+        "executor_display_name": "company stats",
+        "executor_description": "company stats",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/company/stats/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687405012036,
+        "lastModifiedTime": 1687405012036,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "company": {
+                                "company_name": "Sample",
+                                "company_url": "",
+                                "company_email": "johndoe@example.com",
+                                "point_name": "points",
+                                "outgoing_email": null
+                            },
+                            "stats": {
+                                "production": {
+                                    "ambassadors": {
+                                        "activated_count": "82",
+                                        "deactivated_count": "1"
+                                    },
+                                    "campaigns": {
+                                        "active_count": "3"
+                                    },
+                                    "commissions": {
+                                        "pending_count": "33",
+                                        "approved_count": "3",
+                                        "denied_count": "1",
+                                        "pending_sum": "1044.5",
+                                        "approved_sum": "112",
+                                        "denied_sum": "25"
+                                    },
+                                    "revenue": {
+                                        "pending_sum": "3787.18",
+                                        "approved_sum": "15.28",
+                                        "denied_sum": "0"
+                                    },
+                                    "payouts": {
+                                        "pending_count": "0",
+                                        "paid_count": "4",
+                                        "denied_count": "0",
+                                        "pending_sum": "0",
+                                        "paid_sum": "5",
+                                        "denied_sum": "0"
+                                    },
+                                    "clicks": {
+                                        "count": "33"
+                                    }
+                                },
+                                "sandbox": {
+                                    "campaigns": {
+                                        "active_count": "6"
+                                    },
+                                    "clicks": {
+                                        "count": "2"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100178,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "groupall",
+        "executor_version": "v2",
+        "executor_display_name": "group all",
+        "executor_description": "group all",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/group/all/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687405363493,
+        "lastModifiedTime": 1687405363493,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "token": "cfeab99f171a70a900887212e42d1320"
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100179,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "commissionupdate",
+        "executor_version": "v2",
+        "executor_display_name": "commission update",
+        "executor_description": "commission update",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/commission/update/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687405471273,
+        "lastModifiedTime": 1687405471273,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "message": "Commission updated successfully."
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "You can change state of pending commission only."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100162,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "ambassadorupdate",
+        "executor_version": "v2",
+        "executor_display_name": "ambassador update",
+        "executor_description": "ambassador update",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/ambassador/update",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687403523852,
+        "lastModifiedTime": 1687403523852,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "message": "Ambassador updated successfully."
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100159,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "eventrecord",
+        "executor_version": "v2",
+        "executor_display_name": "event record",
+        "executor_description": "event record",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://b2b.gateway.apiplatform.io/v2/eventrecord",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": false,
+        "creationTime": 1687402977086,
+        "lastModifiedTime": 1687402977086,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "referring_ambassador": {
+                                "first_name": "Jane",
+                                "last_name": "Doe",
+                                "email": "jane@example.com",
+                                "uid": null,
+                                "commission": 2,
+                                "balance_money": 2,
+                                "balance_points": "0",
+                                "memorable_url": "http://mbsy.co/USERNAME/djane",
+                                "unique_referrals": "1",
+                                "sandbox": "0",
+                                "custom1": null,
+                                "custom2": null,
+                                "custom3": null
+                            },
+                            "ambassador": {
+                                "first_name": "John",
+                                "last_name": "Doe",
+                                "email": "john@example.com",
+                                "uid": null,
+                                "balance_money": 0,
+                                "balance_points": 0,
+                                "memorable_url": "http://mbsy.co/USERNAME/djohn",
+                                "unique_referrals": 0,
+                                "sandbox": "0",
+                                "custom1": null,
+                                "custom2": null,
+                                "custom3": null,
+                                "street": "",
+                                "city": "",
+                                "state": "",
+                                "zip": "",
+                                "country": "",
+                                "phone": "",
+                                "groups": "2",
+                                "campaign_links": [
+                                    {
+                                        "campaign_uid": "25",
+                                        "campaign_name": "Refer a Company",
+                                        "sandbox": "0",
+                                        "private": "0",
+                                        "facebook_enabled": "0",
+                                        "campaign_description": "Refer a new company to Ambassador and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                        "url": "http://mbsy.co/8l",
+                                        "total_money_earned": "0",
+                                        "total_points_earned": "0"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following POST parameter is required: \"email\"."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100167,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "commissionadd",
+        "executor_version": "v2",
+        "executor_display_name": "commission add",
+        "executor_description": "commission add",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/commission/add/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404053156,
+        "lastModifiedTime": 1687404053156,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "message": "Commission added successfully.",
+                            "commission_uid": 1234
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100172,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "ambassadorall",
+        "executor_version": "v2",
+        "executor_display_name": "ambassador all",
+        "executor_description": "ambassadoambassador allr stats",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/ambassador/all/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "email",
+                "value": "",
+                "description": "Your customer's email address",
+                "req": false
+            },
+            {
+                "key": "uid",
+                "value": "",
+                "description": "Your customer's internal unique ID",
+                "req": false
+            },
+            {
+                "key": "auto_create",
+                "value": "",
+                "description": "If the customer is not an ambassador, create them (1 - yes, 0 - no)",
+                "req": false
+            },
+            {
+                "key": "first_name",
+                "value": "",
+                "description": "Your customer's first name",
+                "req": false
+            },
+            {
+                "key": "last_name",
+                "value": "",
+                "description": "Your customer's last name",
+                "req": false
+            },
+            {
+                "key": "email_new_ambassador",
+                "value": "",
+                "description": "Email login credentials to new ambassadors (1 - yes, 0 - no)  1",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404610554,
+        "lastModifiedTime": 1687404610554,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "ambassadors": [
+                                {
+                                    "first_name": "Jane",
+                                    "last_name": "Doe",
+                                    "email": "jane@example.com",
+                                    "uid": "142",
+                                    "balance_money": "0.00",
+                                    "balance_points": "0",
+                                    "money_paid": "0.00",
+                                    "points_paid": "0.00",
+                                    "memorable_url": "http://mbsy.co/Developers/djane",
+                                    "unique_referrals": "0",
+                                    "sandbox": "0",
+                                    "created_at": "2012-04-10T16:15:19+0000",
+                                    "fraud_score": 0,
+                                    "fraud_score_human_readable": null,
+                                    "fraud_score_percent_ui": 0,
+                                    "fraud_reasons": {}
+                                },
+                                {
+                                    "first_name": "John",
+                                    "last_name": "Doe",
+                                    "email": "john@example.com",
+                                    "uid": "143",
+                                    "balance_money": "0.00",
+                                    "balance_points": "0",
+                                    "money_paid": "0.00",
+                                    "points_paid": "0.00",
+                                    "memorable_url": "http://mbsy.co/Developers/djohn",
+                                    "unique_referrals": "0",
+                                    "sandbox": "0",
+                                    "created_at": "2012-01-31T20:20:42+0000",
+                                    "fraud_score": 0,
+                                    "fraud_score_human_readable": null,
+                                    "fraud_score_percent_ui": 0,
+                                    "fraud_reasons": {}
+                                },
+                                {
+                                    "first_name": "Bob",
+                                    "last_name": "Doe",
+                                    "email": "bob@example.com",
+                                    "uid": "144",
+                                    "balance_money": "0.00",
+                                    "balance_points": "0",
+                                    "money_paid": "0.00",
+                                    "points_paid": "0.00",
+                                    "memorable_url": "http://mbsy.co/Developers/dbob",
+                                    "unique_referrals": "0",
+                                    "sandbox": "0",
+                                    "created_at": "2012-01-31T19:57:27+0000",
+                                    "fraud_score": 0,
+                                    "fraud_score_human_readable": null,
+                                    "fraud_score_percent_ui": 0,
+                                    "fraud_reasons": {}
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100161,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "eventmultirecord",
+        "executor_version": "v2",
+        "executor_display_name": "event multi_record",
+        "executor_description": "event multi_record",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/event/multi_record/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "You API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687403350686,
+        "lastModifiedTime": 1687403350686,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "item": {
+                                "campaign_82": {
+                                    "code": "200",
+                                    "type": "OK",
+                                    "message": "OK: The request was successful. See response body for additional data.",
+                                    "data": {
+                                        "referring_ambassador": {
+                                            "first_name": "Jane",
+                                            "last_name": "Doe",
+                                            "email": "jane@example.com",
+                                            "uid": null,
+                                            "commission": 2,
+                                            "balance_money": 2,
+                                            "balance_points": "0",
+                                            "memorable_url": "http://mbsy.co/Developers/djane",
+                                            "unique_referrals": "1",
+                                            "sandbox": "0",
+                                            "custom1": null,
+                                            "custom2": null,
+                                            "custom3": null
+                                        },
+                                        "ambassador": {
+                                            "first_name": "John",
+                                            "last_name": "Doe",
+                                            "email": "john@example.com",
+                                            "uid": null,
+                                            "balance_money": 0,
+                                            "balance_points": 0,
+                                            "memorable_url": "http://mbsy.co/Developers/djohn",
+                                            "unique_referrals": 0,
+                                            "sandbox": "0",
+                                            "custom1": null,
+                                            "custom2": null,
+                                            "custom3": null,
+                                            "campaign_links": [
+                                                {
+                                                    "campaign_uid": "25",
+                                                    "campaign_name": "Refer a Company",
+                                                    "sandbox": "0",
+                                                    "private": "0",
+                                                    "facebook_enabled": "0",
+                                                    "campaign_description": "Refer a new company to Ambassador and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                                    "url": "http://mbsy.co/8l",
+                                                    "total_money_earned": "0",
+                                                    "total_points_earned": "0"
+                                                }
+                                            ]
+                                        },
+                                        "company": {
+                                            "company_name": "Example Company",
+                                            "company_url": "http://example.com",
+                                            "company_email": "John@example.com",
+                                            "point_name": "Month(s)",
+                                            "outgoing_email": "email@example.com",
+                                            "avatar_url": "https://s3.amazonaws.com/example/avatars/sample.jpg"
+                                        }
+                                    }
+                                },
+                                "campaign_333": {
+                                    "code": "200",
+                                    "type": "OK",
+                                    "message": "OK: The request was successful. See response body for additional data.",
+                                    "data": {
+                                        "referring_ambassador": {
+                                            "first_name": "Jane",
+                                            "last_name": "Doe",
+                                            "email": "jane@example.com",
+                                            "uid": null,
+                                            "commission": 2,
+                                            "balance_money": 2,
+                                            "balance_points": "0",
+                                            "memorable_url": "http://mbsy.co/Developers/djane",
+                                            "unique_referrals": "1",
+                                            "sandbox": "0",
+                                            "custom1": null,
+                                            "custom2": null,
+                                            "custom3": null
+                                        },
+                                        "ambassador": {
+                                            "first_name": "John",
+                                            "last_name": "Doe",
+                                            "email": "john@example.com",
+                                            "uid": null,
+                                            "balance_money": 0,
+                                            "balance_points": 0,
+                                            "memorable_url": "http://mbsy.co/Developers/djohn",
+                                            "unique_referrals": 0,
+                                            "sandbox": "0",
+                                            "custom1": null,
+                                            "custom2": null,
+                                            "custom3": null,
+                                            "campaign_links": [
+                                                {
+                                                    "campaign_uid": "25",
+                                                    "campaign_name": "Refer a Company",
+                                                    "sandbox": "0",
+                                                    "private": "0",
+                                                    "facebook_enabled": "0",
+                                                    "campaign_description": "Refer a new company to Ambassador and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                                    "url": "http://mbsy.co/8l",
+                                                    "total_money_earned": "0",
+                                                    "total_points_earned": "0"
+                                                }
+                                            ]
+                                        },
+                                        "company": {
+                                            "company_name": "Example Company",
+                                            "company_url": "http://example.com",
+                                            "company_email": "John@example.com",
+                                            "point_name": "Month(s)",
+                                            "outgoing_email": "email@example.com",
+                                            "avatar_url": "https://s3.amazonaws.com/example/avatars/sample.jpg"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "item": {
+                                "campaign_180": {
+                                    "code": "400",
+                                    "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                                    "errors": [
+                                        "The provided campaign_uid has expired, doesn't exist, or doesn't belong to your company."
+                                    ],
+                                    "type": "BAD REQUEST"
+                                },
+                                "campaign_82": {
+                                    "code": "200",
+                                    "type": "OK",
+                                    "message": "OK: The request was successful. See response body for additional data.",
+                                    "data": {
+                                        "referring_ambassador": {
+                                            "first_name": "Jane",
+                                            "last_name": "Doe",
+                                            "email": "jane@example.com",
+                                            "uid": null,
+                                            "commission": 2,
+                                            "balance_money": 2,
+                                            "balance_points": "0",
+                                            "memorable_url": "http://mbsy.co/Developers/djane",
+                                            "unique_referrals": "1",
+                                            "sandbox": "0",
+                                            "custom1": null,
+                                            "custom2": null,
+                                            "custom3": null
+                                        },
+                                        "ambassador": {
+                                            "first_name": "John",
+                                            "last_name": "Doe",
+                                            "email": "john@example.com",
+                                            "uid": null,
+                                            "balance_money": 0,
+                                            "balance_points": 0,
+                                            "memorable_url": "http://mbsy.co/Developers/djohn",
+                                            "unique_referrals": 0,
+                                            "sandbox": "0",
+                                            "custom1": null,
+                                            "custom2": null,
+                                            "custom3": null,
+                                            "campaign_links": [
+                                                {
+                                                    "campaign_uid": "25",
+                                                    "campaign_name": "Refer a Company",
+                                                    "sandbox": "0",
+                                                    "private": "0",
+                                                    "facebook_enabled": "0",
+                                                    "campaign_description": "Refer a new company to Ambassador and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                                    "url": "http://mbsy.co/8l",
+                                                    "total_money_earned": "0",
+                                                    "total_points_earned": "0"
+                                                }
+                                            ]
+                                        },
+                                        "company": {
+                                            "company_name": "Example Company",
+                                            "company_url": "http://example.com",
+                                            "company_email": "John@example.com",
+                                            "point_name": "Month(s)",
+                                            "outgoing_email": "email@example.com",
+                                            "avatar_url": "https://s3.amazonaws.com/example/avatars/sample.jpg"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100165,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "groupget",
+        "executor_version": "v2",
+        "executor_display_name": "group get",
+        "executor_description": "group get",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/group/get/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687403853501,
+        "lastModifiedTime": 1687403853501,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "group": {
+                                "name": "Sample",
+                                "description": "Sample group description",
+                                "default": "0"
+                            },
+                            "ambassadors": [
+                                {
+                                    "email": "jane@example.com"
+                                },
+                                {
+                                    "email": "joe@example.com"
+                                },
+                                {
+                                    "email": "josh@example.com"
+                                },
+                                {
+                                    "email": "jeff@example.com"
+                                },
+                                {
+                                    "email": "jack@example.com"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100170,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "ambassadorget",
+        "executor_version": "v2",
+        "executor_display_name": "ambassador get",
+        "executor_description": "ambassador get",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/ambassador/get/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "email",
+                "value": "",
+                "description": "Your customer's email address",
+                "req": false
+            },
+            {
+                "key": "uid",
+                "value": "",
+                "description": "Your customer's internal unique ID",
+                "req": false
+            },
+            {
+                "key": "auto_create",
+                "value": "",
+                "description": "If the customer is not an ambassador, create them (1 - yes, 0 - no)",
+                "req": false
+            },
+            {
+                "key": "first_name",
+                "value": "",
+                "description": "Your customer's first name",
+                "req": false
+            },
+            {
+                "key": "last_name",
+                "value": "",
+                "description": "Your customer's last name",
+                "req": false
+            },
+            {
+                "key": "email_new_ambassador",
+                "value": "",
+                "description": "Email login credentials to new ambassadors (1 - yes, 0 - no)  1",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404438068,
+        "lastModifiedTime": 1687404438068,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "referring_ambassador": {
+                                "first_name": "Jane",
+                                "last_name": "Doe",
+                                "email": "jane@example.com",
+                                "uid": null,
+                                "commission": null,
+                                "balance_money": "2.40",
+                                "balance_points": "0",
+                                "memorable_url": "http://mbsy.co/Developers/djane",
+                                "unique_referrals": "1",
+                                "sandbox": "0",
+                                "custom1": null,
+                                "custom2": null,
+                                "custom3": null
+                            },
+                            "ambassador": {
+                                "first_name": "John",
+                                "last_name": "Doe",
+                                "email": "johndoe@example.com",
+                                "uid": null,
+                                "balance_money": "0.00",
+                                "balance_points": "0",
+                                "money_paid": "9.00",
+                                "points_paid": "0.00",
+                                "memorable_url": "http://mbsy.co/Developers/djohn",
+                                "unique_referrals": "0",
+                                "sandbox": false,
+                                "custom1": null,
+                                "custom2": null,
+                                "custom3": null,
+                                "custom4": "2018-03-07",
+                                "groups": "1,2,3",
+                                "street": null,
+                                "city": null,
+                                "state": null,
+                                "zip": null,
+                                "country": null,
+                                "phone": "",
+                                "company": "Builder Co.",
+                                "paypal_email": "john@example.com",
+                                "campaign_links": [
+                                    {
+                                        "campaign_uid": "25",
+                                        "campaign_name": "Refer a Company",
+                                        "sandbox": "0",
+                                        "private": "0",
+                                        "facebook_enabled": "0",
+                                        "campaign_description": "Refer a new company to Ambassador and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                        "url": "http://mbsy.co/8l",
+                                        "total_money_earned": "0",
+                                        "total_points_earned": "0"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100166,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "commissionall",
+        "executor_version": "v2",
+        "executor_display_name": "commission all",
+        "executor_description": "commission all",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/commission/all/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687403969031,
+        "lastModifiedTime": 1687403969032,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "group": {
+                                "name": "Sample",
+                                "description": "Sample group description",
+                                "default": "0"
+                            },
+                            "ambassadors": [
+                                {
+                                    "email": "jane@example.com"
+                                },
+                                {
+                                    "email": "joe@example.com"
+                                },
+                                {
+                                    "email": "josh@example.com"
+                                },
+                                {
+                                    "email": "jeff@example.com"
+                                },
+                                {
+                                    "email": "jack@example.com"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100169,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "complianceexport",
+        "executor_version": "v2",
+        "executor_display_name": "compliance export",
+        "executor_description": "compliance export",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/compliance/export/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404217591,
+        "lastModifiedTime": 1687404217591,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {}
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100168,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "complianceremove",
+        "executor_version": "v2",
+        "executor_display_name": "compliance remove",
+        "executor_description": "compliance remove",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/compliance/remove/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404140289,
+        "lastModifiedTime": 1687404140289,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {}
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "400",
+                        "message": "BAD REQUEST: The parameters provided were invalid. See response body for error messages.",
+                        "errors": {
+                            "error": [
+                                "The following GET/POST parameter is required: uid or email."
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100174,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "companyget",
+        "executor_version": "v2",
+        "executor_display_name": "company get",
+        "executor_description": "company get",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/company/get/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687404911510,
+        "lastModifiedTime": 1687404911510,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "company": {
+                                "company_name": "Sample",
+                                "company_url": "",
+                                "company_email": "johndoe@example.com",
+                                "point_name": "points",
+                                "outgoing_email": "sample@example.com"
+                            },
+                            "campaigns": [
+                                {
+                                    "campaign_uid": "17",
+                                    "campaign_name": "Sample Campaign 1",
+                                    "campaign_description": "This is a sample description s",
+                                    "initial_reward": {
+                                        "type_text": "Flat Monetary",
+                                        "type_code": "F",
+                                        "amount": "10"
+                                    },
+                                    "recurring_reward": {
+                                        "type_text": "None",
+                                        "type_code": "D",
+                                        "amount": "0"
+                                    },
+                                    "landing_page": "https://example.com/reserve",
+                                    "sandbox": "0",
+                                    "private": "1",
+                                    "facebook_enabled": "0",
+                                    "auto_approve_commissions": "1",
+                                    "discount_value": "df59df8",
+                                    "start_date": "1314918000",
+                                    "end_date": null,
+                                    "user_message": "I thought you would like Ambassador -- it's simple, intuitive referral software for businesses.  To get 10% off, use my referral link:",
+                                    "company_message": "Increase your Social Marketing ROI with Ambassador. Ambassador gives you the tools to turn your customers into Brand Ambassadors. Sign up for a free trial:",
+                                    "subject": "Use this software to turn customers into Brand Ambassadors",
+                                    "social_message": "Looking for Social Media ROI? Check out Ambassador and get 10% off for a limited time.. #ambassador"
+                                },
+                                {
+                                    "campaign_uid": "25",
+                                    "campaign_name": "Sample Campaign 2",
+                                    "campaign_description": "Refer a new company to sample and get rewarded 50% of their first payment and 10% of each recurring payment!",
+                                    "initial_reward": {
+                                        "type_text": "Flat Monetary",
+                                        "type_code": "F",
+                                        "amount": "12"
+                                    },
+                                    "recurring_reward": {
+                                        "type_text": "None",
+                                        "type_code": "D",
+                                        "amount": "0"
+                                    },
+                                    "landing_page": "http://example.com",
+                                    "required_query_params": "code={short_code}&campingid={campaign_uid}",
+                                    "sandbox": "0",
+                                    "private": "1",
+                                    "facebook_enabled": "1",
+                                    "auto_approve_commissions": "1",
+                                    "discount_value": "0",
+                                    "start_date": "1315954800",
+                                    "end_date": null,
+                                    "user_message": "I thought you would like Ambassador -- it's simple, intuitive referral software for businesses.  To get 10% off, use my referral link:",
+                                    "company_message": "Increase your Social Marketing ROI with Ambassador. Ambassador gives you the tools to turn your customers into Brand Ambassadors. Sign up for a free trial:",
+                                    "subject": "Use this software to turn customers into Brand Ambassadors",
+                                    "social_message": "Looking for Social Media ROI? Check out Ambassador and get 10% off for a limited time.. #ambassador",
+                                    "linkedin_message": "Looking for Social Media ROI? Check out Ambassador and get 10% off for a limited time.. #ambassador",
+                                    "twitter_message": "Looking for Social Media ROI? Check out Ambassador and get 10% off for a limited time.. #ambassador"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 100176,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "companytoken",
+        "executor_version": "v2",
+        "executor_display_name": "company token",
+        "executor_description": "company token",
+        "executor_category": "Methods",
+        "executor_category_group": "Methods",
+        "service_provider": "ambassador",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://api.getambassador.com/api/v2/{username}/{token}/json/company/token/",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "username",
+                "value": "",
+                "description": "Your API username"
+            },
+            {
+                "key": "token",
+                "value": "",
+                "description": "Your API token"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1687405117237,
+        "lastModifiedTime": 1687405117237,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": null,
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "response": {
+                        "code": "200",
+                        "message": "OK: The request was successful. See response body for additional data.",
+                        "data": {
+                            "token": "cfeab99f171a70a900887212e42d1320"
+                        }
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

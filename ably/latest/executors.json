@@ -1,0 +1,5284 @@
+[
+    {
+        "id": 111801,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getsRuleUsingRuleId",
+        "executor_version": "v1",
+        "executor_display_name": "Gets a rule using a rule ID",
+        "executor_description": "Returns the rule specified by the rule ID, for the application specified by application ID.",
+        "executor_category": "rules",
+        "executor_category_group": "rules",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/rules/{rule_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "rule_id",
+                "value": "",
+                "description": "string The rule ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186855025,
+        "lastModifiedTime": 1692186855025,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Rule",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "83IzAB",
+                    "appId": "28GY6a",
+                    "version": "1.2",
+                    "status": "enabled",
+                    "created": 1602844091815,
+                    "modified": 1614679682091,
+                    "_links": {},
+                    "ruleType": "http",
+                    "requestMode": "single",
+                    "source": {
+                        "channelFilter": "^my-channel.*",
+                        "type": "channel.message"
+                    },
+                    "target": {
+                        "url": "https://example.com/webhooks",
+                        "headers": [
+                            {
+                                "name": "User-Agent",
+                                "value": "user-agent-string"
+                            },
+                            {
+                                "name": "headerName",
+                                "value": "headerValue"
+                            }
+                        ],
+                        "signingKeyId": "bw66AB",
+                        "enveloped": true,
+                        "format": "json"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111799,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listsRules",
+        "executor_version": "v1",
+        "executor_display_name": "Lists rules",
+        "executor_description": "Lists the rules for the application specified by the application ID.",
+        "executor_category": "rules",
+        "executor_category_group": "rules",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/rules",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186625532,
+        "lastModifiedTime": 1692186625532,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Rule list",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "83IzAB",
+                        "appId": "28GY6a",
+                        "version": "1.2",
+                        "status": "enabled",
+                        "created": 1602844091815,
+                        "modified": 1614679682091,
+                        "_links": {},
+                        "ruleType": "http",
+                        "requestMode": "single",
+                        "source": {
+                            "channelFilter": "^my-channel.*",
+                            "type": "channel.message"
+                        },
+                        "target": {
+                            "url": "https://example.com/webhooks",
+                            "headers": [
+                                {
+                                    "name": "User-Agent",
+                                    "value": "user-agent-string"
+                                },
+                                {
+                                    "name": "headerName",
+                                    "value": "headerValue"
+                                }
+                            ],
+                            "signingKeyId": "bw66AB",
+                            "enveloped": true,
+                            "format": "json"
+                        }
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111802,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatesRule",
+        "executor_version": "v1",
+        "executor_display_name": "Updates a Rule",
+        "executor_description": "Updates the rule specified by the rule ID, for the application specified by application ID.",
+        "executor_category": "rules",
+        "executor_category_group": "rules",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/rules/{rule_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "rule_id",
+                "value": "",
+                "description": "string The rule ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "status": "enabled",
+                "ruleType": "http",
+                "requestMode": "single",
+                "source": {
+                    "channelFilter": "^my-channel.*",
+                    "type": "channel.message"
+                },
+                "target": {
+                    "url": "https://example.com/webhooks",
+                    "headers": [
+                        {
+                            "name": "User-Agent",
+                            "value": "user-agent-string"
+                        },
+                        {
+                            "name": "headerName",
+                            "value": "headerValue"
+                        }
+                    ],
+                    "signingKeyId": "bw66AB",
+                    "enveloped": true,
+                    "format": "json"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186936973,
+        "lastModifiedTime": 1692186936973,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Rule Updated",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "83IzAB",
+                    "appId": "28GY6a",
+                    "version": "1.2",
+                    "status": "enabled",
+                    "created": 1602844091815,
+                    "modified": 1614679682091,
+                    "_links": {},
+                    "ruleType": "http",
+                    "requestMode": "single",
+                    "source": {
+                        "channelFilter": "^my-channel.*",
+                        "type": "channel.message"
+                    },
+                    "target": {
+                        "url": "https://example.com/webhooks",
+                        "headers": [
+                            {
+                                "name": "User-Agent",
+                                "value": "user-agent-string"
+                            },
+                            {
+                                "name": "headerName",
+                                "value": "headerValue"
+                            }
+                        ],
+                        "signingKeyId": "bw66AB",
+                        "enveloped": true,
+                        "format": "json"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111800,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createsRule",
+        "executor_version": "v1",
+        "executor_display_name": "Creates a rule",
+        "executor_description": "Creates a rule for the application with the specified application ID.",
+        "executor_category": "rules",
+        "executor_category_group": "rules",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/rules",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "status": "enabled",
+                "ruleType": "http",
+                "requestMode": "single",
+                "source": {
+                    "channelFilter": "^my-channel.*",
+                    "type": "channel.message"
+                },
+                "target": {
+                    "url": "https://example.com/webhooks",
+                    "headers": [
+                        {
+                            "name": "User-Agent",
+                            "value": "user-agent-string"
+                        },
+                        {
+                            "name": "headerName",
+                            "value": "headerValue"
+                        }
+                    ],
+                    "signingKeyId": "bw66AB",
+                    "enveloped": true,
+                    "format": "json"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186728527,
+        "lastModifiedTime": 1692186728527,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Rule created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "83IzAB",
+                    "appId": "28GY6a",
+                    "version": "1.2",
+                    "status": "enabled",
+                    "created": 1602844091815,
+                    "modified": 1614679682091,
+                    "_links": {},
+                    "ruleType": "http",
+                    "requestMode": "single",
+                    "source": {
+                        "channelFilter": "^my-channel.*",
+                        "type": "channel.message"
+                    },
+                    "target": {
+                        "url": "https://example.com/webhooks",
+                        "headers": [
+                            {
+                                "name": "User-Agent",
+                                "value": "user-agent-string"
+                            },
+                            {
+                                "name": "headerName",
+                                "value": "headerValue"
+                            }
+                        ],
+                        "signingKeyId": "bw66AB",
+                        "enveloped": true,
+                        "format": "json"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111803,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletesRule",
+        "executor_version": "v1",
+        "executor_display_name": "Deletes a rule",
+        "executor_description": "Deletes the rule specified by the rule ID, for the application specified by application ID.",
+        "executor_category": "rules",
+        "executor_category_group": "rules",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/rules/{rule_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "rule_id",
+                "value": "",
+                "description": "string The rule ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692187020000,
+        "lastModifiedTime": 1692187020000,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Rule deleted",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111786,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listsNamespaces",
+        "executor_version": "v1",
+        "executor_display_name": "Lists namespaces",
+        "executor_description": "List the namespaces for the specified application ID.",
+        "executor_category": "namespaces",
+        "executor_category_group": "namespaces",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/namespaces",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692185739350,
+        "lastModifiedTime": 1692185739350,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Gateway timeout",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Namespace list",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "authenticated": false,
+                        "created": 1602844091815,
+                        "modified": 1614679682091,
+                        "id": "namespace",
+                        "persisted": false,
+                        "persistLast": false,
+                        "pushEnabled": false,
+                        "tlsOnly": false,
+                        "exposeTimeserial": true
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111795,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletesNamespace",
+        "executor_version": "v1",
+        "executor_display_name": "Deletes a namespace",
+        "executor_description": "Deletes the namespace with the specified ID, for the specified application ID.",
+        "executor_category": "namespaces",
+        "executor_category_group": "namespaces",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/namespaces/{namespace_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "namespace_id",
+                "value": "",
+                "description": "string The namespace ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186124827,
+        "lastModifiedTime": 1692186124827,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Namespace Deleted",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111788,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatesNamespace",
+        "executor_version": "v1",
+        "executor_display_name": "Updates a namespace",
+        "executor_description": "Updates the namespace with the specified ID, for the application with the specified application ID.",
+        "executor_category": "namespaces",
+        "executor_category_group": "namespaces",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/namespaces/{namespace_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "namespace_id",
+                "value": "",
+                "description": "string The namespace ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "authenticated": false,
+                "persisted": false,
+                "persistLast": false,
+                "pushEnabled": false,
+                "tlsOnly": false,
+                "exposeTimeserial": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1692185961834,
+        "lastModifiedTime": 1692186015947,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Namespace updated",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "authenticated": false,
+                    "created": 1602844091815,
+                    "modified": 1614679682091,
+                    "id": "namespace",
+                    "persisted": false,
+                    "persistLast": false,
+                    "pushEnabled": false,
+                    "tlsOnly": false,
+                    "exposeTimeserial": true
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111787,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createsNamespace",
+        "executor_version": "v1",
+        "executor_display_name": "Creates a namespace",
+        "executor_description": "Creates a namespace for the specified application ID.",
+        "executor_category": "namespaces",
+        "executor_category_group": "namespaces",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/namespaces",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "id": "namespace",
+                "authenticated": false,
+                "persisted": false,
+                "persistLast": false,
+                "pushEnabled": false,
+                "tlsOnly": false,
+                "exposeTimeserial": false
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692185852875,
+        "lastModifiedTime": 1692185852875,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Gateway timeout",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Namespace created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "authenticated": false,
+                    "created": 1602844091815,
+                    "modified": 1614679682091,
+                    "id": "namespace",
+                    "persisted": false,
+                    "persistLast": false,
+                    "pushEnabled": false,
+                    "tlsOnly": false,
+                    "exposeTimeserial": true
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111779,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatesAppsApns",
+        "executor_version": "v1",
+        "executor_display_name": "Updates apps APNs",
+        "executor_description": "Updates the application's Apple Push Notification service (APNs) information.",
+        "executor_category": "apps",
+        "executor_category_group": "apps",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://control.ably.net/v1/apps/{id}/pkcs12",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": [
+                {
+                    "key": "p12File",
+                    "value": "",
+                    "description": "string <binary> The .p12 file containing the app's APNs information.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                },
+                {
+                    "key": "p12Pass",
+                    "value": "",
+                    "description": "string The password for the corresponding .p12 file.",
+                    "req": false,
+                    "isFile": false,
+                    "type": "Text"
+                }
+            ],
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692185092661,
+        "lastModifiedTime": 1692185092661,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App Updated",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "accountId": "WgRpOB",
+                    "id": "28AB6x",
+                    "name": "Default",
+                    "status": "enabled",
+                    "tlsOnly": true,
+                    "apnsUseSandboxEndpoint": false,
+                    "_links": {}
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111772,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listsAccountApps",
+        "executor_version": "v1",
+        "executor_display_name": "Lists account apps",
+        "executor_description": "List all Ably applications for the specified account ID.",
+        "executor_category": "apps",
+        "executor_category_group": "apps",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://control.ably.net/v1/accounts/{account_id}/apps",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "account_id",
+                "value": "",
+                "description": "string The account ID for which to retrieve the associated applications."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692184477767,
+        "lastModifiedTime": 1692184477767,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "List of apps for the specified account are returned",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "accountId": "WgRpOB",
+                        "id": "28AB6x",
+                        "name": "Default",
+                        "status": "enabled",
+                        "tlsOnly": true,
+                        "apnsUseSandboxEndpoint": false,
+                        "_links": {}
+                    }
+                ]
+            },
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Internal server error",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111776,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatesAnApp",
+        "executor_version": "v1",
+        "executor_display_name": "Updates an app",
+        "executor_description": "Updates the application with the specified application ID.",
+        "executor_category": "apps",
+        "executor_category_group": "apps",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://control.ably.net/v1/apps/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string The ID of application to be updated."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "My App",
+                "status": "enabled",
+                "tlsOnly": true,
+                "fcmKey": "AABBQ1KyxCE:APA91bCCYs7r_Q-sqW8HMP_hV4t3vMYx...cJ8344-MhGWODZEuAmg_J4MUJcVQEyDn...I",
+                "apnsCertificate": "-----BEGIN CERTIFICATE-----MIIFaDCC...EXAMPLE...3Dc=-----END CERTIFICATE-----",
+                "apnsPrivateKey": "-----BEGIN PRIVATE KEY-----ABCFaDCC...EXAMPLE...3Dc=-----END PRIVATE KEY-----",
+                "apnsUseSandboxEndpoint": false
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692184829150,
+        "lastModifiedTime": 1692184829150,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "App updated",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "accountId": "WgRpOB",
+                    "id": "28AB6x",
+                    "name": "Default",
+                    "status": "enabled",
+                    "tlsOnly": true,
+                    "apnsUseSandboxEndpoint": false,
+                    "_links": {}
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111775,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createsAnApp",
+        "executor_version": "v1",
+        "executor_display_name": "Creates an app",
+        "executor_description": "Creates an application with the specified properties.",
+        "executor_category": "apps",
+        "executor_category_group": "apps",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://control.ably.net/v1/accounts/{account_id}/apps",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "account_id",
+                "value": "",
+                "description": "string The account ID for which to retrieve the associated applications."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "My App",
+                "status": "enabled",
+                "tlsOnly": true,
+                "fcmKey": "AABBQ1KyxCE:APA91bCCYs7r_Q-sqW8HMP_hV4t3vMYx...cJ8344-MhGWODZEuAmg_J4MUJcVQEyDn...I",
+                "apnsCertificate": "-----BEGIN CERTIFICATE-----MIIFaDCC...EXAMPLE...3Dc=-----END CERTIFICATE-----",
+                "apnsPrivateKey": "-----BEGIN PRIVATE KEY-----ABCFaDCC...EXAMPLE...3Dc=-----END PRIVATE KEY-----",
+                "apnsUseSandboxEndpoint": false
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692184722183,
+        "lastModifiedTime": 1692184722183,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "accountId": "WgRpOB",
+                    "id": "28AB6x",
+                    "name": "Default",
+                    "status": "enabled",
+                    "tlsOnly": true,
+                    "apnsUseSandboxEndpoint": false,
+                    "_links": {}
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111778,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletesAnApp",
+        "executor_version": "v1",
+        "executor_display_name": "Deletes an app",
+        "executor_description": "Deletes the application with the specified application ID.",
+        "executor_category": "apps",
+        "executor_category_group": "apps",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://control.ably.net/v1/apps/{id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "id",
+                "value": "",
+                "description": "string The ID of application to be updated."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692184903645,
+        "lastModifiedTime": 1692184903645,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "App deleted",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111798,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deletesQueue",
+        "executor_version": "v1",
+        "executor_display_name": "Deletes a queue",
+        "executor_description": "Delete the queue with the specified queue name, from the application with the specified application ID.",
+        "executor_category": "queues",
+        "executor_category_group": "queues",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/queues/{queue_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "queue_id",
+                "value": "",
+                "description": "string The queue ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186520294,
+        "lastModifiedTime": 1692186520294,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "DELETE",
+                "message": "Queue deleted",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111797,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createsQueue",
+        "executor_version": "v1",
+        "executor_display_name": "Creates a queue",
+        "executor_description": "Creates a queue for the application specified by application ID. The properties for the queue to be created are specified in the request body.",
+        "executor_category": "queues",
+        "executor_category_group": "queues",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/queues",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "My queue",
+                "ttl": 60,
+                "maxLength": 10000,
+                "region": "us-east-1-a"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186433806,
+        "lastModifiedTime": 1692186433806,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Queue created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "28AB6w:us-east-1-a:My queue",
+                    "appId": "28AB6w",
+                    "name": "My queue",
+                    "region": "eu-west-1-a",
+                    "amqp": {
+                        "uri": "amqps://us-east-1-a-queue.ably.io:5671/shared",
+                        "queueName": "28AB6w:My queue"
+                    },
+                    "stomp": {
+                        "uri": "stomp://us-east-1-a-queue.ably.io:61614",
+                        "host": "shared",
+                        "destination": "/amqp/queue/28AB6w:My queue"
+                    },
+                    "state": "Running",
+                    "messages": {
+                        "ready": 0,
+                        "unacknowledged": 0,
+                        "total": 0
+                    },
+                    "stats": {
+                        "publishRate": 0,
+                        "deliveryRate": 0,
+                        "acknowledgementRate": 0
+                    },
+                    "ttl": 60,
+                    "maxLength": 10000,
+                    "deadletter": false,
+                    "deadletterId": "28AB6w:us-east-1-a:deadletter"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111796,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listsQueues",
+        "executor_version": "v1",
+        "executor_display_name": "Lists queues",
+        "executor_description": "Lists the queues associated with the specified application ID.",
+        "executor_category": "queues",
+        "executor_category_group": "queues",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/queues",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692186244529,
+        "lastModifiedTime": 1692186244529,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Queue list",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "id": "28AB6w:us-east-1-a:My queue",
+                        "appId": "28AB6w",
+                        "name": "My queue",
+                        "region": "eu-west-1-a",
+                        "amqp": {
+                            "uri": "amqps://us-east-1-a-queue.ably.io:5671/shared",
+                            "queueName": "28AB6w:My queue"
+                        },
+                        "stomp": {
+                            "uri": "stomp://us-east-1-a-queue.ably.io:61614",
+                            "host": "shared",
+                            "destination": "/amqp/queue/28AB6w:My queue"
+                        },
+                        "state": "Running",
+                        "messages": {
+                            "ready": 0,
+                            "unacknowledged": 0,
+                            "total": 0
+                        },
+                        "stats": {
+                            "publishRate": 0,
+                            "deliveryRate": 0,
+                            "acknowledgementRate": 0
+                        },
+                        "ttl": 60,
+                        "maxLength": 10000,
+                        "deadletter": false,
+                        "deadletterId": "28AB6w:us-east-1-a:deadletter"
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111783,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatesKey",
+        "executor_version": "v1",
+        "executor_display_name": "Updates a key",
+        "executor_description": "Update the API key with the specified key ID, for the application with the specified application ID.",
+        "executor_category": "keys",
+        "executor_category_group": "keys",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PATCH",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/keys/{key_id}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "key_id",
+                "value": "",
+                "description": "string The API key ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "My key name",
+                "capability": {
+                    "channel1": [
+                        "publish",
+                        "subscribe"
+                    ],
+                    "channel2": [
+                        "history"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692185473615,
+        "lastModifiedTime": 1692185473615,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Gateway timeout",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Key Updated",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "appId": "28GY6a",
+                    "id": "G8dabc",
+                    "name": "My key name",
+                    "status": 0,
+                    "key": "string",
+                    "capability": {
+                        "channel1": [
+                            "publish",
+                            "subscribe"
+                        ],
+                        "channel2": [
+                            "history"
+                        ]
+                    },
+                    "created": 1602844091815,
+                    "modified": 1614679682091
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111781,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "listsAppKeys",
+        "executor_version": "v1",
+        "executor_display_name": "Lists app keys",
+        "executor_description": "Lists the API keys associated with the application ID.",
+        "executor_category": "keys",
+        "executor_category_group": "keys",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/keys",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692185227913,
+        "lastModifiedTime": 1692185227913,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Key list",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": [
+                    {
+                        "appId": "28GY6a",
+                        "id": "G8dabc",
+                        "name": "My key name",
+                        "status": 0,
+                        "key": "string",
+                        "capability": {
+                            "channel1": [
+                                "publish",
+                                "subscribe"
+                            ],
+                            "channel2": [
+                                "history"
+                            ]
+                        },
+                        "created": 1602844091815,
+                        "modified": 1614679682091
+                    }
+                ]
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111782,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createsKey",
+        "executor_version": "v1",
+        "executor_display_name": "Creates a key",
+        "executor_description": "Creates an API key for the application specified.",
+        "executor_category": "keys",
+        "executor_category_group": "keys",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/keys",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "name": "My key name",
+                "capability": {
+                    "channel1": [
+                        "publish",
+                        "subscribe"
+                    ],
+                    "channel2": [
+                        "history"
+                    ]
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692185324319,
+        "lastModifiedTime": 1692185324319,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Key Created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "appId": "28GY6a",
+                    "id": "G8dabc",
+                    "name": "My key name",
+                    "status": 0,
+                    "key": "string",
+                    "capability": {
+                        "channel1": [
+                            "publish",
+                            "subscribe"
+                        ],
+                        "channel2": [
+                            "history"
+                        ]
+                    },
+                    "created": 1602844091815,
+                    "modified": 1614679682091
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111785,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "revokesKey",
+        "executor_version": "v1",
+        "executor_display_name": "Revokes a key",
+        "executor_description": "Revokes the API key with the specified ID, with the Application ID. This deletes the key.",
+        "executor_category": "keys",
+        "executor_category_group": "keys",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "https://control.ably.net/v1/apps/{app_id}/keys/{key_id}/revoke",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "app_id",
+                "value": "",
+                "description": "string The application ID."
+            },
+            {
+                "key": "key_id",
+                "value": "",
+                "description": "string The key ID."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692185626658,
+        "lastModifiedTime": 1692185626658,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Account not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Invalid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 504,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Gateway timeout",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "PATCH",
+                "message": "Key revoked",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {}
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111804,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getTokenDetails",
+        "executor_version": "v1",
+        "executor_display_name": "Get token details",
+        "executor_description": "Retrieve information about the token the current user authenticates with.",
+        "executor_category": "tokens",
+        "executor_category_group": "tokens",
+        "service_provider": "ably",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "https://control.ably.net/v1/me",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": "bearer_token",
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692187135457,
+        "lastModifiedTime": 1692187135457,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 401,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Authentication failed",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "App created",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "message": "string",
+                    "code": 0,
+                    "statusCode": 0,
+                    "href": "string",
+                    "details": {}
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Token details",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "token": {
+                        "id": 12345,
+                        "name": "My Token",
+                        "capabilities": [
+                            "write:namespace",
+                            "read:namespace",
+                            "write:queue",
+                            "read:queue",
+                            "write:rule",
+                            "read:rule",
+                            "write:key",
+                            "read:key",
+                            "write:app",
+                            "read:app"
+                        ]
+                    },
+                    "user": {
+                        "id": 12345,
+                        "email": "user@example.com"
+                    },
+                    "account": {
+                        "id": "VpWaOA",
+                        "name": "Free account"
+                    }
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

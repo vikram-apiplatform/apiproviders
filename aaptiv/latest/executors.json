@@ -1,0 +1,2625 @@
+[
+    {
+        "id": 111749,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "recordsTheCompletionOfWorkout",
+        "executor_version": "v1",
+        "executor_display_name": "Records the completion of a workout",
+        "executor_description": "Records the completion of a workout.",
+        "executor_category": "Workouts",
+        "executor_category_group": "Workouts",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "http://api.aaptiv.com/v1/workouts/{workoutId}/finish",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "workoutId",
+                "value": "",
+                "description": "The id of the workout to finish."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "userId": "123456",
+                "sessionId": "1c5cb3c7-42b8-4787-b4c4-dd1bff704148"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180248167,
+        "lastModifiedTime": 1692180248167,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Bad Request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Workout not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Workout not found"
+                }
+            },
+            {
+                "statusCode": 424,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 204,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Workout session successfully finished",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111747,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "startWorkouts",
+        "executor_version": "v1",
+        "executor_display_name": "Start Workouts",
+        "executor_description": "Records the start of a workout. Returns URL to stream the specified workout along with a session ID and signed cookies to authenticate access.",
+        "executor_category": "Workouts",
+        "executor_category_group": "Workouts",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "http://api.aaptiv.com/v1/workouts/{workoutId}/start",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "workoutId",
+                "value": "",
+                "description": "The id of the workout to start."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "userId": "123456"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180156222,
+        "lastModifiedTime": 1692180156222,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 201,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "New session started",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "streamingUrl": "https://aaptiv-audio.example.com/mix/010620JFTread1_IMP.m3u8?t=6294f8e0-6bc2-40ff-903d-350031bb4802",
+                    "sessionId": "1c5cb3c7-42b8-4787-b4c4-dd1bff704148",
+                    "resourceAccess": {
+                        "CloudFront-Policy": "string",
+                        "CloudFront-Key-Pair-Id": "string",
+                        "CloudFront-Signature": "string"
+                    }
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Bad Request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Workout not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Workout not found"
+                }
+            },
+            {
+                "statusCode": 424,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111755,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsAllWorkoutsMatchingTheGivenSearchQuery",
+        "executor_version": "v1",
+        "executor_display_name": "Returns all workouts matching the given search query",
+        "executor_description": "Returns all workouts matching the given search query.",
+        "executor_category": "Workouts",
+        "executor_category_group": "Workouts",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/search",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "query",
+                "value": "",
+                "description": "string Example: query=cool+down A url-encoded query to search workouts by.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "integer <int32> [ 1 .. 100 ] Default: 20 The upper limit of items to return in one request. The max is 100 and the default is 20.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180655949,
+        "lastModifiedTime": 1692180655949,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Bad Request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Workout not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Workout not found"
+                }
+            },
+            {
+                "statusCode": 424,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of workouts",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "id": "5cbe32f396cc9a0053558aa1",
+                            "name": "Goal Getter",
+                            "description": "This incline treadmill walk will have you climbing and raising speeds while you focus on you goals.",
+                            "duration": 1800000,
+                            "intensityLevel": 3,
+                            "bodyParts": [
+                                {
+                                    "key": "lower_body",
+                                    "name": "Lower Body"
+                                }
+                            ],
+                            "category": {
+                                "key": "treadmill",
+                                "name": "Treadmill",
+                                "imageUrl": "https://cdn.aaptiv.com/assets/images/categories/treadmill.png"
+                            },
+                            "difficulty": {
+                                "key": "intermediate",
+                                "name": "Intermediate"
+                            },
+                            "equipment": [
+                                {
+                                    "key": "foam_roller",
+                                    "name": "Foam roller"
+                                }
+                            ],
+                            "genre": {
+                                "key": "classic_rock",
+                                "name": "Classic Rock"
+                            },
+                            "subtypes": [
+                                {
+                                    "key": "intervals",
+                                    "name": "Intervals"
+                                }
+                            ],
+                            "trainer": {
+                                "key": "kenta_s",
+                                "name": "Kenta Seki",
+                                "imageUrl": "https://cdn.aaptiv.com/assets/images/trainers/kentaSeki-min.png"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111744,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsDetailsForSpecificWorkout",
+        "executor_version": "v1",
+        "executor_display_name": "Returns details for a specific workout",
+        "executor_description": "Returns details for a specific workout.",
+        "executor_category": "Workouts",
+        "executor_category_group": "Workouts",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/workouts/{workoutId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "workoutId",
+                "value": "",
+                "description": "The id of the workout to retrieve."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692179672551,
+        "lastModifiedTime": 1692179672551,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Expected response to a valid request.",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "5cbe32f396cc9a0053558aa1",
+                    "name": "Goal Getter",
+                    "description": "This incline treadmill walk will have you climbing and raising speeds while you focus on you goals.",
+                    "duration": 1800000,
+                    "intensityLevel": 3,
+                    "bodyParts": [
+                        {
+                            "key": "lower_body",
+                            "name": "Lower Body"
+                        }
+                    ],
+                    "category": {
+                        "key": "treadmill",
+                        "name": "Treadmill",
+                        "imageUrl": "https://cdn.aaptiv.com/assets/images/categories/treadmill.png"
+                    },
+                    "difficulty": {
+                        "key": "intermediate",
+                        "name": "Intermediate"
+                    },
+                    "equipment": [
+                        {
+                            "key": "foam_roller",
+                            "name": "Foam roller"
+                        }
+                    ],
+                    "genre": {
+                        "key": "classic_rock",
+                        "name": "Classic Rock"
+                    },
+                    "subtypes": [
+                        {
+                            "key": "intervals",
+                            "name": "Intervals"
+                        }
+                    ],
+                    "trainer": {
+                        "key": "kenta_s",
+                        "name": "Kenta Seki",
+                        "imageUrl": "https://cdn.aaptiv.com/assets/images/trainers/kentaSeki-min.png"
+                    }
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Workout not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Workout not found"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111742,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getWorkouts",
+        "executor_version": "v1",
+        "executor_display_name": "Get Workouts",
+        "executor_description": "Returns a list of workouts that meet the specified criteria. Query parameters can be used to filter the results.",
+        "executor_category": "Workouts",
+        "executor_category_group": "Workouts",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/workouts",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "limit",
+                "value": "",
+                "description": "integer <int32> [ 1 .. 100 ] Default: 20 The upper limit of items to return in one request. The max is 100 and the default is 20.",
+                "req": false
+            },
+            {
+                "key": "page",
+                "value": "",
+                "description": "integer <int32> >= 1 Default: 1 The page number of results to return",
+                "req": false
+            },
+            {
+                "key": "bodyPart",
+                "value": "",
+                "description": "Array of strings Example: bodyPart=lower_body Any body part filters (by keys). Workouts returned will involve at least one of these body parts.",
+                "req": false
+            },
+            {
+                "key": "difficulty",
+                "value": "",
+                "description": "Array of strings Example: difficulty=beginner,all_levels Any difficulty filters (by keys). Workouts returned will be one of these difficulty levels.",
+                "req": false
+            },
+            {
+                "key": "category",
+                "value": "",
+                "description": "Array of strings Example: category=strength_training,treadmill Any category filters (by keys). Workouts returned will be in at least one of these categories",
+                "req": false
+            },
+            {
+                "key": "equipment",
+                "value": "",
+                "description": "Array of strings Example: equipment=dumbbells,barbell Any equipment filters (by keys). Workouts returned will feature at least one piece of this equipment.",
+                "req": false
+            },
+            {
+                "key": "genre",
+                "value": "",
+                "description": "Array of strings Example: genre=classic_rock,pop,indie Any genre filters (by keys). Workouts returned will feature music primarily in one of these genres.",
+                "req": false
+            },
+            {
+                "key": "minDuration\t",
+                "value": "",
+                "description": "integer <int32> Example: minDuration=300000 The minimum workout duration in milliseconds",
+                "req": false
+            },
+            {
+                "key": "maxDuration",
+                "value": "",
+                "description": "integer <int32> Example: maxDuration=900000 The maximum workout duration in milliseconds.",
+                "req": false
+            },
+            {
+                "key": "minIntensity",
+                "value": "",
+                "description": "integer <int32> Example: minIntensity=1 The minimum workout intensity on a scale of 1-5",
+                "req": false
+            },
+            {
+                "key": "maxIntensity",
+                "value": "",
+                "description": " integer <int32> Example: maxIntensity=5 The maximum workout intensity on a scale of 1-5",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692179490775,
+        "lastModifiedTime": 1692179490775,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of workouts",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "id": "5cbe32f396cc9a0053558aa1",
+                            "name": "Goal Getter",
+                            "description": "This incline treadmill walk will have you climbing and raising speeds while you focus on you goals.",
+                            "duration": 1800000,
+                            "intensityLevel": 3,
+                            "bodyParts": [
+                                {
+                                    "key": "lower_body",
+                                    "name": "Lower Body"
+                                }
+                            ],
+                            "category": {
+                                "key": "treadmill",
+                                "name": "Treadmill",
+                                "imageUrl": "https://cdn.aaptiv.com/assets/images/categories/treadmill.png"
+                            },
+                            "difficulty": {
+                                "key": "intermediate",
+                                "name": "Intermediate"
+                            },
+                            "equipment": [
+                                {
+                                    "key": "foam_roller",
+                                    "name": "Foam roller"
+                                }
+                            ],
+                            "genre": {
+                                "key": "classic_rock",
+                                "name": "Classic Rock"
+                            },
+                            "subtypes": [
+                                {
+                                    "key": "intervals",
+                                    "name": "Intervals"
+                                }
+                            ],
+                            "trainer": {
+                                "key": "kenta_s",
+                                "name": "Kenta Seki",
+                                "imageUrl": "https://cdn.aaptiv.com/assets/images/trainers/kentaSeki-min.png"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111752,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsListOfRecommended",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of recommended",
+        "executor_description": "Returns a list of recommended workouts for a given user.",
+        "executor_category": "Workouts",
+        "executor_category_group": "Workouts",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/recommendations",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "userId",
+                "value": "",
+                "description": "The unique identifier for a user.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180503877,
+        "lastModifiedTime": 1692180503878,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Bad Request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Workout not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Workout not found"
+                }
+            },
+            {
+                "statusCode": 424,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of workouts",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "id": "5cbe32f396cc9a0053558aa1",
+                            "name": "Goal Getter",
+                            "description": "This incline treadmill walk will have you climbing and raising speeds while you focus on you goals.",
+                            "duration": 1800000,
+                            "intensityLevel": 3,
+                            "bodyParts": [
+                                {
+                                    "key": "lower_body",
+                                    "name": "Lower Body"
+                                }
+                            ],
+                            "category": {
+                                "key": "treadmill",
+                                "name": "Treadmill",
+                                "imageUrl": "https://cdn.aaptiv.com/assets/images/categories/treadmill.png"
+                            },
+                            "difficulty": {
+                                "key": "intermediate",
+                                "name": "Intermediate"
+                            },
+                            "equipment": [
+                                {
+                                    "key": "foam_roller",
+                                    "name": "Foam roller"
+                                }
+                            ],
+                            "genre": {
+                                "key": "classic_rock",
+                                "name": "Classic Rock"
+                            },
+                            "subtypes": [
+                                {
+                                    "key": "intervals",
+                                    "name": "Intervals"
+                                }
+                            ],
+                            "trainer": {
+                                "key": "kenta_s",
+                                "name": "Kenta Seki",
+                                "imageUrl": "https://cdn.aaptiv.com/assets/images/trainers/kentaSeki-min.png"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111757,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsListOfWorkoutCategories",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of workout categories",
+        "executor_description": "Returns a list of workout categories",
+        "executor_category": "Filtering",
+        "executor_category_group": "Filtering",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/categories",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180829657,
+        "lastModifiedTime": 1692180829657,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of categories",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "key": "treadmill",
+                            "name": "Treadmill",
+                            "imageUrl": "https://cdn.aaptiv.com/assets/images/categories/treadmill.png"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111759,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsListofMusicalGenres",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of musical genres",
+        "executor_description": "Returns a list of musical genres.",
+        "executor_category": "Filtering",
+        "executor_category_group": "Filtering",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/genres",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180992881,
+        "lastModifiedTime": 1692180992881,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of genres",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "key": "classic_rock",
+                            "name": "Classic Rock"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111760,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsListOfEquipment",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of equipment",
+        "executor_description": "Returns a list of equipment",
+        "executor_category": "Filtering",
+        "executor_category_group": "Filtering",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/equipment",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692181066710,
+        "lastModifiedTime": 1692181066710,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of equipment",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "key": "medicine_ball",
+                            "name": "Medicine ball"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111758,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsListofDifficultyLevels",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of difficulty levels",
+        "executor_description": "Returns a list of difficulty levels. Note: The \"All Levels\" difficulty level means that the workout is flexible for multiple levels of fitness.",
+        "executor_category": "Filtering",
+        "executor_category_group": "Filtering",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/difficulty-levels",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180907492,
+        "lastModifiedTime": 1692180907492,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of difficulty levels",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "key": "intermediate",
+                            "name": "Intermediate"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111756,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsListOfBodyParts",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of body parts",
+        "executor_description": "Returns a list of body parts",
+        "executor_category": "Filtering",
+        "executor_category_group": "Filtering",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/body-parts",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "query",
+                "value": "",
+                "description": "string Example: query=cool+down A url-encoded query to search workouts by.",
+                "req": false
+            },
+            {
+                "key": "limit",
+                "value": "",
+                "description": "integer <int32> [ 1 .. 100 ] Default: 20 The upper limit of items to return in one request. The max is 100 and the default is 20.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692180744256,
+        "lastModifiedTime": 1692180744256,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Bad Request"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Workout not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Workout not found"
+                }
+            },
+            {
+                "statusCode": 424,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            },
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "A collection of body parts",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "key": "lower_body",
+                            "name": "Lower Body"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111762,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsListOfWorkoutPrograms",
+        "executor_version": "v1",
+        "executor_display_name": "Returns a list of workout programs",
+        "executor_description": "Returns a list of workout programs.",
+        "executor_category": "Programs",
+        "executor_category_group": "Programs",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/programs",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [
+            {
+                "key": "limit",
+                "value": "",
+                "description": "integer <int32> [ 1 .. 100 ] Default: 20 The upper limit of items to return in one request. The max is 100 and the default is 20.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692181171692,
+        "lastModifiedTime": 1692181171692,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "An array of programs",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "items": [
+                        {
+                            "id": "5a3d6a094c35890094738fh5",
+                            "name": "Cross-Train to 5k",
+                            "description": "Get race ready in six weeks by following this comprehensive training program led by six certified trainers"
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111763,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "returnsDetailsForSpecificProgram",
+        "executor_version": "v1",
+        "executor_display_name": "Returns details for a specific program",
+        "executor_description": "Returns details for a specific program",
+        "executor_category": "Programs",
+        "executor_category_group": "Programs",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "http://api.aaptiv.com/v1/programs/{programId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "programId",
+                "value": "",
+                "description": "The id of the program to retrieve."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692181298008,
+        "lastModifiedTime": 1692181298008,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 404,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Program not found",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Program not found"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "GET",
+                "message": "Expected response to a valid request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "id": "5a3d6a094c35890094738fh5",
+                    "name": "Cross-Train to 5k",
+                    "description": "Get race ready in six weeks by following this comprehensive training program led by six certified trainers",
+                    "stages": [
+                        {
+                            "name": "Week 1",
+                            "workouts": [
+                                {
+                                    "id": "5cbe32f396cc9a0053558aa1",
+                                    "name": "Goal Getter",
+                                    "description": "This incline treadmill walk will have you climbing and raising speeds while you focus on you goals.",
+                                    "duration": 1800000,
+                                    "intensityLevel": 3,
+                                    "bodyParts": [
+                                        {
+                                            "key": "lower_body",
+                                            "name": "Lower Body"
+                                        }
+                                    ],
+                                    "category": {
+                                        "key": "treadmill",
+                                        "name": "Treadmill",
+                                        "imageUrl": "https://cdn.aaptiv.com/assets/images/categories/treadmill.png"
+                                    },
+                                    "difficulty": {
+                                        "key": "intermediate",
+                                        "name": "Intermediate"
+                                    },
+                                    "equipment": [
+                                        {
+                                            "key": "foam_roller",
+                                            "name": "Foam roller"
+                                        }
+                                    ],
+                                    "genre": {
+                                        "key": "classic_rock",
+                                        "name": "Classic Rock"
+                                    },
+                                    "subtypes": [
+                                        {
+                                            "key": "intervals",
+                                            "name": "Intervals"
+                                        }
+                                    ],
+                                    "trainer": {
+                                        "key": "kenta_s",
+                                        "name": "Kenta Seki",
+                                        "imageUrl": "https://cdn.aaptiv.com/assets/images/trainers/kentaSeki-min.png"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 111764,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "tracksUserRelatedEvent",
+        "executor_version": "v1",
+        "executor_display_name": "Tracks a user-related event",
+        "executor_description": "Tracks a user-related event",
+        "executor_category": "Tracking",
+        "executor_category_group": "Tracking",
+        "service_provider": "aaptiv",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "http://api.aaptiv.com/v1/events",
+        "dataroot": null,
+        "pathParams": [],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "X-client-id",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "X-Api-Key",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "userId": "123456",
+                "eventName": "workout_viewed",
+                "eventMetadata": {
+                    "workoutId": "5cbe32f396cc9a0053558aa1"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1692181438411,
+        "lastModifiedTime": 1692181438411,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [
+            {
+                "statusCode": 500,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "An internal server error occurred",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "An internal server error occurred"
+                }
+            },
+            {
+                "statusCode": 400,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Bad Request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Bad Request"
+                }
+            },
+            {
+                "statusCode": 422,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Unable to process the provided request",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": {
+                    "error": "Unable to process the provided request"
+                }
+            },
+            {
+                "statusCode": 200,
+                "name": null,
+                "statusText": null,
+                "methodType": "POST",
+                "message": "Event successfully logged",
+                "description": null,
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "cookies": null,
+                "responseAttributes": [],
+                "sampleData": null
+            }
+        ],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]

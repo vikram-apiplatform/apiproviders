@@ -1,0 +1,4561 @@
+[
+    {
+        "id": 116855,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "authReversal",
+        "executor_version": "v3",
+        "executor_display_name": "Auth Reversal",
+        "executor_description": "Auth Reversal is a request that reverses, or voids, a previously approved authorization that has not yet been captured.",
+        "executor_category": "CARDWALLETTRANSACTIONS",
+        "executor_category_group": "CARDWALLETTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "cardTransactionType": "AUTH_REVERSAL",
+                "transactionId": 1011671987
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696391400023,
+        "lastModifiedTime": 1696391400023,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116854,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "capture",
+        "executor_version": "v3",
+        "executor_display_name": "Capture",
+        "executor_description": "Capture is a request that submits a previously authorized transaction for settlement (i.e. payment by the shopper). Note that each credit card company will only hold the authorization for a limited period (for example, 3-10 days, depending on the credit card scheme).",
+        "executor_category": "CARDWALLETTRANSACTIONS",
+        "executor_category_group": "CARDWALLETTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "cardTransactionType": "CAPTURE",
+                "transactionId": 1011671985
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1696391291847,
+        "lastModifiedTime": 1696391467397,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116852,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "authCapture",
+        "executor_version": "v3",
+        "executor_display_name": "Auth Capture",
+        "executor_description": "Auth Capture performs two actions via a single request:  authorize: checks whether a credit card is valid and has the funds to complete a specific transaction (a purchase) capture: submits the authorized transaction for settlement (a payment by the shopper)",
+        "executor_category": "CARDWALLETTRANSACTIONS",
+        "executor_category_group": "CARDWALLETTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "apikey",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 11,
+                "softDescriptor": "DescTest",
+                "cardHolderInfo": {
+                    "firstName": "test first name",
+                    "lastName": "test last name",
+                    "zip": "02453"
+                },
+                "currency": "USD",
+                "creditCard": {
+                    "expirationYear": 2026,
+                    "securityCode": 837,
+                    "expirationMonth": "02",
+                    "cardNumber": "4263982640269299"
+                },
+                "cardTransactionType": "AUTH_CAPTURE"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696390874666,
+        "lastModifiedTime": 1696390874666,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116853,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "authOnly",
+        "executor_version": "v3",
+        "executor_display_name": "Auth Only",
+        "executor_description": "Auth Only is a request to check whether a credit card is valid and has the funds to complete a specific transaction (i.e. purchase). It does not actually run the charge on the card, but does temporarily hold the funds aside. Note that each credit card company will only hold the authorization for a limited period (for example, 3-10 days, depending on the credit card scheme).",
+        "executor_category": "CARDWALLETTRANSACTIONS",
+        "executor_category_group": "CARDWALLETTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 11,
+                "softDescriptor": "DescTest",
+                "cardHolderInfo": {
+                    "firstName": "test first name",
+                    "lastName": "test last name",
+                    "zip": "02453"
+                },
+                "currency": "USD",
+                "creditCard": {
+                    "expirationYear": 2026,
+                    "securityCode": 837,
+                    "expirationMonth": "02",
+                    "cardNumber": "4263982640269299"
+                },
+                "cardTransactionType": "AUTH_ONLY"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696391094196,
+        "lastModifiedTime": 1696391094196,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116862,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createLBTTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create LBT Transaction",
+        "executor_description": "Create LBT Transaction",
+        "executor_category": "LOCALBANKTRANSFERTRANSACTIONS",
+        "executor_category_group": "LOCALBANKTRANSFERTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 70,
+                "payerInfo": {
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "country": "us"
+                },
+                "currency": "USD"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1696392450661,
+        "lastModifiedTime": 1696446276980,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116865,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveLBTTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve LBT Transaction",
+        "executor_description": "Retrieve LBT Transaction",
+        "executor_category": "LOCALBANKTRANSFERTRANSACTIONS",
+        "executor_category_group": "LOCALBANKTRANSFERTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/resolve",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "Order ID received in the Create LBT Transaction response from BlueSnap",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696446361899,
+        "lastModifiedTime": 1696446361899,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116856,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createECPTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create ECP Transaction",
+        "executor_description": "The Create ECP Transaction request performs a transaction (purchase) using the ACH/ECP payment method. For more information about this payment method, see ACH/ECP.",
+        "executor_category": "ACHECPTRANSACTIONS",
+        "executor_category_group": "ACHECPTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "ecpTransaction": {
+                    "routingNumber": "011075150",
+                    "accountType": "CONSUMER_CHECKING",
+                    "accountNumber": 4099999992
+                },
+                "amount": 100,
+                "payerInfo": {
+                    "zip": "02453",
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "phone": "1234567890"
+                },
+                "softDescriptor": "ABC COMPANY",
+                "currency": "USD",
+                "authorizedByShopper": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696391632094,
+        "lastModifiedTime": 1696391632094,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116857,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveECPTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve ECP Transaction",
+        "executor_description": "This request gets details about a past ECP transaction, such as the transaction ID, amount, currency, payer info or vaulted shopper, and so on.",
+        "executor_category": "ACHECPTRANSACTIONS",
+        "executor_category_group": "ACHECPTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/{transactionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "transactionId",
+                "value": "",
+                "description": "transaction ID received in the response from BlueSnap"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696391854284,
+        "lastModifiedTime": 1696391854284,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116859,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveBECSDirectDebitTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve BECS Direct Debit Transaction",
+        "executor_description": "Retrieve BECS Direct Debit Transaction",
+        "executor_category": "BECSDIRECTDEBITTRANSACTIONS",
+        "executor_category_group": "BECSDIRECTDEBITTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/{transactionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "transactionId",
+                "value": "",
+                "description": "transaction ID received in the response from BlueSnap"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696392109330,
+        "lastModifiedTime": 1696392109330,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116858,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createBECSDirectDebitTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create BECS Direct Debit Transaction",
+        "executor_description": "Create BECS Direct Debit Transaction",
+        "executor_category": "BECSDIRECTDEBITTRANSACTIONS",
+        "executor_category_group": "BECSDIRECTDEBITTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "becsDirectDebitTransaction": {
+                    "bsbNumber": "980201",
+                    "accountNumber": "9990000001",
+                    "accountName": "Boris Britva",
+                    "financialInstitution": "financialInstitution",
+                    "branchName": "branchName",
+                    "agreementId": 81
+                },
+                "amount": 77,
+                "payerInfo": {
+                    "zip": "12345",
+                    "firstName": "Boris",
+                    "lastName": "Britva",
+                    "country": "au"
+                },
+                "currency": "AUD",
+                "authorizedByShopper": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696391978840,
+        "lastModifiedTime": 1696391978840,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116860,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createiDEALTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create iDEAL Transaction",
+        "executor_description": "Create iDEAL Transaction",
+        "executor_category": "IDEALTRANSACTIONS",
+        "executor_category_group": "IDEALTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 42,
+                "currency": "EUR",
+                "payerInfo": {
+                    "firstName": "John",
+                    "lastName": "Doe"
+                },
+                "idealTransaction": {
+                    "returnUrl": "http://www.returnURL.com"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696392180718,
+        "lastModifiedTime": 1696392180718,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116861,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveiDEALTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve iDEAL Transaction",
+        "executor_description": "Retrieve iDEAL Transaction",
+        "executor_category": "IDEALTRANSACTIONS",
+        "executor_category_group": "IDEALTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/resolve",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "Order ID received in the Create iDEAL Transaction response from BlueSnap",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696392276851,
+        "lastModifiedTime": 1696392276851,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116866,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createDebitAgreement",
+        "executor_version": "v3",
+        "executor_display_name": "Create Debit Agreement",
+        "executor_description": "Create Debit Agreement",
+        "executor_category": "MANDATES",
+        "executor_category_group": "MANDATES",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/agreements/debit/{region}/{type}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "region",
+                "value": "",
+                "description": "Represents the country. Possible Values: au, ca"
+            },
+            {
+                "key": "type",
+                "value": "",
+                "description": "Represents the mandate type. Possible Values: onetime,recurring, ondemand"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1696446448998,
+        "lastModifiedTime": 1696448732259,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116870,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "getDebitAgreement",
+        "executor_version": "v3",
+        "executor_display_name": "Get Debit Agreement",
+        "executor_description": "Get Debit Agreement",
+        "executor_category": "MANDATES",
+        "executor_category_group": "MANDATES",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/agreements/{agreementId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "agreementId",
+                "value": "",
+                "description": "Argument included in the response for the Create Debit Agreement request"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "agreementId",
+                "value": "",
+                "description": "Argument included in the response for the Create Debit Agreement request",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696448698377,
+        "lastModifiedTime": 1696448698377,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116874,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievePayPalTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve PayPal Transaction",
+        "executor_description": "Retrieve PayPal Transaction",
+        "executor_category": "MANDATES",
+        "executor_category_group": "MANDATES",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/resolve",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "order ID received in the response",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696448998989,
+        "lastModifiedTime": 1696448998989,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116871,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createPayPalTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create PayPal Transaction",
+        "executor_description": "Create PayPal Transaction",
+        "executor_category": "MANDATES",
+        "executor_category_group": "MANDATES",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 100,
+                "softDescriptor": "ABC COMPANY",
+                "currency": "USD",
+                "paypalTransaction": {
+                    "cancelUrl": "http://www.cancelURL.com",
+                    "returnUrl": "http://www.returnURL.com",
+                    "transactionType": "SET_ORDER"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696448805925,
+        "lastModifiedTime": 1696448805925,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116872,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatePayPalTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Update PayPal Transaction",
+        "executor_description": "Update PayPal Transaction",
+        "executor_category": "MANDATES",
+        "executor_category_group": "MANDATES",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 105,
+                "currency": "USD",
+                "paypalTransaction": {
+                    "orderId": "7078033",
+                    "transactionType": "DO_ORDER"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696448932576,
+        "lastModifiedTime": 1696448932577,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116947,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveSpecificPlan",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Specific Plan",
+        "executor_description": "Retrieve Specific Plan",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/recurring/plans/{planId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "planId",
+                "value": "",
+                "description": "BlueSnap identifier for the plan."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461141735,
+        "lastModifiedTime": 1696461141735,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116945,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createPlan",
+        "executor_version": "v3",
+        "executor_display_name": "Create Plan",
+        "executor_description": "Create Plan",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/recurring/plans",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "chargeFrequency": "MONTHLY",
+                "gracePeriodDays": 10,
+                "trialPeriodDays": 14,
+                "initialChargeAmount": 100,
+                "name": "Gold Plan",
+                "currency": "USD",
+                "maxNumberOfCharges": 12,
+                "recurringChargeAmount": 29.99,
+                "chargeOnPlanSwitch": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461008775,
+        "lastModifiedTime": 1696461008775,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116958,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveSubscriptionSwitchChargeAmount",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Subscription Switch Charge Amount",
+        "executor_description": "Retrieve Subscription Switch Charge Amount",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/recurring/subscriptions/:subscriptionId/switch-charge-amount",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "subscriptionId",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "newplanid",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "newquantity",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696462074776,
+        "lastModifiedTime": 1696462074776,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116953,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createMerchantManagedSubscriptionCharge",
+        "executor_version": "v3",
+        "executor_display_name": "Create Merchant-Managed Subscription Charge",
+        "executor_description": "Create Merchant-Managed Subscription Charge",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/recurring/ondemand/{subscriptionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "subscriptionId",
+                "value": "",
+                "description": "BlueSnap identifier for the subscription."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 45,
+                "currency": "USD",
+                "merchantTransactionId": "MyUniqueOnDemandSubscription",
+                "taxReference": "048deff0-a285-47e1-bc39-42f79bf0095b"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461773861,
+        "lastModifiedTime": 1696461773861,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116955,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveSpecificSubscription",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Specific Subscription",
+        "executor_description": "Retrieve Specific Subscription",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/recurring/subscriptions/{subscriptionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "subscriptionId",
+                "value": "",
+                "description": "BlueSnap identifier for the subscription."
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461924913,
+        "lastModifiedTime": 1696461924913,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116946,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updatePlan",
+        "executor_version": "v3",
+        "executor_display_name": "Update Plan",
+        "executor_description": "Update Plan",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/recurring/plans/{planId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "planId",
+                "value": "",
+                "description": "BlueSnap identifier for the plan."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "chargeFrequency": "MONTHLY",
+                "trialPeriodDays": "7",
+                "initialChargeAmount": "30",
+                "name": "Gold Plan",
+                "currency": "USD",
+                "recurringChargeAmount": "19"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461078798,
+        "lastModifiedTime": 1696461078798,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116951,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateSubscription",
+        "executor_version": "v3",
+        "executor_display_name": "Update Subscription",
+        "executor_description": "Update Subscription",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/recurring/subscriptions/{subscriptionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "subscriptionId",
+                "value": "",
+                "description": "BlueSnap identifier for the subscription."
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461333430,
+        "lastModifiedTime": 1696461333430,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116948,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveAllPlans",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve All Plans",
+        "executor_description": "Retrieve All Plans",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/recurring/plans",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "pagesize",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "after",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "gettotal",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "fulldescription",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461210524,
+        "lastModifiedTime": 1696461210524,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116956,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveAllChargesforaSubscription",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve All Charges for a Subscription",
+        "executor_description": "Retrieve All Charges for a Subscription",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/:subscriptionId/charges",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "subscriptionId",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "pagesize",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "after",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "fulldescription",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461998033,
+        "lastModifiedTime": 1696461998033,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116952,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createMerchantManagedSubscription",
+        "executor_version": "v3",
+        "executor_display_name": "Create Merchant-Managed Subscription",
+        "executor_description": "Create Merchant-Managed Subscription",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/recurring/ondemand",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 45,
+                "currency": "USD",
+                "payerInfo": {
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "zip": "02453",
+                    "country": "us"
+                },
+                "paymentSource": {
+                    "creditCardInfo": {
+                        "creditCard": {
+                            "expirationYear": 2026,
+                            "securityCode": "111",
+                            "expirationMonth": 5,
+                            "cardNumber": "4012000033330026"
+                        }
+                    }
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461386308,
+        "lastModifiedTime": 1696461386308,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116949,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createSubscription",
+        "executor_version": "v3",
+        "executor_display_name": "Create Subscription",
+        "executor_description": "Create Subscription",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/recurring/subscriptions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "payerInfo": {
+                    "zip": "02453",
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "phone": "1234567890"
+                },
+                "paymentSource": {
+                    "creditCardInfo": {
+                        "creditCard": {
+                            "expirationYear": 2023,
+                            "securityCode": "111",
+                            "expirationMonth": "07",
+                            "cardNumber": "4111111111111111"
+                        }
+                    }
+                },
+                "planId": 2283845
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461264533,
+        "lastModifiedTime": 1696461264533,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116954,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveAllSubscriptions",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve All Subscriptions",
+        "executor_description": "Retrieve All Subscriptions",
+        "executor_category": "SUBSCRIPTIONS",
+        "executor_category_group": "SUBSCRIPTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/recurring/subscriptions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "pagesize",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "after",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "gettotal",
+                "value": "",
+                "description": "",
+                "req": false
+            },
+            {
+                "key": "fulldescription",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696461878510,
+        "lastModifiedTime": 1696461878510,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116939,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "refund",
+        "executor_version": "v3",
+        "executor_display_name": "Refund",
+        "executor_description": "Refund",
+        "executor_category": "REFUNDS",
+        "executor_category_group": "REFUNDS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/transactions/refund/{transactionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "transactionId",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "reason": "Refund for order #1992",
+                "cancelSubscriptions": false
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696460666905,
+        "lastModifiedTime": 1696460666905,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116944,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "deleteVaultedShopper",
+        "executor_version": "v3",
+        "executor_display_name": "Delete Vaulted Shopper",
+        "executor_description": "Delete Vaulted Shopper",
+        "executor_category": "VAULTEDSHOPPERS",
+        "executor_category_group": "VAULTEDSHOPPERS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "DELETE",
+        "apiUrl": "{{baseurl}}/services/2/vaulted-shoppers/{vaultedShopperId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "vaultedShopperId",
+                "value": "",
+                "description": "vaultedShopperId received from BlueSnap"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696460926416,
+        "lastModifiedTime": 1696460926416,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116942,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateVaultedShopper",
+        "executor_version": "v3",
+        "executor_display_name": "Update Vaulted Shopper",
+        "executor_description": "Update Vaulted Shopper",
+        "executor_category": "VAULTEDSHOPPERS",
+        "executor_category_group": "VAULTEDSHOPPERS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/vaulted-shoppers/{vaultedShopperId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "vaultedShopperId",
+                "value": "",
+                "description": "vaultedShopperId received from BlueSnap"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "firstName": "FirstName",
+                "lastName": "LastName"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696460814315,
+        "lastModifiedTime": 1696460814315,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116940,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createVaultedShopper",
+        "executor_version": "v3",
+        "executor_display_name": "Create Vaulted Shopper",
+        "executor_description": "Create Vaulted Shopper",
+        "executor_category": "VAULTEDSHOPPERS",
+        "executor_category_group": "VAULTEDSHOPPERS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/vaulted-shoppers",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "firstName": "FirstName",
+                "lastName": "LastName"
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696460748253,
+        "lastModifiedTime": 1696460748253,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116943,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveVaultedShopper",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Vaulted Shopper",
+        "executor_description": "Retrieve Vaulted Shopper",
+        "executor_category": "VAULTEDSHOPPERS",
+        "executor_category_group": "VAULTEDSHOPPERS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/vaulted-shoppers/{vaultedShopperId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "vaultedShopperId",
+                "value": "",
+                "description": "vaultedShopperId received from BlueSnap"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696460874350,
+        "lastModifiedTime": 1696460874350,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116961,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "updateVendor",
+        "executor_version": "v3",
+        "executor_display_name": "Update Vendor",
+        "executor_description": "Update Vendor",
+        "executor_category": "MARKETPLACE",
+        "executor_category_group": "MARKETPLACE",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/vendors/{vendorId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "vendorId",
+                "value": "",
+                "description": "BlueSnap identifier for the vendor"
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": "vendor@example.com",
+                "firstName": "Joe",
+                "lastName": "Smith",
+                "phone": "1-123-456-7890",
+                "address": "123 Main Street",
+                "city": "Boston",
+                "country": "US",
+                "state": "MA",
+                "zip": "02453",
+                "defaultPayoutCurrency": "USD",
+                "ipnUrl": "https://ipnaddress.com",
+                "vendorPrincipal": {
+                    "firstName": "Joe",
+                    "lastName": "Smith",
+                    "address": "123 Main Street",
+                    "city": "Boston",
+                    "country": "US",
+                    "zip": "02453",
+                    "dob": "28-09-9999",
+                    "personalIdentificationNumber": "1234",
+                    "driverLicenseNumber": "561196411",
+                    "email": "individual.vendor@bluesnap.com"
+                },
+                "vendorAgreement": {
+                    "commissionPercent": 30
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696462314871,
+        "lastModifiedTime": 1696462314871,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116962,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveVendor",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Vendor",
+        "executor_description": "Retrieve Vendor",
+        "executor_category": "MARKETPLACE",
+        "executor_category_group": "MARKETPLACE",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/vendors/{vendorId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "vendorId",
+                "value": "",
+                "description": "BlueSnap identifier for the vendor"
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696462363795,
+        "lastModifiedTime": 1696462363795,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116963,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveAllVendors",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve All Vendors",
+        "executor_description": "Retrieve All Vendors",
+        "executor_category": "MARKETPLACE",
+        "executor_category_group": "MARKETPLACE",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/vendors",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "gettotal",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696462418051,
+        "lastModifiedTime": 1696462418051,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116960,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createVendor",
+        "executor_version": "v3",
+        "executor_display_name": "Create Vendor",
+        "executor_description": "Create Vendor",
+        "executor_category": "MARKETPLACE",
+        "executor_category_group": "MARKETPLACE",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/vendors",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "transactionid",
+                "value": "",
+                "description": "either transactionid or merchanttransactionid is required ID of the transaction to be approved/declined",
+                "req": false
+            },
+            {
+                "key": "approvetransaction",
+                "value": "",
+                "description": "Set to true to approve the transaction or to false to decline the transaction. Default value is true.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "email": "vendor@example.com",
+                "firstName": "Joe",
+                "lastName": "Smith",
+                "phone": "1-123-456-7890",
+                "address": "123 Main Street",
+                "city": "Boston",
+                "country": "US",
+                "state": "MA",
+                "zip": "02453",
+                "defaultPayoutCurrency": "USD",
+                "ipnUrl": "https://ipnaddress.com",
+                "vendorPrincipal": {
+                    "firstName": "Joe",
+                    "lastName": "Smith",
+                    "address": "123 Main Street",
+                    "city": "Boston",
+                    "country": "US",
+                    "zip": "02453",
+                    "dob": "28-09-9999",
+                    "personalIdentificationNumber": "1234",
+                    "driverLicenseNumber": "561196411",
+                    "email": "individual.vendor@bluesnap.com"
+                },
+                "vendorAgreement": {
+                    "commissionPercent": 30
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696462260462,
+        "lastModifiedTime": 1696462260462,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116929,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveSofortTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Sofort Transaction",
+        "executor_description": "Retrieve Sofort Transaction",
+        "executor_category": "SOFORTTRANSACTIONS",
+        "executor_category_group": "SOFORTTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/resolve",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "orderId",
+                "value": "",
+                "description": "Order ID received in the Create Sofort Transaction response from BlueSnap",
+                "req": false
+            }
+        ],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696459620343,
+        "lastModifiedTime": 1696459620343,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116928,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createSofortTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create Sofort Transaction",
+        "executor_description": "Create Sofort Transaction",
+        "executor_category": "SOFORTTRANSACTIONS",
+        "executor_category_group": "SOFORTTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "",
+                "value": "",
+                "description": "",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "amount": 42,
+                "currency": "GBP",
+                "payerInfo": {
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "country": "uk"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696459546453,
+        "lastModifiedTime": 1696459546453,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116875,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createPreAuthorizedDebitTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create Pre-Authorized Debit Transaction",
+        "executor_description": "Create Pre-Authorized Debit Transaction",
+        "executor_category": "PREAUTHORIZEDDEBITTRANSACTIONS",
+        "executor_category_group": "PREAUTHORIZEDDEBITTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "acssDirectDebitTransaction": {
+                    "routingNumber": "001004820",
+                    "accountNumber": "9990000001",
+                    "accountType": "PERSONAL",
+                    "agreementId": 87
+                },
+                "amount": 11,
+                "payerInfo": {
+                    "zip": "12345",
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "country": "CA"
+                },
+                "currency": "CAD",
+                "authorizedByShopper": true
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": null,
+        "registeredAsIs": true,
+        "creationTime": 1696449108298,
+        "lastModifiedTime": 1696449237059,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116876,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrievePreAuthorizedDebitTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Pre-Authorized Debit Transaction",
+        "executor_description": "Retrieve Pre-Authorized Debit Transaction",
+        "executor_category": "PREAUTHORIZEDDEBITTRANSACTIONS",
+        "executor_category_group": "PREAUTHORIZEDDEBITTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/{transactionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "transactionId",
+                "value": "",
+                "description": "transaction ID received in the response from BlueSnap"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696449186232,
+        "lastModifiedTime": 1696449186232,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116885,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveSEPADDTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve SEPA DD Transaction",
+        "executor_description": "Retrieve SEPA DD Transaction",
+        "executor_category": "PREAUTHORIZEDDEBITTRANSACTIONS",
+        "executor_category_group": "PREAUTHORIZEDDEBITTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/alt-transactions/{transactionId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "transactionId",
+                "value": "",
+                "description": "transaction ID received in the response from BlueSnap"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696451267142,
+        "lastModifiedTime": 1696451267142,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116936,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "createBatchTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Create Batch Transaction",
+        "executor_description": "Create Batch Transaction",
+        "executor_category": "BATCHTRANSACTIONS",
+        "executor_category_group": "BATCHTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "POST",
+        "apiUrl": "{{baseurl}}/services/2/batch-transactions",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {
+                "batchTransaction": {
+                    "batchId": "567890",
+                    "callbackUrl": "http://example.com/batch_callback"
+                }
+            },
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696460559532,
+        "lastModifiedTime": 1696460559532,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116937,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "retrieveBatchTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Retrieve Batch Transaction",
+        "executor_description": "Retrieve Batch Transaction",
+        "executor_category": "BATCHTRANSACTIONS",
+        "executor_category_group": "BATCHTRANSACTIONS",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "GET",
+        "apiUrl": "{{baseurl}}/services/2/batch-transactions/{batchId}",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            },
+            {
+                "key": "batchId",
+                "value": "",
+                "description": "batch ID sent in the Create Batch Transaction request"
+            }
+        ],
+        "queryParams": [],
+        "headers": [],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": "",
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696460611469,
+        "lastModifiedTime": 1696460611469,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    },
+    {
+        "id": 116959,
+        "executor_type": "THIRDPARTY",
+        "executor_name": "merchantApproveTransaction",
+        "executor_version": "v3",
+        "executor_display_name": "Merchant Approve Transaction",
+        "executor_description": "Merchant Approve Transaction",
+        "executor_category": "FRAUDREVIEW",
+        "executor_category_group": "FRAUDREVIEW",
+        "service_provider": "bluesnap",
+        "executor_scope": null,
+        "partner": "b2b",
+        "account_id": "b2b",
+        "executor_method_type": "PUT",
+        "apiUrl": "{{baseurl}}/services/2/transactions/approval",
+        "dataroot": null,
+        "pathParams": [
+            {
+                "key": "baseurl",
+                "value": "",
+                "description": ""
+            }
+        ],
+        "queryParams": [
+            {
+                "key": "transactionid",
+                "value": "",
+                "description": "either transactionid or merchanttransactionid is required ID of the transaction to be approved/declined",
+                "req": false
+            },
+            {
+                "key": "approvetransaction",
+                "value": "",
+                "description": "Set to true to approve the transaction or to false to decline the transaction. Default value is true.",
+                "req": false
+            }
+        ],
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "req": false
+            }
+        ],
+        "authModel": {
+            "authType": null,
+            "authAttributes": {}
+        },
+        "requestBody": {
+            "value": {},
+            "key": "payload",
+            "description": "Document in JSON format",
+            "annotation": "RequestBody"
+        },
+        "prerequisites": null,
+        "executors": null,
+        "functions": null,
+        "responseAttributes": [
+            {
+                "attributeName": null,
+                "displayName": null,
+                "description": null,
+                "type": null,
+                "size": 0,
+                "precision": 0,
+                "autoIncrement": false,
+                "defaultValue": null,
+                "subType": [],
+                "attributeType": "None",
+                "required": false,
+                "dataStoragePolicy": "None",
+                "apiAccessPolicy": "None",
+                "displayPolicy": "None",
+                "array": false,
+                "customType": false,
+                "updateOption": null,
+                "previousAttributeName": null,
+                "compliances": null
+            }
+        ],
+        "response": null,
+        "attributeMappings": null,
+        "source": null,
+        "block_attributes": null,
+        "workflow_credentials": null,
+        "disabled": false,
+        "published": true,
+        "scopeOfAccess": "public",
+        "registeredAsIs": true,
+        "creationTime": 1696462199151,
+        "lastModifiedTime": 1696462199151,
+        "executionLib": null,
+        "isDocumentationPublished": true,
+        "mockResponses": [],
+        "isMockResponseEnabled": false,
+        "block_id": null,
+        "gatewaySettings": null,
+        "apiQueryModel": null,
+        "properties": null,
+        "vid": null,
+        "nid": null
+    }
+]
